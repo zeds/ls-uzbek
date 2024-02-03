@@ -8,6 +8,7 @@ tom: zeds
 火木土16pm
 richi: Ricchhii
 mizro: mirzo7
+soy: thefame0701
 
 
 
