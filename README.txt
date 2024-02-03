@@ -9,7 +9,9 @@ tom: zeds
 richi: Ricchhii
 mizro: mirzo7
 soy: thefame0701
-Hello
+
+火木土19pm
+Shoxrux: Shoxrux71
 
 
 
