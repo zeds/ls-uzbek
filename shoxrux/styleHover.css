@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profile-iconDiv:hover .profile-icon-item,
+.ring-icoDiv:hover .ring-icon-item,
+.rec-iconDiv:hover .rec-icon-item,
+.mic-iconDiv:hover .mic-icon-item,
+.search-iconDiv:hover .search-icon-item {
+    visibility: visible;
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 5;
+}
