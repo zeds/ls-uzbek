@@ -1,0 +1,204 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
+}
+.header-container {
+	width: 100%;
+}
+.header {
+	width: 100%;
+	height: 40px;
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.left_container {
+	width: 150px;
+	height: 60%;
+	margin-left: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.search_container {
+	height: 40px;
+	display: flex;
+}
+.search_container input {
+	width: 540px;
+	border: solid 1px black;
+	border-radius: 20px 0 0 20px;
+}
+.search_container button {
+	display: flex;
+	width: 60px;
+	border-radius: 0 20px 20px 0;
+	border: solid 1px black;
+	border-left: none;
+	justify-content: center;
+	align-items: center;
+	padding: 7px;
+}
+.mic_icon {
+	display: flex;
+	position: relative;
+	border-radius: 20px;
+	width: 40px;
+	justify-content: center;
+	align-items: center;
+	margin-left: 14px;
+	background-color: #f2f2f2;
+	padding: 8px;
+}
+.mic_icon:hover .tooltip {
+	visibility: visible;
+	opacity: 0.5;
+}
+.tooltip {
+	visibility: hidden; /* はじめは隠しておく */
+	position: absolute; /* 絶対配置 */
+	left: 30%; /* 親に対して中央配置 */
+	bottom: -30px; /* 親要素下からの位置 */
+	display: inline-block;
+	padding: 5px; /* 余白 */
+	white-space: nowrap; /* テキストを折り返さない */
+	font-size: 0.8rem; /* フォントサイズ */
+	line-height: 1.3; /* 行間 */
+	background: #333; /* 背景色 */
+	color: #fff; /* 文字色 */
+	border-radius: 3px; /* 角丸 */
+}
+.right_container {
+	width: 150px;
+	height: 100%;
+	margin-right: 20px;
+	display: flex;
+	padding: 4px;
+	justify-content: space-between;
+}
+.right_container img {
+	height: 100%;
+	border-radius: 20px;
+}
+.movie {
+	position: relative;
+}
+.movie:hover .tooltip {
+	visibility: visible;
+	opacity: 0.5;
+}
+.bell {
+	position: relative;
+}
+.bell:hover .tooltip {
+	visibility: visible;
+	opacity: 0.5;
+}
+.profile {
+	position: relative;
+}
+.profile:hover .tooltip {
+	visibility: visible;
+	opacity: 0.5;
+}
+.body_container {
+	display: flex;
+}
+.nav_container {
+	margin-top: 30px;
+}
+.item {
+	display: flex;
+	align-items: center;
+	padding: 0 12px;
+	color: #0f0f0f;
+	width: 204px;
+	height: 40px;
+	gap: 15px;
+	border-radius: 8px;
+}
+.item:hover {
+	background-color: #f2f2f2;
+}
+.item_text {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: #0f0f0f;
+}
+.content-container {
+	display: grid;
+	background-color: green;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 15px;
+	width: 100%;
+	margin-top: 30px;
+}
+@media (max-width: 940px) {
+	.content_container {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.article_container {
+	background-color: red;
+}
+.article_container img {
+	width: 100%;
+	border-radius: 12px;
+}
+.video {
+	position: relative;
+}
+.video p {
+	position: absolute;
+	font-size: 14px;
+	padding: 3px 2px 2px 3px;
+	right: 4px;
+	bottom: 8px;
+	border-radius: 4px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+.article_contents {
+	width: 100%;
+	display: flex;
+	gap: 10px;
+	padding: 5px;
+}
+.article_contents img {
+	width: 36px;
+	height: 36px;
+	border-radius: 18px;
+}
+.article_text {
+}
+.title {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 500;
+	color: #0f0f0f;
+}
+.author {
+	font-size: 14px;
+	line-height: 20px;
+	color: #0f0f0f;
+	font-weight: 400;
+}
+.statistics {
+	font-size: 14px;
+	line-height: 20px;
+	color: #0f0f0f;
+}
+
+/* videolar qatori 3ta,
+	browser ekrani scroll
+	kensaku */

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-size: 12px;
+			}
+			.container {
+				width: 100%;
+				height: 100vh;
+			}
+			.contents {
+				width: 300px;
+				height: 500px;
+				padding: 20px;
+			}
+			.menu_item {
+				width: 204px;
+				height: 40px;
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				padding: 0 12px;
+				font-size: 16px;
+				color: #0f0f0f;
+				border-radius: 5px;
+			}
+			.menu_item:hover {
+				background: #f2f3f3;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="contents">
+				<ul>
+					<li class="menu_item">
+						<img src="menu_home.svg" />
+						<div>ホーム</div>
+					</li>
+					<li class="menu_item">
+						<img src="menu_short.svg" />
+						<div>ショート</div>
+					</li>
+					<li class="menu_item">
+						<img src="menu_channels.svg" />
+						<div>登録チャンネル</div>
+					</li>
+					<li class="menu_item">
+						<img src="menu_music.svg" />
+						<div>Youtube Music</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

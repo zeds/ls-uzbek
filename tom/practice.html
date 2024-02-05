@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: "Roboto", sans-serif;
+				font-size: 20px;
+			}
+			.container {
+				width: 100%;
+				height: 100vh;
+			}
+			.article_container {
+				width: 380px;
+				padding: 5px;
+				position: relative;
+			}
+			.article_container img {
+				width: 100%;
+				border-radius: 14px;
+			}
+			.article_contents {
+				width: 100%;
+				display: flex;
+				gap: 10px;
+				padding: 5px;
+			}
+			.article_contents img {
+				width: 36px;
+				height: 36px;
+				border-radius: 18px;
+			}
+			.article_text {
+			}
+			.title {
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 22px;
+				color: #0f0f0f;
+			}
+			.author {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 20px;
+				color: #606060;
+			}
+			.statistics {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 20px;
+				color: #606060;
+			}
+			.round {
+				border-radius: 14px;
+			}
+			.time_container {
+				position: relative;
+			}
+			.time {
+				color: white;
+				background: black;
+				padding: 2px 3px 2px 3px;
+				border-radius: 5px;
+				font-size: 12px;
+				font-weight: 500;
+				position: absolute;
+				right: 6px;
+				bottom: 9px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="article_container">
+				<div class="time_container">
+					<img src="jeniffer-top.jpg" />
+					<div class="time">3:31:24</div>
+				</div>
+				<!-- <iframe
+					class="round"
+					width="380"
+					height="214"
+					src="https://www.youtube.com/embed/LoK_tmc-x2w?si=u3PPs4U0dy9lOmAF"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen
+				></iframe> -->
+
+				<div class="article_contents">
+					<img src="jeniffer.jpg" />
+					<div class="article_text">
+						<div class="title">
+							4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+							(Confusing English Words)
+						</div>
+						<div class="author">JForrest English</div>
+						<div class="statistics">7.6万 回視聴</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

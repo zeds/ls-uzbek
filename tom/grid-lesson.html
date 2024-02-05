@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: "Roboto", sans-serif;
+				font-size: 20px;
+			}
+			.container {
+				width: 100%;
+				height: 100vh;
+			}
+			.articles {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr 1fr;
+			}
+			.article {
+				margin: 10px;
+			}
+			.article img {
+				width: 100%;
+			}
+			.item_contents {
+				width: 100%;
+				display: flex;
+				padding: 5px;
+				gap: 10px;
+			}
+			.item_contents img {
+				width: 36px;
+				height: 36px;
+				border-radius: 18px;
+			}
+			.item_text {
+				width: 100%;
+			}
+			.title {
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+
+				line-height: 22px;
+				font-size: 16px;
+				font-weight: 500;
+				color: #0f0f0f;
+			}
+			.user {
+				font-size: 14px;
+			}
+			.statistics {
+				font-size: 14px;
+			}
+
+			@media (width < 648px) {
+				.articles {
+					grid-template-columns: 1fr;
+				}
+			}
+			@media (648px <= width < 768px) {
+				.articles {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+			@media (768px <= width < 1024px) {
+				.articles {
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+			}
+			@media (1024px <= width < 1280px) {
+				.articles {
+					grid-template-columns: 1fr 1fr 1fr 1fr;
+				}
+			}
+			@media (1280px <= width < 1536px) {
+				.articles {
+					grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+				}
+			}
+			@media (1536px <= width) {
+				.articles {
+					grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="articles">
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="item_contents">
+						<img src="jeniffer.jpg" />
+						<div class="item_text">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="item_contents">
+						<img src="jeniffer.jpg" />
+						<div class="item_text">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="item_contents">
+						<img src="jeniffer.jpg" />
+						<div class="item_text">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="item_contents">
+						<img src="jeniffer.jpg" />
+						<div class="item_text">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="item_contents">
+						<img src="jeniffer.jpg" />
+						<div class="item_text">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="item_contents">
+						<img src="jeniffer.jpg" />
+						<div class="item_text">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="item_contents">
+						<img src="jeniffer.jpg" />
+						<div class="item_text">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="item_contents">
+						<img src="jeniffer.jpg" />
+						<div class="item_text">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">article-2</div>
+				<div class="article">article-3</div>
+				<div class="article">article-4</div>
+				<div class="article">article-5</div>
+				<div class="article">article-6</div>
+				<div class="article">article-7</div>
+				<div class="article">article-8</div>
+			</div>
+		</div>
+	</body>
+</html>
