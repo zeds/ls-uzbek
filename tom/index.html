@@ -184,7 +184,7 @@
 			.article_container {
 				width: 100%;
 				display: grid;
-				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-columns: 1fr;
 				gap: 10px;
 			}
 			.article {
@@ -242,11 +242,17 @@
 				.article_container {
 					grid-template-columns: 1fr;
 				}
+				.search_container input {
+					width: 100px;
+				}
 			}
 			/* @media (648px <= width < 768px) { */
 			@media (648px <= width < 1024px) {
 				.article_container {
 					grid-template-columns: 1fr;
+				}
+				.search_container input {
+					width: 200px;
 				}
 			}
 			/* @media (768px <= width < 1024px) {
