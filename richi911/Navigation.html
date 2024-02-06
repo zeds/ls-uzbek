@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        /* background: lightgray; */
+      }
+      .side_menu {
+        width: 204px;
+      }
+      .side_menu li {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        color: #0f0f0f;
+        font-size: 14px;
+        padding: 0 12px;
+        gap: 15px;
+      }
+      .side_menu li:hover {
+        background: #f2f3f3;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul class="side_menu">
+          <li><img src="Home-page.svg" />ホーム</li>
+          <li><img src="Shorts.svg" />ショート</li>
+          <li><img src="Subscriptions.svg" />登録チャンネル</li>
+          <li><img src="Music.svg" />Youtube Music</li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
