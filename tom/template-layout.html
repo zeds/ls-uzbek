@@ -32,26 +32,26 @@
 			}
 			.body_container {
 				width: 100%;
-				height: 100%;
 				background: blue;
 				padding: 10px;
-				display: grid;
-				grid-template-columns: 240px 1fr;
+				display: flex;
+				/* grid-template-columns: 240px 1fr; */
 			}
 			nav {
 				height: 100%;
+				width: 240px;
 				background: orange;
 			}
 			.article_container {
 				width: 100%;
-				height: 100%;
+				/* height: 100%; */
 				background: pink;
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr;
-				gap: 10px;
 			}
 			.article {
 				background: red;
+				display: flex;
 				/* aspect-ratio: 2.2/3; */
 			}
 			.article img {
@@ -104,40 +104,22 @@
 		<div class="container">
 			<header></header>
 			<div class="body_container">
-				<nav></nav>
+				<nav>
+					<ul>
+						<li>item</li>
+						<li>item</li>
+						<li>item</li>
+						<li>item</li>
+						<li>item</li>
+					</ul>
+				</nav>
 				<div class="article_container">
-					<div class="article">
-						<img src="jeniffer-top.jpg" />
-						<div class="article_contents">
-							<img src="jeniffer.jpg" />
-							<div class="article_text">
-								<div>4hour</div>
-								<div>JForrest English</div>
-								<div>7.5万回視聴・1ヶ月前</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<div>画像</div>
-					</div>
-					<div class="article">
-						<div>画像</div>
-					</div>
-					<div class="article">
-						<div>画像</div>
-					</div>
-					<div class="article">
-						<div>画像</div>
-					</div>
-					<div class="article">
-						<div>画像</div>
-					</div>
-					<div class="article">
-						<div>画像</div>
-					</div>
-					<div class="article">
-						<div>画像</div>
-					</div>
+					<div class="article">ああああ</div>
+					<div>ああああ</div>
+					<div>ああああ</div>
+					<div>ああああ</div>
+					<div>ああああ</div>
+					<div>ああああ</div>
 				</div>
 			</div>
 		</div>
