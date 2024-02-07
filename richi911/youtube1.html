@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+      }
+      .header_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        height: 40px;
+
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+      .header_container .logo {
+        height: 50%;
+        position: relative;
+      }
+      .header_container .logo:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+        background: gray;
+      }
+      .header_container .logo:hover {
+        background: lightgrey;
+      }
+      /* .tooltip-text {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        right: 0px;
+        bottom: -45px;
+        font-size: 16px;
+        color: white;
+        padding: 3px 5px 5px 5px;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.5);
+        transition: 05s ease;
+      } */
+      .search_container {
+        display: flex;
+        align-items: center;
+        width: 700px;
+        height: 40px;
+      }
+      .search_container .input {
+        width: 540px;
+        height: 100%;
+        border: solid 1px #c1c1c1;
+        padding-left: 17px;
+        font-size: 16px;
+      }
+      .search_frame {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        border-radius: 20px 0 0 20px;
+        border: solid 1px #cccccc;
+      }
+      .search_frame input {
+        width: 540px;
+        height: 90%;
+        border: none;
+        margin-left: 20px;
+        padding-left: 10px;
+      }
+      .search_container button {
+        width: 64px;
+        height: 100%;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        border-right: solid 1px #d3d3d3;
+        border-top: solid 1px #d3d3d3;
+        border-bottom: solid 1px #d3d3d3;
+        background: #f8f8f8;
+        position: relative;
+      }
+      .search_container button:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+        background: gray;
+      }
+      .search_container button:hover {
+        background: lightgray;
+      }
+      /* .tooltip-text {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+        bottom: -25px;
+        font-size: 9px;
+        color: black;
+        padding: 3px 5px 3px 5px;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.5);
+        transition: 3s ease;
+      } */
+      .mic_icon {
+        display: flex;
+        width: 40px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        justify-content: center;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .mic_icon:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .mic_icon:hover {
+        background: lightgray;
+      }
+      .tooltip-text {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -50px;
+        font-size: 16px;
+        display: inline-block;
+        padding: 10px;
+        white-space: nowrap;
+        line-height: 1.3;
+        background: gray;
+        color: white;
+        border-radius: 3px;
+        transition: 0.3s ease;
+      }
+      .logo_icon {
+        display: flex;
+        width: 30px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo_icon:hover {
+        background: lightgray;
+      }
+      .logo1_icon {
+        display: flex;
+        width: 30px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo1_icon:hover {
+        background: lightgray;
+      }
+      .right_container {
+        height: 100%;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-right: 20px;
+      }
+      .right_container img:last-child {
+        border-radius: 16px;
+        height: 32px;
+        width: 32px;
+      }
+      .right_container img:last-child:hover {
+        background: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header_container">
+        <img class="logo" src="Images/youtube (1).svg" />
+        <div class="tooltip-text">ホームページ</div>
+        <div class="search_container">
+          <div class="search_frame"><input type="text" /></div>
+          <button>
+            <div class="tooltip-text">検索</div>
+            <img src="Images/search-outline.svg" />
+          </button>
+          <div class="mic_icon">
+            <div class="tooltip-text">音声で検索</div>
+            <img src="Images/mic.svg" />
+          </div>
+        </div>
+        <div class="right_container">
+          <img src="Images/recordingicon.svg" />
+          <img src="Images/222.svg" />
+          <img src="Images/profileimg.jpg" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

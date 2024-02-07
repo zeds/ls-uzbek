@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+         *{
+            padding: 0%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            /* background: skyblue; */
+        }
+        .article_container{
+            width: 380px;
+            padding: 10px;
+            /* background: pink; */
+        }
+        .article_container img{
+            width: 100%;
+            border-radius: 20px;
+        }
+        .articl_contents{
+            display: flex;
+
+        }
+        .orange{
+            width: 100px;
+            height: 35px;
+            background: black;
+
+        }
+        .articl_contents img{
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+
+        }
+        .articl_text{
+            margin-left: 10px;
+
+        }
+        .title{
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            font-weight: 500px;
+            font-size: 16px;
+            line-height: 22px;
+            color: #0f0f0f;
+        }
+        .author{
+            font-weight: 400px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .statistics{
+            font-weight: 400px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="article_container">
+            <img id+ src="image/bob.jpeg" />
+            <div class="orange"></div>
+            <div class="articl_contents">
+                <img src="image/blobsmall.jpg" />
+                <div class="articl_text">
+                    <div class="title">4 Hours of English Vocabulary - ALL YOU NEED TO SPEAK </div>
+                    <div class="author">JForrest English</div>
+                    <div class="statistics">132M. views</div>
+                </div>
+             </div>
+        </div>
+    </div>
+</body>
+</html>

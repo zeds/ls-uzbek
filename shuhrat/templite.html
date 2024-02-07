@@ -1,0 +1,138 @@
+<!DOCTYPE html>	
+<html lang="en">	
+<head>	
+<meta charset="UTF-8" />	
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />	
+<link rel="preconnect" href="https://fonts.googleapis.com" />	
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />	
+<link	
+href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"	
+rel="stylesheet"	
+/>	
+<title>Document</title>	
+    <style>	
+        * {	
+        padding: 0;	
+        margin: 0;	
+        box-sizing: border-box;	
+        }	
+        body {	
+        font-family: "Roboto", sans-serif;	
+        font-size: 20px;	
+        }	
+        .container {	
+        width: 100%;	
+        height: 100vh;	
+        background: lightgray;	
+        }	
+        header{
+            width: 100%;
+            height: 56px;
+            background: green;
+        }
+    
+        .body_container{
+            height: 100%;
+            height: 100%;
+            background: blue;
+            padding: 10px0;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+        }
+        nav{
+            
+            height: 100%;
+            background: orange;
+        }
+        .article_container{
+            height: 100%;
+            width: 100%;
+            background: pink;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .article{
+            background: red;
+            aspect-ratio: 2.2/3;
+        }
+        .article img{
+            width: 100%;
+        }
+        .article_contents{
+            display: flex;
+            gap: 5px;
+        }
+        .article_contents img{
+            width: 36px;
+            height: 36px;
+        }
+        .article_text{
+            font-size: 14px;
+        }
+        @media (648px <= width < 768px) {				
+    .article_container {				
+            grid-template-columns: 1fr 1fr;				
+    }				
+}				
+ @media (768px <= width < 1024px) {				
+    .article_container {				
+            grid-template-columns: 1fr 1fr 1fr;				
+    }				
+}				
+ @media (1024px <= width < 1280px) {				
+    .article_container {				
+            grid-template-columns: 1fr 1fr 1fr 1fr;				
+    }				
+}				
+ @media (1280px <= width < 1536px) {				
+    .article_container {				
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;				
+    }				
+}				
+ @media (1536px <= width) {				
+    .article_container {				
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;				
+    }				
+}
+    </style>	
+</head>	
+    <body>	
+        <div class="container">
+
+            <header></header>
+            
+                <div class="body_container">
+
+                    <nav class="side_menu">
+
+                    </nav>
+
+                    <div class="article_container">
+                        <div class="article">
+                            <img src="image/blob.jpeg"/>
+                            <div class="article_contents">
+                                <img src="image/blobsmall.jpg"/>
+                                <div class="article_text">
+                                    <div>4hour</div>
+                                    <div>JForrest English</div>
+                                    <div>7.5万回 .1ヶ月前</div>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="article">
+                            <div>view</div>
+                        </div> 
+                        <div class="article">
+                            <div>view</div>
+                        </div> 
+                        <div class="article">
+                            <div>view</div>
+                        </div> 
+                    </div>
+
+                </div>
+            
+        </div>	
+    </body>	
+</html>	

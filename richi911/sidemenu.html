@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        width: 204px;
+        height: 40px;
+        padding: 0 12px;
+        color: #0f0f0f;
+        gap: 15px;
+        border-radius: 8px;
+        background: #f2f2f2;
+      }
+      .item:hover {
+        background: gray;
+      }
+      .item_text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="item">
+          <img src="Home-page.svg" />
+          <div class="item_text">Home-page</div>
+        </div>
+        <div class="item">
+          <img src="Shorts.svg" />
+          <div class="item_text">Shorts</div>
+        </div>
+        <div class="item">
+          <img src="Subscriptions.svg" />
+          <div class="item_text">Subscriptions</div>
+        </div>
+        <div class="item">
+          <img src="History.svg" />
+          <div class="item_text">History</div>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

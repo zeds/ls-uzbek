@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-size: 20px;
+    }
+
+    /*===============================================================
+                                header
+===============================================================*/
+    .header_container {
+        height: 50px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /*
+START
+*/
+    .header_start_box {
+        height: 100%;
+        width: 240px;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .header_start_menu_box {
+        width: 40px;
+        height: 100%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header_start_menu_box:hover {
+        background-color: rgb(226, 227, 229);
+    }
+
+    .header_start_menu {
+        width: 25px;
+        border-radius: 50%;
+    }
+
+    .header_start_youtube_icon_box {
+        width: 120px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .header_start_youtube_icon {
+        width: 100px;
+        height: 100%;
+        margin-left: 15px;
+    }
+
+    .header_start_youtube_icon_box:hover .header_start_youtube_icon_tooptip {
+        background-color: gray;
+        visibility: visible;
+    }
+
+    .header_start_youtube_icon_tooptip {
+        width: 80px;
+        height: 30px;
+        background-color: black;
+        color: white;
+        position: absolute;
+        right: -30px;
+        top: 30px;
+        visibility: hidden;
+        font-size: 14px;
+    }
+
+    /*
+Center
+*/
+    .header_center_box {
+        height: 100%;
+        width: 680px;
+        display: flex;
+    }
+
+    .header_center_box input {
+        width: 540px;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid black;
+        border-radius: 20px 0px 0px 20px;
+        padding-left: 10px;
+    }
+
+    .header_center_box button {
+        width: 60px;
+        height: 100%;
+        background-color: rgb(253, 254, 255);
+        border: 1px solid black;
+        border-radius: 0px 20px 20px 0px;
+        border-left: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .header_center_box button img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header_center_box button:hover {
+        background-color: rgb(201, 201, 201);
+    }
+
+    .header_center_box button:hover .header_tooptip {
+        background-color: gray;
+        visibility: visible;
+    }
+
+    .header_tooptip {
+        width: 60px;
+        height: 30px;
+        background-color: black;
+        color: white;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        visibility: hidden;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header_center_box_mic {
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+        margin-left: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .header_center_box_mic_tooptip {
+        width: 40px;
+        height: 20px;
+        background-color: black;
+        color: white;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        visibility: hidden;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header_center_box_mic:hover {
+        background-color: rgb(209, 214, 218);
+    }
+
+    .header_center_box_mic:hover .header_center_box_mic_tooptip {
+        background-color: gray;
+        visibility: visible;
+    }
+
+    /*
+End
+*/
+    .header_end_box {
+        height: 100%;
+        width: 150px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_end_icon_box {
+        width: 120px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+
+    .header_end_icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .header_end_icon:hover {
+        background-color: rgb(209, 214, 218);
+    }
+
+    .header_end_icon:hover .header_tooptip {
+        background-color: gray;
+        visibility: visible;
+    }
+
+    .header_end_usericon_box {
+        width: 50px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header_end_usericon {
+        width: 35px;
+        height: 35px;
+
+    }
+
+    .header_end_usericon img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    /*===============================================================
+                            main
+===============================================================*/
+    .container {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .content {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+    }
+
+    /*===============================================================
+                            Navigation
+===============================================================*/
+    .nav_box {
+        width: 225px;
+        height: 100%;
+    }
+
+    .nav_text {
+        font-size: 14px;
+        font-weight: 400px;
+        color: black;
+    }
+
+    .nav_tooptip {
+        width: auto;
+        height: 20px;
+        background-color: white;
+        color: black;
+        position: absolute;
+        right: -20px;
+        top: 20px;
+        visibility: hidden;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul {
+        padding: 10px
+    }
+
+    li {
+        width: 190px;
+        height: 40px;
+        margin-left: 10px;
+        padding-left: 2px;
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    li:hover {
+        background-color: gainsboro;
+        border-radius: 10px;
+    }
+
+    li:hover .nav_tooptip {
+        border: 1px solid black;
+        visibility: visible;
+    }
+
+
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .channel_info {
+        font-size: 16px;
+        color: black;
+        margin-left: 10px;
+    }
+
+    .channel_data {
+        width: 200px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding-left: 7px;
+        gap: 20px;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    .channel_data img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+
+    .channel_name {
+        font-size: 14px;
+        overflow: hidden;
+        -webkit-box-orient: horizontal;
+        -webkit-line-clamp: 1;
+        text-overflow: ellipsis;
+        color: black;
+    }
+
+    .channel_data:hover {
+        background-color: gainsboro;
+    }
+
+    /*===============================================================
+                            Main_body
+===============================================================*/
+
+    .main_body_box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 24px;
+    }
+
+    .movie {
+        width: 320px;
+        height: 300px;
+        padding: 10px;
+    }
+
+    .movie img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .movie_data {
+        display: flex;
+        margin-top: 5px;
+    }
+
+    .movie_data img {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+    }
+
+    .movie_title {
+        margin-left: 10px;
+    }
+
+    .title {
+        font-size: 16px;
+        font-weight: 500px;
+        line-height: 22px;
+        color: #0f0f0f;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    .author_statistics {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #616161;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        line-height: 22px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header_container">
+                <div class="header_start_box">
+                    <div class="header_start_menu_box">
+                        <img class="header_start_menu" src="Svg/menu.svg" alt="menu">
+                    </div>
+                    <div class="header_start_youtube_icon_box">
+                        <img class="header_start_youtube_icon" src="Svg/youtubeicon.svg" alt="">
+                        <div class="header_start_youtube_icon_tooptip">homepage</div>
+                    </div>
+                </div>
+                <div class="header_center_box">
+                    <input type="text" placeholder="検索">
+                    <button><img src="Svg/search.svg">
+                        <div class="header_tooptip">検索</div>
+                    </button>
+                    <div class="header_center_box_mic"><img src="Svg/mic.svg" alt="">
+                        <div class="header_center_box_mic_tooptip">MIC</div>
+                    </div>
+                </div>
+                <div class="header_end_box">
+                    <div class="header_end_icon_box">
+                        <div class="header_end_icon"><img src="Svg/youtube_cama.svg" alt="">
+                            <div class="header_tooptip">カメラ</div>
+                        </div>
+                        <div class="header_end_icon"><img src="Svg/youtube_susu.svg" alt="">
+                            <div class="header_tooptip">お知らせ</div>
+                        </div>
+                    </div>
+                    <div class="header_end_usericon_box">
+                        <div class="header_end_usericon"><img src="pictures/channel_icon.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="content">
+                <div class="nav_box">
+                    <ul>
+                        <li>
+                            <img src="Svg/homeicon.svg" alt="menu" />
+                            <div class="nav_text">ホームページ</div>
+                            <div class="nav_tooptip">ホームページ</div>
+                        </li>
+                        <li>
+                            <img src="Svg/shortcut.svg" alt="short" />
+                            <div class="nav_text">ショート</div>
+                            <div class="nav_tooptip">ショート</div>
+                        </li>
+                        <li>
+                            <img src="Svg/channel.svg" alt="channel" />
+                            <div class="nav_text">登録チャンネル</div>
+                            <div class="nav_tooptip">登録チャンネル</div>
+                        </li>
+                        <hr>
+                        </hr>
+                        <li>
+                            <div class="nav_text">あなたの内容　＞</div>
+                        </li>
+                        <li>
+                            <img src="Svg/userchannel.svg" alt="userchannel" />
+                            <div class="nav_text">あなたのチャンネル</div>
+                            <div class="nav_tooptip">あなたのチャンネル</div>
+                        </li>
+                        <li>
+                            <img src="Svg/userchannel.svg" alt="Resume" />
+                            <div class="nav_text">歴史</div>
+                            <div class="nav_tooptip">歴史</div>
+                        </li>
+                        <li>
+                            <img src="Svg/video.svg" alt="video" />
+                            <div class="nav_text">ビデオ</div>
+                            <div class="nav_tooptip">ビデオ</div>
+                        </li>
+                        <li>
+                            <img src="Svg/videoafter.svg" alt="video" />
+                            <div class="nav_text">予約</div>
+                            <div class="nav_tooptip">予約</div>
+                        </li>
+                        <li>
+                            <img src="Svg/more.svg" alt="more" />
+                            <div class="nav_text">もっと</div>
+                            <div class="nav_tooptip">もっと</div>
+                        </li>
+                        <HR>
+                        </HR>
+                        <div class="channel_info">登録チャンネル</div>
+                        <div class="channel_data">
+                            <img src="pictures/video_thumbnail.png" alt="" />
+                            <div class="channel_name">Sorasakihina</div>
+                        </div>
+                        <div class="channel_data">
+                            <img src="pictures/video_thumbnail.png" alt="" />
+                            <div class="channel_name">Amamiako</div>
+                        </div>
+                        <div class="channel_data">
+                            <img src="pictures/いおり.jpg" alt="" />
+                            <div class="channel_name">Iori</div>
+                        </div>
+                        <div class="channel_data">
+                            <img src="pictures/video_thumbnail.png" alt="" />
+                            <div class="channel_name">Mireniamusaiensusukuru</div>
+                        </div>
+                        <div class="channel_data">
+                            <img src="pictures/video_thumbnail.png" alt="" />
+                            <div class="channel_name">Cleaning & Cleaning</div>
+                        </div>
+                        <div class="channel_data">
+                            <img src="pictures/video_thumbnail.png" alt="" />
+                            <div class="channel_name">百花繚乱</div>
+                        </div>
+                        <hr>
+                        </hr>
+                        <div class="channel_info">探索</div>
+                        <li>
+                            <img src="Svg/hotvideo.svg" alt="hot" />
+                            <div class="nav_text">人気ビデオ</div>
+                            <div class="nav_tooptip">人気ビデオ</div>
+                        </li>
+                        <li>
+                            <img src="Svg/mucis.svg" alt="music" />
+                            <div class="nav_text">音楽</div>
+                            <div class="nav_tooptip">音楽</div>
+                        </li>
+                        <li>
+                            <img src="Svg/videocut.svg" alt="video" />
+                            <div class="nav_text">映画</div>
+                            <div class="nav_tooptip">映画</div>
+                        </li>
+                        <li>
+                            <img src="Svg/rc.svg" alt="RC" />
+                            <div class="nav_text">生放送</div>
+                            <div class="nav_tooptip">生放送</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main_body_box">
+                    <div class="movie">
+                        <img src="pictures/龍蝦拉麵.jpg" alt="" />
+                        <div class="movie_data">
+                            <img src="pictures/channel_icon.png" alt="">
+                            <div class="movie_title">
+                                <div class="title">海老丸らーめん　東京都千代田区西神田2-1-13 十勝ビル1F</div>
+                                <div class="author_statistics">Sorasaki Hina</div>
+                                <div class="author_statistics">24 回視聴・3日前</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <img src="pictures/春駒.jpg" alt="" />
+                        <div class="movie_data">
+                            <img src="pictures/星游.jpg" alt="">
+                            <div class="movie_title">
+                                <div class="title">春駒　大阪府大阪市北区天神橋5-5-2</div>
+                                <div class="author_statistics">赤月</div>
+                                <div class="author_statistics">71 回視聴・1 か月前</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <img src="pictures/海鮮丼.jpg" alt="" />
+                        <div class="movie_data">
+                            <img src="pictures/星游.jpg" alt="">
+                            <div class="movie_title">
+                                <div class="title">東京都江戸川区清新町1-3-6 マルエツ葛西クリーンタウン店 1F</div>
+                                <div class="author_statistics">赤月</div>
+                                <div class="author_statistics">124 回視聴・2年前</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <img src="pictures/立川.jpg" alt="" />
+                        <div class="movie_data">
+                            <img src="pictures/星游.jpg" alt="">
+                            <div class="movie_title">
+                                <div class="title">立川四つ角飯店　東京都立川市曙町1丁目16-5</div>
+                                <div class="author_statistics">赤月</div>
+                                <div class="author_statistics">349 回視聴・3年前</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <img src="pictures/ガンダム.jpg" alt="" />
+                        <div class="movie_data">
+                            <img src="pictures/channel_icon.png" alt="">
+                            <div class="movie_title">
+                                <div class="title">【EXVSOB】機動戦士ガンダム エクストリームバーサス2 オーバーブースト　ストライクノワール</div>
+                                <div class="author_statistics">バンダイナムコアミューズメント公式チャンネル</div>
+                                <div class="author_statistics">9.35万 回視聴・6 か月前</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <img src="pictures/ブルアカ.jpg" alt="" />
+                        <div class="movie_data">
+                            <img src="pictures/ヒナ.jpg" alt="">
+                            <div class="movie_title">
+                                <div class="title">Yostar ブルーアーカイブ総力戦</div>
+                                <div class="author_statistics">＠bluearchive.jp</div>
+                                <div class="author_statistics">58万回視聴・3 か月前</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <img src="pictures/Elden_Ring.jpg" alt="" />
+                        <div class="movie_data">
+                            <img src="pictures/channel_icon.png" alt="">
+                            <div class="movie_title">
+                                <div class="title">Elden_Ring ゲームプレイ動画</div>
+                                <div class="author_statistics">FromSoftware, Inc.</div>
+                                <div class="author_statistics">2.28万 回視聴・4年前</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <img src="pictures/apex.jpg" alt="" />
+                        <div class="movie_data">
+                            <img src="pictures/channel_icon.png" alt="">
+                            <div class="movie_title">
+                                <div class="title">Apex legends</div>
+                                <div class="author_statistics">Apex Legends</div>
+                                <div class="author_statistics">2.84万 回視聴・5年前</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

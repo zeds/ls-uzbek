@@ -1,6 +1,9 @@
 2024-01-09
 
 ウズベキスタンエンジニア教育スタート
+あ
+
+sayfullayevmexroj27@gmail.com: mexroj2603
 
 name github
 tom: zeds
