@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-size: 20px;
+    }
+
+    /*=====================header=======================*/
+    /*---------------------start------------------------*/
+    .header_container {
+        height: 65px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header_start_container {
+        height: 100%;
+        width: 280px;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        justify-content: center;
+    }
+
+    .header_start_menu {
+        height: 40px;
+        width: 40px;
+        background-color: black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .header_start_menu img {
+        width: 35px;
+        height: 35px;
+
+    }
+
+    .header_start_youtube_icon {
+        height: 40px;
+        width: 250px;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+
+    }
+
+    .header_start_youtube_icon img {
+        width: 180px;
+        height: 40px;
+    }
+
+
+    /*-----------------------center--------------------------*/
+    .search_container {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    .search_container input {
+        height: 100%;
+        width: 540px;
+        background-color: rgb(209, 204, 204);
+        border: 1px solid black;
+        border-radius: 40px 0px 0px 40px;
+        color: white;
+        padding-left: 10px;
+    }
+
+    .search_container button {
+        height: 100%;
+        width: 90px;
+        background-color: yellowgreen;
+        border: 1px solid black;
+        border-radius: 0px 40px 40px 0px;
+        border-left: none;
+    }
+
+    .mic_icon {
+        width: 65px;
+        height: 65px;
+        background-color: cadetblue;
+        border: 1px solid black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 14px;
+    }
+
+    /*-----------------------end--------------------------*/
+    .header_end_container {
+        width: 280px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header_end_icon {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header_end_channl_icon img {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+
+    }
+</style>
+
+<body>
+    <header class="header_container">
+        <div class="header_start_container">
+            <div class="header_start_menu">
+                <img src="menu.svg" alt="menu">
+            </div>
+            <div class="header_start_youtube_icon">
+                <img src="youtubeicon.svg" alt="youtube_logo">
+            </div>
+        </div>
+        <div class="search_container">
+            <input type="text" placeholder="search">
+            <button><img src="search.svg" alt="search"></button>
+            <div class="mic_icon"><img src="mic.svg" alt=""></div>
+        </div>
+        <div class="header_end_container">
+            <div class="header_end_icon">
+                <img src="youtube_cama.svg" alt="">
+            </div>
+            <div class="header_end_icon">
+                <img src="youtube_susu.svg" alt="">
+            </div>
+            <div class="header_end_channl_icon">
+                <img src="channel_icon.png" alt="">
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
