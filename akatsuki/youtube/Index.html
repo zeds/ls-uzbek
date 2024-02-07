@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLEX BOX test</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto";
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            align-content: center;
+            background: rgb(40, 39, 39);
+            width: 100%;
+            height: 100vh;
+        }
+
+        .thumb {
+            width: 340px;
+            background: none;
+            padding: 10px;
+            color: white
+        }
+
+
+        img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 18px;
+            transition: border-radius 0.5s;
+        }
+
+        img:hover {
+            border-radius: 0%;
+        }
+
+        .title {
+            font-size: 20px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        .name {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: #ffffff;
+        }
+
+        h1 {
+            position: absolute;
+            left: 10%;
+            top: 10px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>YouTube</h1>
+    </section>
+
+    <main>
+        <section class="container">
+            <div class="thumb">
+                <img src="HtmlSubject/pictures/美食/六歌仙.jpg">
+                <div class="title"><b>六歌仙　東京都新宿区西新宿1-3-1 サンフラワービル6F/7F</b>
+                </div>
+                <div class="name">赤月</div>
+                <div class="name">349 回視聴・3年前</div>
+            </div>
+            <div class="thumb">
+                <img src="HtmlSubject/pictures/美食/龍蝦拉麵.jpg">
+                <div class="title"><b>海老丸らーめん　東京都千代田区西神田2-1-13 十勝ビル1F</b>
+                </div>
+                <div class="name">赤月</div>
+                <div class="name">24 回視聴・3日前</div>
+            </div>
+            <div class="thumb">
+                <img src="HtmlSubject/pictures/美食/春駒.jpg">
+                <div class="title"><b>春駒　大阪府大阪市北区天神橋5-5-2</b>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="name">赤月</div>
+                <div class="name">71 回視聴・1 か月前</div>
+            </div>
+            <div class="thumb">
+                <img src="HtmlSubject/pictures/美食/立川.jpg">
+                <div class="title"><b>立川四つ角飯店　東京都立川市曙町1丁目16-5</b>
+                </div>
+                <div class="name">赤月</div>
+                <div class="name">124 回視聴・2年前</div>
+            </div>
+            <div class="thumb">
+                <img src="HtmlSubject/pictures/Game/ブルアカ.jpg">
+                <div class="title"><b>YOstar ブルーアーカイブ総力戦</b>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="name">＠bluearchive.jp</div>
+                <div class="name">58万回視聴・3 か月前</div>
+            </div>
+            <div class="thumb">
+                <img src="HtmlSubject/pictures/Game/Elden_Ring.jpg">
+                <div class="title"><b>Elden_Ring ゲームプレイ動画</b>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="name">FromSoftware, Inc.</div>
+                <div class="name">2.28万 回視聴・4年前</div>
+            </div>
+            <div class="thumb">
+                <img src="HtmlSubject/pictures/Game/apex.jpg">
+                <div class="title"><b>Apex legends</b>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="name">Apex Legends</div>
+                <div class="name">2.84万 回視聴・5年前</div>
+            </div>
+            <div class="thumb">
+                <a href="https://www.youtube.com/watch?v=QuEzLh79Tyg&t=14s"><img
+                        src="HtmlSubject/pictures/Game/ガンダム.jpg"></a>
+                <div class="title"><b>【EXVSOB】機動戦士ガンダム エクストリームバーサス2 オーバーブースト　ストライクノワール</b>
+                </div>
+                <div class="name">バンダイナムコアミューズメント公式チャンネル</div>
+                <div class="name">9.35万 回視聴・6 か月前</div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
