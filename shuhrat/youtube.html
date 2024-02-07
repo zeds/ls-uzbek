@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />	
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />	
+<link	
+href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"	
+rel="stylesheet"/>
+    <title>YouTube</title>
+</head>
+<style>
+    *{
+            padding: 0%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 20px;
+            font-family: "Roboto", sans-serif;	
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            /* background: orange; */
+        }
+        .header_frame{
+            margin-top: 10px;
+            width: 100%;
+            height: 40px;
+            /* background: silver; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;            
+         }
+         .header_frame img{
+            height: 70%;
+            /* margin-left: 10px; */
+            /* margin-right: 10px; */
+         }
+        .search_container{
+            display: flex;
+            height: 40px;
+            /* background: pink;   */
+
+         }        
+        .search_container input{
+            width: 540px;
+            height: 100%; 
+            /* background: pink;  */
+             border-radius: 20px 0 0 20px;
+            border:  solid 1px black;
+            border-right: none;
+        }
+        .search_container button{
+            width: 60px;
+            height: 100%;
+            border-radius: 0 20px 20px 0;
+            border: solid 1px black; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tooltip{
+           position: relative;           
+        }
+        .tooltip:hover{
+            cursor: pointer;
+            background: grey;
+        }
+        .tooltip:hover .tooltip-text{
+            cursor: pointer ;
+            visibility: visible;
+            background: #333;
+        }
+        .tooltip-text{
+
+            visibility: hidden; 
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -50px;
+            width: 50px;
+            height: 30px;
+            padding: 10px;
+            font-size: 0.8rem;
+            line-height: 1.3;
+            background: #333;
+            color: #fff;
+            border-radius: 3px;
+            transition: 0.1s ease-in;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .mic_icon{
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            margin-left: 14px; 
+             background: #f2f2f2; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            position: relative;
+        }
+        .mic_icon:hover{
+            cursor: pointer;
+            background: grey;
+        }
+        .mic_icon:hover .tooltip-text{
+            cursor: pointer ;
+            visibility: visible;
+            background: #333;
+        }
+        .mic_icon img{
+            margin-left: 0;
+        }
+        .rigt_frame{
+            height: 100%;
+            width: 150px;
+            /* background: green; */
+            display: flex;
+            align-items: center;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .rigt_frame img:last-child{
+            border-radius: 20px;
+            height: 70%;
+        }
+
+        .movie{
+           display: flex; 
+           width: 40px; 
+           height: 100%; 
+            align-items: center;
+            justify-content: center;   
+            position: relative;   
+        }
+        .movie:hover{
+            cursor: pointer;
+            background: grey;
+           
+            border-radius: 20px;
+           
+           
+        }
+        .movie:hover .tooltip-text{
+            cursor: pointer ;
+            visibility: visible;
+            background: #333;
+        }
+
+        .bell{
+           display: flex; 
+           width: 40px;  
+           height: 100%;
+            align-items: center;
+            justify-content: center;   
+            position: relative;   
+        }
+        .bell:hover{
+            cursor: pointer;
+            background: grey;
+           
+            border-radius: 20px;
+           
+           
+        }
+        .bell:hover .tooltip-text{
+            cursor: pointer ;
+            visibility: visible;
+            background: #333;
+        }
+
+        .rasm{
+           display: flex; 
+           width: 40px;  
+           height: 100%;
+            align-items: center;
+            justify-content: center;   
+            position: relative;   
+        }
+        .rasm:hover{
+            cursor: pointer;
+            background: grey;
+           
+            border-radius: 20px;
+           
+           
+        }
+        .rasm:hover .tooltip-text{
+            cursor: pointer ;
+            visibility: visible;
+            background: #333;
+        }
+         
+        
+        /****************************
+                body_container
+         *****************************/
+        
+        .body_container{
+            width: 100%;
+            /* height: 100%; */
+            display: flex;
+            padding: 10px0;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+        }
+        /***********************
+                 nav
+        ************************ */
+        ul{
+            padding: 10px;
+        }
+        li{
+            width: 204px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 0 0 0 10px;
+            border-radius: 5px;
+        }
+        li:hover{
+            background: #f2f2f2;
+        }
+        /******************
+        article_container
+        **********************/
+        .article_container{
+            /* height: 100%; */
+            width: 100%;
+            /* background: pink; */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        /*****************
+        contents_menu 
+        *******************/
+        .contents{
+            /* background: red; */
+            aspect-ratio: 2.2/2;
+        }
+        .contents img{
+            width: 100%;
+            border-radius: 20px;
+        }
+        .articl_contents{
+            display: flex;
+            gap: 5px;
+
+        }
+        .articl_contents img{
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+
+        }
+        .articl_text{
+            /* margin-left: 10px; */
+            font-size: 14px;
+
+        }
+        .title{
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            font-weight: 500px;
+            font-size: 16px;
+            line-height: 22px;
+            color: #0f0f0f;
+        }
+        .author{
+            font-weight: 400px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .statistics{
+            font-weight: 400px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        @media (648px > width ) {				
+            .article_container {				
+                    grid-template-columns: 1fr;				
+            }
+        }
+        @media (648px <= width < 768px) {				
+            .article_container {				
+                    grid-template-columns: 1fr 1fr;				
+            }				
+        }				
+        @media (768px <= width < 1024px) {				
+            .article_container {				
+                    grid-template-columns: 1fr 1fr 1fr;				
+            }				
+        }				
+        @media (1024px <= width < 1280px) {				
+            .article_container {				
+                    grid-template-columns: 1fr 1fr 1fr 1fr;				
+            }				
+        }				
+        @media (1280px <= width < 1536px) {				
+            .article_container {				
+                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;				
+            }				
+        }				
+        @media (1536px <= width) {				
+            .article_container {				
+                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;				
+            }				
+        }
+</style>
+<body>
+    <div class="container">      
+        <div class="header_frame">
+            <img src="icon/youtubelog.svg" />         
+            <div class="search_container">            
+                <input type="text" />
+                <button class="tooltip">
+                    <span class="tooltip-text">検索</span><img src="icon/search.svg" /></button>
+                <div class="mic_icon">
+                    <span class="tooltip-text">検索</span>
+                    <img src="icon/mic.svg" /></div>                
+            </div>
+
+            <div class="rigt_frame">
+                    <div class="movie">
+                        <span class="tooltip-text">abbb</span>
+                        <img src="icon/movie.svg" />
+                    </div> 
+                    <div class="bell">
+                        <span class="tooltip-text">abbb</span>
+                        <img src="icon/bell.svg" />
+                    </div>    
+                    <div class="rasm">
+                        <span class="tooltip-text">abbb</span>
+                        <img src="image/blobsmall.jpg" />
+                    </div> 
+            </div>
+        </div> 
+        <div class="body_container">
+            <nav>
+                <ul>
+                    <li>
+                        <img src="icon/register.svg" />
+                        <div class="menu_text">
+                        ホーム
+                    </li>
+                    <li>
+                        <img src="icon/menu_short.svg" />
+                        <div class="menu_text">
+                        ショート
+                        </div>
+                    </li>
+                    <li>
+                        <img src="icon/menu_channel.svg" />
+                        <div class="menu_text">
+                         登録チャンネル
+                    </li>
+                    <li>
+                        <img src="icon/menu_music.svg" />
+                        <div class="menu_text">
+                         登録チャンネル
+                    </li>
+                    <li>
+                        <img src="icon/menu_history.svg" />
+                        <div class="menu_text">
+                         登録チャンネル
+                    </li>                
+                </ul>
+            </nav>
+                <div class="article_container">
+
+                    <div class="contents">
+                        <img id+ src="image/bob.jpeg" />                    
+                        <div class="articl_contents">
+                            <img src="image/blobsmall.jpg" />
+                            <div class="articl_text">
+                                <div class="title">4 Hours of English Vocabulary - ALL YOU NEED TO SPEAK </div>
+                                <div class="author">JForrest English</div>
+                                <div class="statistics">132M. views</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contents">
+                        <img id+ src="image/bob.jpeg" />                    
+                        <div class="articl_contents">
+                            <img src="image/blobsmall.jpg" />
+                            <div class="articl_text">
+                                <div class="title">4 Hours of English Vocabulary - ALL YOU NEED TO SPEAK </div>
+                                <div class="author">JForrest English</div>
+                                <div class="statistics">132M. views</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contents">
+                        <img id+ src="image/bob.jpeg" />                    
+                        <div class="articl_contents">
+                            <img src="image/blobsmall.jpg" />
+                            <div class="articl_text">
+                                <div class="title">4 Hours of English Vocabulary - ALL YOU NEED TO SPEAK </div>
+                                <div class="author">JForrest English</div>
+                                <div class="statistics">132M. views</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contents">
+                        <img id+ src="image/bob.jpeg" />                    
+                        <div class="articl_contents">
+                            <img src="image/blobsmall.jpg" />
+                            <div class="articl_text">
+                                <div class="title">4 Hours of English Vocabulary - ALL YOU NEED TO SPEAK </div>
+                                <div class="author">JForrest English</div>
+                                <div class="statistics">132M. views</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contents">
+                        <img id+ src="image/bob.jpeg" />                    
+                        <div class="articl_contents">
+                            <img src="image/blobsmall.jpg" />
+                            <div class="articl_text">
+                                <div class="title">4 Hours of English Vocabulary - ALL YOU NEED TO SPEAK </div>
+                                <div class="author">JForrest English</div>
+                                <div class="statistics">132M. views</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contents">
+                        <img id+ src="image/bob.jpeg" />                    
+                        <div class="articl_contents">
+                            <img src="image/blobsmall.jpg" />
+                            <div class="articl_text">
+                                <div class="title">4 Hours of English Vocabulary - ALL YOU NEED TO SPEAK </div>
+                                <div class="author">JForrest English</div>
+                                <div class="statistics">132M. views</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+    </div> 
+</body>
+</html>
