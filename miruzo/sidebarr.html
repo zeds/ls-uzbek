@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      .container3 {
+        width: 60px;
+        height: 100vh;
+        background: lightgray;
+      }
+      .side_menu {
+        width: 204px;
+      }
+      .side_menu li {
+        display: flex;
+        align-items: center;
+        background-color: aqua;
+        height: 40px;
+        color: rgb(8, 8, 8);
+        font-size: 14px;
+        padding: 0 12px;
+        gap: 18px;
+      }
+      .side_menu li:hover {
+        color: #f2f3f3;
+        cursor: pointer;
+      }
+      .side_menu li img {
+        height: 24px;
+        width: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container3">
+      <nav>
+        <ul class="side_menu">
+          <li><img src="home.svg" alt="" />ホーム</li>
+          <li><img src="short.svg" alt="" />ショート</li>
+          <li><img src="subsc.svg" alt="" />チャンネル</li>
+          <li><img src="yb.png" alt="" />Youtube music</li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
