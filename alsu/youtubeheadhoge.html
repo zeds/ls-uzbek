@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 40px;
+        font-family: "Noto Sans Jp", sans-serif;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+      }
+      .header_frame {
+        height: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+      .logo img {
+        height: 30px;
+      }
+      .search_container {
+        display: flex;
+        height: 40px;
+      }
+      .right_frame {
+        height: 90%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 20px;
+      }
+      .item {
+        width: 40px;
+        height: 40px;
+        background: red;
+      }
+      .right_frame img {
+        height: 100%;
+        width: 30px;
+      }
+      .search_container {
+        display: flex;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .search_container input {
+        width: 540px;
+        height: 100%;
+        border-radius: 20px 0 0 20px;
+        border: solid 1px #d3d3d3;
+        padding-left: 15px;
+      }
+      .search_container button {
+        width: 60px;
+        height: 100%;
+        border-left: none;
+        border: solid 1px #d3d3d3;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+      }
+      .right_frame img:last-child {
+        border-radius: 20px;
+        height: 32px;
+      }
+      .mic_icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 14px;
+        background: #f2f2f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+      }
+      .mic_icon:hover {
+        background: #d0d0d0;
+      }
+      .search_container button:hover {
+        background: #d0d0d0;
+      }
+      .video {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: red;
+      }
+      .bell {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header_frame">
+        <div class="logo">
+          <img src="loggo.png" />
+        </div>
+        <div class="search_container">
+          <input type="text" placeholder="検索" />
+          <button><img src="search.svg" /></button>
+          <div class="mic_icon"><img src="mic.svg" /></div>
+        </div>
+        <div class="right_frame">
+          <img src="movie.svg" />
+          <img src="bell.svg" />
+          <img src="shin.png" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
