@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>youtube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+    }
+    .container {
+      width: 100%;
+      height: 100vh;
+    }
+    .container2_header {
+      margin: 5px;
+      padding-left: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .search_container2 {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      padding-right: 0px;
+    }
+    .search_frame {
+      height: 100%;
+      border: solid 1px #cccccc;
+      border-radius: 20px 0 0 20px;
+    }
+    .search_frame input {
+      height: 100%;
+      width: 550px;
+      border-radius: 20px 0 0 20px;
+      padding-left: 10px;
+      border: none;
+    }
+    .search_container2 button {
+      width: 64px;
+      height: 100%;
+      border: solid 1px #cccccc;
+      border-radius: 0 20px 20px 0;
+      border-left: none;
+      background: #949292;
+    }
+    .search_container2 button:hover {
+      background: grey;
+    }
+    .mic_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 100%;
+      margin-left: 11px;
+      border-radius: 20px;
+      background: #f2f2f2;
+      position: relative;
+    }
+    .mic_icon:hover {
+      background-color: #d0d0d0;
+    }
+    .icon_video:hover {
+      background-color: #d0d0d0;
+    }
+    .bell_icon:hover {
+      background-color: #d0d0d0;
+    }
+    .mic_icon:hover .tooltip_text, 
+    .bell_icon:hover .tooltip_text,
+    .icon_video:hover .tooltip_text {
+      opacity: 1;
+      visibility: visible;
+    }
+    .tooltip_text {
+      visibility: hidden;
+      font-size: 16px;
+      color: white;
+      position: absolute;
+      background: black;
+      right: 0;
+      bottom: -45px;
+      padding: 3px 5px 5px 3px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: 0.5s ease;
+    }
+    .icon {
+      height: 46px;
+      width: 50%;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+    .ylogo {
+      height: 46px;
+      width: 120px;
+      padding-top: 5px;
+    }
+    .icons {
+      width: 156px;
+      height: 40px;
+      display: flex;
+      justify-content: space-around;
+      margin-right: 10px;
+      gap: 5px;
+    }
+    .icon_video {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: #f2f2f2;
+      border: none;
+      position: relative;
+    }
+    .icon_video img {
+      height: 32px;
+      width: 32px;
+    }
+    .bell_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: #f2f2f2;
+      border: none;
+      position: relative;
+    }
+    .profil_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: #f2f2f2;
+      border: none;
+    }
+    .profil_icon img {
+      background-size: cover;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        width: 38px;
+    }
+  </style>
+  <body>
+    <div class="container2">
+      <div class="container2_header">
+        <div class="icon">
+          <div class="ylogo">
+            <img src="youtubelogo.svg" alt="" />
+          </div>
+        </div>
+        <div class="search_container2">
+          <div class="search_frame">
+            <input type="text" />
+          </div>
+          <button>
+            <img src="lupa.svg" alt="" />
+          </button>
+          <div class="mic_icon">
+            <div class="tooltip_text">mic</div>
+            <img src="mic2.svg" alt="" />
+          </div>
+        </div>
+        <div class="icons">
+          <div class="icon_video">
+            <div class="tooltip_text">create</div>
+            <img src="video.svg" alt="" />
+          </div>
+          <div class="bell_icon">
+            <div class="tooltip_text">notifications</div>
+            <img src="bell.svg" alt="" />
+          </div>
+          <div class="profil_icon">
+            <img src="myimage.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
