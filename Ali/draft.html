@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-size: 40px;
+        font-family: "Noto Sans JP", sans-serif;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+      }
+
+      .header_frame {
+        width: 100%;
+        height: 40px;
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 30px;
+      }
+
+      .search_container {
+        display: flex;
+        height: 40px;
+      }
+
+      .search_container input {
+        width: 540px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        padding-left: 15px;
+      }
+
+      .search_container button {
+        width: 60px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+      }
+
+      .mic_icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+      }
+
+      .mic_icon button {
+        width: 60px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px;
+        background: #f8f8f8;
+      }
+
+      .right_frame {
+        height: 100%;
+        width: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .right_frame img:last child {
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header_frame">
+        <div class="logo">
+          <img src="logo.svg" />
+        </div>
+        <div class="search_container">
+          <input type="text" placeholder="Search" />
+          <button><img src="search.svg" /></button>
+          <div class="mic_icon">
+            <button><img src="mic.svg" /></button>
+          </div>
+          <div class="right_frame">
+            <img src="movie.svg" />
+            <img src="bell-outline.svg" />
+            <img src="profile.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

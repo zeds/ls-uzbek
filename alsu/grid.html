@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+      }
+      .articles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background: #b8f7f8;
+      }
+      .article {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #04c0d6;
+        color: white;
+        margin: 10px;
+        aspect-ratio: 1/1;
+      }
+      @media (width < 648px) {
+        .articles {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (648px <= width < 768px) {
+        .articles {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (768px <= width < 1024px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      @media (1024px <= width < 1280px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+      @media (1280px <= width < 1536px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="articles">
+        <div class="article">article-1</div>
+        <div class="article">article-2</div>
+        <div class="article">article-3</div>
+        <div class="article">article-4</div>
+        <div class="article">article-5</div>
+        <div class="article">article-6</div>
+        <div class="article">article-7</div>
+        <div class="article">article-8</div>
+      </div>
+    </div>
+  </body>
+</html>
