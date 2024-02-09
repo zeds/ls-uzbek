@@ -37,7 +37,7 @@ body img {
 .center-navbar {
     grid-template-columns: 6fr 1fr 1fr;
     display: grid;
-    justify-content: start;
+    /* justify-content: start; */
 }
 
 .center-navbar input {

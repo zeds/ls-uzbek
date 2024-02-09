@@ -1,0 +1,39 @@
+/*start header-container */
+@media (max-width: 1240px) {
+    .search-container input {
+        width: 400px;
+    }
+}
+
+@media (max-width: 940px) {
+    .search-container input {
+        width: 200px;
+    }
+}
+
+@media (max-width: 700px) {
+    .search-container input {
+        width: 100px;
+    }
+}
+
+/* end header section */
+/* start body container */
+
+@media (max-width: 1240px) {
+    .content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 940px) {
+    .content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+}

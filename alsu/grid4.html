@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .body {
+        font-size: 12px;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+      }
+
+      .header_container {
+        width: 100%;
+        height: 56px;
+      }
+
+      .header_frame {
+        width: 100%;
+        height: 40px;
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .logo_container {
+        display: flex;
+        height: 25px;
+        gap: 20px;
+      }
+      .logo img {
+        height: 25px;
+      }
+
+      .header_frame button {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 20px;
+        border: solid 1px white;
+      }
+
+      .search_container {
+        display: flex;
+        height: 40px;
+        flex: 1;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .search_container input {
+        width: 540px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        padding-left: 15px;
+      }
+
+      .search_container button {
+        width: 60px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+      }
+
+      .mic_icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+      }
+
+      .mic_icon img {
+        width: 20px;
+      }
+
+      .mic_icon button {
+        width: 60px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px;
+        background: #f8f8f8;
+      }
+
+      .right_frame {
+        height: 100%;
+        width: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .right_frame img:last child {
+        border-radius: 20px;
+      }
+
+      .right_frame button {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 20px;
+        border: solid 1px white;
+      }
+
+      .body_container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav {
+        height: 100%;
+        width: 300px;
+      }
+
+      .menu_item {
+        width: 204px;
+        height: 40px;
+        display: flex;
+        justify-content: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0 20px;
+        font-size: 16px;
+        color: #0f0f0f;
+        border-radius: 5px;
+      }
+      .menu_item:hover {
+        background: #f2f3f3;
+        cursor: pointer;
+      }
+
+      .article_container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        padding: 10px;
+      }
+      .articles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+      .article {
+        margin: 10px;
+      }
+      .article img {
+        width: 100%;
+      }
+      .item_contents {
+        width: 100%;
+        display: flex;
+        padding: 5px;
+        gap: 10px;
+      }
+      .item_contents img {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+      }
+      .item_text {
+        width: 100%;
+      }
+      .title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+
+        line-height: 22px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #0f0f0f;
+      }
+      .user {
+        font-size: 14px;
+      }
+      .statistics {
+        font-size: 14px;
+      }
+
+      @media (width < 648px) {
+        .articles {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (648px <= width < 768px) {
+        .articles {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (768px <= width < 1024px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      @media (1024px <= width < 1280px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+      @media (1280px <= width < 1536px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+      }
+      @media (1536px <= width) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div header class="header_container">
+        <div class="header_frame">
+          <div class="logo_container">
+            <img src="Logo_of_YouTube_.svg" />
+            <img src="loggo.png" />
+          </div>
+          <div class="search_container">
+            <input type="text" placeholder="Search" />
+            <button><img src="search.svg" /></button>
+            <div class="mic_icon">
+              <button><img src="mic.svg" /></button>
+            </div>
+          </div>
+          <div class="right_frame">
+            <button><img src="movie.svg" /></button>
+            <button><img src="bell.svg" /></button>
+            <button><img src="avatarka.jpg" /></button>
+          </div>
+        </div>
+      </div>
+      <div class="body_container">
+        <div class="nav">
+          <div class="menu_item">
+            <img src="sidehome.svg" />
+            <div>Home</div>
+          </div>
+          <div class="nav">
+            <div class="menu_item">
+              <img src="short.svg" />
+              <div>Shorts</div>
+            </div>
+                <div class="nav">
+                  <div class="menu_item">
+                    <img src="menuYoutube.svg" />
+                    <div>YouTube Music</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article_container">
+          <div class="articles">
+            <div class="article">
+              <img src="g.png" />
+              <div class="item_contents">
+                <img src="ghibli.png" />
+                <div class="item_text">
+                  <div class="title">Laylo - Home (Official Lyric Video)</div>
+                  <div class="user">Laylo</div>
+                  <div class="statistics">32K views・4 days ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="article">
+              <img src="pic1.jpg" />
+              <div class="item_contents">
+                <img src="page1.jpg" />
+                <div class="item_text">
+                  <div class="title">
+                    My Japanese Husband Makes Perfect Homemade Ramen!
+                  </div>
+                  <div class="user">ToriChyanChannel</div>
+                  <div class="statistics">230K views・11 days ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="article">
+              <img src="jeniffer-top.jpg" />
+              <div class="item_contents">
+                <img src="jeniffer.jpg" />
+                <div class="item_text">
+                  <div class="title">
+                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+                    (Confusing English Words)
+                  </div>
+                  <div class="user">JForrest English</div>
+                  <div class="statistics">7.5万 回視聴</div>
+                </div>
+              </div>
+            </div>
+            <div class="article">
+              <img src="jeniffer-top.jpg" />
+              <div class="item_contents">
+                <img src="jeniffer.jpg" />
+                <div class="item_text">
+                  <div class="title">
+                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+                    (Confusing English Words)
+                  </div>
+                  <div class="user">JForrest English</div>
+                  <div class="statistics">7.5万 回視聴</div>
+                </div>
+              </div>
+            </div>
+            <div class="article">
+              <img src="jeniffer-top.jpg" />
+              <div class="item_contents">
+                <img src="jeniffer.jpg" />
+                <div class="item_text">
+                  <div class="title">
+                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+                    (Confusing English Words)
+                  </div>
+                  <div class="user">JForrest English</div>
+                  <div class="statistics">7.5万 回視聴</div>
+                </div>
+              </div>
+            </div>
+            <div class="article">
+              <img src="jeniffer-top.jpg" />
+              <div class="item_contents">
+                <img src="jeniffer.jpg" />
+                <div class="item_text">
+                  <div class="title">
+                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+                    (Confusing English Words)
+                  </div>
+                  <div class="user">JForrest English</div>
+                  <div class="statistics">7.5万 回視聴</div>
+                </div>
+              </div>
+            </div>
+            <div class="article">
+              <img src="jeniffer-top.jpg" />
+              <div class="item_contents">
+                <img src="jeniffer.jpg" />
+                <div class="item_text">
+                  <div class="title">
+                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+                    (Confusing English Words)
+                  </div>
+                  <div class="user">JForrest English</div>
+                  <div class="statistics">7.5万 回視聴</div>
+                </div>
+              </div>
+            </div>
+            <div class="article">
+              <img src="jeniffer-top.jpg" />
+              <div class="item_contents">
+                <img src="jeniffer.jpg" />
+                <div class="item_text">
+                  <div class="title">
+                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+                    (Confusing English Words)
+                  </div>
+                  <div class="user">JForrest English</div>
+                  <div class="statistics">7.5万 回視聴</div>
+                </div>
+              </div>
+            </div>
+            <div class="article">
+              <img src="jeniffer-top.jpg" />
+              <div class="item_contents">
+                <img src="jeniffer.jpg" />
+                <div class="item_text">
+                  <div class="title">
+                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+                    (Confusing English Words)
+                  </div>
+                  <div class="user">JForrest English</div>
+                  <div class="statistics">7.5万 回視聴</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
