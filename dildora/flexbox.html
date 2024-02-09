@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox homework</title>
+</head>
+
+<style>
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   
+}
+
+body {
+          font-family: "Noto Sans JP";
+          
+     }
+
+.container-1 {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    background-color: pink;
+    align-items: start;
+    justify-content: space-evenly;
+
+}
+.container-2 {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    background-color: pink;
+    align-items: end;
+    justify-content: space-evenly;
+
+}
+
+
+
+.item {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    background-color: plum;
+    color: black;
+    border:10px solid;
+    border-radius: 15px;
+    border-color: purple;
+    font-size: 20px;
+  
+}
+
+img{
+    width: 300px;
+    height: 200px;
+    border-radius: 15px;
+  
+}
+</style>
+<body>
+
+   <div class="container-1">
+        <div class="item"> <img src="1item.jpg" > </div>
+        <div class="item"><img src="2item.jpg" ></div>
+        <div class="item"><img src="3item.jpg" ></div>
+    </div>
+   
+ 
+   <div class="container-2">
+    <div class="item"><img src="4item.jpg" alt=""></div>
+    <div class="item"><img src="5item.jpg" alt=""></div>
+    <div class="item"><img src="6item.jpg" alt=""></div>
+    </div>
+     
+ 
+
+
+ 
+    
+</body>
+</html>
