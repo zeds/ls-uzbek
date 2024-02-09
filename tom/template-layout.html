@@ -25,101 +25,102 @@
 				height: 100vh;
 				background: lightgray;
 			}
-			header {
-				width: 100%;
+			.header_container {
 				height: 56px;
-				background: lightgreen;
+				width: 100%;
+				background: green;
 			}
 			.body_container {
-				width: 100%;
 				background: blue;
-				padding: 10px;
-				display: flex;
-				/* grid-template-columns: 240px 1fr; */
+				padding: 5px;
+				/* display: grid;
+				grid-template-columns: 240px 1fr; */
 			}
-			nav {
-				height: 100%;
+			.nav_container {
+				display: static;
 				width: 240px;
 				background: orange;
 			}
+			.nav_container ul li {
+				white-space: nowrap;
+			}
+			.tag_container {
+				margin-left: 250px;
+				display: grid;
+				/* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+				grid-auto-flow: column;
+				overflow-x: auto;
+				overscroll-behavior-inline: contain;
+
+				align-items: center;
+				gap: 12px;
+
+				overflow-y: scroll;
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+			}
+
+			.tag_container div {
+				/* テキストを折り返さない */
+				white-space: nowrap;
+				background: #f2f2f2;
+				border-radius: 8px;
+				font-size: 14px;
+				font-weight: 500;
+				color: black;
+				text-align: center;
+				padding: 5px 8px;
+			}
 			.article_container {
+				margin-left: 250px;
 				width: 100%;
-				/* height: 100%; */
 				background: pink;
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr;
-			}
-			.article {
-				background: red;
-				display: flex;
-				/* aspect-ratio: 2.2/3; */
-			}
-			.article img {
-				width: 100%;
-			}
-			.article_contents {
-				display: flex;
 				gap: 5px;
 			}
-			.article_contents img {
-				width: 36px;
-				height: 36px;
-			}
-			.article_text {
-				font-size: 14px;
-			}
-			@media (width < 648px) {
-				.article_container {
-					grid-template-columns: 1fr;
-				}
-			}
-			@media (648px <= width < 768px) {
+			/* .article {
+				aspect-ratio: 3/2;
+				background: green;
+			} */
+
+			@media (width < 1200px) {
 				.article_container {
 					grid-template-columns: 1fr 1fr;
-				}
-			}
-			@media (768px <= width < 1024px) {
-				.article_container {
-					grid-template-columns: 1fr 1fr 1fr;
-				}
-			}
-			@media (1024px <= width < 1280px) {
-				.article_container {
-					grid-template-columns: 1fr 1fr 1fr 1fr;
-				}
-			}
-			@media (1280px <= width < 1536px) {
-				.article_container {
-					grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-				}
-			}
-			@media (1536px <= width) {
-				.article_container {
-					grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 				}
 			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
-			<header></header>
+			<header class="header_container"></header>
 			<div class="body_container">
-				<nav>
+				<!-- <nav class="nav_container">
 					<ul>
-						<li>item</li>
-						<li>item</li>
-						<li>item</li>
-						<li>item</li>
-						<li>item</li>
+						<li>ホーム</li>
+						<li>ショート</li>
+						<li>登録チャンネル</li>
+						<li>YouTube Music</li>
 					</ul>
-				</nav>
+				</nav> -->
+				<div class="tag_container">
+					<div>すべて</div>
+					<div>音楽</div>
+					<div>野生生物</div>
+					<div>ミックス</div>
+					<div>ニュース</div>
+					<div>ライブ</div>
+					<div>ペット</div>
+					<div>最近アップロードされた動画</div>
+					<div>視聴済み</div>
+					<div>新しい動画の発見</div>
+				</div>
 				<div class="article_container">
-					<div class="article">ああああ</div>
-					<div>ああああ</div>
-					<div>ああああ</div>
-					<div>ああああ</div>
-					<div>ああああ</div>
-					<div>ああああ</div>
+					<div class="article">あああ</div>
+					<div class="article">あああ</div>
+					<div class="article">あああ</div>
+					<div class="article">あああ</div>
+					<div class="article">あああ</div>
 				</div>
 			</div>
 		</div>
