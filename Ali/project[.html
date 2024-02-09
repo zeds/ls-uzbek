@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+      }
+      .article_container {
+        width: 380px;
+        padding: 5px;
+      }
+      .article_container img {
+        width: 100%;
+        border-radius: 12px;
+      }
+      .article_contents {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        padding: 5px;
+      }
+      .article_contents img {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+      }
+
+      .title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: #0f0f0f;
+      }
+      .author {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #606060;
+      }
+      .statistics {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #606060;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="article_container">
+        <img src="pic.jpg" />
+        <div class="article_contents">
+          <img src="page.jpg" />
+          <div class="article_text">
+            <div class="title">Laylo - Home (Official Lyric Video)</div>
+            <div class="author">Laylo</div>
+            <div class="statistics">32K views・4 days ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
