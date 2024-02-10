@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLEX BOX</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Robotto";
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: white;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: flex-start;
+
+      }
+      .thumb {
+        width: 200px;
+        background: rgb(239, 242, 243);
+        padding: 10px;
+        border-color: red;
+        border-radius: 20px;
+      }
+      img {
+        width: 100%;
+        aspect-ratio: 11/6;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .name {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="thumb">
+        <img src="uzbek.jpg" />
+        <div class="title">
+          GREENCARD-Amerika mamlakatiga yo'llanma yutin olishni istaysizmi.Unda
+          biz sizga yordam beramiz.
+        </div>
+        <div class="name">GREENCARD.UZB.AMERIKA.TOSH</div>
+      </div>
+      <div class="thumb">
+        <img src="car.jpg" />
+        <div class="title">
+          SUPERCAR-Dunyodagi eng qimmat va hashamatli mashinlar .
+        </div>
+        <div class="name">SUPERCAR.WORLD.UZB</div>
+      </div>
+      <div class="thumb">
+        <img src="car.jpg" />
+        <div class="title">
+          SUPERCAR-Dunyodagi eng qimmat va hashamatli mashinlar .
+        </div>
+        <div class="name">SUPERCAR.WORLD.UZB</div>
+      </div>
+      <div class="thumb">
+        <img src="car.jpg" />
+        <div class="title">
+          SUPERCAR-Dunyodagi eng qimmat va hashamatli mashinlar .
+        </div>
+        <div class="name">SUPERCAR.WORLD.UZB</div>
+      </div>
+      <div class="thumb">
+        <img src="car.jpg" />
+        <div class="title">
+          SUPERCAR-Dunyodagi eng qimmat va hashamatli mashinlar .
+        </div>
+        <div class="name">SUPERCAR.WORLD.UZB</div>
+      </div>
+      <div class="thumb">
+        <img src="car.jpg" />
+        <div class="title">
+          SUPERCAR-Dunyodagi eng qimmat va hashamatli mashinlar .
+        </div>
+        <div class="name">SUPERCAR.WORLD.UZB</div>
+      </div>
+    </div>
+  </body>
+</html>
