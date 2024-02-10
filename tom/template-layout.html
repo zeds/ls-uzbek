@@ -16,113 +16,287 @@
 				margin: 0;
 				box-sizing: border-box;
 			}
+			li {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
 			body {
 				font-family: "Roboto", sans-serif;
 				font-size: 20px;
+				position: relative;
 			}
 			.container {
 				width: 100%;
 				height: 100vh;
 				background: lightgray;
 			}
-			.header_container {
-				height: 56px;
+			header {
+				position: fixed;
+				z-index: 2;
 				width: 100%;
-				background: green;
+				height: 56px;
+				background: skyblue;
 			}
-			.body_container {
-				background: blue;
-				padding: 5px;
-				/* display: grid;
-				grid-template-columns: 240px 1fr; */
-			}
-			.nav_container {
-				display: static;
+			nav {
+				position: fixed;
+				top: 70px;
+				z-index: 2;
 				width: 240px;
-				background: orange;
+				height: 100%;
 			}
-			.nav_container ul li {
-				white-space: nowrap;
+			nav li {
+				display: flex;
+				margin-left: 10px;
+				padding: 5px 12px;
+				gap: 12px;
+			}
+			nav li:hover {
+				background: gray;
+				cursor: pointer;
+			}
+			main {
+				position: absolute;
 			}
 			.tag_container {
-				margin-left: 250px;
-				display: grid;
-				/* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
-				grid-auto-flow: column;
-				overflow-x: auto;
-				overscroll-behavior-inline: contain;
+				position: fixed;
+				z-index: 1;
+				top: 56px;
+				width: 100%;
+				padding-left: 240px;
+				background: white;
+				padding: 10px 0 10px 240px;
+			}
+			.tag_list {
+				display: flex; /* 要素を横並びにする */
+				white-space: nowrap; /* 要素を折り返さずに横並びにする */
+				overflow-x: auto; /* 横方向のスクロールを有効にする */
 
-				align-items: center;
-				gap: 12px;
-
+				/* スクロールバーを消す */
 				overflow-y: scroll;
 				-ms-overflow-style: none;
 				scrollbar-width: none;
 			}
-
-			.tag_container div {
-				/* テキストを折り返さない */
-				white-space: nowrap;
-				background: #f2f2f2;
-				border-radius: 8px;
-				font-size: 14px;
-				font-weight: 500;
-				color: black;
-				text-align: center;
-				padding: 5px 8px;
+			.tag {
+				flex: 0 0 auto; /* 要素のサイズを固定する */
+				margin-right: 10px; /* タグ間の間隔を設定する */
+				background: lightgray;
+				padding: 10px;
 			}
-			.article_container {
-				margin-left: 250px;
-				width: 100%;
-				background: pink;
+			.tag:hover {
+				cursor: pointer;
+				background: gray;
+			}
+			.articles {
+				padding-left: 240px;
+				padding-top: 120px;
+				height: 100%;
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr;
-				gap: 5px;
+				gap: 10px;
 			}
-			/* .article {
+			.article {
+				width: 100%;
+				background: orange;
 				aspect-ratio: 3/2;
-				background: green;
-			} */
-
-			@media (width < 1200px) {
-				.article_container {
-					grid-template-columns: 1fr 1fr;
-				}
+				padding: 20px;
+			}
+			.article img {
+				width: 100%;
+			}
+			.description {
+				display: flex;
+				gap: 10px;
+			}
+			.description img {
+				width: 36px;
+				height: 36px;
+				border-radius: 18px;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
-			<header class="header_container"></header>
-			<div class="body_container">
-				<!-- <nav class="nav_container">
-					<ul>
-						<li>ホーム</li>
-						<li>ショート</li>
-						<li>登録チャンネル</li>
-						<li>YouTube Music</li>
-					</ul>
-				</nav> -->
-				<div class="tag_container">
-					<div>すべて</div>
-					<div>音楽</div>
-					<div>野生生物</div>
-					<div>ミックス</div>
-					<div>ニュース</div>
-					<div>ライブ</div>
-					<div>ペット</div>
-					<div>最近アップロードされた動画</div>
-					<div>視聴済み</div>
-					<div>新しい動画の発見</div>
-				</div>
-				<div class="article_container">
-					<div class="article">あああ</div>
-					<div class="article">あああ</div>
-					<div class="article">あああ</div>
-					<div class="article">あああ</div>
-					<div class="article">あああ</div>
-				</div>
+		<header>ヘッダー</header>
+		<nav>
+			<ul>
+				<li>
+					<img src="menu_home.svg" />
+					<div>ホーム</div>
+				</li>
+				<li>
+					<img src="menu_short.svg" />
+					<div>ショート</div>
+				</li>
+				<li>
+					<img src="menu_channels.svg" />
+					<div>登録チャンネル</div>
+				</li>
+				<li>
+					<img src="menu_music.svg" />
+					<div>Youtube Music</div>
+				</li>
+			</ul>
+		</nav>
+		<div class="tag_container">
+			<div class="tag_list">
+				<div class="tag">音楽</div>
+				<div class="tag">野生生物</div>
+				<div class="tag">ミックス</div>
+				<div class="tag">ニュース</div>
+				<div class="tag">ライブ</div>
+				<div class="tag">ペット</div>
+				<div class="tag">最近アップロードされた動画</div>
+				<div class="tag">視聴済み</div>
+				<div class="tag">新しい動画の発見</div>
 			</div>
 		</div>
+		<main>
+			<div class="articles">
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="jeniffer-top.jpg" />
+					<div class="description">
+						<img src="avatar.jpg" />
+						<div class="text_container">
+							<div>title</div>
+							<div>author</div>
+							<div>time</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 	</body>
 </html>
