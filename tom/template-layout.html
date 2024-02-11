@@ -16,22 +16,27 @@
 				margin: 0;
 				box-sizing: border-box;
 			}
+
 			li {
 				list-style: none;
 			}
+
 			a {
 				text-decoration: none;
 			}
+
 			body {
 				font-family: "Roboto", sans-serif;
 				font-size: 20px;
 				position: relative;
 			}
+
 			.container {
 				width: 100%;
 				height: 100vh;
 				background: lightgray;
 			}
+
 			header {
 				position: fixed;
 				z-index: 2;
@@ -39,6 +44,7 @@
 				height: 56px;
 				background: skyblue;
 			}
+
 			nav {
 				position: fixed;
 				top: 70px;
@@ -46,49 +52,61 @@
 				width: 240px;
 				height: 100%;
 			}
+
 			nav li {
 				display: flex;
 				margin-left: 10px;
 				padding: 5px 12px;
 				gap: 12px;
 			}
+
 			nav li:hover {
 				background: gray;
 				cursor: pointer;
 			}
+
 			main {
 				position: absolute;
 			}
+
 			.tag_container {
 				position: fixed;
 				z-index: 1;
 				top: 56px;
 				width: 100%;
-				height: 56px;
 				padding-left: 240px;
-				background: green;
+				background: white;
 				padding: 10px 0 10px 240px;
 			}
+
 			.tag_list {
-				display: flex; /* 要素を横並びにする */
-				white-space: nowrap; /* 要素を折り返さずに横並びにする */
-				overflow-x: auto; /* 横方向のスクロールを有効にする */
+				display: flex;
+				/* 要素を横並びにする */
+				white-space: nowrap;
+				/* 要素を折り返さずに横並びにする */
+				overflow-x: auto;
+				/* 横方向のスクロールを有効にする */
 
 				/* スクロールバーを消す */
 				overflow-y: scroll;
 				-ms-overflow-style: none;
 				scrollbar-width: none;
 			}
+
 			.tag {
-				flex: 0 0 auto; /* 要素のサイズを固定する */
-				margin-right: 10px; /* タグ間の間隔を設定する */
+				flex: 0 0 auto;
+				/* 要素のサイズを固定する */
+				margin-right: 10px;
+				/* タグ間の間隔を設定する */
 				background: lightgray;
 				padding: 10px;
 			}
+
 			.tag:hover {
 				cursor: pointer;
 				background: gray;
 			}
+
 			.articles {
 				padding-left: 240px;
 				padding-top: 120px;
@@ -97,19 +115,23 @@
 				grid-template-columns: 1fr 1fr 1fr;
 				gap: 10px;
 			}
+
 			.article {
 				width: 100%;
 				background: orange;
 				/* aspect-ratio: 3/2; */
 				padding: 20px;
 			}
+
 			.article img {
 				width: 100%;
 			}
+
 			.description {
 				display: flex;
 				gap: 10px;
 			}
+
 			.description img {
 				width: 36px;
 				height: 36px;
@@ -117,6 +139,7 @@
 			}
 		</style>
 	</head>
+
 	<body>
 		<header>ヘッダー</header>
 		<nav>
