@@ -3,41 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube-like Search Bar</title>
   <style>
-    /* Basic styling for the search bar */
-    .search-container {
-      display: flex;
-      justify-content: center;
-      margin: 10px;
+    .box {
+      width: 200px; /* Set the width of your box */
+      height: 100px; /* Set the height of your box */
+      border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+      text-align: center; /* Center text horizontally */
+      line-height: 100px; /* Center text vertically (adjust based on box height) */
     }
 
-    .search-bar {
-      padding: 10px;
-      width: 100%;
-      max-width: 600px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 2px;
-      font-size: 16px;
-      outline: none;
-    }
-
-    .search-icon {
-      padding: 10px;
-      background-color: #f8f8f8;
-      border: 1px solid #ccc;
-      border-radius: 2px;
-      cursor: pointer;
+    /* Optional: Style the text */
+    .box p {
+      margin: 0;
     }
   </style>
+  <title>Centered Text in Box</title>
 </head>
 <body>
 
-  <!-- Search Bar -->
-  <div class="search-container">
-    <input type="text" class="search-bar" placeholder="Search...">
-    <div class="search-icon">&#128269;</div>
+  <div class="box">
+    <p>Your centered text goes here.</p>
   </div>
 
 </body>
