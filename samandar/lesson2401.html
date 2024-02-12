@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 40px;
+        font-family: "Noto Sans JP";
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+      }
+      .header_frame {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        margin-top: 10px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo img {
+        height: 60%;
+      }
+      .search_container {
+        display: flex;
+        height: 40px;
+        border:1px #d3d3d3;
+      }
+      .search_container img {
+        width: 10px;
+        height: 10px;
+      }
+      .search_container input {
+        width: 540px;
+        height: 100%;
+        border: 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        padding-left: 15px;
+      }
+      .search_container button {
+        width: 60px;
+        height: 100%;
+        background: #f8f8f8;
+        border: solid 1px #d3d3d3;
+        border-radius: 0 20px 20px 0;
+        border-left: none;
+      }
+      .mic_icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 14px;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+      }
+      .mic_icon img {
+        width: 30px;
+      }
+      .right_frame {
+        height: 100%;
+        width: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .right_frame img {
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header_frame">
+        <div class="Logo">
+          <img src="youtube.svg" />
+        </div>
+        <div class="search_container">
+          <input type="text" placeholder="Search" />
+          <button><img src="search-outline.svg" /></button>
+          <div class="mic_icon"><img src="mic.svg" /></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
