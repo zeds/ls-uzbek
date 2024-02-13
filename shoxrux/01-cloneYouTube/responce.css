@@ -24,7 +24,12 @@
     }
 
     .item-text {
-        display: none;
+        font-size: 10px;
+        /* display: none; */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
     }
 
     .article-frame {
