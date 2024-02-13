@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+      .header_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        height: 40px;
+
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+      .header_container .logo {
+        height: 50%;
+      }
+      .search_container {
+        display: flex;
+        align-items: center;
+        width: 700px;
+        height: 40px;
+      }
+      .search_container input {
+        width: 540px;
+        height: 100%;
+        border: solid 1px #c1c1c1;
+        padding-left: 17px;
+        font-size: 16px;
+      }
+      .search_frame {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        border-radius: 20px 0 0 20px;
+        border: solid 1px #cccccc;
+      }
+      .search_frame input {
+        width: 540px;
+        height: 90%;
+        border: none;
+        margin-left: 20px;
+        padding-left: 10px;
+      }
+      .search_container button {
+        width: 64px;
+        height: 100%;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        border-right: solid 1px #d3d3d3;
+        border-top: solid 1px #d3d3d3;
+        border-top: solid 1px #d3d3d3;
+        background: #f8f8f8;
+        position: relative;
+      }
+      .search_container button:hover {
+        background: lightgrey;
+      }
+      .mic_icon {
+        display: flex;
+        width: 40px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        justify-content: center;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .mic_icon {
+        display: flex;
+        width: 40px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .mic_icon:hover {
+        background: lightgrey;
+      }
+      .right_container {
+        height: 100%;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-right: 20px;
+      }
+      .logo_icon {
+        display: flex;
+        width: 30px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo1_icon {
+        display: flex;
+        width: 30px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        justify-content: center;
+      }
+      .right_container img:last-child {
+        border-radius: 16px;
+        height: 32px;
+        width: 32px;
+      }
+      .body_container {
+        display: flex;
+        padding: 20px;
+      }
+      .side_menu {
+        width: 204px;
+        margin-top: 10px;
+        background: white;
+      }
+      .side_menu li {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        color: #0f0f0f;
+        font-size: 14px;
+        padding: 0 12px;
+        gap: 15px;
+      }
+      .side_menu li:hover {
+        background: #f2f3f3;
+        border-radius: 8px;
+      }
+      .article_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        position: relative;
+        margin-left: 10px;
+      }
+      .article {
+        background: pink;
+      }
+      .article img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .item {
+        display: flex;
+        background: red;
+      }
+      .item img {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        background: skyblue;
+        object-fit: cover;
+      }
+      .item_text {
+        width: 100%;
+        margin-left: 10px;
+      }
+      .title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: 16px;
+      }
+      .user {
+        font-size: 14px;
+      }
+      .statistics {
+        font-size: 14px;
+      }
+      @media (max-width: 1536px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+      }
+      @media (max-width: 1280px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+      @media (max-width: 1024px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 648px) {
+        .article_container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header_container">
+        <img class="logo" src="logos--youtube.svg" />
+        <div class="search_container">
+          <div class="search_frame"><input type="text" /></div>
+          <button>
+            <img src="search-outline.svg" />
+          </button>
+          <div class="mic_icon">
+            <img src="mic.svg" />
+          </div>
+        </div>
+        <div class="right_container">
+          <img src="smh.svg" />
+          <img src="logo.svg" />
+          <img src="photo.jpg" />
+        </div>
+      </div>
+      <div class="body_container">
+        <nav>
+          <ul class="side_menu">
+            <li><img src="menu_home.svg" />Home</li>
+            <li><img src="menu_short.svg" />Shorts</li>
+            <li><img src="menu_channels.svg" />Subscriptions</li>
+            <li><strong>You</strong><img src="menu_you.svg" /></li>
+            <li><img src="menu_music.svg" />Music</li>
+            <li><img src="menu_history.svg" />History</li>
+            <li><img src="menu_your-videos.svg" />Your videos</li>
+            <li><img src="menu_watch-later.svg" />Watch later</li>
+            <li><img src="menu_show-more.svg" />Show more</li>
+            <li><strong>Subscriptions</strong></li>
+            <li><img src="menu_trending.svg" />Trending</li>
+            <li><img src="menu_Live.svg" />Live</li>
+            <li><img src="menu_Gaming.svg" />Gaming</li>
+            <li><img src="menu_news.svg" />News</li>
+            <li><img src="menu_show-more.svg" />Show more</li>
+          </ul>
+        </nav>
+        <div class="article_container">
+          <div class="article">
+            <img src="cat.jpg" />
+            <div class="item">
+              <img src="kitten.jpg" />
+              <div class="item_text">
+                <div class="title">15 minutes of adorable kittens</div>
+                <div class="user">The Pet Collective</div>
+                <div class="statistics">3M views</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="cat.jpg" />
+            <div class="item">
+              <img src="kitten.jpg" />
+              <div class="item_text">
+                <div class="title">15 minutes of adorable kittens</div>
+                <div class="user">The Pet Collective</div>
+                <div class="statistics">3M views</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="cat.jpg" />
+            <div class="item">
+              <img src="kitten.jpg" />
+              <div class="item_text">
+                <div class="title">15 minutes of adorable kittens</div>
+                <div class="user">The Pet Collective</div>
+                <div class="statistics">3M views</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="cat.jpg" />
+            <div class="item">
+              <img src="kitten.jpg" />
+              <div class="item_text">
+                <div class="title">15 minutes of adorable kittens</div>
+                <div class="user">The Pet Collective</div>
+                <div class="statistics">3M views</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="cat.jpg" />
+            <div class="item">
+              <img src="kitten.jpg" />
+              <div class="item_text">
+                <div class="title">15 minutes of adorable kittens</div>
+                <div class="user">The Pet Collective</div>
+                <div class="statistics">3M views</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="cat.jpg" />
+            <div class="item">
+              <img src="kitten.jpg" />
+              <div class="item_text">
+                <div class="title">15 minutes of adorable kittens</div>
+                <div class="user">The Pet Collective</div>
+                <div class="statistics">3M views</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="cat.jpg" />
+            <div class="item">
+              <img src="kitten.jpg" />
+              <div class="item_text">
+                <div class="title">15 minutes of adorable kittens</div>
+                <div class="user">The Pet Collective</div>
+                <div class="statistics">3M views</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="cat.jpg" />
+            <div class="item">
+              <img src="kitten.jpg" />
+              <div class="item_text">
+                <div class="title">15 minutes of adorable kittens</div>
+                <div class="user">The Pet Collective</div>
+                <div class="statistics">3M views</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
