@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>youtob</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 40px;
+        font-family: "Roboto" sans-serif;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: powderblue;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .article_container {
+        width: 380px;
+        padding: 10px;
+        background: pink;
+      }
+      .article_container img {
+        width: 100%;
+      }
+      .article_contents {
+        display: flex;
+      }
+      .article_contents img {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+      }
+      .article_text {
+        margin-left: 10px;
+      }
+      .title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: #0f0f0f;
+      }
+      .author {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      .statistics {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <iframe width="360" height="214" src="https://www.youtube.com/embed/CPO2iwMUqGw?si=bMJOz39M4NFPhzQZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="article_contents">
+          <img src="unnamed.jpg" />
+          <div class="article_text">
+            <div class="title">Sedan — Sedans,
+            </div>
+            <div class="author">JForres engilsh</div>
+            <div class="statistics">7.7 day ago 100000 see</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
