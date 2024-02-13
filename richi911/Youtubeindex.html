@@ -1,462 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-			rel="stylesheet"
-		/>
-		<title>Document</title>
-		<style>
-			* {
-				padding: 0;
-				margin: 0;
-				box-sizing: border-box;
-			}
-			body {
-				font-family: "Roboto", sans-serif;
-				font-size: 20px;
-			}
-			.container {
-				width: 100%;
-				height: 100vh;
-				position: relative;
-			}
-			.left_container {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				height: 39.5px;
-				width: 150px;
-				display: flex;
-				align-items: center;
-				justify-content: space-evenly;
-				margin-right: 20px;
-				/* background: skyblue; */
-				position: absolute;
-			}
-			.left_container .logo123 {
-				height: 50%;
-			}
-			.left_container .logo {
-				height: 50%;
-			}
-			.header_container {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+      .header_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-				width: 100%;
-				height: 40px;
+        width: 100%;
+        height: 40px;
 
-				padding-left: 20px;
-				margin-top: 10px;
-				/* background: green; */
-			}
-			.header_container .logo {
-				height: 50%;
-			}
-			.search_container {
-				display: flex;
-				align-items: center;
-				width: 700px;
-				height: 40px;
-				/* background: red; */
-			}
-			.search_container input {
-				width: 540px;
-				height: 100%;
-				border: solid 1px #c1c1c1;
-				padding-left: 17px;
-				font-size: 16px;
-			}
-			.search_frame {
-				display: flex;
-				height: 100%;
-				align-items: center;
-				border-radius: 20px 0 0 20px;
-				border: solid 1px #cccccc;
-			}
-			.search_frame input {
-				width: 540px;
-				height: 90%;
-				border: none;
-				margin-left: 20px;
-				padding-left: 10px;
-			}
-			.search_container button {
-				width: 64px;
-				height: 100%;
-				border: none;
-				border-radius: 0 20px 20px 0;
-				border-right: solid 1px #d3d3d3;
-				border-top: solid 1px #d3d3d3;
-				border-top: solid 1px #d3d3d3;
-				background: #f8f8f8;
-				position: relative;
-			}
-			.search_container button:hover .tooltip-text {
-				opacity: 1;
-				visibility: visible;
-				background: gray;
-			}
-			.search_container button:hover {
-				background: lightgrey;
-			}
-			.tooltip-text {
-				opacity: 0;
-				visibility: hidden;
-				position: absolute;
-				left: 50%;
-				transform: translateX(-50%);
-				bottom: -50px;
-				font-size: 16px;
-				display: inline-block;
-				padding: 10px;
-				white-space: nowrap;
-				line-height: 1.3;
-				background: gray;
-				color: white;
-				border-radius: 3px;
-				transition: 0.3s ease;
-			}
-			.mic_icon {
-				display: flex;
-				width: 40px;
-				height: 100%;
-				border-radius: 20px;
-				margin-left: 14px;
-				align-items: center;
-				justify-content: center;
-				background: #f2f2f2;
-				position: relative;
-			}
-			.mic_icon {
-				display: flex;
-				width: 40px;
-				height: 100%;
-				border-radius: 20px;
-				margin-left: 14px;
-				align-items: center;
-				background: #f2f2f2;
-				position: relative;
-			}
-			.mic_icon:hover .tooltip-text {
-				opacity: 1;
-				visibility: visible;
-			}
-			.mic_icon:hover {
-				background: lightgrey;
-			}
-			.right_container {
-				height: 100%;
-				width: 100px;
-				display: flex;
-				align-items: center;
-				justify-content: space-evenly;
-				margin-right: 20px;
-				/* background: skyblue; */
-			}
-			.logo_icon {
-				display: flex;
-				width: 30px;
-				height: 100%;
-				border-radius: 20px;
-				margin-left: 14px;
-				align-items: center;
-				justify-content: center;
-			}
-			.logo1_icon {
-				display: flex;
-				width: 30px;
-				height: 100%;
-				border-radius: 20px;
-				margin-left: 14px;
-				align-items: center;
-				justify-content: center;
-			}
-			.right_container img:last-child {
-				border-radius: 16px;
-				height: 32px;
-				width: 32px;
-			}
-
-			.body_container {
-				display: flex;
-				padding: 20px;
-				background: green;
-			}
-
-			.side_menu {
-				width: 204px;
-				margin-top: 10px;
-				background: pink;
-			}
-			.side_menu li {
-				display: flex;
-				align-items: center;
-				height: 40px;
-				color: #0f0f0f;
-				font-size: 14px;
-				padding: 0 12px;
-				gap: 15px;
-			}
-			.side_menu li:hover {
-				background: #f2f3f3;
-				border-radius: 8px;
-			}
-
-			.article_container {
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr 1fr;
-				gap: 10px;
-				position: relative;
-				background: skyblue;
-				margin-left: 10px;
-			}
-			.article {
-				position: relative;
-			}
-			.article img {
-				width: 100%;
-				border-radius: 10px;
-			}
-			.time {
-				width: 78px;
-				border-radius: 7px;
-				position: absolute;
-				color: white;
-				background: black;
-				bottom: 26%;
-				right: 2px;
-			}
-			.item {
-				background: red;
-				display: flex;
-			}
-			.item img {
-				width: 32px;
-				height: 32px;
-				border-radius: 18px;
-			}
-			.item_text {
-				width: 100%;
-				margin-left: 10px;
-			}
-			.title {
-				overflow: hidden;
-				display: -webkit-box;
-				-webkit-box-orient: vertical;
-				-webkit-line-clamp: 2;
-				font-size: 16px;
-			}
-			.user {
-				font-size: 14px;
-			}
-			.statistics {
-				font-size: 14px;
-			}
-			@media (max-width: 1536px) {
-				.article_container {
-					grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-				}
-			}
-			@media (max-width: 1280px) {
-				.article_container {
-					grid-template-columns: 1fr 1fr 1fr 1fr;
-				}
-			}
-			@media (max-width: 1024px) {
-				.article_container {
-					grid-template-columns: 1fr 1fr 1fr;
-				}
-			}
-			@media (max-width: 768px) {
-				.article_container {
-					grid-template-columns: 1fr 1fr;
-				}
-			}
-			@media (max-width: 648px) {
-				.article_container {
-					grid-template-columns: 1fr;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="left_container">
-				<img class="logo123" src="Images/Before-logo.svg" />
-				<img class="logo" src="Images/youtube (1).svg" />
-			</div>
-			<div class="header_container">
-				<img class="logo" src="Images/Whitebackground.png" />
-				<div class="search_container">
-					<div class="search_frame"><input type="text" /></div>
-					<button>
-						<div class="tooltip-text">検索</div>
-						<img src="Images/search-outline.svg" />
-					</button>
-					<div class="mic_icon">
-						<div class="tooltip-text">音声で検索</div>
-						<img src="Images/mic.svg" />
-					</div>
-				</div>
-				<div class="right_container">
-					<img src="Images/recordingicon.svg" />
-					<img src="Images/222.svg" />
-					<img src="Images/profileimg.jpg" />
-				</div>
-			</div>
-			<div class="body_container">
-				<nav>
-					<ul class="side_menu">
-						<li><img src="Images/Home-page.svg" />Home</li>
-						<li><img src="Images/Shorts.svg" />Shorts</li>
-						<li><img src="Images/Subscriptions.svg" />Subscriptions</li>
-						<hr />
-						<li><strong>You</strong><img src="Images/You.svg" /></li>
-						<li><img src="Images/Music.svg" />Music</li>
-						<li><img src="Images/History.svg" />History</li>
-						<li><img src="Images/Your-videos.svg" />Your videos</li>
-						<li><img src="Images/Watch-later.svg" />Watch later</li>
-						<li><img src="Images/Show-more.svg" />Show more</li>
-						<hr />
-						<li><strong>Subscriptions</strong></li>
-						<hr />
-						<li><img src="Images/Trending.svg" />Trending</li>
-						<li><img src="Images/Live.svg" />Live</li>
-						<li><img src="Images/Gaming.svg" />Gaming</li>
-						<li><img src="Images/News.svg" />News</li>
-						<li><img src="Images/Show-more.svg" />Show more</li>
-					</ul>
-				</nav>
-				<div class="article_container">
-					<div class="article">
-						<img src="Images/111.jpg" />
-						<div class="time">10:47:58</div>
-						<div class="item">
-							<img src="Images/unnamed.jpg" />
-							<div class="item_text">
-								<div class="title">
-									How to move to Los Angeles. The best way to move to
-									one of the best destinations in the world
-								</div>
-								<div class="user">Your Travel</div>
-								<div class="statistics">3M Followrs</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="Images/111.jpg" />
-						<div class="time">10:47:58</div>
-						<div class="item">
-							<img src="Images/unnamed.jpg" />
-							<div class="item_text">
-								<div class="title">
-									How to move to Los Angeles. The best way to move to
-									one of the best destinations in the world
-								</div>
-								<div class="user">Your Travel</div>
-								<div class="statistics">3M Followrs</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="Images/111.jpg" />
-						<div class="time">10:47:58</div>
-						<div class="item">
-							<img src="Images/unnamed.jpg" />
-							<div class="item_text">
-								<div class="title">
-									How to move to Los Angeles. The best way to move to
-									one of the best destinations in the world
-								</div>
-								<div class="user">Your Travel</div>
-								<div class="statistics">3M Followrs</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="Images/111.jpg" />
-						<div class="time">10:47:58</div>
-						<div class="item">
-							<img src="Images/unnamed.jpg" />
-							<div class="item_text">
-								<div class="title">
-									How to move to Los Angeles. The best way to move to
-									one of the best destinations in the world
-								</div>
-								<div class="user">Your Travel</div>
-								<div class="statistics">3M Followrs</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="Images/111.jpg" />
-						<div class="time">10:47:58</div>
-						<div class="item">
-							<img src="Images/unnamed.jpg" />
-							<div class="item_text">
-								<div class="title">
-									How to move to Los Angeles. The best way to move to
-									one of the best destinations in the world
-								</div>
-								<div class="user">Your Travel</div>
-								<div class="statistics">3M Followrs</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="Images/111.jpg" />
-						<div class="time">10:47:58</div>
-						<div class="item">
-							<img src="Images/unnamed.jpg" />
-							<div class="item_text">
-								<div class="title">
-									How to move to Los Angeles. The best way to move to
-									one of the best destinations in the world
-								</div>
-								<div class="user">Your Travel</div>
-								<div class="statistics">3M Followrs</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="Images/111.jpg" />
-						<div class="time">10:47:58</div>
-						<div class="item">
-							<img src="Images/unnamed.jpg" />
-							<div class="item_text">
-								<div class="title">
-									How to move to Los Angeles. The best way to move to
-									one of the best destinations in the world
-								</div>
-								<div class="user">Your Travel</div>
-								<div class="statistics">3M Followrs</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="Images/111.jpg" />
-						<div class="time">10:47:58</div>
-						<div class="item">
-							<img src="Images/unnamed.jpg" />
-							<div class="item_text">
-								<div class="title">
-									How to move to Los Angeles. The best way to move to
-									one of the best destinations in the world
-								</div>
-								<div class="user">Your Travel</div>
-								<div class="statistics">3M Followrs</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+        padding-left: 20px;
+        margin-top: 10px;
+        /* background: green; */
+      }
+      .header_container .logo {
+        height: 50%;
+      }
+      .search_container {
+        display: flex;
+        align-items: center;
+        width: 700px;
+        height: 40px;
+        /* background: red; */
+      }
+      .search_container input {
+        width: 540px;
+        height: 100%;
+        border: solid 1px #c1c1c1;
+        padding-left: 17px;
+        font-size: 16px;
+      }
+      .search_frame {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        border-radius: 20px 0 0 20px;
+        border: solid 1px #cccccc;
+      }
+      .search_frame input {
+        width: 540px;
+        height: 90%;
+        border: none;
+        margin-left: 20px;
+        padding-left: 10px;
+      }
+      .search_container button {
+        width: 64px;
+        height: 100%;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        border-right: solid 1px #d3d3d3;
+        border-top: solid 1px #d3d3d3;
+        border-top: solid 1px #d3d3d3;
+        background: #f8f8f8;
+        position: relative;
+      }
+      .search_container button:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+        background: gray;
+      }
+      .search_container button:hover {
+        background: lightgrey;
+      }
+      .tooltip-text {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -50px;
+        font-size: 16px;
+        display: inline-block;
+        padding: 10px;
+        white-space: nowrap;
+        line-height: 1.3;
+        background: gray;
+        color: white;
+        border-radius: 3px;
+        transition: 0.3s ease;
+      }
+      .mic_icon {
+        display: flex;
+        width: 40px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        justify-content: center;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .mic_icon {
+        display: flex;
+        width: 40px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .mic_icon:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .mic_icon:hover {
+        background: lightgrey;
+      }
+      .right_container {
+        height: 100%;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-right: 20px;
+        /* background: skyblue; */
+      }
+      .logo_icon {
+        display: flex;
+        width: 30px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo1_icon {
+        display: flex;
+        width: 30px;
+        height: 100%;
+        border-radius: 20px;
+        margin-left: 14px;
+        align-items: center;
+        justify-content: center;
+      }
+      .right_container img:last-child {
+        border-radius: 16px;
+        height: 32px;
+        width: 32px;
+      }
+      .body_container {
+        display: flex;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 20px;
+        padding-left: 5px;
+        /* background: green; */
+      }
+      .side_menu {
+        width: 204px;
+        /* margin-top: 10px; */
+        /* background: pink; */
+      }
+      .side_menu li {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        color: #0f0f0f;
+        font-size: 14px;
+        padding: 0 12px;
+        gap: 15px;
+      }
+      /* @media (width < 800px) {
+        .side_menu li {
+          grid-template-columns: 24px;
+        }
+        .side_menu li .nav_text {
+          display: none;
+        }
+      } */
+      .side_menu li:hover {
+        background: #f2f3f3;
+        border-radius: 8px;
+      }
+      .article_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        position: relative;
+        /* background: skyblue; */
+        margin-left: 10px;
+      }
+      .article {
+        position: relative;
+      }
+      .article img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .time {
+        width: 78px;
+        border-radius: 7px;
+        position: absolute;
+        color: white;
+        background: black;
+        bottom: 51%;
+        right: 1px;
+      }
+      .item {
+        /* background: red; */
+        display: flex;
+      }
+      .item img {
+        width: 32px;
+        height: 32px;
+        border-radius: 18px;
+      }
+      .item_text {
+        width: 100%;
+        margin-left: 10px;
+      }
+      .title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: 16px;
+      }
+      .user {
+        font-size: 14px;
+      }
+      .statistics {
+        font-size: 14px;
+      }
+      @media (max-width: 1536px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+      }
+      @media (max-width: 1280px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+      @media (max-width: 1024px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 648px) {
+        .article_container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header_container">
+        <img class="logo" src="Images/youtube (1).svg" />
+        <div class="search_container">
+          <div class="search_frame"><input type="text" /></div>
+          <button>
+            <div class="tooltip-text">検索</div>
+            <img src="Images/search-outline.svg" />
+          </button>
+          <div class="mic_icon">
+            <div class="tooltip-text">音声で検索</div>
+            <img src="Images/mic.svg" />
+          </div>
+        </div>
+        <div class="right_container">
+          <img src="Images/recordingicon.svg" />
+          <img src="Images/222.svg" />
+          <img src="Images/profileimg.jpg" />
+        </div>
+      </div>
+      <div class="body_container">
+        <nav>
+          <ul class="side_menu">
+            <li><img src="Images/Home-page.svg" />Home</li>
+            <li><img src="Images/Shorts.svg" />Shorts</li>
+            <li><img src="Images/Subscriptions.svg" />Subscriptions</li>
+            <hr />
+            <li><strong>You</strong><img src="Images/You.svg" /></li>
+            <li><img src="Images/Music.svg" />Music</li>
+            <li><img src="Images/History.svg" />History</li>
+            <li><img src="Images/Your-videos.svg" />Your videos</li>
+            <li><img src="Images/Watch-later.svg" />Watch later</li>
+            <li><img src="Images/Show-more.svg" />Show more</li>
+            <hr />
+            <li><strong>Subscriptions</strong></li>
+            <hr />
+            <li><img src="Images/Trending.svg" />Trending</li>
+            <li><img src="Images/Live.svg" />Live</li>
+            <li><img src="Images/Gaming.svg" />Gaming</li>
+            <li><img src="Images/News.svg" />News</li>
+            <li><img src="Images/Show-more.svg" />Show more</li>
+          </ul>
+        </nav>
+        <div class="article_container">
+          <div class="article">
+            <img src="Images/111.jpg" />
+            <div class="time">10:47:58</div>
+            <div class="item">
+              <img src="Images/unnamed.jpg" />
+              <div class="item_text">
+                <div class="title">
+                  How to move to Los Angeles. The best way to move to one of the
+                  best destinations in the world
+                </div>
+                <div class="user">Your Travel</div>
+                <div class="statistics">3M Followrs</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="Images/111.jpg" />
+            <div class="time">10:47:58</div>
+            <div class="item">
+              <img src="Images/unnamed.jpg" />
+              <div class="item_text">
+                <div class="title">
+                  How to move to Los Angeles. The best way to move to one of the
+                  best destinations in the world
+                </div>
+                <div class="user">Your Travel</div>
+                <div class="statistics">3M Followrs</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="Images/111.jpg" />
+            <div class="time">10:47:58</div>
+            <div class="item">
+              <img src="Images/unnamed.jpg" />
+              <div class="item_text">
+                <div class="title">
+                  How to move to Los Angeles. The best way to move to one of the
+                  best destinations in the world
+                </div>
+                <div class="user">Your Travel</div>
+                <div class="statistics">3M Followrs</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="Images/111.jpg" />
+            <div class="time">10:47:58</div>
+            <div class="item">
+              <img src="Images/unnamed.jpg" />
+              <div class="item_text">
+                <div class="title">
+                  How to move to Los Angeles. The best way to move to one of the
+                  best destinations in the world
+                </div>
+                <div class="user">Your Travel</div>
+                <div class="statistics">3M Followrs</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="Images/111.jpg" />
+            <div class="time">10:47:58</div>
+            <div class="item">
+              <img src="Images/unnamed.jpg" />
+              <div class="item_text">
+                <div class="title">
+                  How to move to Los Angeles. The best way to move to one of the
+                  best destinations in the world
+                </div>
+                <div class="user">Your Travel</div>
+                <div class="statistics">3M Followrs</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="Images/111.jpg" />
+            <div class="time">10:47:58</div>
+            <div class="item">
+              <img src="Images/unnamed.jpg" />
+              <div class="item_text">
+                <div class="title">
+                  How to move to Los Angeles. The best way to move to one of the
+                  best destinations in the world
+                </div>
+                <div class="user">Your Travel</div>
+                <div class="statistics">3M Followrs</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="Images/111.jpg" />
+            <div class="time">10:47:58</div>
+            <div class="item">
+              <img src="Images/unnamed.jpg" />
+              <div class="item_text">
+                <div class="title">
+                  How to move to Los Angeles. The best way to move to one of the
+                  best destinations in the world
+                </div>
+                <div class="user">Your Travel</div>
+                <div class="statistics">3M Followrs</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <img src="Images/111.jpg" />
+            <div class="time">10:47:58</div>
+            <div class="item">
+              <img src="Images/unnamed.jpg" />
+              <div class="item_text">
+                <div class="title">
+                  How to move to Los Angeles. The best way to move to one of the
+                  best destinations in the world
+                </div>
+                <div class="user">Your Travel</div>
+                <div class="statistics">3M Followrs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

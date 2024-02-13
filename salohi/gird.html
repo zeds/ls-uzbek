@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+        body {
+        font-size: 40px;
+        font-family: "Roboto", sans-serif;
+        }
+        .container {
+        width: 1000px;
+        height: 500vh;
+        background: powderblue;
+
+        }
+        .article {
+        display: grid;
+        background: whitesmoke;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .item {
+        background: darkcyan;
+        aspect-ratio: 1/1;
+        margin: 10px;
+        }
+
+    </style>
+        <body>
+        <div class="container">
+            <div class="article">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+            <div class="item">item4</div>
+            <div class="item">item5</div>
+            <div class="item">item6</div>
+            <div class="item">item7</div>
+            <div class="item">item8</div>
+            </div></div>
+    </body>
+</html>
