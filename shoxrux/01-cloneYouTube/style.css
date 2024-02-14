@@ -11,10 +11,14 @@ body {
 
 .container {
     width: 100%;
+    background: #fff;
     /* height: 100vh; */
 }
 
 .header-container {
+    background-color: #fff;
+    position: fixed;
+    z-index: 2;
     height: 56px;
     width: 100%;
     display: flex;
@@ -47,6 +51,7 @@ body {
 }
 
 .search-container input {
+    padding-left: 20px;
     outline: none;
     width: 536px;
     height: 40px;
@@ -55,12 +60,12 @@ body {
     border: 1px solid var(--ytd-searchbox-legacy-border-color);
     border-right: none;
     border-radius: 40px 0 0 40px;
-    padding: 0 4px 0 16px;
+    /* padding: 0 4px 0 16px; */
     margin-left: 32px;
     display: flexbox;
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    /* padding: 10px; */
     border: solid 1px rgb(216, 216, 216);
     border-radius: 20px 0 0 20px;
 }
@@ -220,6 +225,12 @@ body {
 /* end right-container */
 
 /* start body container */
+.side-menu {
+    position: fixed;
+    z-index: 2;
+    top: 59px;
+    left: 13px;
+}
 
 .body-container {
     display: flex;
@@ -243,23 +254,36 @@ body {
 }
 
 .item-text {
-
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
-    line-height: 20px;
     color: #0f0f0f;
 }
 
 /* article frame */
+/* .frame-and-content {
+    margin-top: 64px;
+} */
+
 .article-frame {
-    transition-delay: 1s;
-    display: grid;
-    margin: 5px 10px;
+    position: fixed;
+    z-index: 1;
+    top: 56px;
+    height: 56px;
+    width: 100%;
+    padding-left: 240px;
+    background: white;
 }
 
 .example-2 {
+
+    /* white-space: nowrap;
+    overflow-x: hidden; */
+    display: flex;
     white-space: nowrap;
-    overflow-x: hidden;
+    overflow-x: auto;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
 }
 
@@ -274,6 +298,7 @@ body {
 
 .article-frame ul li {
     transition: 1s;
+    font-weight: 500;
     cursor: pointer;
     background: #f2f2f2;
     border-radius: 8px;
@@ -287,7 +312,8 @@ body {
 }
 
 .article-frame ul li:hover {
-    background-image: linear-gradient(58.2deg, rgba(40, 91, 212, 0.73) -3%, rgba(171, 53, 163, 0.45) 49.3%, rgba(255, 204, 112, 0.37) 97.7%);
+    background-color: rgb(197, 197, 197);
+    /* background-image: linear-gradient(58.2deg, rgba(40, 91, 212, 0.73) -3%, rgba(171, 53, 163, 0.45) 49.3%, rgba(255, 204, 112, 0.37) 97.7%); */
 }
 
 /* article frame */
@@ -295,12 +321,19 @@ body {
 
 /* content */
 .content {
+    padding-left: 240px;
+    padding-right: 20px;
+    padding-top: 120px;
+    height: 100%;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 15px;
     width: 100%;
     margin-top: 20px;
-    padding: 10px;
+    padding: 10px; */
 }
 
 .article_container {

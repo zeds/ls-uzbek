@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+      }
+      .container {
+        width: 100%;
+        height: 100px;
+      }
+      .input_waku {
+        width: 600px;
+        height: 40px;
+        display: flex;
+        position: relative;
+      }
+      input {
+        width: 90%;
+        border-radius: 25px;
+        border: solid 1px #d3d3d3;
+        padding-left: 15px;
+      }
+      .box_1 {
+        width: 60px;
+        height: 40px;
+        background: #f8f8f8;
+        position: absolute;
+        right: 55px;
+        border-radius: 0 25px 25px 0;
+        border: solid 1px #d3d3d3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box_2 {
+        width: 40px;
+        height: 40px;
+        background: #f2f2f2;
+        position: absolute;
+        right: 0;
+        border-radius: 20px 20px 20px 20px;
+        border: solid 1px #d3d3d3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .img {
+        height: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input_waku">
+      <input type="text" placeholder="Search" />
+      <div class="box_1">
+        <img src="search-outline.svg" />
+      </div>
+      <div class="box_2">
+        <img src="mic.svg" />
+      </div>
+    </div>
+  </body>
+</html>
