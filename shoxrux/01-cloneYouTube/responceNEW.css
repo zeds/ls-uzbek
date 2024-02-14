@@ -1,0 +1,126 @@
+@media(width < 648px) {
+    .content {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+    .article-frame {
+        padding-left: 20px;
+    }
+
+    .search-container {
+        margin: 0 2rem 0 1rem;
+    }
+}
+
+@media(648px <=width < 768px) {
+    .content {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 20px;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+    .article-frame {
+        padding-left: 20px;
+    }
+
+    .search-container {
+        margin: 0 2rem 0 1rem;
+    }
+}
+
+@media(768px <=width < 1024px) {
+    .content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .content {
+        padding-left: 100px;
+    }
+
+    .article-frame {
+        padding-left: 100px;
+    }
+
+    .item {
+        height: 50px;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        width: 60px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .item-text {
+        padding-left: 12px;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        width: 60px;
+        align-items: center;
+        margin-bottom: 10px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+}
+
+@media(1023px <=width <1280px) {
+    .content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .content {
+        padding-left: 100px;
+    }
+
+    .article-frame {
+        padding-left: 100px;
+    }
+
+    .item {
+        height: 50px;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        width: 60px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .item-text {
+        padding-left: 12px;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        width: 60px;
+        align-items: center;
+        margin-bottom: 10px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+}
+
+@media(1280px <=width <1536px) {
+    .content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
+
+@media (1536px <=width) {
+    .content {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
