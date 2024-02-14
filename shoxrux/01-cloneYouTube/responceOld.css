@@ -54,9 +54,25 @@
     }
 }
 
-@media (max-width: 700px) {
+@media (width < 648px) {
     .search-container input {
         width: 100px;
+    }
+
+    .body-container {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+}
+
+@media (648px <=width < 768px) {
+    .body-container {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
