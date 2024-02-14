@@ -335,6 +335,23 @@ body {
     border-radius: 10px;
 }
 
+.img-and-time {
+    position: relative;
+}
+
+.time {
+    border-radius: 8px;
+    padding: 5px;
+    background: #00000078;
+    color: white;
+    font-size: 14px;
+    /* bottom: -38px; */
+    /* left: 0; */
+    right: 6px;
+    top: 170px;
+    position: absolute;
+}
+
 .article_container img {
     width: 100%;
     border-radius: 10px;
