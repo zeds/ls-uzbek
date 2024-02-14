@@ -229,7 +229,7 @@ body {
     position: fixed;
     z-index: 2;
     top: 59px;
-    left: 16px;
+    left: 13px;
 }
 
 .body-container {
@@ -254,10 +254,8 @@ body {
 }
 
 .item-text {
-
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
-    line-height: 20px;
     color: #0f0f0f;
 }
 
