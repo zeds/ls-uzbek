@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <title>Youtube</title>
+    <title>Document</title>
     <style>
       * {
         padding: 0;
@@ -34,10 +34,9 @@
       }
       header {
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         width: 100%;
         height: 56px;
-
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -47,12 +46,13 @@
       }
       header .logo {
         height: 20px;
+        /* background: red; */
       }
       .search_container {
         display: flex;
         height: 40px;
         flex-grow: 1;
-        margin: 0 10px 0 10px;
+        margin: 0 5rem 0 5rem;
         max-width: 666px;
       }
       .search_container input {
@@ -64,7 +64,8 @@
         font-size: 16px;
       }
       .search_button {
-        width: 64px;
+        width: 60px;
+        height: 100%;
         border: solid 1px #d3d3d3;
         border-left: none;
         border-radius: 0 20px 20px 0;
@@ -82,7 +83,9 @@
         background: #d0d0d0;
       }
       .mic_icon {
-        aspect-ratio: 1/1;
+        /* 親でdisplay: flexを指定しているが、親が縮むとmicの幅も縮んでしまう。 */
+        /* micは固定にしたいので、flex: 0 0 40px;と指定している。 */
+        flex: 0 0 40px;
         width: 40px;
         margin-left: 14px;
         display: flex;
@@ -125,6 +128,8 @@
         background: rgba(0, 0, 0, 0.5);
         border-radius: 5px;
       }
+
+      /* ホバー時にツールチップの非表示を解除 */
       .tooltip:hover .tooltip-text {
         opacity: 1;
         visibility: visible;
@@ -168,13 +173,12 @@
       nav {
         position: fixed;
         top: 70px;
-        z-index: 999;
+        z-index: 2;
         width: 240px;
         height: 100%;
       }
       nav li {
         display: flex;
-        align-items: center;
         width: 204px;
         margin-left: 10px;
         padding: 8px 12px;
@@ -205,17 +209,18 @@
         background: white;
       }
       .tag_list {
-        display: flex;
-        white-space: nowrap;
-        overflow-x: auto;
+        display: flex; /* 要素を横並びにする */
+        white-space: nowrap; /* 要素を折り返さずに横並びにする */
+        overflow-x: auto; /* 横方向のスクロールを有効にする */
 
+        /* スクロールバーを消す */
         overflow-y: scroll;
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
       .tag {
-        flex: 0 0 auto;
-        margin-right: 10px;
+        flex: 0 0 auto; /* 要素のサイズを固定する */
+        margin-right: 10px; /* タグ間の間隔を設定する */
         background: #f2f2f2;
         font-weight: 500;
         font-size: 14px;
@@ -243,7 +248,6 @@
       }
       .article img {
         width: 100%;
-        border-radius: 10px;
       }
       .description {
         display: flex;
@@ -267,11 +271,9 @@
       }
       .user {
         font-size: 14px;
-        color: gray;
       }
       .statistics {
         font-size: 14px;
-        color: gray;
       }
       @media (width < 648px) {
         .articles {
@@ -321,8 +323,8 @@
           font-size: 10px;
           width: 60px;
           align-items: center;
-          padding: 10px;
-          margin-bottom: 10px;
+          padding: 0;
+          margin-bottom: 15px;
         }
         nav li div {
           overflow: hidden;
@@ -348,8 +350,8 @@
           font-size: 10px;
           width: 60px;
           align-items: center;
-          padding: 10px;
-          margin-bottom: 10px;
+          padding: 0;
+          margin-bottom: 15px;
         }
         nav li div {
           overflow: hidden;
@@ -372,241 +374,212 @@
   </head>
   <body>
     <header class="header_container">
-      <img class="logo" src="Images/youtube (1).svg" />
+      <img class="logo" src="YouTube_Logo_2017.svg.webp" />
       <div class="search_container">
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="検索" />
 
         <button class="search_button">
           <div class="tooltip-text">検索</div>
-          <img src="Images/search-outline.svg" />
+          <img src="search-outline.svg" />
         </button>
 
         <div class="mic_icon">
           <div class="tooltip-text">音声で検索</div>
-          <img src="Images/mic.svg" />
+          <img src="mic.svg" />
         </div>
       </div>
       <div class="right_container">
         <div class="video">
           <div class="tooltip-text">作成</div>
-          <img src="Images/recordingicon.svg" />
+          <img src="movie.svg" />
         </div>
 
         <div class="bell">
           <div class="tooltip-text">通知</div>
-          <img src="Images/222.svg" />
+          <img src="bell.svg" />
         </div>
 
-        <img class="profile" src="Images/1.jpg" />
+        <img class="profile" src="profile.jpg" />
       </div>
     </header>
     <nav>
       <ul>
         <li>
-          <img src="Images/Home-page.svg" />
-          <div>Home</div>
+          <img src="menu_home.svg" />
+          <div>ホーム</div>
         </li>
         <li>
-          <img src="Images/Shorts.svg" />
-          <div>Shorts</div>
+          <img src="menu_short.svg" />
+          <div>ショート</div>
         </li>
         <li>
-          <img src="Images/Subscriptions.svg" />
-          <div>Subscriptions</div>
-        </li>
-        <hr />
-        <li>
-          <div><strong>You</strong></div>
-          <img src="Images/You.svg" />
+          <img src="menu_channels.svg" />
+          <div>登録チャンネル</div>
         </li>
         <li>
-          <img src="Images/Music.svg" />
-          <div>Music</div>
-        </li>
-        <li>
-          <img src="Images/History.svg" />
-          <div>History</div>
-        </li>
-        <li>
-          <img src="Images/Your-videos.svg" />
-          <div>Your videos</div>
-        </li>
-        <li>
-          <img src="Images/Watch-later.svg" />
-          <div>Watch later</div>
-        </li>
-        <li>
-          <img src="Images/Show-more.svg" />
-          <div>Show more</div>
-        </li>
-        <hr />
-        <li>
-          <div><strong>Subscriptions</strong></div>
-        </li>
-        <hr />
-        <li>
-          <img src="Images/Trending.svg" />
-          <div>Trending</div>
-        </li>
-        <li>
-          <img src="Images/Live.svg" />
-          <div>Live</div>
-        </li>
-        <li>
-          <img src="Images/Gaming.svg" />
-          <div>Gaming</div>
-        </li>
-        <li>
-          <img src="Images/News.svg" />
-          <div>News</div>
-        </li>
-        <li>
-          <img src="Images/Show-more.svg" />
-          <div>Show more</div>
+          <img src="menu_music.svg" />
+          <div>Youtube Music</div>
         </li>
       </ul>
     </nav>
     <div class="tag_container">
       <div class="tag_list">
-        <div class="tag">All</div>
-        <div class="tag">Mix</div>
-        <div class="tag">Live</div>
-        <div class="tag">Trending</div>
-        <div class="tag">Games</div>
-        <div class="tag">News</div>
-        <div class="tag">Learning</div>
-        <div class="tag">Fitness</div>
-        <div class="tag">Design</div>
+        <div class="tag">音楽</div>
+        <div class="tag">野生生物</div>
+        <div class="tag">ミックス</div>
+        <div class="tag">ニュース</div>
+        <div class="tag">ライブ</div>
+        <div class="tag">ペット</div>
+        <div class="tag">最近アップロードされた動画</div>
+        <div class="tag">視聴済み</div>
+        <div class="tag">新しい動画の発見</div>
       </div>
     </div>
     <main>
       <div class="articles">
         <div class="article">
-          <img src="Images/nyc.webp" />
+          <img src="jeniffer-top.jpg" />
           <div class="description">
-            <img src="Images/nyc1.jpg" />
-            <div class="item_text">
+            <img src="avatar.jpg" />
+            <div class="text_container">
               <div class="title">
-                New York City walk - Central Park, 5th Avenue, Bryant Park, 42nd
-                Street, NYC, Manhattan 4K 60fps
+                4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY (Confusing
+                English Words)
               </div>
-              <div class="user">Tony Walker</div>
-              <div class="statistics">208K views - 2 weeks ago</div>
+              <div class="user">JForrest English</div>
+              <div class="statistics">7.5万 回視聴</div>
             </div>
           </div>
         </div>
         <div class="article">
-          <img src="Images/Serenity.webp" />
+          <img src="jeniffer-top.jpg" />
           <div class="description">
-            <img src="Images/Serenity1.jpg" />
-            <div class="item_text">
-              <div class="title">
-                Serenity 🍀 Lofi Keep You Safe 🌴 Lofi Hip Hop Radio - Deep
-                Focus [ Calm - Relax - Study ]
-              </div>
-              <div class="user">LOFI KEEP YOU SAFE</div>
-              <div class="statistics">511K views - 1 year ago</div>
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
             </div>
           </div>
         </div>
         <div class="article">
-          <img src="Images/live.webp" />
+          <img src="jeniffer-top.jpg" />
           <div class="description">
-            <img src="Images/live1.jpg" />
-            <div class="item_text">
-              <div class="title">
-                WEDNESDAY MORNING JAZZ: Warm Jazz Music with Cozy Coffee Shop
-                Ambience ☕ Relaxing Instrumental Music
-              </div>
-              <div class="user">Cafe Music BGM channel</div>
-              <div class="statistics">956K views - 2 months ago</div>
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
             </div>
           </div>
         </div>
         <div class="article">
-          <img src="Images/interstellar.webp" />
+          <img src="jeniffer-top.jpg" />
           <div class="description">
-            <img src="Images/interstellar1.jpg" />
-            <div class="item_text">
-              <div class="title">
-                interstellar but it sounds like snowfall (slowed) (1 hour loop)
-              </div>
-              <div class="user">pandora</div>
-              <div class="statistics">4.5M views - 11 months ago</div>
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
             </div>
           </div>
         </div>
         <div class="article">
-          <img src="Images/capitans.webp" />
+          <img src="jeniffer-top.jpg" />
           <div class="description">
-            <img src="Images/capitants2.jpg" />
-            <div class="item_text">
-              <div class="title">
-                Captains of the World | Official Trailer | Netflix
-              </div>
-              <div class="user">Netflix</div>
-              <div class="statistics">1.9M views - 1 months ago</div>
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
             </div>
           </div>
         </div>
         <div class="article">
-          <img src="Images/space.webp" />
+          <img src="jeniffer-top.jpg" />
           <div class="description">
-            <img src="Images/google-logo.jpg" />
-            <div class="item_text">
-              <div class="title">
-                Google — 25 Years in Search: The Most Searched
-              </div>
-              <div class="user">Google</div>
-              <div class="statistics">351M views - 2 months ago</div>
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
             </div>
           </div>
         </div>
         <div class="article">
-          <img src="Images/231.jpg" />
+          <img src="jeniffer-top.jpg" />
           <div class="description">
-            <img src="Images/123.jpg" />
-            <div class="item_text">
-              <div class="title">
-                Los Angeles in 8K ULTRA HD HDR - City of Angels (60 FPS)
-              </div>
-              <div class="user">8K Paradise</div>
-              <div class="statistics">3M Followrs</div>
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
             </div>
           </div>
         </div>
         <div class="article">
-          <img src="Images/enes.webp" />
+          <img src="jeniffer-top.jpg" />
           <div class="description">
-            <img src="Images/enes1.jpg" />
-            <div class="item_text">
-              <div class="title">
-                TOURING A $30,000,000 Tropical Mansion with a Jungle Backyard!
-              </div>
-              <div class="user">Enes Yilmazer</div>
-              <div class="statistics">1.2M views - 2 months ago</div>
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
             </div>
           </div>
         </div>
         <div class="article">
-          <img src="Images/e.webp" />
+          <img src="jeniffer-top.jpg" />
           <div class="description">
-            <img src="Images/e1.jpg" />
-            <div class="item_text">
-              <div class="title">West England</div>
-              <div class="user">Rick Steve's Europe</div>
-              <div class="statistics">17M views - 6 years ago</div>
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
             </div>
           </div>
         </div>
         <div class="article">
-          <img src="Images/alaska.webp" />
+          <img src="jeniffer-top.jpg" />
           <div class="description">
-            <img src="Images/alaska1.jpg" />
-            <div class="item_text">
-              <div class="title">Alaska in 8K 60p HDR (Dolby Vision)</div>
-              <div class="user">Jacob + Katie Schwarz</div>
-              <div class="statistics">10M views - 1 year ago</div>
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
             </div>
           </div>
         </div>
