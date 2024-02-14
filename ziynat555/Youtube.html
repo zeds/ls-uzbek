@@ -151,6 +151,39 @@
         background: #f2f3f3;
         border-radius: 8px;
       }
+      .tag_container {
+        position: fixed;
+        z-index: 1;
+        top: 56px;
+        height: 56px;
+        width: 100%;
+        padding-left: 240px;
+        background: white;
+      }
+      .tag_list {
+        display: flex;
+        white-space: nowrap;
+        overflow-x: auto;
+
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .tag {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        background: #f2f2f2;
+        font-weight: 500;
+        font-size: 14px;
+        color: #0f0f0f;
+        margin: 12px 12px 12px 0;
+        padding: 5px 12px;
+        border-radius: 8px;
+      }
+      .tag:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
       .article_container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -159,7 +192,7 @@
         margin-left: 10px;
       }
       .article {
-        background: pink;
+        background: white;
       }
       .article img {
         width: 100%;
@@ -167,7 +200,7 @@
       }
       .item {
         display: flex;
-        background: red;
+        background: skyblue;
       }
       .item img {
         width: 32px;
@@ -193,29 +226,14 @@
       .statistics {
         font-size: 14px;
       }
-      @media (max-width: 1536px) {
-        .article_container {
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        }
-      }
-      @media (max-width: 1280px) {
-        .article_container {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-      }
-      @media (max-width: 1024px) {
-        .article_container {
+      @media (1280px <= width < 1536px) {
+        .articles {
           grid-template-columns: 1fr 1fr 1fr;
         }
       }
-      @media (max-width: 768px) {
-        .article_container {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      @media (max-width: 648px) {
-        .article_container {
-          grid-template-columns: 1fr;
+      @media (1536px <= width) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
         }
       }
     </style>
@@ -259,6 +277,19 @@
             <li><img src="menu_show-more.svg" />Show more</li>
           </ul>
         </nav>
+        <div class="tag_container">
+          <div class="tag_list">
+            <div class="tag">All</div>
+            <div class="tag">Gaming</div>
+            <div class="tag">Mixes</div>
+            <div class="tag">News</div>
+            <div class="tag">Podcast</div>
+            <div class="tag">Live</div>
+            <div class="tag">Beauty</div>
+            <div class="tag">Manga</div>
+            <div class="tag">Landscapes</div>
+          </div>
+        </div>
         <div class="article_container">
           <div class="article">
             <img src="cat.jpg" />
