@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        position: relative;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: lightgray;
+      }
+      header {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
+        background: skyblue;
+      }
+      nav {
+        position: fixed;
+        top: 70px;
+        z-index: 2;
+        width: 240px;
+        height: 100%;
+      }
+      nav li {
+        display: flex;
+        margin-left: 10px;
+        padding: 5px 12px;
+        gap: 12px;
+      }
+      nav li:hover {
+        background: gray;
+        cursor: pointer;
+      }
+      main {
+        position: absolute;
+      }
+      .tag_container {
+        position: fixed;
+        z-index: 1;
+        top: 56px;
+        width: 100%;
+        padding-left: 240px;
+        background: white;
+        padding: 10px 0 10px 240px;
+      }
+      .tag_list {
+        display: flex; /* 要素を横並びにする */
+        white-space: nowrap; /* 要素を折り返さずに横並びにする */
+        overflow-x: auto; /* 横方向のスクロールを有効にする */
+
+        /* スクロールバーを消す */
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .tag {
+        flex: 0 0 auto; /* 要素のサイズを固定する */
+        margin-right: 10px; /* タグ間の間隔を設定する */
+        background: lightgray;
+        padding: 10px;
+      }
+      .tag:hover {
+        cursor: pointer;
+        background: gray;
+      }
+      .articles {
+        padding-left: 240px;
+        padding-top: 120px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+      }
+      .article {
+        width: 100%;
+        background: orange;
+        aspect-ratio: 3/2;
+        padding: 20px;
+      }
+      .article img {
+        width: 100%;
+      }
+      .description {
+        display: flex;
+        gap: 10px;
+      }
+      .description img {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+      }
+      @media (max-width: 1240px) {
+      }
+      @media (max-width: 940px) {
+        ul li {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          height: 60px;
+          color: #070606;
+          font-size: 14px;
+          padding: 0 10px;
+          gap: 10px;
+        }
+        .tag_list {
+          width: 75%;
+        }
+        ul li img {
+          height: 24px;
+          width: 24px;
+        }
+        nav {
+          width: 100px;
+        }
+        .txt {
+          font-size: 10px;
+          font-weight: 600;
+        }
+      }
+      @media (max-width: 768px) {
+        nav {
+          width: 40px;
+        }
+        .txt {
+          display: none;
+        }
+        .tag_list {
+          width: 50%;
+        }
+      }
+      nav {
+        background-color: blueviolet;
+      }
+      .tag {
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>ヘッダー</header>
+    <nav>
+      <ul>
+        <li>
+          <img src="menu_home.svg" />
+          <div class="txt">ホーム</div>
+        </li>
+        <li>
+          <img src="menu_short.svg" />
+          <div class="txt">ショート</div>
+        </li>
+        <li>
+          <img src="menu_channels.svg" />
+          <div class="txt">登録チャンネル</div>
+        </li>
+        <li>
+          <img src="menu_music.svg" />
+          <div class="txt">Youtube Music</div>
+        </li>
+      </ul>
+    </nav>
+    <div class="tag_container">
+      <div class="tag_list">
+        <div class="tag">音楽</div>
+        <div class="tag">野生生物</div>
+        <div class="tag">ミックス</div>
+        <div class="tag">ニュース</div>
+        <div class="tag">ライブ</div>
+        <div class="tag">ペット</div>
+        <div class="tag">最近アップロードされた動画</div>
+        <div class="tag">視聴済み</div>
+        <div class="tag">新しい動画の発見</div>
+      </div>
+    </div>
+    <main>
+      <div class="articles">
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="jeniffer-top.jpg" />
+          <div class="description">
+            <img src="avatar.jpg" />
+            <div class="text_container">
+              <div>title</div>
+              <div>author</div>
+              <div>time</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
