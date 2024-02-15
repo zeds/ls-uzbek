@@ -9,193 +9,240 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <title>Youtube</title>
-    <link rel="stylesheet" href="Youtube.css" />
-    <link
-      rel="shortcut icon"
-      href="YouTube_Logo_2017.svg.png"
-      type="image/x-icon"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <title>YouTube</title>
+    <link rel="stylesheet" href="Youtube copy.css" />
   </head>
   <body>
-    <div class="container">
-      <header>
-        <div class="left-container">
-          <div class="point">
-            <img src="akar-icons--three-line-horizontal.svg" />
-          </div>
-          <div class="logo">
-            <img src="YouTube_Logo_2017.svg.png" />
+    <header class="header_container">
+      <div class="left_container">
+        <div class="line">
+          <img src="akar-icons--three-line-horizontal.svg" />
+        </div>
+
+        <img class="logo" src="YouTube_Logo_2017.svg.png" />
+      </div>
+
+      <div class="search_container">
+        <input type="text" placeholder="Search" />
+
+        <button class="search_button">
+          <div class="tooltip-text">Search</div>
+          <img src="search-outline.svg" />
+        </button>
+
+        <div class="mic_icon">
+          <div class="tooltip-text">Search with your voice</div>
+          <img src="baseline-mic (1).svg" />
+        </div>
+      </div>
+      <div class="right_container">
+        <div class="movie">
+          <div class="tooltip-text">Create</div>
+          <img src="movie.svg" />
+        </div>
+
+        <div class="bell">
+          <div class="tooltip-text">Notifications</div>
+          <img src="bell (1).svg" />
+        </div>
+
+        <img class="profile" src="Asila.jpg" />
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <img src="home-sharp.svg" />
+          <div>Home</div>
+        </li>
+        <li>
+          <img src="shorts.svg" />
+          <div>Shorts</div>
+        </li>
+        <li>
+          <img src="subsri.svg" />
+          <div>Subscriptions</div>
+        </li>
+        <li>
+          <img src="history.svg" />
+          <div>History</div>
+        </li>
+        <li>
+          <img src="bell (1).svg" />
+          <div>Trending</div>
+        </li>
+      </ul>
+    </nav>
+    <div class="tag_container">
+      <div class="tag_list">
+        <div class="tag">All</div>
+        <div class="tag">Mixes</div>
+        <div class="tag">Music</div>
+        <div class="tag">Genshin Impact</div>
+        <div class="tag">Playlists</div>
+        <div class="tag">Soundtracks</div>
+        <div class="tag">Chill-out Music</div>
+        <div class="tag">Japanese Music</div>
+        <div class="tag">Indie Music</div>
+        <div class="tag">Live</div>
+      </div>
+    </div>
+    <main>
+      <div class="article_container">
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
+            </div>
           </div>
         </div>
-        <div class="search-container">
-          <input type="text" placeholder="Search" />
-          <button class="search-button">
-            <img src="search-outline.svg" />
-            <div class="tooltip-text">検索</div>
-          </button>
-          <div class="mic-icon">
-            <img src="baseline-mic (1).svg" />
-            <div class="tooltip-text">音声で検索</div>
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
+            </div>
           </div>
         </div>
-        <div class="right-container">
-          <div class="movie">
-            <img src="movie.svg" />
-            <div class="tooltip-text">作成</div>
-          </div>
-          <div class="bell">
-            <img src="bell (1).svg" />
-            <div class="tooltip-text">通知</div>
-          </div>
-          <div class="profile">
-            <img src="anhor.jpg" />
-            <div class="tooltip-text">Profile</div>
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
+            </div>
           </div>
         </div>
-      </header>
-      <div class="body-container">
-        <nav class="side-menu">
-          <div class="item">
-            <img src="material-symbols-light--home-outline (1).svg" />
-            <div class="item_text">Home</div>
-          </div>
-          <div class="item">
-            <img src="shorts.svg" />
-            <div class="item_text">Short</div>
-          </div>
-          <div class="item">
-            <img src="subsri.svg" />
-            <div class="item_text">Subscribe</div>
-          </div>
-          <hr />
-          <div class="item">
-            <img src="history.svg" />
-            <div class="item_text">History</div>
-          </div>
-          <div class="item">
-            <img src="history.svg" />
-            <div class="item_text">Watch later</div>
-          </div>
-        </nav>
-        <div class="article-frame">
-          <div>
-            <ul>
-              <li>すべて</li>
-              <li>ミックス</li>
-              <li>ライブ</li>
-              <li>ゲーム</li>
-              <li>ニュース</li>
-              <li>最近アップロード</li>
-              <li>視聴済み</li>
-            </ul>
-          </div>
-          <div class="article-container">
-            <div class="article">
-              <img src="hq720 (2).webp" />
-              <div class="article-contents">
-                <img src="Asila.jpg" />
-                <div class="article_text">
-                  <div class="title">
-                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
-                    (Confusing English Words)
-                  </div>
-                  <div class="author">JForrest English</div>
-                  <div class="statistics">714 тыс. подписчиков</div>
-                </div>
-              </div>
+
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
             </div>
-            <div class="article">
-              <img src="hq720 (3).webp" />
-              <div class="article-contents">
-                <img src="Asila.jpg" />
-                <div class="article_text">
-                  <div class="title">
-                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
-                    (Confusing English Words)
-                  </div>
-                  <div class="author">JForrest English</div>
-                  <div class="statistics">714 тыс. подписчиков</div>
-                </div>
-              </div>
+          </div>
+        </div>
+
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
             </div>
-            <div class="article">
-              <img src="hq720 (4).webp" />
-              <div class="article-contents">
-                <img src="Asila.jpg" />
-                <div class="article_text">
-                  <div class="title">
-                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
-                    (Confusing English Words)
-                  </div>
-                  <div class="author">JForrest English</div>
-                  <div class="statistics">714 тыс. подписчиков</div>
-                </div>
-              </div>
+          </div>
+        </div>
+
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
             </div>
-            <div class="article">
-              <img src="hq720 (2).webp" />
-              <div class="article-contents">
-                <img src="Asila.jpg" />
-                <div class="article_text">
-                  <div class="title">
-                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
-                    (Confusing English Words)
-                  </div>
-                  <div class="author">JForrest English</div>
-                  <div class="statistics">714 тыс. подписчиков</div>
-                </div>
-              </div>
+          </div>
+        </div>
+
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
             </div>
-            <div class="article">
-              <img src="hq720 (3).webp" />
-              <div class="article-contents">
-                <img src="Asila.jpg" />
-                <div class="article_text">
-                  <div class="title">
-                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
-                    (Confusing English Words)
-                  </div>
-                  <div class="author">JForrest English</div>
-                  <div class="statistics">714 тыс. подписчиков</div>
-                </div>
-              </div>
+          </div>
+        </div>
+
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
             </div>
-            <div class="article">
-              <img src="hq720 (2).webp" />
-              <div class="article-contents">
-                <img src="Asila.jpg" />
-                <div class="article_text">
-                  <div class="title">
-                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
-                    (Confusing English Words)
-                  </div>
-                  <div class="author">JForrest English</div>
-                  <div class="statistics">714 тыс. подписчиков</div>
-                </div>
-              </div>
+          </div>
+        </div>
+
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
             </div>
-            <div class="article">
-              <img src="hq720 (4).webp" />
-              <div class="article-contents">
-                <img src="Asila.jpg" />
-                <div class="article_text">
-                  <div class="title">
-                    4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
-                    (Confusing English Words)
-                  </div>
-                  <div class="author">JForrest English</div>
-                  <div class="statistics">714 тыс. подписчиков</div>
-                </div>
-              </div>
+          </div>
+        </div>
+
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article_video">
+          <img src="hqdefault.jpg" />
+          <div class="description">
+            <img src="Asila.jpg" />
+            <div class="text_container">
+              <div class="title">One litre of Tears</div>
+              <div class="author">Japanese dramas</div>
+              <div class="statistics">38K views 1 month ago</div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
