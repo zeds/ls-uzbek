@@ -340,6 +340,7 @@ body {
 }
 
 .time {
+    display: none;
     border-radius: 8px;
     padding: 5px;
     background: #00000078;

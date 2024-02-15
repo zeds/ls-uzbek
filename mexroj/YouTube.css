@@ -20,6 +20,7 @@ body {
   background: lightgray;
 }
 header {
+  /* background-color: chartreuse; */
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -164,17 +165,18 @@ header .logo {
   background: gray;
 }
 
-nav {
+.nav {
+  /* background-color: coral; */
   position: fixed;
-  top: 70px;
+  top: 56px;
   z-index: 2;
   width: 240px;
   height: 100%;
 }
-nav li {
+.nav li {
   display: flex;
   width: 204px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   padding: 8px 12px;
   gap: 24px;
   font-weight: 500;
@@ -182,31 +184,34 @@ nav li {
   color: #0f0f0f;
   border-radius: 10px;
 }
-nav li img {
+.nav li img {
   width: 24px;
   height: 24px;
 }
-nav li:hover {
+.nav li:hover {
   background: #f2f2f2;
   cursor: pointer;
 }
-main {
+.main {
+  /* background-color: blue; */
   position: absolute;
+  padding-left: 240px;
+  top: 56px;
 }
 .tag_container {
   position: fixed;
   z-index: 1;
   top: 56px;
   height: 56px;
+  /* padding-left: 240px; */
   width: 100%;
-  padding-left: 240px;
   background: white;
 }
 .tag_list {
   display: flex; /* 要素を横並びにする */
   white-space: nowrap; /* 要素を折り返さずに横並びにする */
   overflow-x: auto; /* 横方向のスクロールを有効にする */
-
+  /* background-color: green; */
   /* スクロールバーを消す */
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -228,20 +233,22 @@ main {
   background: #e5e5e5;
 }
 .articles {
-  padding-left: 240px;
-  padding-right: 20px;
-  padding-top: 120px;
   height: 100%;
+  padding-top: 60px;
+  gap: 10px;
+  /* background-color: aqua; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
 }
 .article {
+  /* background-color: red; */
+  position: relative;
   width: 100%;
   aspect-ratio: 3/2;
 }
 .article img {
   width: 100%;
+  border-radius: 5%;
 }
 .description {
   display: flex;
@@ -273,15 +280,18 @@ main {
   .articles {
     grid-template-columns: 1fr;
   }
-  nav {
+  .main {
+    padding: 0;
+  }
+  .nav {
     display: none;
   }
-  .articles {
+  /* .articles {
     padding-left: 20px;
   }
   .tag_container {
     padding-left: 20px;
-  }
+  } */
   .search_container {
     margin: 0 2rem 0 1rem;
   }
@@ -290,37 +300,48 @@ main {
   .articles {
     grid-template-columns: 1fr 1fr;
   }
-  nav {
-    display: none;
+  .main {
+    padding-left: 72px;
   }
-  .articles {
-    padding-left: 20px;
+  .nav {
+    width: 72px;
   }
-  .tag_container {
-    padding-left: 20px;
-  }
-}
-@media (768px <= width < 1024px) {
-  .articles {
-    grid-template-columns: 1fr 1fr;
-  }
-  .articles {
-    padding-left: 100px;
-  }
-  .tag_container {
-    padding-left: 100px;
-  }
-
-  nav li {
+  .nav li {
     flex-direction: column;
     gap: 5px;
     font-size: 10px;
     width: 60px;
     align-items: center;
-    padding: 0;
-    margin-bottom: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
   }
-  nav li div {
+  .nav li div {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+}
+@media (768px <= width < 1024px) {
+  .main {
+    padding-left: 72px;
+  }
+  .articles {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nav {
+    width: 72px;
+  }
+  .nav li {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 10px;
+    width: 60px;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .nav li div {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -331,35 +352,29 @@ main {
   .articles {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .articles {
-    padding-left: 100px;
+  .main {
+    padding-left: 72px;
   }
-  .tag_container {
-    padding-left: 100px;
+  .nav {
+    width: 72px;
   }
-
-  nav li {
+  .nav li {
     flex-direction: column;
     gap: 5px;
     font-size: 10px;
     width: 60px;
     align-items: center;
-    padding: 0;
-    margin-bottom: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
   }
-  nav li div {
+  .nav li div {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
   }
 }
-@media (1280px <= width < 1536px) {
-  .articles {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-@media (1536px <= width) {
+@media (1280px <= width) {
   .articles {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
