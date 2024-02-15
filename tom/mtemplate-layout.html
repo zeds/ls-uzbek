@@ -7,8 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <title>Document</title>
     <style>
       * {
@@ -99,7 +98,7 @@
       .article {
         width: 100%;
         background: orange;
-        /* aspect-ratio: 3/2; */
+        aspect-ratio: 3/2;
         padding: 20px;
       }
       .article img {
@@ -114,6 +113,51 @@
         height: 36px;
         border-radius: 18px;
       }
+      @media (max-width: 1240px) {
+      }
+      @media (max-width: 940px) {
+        ul li {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          height: 60px;
+          color: #070606;
+          font-size: 14px;
+          padding: 0 10px;
+          gap: 10px;
+        }
+        .tag_list {
+          width: 75%;
+        }
+        ul li img {
+          height: 24px;
+          width: 24px;
+        }
+        nav {
+          width: 100px;
+        }
+        .txt {
+          font-size: 10px;
+          font-weight: 600;
+        }
+      }
+      @media (max-width: 768px) {
+        nav {
+          width: 40px;
+        }
+        .txt {
+          display: none;
+        }
+        .tag_list {
+          width: 50%;
+        }
+      }
+      nav {
+        background-color: blueviolet;
+      }
+      .tag {
+        border-radius: 10px;
+      }
     </style>
   </head>
   <body>
@@ -122,19 +166,19 @@
       <ul>
         <li>
           <img src="menu_home.svg" />
-          <div>ホーム</div>
+          <div class="txt">ホーム</div>
         </li>
         <li>
           <img src="menu_short.svg" />
-          <div>ショート</div>
+          <div class="txt">ショート</div>
         </li>
         <li>
           <img src="menu_channels.svg" />
-          <div>登録チャンネル</div>
+          <div class="txt">登録チャンネル</div>
         </li>
         <li>
           <img src="menu_music.svg" />
-          <div>Youtube Music</div>
+          <div class="txt">Youtube Music</div>
         </li>
       </ul>
     </nav>
