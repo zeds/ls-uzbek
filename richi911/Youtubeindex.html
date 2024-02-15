@@ -1,616 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <title>Youtube</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      li {
-        list-style: none;
-      }
-      a {
-        text-decoration: none;
-      }
-      body {
-        font-family: "Roboto", sans-serif;
-        font-size: 20px;
-        position: relative;
-      }
-      .container {
-        width: 100%;
-        height: 100vh;
-        background: lightgray;
-      }
-      header {
-        position: fixed;
-        z-index: 1;
-        width: 100%;
-        height: 56px;
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Youtube</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			li {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+			body {
+				font-family: "Roboto", sans-serif;
+				font-size: 20px;
+				position: relative;
+			}
+			.container {
+				width: 100%;
+				height: 100vh;
+				background: lightgray;
+			}
+			header {
+				position: fixed;
+				z-index: 2;
+				width: 100%;
+				height: 56px;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
 
-        padding-left: 20px;
-        background: white;
-      }
-      header .logo {
-        height: 20px;
-      }
-      .search_container {
-        display: flex;
-        height: 40px;
-        flex-grow: 1;
-        margin: 0 10px 0 10px;
-        max-width: 666px;
-      }
-      .search_container input {
-        width: 100%;
-        height: 100%;
-        border: solid 1px #d3d3d3;
-        border-radius: 20px 0 0 20px;
-        padding-left: 17px;
-        font-size: 16px;
-      }
-      .search_button {
-        width: 64px;
-        border: solid 1px #d3d3d3;
-        border-left: none;
-        border-radius: 0 20px 20px 0;
-        background: #f8f8f8;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-      }
-      .search_button:hover .tooltip-text {
-        opacity: 1;
-        visibility: visible;
-      }
-      .search_button:hover {
-        background: #d0d0d0;
-      }
-      .mic_icon {
-        aspect-ratio: 1/1;
-        width: 40px;
-        margin-left: 14px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        background: #f2f2f2;
-        position: relative;
-      }
-      .mic_icon:hover .tooltip-text {
-        visibility: visible;
-      }
-      .mic_icon:hover {
-        background: #d0d0d0;
-      }
-      .right_container {
-        height: 100%;
-        width: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin-right: 20px;
-      }
-      .profile {
-        border-radius: 20px;
-        height: 32px;
-      }
-      .tooltip-text {
-        visibility: hidden;
-        position: absolute;
-        bottom: -45px;
+				padding-left: 20px;
+				background: white;
+			}
+			header .logo {
+				height: 20px;
+			}
+			.search_container {
+				display: flex;
+				height: 40px;
+				flex-grow: 1;
+				margin: 0 10px 0 10px;
+				max-width: 666px;
+			}
+			.search_container input {
+				width: 100%;
+				height: 100%;
+				border: solid 1px #d3d3d3;
+				border-radius: 20px 0 0 20px;
+				padding-left: 17px;
+				font-size: 16px;
+			}
+			.search_button {
+				width: 64px;
+				border: solid 1px #d3d3d3;
+				border-left: none;
+				border-radius: 0 20px 20px 0;
+				background: #f8f8f8;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+			}
+			.search_button:hover .tooltip-text {
+				opacity: 1;
+				visibility: visible;
+			}
+			.search_button:hover {
+				background: #d0d0d0;
+			}
+			.mic_icon {
+				aspect-ratio: 1/1;
+				width: 40px;
+				margin-left: 14px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 20px;
+				background: #f2f2f2;
+				position: relative;
+			}
+			.mic_icon:hover .tooltip-text {
+				visibility: visible;
+			}
+			.mic_icon:hover {
+				background: #d0d0d0;
+			}
+			.right_container {
+				height: 100%;
+				width: 150px;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				margin-right: 20px;
+			}
+			.profile {
+				border-radius: 20px;
+				height: 32px;
+			}
+			.tooltip-text {
+				visibility: hidden;
+				position: absolute;
+				bottom: -45px;
 
-        display: inline-block;
-        white-space: nowrap;
-        padding: 10px;
+				display: inline-block;
+				white-space: nowrap;
+				padding: 10px;
 
-        font-size: 12px;
-        color: white;
+				font-size: 12px;
+				color: white;
 
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-      }
-      .tooltip:hover .tooltip-text {
-        opacity: 1;
-        visibility: visible;
-      }
-      .tooltip:hover {
-        background: gray;
-      }
-      .video {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        position: relative;
-      }
-      .video:hover .tooltip-text {
-        opacity: 1;
-        visibility: visible;
-      }
-      .video:hover {
-        background: gray;
-      }
-      .bell {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        position: relative;
-      }
-      .bell:hover .tooltip-text {
-        opacity: 1;
-        visibility: visible;
-      }
-      .bell:hover {
-        background: gray;
-      }
+				background: rgba(0, 0, 0, 0.5);
+				border-radius: 5px;
+			}
+			.tooltip:hover .tooltip-text {
+				opacity: 1;
+				visibility: visible;
+			}
+			.tooltip:hover {
+				background: gray;
+			}
+			.video {
+				width: 40px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 20px;
+				position: relative;
+			}
+			.video:hover .tooltip-text {
+				opacity: 1;
+				visibility: visible;
+			}
+			.video:hover {
+				background: gray;
+			}
+			.bell {
+				width: 40px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 20px;
+				position: relative;
+			}
+			.bell:hover .tooltip-text {
+				opacity: 1;
+				visibility: visible;
+			}
+			.bell:hover {
+				background: gray;
+			}
 
-      nav {
-        position: fixed;
-        top: 70px;
-        z-index: 999;
-        width: 240px;
-        height: 100%;
-      }
-      nav li {
-        display: flex;
-        align-items: center;
-        width: 204px;
-        margin-left: 10px;
-        padding: 8px 12px;
-        gap: 24px;
-        font-weight: 500;
-        font-size: 14px;
-        color: #0f0f0f;
-        border-radius: 10px;
-      }
-      nav li img {
-        width: 24px;
-        height: 24px;
-      }
-      nav li:hover {
-        background: #f2f2f2;
-        cursor: pointer;
-      }
-      main {
-        position: absolute;
-      }
-      .tag_container {
-        position: fixed;
-        z-index: 1;
-        top: 56px;
-        height: 56px;
-        width: 100%;
-        padding-left: 240px;
-        background: white;
-      }
-      .tag_list {
-        display: flex;
-        white-space: nowrap;
-        overflow-x: auto;
+			nav {
+				position: fixed;
+				z-index: 2;
+				top: 70px;
+				width: 240px;
+				height: 100%;
+			}
+			nav li {
+				display: flex;
+				align-items: center;
+				width: 204px;
+				margin-left: 10px;
+				padding: 8px 12px;
+				gap: 24px;
+				font-weight: 500;
+				font-size: 14px;
+				color: #0f0f0f;
+				border-radius: 10px;
+			}
+			nav li img {
+				width: 24px;
+				height: 24px;
+			}
+			nav li:hover {
+				background: #f2f2f2;
+				cursor: pointer;
+			}
+			main {
+				position: absolute;
+			}
+			.tag_container {
+				position: fixed;
+				z-index: 1;
+				top: 56px;
+				height: 56px;
+				width: 100%;
+				padding-left: 240px;
+				background: white;
+			}
+			.tag_list {
+				display: flex;
+				white-space: nowrap;
+				overflow-x: auto;
 
-        overflow-y: scroll;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      .tag {
-        flex: 0 0 auto;
-        margin-right: 10px;
-        background: #f2f2f2;
-        font-weight: 500;
-        font-size: 14px;
-        color: #0f0f0f;
-        margin: 12px 12px 12px 0;
-        padding: 5px 12px;
-        border-radius: 8px;
-      }
-      .tag:hover {
-        cursor: pointer;
-        background: #e5e5e5;
-      }
-      .articles {
-        padding-left: 240px;
-        padding-right: 20px;
-        padding-top: 120px;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
-      }
-      .article {
-        width: 100%;
-        aspect-ratio: 3/2;
-      }
-      .article img {
-        width: 100%;
-        border-radius: 10px;
-      }
-      .description {
-        display: flex;
-        gap: 10px;
-      }
-      .description img {
-        width: 36px;
-        height: 36px;
-        border-radius: 18px;
-      }
-      .title {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+				overflow-y: scroll;
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+			}
+			.tag {
+				flex: 0 0 auto;
+				margin-right: 10px;
+				background: #f2f2f2;
+				font-weight: 500;
+				font-size: 14px;
+				color: #0f0f0f;
+				margin: 12px 12px 12px 0;
+				padding: 5px 12px;
+				border-radius: 8px;
+			}
+			.tag:hover {
+				cursor: pointer;
+				background: #e5e5e5;
+			}
+			.articles {
+				padding-left: 240px;
+				padding-right: 20px;
+				padding-top: 120px;
+				height: 100%;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 10px;
+			}
+			.article {
+				width: 100%;
+				aspect-ratio: 3/2;
+			}
+			.article img {
+				width: 100%;
+				border-radius: 10px;
+			}
+			.description {
+				display: flex;
+				gap: 10px;
+			}
+			.description img {
+				width: 36px;
+				height: 36px;
+				border-radius: 18px;
+			}
+			.title {
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
 
-        line-height: 22px;
-        font-size: 16px;
-        font-weight: 500;
-        color: #0f0f0f;
-      }
-      .user {
-        font-size: 14px;
-        color: gray;
-      }
-      .statistics {
-        font-size: 14px;
-        color: gray;
-      }
-      @media (width < 648px) {
-        .articles {
-          grid-template-columns: 1fr;
-        }
-        nav {
-          display: none;
-        }
-        .articles {
-          padding-left: 20px;
-        }
-        .tag_container {
-          padding-left: 20px;
-        }
-        .search_container {
-          margin: 0 2rem 0 1rem;
-        }
-      }
-      @media (648px <= width < 768px) {
-        .articles {
-          grid-template-columns: 1fr 1fr;
-        }
-        nav {
-          display: none;
-        }
-        .articles {
-          padding-left: 20px;
-        }
-        .tag_container {
-          padding-left: 20px;
-        }
-      }
-      @media (768px <= width < 1024px) {
-        .articles {
-          grid-template-columns: 1fr 1fr;
-        }
-        .articles {
-          padding-left: 100px;
-        }
-        .tag_container {
-          padding-left: 100px;
-        }
+				line-height: 22px;
+				font-size: 16px;
+				font-weight: 500;
+				color: #0f0f0f;
+			}
+			.user {
+				font-size: 14px;
+				color: gray;
+			}
+			.statistics {
+				font-size: 14px;
+				color: gray;
+			}
+			@media (width < 648px) {
+				.articles {
+					grid-template-columns: 1fr;
+				}
+				nav {
+					display: none;
+				}
+				.articles {
+					padding-left: 20px;
+				}
+				.tag_container {
+					padding-left: 20px;
+				}
+				.search_container {
+					margin: 0 2rem 0 1rem;
+				}
+			}
+			@media (648px <= width < 768px) {
+				.articles {
+					grid-template-columns: 1fr 1fr;
+				}
+				nav {
+					display: none;
+				}
+				.articles {
+					padding-left: 20px;
+				}
+				.tag_container {
+					padding-left: 20px;
+				}
+			}
+			@media (768px <= width < 1024px) {
+				.articles {
+					grid-template-columns: 1fr 1fr;
+				}
+				.articles {
+					padding-left: 100px;
+				}
+				.tag_container {
+					padding-left: 100px;
+				}
 
-        nav li {
-          flex-direction: column;
-          gap: 5px;
-          font-size: 10px;
-          width: 60px;
-          align-items: center;
-          padding: 10px;
-          margin-bottom: 10px;
-        }
-        nav li div {
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 1;
-        }
-      }
-      @media (1024px <= width < 1280px) {
-        .articles {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-        .articles {
-          padding-left: 100px;
-        }
-        .tag_container {
-          padding-left: 100px;
-        }
+				nav li {
+					flex-direction: column;
+					gap: 5px;
+					font-size: 10px;
+					width: 60px;
+					align-items: center;
+					padding: 10px;
+					margin-bottom: 10px;
+				}
+				nav li div {
+					overflow: hidden;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 1;
+				}
+			}
+			@media (1024px <= width < 1280px) {
+				.articles {
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+				.articles {
+					padding-left: 100px;
+				}
+				.tag_container {
+					padding-left: 100px;
+				}
 
-        nav li {
-          flex-direction: column;
-          gap: 5px;
-          font-size: 10px;
-          width: 60px;
-          align-items: center;
-          padding: 10px;
-          margin-bottom: 10px;
-        }
-        nav li div {
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 1;
-        }
-      }
-      @media (1280px <= width < 1536px) {
-        .articles {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-      }
-      @media (1536px <= width) {
-        .articles {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="header_container">
-      <img class="logo" src="Images/youtube (1).svg" />
-      <div class="search_container">
-        <input type="text" placeholder="Search" />
+				nav li {
+					flex-direction: column;
+					gap: 5px;
+					font-size: 10px;
+					width: 60px;
+					align-items: center;
+					padding: 10px;
+					margin-bottom: 10px;
+				}
+				nav li div {
+					overflow: hidden;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 1;
+				}
+			}
+			@media (1280px <= width < 1536px) {
+				.articles {
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+			}
+			@media (1536px <= width) {
+				.articles {
+					grid-template-columns: 1fr 1fr 1fr 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header_container">
+			<img class="logo" src="Images/youtube (1).svg" />
+			<div class="search_container">
+				<input type="text" placeholder="Search" />
 
-        <button class="search_button">
-          <div class="tooltip-text">検索</div>
-          <img src="Images/search-outline.svg" />
-        </button>
+				<button class="search_button">
+					<div class="tooltip-text">検索</div>
+					<img src="Images/search-outline.svg" />
+				</button>
 
-        <div class="mic_icon">
-          <div class="tooltip-text">音声で検索</div>
-          <img src="Images/mic.svg" />
-        </div>
-      </div>
-      <div class="right_container">
-        <div class="video">
-          <div class="tooltip-text">作成</div>
-          <img src="Images/recordingicon.svg" />
-        </div>
+				<div class="mic_icon">
+					<div class="tooltip-text">音声で検索</div>
+					<img src="Images/mic.svg" />
+				</div>
+			</div>
+			<div class="right_container">
+				<div class="video">
+					<div class="tooltip-text">作成</div>
+					<img src="Images/recordingicon.svg" />
+				</div>
 
-        <div class="bell">
-          <div class="tooltip-text">通知</div>
-          <img src="Images/222.svg" />
-        </div>
+				<div class="bell">
+					<div class="tooltip-text">通知</div>
+					<img src="Images/222.svg" />
+				</div>
 
-        <img class="profile" src="Images/1.jpg" />
-      </div>
-    </header>
-    <nav>
-      <ul>
-        <li>
-          <img src="Images/Home-page.svg" />
-          <div>Home</div>
-        </li>
-        <li>
-          <img src="Images/Shorts.svg" />
-          <div>Shorts</div>
-        </li>
-        <li>
-          <img src="Images/Subscriptions.svg" />
-          <div>Subscriptions</div>
-        </li>
-        <hr />
-        <li>
-          <div><strong>You</strong></div>
-          <img src="Images/You.svg" />
-        </li>
-        <li>
-          <img src="Images/Music.svg" />
-          <div>Music</div>
-        </li>
-        <li>
-          <img src="Images/History.svg" />
-          <div>History</div>
-        </li>
-        <li>
-          <img src="Images/Your-videos.svg" />
-          <div>Your videos</div>
-        </li>
-        <li>
-          <img src="Images/Watch-later.svg" />
-          <div>Watch later</div>
-        </li>
-        <li>
-          <img src="Images/Show-more.svg" />
-          <div>Show more</div>
-        </li>
-        <hr />
-        <li>
-          <div><strong>Subscriptions</strong></div>
-        </li>
-        <hr />
-        <li>
-          <img src="Images/Trending.svg" />
-          <div>Trending</div>
-        </li>
-        <li>
-          <img src="Images/Live.svg" />
-          <div>Live</div>
-        </li>
-        <li>
-          <img src="Images/Gaming.svg" />
-          <div>Gaming</div>
-        </li>
-        <li>
-          <img src="Images/News.svg" />
-          <div>News</div>
-        </li>
-        <li>
-          <img src="Images/Show-more.svg" />
-          <div>Show more</div>
-        </li>
-      </ul>
-    </nav>
-    <div class="tag_container">
-      <div class="tag_list">
-        <div class="tag">All</div>
-        <div class="tag">Mix</div>
-        <div class="tag">Live</div>
-        <div class="tag">Trending</div>
-        <div class="tag">Games</div>
-        <div class="tag">News</div>
-        <div class="tag">Learning</div>
-        <div class="tag">Fitness</div>
-        <div class="tag">Design</div>
-      </div>
-    </div>
-    <main>
-      <div class="articles">
-        <div class="article">
-          <img src="Images/nyc.webp" />
-          <div class="description">
-            <img src="Images/nyc1.jpg" />
-            <div class="item_text">
-              <div class="title">
-                New York City walk - Central Park, 5th Avenue, Bryant Park, 42nd
-                Street, NYC, Manhattan 4K 60fps
-              </div>
-              <div class="user">Tony Walker</div>
-              <div class="statistics">208K views - 2 weeks ago</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="Images/Serenity.webp" />
-          <div class="description">
-            <img src="Images/Serenity1.jpg" />
-            <div class="item_text">
-              <div class="title">
-                Serenity 🍀 Lofi Keep You Safe 🌴 Lofi Hip Hop Radio - Deep
-                Focus [ Calm - Relax - Study ]
-              </div>
-              <div class="user">LOFI KEEP YOU SAFE</div>
-              <div class="statistics">511K views - 1 year ago</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="Images/live.webp" />
-          <div class="description">
-            <img src="Images/live1.jpg" />
-            <div class="item_text">
-              <div class="title">
-                WEDNESDAY MORNING JAZZ: Warm Jazz Music with Cozy Coffee Shop
-                Ambience ☕ Relaxing Instrumental Music
-              </div>
-              <div class="user">Cafe Music BGM channel</div>
-              <div class="statistics">956K views - 2 months ago</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="Images/interstellar.webp" />
-          <div class="description">
-            <img src="Images/interstellar1.jpg" />
-            <div class="item_text">
-              <div class="title">
-                interstellar but it sounds like snowfall (slowed) (1 hour loop)
-              </div>
-              <div class="user">pandora</div>
-              <div class="statistics">4.5M views - 11 months ago</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="Images/capitans.webp" />
-          <div class="description">
-            <img src="Images/capitants2.jpg" />
-            <div class="item_text">
-              <div class="title">
-                Captains of the World | Official Trailer | Netflix
-              </div>
-              <div class="user">Netflix</div>
-              <div class="statistics">1.9M views - 1 months ago</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="Images/space.webp" />
-          <div class="description">
-            <img src="Images/google-logo.jpg" />
-            <div class="item_text">
-              <div class="title">
-                Google — 25 Years in Search: The Most Searched
-              </div>
-              <div class="user">Google</div>
-              <div class="statistics">351M views - 2 months ago</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="Images/231.jpg" />
-          <div class="description">
-            <img src="Images/123.jpg" />
-            <div class="item_text">
-              <div class="title">
-                Los Angeles in 8K ULTRA HD HDR - City of Angels (60 FPS)
-              </div>
-              <div class="user">8K Paradise</div>
-              <div class="statistics">3M Followrs</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="Images/enes.webp" />
-          <div class="description">
-            <img src="Images/enes1.jpg" />
-            <div class="item_text">
-              <div class="title">
-                TOURING A $30,000,000 Tropical Mansion with a Jungle Backyard!
-              </div>
-              <div class="user">Enes Yilmazer</div>
-              <div class="statistics">1.2M views - 2 months ago</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="Images/e.webp" />
-          <div class="description">
-            <img src="Images/e1.jpg" />
-            <div class="item_text">
-              <div class="title">West England</div>
-              <div class="user">Rick Steve's Europe</div>
-              <div class="statistics">17M views - 6 years ago</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="Images/alaska.webp" />
-          <div class="description">
-            <img src="Images/alaska1.jpg" />
-            <div class="item_text">
-              <div class="title">Alaska in 8K 60p HDR (Dolby Vision)</div>
-              <div class="user">Jacob + Katie Schwarz</div>
-              <div class="statistics">10M views - 1 year ago</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-  </body>
+				<img class="profile" src="Images/1.jpg" />
+			</div>
+		</header>
+		<nav>
+			<ul>
+				<li>
+					<img src="Images/Home-page.svg" />
+					<div>Home</div>
+				</li>
+				<li>
+					<img src="Images/Shorts.svg" />
+					<div>Shorts</div>
+				</li>
+				<li>
+					<img src="Images/Subscriptions.svg" />
+					<div>Subscriptions</div>
+				</li>
+				<hr />
+				<li>
+					<div><strong>You</strong></div>
+					<img src="Images/You.svg" />
+				</li>
+				<li>
+					<img src="Images/Music.svg" />
+					<div>Music</div>
+				</li>
+				<li>
+					<img src="Images/History.svg" />
+					<div>History</div>
+				</li>
+				<li>
+					<img src="Images/Your-videos.svg" />
+					<div>Your videos</div>
+				</li>
+				<li>
+					<img src="Images/Watch-later.svg" />
+					<div>Watch later</div>
+				</li>
+				<li>
+					<img src="Images/Show-more.svg" />
+					<div>Show more</div>
+				</li>
+				<hr />
+				<li>
+					<div><strong>Subscriptions</strong></div>
+				</li>
+				<hr />
+				<li>
+					<img src="Images/Trending.svg" />
+					<div>Trending</div>
+				</li>
+				<li>
+					<img src="Images/Live.svg" />
+					<div>Live</div>
+				</li>
+				<li>
+					<img src="Images/Gaming.svg" />
+					<div>Gaming</div>
+				</li>
+				<li>
+					<img src="Images/News.svg" />
+					<div>News</div>
+				</li>
+				<li>
+					<img src="Images/Show-more.svg" />
+					<div>Show more</div>
+				</li>
+			</ul>
+		</nav>
+		<div class="tag_container">
+			<div class="tag_list">
+				<div class="tag">All</div>
+				<div class="tag">Mix</div>
+				<div class="tag">Live</div>
+				<div class="tag">Trending</div>
+				<div class="tag">Games</div>
+				<div class="tag">News</div>
+				<div class="tag">Learning</div>
+				<div class="tag">Fitness</div>
+				<div class="tag">Design</div>
+			</div>
+		</div>
+		<main>
+			<div class="articles">
+				<div class="article">
+					<img src="Images/nyc.webp" />
+					<div class="description">
+						<img src="Images/nyc1.jpg" />
+						<div class="item_text">
+							<div class="title">
+								New York City walk - Central Park, 5th Avenue, Bryant
+								Park, 42nd Street, NYC, Manhattan 4K 60fps
+							</div>
+							<div class="user">Tony Walker</div>
+							<div class="statistics">208K views - 2 weeks ago</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="Images/Serenity.webp" />
+					<div class="description">
+						<img src="Images/Serenity1.jpg" />
+						<div class="item_text">
+							<div class="title">
+								Serenity 🍀 Lofi Keep You Safe 🌴 Lofi Hip Hop Radio -
+								Deep Focus [ Calm - Relax - Study ]
+							</div>
+							<div class="user">LOFI KEEP YOU SAFE</div>
+							<div class="statistics">511K views - 1 year ago</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="Images/live.webp" />
+					<div class="description">
+						<img src="Images/live1.jpg" />
+						<div class="item_text">
+							<div class="title">
+								WEDNESDAY MORNING JAZZ: Warm Jazz Music with Cozy Coffee
+								Shop Ambience ☕ Relaxing Instrumental Music
+							</div>
+							<div class="user">Cafe Music BGM channel</div>
+							<div class="statistics">956K views - 2 months ago</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="Images/interstellar.webp" />
+					<div class="description">
+						<img src="Images/interstellar1.jpg" />
+						<div class="item_text">
+							<div class="title">
+								interstellar but it sounds like snowfall (slowed) (1
+								hour loop)
+							</div>
+							<div class="user">pandora</div>
+							<div class="statistics">4.5M views - 11 months ago</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="Images/capitans.webp" />
+					<div class="description">
+						<img src="Images/capitants2.jpg" />
+						<div class="item_text">
+							<div class="title">
+								Captains of the World | Official Trailer | Netflix
+							</div>
+							<div class="user">Netflix</div>
+							<div class="statistics">1.9M views - 1 months ago</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="Images/space.webp" />
+					<div class="description">
+						<img src="Images/google-logo.jpg" />
+						<div class="item_text">
+							<div class="title">
+								Google — 25 Years in Search: The Most Searched
+							</div>
+							<div class="user">Google</div>
+							<div class="statistics">351M views - 2 months ago</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="Images/231.jpg" />
+					<div class="description">
+						<img src="Images/123.jpg" />
+						<div class="item_text">
+							<div class="title">
+								Los Angeles in 8K ULTRA HD HDR - City of Angels (60 FPS)
+							</div>
+							<div class="user">8K Paradise</div>
+							<div class="statistics">3M Followrs</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="Images/enes.webp" />
+					<div class="description">
+						<img src="Images/enes1.jpg" />
+						<div class="item_text">
+							<div class="title">
+								TOURING A $30,000,000 Tropical Mansion with a Jungle
+								Backyard!
+							</div>
+							<div class="user">Enes Yilmazer</div>
+							<div class="statistics">1.2M views - 2 months ago</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="Images/e.webp" />
+					<div class="description">
+						<img src="Images/e1.jpg" />
+						<div class="item_text">
+							<div class="title">West England</div>
+							<div class="user">Rick Steve's Europe</div>
+							<div class="statistics">17M views - 6 years ago</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="Images/alaska.webp" />
+					<div class="description">
+						<img src="Images/alaska1.jpg" />
+						<div class="item_text">
+							<div class="title">
+								Alaska in 8K 60p HDR (Dolby Vision)
+							</div>
+							<div class="user">Jacob + Katie Schwarz</div>
+							<div class="statistics">10M views - 1 year ago</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
 </html>
