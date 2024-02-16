@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+      }
+      .header_container {
+        width: 100%;
+        height: 56px;
+      }
+      .header_frame {
+        width: 100%;
+        height: 40px;
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header_frame button {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 20px;
+        border: solid 1px white;
+      }
+      .header_frame button:hover {
+        background: white;
+        cursor: pointer;
+      }
+      .left_container {
+        display: flex;
+        width: 210px;
+        height: 25px;
+        gap: 20px;
+        margin: 10px;
+      }
+      .search_container {
+        display: flex;
+        height: 40px;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      }
+      .search_container input {
+        width: 540px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        padding-left: 15px;
+      }
+      .search_container button {
+        width: 55px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+      }
+      .search_container button:hover {
+        background: #a0a0a0;
+        cursor: pointer;
+      }
+      .mic_icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+      }
+      .mic_icon button {
+        width: 60px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px;
+        background: #f8f8f8;
+      }
+      .right_container {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-right: 20px;
+      }
+      .profile img{
+        width: 100%;
+        border-radius: 20px;
+      }
+      .right_container button:hover {
+        background: #d3d3d3;
+        cursor: pointer;
+      }
+      .body_container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 10px;
+      }
+      .nav {
+        height: 100%;
+        width: 216px;
+      }
+      .menu_item {
+        width: 204px;
+        height: 40px;
+        display: flex;
+        justify-content: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0 20px;
+        font-size: 16px;
+        color: #0f0f0f;
+        border-radius: 5px;
+      }
+      .menu_item:hover {
+        background: #f2f2f2;
+        cursor: pointer;
+      }
+
+      .article_container {
+        height: 100vh;
+        width: 100%;
+        display: grid;
+      }
+
+      .articles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .article {
+        margin: 10px;
+      }
+
+      .round {
+        border-radius: 14px;
+      }
+      .item_contents {
+        display: flex;
+      }
+      .item_contents img {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+      }
+      .item_text {
+        width: 100%;
+        margin-left: 10px;
+      }
+      .title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        color: #0f0f0f;
+
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .author {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #606060;
+      }
+
+      .statistics {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #606060;
+      }
+      @media (width < 648px) {
+        .articles {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (648px <= width < 768px) {
+        .articles {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (768px <= width < 1024px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div header class="header_container">
+        <div class="header_frame">
+          <button><img src="hamburger.svg" /></button>
+          <div class="left_container">
+            <img src="youtube.svg" />
+          </div>
+          <div class="search_container">
+            <input type="text" placeholder="Search" />
+            <button class="tooltip-text">  
+                <img src="search-sharp.svg" />
+            </button>
+            <div class="mic_icon">
+              <button title="Voice search"><img src="mic.svg" /></button>
+            </div>
+          </div>
+          <div class="right_container">
+            <div class="Video">
+              <button title="Create"><img src="movie_icon.svg" /></button>
+            </div>
+            <div class="bell">
+              <button title="Notifications"><img src="bell.svg" /></button>
+            </div>
+            <div class="profile">
+              <button>
+                <img
+                  src="https://yt3.googleusercontent.com/ytc/AIf8zZRrabIIIBL83sV4A4qx-96uDbu-7Y5uakcgUZxz_62WCWe0gJo3r7KsXYkI7MJZ=s88-c-k-c0x00ffffff-no-rj"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="body_container">
+        <div class="nav">
+          <div class="menu_item">
+            <img src="main.svg" />
+            <div>Home</div>
+          </div>
+          <div class="nav">
+            <div class="menu_item">
+              <img src="shorts.svg" />
+              <div>Shorts</div>
+            </div>
+            <div class="nav">
+              <div class="menu_item">
+                <img src="subs.svg" />
+                <div>Subscriptions</div>
+              </div>
+              <div class="nav">
+                <div class="menu_item">
+                  <img src="all.svg" />
+                  <div>History</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="article_container">
+        <div class="articles">
+          <div class="article">
+            <iframe
+              class="round"
+              width="100%"
+              src="https://www.youtube.com/embed/RFAoGY11tUM"
+              title="RE-IGNITION // VALORANT x Emei x Jazz Alonso x ARB4 – официальный музыкальный трек"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            >
+        </iframe>
+            <div class="item_contents">
+              <div class="item_text">
+                <div class="item_text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris rutrum, metus a tempor bibendum, mi neque volutpat
+                  magna, vitae condimentum nibh enim ut enim.
+                </div>
+                <div class="author">Lorem ipsum</div>
+                <div class="statistics">90万　回視聴・1ヶ月前</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <iframe
+              class="round"
+              width="100%"
+              src="https://www.youtube.com/embed/RFAoGY11tUM"
+              title="RE-IGNITION // VALORANT x Emei x Jazz Alonso x ARB4 – официальный музыкальный трек"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            >
+        </iframe>
+            <div class="item_contents">
+              <div class="item_text">
+                <div class="item_text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris rutrum, metus a tempor bibendum, mi neque volutpat
+                  magna, vitae condimentum nibh enim ut enim.
+                </div>
+                <div class="author">Lorem ipsum</div>
+                <div class="statistics">90万　回視聴・1ヶ月前</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <iframe
+              class="round"
+              width="100%"
+              src="https://www.youtube.com/embed/RFAoGY11tUM"
+              title="RE-IGNITION // VALORANT x Emei x Jazz Alonso x ARB4 – официальный музыкальный трек"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            >
+        </iframe>
+            <div class="item_contents">
+              <div class="item_text">
+                <div class="item_text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris rutrum, metus a tempor bibendum, mi neque volutpat
+                  magna, vitae condimentum nibh enim ut enim.
+                </div>
+                <div class="author">Lorem ipsum</div>
+                <div class="statistics">90万　回視聴・1ヶ月前</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <iframe
+              class="round"
+              width="100%"
+              src="https://www.youtube.com/embed/RFAoGY11tUM"
+              title="RE-IGNITION // VALORANT x Emei x Jazz Alonso x ARB4 – официальный музыкальный трек"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            >
+        </iframe>
+            <div class="item_contents">
+              <div class="item_text">
+                <div class="item_text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris rutrum, metus a tempor bibendum, mi neque volutpat
+                  magna, vitae condimentum nibh enim ut enim.
+                </div>
+                <div class="author">Lorem ipsum</div>
+                <div class="statistics">90万　回視聴・1ヶ月前</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <iframe
+              class="round"
+              width="100%"
+              src="https://www.youtube.com/embed/RFAoGY11tUM"
+              title="RE-IGNITION // VALORANT x Emei x Jazz Alonso x ARB4 – официальный музыкальный трек"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            >
+        </iframe>
+            <div class="item_contents">
+              <div class="item_text">
+                <div class="item_text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris rutrum, metus a tempor bibendum, mi neque volutpat
+                  magna, vitae condimentum nibh enim ut enim.
+                </div>
+                <div class="author">Lorem ipsum</div>
+                <div class="statistics">90万　回視聴・1ヶ月前</div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+  </body>
+</html>
