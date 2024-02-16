@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: "Roboto", sans-serif;
+				font-size: 20px;
+			}
+			.container {
+				width: 100%;
+				height: 100vh;
+				background: lightgray;
+			}
+			.tag_container {
+				display: grid;
+				/* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+				grid-auto-flow: column;
+				overflow-x: auto;
+				overscroll-behavior-inline: contain;
+
+				background: skyblue;
+				align-items: center;
+				gap: 12px;
+
+				overflow-y: scroll;
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+			}
+			.tag_container span {
+				/* テキストを折り返さない */
+				white-space: nowrap;
+				background: #f2f2f2;
+				border-radius: 8px;
+				font-size: 14px;
+				font-weight: 500;
+				color: black;
+				text-align: center;
+				padding: 5px 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="tag_container">
+				<span>すべて</span>
+				<span>音楽</span>
+				<span>野生生物</span>
+				<span>ミックス</span>
+				<span>ニュース</span>
+				<span>ライブ</span>
+				<span>ペット</span>
+				<span>最近アップロードされた動画</span>
+				<span>視聴済み</span>
+				<span>新しい動画の発見</span>
+			</div>
+		</div>
+	</body>
+</html>
