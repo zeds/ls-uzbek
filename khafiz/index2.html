@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Calibri";
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      background: pink;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .input_wake {
+      width: 600px;
+      height: 40px;
+      background: white;
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 50px;
+    }
+    input {
+      width: 100%;
+      border-radius: 25px;
+      border: solid 1px #d3d3d3;
+      padding-left: 15px;
+    }
+    .box {
+      width: 60px;
+      height: 40px;
+      background: #f8f8f8;
+      border-radius: 0 25px 25px 0;
+      border: solid 1px #d3d3d3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      height: 70%;
+    }
+
+    .thumb {
+      width: 380px;
+      padding: 10px;
+      background: lightblue;
+      position: absolute;
+      top: 100px;
+    }
+
+    img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 22px;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+
+    .name {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: black;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="thumb">
+        <img src="uzbek.jpg" />
+        <div class="title">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+          rutrum, metus a tempor bibendum, mi neque volutpat magna, vitae
+          condimentum nibh enim ut enim.
+          <div class="name">Lorem ipsum</div>
+          <div class="name">90万　回視聴・1ヶ月前</div>
+        </div>
+      </div>
+      <div class="thumb">
+        <img src="uzbek.jpg" />
+        <div class="title">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+          rutrum, metus a tempor bibendum, mi neque volutpat magna, vitae
+          condimentum nibh enim ut enim.
+          <div class="name">Lorem ipsum</div>
+          <div class="name">90万　回視聴・1ヶ月前</div>
+        </div>
+      </div>
+      <div class="thumb">
+        <img src="uzbek.jpg" />
+        <div class="title">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+          rutrum, metus a tempor bibendum, mi neque volutpat magna, vitae
+          condimentum nibh enim ut enim.
+          <div class="name">Lorem ipsum</div>
+          <div class="name">90万　回視聴・1ヶ月前</div>
+        </div>
+      </div>
+      <div class="thumb">
+        <img src="uzbek.jpg" />
+        <div class="title">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+          rutrum, metus a tempor bibendum, mi neque volutpat magna, vitae
+          condimentum nibh enim ut enim.
+          <div class="name">Lorem ipsum</div>
+          <div class="name">90万　回視聴・1ヶ月前</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

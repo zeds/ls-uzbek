@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        border: 2px solid black;
+        background: lightgray;
+        position: relative;
+      }
+      .box {
+        width: 800px;
+        height: 800px;
+        border: solid 1px black;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .purple {
+        background: rgba(128, 0, 128, 0.322);
+        width: 600px;
+        height: 300px;
+        position: absolute;
+      }
+      .orange {
+        background: rgba(255, 166, 0, 0.322);
+        width: 700px;
+        height: 600px;
+        position: absolute;
+      }
+      .yellow {
+        background: rgba(255, 255, 0, 0.39);
+        width: 700px;
+        height: 600px;
+        position: absolute;
+      }
+      .red {
+        background: rgba(255, 0, 0, 0.377);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box purple"></div>
+      <div class="box orange"></div>
+      <div class="box yellow"></div>
+      <div class="box red"></div>
+    </div>
+  </body>
+</html>

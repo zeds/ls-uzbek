@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLEX BOX</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Noto Sans JP";
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        background: pink;
+        align-items: center;
+        justify-content: center;
+      }
+      .thumb {
+        padding: 10px;
+        width: 380px;
+        background: #eeeeee;
+      }
+      img {
+        width: 100%;
+        justify-content: center;
+      }
+      .thumb .desc {
+        font-size: 16px;
+        line-height: 22px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .thumb .name {
+        font-size: 14px;
+        line-height: 20px;
+        color: #888888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="thumb">
+        <img src="uzbek.jpg" />
+        <div class="desc">
+          4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY (Confusing English
+          Words)
+        </div>
+        <div class="name">JForrest English</div>
+      </div>
+    </div>
+  </body>
+</html>

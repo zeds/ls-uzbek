@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .user {
+        font-size: 14px;
+      }
+      .statistics {
+        font-size: 14px;
+      }
+      @media (width < 648px) {
+        .article_container {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (648px <= width <768px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (768px <= width <1024px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      @media (1024px <= width <1280px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+      @media (1280px <= width <1536px) {
+        .article_container {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

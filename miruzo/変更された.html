@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>youtubeclone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet" />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      list-style: none;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      font-size: 20px;
+      position: relative;
+    }
+    .cotainer {
+      width: 100%;
+      height: 100vh;
+    }
+    .tag_container {
+      position: fixed;
+      z-index: 1;
+      top: 50px;
+      width: 100%;
+      padding-left: 240px;
+      background: white;
+    }
+    .tag_list {
+      display: flex;
+      white-space: nowrap;
+      overflow-x: auto;
+
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .tag {
+      flex: 0 0 auto;
+      margin-right: 10px;
+      background: #f2f2f2;
+      font-weight: 500;
+      font-size: 14px;
+      color: #0f0f0f;
+      margin: 12px 12px 12px 0;
+      padding: 5px 12px;
+      border-radius: 8px;
+    }
+    .tag:hover {
+      cursor: pointer;
+      background: #e5e5e5;
+    }
+    .container_header {
+      position: fixed;
+      z-index: 1;
+      width: 100%;
+      height: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      background: white;
+    }
+    header .ylogo {
+      height: 20px;
+    }
+    .search_container {
+      display: flex;
+      height: 40px;
+      flex-grow: 1;
+      margin: 0 5rem 0 5rem;
+      max-width: 666px;
+    }
+    .search_container input {
+      width: 100%;
+      height: 100%;
+      border: solid 1px #d3d3d3;
+      border-radius: 20px 0 0 20px;
+      padding-left: 17px;
+      font-size: 16px;
+    }
+    .search_container button {
+      width: 64px;
+      height: 100%;
+      border: solid 1px #cccccc;
+      border-radius: 0 20px 20px 0;
+      border-left: none;
+      background: #f8f8f8;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 10px;
+    }
+
+    .search_container button:hover {
+      background: #d0d0d0;
+    }
+    .search_container button:hover .tooltip_text {
+      opacity: 1;
+      visibility: visible;
+    }
+    .mic_icon {
+      flex: 0 0 40px;
+      width: 40px;
+      margin-left: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 11px;
+      border-radius: 20px;
+      background: #f2f2f2;
+      position: relative;
+    }
+    .mic_icon:hover .tooltip_text {
+      opacity: 1;
+      visibility: visible;
+    }
+    .mic_icon:hover {
+      background: #d0d0d0;
+    }
+
+    .icon {
+      height: 46px;
+      width: 50%;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+    .img_icon {
+      height: 46px;
+      width: 120px;
+    }
+    .icons {
+      width: 156px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      margin-right: 10px;
+    }
+    .icon_video {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: #f2f2f2;
+      border: none;
+      position: relative;
+      padding: 10px;
+    }
+    .icon_video:hover .tooltip_text {
+      opacity: 1;
+      visibility: visible;
+    }
+    .icon_video:hover {
+      background: #d0d0d0;
+    }
+    .bell_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: #f2f2f2;
+      border: none;
+      position: relative;
+      margin: 0 5px;
+    }
+    .bell_icon:hover {
+      background: #d0d0d0;
+    }
+    .bell_icon:hover .tooltip_text {
+      opacity: 1;
+      visibility: visible;
+    }
+    .profile_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: #f2f2f2;
+      border: none;
+      position: relative;
+    }
+    .profile_icon img {
+      background-size: cover;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      width: 38px;
+    }
+    .profile_icon:hover {
+      background: #d0d0d0;
+    }
+    .profile_icon:hover .tooltip_text {
+      opacity: 1;
+      visibility: visible;
+    }
+    .article_container {
+      padding-right: 20px;
+      padding-left: 240px;
+      padding-top: 120px;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+
+    .icon img {
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+    }
+    .article_container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+    }
+    .article_content_img {
+      width: 100%;
+      position: relative;
+    }
+    .time {
+      color: white;
+      background: black;
+      position: absolute;
+      padding: 3px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      right: 7px;
+      bottom: 7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .article {
+      width: 100%;
+      aspect-ratio: 2/1;
+    }
+    .article_text {
+      width: 100%;
+      gap: 5px;
+      display: flex;
+      justify-content: center;
+    }
+    .text_img {
+      width: 30px;
+      height: 30px;
+    }
+    .text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .video_name {
+      font-size: 14px;
+      width: 100%;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      font-weight: bold;
+    }
+    .channel_name {
+      font-size: 14px;
+      color: #aaaaaa;
+    }
+    .views {
+      font-size: 14px;
+      color: #aaaaaa;
+    }
+    nav {
+      position: fixed;
+      top: 70px;
+      z-index: 2;
+      width: 240px;
+      height: 100%;
+    }
+    nav li {
+      display: flex;
+      width: 204px;
+      margin-left: 10px;
+      padding: 8px 12px;
+      gap: 24px;
+      font-weight: 500;
+      font-size: 14px;
+      color: #0f0f0f;
+      border-radius: 10px;
+      align-items: center;
+    }
+    nav li img {
+      width: 24px;
+      height: 24px;
+    }
+    main {
+      position: absolute;
+    }
+
+    nav li:hover {
+      background: #f2f3f3;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .side_menu img {
+      width: 30px;
+    }
+
+    .tooltip_text {
+      visibility: hidden;
+      opacity: 0;
+      font-size: 16px;
+      color: white;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.5);
+      bottom: -45px;
+      padding: 3px 5px 3px 5px;
+      border-radius: 5px;
+      transition: 0.0001s ease;
+      font-weight: bold;
+    }
+    @media (width < 648px) {
+      .article_container {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        display: none;
+      }
+      .article_container {
+        padding-left: 20px;
+      }
+      .tag_container {
+        padding-left: 20px;
+      }
+      .search_container {
+        margin: 0 2rem 0 1rem;
+      }
+    }
+
+    @media (648px <= width < 768px) {
+      .article_container {
+        grid-template-columns: 1fr 1fr;
+      }
+      nav {
+        display: none;
+      }
+      .article_container {
+        padding-left: 20px;
+      }
+      .tag_container {
+        padding-left: 20px;
+      }
+    }
+    @media (768px <= width < 1024px) {
+      .article_container {
+        grid-template-columns: 1fr 1fr;
+      }
+      .article_container {
+        padding-left: 100px;
+      }
+      .tag_container {
+        padding-left: 100px;
+      }
+      nav li {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        width: 60px;
+        align-items: center;
+        padding: 10;
+        margin-bottom: 10px;
+      }
+      nav li div {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+    }
+    @media (1024px <= width < 1280px) {
+      .article_container {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .article_container {
+        padding-left: 100px;
+      }
+      .tag_container {
+        padding-left: 100px;
+      }
+      nav li {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        width: 60px;
+        align-items: center;
+        padding: 10;
+        margin-bottom: 10px;
+      }
+      nav li div {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+    }
+    @media (1280 <= width < 1536px) {
+      .article_container {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    @media (1536px <= width) {
+      .article_container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="tag_container">
+        <div class="tag_list">
+          <div class="tag">音楽</div>
+          <div class="tag">野生生物</div>
+          <div class="tag">ミックス</div>
+          <div class="tag">ニュース</div>
+          <div class="tag">ライブ</div>
+          <div class="tag">ペット</div>
+          <div class="tag">最近アップロードされた動画</div>
+          <div class="tag">視聴済み</div>
+          <div class="tag">新しい動画の発見</div>
+        </div>
+      </div>
+      <header class="container_header">
+        <img class="ylogo" src="youtubelogo.svg" />
+        <div class="search_container">
+          <input type="text" placeholder="検索" />
+
+          <button>
+            <div class="tooltip_text">Search</div>
+            <img src="lupa.svg" alt="" />
+          </button>
+          <div class="mic_icon">
+            <div class="tooltip_text">Mic</div>
+            <img src="mic2.svg" alt="" />
+          </div>
+        </div>
+        <div class="icons">
+          <div class="icon_video">
+            <div class="tooltip_text">Create</div>
+            <img src="video.svg" alt="" />
+          </div>
+          <div class="bell_icon">
+            <div class="tooltip_text">notifications</div>
+            <img src="bell.svg" alt="" />
+          </div>
+          <div class="profile_icon">
+            <div class="tooltip_text">MyProfile</div>
+            <img src="myimage.jpg" alt="" />
+          </div>
+        </div>
+      </header>
+      <nav>
+        <ul>
+          <li>
+            <img src="home.svg" />
+            <div>ホーム</div>
+          </li>
+          <li>
+            <img src="short.svg" />
+            <div>ショート</div>
+          </li>
+          <li>
+            <img src="subsc.svg" />
+            <div>登録チャンネル</div>
+          </li>
+          <li>
+            <img src="yb.png" />
+            <div>Youtube music</div>
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <div class="article_container">
+          <div class="article">
+            <div class="article_content_img">
+              <div class="time">13:22:34</div>
+              <img src="layout.png" alt="" />
+            </div>
+            <div class="article_text">
+              <div class="text_img">
+                <img src="layout.png" alt="" />
+              </div>
+              <div class="text">
+                <div class="video_name">
+                  4 HOUR ENGLISH LESSON-ADVANCED ENGLISH VOCABULARIES AND
+                  ENGLISH WORDS
+                </div>
+                <div class="channel_name">@JForrestenglish</div>
+                <div class="views">254M views:1monthago</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <div class="article_content_img">
+              <div class="time">13:22:34</div>
+              <img src="layout.png" alt="" />
+            </div>
+            <div class="article_text">
+              <div class="text_img">
+                <img src="layout.png" alt="" />
+              </div>
+              <div class="text">
+                <div class="video_name">
+                  4 HOUR ENGLISH LESSON-ADVANCED ENGLISH VOCABULARIES AND
+                  ENGLISH WORDS
+                </div>
+                <div class="channel_name">@JForrestenglish</div>
+                <div class="views">254M views:1monthago</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <div class="article_content_img">
+              <div class="time">13:22:34</div>
+              <img src="layout.png" alt="" />
+            </div>
+            <div class="article_text">
+              <div class="text_img">
+                <img src="layout.png" alt="" />
+              </div>
+              <div class="text">
+                <div class="video_name">
+                  4 HOUR ENGLISH LESSON-ADVANCED ENGLISH VOCABULARIES AND
+                  ENGLISH WORDS
+                </div>
+                <div class="channel_name">@JForrestenglish</div>
+                <div class="views">254M views:1monthago</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <div class="article_content_img">
+              <div class="time">13:22:34</div>
+              <img src="layout.png" alt="" />
+            </div>
+            <div class="article_text">
+              <div class="text_img">
+                <img src="layout.png" alt="" />
+              </div>
+              <div class="text">
+                <div class="video_name">
+                  4 HOUR ENGLISH LESSON-ADVANCED ENGLISH VOCABULARIES AND
+                  ENGLISH WORDS
+                </div>
+                <div class="channel_name">@JForrestenglish</div>
+                <div class="views">254M views:1monthago</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <div class="article_content_img">
+              <div class="time">13:22:34</div>
+              <img src="layout.png" alt="" />
+            </div>
+            <div class="article_text">
+              <div class="text_img">
+                <img src="layout.png" alt="" />
+              </div>
+              <div class="text">
+                <div class="video_name">
+                  4 HOUR ENGLISH LESSON-ADVANCED ENGLISH VOCABULARIES AND
+                  ENGLISH WORDS
+                </div>
+                <div class="channel_name">@JForrestenglish</div>
+                <div class="views">254M views:1monthago</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <div class="article_content_img">
+              <div class="time">13:22:34</div>
+              <img src="layout.png" alt="" />
+            </div>
+            <div class="article_text">
+              <div class="text_img">
+                <img src="layout.png" alt="" />
+              </div>
+              <div class="text">
+                <div class="video_name">
+                  4 HOUR ENGLISH LESSON-ADVANCED ENGLISH VOCABULARIES AND
+                  ENGLISH WORDS
+                </div>
+                <div class="channel_name">@JForrestenglish</div>
+                <div class="views">254M views:1monthago</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <div class="article_content_img">
+              <div class="time">13:22:34</div>
+              <img src="layout.png" alt="" />
+            </div>
+            <div class="article_text">
+              <div class="text_img">
+                <img src="layout.png" alt="" />
+              </div>
+              <div class="text">
+                <div class="video_name">
+                  4 HOUR ENGLISH LESSON-ADVANCED ENGLISH VOCABULARIES AND
+                  ENGLISH WORDS
+                </div>
+                <div class="channel_name">@JForrestenglish</div>
+                <div class="views">254M views:1monthago</div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <div class="article_content_img">
+              <div class="time">13:22:34</div>
+              <img src="layout.png" alt="" />
+            </div>
+            <div class="article_text">
+              <div class="text_img">
+                <img src="layout.png" alt="" />
+              </div>
+              <div class="text">
+                <div class="video_name">
+                  4 HOUR ENGLISH LESSON-ADVANCED ENGLISH VOCABULARIES AND
+                  ENGLISH WORDS
+                </div>
+                <div class="channel_name">@JForrestenglish</div>
+                <div class="views">254M views:1monthago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
