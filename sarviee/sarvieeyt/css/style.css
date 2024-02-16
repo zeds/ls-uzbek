@@ -409,7 +409,7 @@ main {
     font-size: 10px;
     width: 60px;
     align-items: center;
-    padding: 0;
+    padding: 5px;
     margin-bottom: 15px;
   }
   nav li div {
