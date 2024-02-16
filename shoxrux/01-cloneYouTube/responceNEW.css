@@ -1,5 +1,5 @@
 @media(width < 648px) {
-    .content {
+    .articles {
         grid-template-columns: 1fr;
         padding-left: 20px;
     }
@@ -8,7 +8,7 @@
         display: none;
     }
 
-    .article-frame {
+    .tag-container {
         padding-left: 20px;
     }
 
@@ -18,7 +18,7 @@
 }
 
 @media(648px <=width < 768px) {
-    .content {
+    .articles {
         grid-template-columns: 1fr 1fr;
         padding-left: 20px;
     }
@@ -27,7 +27,7 @@
         display: none;
     }
 
-    .article-frame {
+    .tag-container {
         padding-left: 20px;
     }
 
@@ -37,20 +37,21 @@
 }
 
 @media(768px <=width < 1024px) {
-    .content {
+    .articles {
         grid-template-columns: 1fr 1fr;
     }
 
-    .content {
+    .articles {
         padding-left: 100px;
     }
 
-    .article-frame {
+    .tag-container {
         padding-left: 100px;
     }
 
     .item {
-        height: 50px;
+        padding: 5px;
+        height: 60px;
         flex-direction: column;
         gap: 5px;
         font-size: 10px;
@@ -66,7 +67,8 @@
         font-size: 10px;
         width: 60px;
         align-items: center;
-        margin-bottom: 10px;
+        margin-top: 2px;
+        /* margin-bottom: 10px; */
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -75,20 +77,21 @@
 }
 
 @media(1023px <=width <1280px) {
-    .content {
+    .articles {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .content {
+    .articles {
         padding-left: 100px;
     }
 
-    .article-frame {
+    .tag-container {
         padding-left: 100px;
     }
 
     .item {
-        height: 50px;
+        padding: 5px;
+        height: 60px;
         flex-direction: column;
         gap: 5px;
         font-size: 10px;
@@ -104,7 +107,8 @@
         font-size: 10px;
         width: 60px;
         align-items: center;
-        margin-bottom: 10px;
+        margin-top: 2px;
+        /* margin-bottom: 10px; */
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -113,14 +117,14 @@
 }
 
 @media(1280px <=width <1536px) {
-    .content {
+    .articles {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
 }
 
 @media (1536px <=width) {
-    .content {
+    .articles {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
