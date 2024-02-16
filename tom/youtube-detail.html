@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			li {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+
+			body {
+				font-family: "Roboto", sans-serif;
+				font-size: 20px;
+			}
+			.container {
+				width: 100%;
+				height: 100vh;
+				background: lightgray;
+			}
+			header {
+				width: 100%;
+				height: 56px;
+				background: skyblue;
+			}
+			main {
+				display: grid;
+				grid-template-columns: 1fr 400px;
+				max-width: 1480px;
+				margin: 0 auto;
+			}
+			.left_contents {
+				height: 700px;
+				background: orange;
+			}
+			.right_contents {
+				height: 100vh;
+				background: pink;
+			}
+			@media (width < 980px) {
+				main {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header></header>
+			<main>
+				<div class="left_contents">ああああああ</div>
+				<div class="right_contents">いいいいいいいいい</div>
+			</main>
+		</div>
+	</body>
+</html>
