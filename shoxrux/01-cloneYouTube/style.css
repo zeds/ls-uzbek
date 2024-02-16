@@ -7,15 +7,16 @@
 body {
     font-family: "Roboto", sans-serif;
     font-size: 20px;
+    position: relative;
 }
 
-.container {
+.header_container {
     width: 100%;
     background: #fff;
     /* height: 100vh; */
 }
 
-.header-container {
+.container {
     background-color: #fff;
     position: fixed;
     z-index: 2;
@@ -43,6 +44,7 @@ body {
 }
 
 .hamburger {
+    cursor: pointer;
     margin-right: 10px;
     height: 24px;
     width: 24px;
@@ -225,12 +227,11 @@ body {
     left: 13px;
 }
 
-.body-container {
+main {
     display: flex;
 }
 
 .item {
-
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -257,7 +258,7 @@ body {
     margin-top: 64px;
 } */
 
-.article-frame {
+.tag-container {
     position: fixed;
     z-index: 1;
     top: 56px;
@@ -267,7 +268,7 @@ body {
     background: white;
 }
 
-.example-2 {
+.tag-list {
 
     /* white-space: nowrap;
     overflow-x: hidden; */
@@ -281,7 +282,7 @@ body {
 }
 
 
-.article-frame ul {
+.tag-container ul {
     margin-top: 8px;
     list-style: none;
     display: flex;
@@ -289,7 +290,7 @@ body {
     gap: 14px;
 }
 
-.article-frame ul li {
+.tag-container ul li {
     transition: 1s;
     font-weight: 500;
     cursor: pointer;
@@ -299,12 +300,12 @@ body {
     padding: 5px 12px;
 }
 
-.article-frame ul li:nth-child(1) {
+.tag-container ul li:nth-child(1) {
     background-color: #0f0f0f;
     color: white;
 }
 
-.article-frame ul li:hover {
+.tag-container ul li:hover {
     background-color: rgb(197, 197, 197);
     /* background-image: linear-gradient(58.2deg, rgba(40, 91, 212, 0.73) -3%, rgba(171, 53, 163, 0.45) 49.3%, rgba(255, 204, 112, 0.37) 97.7%); */
 }
@@ -313,7 +314,7 @@ body {
 
 
 /* content */
-.content {
+.articles {
     padding-left: 240px;
     padding-right: 20px;
     padding-top: 120px;
@@ -329,7 +330,7 @@ body {
     padding: 10px; */
 }
 
-.article_container {
+.article {
     cursor: pointer;
     width: 100%;
     border-radius: 10px;
@@ -353,7 +354,7 @@ body {
     position: absolute;
 }
 
-.article_container img {
+.article img {
     width: 100%;
     border-radius: 10px;
 }
