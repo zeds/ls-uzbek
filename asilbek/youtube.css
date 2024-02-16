@@ -10,7 +10,7 @@ a {
 	text-decoration: none;
 }
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-size: 20px;
 	position: relative;
 }
@@ -77,8 +77,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	border-radius: 20px;
-	background: #f2f2f2;
 	position: relative;
+	border: none;
 }
 .mic_icon:hover .tooltip-text {
 	opacity: 1;
@@ -98,6 +98,7 @@ body {
 .profile {
 	border-radius: 20px;
 	height: 32px;
+	border: none;
 }
 .tooltip-text {
 	display: inline-block;
@@ -131,6 +132,7 @@ body {
 	align-items: center;
 	border-radius: 20px;
 	position: relative;
+	border: none;
 }
 .video:hover .tooltip-text {
 	opacity: 1;
@@ -147,6 +149,7 @@ body {
 	align-items: center;
 	border-radius: 20px;
 	position: relative;
+	border: none;
 }
 .bell:hover .tooltip-text {
 	opacity: 1;
@@ -239,8 +242,12 @@ li:hover {
 }
 .certain_article {
 	width: 100%;
-	aspect-ratio: 3/2;
+	aspect-ratio: 2/1.8;
 }
+.certain_article img {
+	border-radius: 8px;
+}
+
 .certain_article img {
 	width: 100%;
 }
@@ -321,10 +328,10 @@ li:hover {
 		font-size: 10px;
 		width: 60px;
 		align-items: center;
-		padding: 0;
+		padding: 10px;
 		margin-bottom: 15px;
 	}
-	.side_menu li .side_menu_text {
+	.side_menu li div {
 		overflow: hidden;
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
@@ -348,10 +355,10 @@ li:hover {
 		font-size: 10px;
 		width: 60px;
 		align-items: center;
-		padding: 0;
+		padding: 10px;
 		margin-bottom: 15px;
 	}
-	.side_menu li .side_menu_text {
+	.side_menu li div {
 		overflow: hidden;
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
