@@ -61,11 +61,13 @@
     }
 
     .item-text {
-        padding-left: 12px;
+        /* padding-left: 12px; */
         flex-direction: column;
         gap: 5px;
         font-size: 10px;
-        width: 60px;
+        /* width: 60px; */
+        justify-content: center;
+        text-overflow: ellipsis;
         align-items: center;
         margin-top: 2px;
         /* margin-bottom: 10px; */
