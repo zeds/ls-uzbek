@@ -75,7 +75,7 @@ header .logo {
   visibility: visible;
 }
 .search_button:hover {
-  background: #d0d0d0;
+  background: #e0e0e0;
 }
 .mic_icon {
   /* 親でdisplay: flexを指定しているが、親が縮むとmicの幅も縮んでしまう。 */
@@ -94,7 +94,7 @@ header .logo {
   visibility: visible;
 }
 .mic_icon:hover {
-  background: #d0d0d0;
+  background: #e0e0e0;
 }
 .right_container {
   height: 100%;
@@ -125,13 +125,13 @@ header .logo {
 }
 
 /* ホバー時にツールチップの非表示を解除 */
-.tooltip:hover .tooltip-text {
+/* .tooltip:hover .tooltip-text {
   opacity: 1;
   visibility: visible;
-}
-.tooltip:hover {
+} */
+/* .tooltip:hover {
   background: gray;
-}
+} */
 .video {
   width: 40px;
   height: 40px;
@@ -146,7 +146,7 @@ header .logo {
   visibility: visible;
 }
 .video:hover {
-  background: gray;
+  background: #e0e0e0;
 }
 .bell {
   width: 40px;
@@ -162,7 +162,7 @@ header .logo {
   visibility: visible;
 }
 .bell:hover {
-  background: gray;
+  background: #e0e0e0;
 }
 
 .nav {
@@ -172,6 +172,11 @@ header .logo {
   z-index: 2;
   width: 240px;
   height: 100%;
+}
+.nav hr {
+  width: 204px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .nav li {
   display: flex;
@@ -192,18 +197,13 @@ header .logo {
   background: #f2f2f2;
   cursor: pointer;
 }
-.main {
-  /* background-color: blue; */
-  position: absolute;
-  padding-left: 240px;
-  top: 56px;
-}
+
 .tag_container {
   position: fixed;
   z-index: 1;
   top: 56px;
   height: 56px;
-  /* padding-left: 240px; */
+  padding-left: 240px;
   width: 100%;
   background: white;
 }
@@ -232,11 +232,15 @@ header .logo {
   cursor: pointer;
   background: #e5e5e5;
 }
+.main {
+  /* background-color: blue; */
+  position: absolute;
+  padding-left: 240px;
+  top: 120px;
+}
 .articles {
   height: 100%;
-  padding-top: 60px;
   gap: 10px;
-  /* background-color: aqua; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -281,17 +285,17 @@ header .logo {
     grid-template-columns: 1fr;
   }
   .main {
-    padding: 0;
+    padding-left: 0;
   }
   .nav {
     display: none;
   }
-  /* .articles {
-    padding-left: 20px;
+  .articles {
+    padding-left: 10px;
   }
   .tag_container {
-    padding-left: 20px;
-  } */
+    padding-left: 10px;
+  }
   .search_container {
     margin: 0 2rem 0 1rem;
   }
@@ -301,6 +305,9 @@ header .logo {
     grid-template-columns: 1fr 1fr;
   }
   .main {
+    padding-left: 72px;
+  }
+  .tag_container {
     padding-left: 72px;
   }
   .nav {
@@ -324,6 +331,9 @@ header .logo {
 }
 @media (768px <= width < 1024px) {
   .main {
+    padding-left: 72px;
+  }
+  .tag_container {
     padding-left: 72px;
   }
   .articles {
@@ -352,29 +362,8 @@ header .logo {
   .articles {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .main {
-    padding-left: 72px;
-  }
-  .nav {
-    width: 72px;
-  }
-  .nav li {
-    flex-direction: column;
-    gap: 5px;
-    font-size: 10px;
-    width: 60px;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  .nav li div {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-  }
 }
-@media (1280px <= width) {
+@media (1280px < width) {
   .articles {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
