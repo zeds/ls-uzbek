@@ -291,6 +291,9 @@ header .logo {
   .nav {
     display: none;
   }
+  .nav hr {
+    display: none;
+  }
   .articles {
     padding-left: 10px;
   }
@@ -312,6 +315,9 @@ header .logo {
     padding-left: 72px;
   }
   .nav {
+    width: 72px;
+  }
+  .nav hr {
     width: 72px;
   }
   .nav li {
@@ -341,6 +347,9 @@ header .logo {
     grid-template-columns: 1fr 1fr;
   }
   .nav {
+    width: 72px;
+  }
+  .nav hr {
     width: 72px;
   }
   .nav li {
