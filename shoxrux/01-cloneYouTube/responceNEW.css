@@ -38,6 +38,7 @@
 
 @media(768px <=width < 1024px) {
     .articles {
+        gap: 20px;
         grid-template-columns: 1fr 1fr;
     }
 
@@ -80,6 +81,7 @@
 
 @media(1023px <=width <1280px) {
     .articles {
+        gap: 20px;
         grid-template-columns: 1fr 1fr 1fr;
     }
 
@@ -120,6 +122,7 @@
 
 @media(1280px <=width <1536px) {
     .articles {
+        gap: 20px;
         grid-template-columns: 1fr 1fr 1fr;
     }
 
