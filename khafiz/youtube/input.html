@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        padding-top: 20px;
+      }
+      .header_frame {
+        width: 100%;
+        height: 40px;
+        background: rgb(255, 255, 255);
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-left: 10px;
+      }
+      .header_frame img {
+        height: 30px;
+      }
+      .search_container {
+        display: flex;
+        height: 40px;
+      }
+      .search_container input {
+        width: 540px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        background: white;
+      }
+      .search_container button {
+        width: 60px;
+        height: 100%;
+        border: solid 1px #cccccc;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .search_button {
+        width: 60px;
+        height: 100%;
+      }
+      .search_container button img {
+        height: 25px;
+      }
+      .header_right {
+        height: 100%;
+        width: 200px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .bell {
+        width: 40px;
+        height: 40px;
+        border-radius: 24px 24px 24px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .movie_icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 24px 24px 24px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .mic_icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 14px;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+      }
+      .tooltip:hover .tooltip-text {
+        cursor: pointer;
+        visibility: visible;
+      }
+      .tooltip:hover {
+        background: gray;
+      }
+      .mic_icon img {
+        height: 10 px;
+      }
+      .header_right img:last-child {
+        height: 32px;
+        border-radius: 20px;
+      }
+      .tooltip {
+        position: relative;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+        bottom: -45px;
+        width: 80px;
+        height: 25px;
+        background: rgba(0, 0, 0, 0.7);
+        font-size: 14px;
+        border: solid 1px black;
+        border-radius: 10px 10px 10px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header_frame">
+        <img src="youtube.svg" />
+        <div class="search_container">
+          <input type="text" placeholder="Search" />
+          <button class="search_button tooltip">
+            <span class="tooltip-text"> Lorem </span>
+            <img src="search-sharp.svg" />
+          </button>
+          <div class="mic_icon tooltip">
+            <span class="tooltip-text">音声で検索</span>
+            <img src="mic.svg" />
+          </div>
+        </div>
+        <div class="header_right">
+          <div class="bell tooltip">
+            <span class="tooltip-text"> Lorem </span> <img src="bell.svg" />
+          </div>
+          <div class="movie_icon tooltip">
+            <span class="tooltip-text"> Lorem </span>
+            <img src="movie_icon.svg" />
+          </div>
+          <img
+            src="https://yt3.ggpht.com/ytc/AIf8zZRrabIIIBL83sV4A4qx-96uDbu-7Y5uakcgUZxz_62WCWe0gJo3r7KsXYkI7MJZ=s88-c-k-c0x00ffffff-no-rj"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

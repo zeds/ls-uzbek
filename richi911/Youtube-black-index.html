@@ -26,11 +26,12 @@
         font-family: "Roboto", sans-serif;
         font-size: 20px;
         position: relative;
+        background: darkslategray;
       }
       .container {
         width: 100%;
         height: 100vh;
-        background: lightgray;
+        background: black;
       }
       header {
         position: fixed;
@@ -43,10 +44,10 @@
         align-items: center;
 
         padding-left: 20px;
-        background: white;
+        background: darkslategray;
       }
       header .logo {
-        height: 20px;
+        height: 35px;
       }
       .search_container {
         display: flex;
@@ -54,18 +55,20 @@
         flex-grow: 1;
         margin: 0 10px 0 10px;
         max-width: 666px;
+        background: ;
       }
       .search_container input {
         width: 100%;
         height: 100%;
-        border: solid 1px #d3d3d3;
+        border: solid 1px black;
         border-radius: 20px 0 0 20px;
         padding-left: 17px;
         font-size: 16px;
+        background: burlywood;
       }
       .search_button {
         width: 64px;
-        border: solid 1px #d3d3d3;
+        border: solid 1px black;
         border-left: none;
         border-radius: 0 20px 20px 0;
         background: #f8f8f8;
@@ -73,16 +76,18 @@
         align-items: center;
         justify-content: center;
         position: relative;
+        background: burlywood;
       }
       .search_button:hover .tooltip-text {
         opacity: 1;
         visibility: visible;
       }
       .search_button:hover {
-        background: #d0d0d0;
+        background: bisque;
       }
       .mic_icon {
         aspect-ratio: 1/1;
+        border: solid 1px black;
         width: 40px;
         margin-left: 14px;
         display: flex;
@@ -91,12 +96,13 @@
         border-radius: 20px;
         background: #f2f2f2;
         position: relative;
+        background: burlywood;
       }
       .mic_icon:hover .tooltip-text {
         visibility: visible;
       }
       .mic_icon:hover {
-        background: #d0d0d0;
+        background: bisque;
       }
       .right_container {
         height: 100%;
@@ -107,8 +113,9 @@
         margin-right: 20px;
       }
       .profile {
+        border: solid 1px black;
         border-radius: 20px;
-        height: 32px;
+        height: 40px;
       }
       .tooltip-text {
         visibility: hidden;
@@ -130,9 +137,10 @@
         visibility: visible;
       }
       .tooltip:hover {
-        background: gray;
+        background: bisque;
       }
       .video {
+        border: solid 1px black;
         width: 40px;
         height: 40px;
         display: flex;
@@ -140,15 +148,17 @@
         align-items: center;
         border-radius: 20px;
         position: relative;
+        background: burlywood;
       }
       .video:hover .tooltip-text {
         opacity: 1;
         visibility: visible;
       }
       .video:hover {
-        background: gray;
+        background: bisque;
       }
       .bell {
+        border: solid 1px black;
         width: 40px;
         height: 40px;
         display: flex;
@@ -156,13 +166,14 @@
         align-items: center;
         border-radius: 20px;
         position: relative;
+        background: burlywood;
       }
       .bell:hover .tooltip-text {
         opacity: 1;
         visibility: visible;
       }
       .bell:hover {
-        background: gray;
+        background: bisque;
       }
 
       nav {
@@ -171,6 +182,7 @@
         z-index: 999;
         width: 240px;
         height: 100%;
+        background: darkslategray;
       }
       nav li {
         display: flex;
@@ -181,7 +193,7 @@
         gap: 24px;
         font-weight: 500;
         font-size: 14px;
-        color: #0f0f0f;
+        color: burlywood;
         border-radius: 10px;
       }
       nav li img {
@@ -189,7 +201,7 @@
         height: 24px;
       }
       nav li:hover {
-        background: #f2f2f2;
+        background: bisque;
         cursor: pointer;
       }
       main {
@@ -202,7 +214,7 @@
         height: 56px;
         width: 100%;
         padding-left: 240px;
-        background: white;
+        background: darkslategray;
       }
       .tag_list {
         display: flex;
@@ -215,8 +227,9 @@
       }
       .tag {
         flex: 0 0 auto;
+        border: solid 1px black;
         margin-right: 10px;
-        background: #f2f2f2;
+        background: burlywood;
         font-weight: 500;
         font-size: 14px;
         color: #0f0f0f;
@@ -226,7 +239,7 @@
       }
       .tag:hover {
         cursor: pointer;
-        background: #e5e5e5;
+        background: bisque;
       }
       .articles {
         padding-left: 240px;
@@ -244,6 +257,7 @@
       .article img {
         width: 100%;
         border-radius: 10px;
+        border: solid 1px black;
       }
       .description {
         display: flex;
@@ -253,6 +267,7 @@
         width: 36px;
         height: 36px;
         border-radius: 18px;
+        border: solid 1px black;
       }
       .title {
         overflow: hidden;
@@ -263,28 +278,32 @@
         line-height: 22px;
         font-size: 16px;
         font-weight: 500;
-        color: #0f0f0f;
+        color: burlywood;
       }
       .user {
         font-size: 14px;
-        color: gray;
+        font-weight: 1000;
+        color: #0f0f0f;
       }
       .statistics {
         font-size: 14px;
-        color: gray;
+        font-weight: 1000;
+        color: #0f0f0f;
       }
       .p {
         display: flex;
         align-items: center;
         border-radius: 3px;
+        border: solid 1px black;
         width: 50px;
         height: 15px;
         font-size: 12px;
-        color: white;
-        background: red;
+        color: #0f0f0f;
+        background: burlywood;
       }
       .p img {
         display: flex;
+        border: none;
         align-items: center;
         padding: 2px;
         width: 20px;
@@ -388,7 +407,7 @@
   </head>
   <body>
     <header class="header_container">
-      <img class="logo" src="Images/youtube (1).svg" />
+      <img class="logo" src="Images/icomoon-free--youtube2.svg" />
       <div class="search_container">
         <input type="text" placeholder="Search" />
 
@@ -399,13 +418,13 @@
 
         <div class="mic_icon">
           <div class="tooltip-text">音声で検索</div>
-          <img src="Images/mic.svg" />
+          <img src="Images/mic-black.svg" />
         </div>
       </div>
       <div class="right_container">
         <div class="video">
           <div class="tooltip-text">作成</div>
-          <img src="Images/recordingicon.svg" />
+          <img src="Images/video-black.svg" />
         </div>
 
         <div class="bell">
@@ -423,14 +442,13 @@
           <div>Home</div>
         </li>
         <li>
-          <img src="Images/Shorts.svg" />
+          <img src="Images/shorts-black.svg" />
           <div>Shorts</div>
         </li>
         <li>
           <img src="Images/Subscriptions.svg" />
           <div>Subscriptions</div>
         </li>
-        <hr />
         <li>
           <div><strong>You</strong></div>
           <img src="Images/You.svg" />
@@ -455,11 +473,9 @@
           <img src="Images/Show-more.svg" />
           <div>Show more</div>
         </li>
-        <hr />
         <li>
           <div><strong>Subscriptions</strong></div>
         </li>
-        <hr />
         <li>
           <img src="Images/Trending.svg" />
           <div>Trending</div>
