@@ -18,7 +18,7 @@
       }
       .body {
         font-size: 20px;
-        font-family: "Roboto", sans-serif;
+        font-family: "Roboto",Arial ,sans-serif;
         position: relative;
       }
       .container {
@@ -33,37 +33,39 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 20px;
+        padding-left: 10px;
 
         background: white;
       }
       .box_container {
-        height: 100%;
-        width: 165px;
+        height: 56px;
+        width: 169px;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        margin-right: 20px;
       }
       .set_container {
         width: 40px;
         height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         border-radius: 20px;
-        position: relative;
+        padding: 8px;
+      }
+      .set_container img{
+        width: 24px;
+        height: 24px;
       }
       .set_container:hover {
         background: #d0d0d0;
       }
       .logo_container {
-        display: flex;
-        height: 20px;
-        gap: 20px;
+        height: 56px;
+       width: 120px;
+       gap: 20px;
+        padding: 18px 14px 18px 16px;
       }
       .logo img {
         height: 20px;
+        width: 90px;
       }
       .search_container {
         display: flex;
@@ -188,13 +190,6 @@
       .bell:hover {
         background: gray;
       }
-
-      .body_container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        gap: 5px;
-      }
       .side_manu {
         position: fixed;
         top: 70px;
@@ -204,14 +199,14 @@
       }
       .menu_item {
         width: 204px;
-        height: 40px;
         display: flex;
         align-items: center;
-        gap: 20px;
+        justify-content: column;
+        gap: 24px;
         margin-left: 10px;
-        padding: 8px 12px;
+        padding: 8px  12px;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 510;
         color: #0f0f0f;
         border-radius: 10px;
       }
@@ -223,20 +218,8 @@
         background: #f3f3f3;
         cursor: pointer;
       }
-      li {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        padding: 0 12px;
-        font-size: 16px;
-        color: #0f0f0f;
-        border-radius: 5px;
-      }
-
       .article_container {
-        width: 100%;
-        height: 100vh;
-        display: grid;
+        position: absolute;
       }
       .tag_container {
         position: fixed;
@@ -259,12 +242,14 @@
         flex: 0 0 auto;
         margin-right: 10px;
         background: #f2f2f2;
-        font-weight: 500;
+        font-weight: 550;
         font-size: 14px;
         color: #0f0f0f;
         margin: 12px 12px 12px 0;
         padding: 5px 12px;
         border-radius: 8px;
+        height: 32px;
+        line-height: 23px;
       }
       .tag:hover {
         cursor: pointer;
@@ -273,56 +258,53 @@
       .articles {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        width: 100%;
         height: 100%;
         padding-left: 240px;
         padding-right: 20px;
         padding-top: 120px;
-        border-radius: 20px;
         gap: 10px;
       }
       .article {
         margin: 10px;
         width: 100%;
         aspect-ratio: 3/2;
+        gap: 10px;
       }
       .article img {
         width: 100%;
-
         object-fit: cover;
-        border-radius: 20px;
+        border-radius: 12px;
       }
       .item_contents {
         display: flex;
         gap: 10px;
+      margin: 10px;
+      margin-left: 0px;
+      margin-right: 24px;
       }
       .item_contents img {
         width: 36px;
         height: 36px;
         border-radius: 18px;
       }
-      .item_text {
-        width: 100%;
-        margin-left: 10px;
-      }
       .title {
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
+        -webkit-line-clamp: 2;
         line-height: 22px;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 550;
         color: #0f0f0f;
       }
       .user {
-        font-weight: 400;
+        font-weight: lighter;
         font-size: 14px;
         line-height: 20px;
         color: #606060;
       }
       .statistics {
-        font-weight: 400;
+        font-weight: lighter;
         font-size: 14px;
         line-height: 20px;
         color: #606060;
@@ -374,8 +356,8 @@
           font-size: 10px;
           width: 60px;
           align-items: center;
-          padding: 0;
-          margin-bottom: 15px;
+          padding: 0px;
+          margin-bottom: 25px;
         }
         .menu_item div {
           overflow: hidden;
@@ -401,7 +383,7 @@
           font-size: 10px;
           width: 60px;
           align-items: center;
-          padding: 0;
+          padding: 5px;
           margin-bottom: 15px;
         }
         .menu_item div {
@@ -441,44 +423,43 @@
             <img src="search-outline.svg" />
           </button>
           <div class="mic_icon">
-            <div class="tooltip-text">MIC</div>
+            <div class="tooltip-text">Search with your voice</div>
             <img src="mic.svg" />
           </div>
         </div>
         <div class="right_container">
           <div class="video">
-            <div class="tooltip-text">VIDEO</div>
+            <div class="tooltip-text">Video</div>
             <img src="movie.svg" />
           </div>
           <div class="bell">
-            <div class="tooltip-text">BELL</div>
+            <div class="tooltip-text">Bell</div>
             <img src="mdi--bell-outline.svg" />
           </div>
           <img class="profile" src="samandar.png" />
         </div>
       </header>
-      <div class="body_container">
         <div class="side_manu">
           <ul>
             <li class="menu_item">
               <img src="menu_home.svg" />
-              <div>HOME</div>
+              <div>Home</div>
             </li>
             <li class="menu_item">
               <img src="menu_short.svg" />
-              <div>SHORTS</div>
+              <div>SHorts</div>
             </li>
             <li class="menu_item">
               <img src="menu_channels.svg" />
-              <div>CHANNELS</div>
+              <div>Channals</div>
             </li>
             <li class="menu_item">
               <img src="menu_music.svg" />
-              <div>YOUTUBE MUSIC</div>
+              <div>You</div>
             </li>
             <li class="menu_item">
               <img src="menu_history.svg" />
-              <div>HISTORY</div>
+              <div>History</div>
             </li>
           </ul>
         </div>
@@ -500,112 +481,124 @@
         <div class="article_container">
           <div class="articles">
             <div class="article">
-              <img src="html darsi.webp" />
+              <img src="foodball9.jpg" />
               <div class="item_contents">
-                <img src="profil html dars.jpg" />
+                <img src="foodball9-profil.jpg" />
                 <div class="item_text">
                   <div class="title">
-                    HTML dasturlash |1."Tables"(Jadvallar)
+                    TOP-10 ENG QIMMAT O'ZBEKISTONLIK FUTBOLCHILAR BILAN TANISHING. 
                   </div>
-                  <div class="user">Ulugbek Samigjonov</div>
+                  <div class="user">EuroUzbFootball </div>
                   <div class="statistics">829K views・3 yil oldin</div>
                 </div>
               </div>
             </div>
             <div class="article">
-              <img src="html darsi.webp" />
+              <img src="foodball8.jpg" />
               <div class="item_contents">
-                <img src="profil html dars.jpg" />
+                <img src="foodball8-profil.jpg" />
                 <div class="item_text">
                   <div class="title">
-                    HTML dasturlash |2."Tables"(Jadvallar)
+                    Uzbekistonlik eng qimmat futbolchilar TOP-10
                   </div>
-                  <div class="user">Ulugbek Samigjonov</div>
-                  <div class="statistics">829K views・3 yil oldin</div>
+                  <div class="user">Milliy Boom  </div>
+                  <div class="statistics"> 3,916 views 2 years ago</div>
                 </div>
               </div>
             </div>
             <div class="article">
-              <img src="html darsi.webp" />
+              <img src="foodball7.jpg" />
               <div class="item_contents">
-                <img src="profil html dars.jpg" />
+                <img src="foodball7-profil.jpg" />
                 <div class="item_text">
                   <div class="title">
-                    HTML dasturlash |3."Tables"(Jadvallar)
+                    G’ALABA BIZ FINALDAMIZ PENALTILAR SERIYASI TO’LIQ HOLDA VIDEO UZBEKISTON KOREA U20
                   </div>
-                  <div class="user">Ulugbek Samigjonov</div>
-                  <div class="statistics">829K views・3 yil oldin</div>
+                  <div class="user"> FUTBOL TIME </div>
+                  <div class="statistics">1,721,920 views 11 months ago</div>
                 </div>
               </div>
             </div>
             <div class="article">
-              <img src="html darsi.webp" />
+              <img src="foodball6.jpg" />
               <div class="item_contents">
-                <img src="profil html dars.jpg" />
+                <img src="foodball6-profil.jpg" />
                 <div class="item_text">
                   <div class="title">
-                    HTML dasturlash |4."Tables"(Jadvallar)
+                    ФИНАЛ! УЗБЕКИСТОН 1-0 ИРОҚ УЙИНИДА ЧЕМПИОН БУЛДИК, ШАВКАТ МИРЗИЕЕВ ХАМ ТАШРИФ БУЮРДИ. 
                   </div>
-                  <div class="user">Ulugbek Samigjonov</div>
-                  <div class="statistics">829K views・3 yil oldin</div>
+                  <div class="user">ТЕЗКОР ХАБАР </div>
+                  <div class="statistics">551,060 views 10 months ago</div>
                 </div>
               </div>
             </div>
             <div class="article">
-              <img src="html darsi.webp" />
+              <img src="foodball5.jpg" />
               <div class="item_contents">
-                <img src="profil html dars.jpg" />
+                <img src="foodball5-profil.jpg" />
                 <div class="item_text">
                   <div class="title">
-                    HTML dasturlash |5."Tables"(Jadvallar)
+                    Unwanted boys vs Abbosbek Fayzullayev CHALLENGE!!! 
                   </div>
-                  <div class="user">Ulugbek Samigjonov</div>
-                  <div class="statistics">829K views・3 yil oldin</div>
+                  <div class="user">ABDUJABBOROV__7 -  UNWANTED BOYS  </div>
+                  <div class="statistics">1,439,874 views 7 months ago</div>
                 </div>
               </div>
             </div>
             <div class="article">
-              <img src="html darsi.webp" />
+              <img src="foodball4.jpg" />
               <div class="item_contents">
-                <img src="profil html dars.jpg" />
+                <img src="foodball4-profil.jpg" />
                 <div class="item_text">
                   <div class="title">
-                    HTML dasturlash |6."Tables"(Jadvallar)
+                    Cristiano Ronaldo vs Lionel Messi Al Nassr vs Inter Miami 6-0 Highlights All Goals 2024 
                   </div>
-                  <div class="user">Ulugbek Samigjonov</div>
-                  <div class="statistics">829K views・3 yil oldin</div>
+                  <div class="user"> SPECIAL FOOTBALL SHORTS  </div>
+                  <div class="statistics">603,230 views 13 days ago</div>
                 </div>
               </div>
             </div>
             <div class="article">
-              <img src="html darsi.webp" />
+              <img src="foodball3.jpg" />
               <div class="item_contents">
-                <img src="profil html dars.jpg" />
+                <img src="foodball3-profil.jpg" />
                 <div class="item_text">
                   <div class="title">
-                    HTML dasturlash |7."Tables"(Jadvallar)
+                    Ultra VS👑Messi vs Ronaldo💪(2005-2023)
                   </div>
-                  <div class="user">Ulugbek Samigjonov</div>
-                  <div class="statistics">829K views・3 yil oldin</div>
+                  <div class="user"> VS Football  </div>
+                  <div class="statistics">1,335,401 views 1 year ago</div>
                 </div>
               </div>
             </div>
             <div class="article">
-              <img src="html darsi.webp" />
+              <img src="foodball2.jpg" />
               <div class="item_contents">
-                <img src="profil html dars.jpg" />
+                <img src="foodball2-profil.jpg" />
                 <div class="item_text">
                   <div class="title">
-                    HTML dasturlash |8."Tables"(Jadvallar)
+                    Uzbekistan 2 - 0 Japan 
                   </div>
-                  <div class="user">Ulugbek Samigjonov</div>
-                  <div class="statistics">829K views・3 yil oldin</div>
+                  <div class="user">AFC Asian Cup  </div>
+                  <div class="statistics">470,649 views 1 year ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="article">
+              <img src="foodball1.jpg" />
+              <div class="item_contents">
+                <img src="foodball1-profil.jpg" />
+                <div class="item_text">
+                  <div class="title">
+                    Cristiano Ronaldo is STILL THE GOAT at 38 • Dribbling Skills, Assists &amp; Goals 2023/24 
+                  </div>
+                  <div class="user">by KIANO7HD   </div>
+                  <div class="statistics">260,055 views 3 months ago</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </body>
 </html>
