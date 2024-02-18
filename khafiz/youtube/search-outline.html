@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+      }
+      .input_wake {
+        width: 600px;
+        height: 40px;
+        background: #ffffff;
+        display: flex;
+        position: relative;
+      }
+      input {
+        width: 100%;
+        border-radius: 25px;
+        border: solid 1px #d3d3d3;
+        padding-left: 15px;
+      }
+      .box1 {
+        width: 60px;
+        height: 40px;
+        background: #f8f8f8;
+        position: absolute;
+        right: 55px;
+        border-radius: 0 25px 25px 0;
+        border: solid 1px #d3d3d3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box2 {
+        width: 60px;
+        height: 40px;
+        background: #d3d3d3;
+        position: absolute;
+        right: 0;
+        border-radius: 25px 25px 25px 25px;
+        border: sol;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      img {
+        height: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input_wake">
+      <input type="text" placeholder="Search" />
+      <div class="box1">
+        <img src="search.svg" />
+      </div>
+      <div class="box2">
+        <img src="mic.svg" />
+      </div>
+    </div>
+  </body>
+</html>

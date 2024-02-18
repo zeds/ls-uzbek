@@ -34,7 +34,7 @@
       }
       header {
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         width: 100%;
         height: 56px;
 
@@ -130,7 +130,7 @@
         visibility: visible;
       }
       .tooltip:hover {
-        background: gray;
+        background: lightgray;
       }
       .video {
         width: 40px;
@@ -146,7 +146,7 @@
         visibility: visible;
       }
       .video:hover {
-        background: gray;
+        background: lightgray;
       }
       .bell {
         width: 40px;
@@ -162,7 +162,7 @@
         visibility: visible;
       }
       .bell:hover {
-        background: gray;
+        background: lightgray;
       }
 
       nav {
@@ -191,6 +191,13 @@
       nav li:hover {
         background: #f2f2f2;
         cursor: pointer;
+      }
+      .l {
+        height: 1px;
+        width: 200px;
+        margin: 10px;
+        border: none;
+        background-color: gainsboro;
       }
       main {
         position: absolute;
@@ -231,11 +238,11 @@
       .articles {
         padding-left: 240px;
         padding-right: 20px;
-        padding-top: 120px;
+        padding-top: 135px;
         height: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
+        gap: 15px;
       }
       .article {
         width: 100%;
@@ -248,6 +255,7 @@
       .description {
         display: flex;
         gap: 10px;
+        margin-top: 5px;
       }
       .description img {
         width: 36px;
@@ -268,16 +276,39 @@
       .user {
         font-size: 14px;
         color: gray;
+        margin-top: 4px;
       }
       .statistics {
         font-size: 14px;
         color: gray;
+        padding-bottom: 35px;
+      }
+      .p {
+        display: flex;
+        align-items: center;
+        border-radius: 3px;
+        width: 50px;
+        height: 15px;
+        font-size: 12px;
+        color: white;
+        background: crimson;
+        margin-top: -28px;
+        /* margin-bottom: 20px; */
+      }
+      .p img {
+        display: flex;
+        align-items: center;
+        padding: 2px;
+        width: 20px;
       }
       @media (width < 648px) {
         .articles {
           grid-template-columns: 1fr;
         }
         nav {
+          display: none;
+        }
+        .l {
           display: none;
         }
         .articles {
@@ -295,6 +326,9 @@
           grid-template-columns: 1fr 1fr;
         }
         nav {
+          display: none;
+        }
+        .l {
           display: none;
         }
         .articles {
@@ -330,6 +364,10 @@
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 1;
         }
+
+        .l {
+          width: 62px;
+        }
       }
       @media (1024px <= width < 1280px) {
         .articles {
@@ -356,6 +394,9 @@
           display: -webkit-box;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 1;
+        }
+        .l {
+          width: 62px;
         }
       }
       @media (1280px <= width < 1536px) {
@@ -414,7 +455,7 @@
           <img src="Images/Subscriptions.svg" />
           <div>Subscriptions</div>
         </li>
-        <hr />
+        <hr class="l" />
         <li>
           <div><strong>You</strong></div>
           <img src="Images/You.svg" />
@@ -439,11 +480,11 @@
           <img src="Images/Show-more.svg" />
           <div>Show more</div>
         </li>
-        <hr />
+        <hr class="l" />
         <li>
           <div><strong>Subscriptions</strong></div>
         </li>
-        <hr />
+        <hr class="l" />
         <li>
           <img src="Images/Trending.svg" />
           <div>Trending</div>
@@ -505,7 +546,8 @@
                 Focus [ Calm - Relax - Study ]
               </div>
               <div class="user">LOFI KEEP YOU SAFE</div>
-              <div class="statistics">511K views - 1 year ago</div>
+              <div class="statistics">5.1K watching</div>
+              <div class="p"><img src="Images/live1.svg" />LIVE</div>
             </div>
           </div>
         </div>
@@ -518,8 +560,9 @@
                 WEDNESDAY MORNING JAZZ: Warm Jazz Music with Cozy Coffee Shop
                 Ambience ☕ Relaxing Instrumental Music
               </div>
-              <div class="user">Cafe Music BGM channel</div>
-              <div class="statistics">956K views - 2 months ago</div>
+              <div class="user">Cafe Music BGM channel LIVE</div>
+              <div class="statistics">1.2K watching</div>
+              <div class="p"><img src="Images/live1.svg" />LIVE</div>
             </div>
           </div>
         </div>
@@ -532,7 +575,8 @@
                 interstellar but it sounds like snowfall (slowed) (1 hour loop)
               </div>
               <div class="user">pandora</div>
-              <div class="statistics">4.5M views - 11 months ago</div>
+              <div class="statistics">2.8K watching</div>
+              <div class="p"><img src="Images/live1.svg" />LIVE</div>
             </div>
           </div>
         </div>

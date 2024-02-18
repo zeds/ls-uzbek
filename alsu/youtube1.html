@@ -16,22 +16,27 @@
 				margin: 0;
 				box-sizing: border-box;
 			}
+
 			li {
 				list-style: none;
 			}
+
 			a {
 				text-decoration: none;
 			}
+
 			body {
 				font-family: "Roboto", sans-serif;
 				font-size: 20px;
 				position: relative;
 			}
+
 			.container {
 				width: 100%;
 				height: 100vh;
 				background: lightgray;
 			}
+
 			header {
 				position: fixed;
 				z-index: 2;
@@ -44,18 +49,21 @@
 				padding-left: 20px;
 				background: white;
 			}
+
 			header .logo {
-				/* height: 100%; */
 				height: 20px;
 				/* background: red; */
 			}
+
 			.search_container {
 				display: flex;
 				height: 40px;
 				flex-grow: 1;
-				margin: 0 5rem 0 5rem;
+				/* margin: 0 5rem 0 5rem; */
+				margin: 0 10px 0 10px;
 				max-width: 666px;
 			}
+
 			.search_container input {
 				width: 100%;
 				height: 100%;
@@ -64,9 +72,10 @@
 				padding-left: 17px;
 				font-size: 16px;
 			}
+
 			.search_button {
-				width: 60px;
-				height: 100%;
+				width: 64px;
+				/* height: 100%; */
 				border: solid 1px #d3d3d3;
 				border-left: none;
 				border-radius: 0 20px 20px 0;
@@ -76,17 +85,21 @@
 				justify-content: center;
 				position: relative;
 			}
+
 			.search_button:hover .tooltip-text {
 				opacity: 1;
 				visibility: visible;
 			}
+
 			.search_button:hover {
 				background: #d0d0d0;
 			}
+
 			.mic_icon {
 				/* 親でdisplay: flexを指定しているが、親が縮むとmicの幅も縮んでしまう。 */
 				/* micは固定にしたいので、flex: 0 0 40px;と指定している。 */
-				flex: 0 0 40px;
+				/* または、aspect-ratio: 1/1;でもいい */
+				aspect-ratio: 1/1;
 				width: 40px;
 				margin-left: 14px;
 				display: flex;
@@ -96,12 +109,15 @@
 				background: #f2f2f2;
 				position: relative;
 			}
+
 			.mic_icon:hover .tooltip-text {
 				visibility: visible;
 			}
+
 			.mic_icon:hover {
 				background: #d0d0d0;
 			}
+
 			.right_container {
 				height: 100%;
 				width: 150px;
@@ -110,11 +126,13 @@
 				justify-content: space-around;
 				margin-right: 20px;
 			}
+
 			.profile {
 				border-radius: 16px;
 				height: 32px;
 				width: 32px;
 			}
+
 			.tooltip-text {
 				visibility: hidden;
 				position: absolute;
@@ -136,9 +154,11 @@
 				opacity: 1;
 				visibility: visible;
 			}
+
 			.tooltip:hover {
 				background: gray;
 			}
+
 			.video {
 				width: 40px;
 				height: 40px;
@@ -148,13 +168,16 @@
 				border-radius: 20px;
 				position: relative;
 			}
+
 			.video:hover .tooltip-text {
 				opacity: 1;
 				visibility: visible;
 			}
+
 			.video:hover {
-				background: gray;
+				background: #d0d0d0;
 			}
+
 			.bell {
 				width: 40px;
 				height: 40px;
@@ -164,21 +187,24 @@
 				border-radius: 20px;
 				position: relative;
 			}
+
 			.bell:hover .tooltip-text {
 				opacity: 1;
 				visibility: visible;
 			}
+
 			.bell:hover {
-				background: gray;
+				background: #d0d0d0;
 			}
 
 			nav {
 				position: fixed;
 				top: 70px;
-				z-index: 2;
+				z-index: 999;
 				width: 240px;
 				height: 100%;
 			}
+
 			nav li {
 				display: flex;
 				width: 204px;
@@ -190,17 +216,21 @@
 				color: #0f0f0f;
 				border-radius: 10px;
 			}
+
 			nav li img {
 				width: 24px;
 				height: 24px;
 			}
+
 			nav li:hover {
 				background: #f2f2f2;
 				cursor: pointer;
 			}
+
 			main {
 				position: absolute;
 			}
+
 			.tag_container {
 				position: fixed;
 				z-index: 1;
@@ -210,19 +240,26 @@
 				padding-left: 240px;
 				background: white;
 			}
+
 			.tag_list {
-				display: flex; /* 要素を横並びにする */
-				white-space: nowrap; /* 要素を折り返さずに横並びにする */
-				overflow-x: auto; /* 横方向のスクロールを有効にする */
+				display: flex;
+				/* 要素を横並びにする */
+				white-space: nowrap;
+				/* 要素を折り返さずに横並びにする */
+				overflow-x: auto;
+				/* 横方向のスクロールを有効にする */
 
 				/* スクロールバーを消す */
 				overflow-y: scroll;
 				-ms-overflow-style: none;
 				scrollbar-width: none;
 			}
+
 			.tag {
-				flex: 0 0 auto; /* 要素のサイズを固定する */
-				margin-right: 10px; /* タグ間の間隔を設定する */
+				flex: 0 0 auto;
+				/* 要素のサイズを固定する */
+				margin-right: 10px;
+				/* タグ間の間隔を設定する */
 				background: #f2f2f2;
 				font-weight: 500;
 				font-size: 14px;
@@ -231,10 +268,12 @@
 				padding: 5px 12px;
 				border-radius: 8px;
 			}
+
 			.tag:hover {
 				cursor: pointer;
 				background: #e5e5e5;
 			}
+
 			.articles {
 				padding-left: 240px;
 				padding-right: 20px;
@@ -244,22 +283,29 @@
 				grid-template-columns: 1fr 1fr 1fr;
 				gap: 10px;
 			}
+
 			.article {
 				width: 100%;
-				aspect-ratio: 3/2;
+				aspect-ratio: 3/2.6;
 			}
+
 			.article img {
 				width: 100%;
+				border-radius: 11px;
 			}
+
 			.description {
+				margin-top: 8px;
 				display: flex;
 				gap: 10px;
 			}
+
 			.description img {
 				width: 36px;
 				height: 36px;
 				border-radius: 18px;
 			}
+
 			.title {
 				overflow: hidden;
 				display: -webkit-box;
@@ -271,50 +317,70 @@
 				font-weight: 500;
 				color: #0f0f0f;
 			}
+
 			.user {
 				font-size: 14px;
 			}
+
 			.statistics {
 				font-size: 14px;
 			}
+
 			@media (width < 648px) {
 				.articles {
 					grid-template-columns: 1fr;
 				}
+
 				nav {
 					display: none;
+
+					position: fixed;
+					top: 70px;
+					z-index: 2;
+					width: 240px;
+					height: 100%;
 				}
+
 				.articles {
 					padding-left: 20px;
 				}
+
 				.tag_container {
 					padding-left: 20px;
 				}
+
 				.search_container {
 					margin: 0 2rem 0 1rem;
 				}
 			}
-			@media (648px <= width < 768px) {
+
+			@media (648px <=width < 768px) {
 				.articles {
 					grid-template-columns: 1fr 1fr;
 				}
+
 				nav {
 					display: none;
 				}
+
 				.articles {
 					padding-left: 20px;
 				}
+
 				.tag_container {
 					padding-left: 20px;
 				}
 			}
-			@media (768px <= width < 1024px) {
+
+			@media (768px <=width < 1024px) {
 				.articles {
 					grid-template-columns: 1fr 1fr;
 				}
+
 				.articles {
 					padding-left: 100px;
 				}
+
 				.tag_container {
 					padding-left: 100px;
 				}
@@ -325,9 +391,10 @@
 					font-size: 10px;
 					width: 60px;
 					align-items: center;
-					padding: 0;
-					margin-bottom: 15px;
+					padding: 10px;
+					margin-bottom: 10px;
 				}
+
 				nav li div {
 					overflow: hidden;
 					display: -webkit-box;
@@ -335,13 +402,16 @@
 					-webkit-line-clamp: 1;
 				}
 			}
-			@media (1024px <= width < 1280px) {
+
+			@media (1024px <=width < 1280px) {
 				.articles {
 					grid-template-columns: 1fr 1fr 1fr;
 				}
+
 				.articles {
 					padding-left: 100px;
 				}
+
 				.tag_container {
 					padding-left: 100px;
 				}
@@ -352,9 +422,10 @@
 					font-size: 10px;
 					width: 60px;
 					align-items: center;
-					padding: 0;
-					margin-bottom: 15px;
+					padding: 10px;
+					margin-bottom: 10px;
 				}
+
 				nav li div {
 					overflow: hidden;
 					display: -webkit-box;
@@ -362,23 +433,24 @@
 					-webkit-line-clamp: 1;
 				}
 			}
-			@media (1280px <= width < 1536px) {
+
+			@media (1280px <=width < 1536px) {
 				.articles {
 					grid-template-columns: 1fr 1fr 1fr;
 				}
 			}
-			@media (1536px <= width) {
+
+			@media (1536px <=width) {
 				.articles {
 					grid-template-columns: 1fr 1fr 1fr 1fr;
 				}
 			}
 		</style>
 	</head>
+
 	<body>
 		<header class="header_container">
-			<!-- <img class="logo" src="loggo.png" /> -->
 			<img class="logo" src="YouTube_Logo_2017.svg.webp" />
-
 			<div class="search_container">
 				<input type="text" placeholder="検索" />
 
@@ -398,244 +470,6 @@
 					<img src="movie.svg" />
 				</div>
 
-<<<<<<< HEAD
-        <img class="profile" src="uzz.jpg" />
-      </div>
-    </header>
-    <nav>
-      <ul>
-        <li>
-          <img src="sidehome.svg" />
-          <div>ホーム</div>
-        </li>
-        <li>
-          <img src="short.svg" />
-          <div>ショート</div>
-        </li>
-        <li>
-          <img src="torokuicon.svg" />
-          <div>登録チャンネル</div>
-        </li>
-        <li>
-          <img src="menuYoutube.svg" />
-          <div>Youtube Music</div>
-        </li>
-      </ul>
-    </nav>
-    <div class="tag_container">
-      <div class="tag_list">
-        <div class="tag">音楽</div>
-        <div class="tag">野生生物</div>
-        <div class="tag">ミックス</div>
-        <div class="tag">ニュース</div>
-        <div class="tag">ライブ</div>
-        <div class="tag">ペット</div>
-        <div class="tag">最近アップロードされた動画</div>
-        <div class="tag">視聴済み</div>
-        <div class="tag">新しい動画の発見</div>
-      </div>
-    </div>
-    <main>
-      <div class="articles">
-        <div class="article">
-          <img src="hq720.webp" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="aa.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="ahiru.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="g.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="kawaii.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="kk.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="moon.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="shin.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="yy.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="g.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="aa.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="ahiru.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-        <div class="article">
-          <img src="kawaii.png" />
-          <div class="description">
-            <img src="hq720.webp" />
-            <div class="text_container">
-              <div class="title">
-                Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-                PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo -
-                Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
-              </div>
-              <div class="user">semii</div>
-              <div class="statistics">7.5万 回視聴</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-  </body>
-=======
 				<div class="bell">
 					<div class="tooltip-text">通知</div>
 					<img src="bell.svg" />
@@ -680,208 +514,174 @@
 		<main>
 			<div class="articles">
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="aa.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="aa.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani Poji
+								chill breakcore songs to fall asleep listening to
 							</div>
-							<div class="user">semii</div>
+							<div class="user">JFo</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="ahiru.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="ahiru.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								ジブリ最高の癒しのピアノメロディー💽リラックスタイムに最適な、癒しのジブリスタジオ
 							</div>
-							<div class="user">semii</div>
+							<div class="user">Jjjj</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="night.webp" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="shin.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								ゆとりある東京の午後🎏 ㅣ 昼にぴったりのJpopプレイリスト
 							</div>
-							<div class="user">semii</div>
+							<div class="user">fhhh</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="Снимок экрана 2024-01-20 214001.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="Снимок экрана 2024-01-20 214001.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								a silly vocaloid playlist to listen to when ur bored :D
+								// vocaloid/ utaite mix!
 							</div>
-							<div class="user">semii</div>
+							<div class="user">samee</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="volcaloid.webp" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="g.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								ジブリ音楽はポジティブなエネルギーをもたらします🎵
+								少なくとも1 回 は 聞くべ き
 							</div>
-							<div class="user">semii</div>
+							<div class="user">kiki</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="kawaii.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="kawaii.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								Pipo Pipo - Serani Poji..Pipo Pipo - Serani Poji
 							</div>
-							<div class="user">semii</div>
+							<div class="user">JForrest English</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="kk.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="kk.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								𝗝-𝗣𝗼𝗽 𝗣𝗹𝗮𝘆𝗹𝗶𝘀𝘁 ゆとりある東京の午後🎏 ㅣ
+								昼にぴったりのJpopプレイリスト
 							</div>
-							<div class="user">semii</div>
+							<div class="user">kakee</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="moon.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="moon.png" />
 						<div class="text_container">
-							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
-							</div>
-							<div class="user">semii</div>
+							<div class="title">사랑은 언어를 초월하는 거야 | JPOP</div>
+							<div class="user">chillhouse</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="aa.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="aa.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								ジブリ最高の癒しのピアノメロディー💽リラックスタイムに最適な、癒しのジブリスタジオ
 							</div>
-							<div class="user">semii</div>
+							<div class="user">ames</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="Снимок экрана 2024-01-20 214001.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="Снимок экрана 2024-01-20 214001.png" />
 						<div class="text_container">
 							<div class="title">
 								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Seran
 							</div>
-							<div class="user">semii</div>
+							<div class="user">liliys</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="g.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="g.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								a silly vocaloid playlist to listen to when ur bored :D
+								// vocaloid/ utaite mix!
 							</div>
-							<div class="user">semii</div>
+							<div class="user">janee</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="kawaii.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="kawaii.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								ゆとりある東京の午後🎏 ㅣ 昼にぴったりのJpopプレイリスト
 							</div>
-							<div class="user">semii</div>
+							<div class="user">semis</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
 				<div class="article">
-					<img src="hq720.webp" />
+					<img src="ahiru.png" />
 					<div class="description">
-						<img src="hq720.webp" />
+						<img src="ahiru.png" />
 						<div class="text_container">
 							<div class="title">
-								Pipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo Pipo
-								- Serani PojiPipo Pipo - Serani PojiPipo Pipo - Serani
-								PojiPipo Pipo - Serani PojiPipo Pipo - Serani PojiPipo
-								Pipo - Serani Poji
+								ジブリ音楽はポジティブなエネルギーをもたらします🎵
+								少なくとも1 回 は 聞くべ き
 							</div>
-							<div class="user">semii</div>
+							<div class="user">jabe</div>
 							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
@@ -889,5 +689,4 @@
 			</div>
 		</main>
 	</body>
->>>>>>> 670773c19b00e08eb33d73f165cf8f8aa741dd54
 </html>
