@@ -7,15 +7,16 @@
 body {
     font-family: "Roboto", sans-serif;
     font-size: 20px;
+    position: relative;
 }
 
-.container {
+.header_container {
     width: 100%;
     background: #fff;
     /* height: 100vh; */
 }
 
-.header-container {
+.container {
     background-color: #fff;
     position: fixed;
     z-index: 2;
@@ -35,11 +36,15 @@ body {
 }
 
 .search-container {
+    justify-content: center;
+    flex-grow: 1;
     height: 40px;
     display: flex;
+    max-width: 666px;
 }
 
 .hamburger {
+    cursor: pointer;
     margin-right: 10px;
     height: 24px;
     width: 24px;
@@ -51,23 +56,13 @@ body {
 }
 
 .search-container input {
-    padding-left: 20px;
     outline: none;
-    width: 536px;
-    height: 40px;
-    position: relative;
-    align-items: center;
-    border: 1px solid var(--ytd-searchbox-legacy-border-color);
-    border-right: none;
-    border-radius: 40px 0 0 40px;
-    /* padding: 0 4px 0 16px; */
-    margin-left: 32px;
-    display: flexbox;
-    display: flex;
-    flex-direction: row;
-    /* padding: 10px; */
-    border: solid 1px rgb(216, 216, 216);
+    width: 100%;
+    height: 100%;
+    border: solid 1px #d3d3d3;
     border-radius: 20px 0 0 20px;
+    padding-left: 17px;
+    font-size: 16px;
 }
 
 .search-container button {
@@ -232,12 +227,12 @@ body {
     left: 13px;
 }
 
-.body-container {
+main {
+    padding-top: 5px;
     display: flex;
 }
 
 .item {
-
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -264,7 +259,7 @@ body {
     margin-top: 64px;
 } */
 
-.article-frame {
+.tag-container {
     position: fixed;
     z-index: 1;
     top: 56px;
@@ -274,7 +269,7 @@ body {
     background: white;
 }
 
-.example-2 {
+.tag-list {
 
     /* white-space: nowrap;
     overflow-x: hidden; */
@@ -288,7 +283,7 @@ body {
 }
 
 
-.article-frame ul {
+.tag-container ul {
     margin-top: 8px;
     list-style: none;
     display: flex;
@@ -296,7 +291,7 @@ body {
     gap: 14px;
 }
 
-.article-frame ul li {
+.tag-container ul li {
     transition: 1s;
     font-weight: 500;
     cursor: pointer;
@@ -306,12 +301,12 @@ body {
     padding: 5px 12px;
 }
 
-.article-frame ul li:nth-child(1) {
+.tag-container ul li:nth-child(1) {
     background-color: #0f0f0f;
     color: white;
 }
 
-.article-frame ul li:hover {
+.tag-container ul li:hover {
     background-color: rgb(197, 197, 197);
     /* background-image: linear-gradient(58.2deg, rgba(40, 91, 212, 0.73) -3%, rgba(171, 53, 163, 0.45) 49.3%, rgba(255, 204, 112, 0.37) 97.7%); */
 }
@@ -320,14 +315,14 @@ body {
 
 
 /* content */
-.content {
+.articles {
     padding-left: 240px;
     padding-right: 20px;
     padding-top: 120px;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
     /* display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 15px;
@@ -336,12 +331,33 @@ body {
     padding: 10px; */
 }
 
-.article_container {
+.article {
+    aspect-ratio: 3/2;
+    cursor: pointer;
     width: 100%;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-.article_container img {
+.img-and-time {
+    position: relative;
+}
+
+.time {
+    display: none;
+    border-radius: 8px;
+    padding: 5px;
+    background: #00000078;
+    color: white;
+    font-size: 14px;
+    /* bottom: -38px; */
+    /* left: 0; */
+    right: 6px;
+    top: 170px;
+    position: absolute;
+}
+
+.article img {
     width: 100%;
     border-radius: 10px;
 }
@@ -355,24 +371,30 @@ body {
 
 .article_contents img {
     width: 36px;
-    height: 36px;
+    height: 24px;
     border-radius: 18px;
 }
 
-
+.article_text {
+    margin-top: 5px;
+}
 
 .title {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    font-size: 16px;
     line-height: 22px;
+    font-size: 16px;
     font-weight: 500;
     color: #0f0f0f;
 }
 
 .author {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
     align-items: center;
     display: flex;
     font-size: 14px;

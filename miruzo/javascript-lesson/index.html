@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="animal">猫</div>
+      <button id="change">犬にしてください</button>
+    </div>
+    <script>
+      const animal = document.querySelector("#animal");
+      const bt = document.querySelector("#change");
+
+      bt.onclick = () => {
+        if (animal.innerHTML === "犬") {
+          animal.innerHTML = "猫";
+          animal.style.background = "red";
+          animal.style.color = "white";
+        } else {
+          animal.innerHTML = "犬";
+          animal.style.background = "blue";
+          animal.style.color = "black";
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+/*start header-container */
+@media (max-width: 1440px) {
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+
+}
+
+@media(max-width: 1024px) {
+    .body-container {
+        position: absolute;
+    }
+
+    .item {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        width: 60px;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+    .item-text {
+        width: 100%;
+        font-size: 10px;
+        /* display: none; */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+
+    .article-frame {
+        padding-left: 100px;
+    }
+
+    .content {
+        padding-left: 100px;
+    }
+}
+
+@media (max-width: 1240px) {
+    .search-container input {
+        width: 400px;
+    }
+
+}
+
+@media (max-width: 940px) {
+    .search-container input {
+        width: 200px;
+    }
+}
+
+@media (width < 648px) {
+    .search-container input {
+        width: 100px;
+    }
+
+    .body-container {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+}
+
+@media (648px <=width < 768px) {
+    .body-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* end header section */
+/* start body container */
+
+@media (max-width: 1240px) {
+    .content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 940px) {
+    .content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 648px) {
+    .header-container {
+        margin: 0 2rem 0 1rem;
+    }
+
+    .container {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        background: white;
+    }
+
+    .content {
+        padding-left: 21px;
+    }
+
+    .left-container {
+        margin-left: 0;
+    }
+
+    .container {
+        padding-left: 0;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+    .search-container input {
+        width: 100%;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        padding-left: 17px;
+        font-size: 16px;
+    }
+
+    .article-frame {
+        padding-left: 20px;
+    }
+}
