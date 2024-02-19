@@ -1,391 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Youtube</title>
-		<style>
-			* {
-				padding: 0;
-				margin: 0;
-				box-sizing: border-box;
-			}
-			body {
-				font-family: "Roboto", sans-serif;
-				font-size: 20px;
-			}
-			.container {
-				width: 100%;
-				height: 100vh;
-				position: relative;
-			}
-			.header_container {
-				position: fixed;
-				z-index: 1;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Youtube</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        position: relative;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: white;
+      }
+      header {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
 
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-				width: 100%;
-				height: 56px;
+        padding-left: 20px;
+        background: white;
+      }
+      header .logo {
+        height: 20px;
+      }
+      .search_container {
+        display: flex;
+        height: 40px;
+        flex-grow: 1;
+        margin: 0 10px 0 10px;
+        max-width: 666px;
+      }
+      .search_container input {
+        width: 100%;
+        height: 100%;
+        border: solid 1px #c1c1c1;
+        border-radius: 20px 0 0 20px;
+        padding-left: 17px;
+        font-size: 16px;
+      }
+      .search_button {
+        width: 64px;
+        border: solid 1px #cccccc;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .search_button:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .search_button:hover {
+        background: lightgrey;
+      }
+      .mic_icon {
+        aspect-ratio: 1/1;
+        width: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .mic_icon:hover .tooltip-text {
+        visibility: visible;
+      }
+      .mic_icon:hover {
+        background: lightgrey;
+      }
+      .right_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 20px;
+      }
+      .profile {
+        border-radius: 20px;
+        height: 32px;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        bottom: -45px;
 
-				padding-left: 20px;
-				background: white;
-			}
-			.header_container .logo {
-				height: 50%;
-			}
-			.search_container {
-				display: flex;
-				align-items: center;
-				width: 700px;
-				height: 40px;
-			}
-			.search_container input {
-				width: 540px;
-				height: 100%;
-				border: solid 1px #c1c1c1;
-				padding-left: 17px;
-				font-size: 16px;
-			}
-			.search_frame {
-				display: flex;
-				height: 100%;
-				align-items: center;
-				border-radius: 20px 0 0 20px;
-				border: solid 1px #cccccc;
-			}
-			.search_frame input {
-				width: 540px;
-				height: 90%;
-				border: none;
-				margin-left: 20px;
-				padding-left: 10px;
-			}
-			.search_container button {
-				width: 64px;
-				height: 100%;
-				border: none;
-				border-radius: 0 20px 20px 0;
-				border-right: solid 1px #d3d3d3;
-				border-top: solid 1px #d3d3d3;
-				border-top: solid 1px #d3d3d3;
-				background: #f8f8f8;
-				position: relative;
-			}
-			.search_container button:hover {
-				background: lightgrey;
-			}
-			.mic_icon {
-				display: flex;
-				width: 40px;
-				height: 100%;
-				border-radius: 20px;
-				margin-left: 14px;
-				align-items: center;
-				justify-content: center;
-				background: #f2f2f2;
-				position: relative;
-			}
-			.mic_icon {
-				display: flex;
-				width: 40px;
-				height: 100%;
-				border-radius: 20px;
-				margin-left: 14px;
-				align-items: center;
-				background: #f2f2f2;
-				position: relative;
-			}
-			.mic_icon:hover {
-				background: lightgrey;
-			}
-			.right_container {
-				height: 100%;
-				width: 100px;
-				display: flex;
-				align-items: center;
-				justify-content: space-evenly;
-				margin-right: 20px;
-			}
-			.logo_icon {
-				display: flex;
-				width: 30px;
-				height: 100%;
-				border-radius: 20px;
-				margin-left: 14px;
-				align-items: center;
-				justify-content: center;
-			}
-			.logo1_icon {
-				display: flex;
-				width: 30px;
-				height: 100%;
-				border-radius: 20px;
-				margin-left: 14px;
-				align-items: center;
-				justify-content: center;
-			}
-			.right_container img:last-child {
-				border-radius: 16px;
-				height: 32px;
-				width: 32px;
-			}
-			.body_container {
-				display: flex;
-				padding: 20px;
-			}
-			.side_menu {
-				position: fixed;
-				top: 70px;
-				z-index: 2;
-				width: 204px;
-				margin-top: 10px;
-				background: white;
-			}
-			.side_menu li {
-				display: flex;
-				align-items: center;
-				height: 40px;
-				color: #0f0f0f;
-				font-size: 14px;
-				padding: 0 12px;
-				gap: 15px;
-			}
-			.side_menu li:hover {
-				background: #f2f3f3;
-				border-radius: 8px;
-			}
-			.tag_container {
-				position: fixed;
-				z-index: 1;
-				top: 56px;
-				height: 56px;
-				width: 100%;
-				padding-left: 240px;
-			}
-			.tag_list {
-				display: flex;
-				white-space: nowrap;
-				overflow-x: auto;
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
 
-				overflow-y: scroll;
-				-ms-overflow-style: none;
-				scrollbar-width: none;
-			}
-			.tag {
-				flex: 0 0 auto;
-				margin-right: 10px;
-				background: #f2f2f2;
-				font-weight: 500;
-				font-size: 14px;
-				color: #0f0f0f;
-				margin: 12px 12px 12px 0;
-				padding: 5px 12px;
-				border-radius: 8px;
-			}
-			.tag:hover {
-				cursor: pointer;
-				background: #e5e5e5;
-			}
-			.article_container {
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr 1fr;
-				gap: 10px;
-				position: relative;
-				margin-left: 10px;
-			}
-			.article {
-				background: white;
-			}
-			.article img {
-				width: 100%;
-				border-radius: 10px;
-			}
-			.item {
-				display: flex;
-				background: skyblue;
-			}
-			.item img {
-				width: 32px;
-				height: 32px;
-				border-radius: 16px;
-				background: skyblue;
-				object-fit: cover;
-			}
-			.item_text {
-				width: 100%;
-				margin-left: 10px;
-			}
-			.title {
-				overflow: hidden;
-				display: -webkit-box;
-				-webkit-box-orient: vertical;
-				-webkit-line-clamp: 2;
-				font-size: 16px;
-			}
-			.user {
-				font-size: 14px;
-			}
-			.statistics {
-				font-size: 14px;
-			}
-			@media (1280px <= width < 1536px) {
-				.articles {
-					grid-template-columns: 1fr 1fr 1fr;
-				}
-			}
-			@media (1536px <= width) {
-				.articles {
-					grid-template-columns: 1fr 1fr 1fr 1fr;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="header_container">
-				<img class="logo" src="logos--youtube.svg" />
-				<div class="search_container">
-					<div class="search_frame"><input type="text" /></div>
-					<button>
-						<img src="search-outline.svg" />
-					</button>
-					<div class="mic_icon">
-						<img src="mic.svg" />
-					</div>
-				</div>
-				<div class="right_container">
-					<img src="smh.svg" />
-					<img src="logo.svg" />
-					<img src="photo.jpg" />
-				</div>
-			</div>
-			<div class="body_container">
-				<nav>
-					<ul class="side_menu">
-						<li><img src="menu_home.svg" />Home</li>
-						<li><img src="menu_short.svg" />Shorts</li>
-						<li><img src="menu_channels.svg" />Subscriptions</li>
-						<li><strong>You</strong><img src="menu_you.svg" /></li>
-						<li><img src="menu_music.svg" />Music</li>
-						<li><img src="menu_history.svg" />History</li>
-						<li><img src="menu_your-videos.svg" />Your videos</li>
-						<li><img src="menu_watch-later.svg" />Watch later</li>
-						<li><img src="menu_show-more.svg" />Show more</li>
-						<li><strong>Subscriptions</strong></li>
-						<li><img src="menu_trending.svg" />Trending</li>
-						<li><img src="menu_Live.svg" />Live</li>
-						<li><img src="menu_Gaming.svg" />Gaming</li>
-						<li><img src="menu_news.svg" />News</li>
-						<li><img src="menu_show-more.svg" />Show more</li>
-					</ul>
-				</nav>
-				<div class="tag_container">
-					<div class="tag_list">
-						<div class="tag">All</div>
-						<div class="tag">Gaming</div>
-						<div class="tag">Mixes</div>
-						<div class="tag">News</div>
-						<div class="tag">Podcast</div>
-						<div class="tag">Live</div>
-						<div class="tag">Beauty</div>
-						<div class="tag">Manga</div>
-						<div class="tag">Landscapes</div>
-					</div>
-				</div>
-				<div class="article_container">
-					<div class="article">
-						<img src="cat.jpg" />
-						<div class="item">
-							<img src="kitten.jpg" />
-							<div class="item_text">
-								<div class="title">15 minutes of adorable kittens</div>
-								<div class="user">The Pet Collective</div>
-								<div class="statistics">3M views</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="cat.jpg" />
-						<div class="item">
-							<img src="kitten.jpg" />
-							<div class="item_text">
-								<div class="title">15 minutes of adorable kittens</div>
-								<div class="user">The Pet Collective</div>
-								<div class="statistics">3M views</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="cat.jpg" />
-						<div class="item">
-							<img src="kitten.jpg" />
-							<div class="item_text">
-								<div class="title">15 minutes of adorable kittens</div>
-								<div class="user">The Pet Collective</div>
-								<div class="statistics">3M views</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="cat.jpg" />
-						<div class="item">
-							<img src="kitten.jpg" />
-							<div class="item_text">
-								<div class="title">15 minutes of adorable kittens</div>
-								<div class="user">The Pet Collective</div>
-								<div class="statistics">3M views</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="cat.jpg" />
-						<div class="item">
-							<img src="kitten.jpg" />
-							<div class="item_text">
-								<div class="title">15 minutes of adorable kittens</div>
-								<div class="user">The Pet Collective</div>
-								<div class="statistics">3M views</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="cat.jpg" />
-						<div class="item">
-							<img src="kitten.jpg" />
-							<div class="item_text">
-								<div class="title">15 minutes of adorable kittens</div>
-								<div class="user">The Pet Collective</div>
-								<div class="statistics">3M views</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="cat.jpg" />
-						<div class="item">
-							<img src="kitten.jpg" />
-							<div class="item_text">
-								<div class="title">15 minutes of adorable kittens</div>
-								<div class="user">The Pet Collective</div>
-								<div class="statistics">3M views</div>
-							</div>
-						</div>
-					</div>
-					<div class="article">
-						<img src="cat.jpg" />
-						<div class="item">
-							<img src="kitten.jpg" />
-							<div class="item_text">
-								<div class="title">15 minutes of adorable kittens</div>
-								<div class="user">The Pet Collective</div>
-								<div class="statistics">3M views</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+        font-size: 12px;
+        color: white;
+
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+      .tooltip:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .tooltip:hover {
+        background: gray;
+      }
+      .video {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .video:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .video:hover {
+        background: lightgray;
+      }
+      .bell {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .bell:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .bell:hover {
+        background: lightgray;
+      }
+      nav {
+        position: fixed;
+        top: 70px;
+        z-index: 2;
+        width: 240px;
+        height: 100%;
+      }
+      nav li {
+        display: flex;
+        align-items: center;
+        width: 204px;
+        margin-left: 10px;
+        padding: 8px 12px;
+        gap: 24px;
+        font-weight: 500;
+        font-size: 14px;
+        color: #0f0f0f;
+        border-radius: 10px;
+      }
+      nav li img {
+        width: 24px;
+        height: 24px;
+      }
+      nav li:hover {
+        background: #f2f3f3;
+        cursor: pointer;
+      }
+      main {
+        position: absolute;
+      }
+      .tag_container {
+        position: fixed;
+        z-index: 1;
+        top: 56px;
+        height: 56px;
+        width: 100%;
+        padding-left: 240px;
+        padding-bottom: 50px;
+        background: white;
+      }
+      .tag_list {
+        display: flex;
+        white-space: nowrap;
+        overflow-x: auto;
+
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .tag {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        background: #f2f2f2;
+        font-weight: 500;
+        font-size: 14px;
+        color: #0f0f0f;
+        margin: 12px 12px 12px 0;
+        padding: 5px 12px;
+        border-radius: 8px;
+      }
+      .tag:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+      .articles {
+        padding-left: 240px;
+        padding-right: 20px;
+        padding-top: 120px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+      }
+      .article {
+        width: 100%;
+        aspect-ratio: 3/2;
+      }
+      .article img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .description {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .description img {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+      }
+      .title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+
+        line-height: 22px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #0f0f0f;
+      }
+      .user {
+        font-size: 14px;
+      }
+      .statistics {
+        padding-bottom: 25px;
+        font-size: 14px;
+      }
+      @media (width < 648px) {
+        .articles {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          display: none;
+        }
+        .articles {
+          padding-left: 20px;
+        }
+        .tag_container {
+          padding-left: 20px;
+        }
+        .search_container {
+          margin: 0 2rem 0 1rem;
+        }
+      }
+      @media (648px <= width < 768px) {
+        .articles {
+          grid-template-columns: 1fr 1fr;
+        }
+        nav {
+          display: none;
+        }
+        .articles {
+          padding-left: 20px;
+        }
+        .tag_container {
+          padding-left: 20px;
+        }
+      }
+      @media (768px <= width < 1024px) {
+        .articles {
+          grid-template-columns: 1fr 1fr;
+        }
+        .articles {
+          padding-left: 100px;
+        }
+        .tag_container {
+          padding-left: 100px;
+        }
+        nav li {
+          flex-direction: column;
+          gap: 5px;
+          font-size: 10px;
+          width: 60px;
+          align-items: center;
+          padding: 10px;
+          margin-bottom: 10px;
+        }
+        nav li div {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+      }
+      @media (1024px <= width < 1280px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        .articles {
+          padding-left: 100px;
+        }
+        .tag_container {
+          padding-left: 100px;
+        }
+
+        nav li {
+          flex-direction: column;
+          gap: 5px;
+          font-size: 10px;
+          width: 60px;
+          align-items: center;
+          padding: 10px;
+          margin-bottom: 10px;
+        }
+        nav li div {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+      }
+      @media (1280px <= width < 1536px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      @media (1536px <= width) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header_container">
+      <img class="logo" src="logos--youtube.svg" />
+      <div class="search_container">
+        <input type="text" placeholder="Search" />
+
+        <button class="search_button">
+          <div class="tooltip-text">検察</div>
+          <img src="search-outline.svg" />
+        </button>
+
+        <div class="mic_icon">
+          <div class="tooltip-text">音声で検察"</div>
+          <img src="mic.svg" />
+        </div>
+      </div>
+      <div class="right_container">
+        <div class="video">
+          <div class="tooltip-text">Create</div>
+          <img src="smh.svg" />
+        </div>
+
+        <div class="bell">
+          <div class="tooltip-text">Notifications</div>
+          <img src="logo.svg" />
+        </div>
+        <img class="profile" src="1unnamed (4).jpg" />
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <img src="menu_home.svg" />
+          <div>Home</div>
+        </li>
+        <li>
+          <img src="menu_short.svg" />
+          <div>Shorts</div>
+        </li>
+        <li>
+          <img src="menu_channels.svg" />
+          <div>Subscriptions</div>
+        </li>
+        <li>
+          <strong>You</strong>
+          <img src="menu_you.svg" />
+        </li>
+        <li>
+          <img src="menu_music.svg" />
+          <div>Music</div>
+        </li>
+        <li>
+          <img src="menu_history.svg" />
+          <div>History</div>
+        </li>
+        <li>
+          <img src="menu_your-videos.svg" />
+          <div>Your videos</div>
+        </li>
+        <li>
+          <img src="menu_watch-later.svg" />
+          <div>Watch later</div>
+        </li>
+        <li>
+          <img src="menu_show-more.svg" />
+          <div>Show more</div>
+        </li>
+        <li>
+          <strong>Subscriptions</strong>
+        </li>
+        <li>
+          <img src="menu_trending.svg" />
+          <div>Trending</div>
+        </li>
+        <li>
+          <img src="menu_Live.svg" />
+          <div>Live</div>
+        </li>
+        <li>
+          <img src="menu_Gaming.svg" />
+          <div>Gaming</div>
+        </li>
+        <li>
+          <img src="menu_news.svg" />
+          <div>News</div>
+        </li>
+        <li>
+          <img src="menu_show-more.svg" />
+          <div>Show more</div>
+        </li>
+      </ul>
+    </nav>
+    <div class="tag_container">
+      <div class="tag_list">
+        <div class="tag">All</div>
+        <div class="tag">Gaming</div>
+        <div class="tag">Mixes</div>
+        <div class="tag">News</div>
+        <div class="tag">Podcast</div>
+        <div class="tag">Live</div>
+        <div class="tag">Beauty</div>
+        <div class="tag">Manga</div>
+        <div class="tag">Landscapes</div>
+      </div>
+    </div>
+    <main>
+      <div class="articles">
+        <div class="article">
+          <img src="surv.webp" />
+          <div class="description">
+            <img src="surv1.jpg" />
+            <div class="item_text">
+              <div class="title">Top Survivor Rank Stream - Identity V</div>
+              <div class="user">Sikey</div>
+              <div class="statistics">3 thousand views - 1 month ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="Planet.webp" />
+          <div class="description">
+            <img src="channels4_profile.jpg" />
+            <div class="text_container">
+              <div class="title">
+                UNREAL PLANET | Places That Don't Seem Real
+              </div>
+              <div class="user">Lifeder.En</div>
+              <div class="statistics">8.6M views - 2 months ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="animals.webp" />
+          <div class="description">
+            <img src="Petchannel.jpg" />
+            <div class="text_container">
+              <div class="title">
+                The FUNNIEST Pet Videos of 2023! 🤣 | BEST Compilation
+              </div>
+              <div class="user">The Pet Collective</div>
+              <div class="statistics">21M views - 3 months ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="Lily.webp" />
+          <div class="description">
+            <img src="LinkClick.jpg" />
+            <div class="text_container">
+              <div class="title">Luck Life — 'Lily' | Color Coded Lyrics</div>
+              <div class="user">Kei Takahashi</div>
+              <div class="statistics">271 thousand views - 2 years ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="study.webp" />
+          <div class="description">
+            <img src="person.jpg" />
+            <div class="text_container">
+              <div class="title">
+                2.5-HOUR STUDY WITH ME / calm piano / 🚢 Yokohama Harbor at
+                SUNSET🌃 /
+              </div>
+              <div class="user">Abao in Tokyo</div>
+              <div class="statistics">15M views - 1 year ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="BlueLock.webp" />
+          <div class="description">
+            <img src="Isagi.jpg" />
+            <div class="text_container">
+              <div class="title">
+                Blue Lock Best Moments That Broke The Internet!!!🤯🤯
+              </div>
+              <div class="user">Blue Lock TV</div>
+              <div class="statistics">35thousand views - 1 year ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="influence.webp" />
+          <div class="description">
+            <img src="Hannah.jpg" />
+            <div class="text_container">
+              <div class="title">
+                INFLUENCER INSANITY EP 1 | The unhinged consumerism of “restock”
+                influencers, so unrealistic!
+              </div>
+              <div class="user">Hannah Alonzo</div>
+              <div class="statistics">1.6M views - 7 days ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="Cosplay.webp" />
+          <div class="description">
+            <img src="Girl.jpg" />
+            <div class="text_container">
+              <div class="title">
+                ☆ Xianyun Cosplay Makeup Tutorial Genshin Impact 原神 ☆
+              </div>
+              <div class="user">Kleiner Pixel</div>
+              <div class="statistics">36 thousand views - 8 days ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="sleep.webp" />
+          <div class="description">
+            <img src="psps.jpg" />
+            <div class="text_container">
+              <div class="title">
+                Before Bed Sleep Music | Soft crystal singing bowls
+              </div>
+              <div class="user">Sleeping Vibration</div>
+              <div class="statistics">2.5M views - 1 year ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
