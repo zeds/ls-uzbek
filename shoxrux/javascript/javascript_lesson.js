@@ -16,12 +16,16 @@
 
 const button = document.getElementById("button-id");
 
+
+
 button.addEventListener("click", updateSudentName);
 
 function updateSudentName() {
 
     var studentName = prompt("学生の名前を入力して下さい");
 
-    button.style.color = 'green';
+    button.style.color = 'red';
     button.textContent = `学生の 名前は: ${studentName}`;
 }
+
+button2.addEventListener("click", studentOld);
