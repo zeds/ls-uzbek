@@ -28,4 +28,18 @@ function updateSudentName() {
     button.textContent = `学生の 名前は: ${studentName}`;
 }
 
-button2.addEventListener("click", studentOld);
+
+// const color = document.getElementById("color");
+// const changeColor = document.getElementById("changecolorBtn");
+
+// changeColor.onclick = () => {
+//     if (color.innerHTML === "green") {
+//         color.innerHTML = "red";
+//         color.style.background = "red";
+//         color.style.color = "blue";
+//     } else {
+//         color.innerHTML = "green";
+//         color.style.background = "green";
+//         color.style.color = "gray";
+//     }
+// }
