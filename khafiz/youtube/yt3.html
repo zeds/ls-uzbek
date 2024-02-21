@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>YouTube</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        position: relative;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: lightgray;
+      }
+      header {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-left: 10px;
+        background: white;
+      }
+      .left_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .ham {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+
+      .ham:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+
+      .logo {
+        height: 20px;
+        cursor: pointer;
+      }
+
+      .search_container {
+        display: flex;
+        height: 40px;
+        flex-grow: 1;
+        margin: 0 5rem 0 5rem;
+        max-width: 666px;
+      }
+      .search_container input {
+        width: 100%;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        padding-left: 17px;
+        font-size: 16px;
+      }
+      .search_button {
+        width: 60px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+      }
+      .search_button:hover .tooltip-text {
+        opacity: 0.93;
+        visibility: visible;
+        background-color: #686868;
+      }
+
+      .search_button:hover {
+        background: #d0d0d0;
+      }
+      .mic_icon {
+        /* 親でdisplay: flexを指定しているが、親が縮むとmicの幅も縮んでしまう。 */
+        /* micは固定にしたいので、flex: 0 0 40px;と指定している。 */
+        flex: 0 0 40px;
+        width: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+        position: relative;
+        cursor: pointer;
+      }
+      .mic_icon:hover .tooltip-text {
+        opacity: 0.93;
+        visibility: visible;
+        background-color: #686868;
+      }
+      .mic_icon:hover {
+        background: #d0d0d0;
+      }
+      .right_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 20px;
+      }
+      .profile {
+        border-radius: 20px;
+        height: 32px;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        bottom: -45px;
+
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
+
+        font-size: 12px;
+        color: white;
+
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+
+      /* ホバー時にツールチップの非表示を解除 */
+      .tooltip:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .tooltip:hover {
+        background: gray;
+      }
+      .video {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .video:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .video:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+      .bell {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .bell:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .bell:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+
+      nav {
+        position: fixed;
+        top: 70px;
+        z-index: 2;
+        width: 240px;
+        height: 100%;
+      }
+      nav li {
+        display: flex;
+        width: 204px;
+        margin-left: 10px;
+        padding: 8px 12px;
+        gap: 24px;
+        font-weight: 500;
+        font-size: 14px;
+        color: #0f0f0f;
+        border-radius: 10px;
+        justify-content: column;
+        align-items: center;
+      }
+      nav li img {
+        width: 24px;
+        height: 24px;
+      }
+      nav li:hover {
+        background: #f2f2f2;
+        cursor: pointer;
+      }
+      main {
+        position: absolute;
+      }
+      .tag_container {
+        position: fixed;
+        z-index: 1;
+        top: 56px;
+        height: 56px;
+        width: 100%;
+        padding-left: 240px;
+        background: white;
+      }
+      .tag_list {
+        display: flex; /* 要素を横並びにする */
+        white-space: nowrap; /* 要素を折り返さずに横並びにする */
+        overflow-x: auto; /* 横方向のスクロールを有効にする */
+
+        /* スクロールバーを消す */
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .tag {
+        flex: 0 0 auto; /* 要素のサイズを固定する */
+        margin-right: 10px; /* タグ間の間隔を設定する */
+        background: #f2f2f2;
+        font-weight: 500;
+        font-size: 14px;
+        color: #0f0f0f;
+        margin: 12px 12px 12px 0;
+        padding: 5px 12px;
+        border-radius: 8px;
+        height: 32px;
+        line-height: 23px;
+      }
+      .tag:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+      .articles {
+        padding-left: 240px;
+        padding-right: 20px;
+        padding-top: 110px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+      }
+      .article {
+        width: 100%;
+        aspect-ratio: 3/2.8;
+      }
+      .article img {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .description {
+        display: flex;
+        gap: 10px;
+      }
+      .description img {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+      }
+      .title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+
+        line-height: 22px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #0f0f0f;
+      }
+      .user {
+        font-size: 14px;
+      }
+      .statistics {
+        font-size: 14px;
+      }
+      @media (width < 648px) {
+        .articles {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          display: none;
+        }
+        .articles {
+          padding-left: 20px;
+        }
+        .tag_container {
+          padding-left: 20px;
+        }
+        .search_container {
+          margin: 0 2rem 0 1rem;
+        }
+      }
+      @media (648px <= width < 768px) {
+        .articles {
+          grid-template-columns: 1fr 1fr;
+        }
+        nav {
+          display: none;
+        }
+        .articles {
+          padding-left: 20px;
+        }
+        .tag_container {
+          padding-left: 20px;
+        }
+      }
+      @media (768px <= width < 1024px) {
+        .articles {
+          grid-template-columns: 1fr 1fr;
+        }
+        .articles {
+          padding-left: 100px;
+        }
+        .tag_container {
+          padding-left: 100px;
+        }
+
+        nav li {
+          flex-direction: column;
+          gap: 5px;
+          font-size: 10px;
+          width: 60px;
+          align-items: center;
+          padding: 10px;
+          margin-bottom: 15px;
+        }
+        nav li div {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+      }
+      @media (1024px <= width < 1280px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        .articles {
+          padding-left: 100px;
+        }
+        .tag_container {
+          padding-left: 100px;
+        }
+
+        nav li {
+          flex-direction: column;
+          gap: 5px;
+          font-size: 10px;
+          width: 60px;
+          align-items: center;
+          padding: 10px;
+          margin-bottom: 15px;
+        }
+        nav li div {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+      }
+      @media (1280px <=width < 1536px) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
+      @media (1536px <=width) {
+        .articles {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header_container">
+      <div class="left_container">
+        <div class="ham">
+          <img src="hamburger.svg" />
+        </div>
+
+        <img class="logo" src="youtube.svg" />
+      </div>
+
+      <div class="search_container">
+        <input type="text" placeholder="Search" />
+
+        <button class="search_button">
+          <div class="tooltip-text">Search</div>
+          <img src="search-sharp.svg" />
+        </button>
+
+        <div class="mic_icon">
+          <div class="tooltip-text">Search with your voice</div>
+          <img src="mic.svg" />
+        </div>
+      </div>
+      <div class="right_container">
+        <div class="video">
+          <div class="tooltip-text">Create</div>
+          <img src="movie_icon.svg" />
+        </div>
+
+        <div class="bell">
+          <div class="tooltip-text">Notifications</div>
+          <img src="bell.svg" />
+        </div>
+
+        <img
+          class="profile"
+          src="https://yt3.googleusercontent.com/ytc/AIf8zZRrabIIIBL83sV4A4qx-96uDbu-7Y5uakcgUZxz_62WCWe0gJo3r7KsXYkI7MJZ=s88-c-k-c0x00ffffff-no-rj"
+        />
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <img src="main.svg" />
+          <div>Home</div>
+        </li>
+        <li>
+          <img src="shorts.svg" />
+          <div>Shorts</div>
+        </li>
+        <li>
+          <img src="subs.svg" />
+          <div>Subscriptions</div>
+        </li>
+        <li>
+          <img src="all.svg" />
+          <div>History</div>
+        </li>
+        <li>
+          <img src="music.svg" />
+          <div>Youtube Music</div>
+        </li>
+      </ul>
+    </nav>
+    <div class="tag_container">
+      <div class="tag_list">
+        <div class="tag">All</div>
+        <div class="tag">Gaming</div>
+        <div class="tag">Valorant</div>
+        <div class="tag">Music</div>
+        <div class="tag">Mixes</div>
+        <div class="tag">News</div>
+        <div class="tag">Japanese Music</div>
+        <div class="tag">Chill-out music</div>
+        <div class="tag">Trailers</div>
+        <div class="tag">Indie music</div>
+        <div class="tag">Recently uploaded</div>
+        <div class="tag">Watched</div>
+        <div class="tag">New to you</div>
+      </div>
+    </div>
+    <main>
+      <div class="articles">
+        <div class="article">
+          <img src="j.jpg" />
+          <div class="description">
+            <img src="ju.jpg" />
+            <div class="text-container">
+              <div class="title">
+                Japanese Listening Practice || Japanese Conversation || Slow and
+                Easy Japanese Lesson
+              </div>
+              <div class="user">JLPT TUTOR</div>
+              <div class="statistics">148 Views・1 day ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="k.jpg" />
+          <div class="description">
+            <img src="ku.jpg" />
+            <div class="text-container">
+              <div class="title">Old Kanye</div>
+              <div class="user">LazyFlavio</div>
+              <div class="statistics">4.3M Views・1 year ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="v.jpg" />
+          <div class="description">
+            <img src="vu.jpg" />
+            <div class="text-container">
+              <div class="title">
+                Die For You ft. Grabbitz // Official Music Video // VALORANT
+                Champions 2021
+              </div>
+              <div class="user">VALORANT</div>
+              <div class="statistics">84M Views・2 years ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="d.jpg" />
+          <div class="description">
+            <img src="du.jpg" />
+            <div class="text-container">
+              <div class="title">
+                Dr. Dre Beats but they're MEDIEVAL | feat Still D.R.E, In Da
+                Club, Xxplosive, California Love + more
+              </div>
+              <div class="user">Beedle The Bardcore</div>
+              <div class="statistics">4.4M Views・2 years ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="i.jpg" />
+          <div class="description">
+            <img src="iu.jpg" />
+            <div class="text-container">
+              <div class="title">Its just a game</div>
+              <div class="user">Innocent</div>
+              <div class="statistics">7.6M Views・2 years ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="p.jpg" />
+          <div class="description">
+            <img src="pu.jpg" />
+            <div class="text-container">
+              <div class="title">
+                Peter Griffin and Neco Arc Sing Somebody That I Used To Know
+              </div>
+              <div class="user">imfrybro</div>
+              <div class="statistics">724K Views・7 months ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="n.jpg" />
+          <div class="description">
+            <img src="nu.jpg" />
+            <div class="text-container">
+              <div class="title">
+                Новаторы - Что-то срочно надо выдумать такое, что-бы победителем
+                прийти домой. (TikTok)👍🎶🔥
+              </div>
+              <div class="user">Artemiys Ranes</div>
+              <div class="statistics">394K Views・2 years ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="a.jpg" />
+          <div class="description">
+            <img src="au.jpg" />
+            <div class="text-container">
+              <div class="title">
+                Ado - New Genesis (UTA from ONE PIECE FILM RED)
+              </div>
+              <div class="user">Crunchyroll</div>
+              <div class="statistics">6.2M Views・1 years ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="m.jpg" />
+          <div class="description">
+            <img src="mu.jpg" />
+            <div class="text-container">
+              <div class="title">
+                MILGRAM / Amane - The Purge March [The Second Trial Music Video]
+              </div>
+              <div class="user">MILGRAM -ミルグラム-</div>
+              <div class="statistics">4.9M Views・5 month ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="o.jpg" />
+          <div class="description">
+            <img src="ou.jpg  " />
+            <div class="text-container">
+              <div class="title">
+                I Don't Like Mondays. / PAINT ("ONE PIECE" theme Song)
+              </div>
+              <div class="user">I Don't Like Mondays.</div>
+              <div class="statistics">15M Views・2 years ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="g.jpg" />
+          <div class="description">
+            <img src="gu.jpg" />
+            <div class="text-container">
+              <div class="title">
+                Popular Anime Openings But It's Lofi Remix ~ Best Anime Lofi Hip
+                Hop Mix
+              </div>
+              <div class="user">Chill Out & Lofi Music</div>
+              <div class="statistics">588K Views・8 months ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="c.jpg" />
+          <div class="description">
+            <img src="cu.jpg" />
+            <div class="text-container">
+              <div class="title">Cats with nothing to lose</div>
+              <div class="user">cat_exe</div>
+              <div class="statistics">2.5M Views・1 month ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="article">
+          <img src="q.jpg" />
+          <div class="description">
+            <img src="qu.jpg" />
+            <div class="text-container">
+              <div class="title">buttercup - jack stauber (cover)</div>
+              <div class="user">chloe moriondo</div>
+              <div class="statistics">20M Views・4 years ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

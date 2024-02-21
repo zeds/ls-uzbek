@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: lightgray;
+      }
+      .articles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background: #b8f7f8;
+      }
+      .article {
+        display: flex;
+        background: #04c0d6;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        aspect-ratio: 16/9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="articles">
+        <div class="article">article1</div>
+        <div class="article">article2</div>
+        <div class="article">article3</div>
+        <div class="article">article4</div>
+        <div class="article">article5</div>
+        <div class="article">article6</div>
+        <div class="article">article7</div>
+        <div class="article">article8</div>
+      </div>
+    </div>
+  </body>
+</html>

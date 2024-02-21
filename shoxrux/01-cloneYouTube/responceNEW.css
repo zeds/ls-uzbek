@@ -1,0 +1,135 @@
+@media(width < 648px) {
+    .articles {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+    .tag-container {
+        padding-left: 20px;
+    }
+
+    .search-container {
+        margin: 0 2rem 0 1rem;
+    }
+}
+
+@media(648px <=width < 768px) {
+    .articles {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 20px;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+    .tag-container {
+        padding-left: 20px;
+    }
+
+    .search-container {
+        margin: 0 2rem 0 1rem;
+    }
+}
+
+@media(768px <=width < 1024px) {
+    .articles {
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .articles {
+        padding-left: 100px;
+    }
+
+    .tag-container {
+        padding-left: 100px;
+    }
+
+    .item {
+        padding: 5px;
+        height: 60px;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        width: 60px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .item-text {
+        /* padding-left: 12px; */
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        /* width: 60px; */
+        justify-content: center;
+        text-overflow: ellipsis;
+        align-items: center;
+        margin-top: 2px;
+        /* margin-bottom: 10px; */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+}
+
+@media(1023px <=width <1280px) {
+    .articles {
+        gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .articles {
+        padding-left: 100px;
+    }
+
+    .tag-container {
+        padding-left: 100px;
+    }
+
+    .item {
+        padding: 5px;
+        height: 60px;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        width: 60px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .item-text {
+        /* padding-left: 12px; */
+        flex-direction: column;
+        gap: 5px;
+        font-size: 10px;
+        /* width: 60px; */
+        align-items: center;
+        margin-top: 2px;
+        /* margin-bottom: 10px; */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+}
+
+@media(1280px <=width <1536px) {
+    .articles {
+        gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
+
+@media (1536px <=width) {
+    .articles {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLEX BOX</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto";
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: pink;
+      }
+      .thumb {
+        width: 380px;
+        background: lightblue;
+        padding: 10px;
+      }
+      img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+       border-radius :20px; 
+      }
+      .title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .name {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: black;
+      }
+      .item_contents img {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="thumb">
+      <img src="uzbek.jpg" />
+      <div class="item_contents">
+        <img src="samandar.png" />
+      <div class="title">
+        4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY, BEST NUMBER ONE ENGLISH LESSON.
+      </div>
+      <div class="name">JForrest English</div>
+      <div class="name">7.1万 回視聴・1 か月前</div>
+    </div>
+</div>
+</div>
+  </body>
+</html>

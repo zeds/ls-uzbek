@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var asilaWeight = 50;
+      var asilaHeight = 1.6;
+      asilabmi = asilaWeight / (asilaHeight * asilaHeight);
+      console.log(asilabmi);
+
+      var weight = 50;
+      var height = 2.6;
+      var bmi = weight / (height * height);
+      if (bmi < 14.99) {
+        console.log("underweight");
+      } else if (bmi > 15.0 && bmi < 24.0) {
+        console.log("normal");
+      } else if (bmi > 25.0) {
+        console.log("overweight");
+      }
+
+      var pupilAge = 17;
+      var pasportAge = 16;
+
+      if (pasportAge <= pupilAge) {
+        console.log("You can take");
+      } else {
+        console.log("Please later");
+      }
+
+      var studentScore = 77;
+      if (studentScore >= 90) {
+        console.log("You got A");
+      } else if (studentScore < 90 && studentScore > 80) {
+        console.log("You got B");
+      } else if (studentScore < 80 && studentScore >= 70) {
+        console.log("You got C");
+      } else if (studentScore < 70 && studentScore >= 60) {
+        console.log("You got D");
+      } else {
+        console.log("Faaaaaaall");
+      }
+    </script>
+  </body>
+</html>
