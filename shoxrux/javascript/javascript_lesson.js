@@ -1,22 +1,22 @@
-// 1 get button element
-// const button = document.querySelector("button");
-// 2 add eventListener to the button
-// button.addEventListener("click", updateName);
-// 3 create updateName Function
 
-// function updateName() {
-//     let name = prompt("名前を入力して下さい");
-//     button.textContent = `学生の 名前は: ${name}`;
-// }
-// function updateName() {
-//     const name = prompt("名前を入力して下さい");
-//     button.textContent = `Player 1: ${name}`;
-// }
+const color_btn = document.querySelector("#changecolorBtn");
+const color = document.querySelector("#color");
+
+color_btn.onclick = () => {
+    if (color.innerHTML === "green") {
+        color.innerHTML = "red";
+        color.style.background = "red";
+        color.style.color = "white";
+    } else {
+        color.innerHTML = "green";
+        color.style.background = "green";
+        color.style.color = "white";
+    }
+}
+
 
 
 const button = document.getElementById("button-id");
-
-
 
 button.addEventListener("click", updateSudentName);
 
@@ -28,4 +28,8 @@ function updateSudentName() {
     button.textContent = `学生の 名前は: ${studentName}`;
 }
 
-button2.addEventListener("click", studentOld);
+
+
+
+
+
