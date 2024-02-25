@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: lightgray;
+      }
+      header {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
+        background: skyblue;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        background: white;
+      }
+      header .logo {
+        height: 20px;
+      }
+      .search_container {
+        display: flex;
+        height: 40px;
+        flex-grow: 1;
+        /* margin: 0 5rem 0 5rem; */
+        margin: 0 10px 0 10px;
+        max-width: 666px;
+      }
+
+      .search_container input {
+        width: 100%;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        padding-left: 17px;
+        font-size: 16px;
+      }
+
+      .search_button {
+        width: 64px;
+        /* height: 100%; */
+        border: solid 1px #d3d3d3;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .search_button:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .search_button:hover {
+        background: #d0d0d0;
+      }
+
+      .mic_icon {
+        /* 親でdisplay: flexを指定しているが、親が縮むとmicの幅も縮んでしまう。 */
+        /* micは固定にしたいので、flex: 0 0 40px;と指定している。 */
+        /* または、aspect-ratio: 1/1;でもいい */
+        aspect-ratio: 1/1;
+        width: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+        position: relative;
+      }
+
+      .mic_icon:hover .tooltip-text {
+        visibility: visible;
+      }
+
+      .mic_icon:hover {
+        background: #d0d0d0;
+      }
+      .right_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 20px;
+      }
+
+      .profile {
+        border-radius: 16px;
+        height: 32px;
+        width: 32px;
+      }
+
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        bottom: -45px;
+
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
+
+        font-size: 12px;
+        color: white;
+
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+
+      /* ホバー時にツールチップの非表示を解除 */
+      .tooltip:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .tooltip:hover {
+        background: gray;
+      }
+
+      .video {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+
+      .video:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .video:hover {
+        background: gray;
+      }
+
+      .bell {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+
+      .bell:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .bell:hover {
+        background: gray;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        max-width: 1480px;
+        margin: 0 auto;
+      }
+      .left_contents {
+        height: 700px;
+        background: orange;
+      }
+      .right_contents {
+        height: 100vh;
+        background: pink;
+      }
+      @media (width < 980px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <header class="header_container">
+          <img class="logo" src="YouTube_Logo_2017.svg.webp" />
+          <div class="search_container">
+            <input type="text" placeholder="検索" />
+
+            <button class="search_button">
+              <div class="tooltip-text">検索</div>
+              <img src="search.svg" />
+            </button>
+
+            <div class="mic_icon">
+              <div class="tooltip-text">音声で検索</div>
+              <img src="mic.svg" />
+            </div>
+          </div>
+          <div class="right_container">
+            <div class="video">
+              <div class="tooltip-text">作成</div>
+              <img src="movie.svg" />
+            </div>
+
+            <div class="bell">
+              <div class="tooltip-text">通知</div>
+              <img src="bell.svg" />
+            </div>
+
+            <img class="profile" src="uzz.jpg" />
+          </div>
+        </header>
+      </header>
+      <main>
+        <div class="left_contents">ああああああ</div>
+        <div class="right_contents">いいいいいいいいい</div>
+      </main>
+    </div>
+  </body>
+</html>
