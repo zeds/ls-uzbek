@@ -8,10 +8,10 @@ let pad_2 = document.querySelectorAll(".pad")[1];
 let pad_3 = document.querySelectorAll(".pad")[2];
 let pad_4 = document.querySelectorAll(".pad")[3];
 let pad_5 = document.querySelectorAll(".pad")[4];
-let pad_8 = document.querySelectorAll(".pad")[5];
-let pad_6 = document.querySelectorAll(".pad")[8];
+let pad_6 = document.querySelectorAll(".pad")[5];
 let pad_7 = document.querySelectorAll(".pad")[6];
-let pad_9 = document.querySelectorAll(".pad")[7];
+let pad_8 = document.querySelectorAll(".pad")[7];
+let pad_9 = document.querySelectorAll(".pad")[8];
 let pad_10 = document.querySelectorAll(".pad")[9];
 
 x.style.background = "red";
