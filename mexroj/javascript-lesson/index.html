@@ -4,59 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Roboto", sans-serif;
-        font-size: 20px;
-      }
-      .container {
-        width: 100%;
-        height: 100vh;
-        background: lightgray;
-      }
-      button {
-        font-family: "helvetica neue", helvetica, sans-serif;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        border: 2px solid rgb(200 200 0 / 60%);
-        background-color: rgb(0 217 217 / 60%);
-        color: rgb(100 0 0 / 100%);
-        box-shadow: 1px 1px 2px rgb(0 0 200 / 40%);
-        border-radius: 10px;
-        padding: 3px 10px;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <button type="button">Player 1: Chris</button>
-      <div id="item">Mexroj</div>
+    <div class="calc-container">
+      <div class="x">x</div>
+      <div>+</div>
+      <div class="y">y</div>
+      <div>=</div>
+      <div class="z">z</div>
     </div>
-    <script>
-      const button = document.querySelector("button");
-
-      button.addEventListener("click", updateName);
-
-      function updateName() {
-        const name = prompt("名前を入力して下さい");
-        button.textContent = `Player 1: ${name}`;
-      }
-      let elem = document.getElementById("item");
-      elem.style.backgroundColor = "red";
-      elem.style.color = "white";
-      elem.style.fontSize = "20px";
-    </script>
+    <div class="pad-container">
+      <div class="pad">1</div>
+      <div class="pad">2</div>
+      <div class="pad">3</div>
+      <div class="pad">4</div>
+      <div class="pad">5</div>
+      <div class="pad">6</div>
+      <div class="pad">7</div>
+      <div class="pad">8</div>
+      <div class="pad">9</div>
+      <div class="pad">=</div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
