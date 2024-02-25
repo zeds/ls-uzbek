@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        position: relative;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: skyblue;
+      }
+      header {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 10px;
+      }
+      .left-container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .ham {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .ham:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+      .logo {
+        height: 20px;
+        cursor: pointer;
+      }
+      .search_container {
+        display: flex;
+        height: 40px;
+        flex-grow: 1;
+        margin: 0 5rem 0 5rem;
+        max-width: 666px;
+      }
+      .search_container input {
+        width: 100%;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        padding-left: 17px;
+        font-size: 16px;
+      }
+      .search_button {
+        width: 60px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+      }
+      .search_button:hover .tooltip-text {
+        opacity: 0.93;
+        visibility: visible;
+        background: #686868;
+      }
+      .search_button:hover {
+        background: #d0d0d0;
+      }
+      .mic_icon {
+        flex: 0 0 40px;
+        width: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+        position: relative;
+        cursor: pointer;
+      }
+      .mic_icon:hover .tooltip-text {
+        opacity: 0.93;
+        visibility: visible;
+        background: #686868;
+      }
+      .mic_icon:hover {
+        background: #d0d0d0;
+      }
+      .right_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-left: 20px;
+      }
+      .profile {
+        border-radius: 20px;
+        height: 32px;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        bottom: -45px;
+
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
+
+        font-size: 12px;
+        color: white;
+
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+
+      .tooltip:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .tooltip:hover {
+        background: gray;
+      }
+      .video {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .video:hover {
+        cursor: pointer;
+        background: #e3e3e3;
+      }
+      .video:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .bell {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .bell:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+      .bell:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      nav {
+        position: fixed;
+        top: 70px;
+        z-index: 2;
+        width: 240px;
+        height: 100%;
+      }
+      .nav_article {
+        display: flex;
+        width: 204px;
+        margin-left: 900px;
+        padding: 8px 12px;
+        font-weight: 500;
+        font-size: 14px;
+        color: #0f0f0f;
+        border-radius: 10px;
+        justify-content: column;
+        align-items: center;
+      }
+      .nav_article img {
+        width: 100%;
+        border-radius: 12px;
+      }
+      .title {
+        text-align: center;
+      }
+      main {
+        position: absolute;
+      }
+      .tag_container {
+        position: fixed;
+        z-index: 2;
+        top: 56px;
+        height: 56px;
+        width: 403px;
+        margin-left: 912px;
+        margin-right: 50px;
+        background: white;
+      }
+      .tag_list {
+        display: flex;
+        white-space: nowrap;
+        overflow-x: auto;
+
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .tag {
+        flex: 0 0 auto;
+        margin-left: 10px;
+        background: #f2f2f2;
+        font-weight: 500;
+        font-size: 14px;
+        color: #0f0f0f;
+        margin: 12px 12px 12px 0;
+        padding: 5px 12px;
+        border-radius: 8px;
+        height: 32px;
+        line-height: 23px;
+      }
+      .tag:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+      .video_stream {
+        display: flex;
+        width: 700px;
+        height: 500px;
+        aspect-ratio: 3 / 2;
+        justify-content: center;
+        align-items: center;
+      }
+      .video_stream img {
+        width: 100%;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header_container">
+      <div class="left-container">
+        <div class="ham">
+          <img src="hamburger.svg" />
+        </div>
+        <img class="logo" src="youtube.svg" />
+      </div>
+
+      <div class="search_container">
+        <input type="text" placeholder="Search" />
+
+        <button class="search_button">
+          <div class="tooltip-text">Search</div>
+          <img src="search-sharp.svg" />
+        </button>
+
+        <div class="mic_icon">
+          <div class="tooltip-text">Search with voice</div>
+          <img src="mic.svg" />
+        </div>
+      </div>
+
+      <div class="right_container">
+        <div class="video">
+          <div class="tooltip-text">Create</div>
+          <img src="movie_icon.svg" />
+        </div>
+
+        <div class="bell">
+          <div class="tooltip-text">Notifications</div>
+          <img src="bell.svg" />
+        </div>
+
+        <img
+          class="profile"
+          src="https://yt3.googleusercontent.com/ytc/AIf8zZRrabIIIBL83sV4A4qx-96uDbu-7Y5uakcgUZxz_62WCWe0gJo3r7KsXYkI7MJZ=s88-c-k-c0x00ffffff-no-rj"
+        />
+      </div>
+    </header>
+    <nav>
+      <div class="nav_article">
+        <img src="j.jpg" />
+        <div class="text-container">
+          <div class="title">
+            Japanese Listening Practice || Japanese Conversation || Slow and
+            Easy Japanese Lesson
+          </div>
+          <div class="user">JLPT TUTOR</div>
+          <div class="statistics">148 Views・1 day ago</div>
+        </div>
+      </div>
+      <div class="nav_article">
+        <img src="k.jpg" />
+        <div class="text-container">
+          <div class="title">Old Kanye</div>
+          <div class="user">LazyFlavio</div>
+          <div class="statistics">4.3M Views・1 year ago</div>
+        </div>
+      </div>
+      <div class="nav_article">
+        <img src="v.jpg" />
+        <div class="text-container">
+          <div class="title">
+            Die For You ft. Grabbitz // Official Music Video // VALORANT
+            Champions 2021
+          </div>
+          <div class="user">VALORANT</div>
+          <div class="statistics">84M Views・2 years ago</div>
+        </div>
+      </div>
+      <div class="nav_article">
+        <img src="d.jpg" />
+        <div class="text-container">
+          <div class="title">
+            Dr. Dre Beats but they're MEDIEVAL | feat Still D.R.E, In Da Club,
+            Xxplosive, California Love + more
+          </div>
+          <div class="user">Beedle The Bardcore</div>
+          <div class="statistics">4.4M Views・2 years ago</div>
+        </div>
+      </div>
+    </nav>
+    <div class="tag_container">
+      <div class="tag_list">
+        <div class="tag">All</div>
+        <div class="tag">Gaming</div>
+        <div class="tag">Valorant</div>
+        <div class="tag">Music</div>
+        <div class="tag">Mixes</div>
+        <div class="tag">News</div>
+        <div class="tag">Japanese Music</div>
+        <div class="tag">Chill-out music</div>
+        <div class="tag">Trailers</div>
+        <div class="tag">Indie music</div>
+        <div class="tag">Recently uploaded</div>
+        <div class="tag">Watched</div>
+        <div class="tag">New to you</div>
+      </div>
+    </div>
+    <main>
+      <div class="video_stream">
+        <img src="uzbek.jpg" />
+      </div>
+    </main>
+  </body>
+</html>

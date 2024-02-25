@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 20px;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: lightgray;
+        }
+
+        .header_container {
+            width: 100%;
+            height: 56px;
+            background-color: yellowgreen;
+        }
+
+        .body_container {
+            background-color: blue;
+            padding: 5px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+        }
+
+        .side_menu {
+            display: static;
+            width: 240px;
+            background-color: orange;
+        }
+
+        /* .side_menu ul li {
+            white-space: nowrap;
+        } */
+
+
+        .tag_container {
+            height: 100px;
+            display: grid;
+            /* grid-auto-columns: 21%; */
+            grid-auto-flow: column;
+            overflow-x: auto;
+            overscroll-behavior-inline: contain;
+            background: skyblue;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .tag_container div {
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: black;
+            text-align: center;
+            padding: 5px 8px;
+
+        }
+
+        .article_container {
+            width: 100%;
+            background-color: pink;
+            display: grip;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            margin-left: 250px;
+        }
+
+        /* .article {
+            aspect-ratio: 3/2;
+            background-color: gold;
+        } */
+
+        @media(width < 1200px) {
+            .article_container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="header_container">
+        </header>
+        <div class="body_container">
+            <!-- <nav class="side_menu">
+                <ul>
+                    <li>ホームページ</li>
+                    <li>ショート</li>
+                    <li>登録チャンネル</li>
+                    <li>Youtube Music</li>
+                </ul>
+            </nav> -->
+            <div class="tag_container">
+                <div>すべて</div>
+                <div>音楽</div>
+                <div>野生動物</div>
+                <div>ミックス</div>
+                <div>ニュース</div>
+                <div>ライブ</div>
+                <div>ベット</div>
+                <div>最近アップデート</div>
+                <div>視聽済み</div>
+                <div>新しい動画</div>
+                <div class="article_container">
+                    <div class="article">aaa</div>
+                    <div class="article">aaa</div>
+                    <div class="article">aaa</div>
+                    <div class="article">aaa</div>
+                    <div class="article">aaa</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

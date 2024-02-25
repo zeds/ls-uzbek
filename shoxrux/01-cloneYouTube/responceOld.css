@@ -24,6 +24,7 @@
     }
 
     .item-text {
+        width: 100%;
         font-size: 10px;
         /* display: none; */
         overflow: hidden;

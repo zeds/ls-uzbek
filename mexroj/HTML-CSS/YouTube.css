@@ -1,0 +1,407 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  position: relative;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background: lightgray;
+}
+header {
+  /* background-color: chartreuse; */
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 20px;
+  background: white;
+}
+.left_container {
+  display: flex;
+  gap: 15px;
+}
+header .hamburger {
+  height: 20px;
+}
+header .logo {
+  height: 20px;
+  /* background: red; */
+}
+.search_container {
+  display: flex;
+  height: 40px;
+  flex-grow: 1;
+  margin: 0 5rem 0 5rem;
+  max-width: 666px;
+}
+.search_container input {
+  width: 100%;
+  height: 100%;
+  border: solid 1px #d3d3d3;
+  border-radius: 20px 0 0 20px;
+  padding-left: 17px;
+  font-size: 16px;
+}
+.search_button {
+  width: 60px;
+  height: 100%;
+  border: solid 1px #d3d3d3;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.search_button:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
+.search_button:hover {
+  background: #e0e0e0;
+}
+.mic_icon {
+  /* 親でdisplay: flexを指定しているが、親が縮むとmicの幅も縮んでしまう。 */
+  /* micは固定にしたいので、flex: 0 0 40px;と指定している。 */
+  flex: 0 0 40px;
+  width: 40px;
+  margin-left: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #f2f2f2;
+  position: relative;
+}
+.mic_icon:hover .tooltip-text {
+  visibility: visible;
+}
+.mic_icon:hover {
+  background: #e0e0e0;
+}
+.right_container {
+  height: 100%;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 20px;
+}
+.profile {
+  border-radius: 20px;
+  height: 32px;
+}
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  bottom: -45px;
+
+  display: inline-block;
+  white-space: nowrap;
+  padding: 10px;
+
+  font-size: 12px;
+  color: white;
+
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+/* ホバー時にツールチップの非表示を解除 */
+/* .tooltip:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+} */
+/* .tooltip:hover {
+  background: gray;
+} */
+.video {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  position: relative;
+}
+.video:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
+.video:hover {
+  background: #e0e0e0;
+}
+.bell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  position: relative;
+}
+.bell:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
+.bell:hover {
+  background: #e0e0e0;
+}
+
+.nav {
+  /* background-color: coral; */
+  position: fixed;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  top: 70px;
+  z-index: 2;
+  width: 230px;
+  height: 100%;
+}
+.nav hr {
+  width: 204px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.nav li {
+  display: flex;
+  width: 204px;
+  /* margin-left: 10px; */
+  padding: 8px 12px;
+  gap: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #0f0f0f;
+  border-radius: 10px;
+}
+.nav li img {
+  width: 24px;
+  height: 24px;
+}
+.nav li:hover {
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+.tag_container {
+  position: fixed;
+  z-index: 1;
+  top: 56px;
+  height: 56px;
+  padding-left: 240px;
+  width: 100%;
+  background: white;
+}
+.tag_list {
+  display: flex; /* 要素を横並びにする */
+  white-space: nowrap; /* 要素を折り返さずに横並びにする */
+  overflow-x: auto; /* 横方向のスクロールを有効にする */
+  /* background-color: green; */
+  /* スクロールバーを消す */
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tag {
+  flex: 0 0 auto; /* 要素のサイズを固定する */
+  margin-right: 10px; /* タグ間の間隔を設定する */
+  background: #f2f2f2;
+  font-weight: 500;
+  font-size: 14px;
+  color: #0f0f0f;
+  margin: 12px 12px 12px 0;
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+.tag:hover {
+  cursor: pointer;
+  background: #e5e5e5;
+}
+.main {
+  /* background-color: blue; */
+  position: absolute;
+  padding-left: 240px;
+  top: 120px;
+}
+.articles {
+  height: 100%;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.article {
+  /* background-color: red; */
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/1.9;
+}
+.article img {
+  width: 100%;
+  border-radius: 5%;
+}
+.description {
+  display: flex;
+  gap: 10px;
+}
+.description img {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+}
+.title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  line-height: 22px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #0f0f0f;
+}
+.user {
+  font-size: 14px;
+}
+.statistics {
+  font-size: 14px;
+}
+
+/* nav-container */
+
+@media (width < 694px) {
+  .main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .tag_container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .articles {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    display: none;
+  }
+  .nav hr {
+    display: none;
+  }
+  .search_container {
+    margin: 0 2rem 0 1rem;
+  }
+}
+@media (694px < width < 790px) {
+  .main {
+    padding-left: 20px;
+  }
+  .tag_container {
+    padding-left: 20px;
+  }
+  .articles {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nav {
+    display: none;
+  }
+  .nav hr {
+    display: none;
+  }
+  .search_container {
+    margin: 0 2rem 0 1rem;
+  }
+}
+@media (790px <= width < 1075px) {
+  .main {
+    padding-left: 72px;
+  }
+  .articles {
+    grid-template-columns: 1fr 1fr;
+  }
+  .tag_container {
+    padding-left: 72px;
+  }
+  .nav {
+    width: 72px;
+    overflow: hidden;
+  }
+  .nav hr {
+    display: none;
+  }
+  .nav .one li {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 10px;
+    width: 60px;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .nav .one li div {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  .nav .two {
+    display: none;
+  }
+  .nav .three {
+    display: none;
+  }
+}
+@media (1075px <= width < 1307px) {
+  .main {
+    padding-left: 72px;
+  }
+  .articles {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .tag_container {
+    padding-left: 72px;
+  }
+  .nav {
+    width: 72px;
+    overflow: hidden;
+  }
+  .nav hr {
+    display: none;
+  }
+  .nav .one li {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 10px;
+    width: 60px;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .nav .one li div {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  .nav .two {
+    display: none;
+  }
+  .nav .three {
+    display: none;
+  }
+}
