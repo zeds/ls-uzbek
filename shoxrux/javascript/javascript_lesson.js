@@ -3,6 +3,7 @@ const color_btn = document.querySelector("#changecolorBtn");
 const color = document.querySelector("#color");
 
 color_btn.onclick = () => {
+    console.log(color.innerHTML);
     if (color.innerHTML === "green") {
         color.innerHTML = "red";
         color.style.background = "red";
@@ -13,6 +14,9 @@ color_btn.onclick = () => {
         color.style.color = "white";
     }
 }
+
+
+// =============================
 
 
 
