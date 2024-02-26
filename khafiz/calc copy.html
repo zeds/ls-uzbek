@@ -18,7 +18,11 @@
       .pad_container {
         display: flex;
       }
-      .plus .minus .divide .multiply .pad {
+      .x,
+      .y,
+      .z,
+      .plus,
+      .pad {
         display: flex;
         width: 50px;
         height: 50px;
@@ -53,7 +57,7 @@
       <div class="pad">=</div>
       <div class="pad">+</div>
       <div class="pad">-</div>
-      <div class="pad">"</div>
+      <div class="pad">*</div>
       <div class="pad">/</div>
     </div>
   </body>
@@ -157,9 +161,34 @@
   });
   pad_10.addEventListener("click", function () {
     console.log("=");
+    if (type === "+") {
+      z = x + y;
+    }
+    if (type === "-") {
+      z = x - y;
+    }
     let x = Number(document.querySelector(".x").innerHTML);
     let y = Number(document.querySelector(".y").innerHTML);
     let z = x + y;
     document.querySelector(".z").innerHTML = z.toString();
+    x.style.background = "red";
+    y.style.background = "transparent";
+    select = "x";
   });
+  pad_11.addEventListener("click"),
+    function () {
+      document.querySelector(".plus").innerHTML = "+";
+      x.style.background = "red";
+      y.style.background = "transparent";
+      select = "y";
+      type = "+";
+    };
+  pad_12.addEventListener("click"),
+    function () {
+      document.querySelector(".plus").innerHTML = "-";
+      x.style.background = "transparent";
+      y.style.background = "red";
+      select = "y";
+      type = "-";
+    };
 </script>
