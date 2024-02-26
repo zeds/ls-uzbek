@@ -18,10 +18,6 @@
       .pad_container {
         display: flex;
       }
-      .x,
-      .y,
-      .z,
-      .plus,
       .pad {
         display: flex;
         width: 50px;
@@ -55,14 +51,18 @@
       <div class="pad">8</div>
       <div class="pad">9</div>
       <div class="pad">=</div>
+      <div class="pad">+</div>
+      <div class="pad">-</div>
+      <div class="pad">"</div>
+      <div class="pad">/</div>
     </div>
   </body>
 </html>
 <script>
+  select = "x";
   let x = document.querySelector(".x");
   let y = document.querySelector(".y");
   let z = document.querySelector(".z");
-  select = "x";
 
   let pad_1 = document.querySelectorAll(".pad")[0];
   let pad_2 = document.querySelectorAll(".pad")[1];
