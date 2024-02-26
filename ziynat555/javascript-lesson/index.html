@@ -57,6 +57,7 @@
 
     <script>
       let select = "x";
+      let type = "+";
       let x = document.querySelector(".x");
       let y = document.querySelector(".y");
       let z = document.querySelector(".z");
@@ -71,10 +72,10 @@
       let pad_8 = document.querySelectorAll(".pad")[7];
       let pad_9 = document.querySelectorAll(".pad")[8];
       let pad_10 = document.querySelectorAll(".pad")[9];
-      let pad_11 = document.querySelectorAll(".pad")[10];
-      let pad_12 = document.querySelectorAll(".pad")[11];
-      let pad_13 = document.querySelectorAll(".pad")[12];
-      let pad_14 = document.querySelectorAll(".pad")[13];
+      let pad_11 = document.querySelectorAll(".pad")[10]; //+
+      let pad_12 = document.querySelectorAll(".pad")[11]; //-
+      let pad_13 = document.querySelectorAll(".pad")[12]; //*
+      let pad_14 = document.querySelectorAll(".pad")[13]; // /
 
       x.style.background = "red";
 
@@ -91,10 +92,11 @@
 
       pad_1.addEventListener("click", function () {
         if (select === "x") {
-          x.innerHTML = "1";
-        } else {
-          y.innerHTML = "1";
+          if (x.innerHTML === "x") {
+            x.innerHTML = "1";
+          }
         }
+        els;
       });
       pad_2.addEventListener("click", function () {
         if (select === "x") {
@@ -163,6 +165,7 @@
       pad_11.addEventListener("click", function () {
         select = "y";
         type = "+";
+
         x.style.background = "transparent";
         y.style.background = "red";
       });
