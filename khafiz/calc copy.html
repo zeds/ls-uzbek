@@ -289,36 +289,57 @@
       });
       pad_10.addEventListener("click", function () {
         console.log("=");
+        let x = Number(document.querySelector(".x").innerHTML);
+        let y = Number(document.querySelector(".y").innerHTML);
         if (type === "+") {
           z = x + y;
         }
         if (type === "-") {
           z = x - y;
         }
-        let x = Number(document.querySelector(".x").innerHTML);
-        let y = Number(document.querySelector(".y").innerHTML);
-        let z = x + y;
-        document.querySelector(".z").innerHTML = z.toString();
-        x.style.background = "red";
-        y.style.background = "transparent";
+        if (type === "*") {
+          z = x * y;
+        }
+        if (type === "/") {
+          z = x / y;
+        }
+        document.querySelector(".z").innerHTML = z;
+        document.querySelector(".x").style.background = "#A8AAFF";
+        document.querySelector(".y").style.background = "transparent";
+
+        document.querySelector(".x").innerHTML = "x";
+        document.querySelector(".y").innerHTML = "y";
+
         select = "x";
       });
-      pad_11.addEventListener("click"),
-        function () {
-          document.querySelector(".plus").innerHTML = "+";
-          x.style.background = "red";
-          y.style.background = "transparent";
-          select = "y";
-          type = "+";
-        };
-      pad_12.addEventListener("click"),
-        function () {
-          document.querySelector(".plus").innerHTML = "-";
-          x.style.background = "transparent";
-          y.style.background = "red";
-          select = "y";
-          type = "-";
-        };
+      pad_11.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "+";
+        x.style.background = "transparent";
+        y.style.background = "#A8AAFF";
+        select = "y";
+        type = "+";
+      });
+      pad_12.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "-";
+        x.style.background = "transparent";
+        y.style.background = "#A8AAFF";
+        select = "y";
+        type = "-";
+      });
+      pad_13.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "*";
+        x.style.background = "transparent";
+        y.style.background = "#A8AAFF";
+        select = "y";
+        type = "*";
+      });
+      pad_14.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "/";
+        x.style.background = "transparent";
+        y.style.background = "#A8AAFF";
+        select = "y";
+        type = "/";
+      });
     </script>
   </body>
 </html>
