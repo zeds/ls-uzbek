@@ -104,65 +104,137 @@
 
 			pad_1.addEventListener("click", function () {
 				if (select === "x") {
-					x.innerHTML = "1";
+					if (x.innerHTML === "x") {
+						x.innerHTML = "1";
+					} else {
+						x.innerHTML = x.innerHTML + "1";
+					}
 				} else {
-					y.innerHTML = "1";
+					if (y.innerHTML === "y") {
+						y.innerHTML = "1";
+					} else {
+						y.innerHTML = y.innerHTML + "1";
+					}
 				}
 			});
 			pad_2.addEventListener("click", function () {
 				if (select === "x") {
-					x.innerHTML = "2";
+					if (x.innerHTML === "x") {
+						x.innerHTML = "2";
+					} else {
+						x.innerHTML = x.innerHTML + "2";
+					}
 				} else {
-					y.innerHTML = "2";
+					if (y.innerHTML === "y") {
+						y.innerHTML = "2";
+					} else {
+						y.innerHTML = y.innerHTML + "2";
+					}
 				}
 			});
 			pad_3.addEventListener("click", function () {
 				if (select === "x") {
-					x.innerHTML = "3";
+					if (x.innerHTML === "x") {
+						x.innerHTML = "3";
+					} else {
+						x.innerHTML = x.innerHTML + "3";
+					}
 				} else {
-					y.innerHTML = "3";
+					if (y.innerHTML === "y") {
+						y.innerHTML = "3";
+					} else {
+						y.innerHTML = y.innerHTML + "3";
+					}
 				}
 			});
 			pad_4.addEventListener("click", function () {
 				if (select === "x") {
-					x.innerHTML = "4";
+					if (x.innerHTML === "x") {
+						x.innerHTML = "4";
+					} else {
+						x.innerHTML = x.innerHTML + "4";
+					}
 				} else {
-					y.innerHTML = "4";
+					if (y.innerHTML === "y") {
+						y.innerHTML = "4";
+					} else {
+						y.innerHTML = y.innerHTML + "4";
+					}
 				}
 			});
 			pad_5.addEventListener("click", function () {
 				if (select === "x") {
-					x.innerHTML = "5";
+					if (x.innerHTML === "x") {
+						x.innerHTML = "5";
+					} else {
+						x.innerHTML = x.innerHTML + "5";
+					}
 				} else {
-					y.innerHTML = "5";
+					if (y.innerHTML === "y") {
+						y.innerHTML = "5";
+					} else {
+						y.innerHTML = y.innerHTML + "5";
+					}
 				}
 			});
 			pad_6.addEventListener("click", function () {
 				if (select === "x") {
-					x.innerHTML = "6";
+					if (x.innerHTML === "x") {
+						x.innerHTML = "6";
+					} else {
+						x.innerHTML = x.innerHTML + "6";
+					}
 				} else {
-					y.innerHTML = "6";
+					if (y.innerHTML === "y") {
+						y.innerHTML = "6";
+					} else {
+						y.innerHTML = y.innerHTML + "6";
+					}
 				}
 			});
 			pad_7.addEventListener("click", function () {
 				if (select === "x") {
-					x.innerHTML = "7";
+					if (x.innerHTML === "x") {
+						x.innerHTML = "7";
+					} else {
+						x.innerHTML = x.innerHTML + "7";
+					}
 				} else {
-					y.innerHTML = "7";
+					if (y.innerHTML === "y") {
+						y.innerHTML = "7";
+					} else {
+						y.innerHTML = y.innerHTML + "7";
+					}
 				}
 			});
 			pad_8.addEventListener("click", function () {
 				if (select === "x") {
-					x.innerHTML = "8";
+					if (x.innerHTML === "x") {
+						x.innerHTML = "8";
+					} else {
+						x.innerHTML = x.innerHTML + "8";
+					}
 				} else {
-					y.innerHTML = "8";
+					if (y.innerHTML === "y") {
+						y.innerHTML = "8";
+					} else {
+						y.innerHTML = y.innerHTML + "8";
+					}
 				}
 			});
 			pad_9.addEventListener("click", function () {
 				if (select === "x") {
-					x.innerHTML = "9";
+					if (x.innerHTML === "x") {
+						x.innerHTML = "9";
+					} else {
+						x.innerHTML = x.innerHTML + "9";
+					}
 				} else {
-					y.innerHTML = "9";
+					if (y.innerHTML === "y") {
+						y.innerHTML = "9";
+					} else {
+						y.innerHTML = y.innerHTML + "";
+					}
 				}
 			});
 
@@ -186,6 +258,10 @@
 				document.querySelector(".z").innerHTML = z;
 				document.querySelector(".x").style.background = "#A8AAFF";
 				document.querySelector(".y").style.background = "transparent";
+
+				document.querySelector(".x").innerHTML = "x";
+				document.querySelector(".y").innerHTML = "y";
+
 				select = "x";
 			});
 			// +
