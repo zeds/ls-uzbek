@@ -28,6 +28,35 @@
 				cursor: pointer;
 				margin: 5px;
 			}
+			.dentaku {
+				display: grid;
+				grid-template-columns: 50px 50px 50px 50px;
+				grid-auto-rows: 50px;
+			}
+			.dentaku_bottom {
+				display: grid;
+				grid-template-columns: 100px 50px 50px;
+				grid-auto-rows: 50px;
+			}
+			.btn {
+				display: flex;
+				width: 50px;
+				height: 50px;
+				background: gray;
+				justify-content: center;
+				align-items: center;
+				border: 1px solid black;
+				cursor: pointer;
+			}
+			.btn_zero {
+				display: flex;
+				width: 100px;
+				height: 50px;
+				background: gray;
+				justify-content: center;
+				align-items: center;
+				border: 1px solid black;
+			}
 		</style>
 	</head>
 	<body>
@@ -54,6 +83,29 @@
 			<div class="pad">*</div>
 			<div class="pad">/</div>
 		</div>
+		<div class="dentaku">
+			<div class="btn">C</div>
+			<div class="btn">±</div>
+			<div class="btn">%</div>
+			<div class="btn">÷</div>
+			<div class="btn">7</div>
+			<div class="btn">8</div>
+			<div class="btn">9</div>
+			<div class="btn">x</div>
+			<div class="btn">4</div>
+			<div class="btn">5</div>
+			<div class="btn">6</div>
+			<div class="btn">-</div>
+			<div class="btn_1 btn">1</div>
+			<div class="btn">2</div>
+			<div class="btn">3</div>
+			<div class="btn">+</div>
+		</div>
+		<div class="dentaku_bottom">
+			<div class="btn_zero">0</div>
+			<div class="btn">.</div>
+			<div class="btn">=</div>
+		</div>
 
 		<script>
 			let select = "x";
@@ -61,6 +113,23 @@
 			let x = document.querySelector(".x");
 			let y = document.querySelector(".y");
 			let z = document.querySelector(".z");
+
+			let btn_1 = document.querySelector(".btn_1");
+			btn_1.addEventListener("click", function () {
+				if (select === "x") {
+					if (x.innerHTML === "x") {
+						x.innerHTML = "1";
+					} else {
+						x.innerHTML = x.innerHTML + "1";
+					}
+				} else {
+					if (y.innerHTML === "y") {
+						y.innerHTML = "1";
+					} else {
+						y.innerHTML = y.innerHTML + "1";
+					}
+				}
+			});
 
 			let pad_1 = document.querySelectorAll(".pad")[0];
 			let pad_2 = document.querySelectorAll(".pad")[1];
