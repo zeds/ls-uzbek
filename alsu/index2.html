@@ -18,13 +18,13 @@
       }
       .pad {
         display: flex;
-        width: 540px;
+        width: 50px;
         height: 50px;
         justify-content: center;
         align-items: center;
         border-radius: 5px;
         background: black;
-        color: white;
+        color: blanchedalmond;
         cursor: pointer;
         margin: 5px;
       }
@@ -144,11 +144,12 @@
           y.innerHTML = "9";
         }
       });
+
       pad_10.addEventListener("click", function () {
         console.log("=");
         let x = Number(document.querySelector(".x").innerHTML);
         let y = Number(document.querySelector(".y").innerHTML);
-        let z = x + y;
+        z = x + y;
         document.querySelector(".z").innerHTML = z;
       });
     </script>
