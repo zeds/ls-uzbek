@@ -60,12 +60,31 @@
         align-items: center;
         width: 100px;
         height: 50px;
-        background: gray;
+        background: rgb(153, 152, 152);
         border: 1px solid black;
       }
       .dentaku_bottom {
         display: grid;
         grid-template-columns: 100px 50px 50px;
+      }
+      .btn_div,
+      .btn_multi,
+      .btn_minus,
+      .btn_plus,
+      .btn_eq {
+        background: orange;
+      }
+      .btn_7,
+      .btn_8,
+      .btn_9,
+      .btn_4,
+      .btn_5,
+      .btn_6,
+      .btn_1,
+      .btn_2,
+      .btn_3,
+      .btn_n {
+        background: rgb(153, 152, 152);
       }
     </style>
   </head>
@@ -98,7 +117,7 @@
     </div>
     <div class="dentaku_bottom">
       <div class="btn_0 btn">0</div>
-      <div class="btn">.</div>
+      <div class="btn_n btn">.</div>
       <div class="btn_eq btn">=</div>
     </div>
 
@@ -108,6 +127,7 @@
       let x = document.querySelector(".x");
       let y = document.querySelector(".y");
       let z = document.querySelector(".z");
+
       let btn_0 = document.querySelector(".btn_0");
       let btn_1 = document.querySelector(".btn_1");
       let btn_2 = document.querySelector(".btn_2");
@@ -123,7 +143,8 @@
       let btn_multi = document.querySelector(".btn_multi");
       let btn_div = document.querySelector(".btn_div");
       let btn_eq = document.querySelector(".btn_eq");
-      x.style.background = "#A8AAFF";
+
+      x.style.background = "red";
 
       x.addEventListener("click", function () {
         x.style.background = "#A8AAFF";
