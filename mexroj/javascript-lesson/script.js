@@ -181,6 +181,7 @@ btn_9.addEventListener("click", function () {
 });
 
 // +
+
 btn_eq.addEventListener("click", function () {
   let x = Number(document.querySelector(".x").innerHTML);
   let y = Number(document.querySelector(".y").innerHTML);
