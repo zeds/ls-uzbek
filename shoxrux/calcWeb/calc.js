@@ -22,6 +22,7 @@ let btn_eq = document.querySelector(".btn_eq");
 let btn_clear = document.querySelector(".clear");
 let btn_plus_minus = document.querySelector(".plus_minus");
 let btn_percent = document.querySelector(".percent");
+let ans = document.querySelector(".ans");
 
 x.style.background = "#A8AAFF";
 
@@ -54,12 +55,14 @@ btn_1.addEventListener("click", function () {
 		} else {
 			x.innerHTML = x.innerHTML + "1";
 		}
+		ans.innerHTML = x.innerHTML;
 	} else {
 		if (y.innerHTML === "y") {
 			y.innerHTML = "1";
 		} else {
 			y.innerHTML = y.innerHTML + "1";
 		}
+		ans.innerHTML = y.innerHTML;
 	}
 });
 btn_2.addEventListener("click", function () {
@@ -69,12 +72,14 @@ btn_2.addEventListener("click", function () {
 		} else {
 			x.innerHTML = x.innerHTML + "2";
 		}
+		ans.innerHTML = x.innerHTML;
 	} else {
 		if (y.innerHTML === "y") {
 			y.innerHTML = "2";
 		} else {
 			y.innerHTML = y.innerHTML + "2";
 		}
+		ans.innerHTML = y.innerHTML;
 	}
 });
 btn_3.addEventListener("click", function () {
@@ -84,12 +89,14 @@ btn_3.addEventListener("click", function () {
 		} else {
 			x.innerHTML = x.innerHTML + "3";
 		}
+		ans.innerHTML = x.innerHTML;
 	} else {
 		if (y.innerHTML === "y") {
 			y.innerHTML = "3";
 		} else {
 			y.innerHTML = y.innerHTML + "3";
 		}
+		ans.innerHTML = y.innerHTML;
 	}
 });
 btn_4.addEventListener("click", function () {
@@ -99,12 +106,14 @@ btn_4.addEventListener("click", function () {
 		} else {
 			x.innerHTML = x.innerHTML + "4";
 		}
+		ans.innerHTML = x.innerHTML;
 	} else {
 		if (y.innerHTML === "y") {
 			y.innerHTML = "4";
 		} else {
 			y.innerHTML = y.innerHTML + "4";
 		}
+		ans.innerHTML = y.innerHTML;
 	}
 });
 btn_5.addEventListener("click", function () {
@@ -114,12 +123,14 @@ btn_5.addEventListener("click", function () {
 		} else {
 			x.innerHTML = x.innerHTML + "5";
 		}
+		ans.innerHTML = x.innerHTML;
 	} else {
 		if (y.innerHTML === "y") {
 			y.innerHTML = "5";
 		} else {
 			y.innerHTML = y.innerHTML + "5";
 		}
+		ans.innerHTML = y.innerHTML;
 	}
 });
 btn_6.addEventListener("click", function () {
@@ -129,12 +140,14 @@ btn_6.addEventListener("click", function () {
 		} else {
 			x.innerHTML = x.innerHTML + "6";
 		}
+		ans.innerHTML = x.innerHTML;
 	} else {
 		if (y.innerHTML === "y") {
 			y.innerHTML = "6";
 		} else {
 			y.innerHTML = y.innerHTML + "6";
 		}
+		ans.innerHTML = y.innerHTML;
 	}
 });
 btn_7.addEventListener("click", function () {
@@ -144,12 +157,14 @@ btn_7.addEventListener("click", function () {
 		} else {
 			x.innerHTML = x.innerHTML + "7";
 		}
+		ans.innerHTML = x.innerHTML;
 	} else {
 		if (y.innerHTML === "y") {
 			y.innerHTML = "7";
 		} else {
 			y.innerHTML = y.innerHTML + "7";
 		}
+		ans.innerHTML = y.innerHTML;
 	}
 });
 // btn_8.addEventListener("click", function () {
@@ -176,12 +191,14 @@ btn_8.addEventListener("click", function () {
 		} else {
 			x.innerHTML = x.innerHTML + "8";
 		}
+		ans.innerHTML = x.innerHTML;
 	} else {
 		if (y.innerHTML === "y") {
 			y.innerHTML = "8";
 		} else {
 			y.innerHTML = y.innerHTML + "8";
 		}
+		ans.innerHTML = y.innerHTML;
 	}
 });
 btn_9.addEventListener("click", function () {
@@ -191,12 +208,14 @@ btn_9.addEventListener("click", function () {
 		} else {
 			x.innerHTML = x.innerHTML + "9";
 		}
+		ans.innerHTML = x.innerHTML;
 	} else {
 		if (y.innerHTML === "y") {
 			y.innerHTML = "9";
 		} else {
 			y.innerHTML = y.innerHTML + "9";
 		}
+		ans.innerHTML = y.innerHTML;
 	}
 });
 
@@ -223,6 +242,7 @@ btn_eq.addEventListener("click", function () {
 	}
 
 	document.querySelector(".z").innerHTML = z;
+	document.querySelector(".ans").innerHTML = z;
 	document.querySelector(".x").style.background = "#A8AAFF";
 	document.querySelector(".y").style.background = "transparent";
 
@@ -269,10 +289,11 @@ btn_clear.addEventListener("click", function () {
 	y.style.background = "transparent";
 	select = "x";
 	type = "+";
-	document.querySelector(".x").innerHTML = "x";
+	x.innerHTML = "x";
 	document.querySelector(".plus").innerHTML = "+";
 	document.querySelector(".y").innerHTML = "y";
 	document.querySelector(".z").innerHTML = "z";
+	ans.innerHTML = "0";
 });
 // ±
 btn_plus_minus.addEventListener("click", function () {
