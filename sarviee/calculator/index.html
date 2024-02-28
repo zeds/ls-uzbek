@@ -22,13 +22,14 @@
         height: 50px;
         justify-content: center;
         align-items: center;
-        border-radius: 5px;
+        border-radius: 25px;
         background: black;
         color: blanchedalmond;
         cursor: pointer;
         margin: 5px;
       }
       .btn_div,
+      .btn_multi,
       .btn_minus,
       .btn_plus,
       .btn_eq {
@@ -37,11 +38,11 @@
         align-items: center;
         width: 50px;
         height: 50px;
-        background: #ffbb3c;
+        background: #ffb833;
         border: 1px solid black;
+        border-radius: 25px;
         color: white;
         cursor: pointer;
-        border-radius: 25px;
       }
       .btn_c,
       .btn_pm,
@@ -53,9 +54,9 @@
         height: 50px;
         background: gray;
         border: 1px solid black;
+        border-radius: 25px;
         color: white;
         cursor: pointer;
-        border-radius: 25px;
       }
       .x,
       .y,
@@ -117,7 +118,7 @@
       <div class="btn_7 btn">7</div>
       <div class="btn_8 btn">8</div>
       <div class="btn_9 btn">9</div>
-      <div class="btn_div">x</div>
+      <div class="btn_multi">x</div>
       <div class="btn_4 btn">4</div>
       <div class="btn_5 btn">5</div>
       <div class="btn_6 btn">6</div>
@@ -135,7 +136,7 @@
 
     <script>
       let select = "x";
-      let type = "+"; // + - * /
+      let type = "+";
       let x = document.querySelector(".x");
       let y = document.querySelector(".y");
       let z = document.querySelector(".z");
@@ -154,6 +155,9 @@
       let btn_multi = document.querySelector(".btn_multi");
       let btn_div = document.querySelector(".btn_div");
       let btn_eq = document.querySelector(".btn_eq");
+      let btn_p = document.querySelector(".btn_p");
+      let btn_c = document.querySelector(".btn_c");
+
       x.style.background = "#ffbb3c";
 
       x.addEventListener("click", function () {
@@ -314,7 +318,6 @@
         }
       });
 
-      // +
       btn_eq.addEventListener("click", function () {
         let x = Number(document.querySelector(".x").innerHTML);
         let y = Number(document.querySelector(".y").innerHTML);
@@ -332,6 +335,12 @@
           case "/":
             z = x / y;
             break;
+          case "%":
+            z = x % y;
+            break;
+          case "c":
+            (x = 0), (y = 0);
+            break;
         }
 
         document.querySelector(".z").innerHTML = z;
@@ -343,7 +352,6 @@
 
         select = "x";
       });
-      // +
       btn_plus.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "+";
         x.style.background = "transparent";
@@ -351,7 +359,6 @@
         select = "y";
         type = "+";
       });
-      // -
       btn_minus.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "-";
         x.style.background = "transparent";
@@ -359,7 +366,6 @@
         select = "y";
         type = "-";
       });
-      // *
       btn_multi.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "*";
         x.style.background = "transparent";
@@ -367,13 +373,26 @@
         select = "y";
         type = "*";
       });
-      // /(割る)
       btn_div.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "/";
         x.style.background = "transparent";
         y.style.background = "#ffbb3c";
         select = "y";
         type = "/";
+      });
+      btn_p.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "%";
+        x.style.background = "transparent";
+        y.style.background = "#ffbb3c";
+        select = "y";
+        type = "%";
+      });
+      btn_c.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "c";
+        x.style.background = "transparent";
+        y.style.background = "#ffbb3c";
+        select = "y";
+        type = "x";
       });
     </script>
   </body>

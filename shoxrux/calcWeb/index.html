@@ -1,64 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				background: #fde4f2;
+				font-size: 30px;
+			}
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-        body {
-            background: #fde4f2;
-            font-size: 30px;
-        }
+			.calc_container {
+				display: flex;
+				justify-content: center;
+				margin-top: 50px;
+				justify-content: center;
+				display: flex;
+				margin-bottom: 40px;
+			}
 
+			.pad_container {
+				display: flex;
+			}
 
+			.pad {
+				display: flex;
+				width: 50px;
+				height: 50px;
+				justify-content: center;
+				align-items: center;
+				border-radius: 5px;
+				background: black;
+				color: blanchedalmond;
+				cursor: pointer;
+				margin: 5px;
+			}
 
-        .calc_container {
+			.x,
+			.y,
+			.z,
+			.plus,
+			.equals {
+				width: 50px;
+				height: 50px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 5px;
+			}
 
-            display: flex;
-            justify-content: center;
-            margin-top: 50px;
-            justify-content: center;
-            display: flex;
-            margin-bottom: 40px;
-        }
+			.dentaku {
+				justify-content: center;
+				display: grid;
+				grid-template-columns: 50px 50px 50px 50px;
+			}
 
-        .pad_container {
-            display: flex;
-        }
+			.btn {
+				border-radius: 3px;
+				margin: 3px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 40px;
+				height: 50px;
+				background: rgb(81, 182, 196);
+				border: 1px solid rgba(0, 0, 0, 0.562);
+				cursor: pointer;
+			}
 
-        .pad {
-            display: flex;
-            width: 50px;
-            height: 50px;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-            background: black;
-            color: blanchedalmond;
-            cursor: pointer;
-            margin: 5px;
-        }
+			.btn_0 {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 90px;
+				height: 50px;
+				background: rgb(81, 182, 196);
+				border: 1px solid rgba(0, 0, 0, 0.562);
+			}
 
-        .x,
-        .y,
-        .z,
-        .plus,
-        .equals {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 5px;
-        }
+			.dentaku_bottom {
+				justify-content: center;
+				display: grid;
+				grid-template-columns: 100px 50px 50px;
+			}
+		</style>
+	</head>
 
-        .dentaku {
-            justify-content: center;
-            display: grid;
-            grid-template-columns: 50px 50px 50px 50px;
-        }
+	<body>
+		<div class="calc_container">
+			<div class="x">x</div>
+			<div class="plus">+</div>
+			<div class="y">y</div>
+			<div class="equals">=</div>
+			<div class="z">z</div>
+		</div>
+		<div class="dentaku">
+			<div class="clear btn">C</div>
+			<div class="plus_minus btn">±</div>
+			<div class="percent btn">%</div>
+			<div class="btn_div btn">÷</div>
+			<div class="btn_7 btn">7</div>
+			<div class="btn_8 btn">8</div>
+			<div class="btn_9 btn">9</div>
+			<div class="btn_multi btn">x</div>
+			<div class="btn_4 btn">4</div>
+			<div class="btn_5 btn">5</div>
+			<div class="btn_6 btn">6</div>
+			<div class="btn_minus btn">-</div>
+			<div class="btn_1 btn">1</div>
+			<div class="btn_2 btn">2</div>
+			<div class="btn_3 btn">3</div>
+			<div class="btn_plus btn">+</div>
+		</div>
+		<div class="dentaku_bottom">
+			<div class="btn_0 btn">0</div>
+			<div class="btn">.</div>
+			<div class="btn_eq btn">=</div>
+		</div>
 
+<<<<<<< HEAD
         .btn {
             border-radius: 3px;
             margin: 3px;
@@ -126,3 +186,8 @@
 </body>
 
 </html>
+=======
+		<script src="./calc.js"></script>
+	</body>
+</html>
+>>>>>>> b888ead46ff05aa32fd56602dc1cdca569c0b06b

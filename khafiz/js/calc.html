@@ -22,7 +22,7 @@
         height: 50px;
         justify-content: center;
         align-items: center;
-        border-radius: 5px;
+        border-radius: 25px;
         background: black;
         color: blanchedalmond;
         cursor: pointer;
@@ -40,6 +40,7 @@
         height: 50px;
         background: #ffb833;
         border: 1px solid black;
+        border-radius: 25px;
         color: white;
         cursor: pointer;
       }
@@ -53,6 +54,7 @@
         height: 50px;
         background: gray;
         border: 1px solid black;
+        border-radius: 25px;
         color: white;
         cursor: pointer;
       }
@@ -82,6 +84,7 @@
         border: 1px solid black;
         cursor: pointer;
         color: white;
+        border-radius: 25px;
       }
       .btn_0 {
         display: flex;
@@ -152,6 +155,10 @@
       let btn_multi = document.querySelector(".btn_multi");
       let btn_div = document.querySelector(".btn_div");
       let btn_eq = document.querySelector(".btn_eq");
+      let btn_p = document.querySelector(".btn_p");
+      let btn_c = document.querySelector(".btn_c");
+      let btn_pm = document.querySelector(".btn_pm");
+
       x.style.background = "#ffbb3c";
 
       x.addEventListener("click", function () {
@@ -329,6 +336,12 @@
           case "/":
             z = x / y;
             break;
+          case "%":
+            z = x % y;
+            break;
+          case "":
+            z = x % y;
+            break;
         }
 
         document.querySelector(".z").innerHTML = z;
@@ -367,6 +380,34 @@
         y.style.background = "#ffbb3c";
         select = "y";
         type = "/";
+      });
+      btn_p.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "%";
+        x.style.background = "transparent";
+        y.style.background = "#ffbb3c";
+        select = "y";
+        type = "%";
+      });
+      btn_c.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "c";
+        x.style.background = "#ffbb3c";
+        y.style.background = "transparent";
+        select = "x";
+        type = "+";
+        document.querySelector(".x").innerHTML = "x";
+        document.querySelector(".plus").innerHTML = "+";
+        document.querySelector(".y").innerHTML = "y";
+        document.querySelector(".z").innerHTML = "z";
+      });
+      btn_pm.addEventListener("click", function () {
+        if (select === "x")
+          if (x.innerHTML !== "x") {
+            x.innerHTML = x.innerHTML * -1;
+          }
+        if (select === "y")
+          if (y.innerHTML !== "y") {
+            y.innerHTML = y.innerHTML * -1;
+          }
       });
     </script>
   </body>
