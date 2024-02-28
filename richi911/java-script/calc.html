@@ -3,17 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
     <title>Document</title>
     <style>
       body {
-        font-size: 30px;
         background: rgb(190, 215, 214);
+        font-size: 30px;
       }
       .calc_container {
         display: flex;
@@ -93,7 +87,7 @@
   <body>
     <div class="calc_container">
       <div class="x">x</div>
-      <div>+</div>
+      <div class="type">+</div>
       <div class="y">y</div>
       <div>=</div>
       <div class="z">z</div>
@@ -103,17 +97,17 @@
       <div class="btn btn_dk">±</div>
       <div class="btn btn_dk">%</div>
       <div class="btn_div btn_orange">÷</div>
-      <div class="btn btn_dk">7</div>
-      <div class="btn btn_dk">8</div>
-      <div class="btn btn_dk">9</div>
+      <div class="btn_7 btn_dk">7</div>
+      <div class="btn_8 btn_dk">8</div>
+      <div class="btn_9 btn_dk">9</div>
       <div class="btn_multi btn_orange">x</div>
-      <div class="btn btn_dk">4</div>
-      <div class="btn btn_dk">5</div>
-      <div class="btn btn_dk">6</div>
+      <div class="btn_4 btn_dk">4</div>
+      <div class="btn_5 btn_dk">5</div>
+      <div class="btn_6 btn_dk">6</div>
       <div class="btn_minus btn_orange">-</div>
-      <div class="btn btn_dk">1</div>
-      <div class="btn btn_dk">2</div>
-      <div class="btn btn_dk">3</div>
+      <div class="btn_1 btn_dk">1</div>
+      <div class="btn_2 btn_dk">2</div>
+      <div class="btn_3 btn_dk">3</div>
       <div class="btn_plus btn_orange">+</div>
     </div>
     <div class="dentaku_bottom">
@@ -129,7 +123,7 @@
       let y = document.querySelector(".y");
       let z = document.querySelector(".z");
 
-      let btn_zero = document.querySelectorAll(".btn_zero");
+      let btn_zero = document.querySelector(".btn_zero");
       let btn_1 = document.querySelector(".btn_1");
       let btn_2 = document.querySelector(".btn_2");
       let btn_3 = document.querySelector(".btn_3");
