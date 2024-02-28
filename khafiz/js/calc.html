@@ -29,6 +29,7 @@
         margin: 5px;
       }
       .btn_div,
+      .btn_multi,
       .btn_minus,
       .btn_plus,
       .btn_eq {
@@ -37,7 +38,7 @@
         align-items: center;
         width: 50px;
         height: 50px;
-        background: #ffbb3c;
+        background: #ffb833;
         border: 1px solid black;
         color: white;
         cursor: pointer;
@@ -114,7 +115,7 @@
       <div class="btn_7 btn">7</div>
       <div class="btn_8 btn">8</div>
       <div class="btn_9 btn">9</div>
-      <div class="btn_div">x</div>
+      <div class="btn_multi">x</div>
       <div class="btn_4 btn">4</div>
       <div class="btn_5 btn">5</div>
       <div class="btn_6 btn">6</div>
@@ -132,7 +133,7 @@
 
     <script>
       let select = "x";
-      let type = "+"; // + - * /
+      let type = "+";
       let x = document.querySelector(".x");
       let y = document.querySelector(".y");
       let z = document.querySelector(".z");
@@ -311,7 +312,6 @@
         }
       });
 
-      // +
       btn_eq.addEventListener("click", function () {
         let x = Number(document.querySelector(".x").innerHTML);
         let y = Number(document.querySelector(".y").innerHTML);
@@ -340,7 +340,6 @@
 
         select = "x";
       });
-      // +
       btn_plus.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "+";
         x.style.background = "transparent";
@@ -348,7 +347,6 @@
         select = "y";
         type = "+";
       });
-      // -
       btn_minus.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "-";
         x.style.background = "transparent";
@@ -356,7 +354,6 @@
         select = "y";
         type = "-";
       });
-      // *
       btn_multi.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "*";
         x.style.background = "transparent";
@@ -364,7 +361,6 @@
         select = "y";
         type = "*";
       });
-      // /(割る)
       btn_div.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "/";
         x.style.background = "transparent";
