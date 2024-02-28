@@ -9,7 +9,7 @@ const display = document.querySelectorAll("input");
 class Calculator {
   signView;
   signOperator;
-  operators =['+' '-' '*' '/']
+  operators =['+', '-', '*' ,'/']
   isDot = false;
 
   setDisplay(value) {
