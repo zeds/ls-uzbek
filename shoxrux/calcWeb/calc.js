@@ -20,6 +20,8 @@ let btn_multi = document.querySelector(".btn_multi");
 let btn_div = document.querySelector(".btn_div");
 let btn_eq = document.querySelector(".btn_eq");
 let btn_point = document.querySelector(".point");
+let btn_cancel = document.querySelector(".cancel");
+
 
 x.style.background = "red";
 
@@ -270,3 +272,8 @@ btn_point.addEventListener("click", function () {
     type = "%";
     console.log(btn_point);
 })
+
+// for (let index = 0; index < array.length; index++) {
+//     const element = array[index];
+
+// }
