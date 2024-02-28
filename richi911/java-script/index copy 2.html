@@ -6,19 +6,27 @@
     <title>Document</title>
     <style>
       body {
-        background: rgb(190, 215, 214);
+        background: rgb(190, 215, 224);
         font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
       }
       .layout {
         background: black;
-        height: 335px;
-        width: 205px;
-        padding-left: 3px;
-        border-radius: 5px;
+        height: 320px;
+        width: 235px;
+        padding-right: 10px;
+        padding-left: 25px;
+        border-radius: 10px;
       }
       .calc_container {
         display: flex;
-        margin-bottom: 10px;
+        margin-bottom: 1px;
+        justify-content: end;
+        background-color: black;
+        margin-right: 25px;
       }
       .dentaku {
         display: grid;
@@ -40,6 +48,8 @@
         border: 1px solid black;
         cursor: pointer;
         color: white;
+        border-radius: 50%;
+        margin: 10px;
       }
       .btn_orange {
         display: flex;
@@ -51,6 +61,8 @@
         border: 1px solid black;
         cursor: pointer;
         color: white;
+        border-radius: 50%;
+        margin: 10px;
       }
       .btn_dk {
         display: flex;
@@ -62,6 +74,8 @@
         border: 1px solid black;
         cursor: pointer;
         color: white;
+        border-radius: 50%;
+        margin: 10px;
       }
       .btn_zero {
         display: flex;
@@ -73,6 +87,8 @@
         border: 1px solid black;
         color: white;
         cursor: pointer;
+        border-radius: 20px;
+        margin: 10px;
       }
       .x,
       .type,
@@ -99,21 +115,22 @@
       </div>
       <div class="ans">0</div>
       <div class="dentaku">
-        <div class="btn_dk" onclick="clearInput()">C</div>
+        <div class="btn btn_dk" onclick="clearInput()">C</div>
         <div class="btn_plus_minus btn_dk">±</div>
+        <!-- <div class="btn btn_dk" onclick="calculatePercentage()">%</div> -->
         <div class="btn_percent btn_dk">%</div>
         <div class="btn_div btn_orange">÷</div>
-        <div class="btn_7 btn_dk">7</div>
-        <div class="btn_8 btn_dk">8</div>
-        <div class="btn_9 btn_dk">9</div>
+        <div class="btn_7 btn">7</div>
+        <div class="btn_8 btn">8</div>
+        <div class="btn_9 btn">9</div>
         <div class="btn_multi btn_orange">x</div>
-        <div class="btn_4 btn_dk">4</div>
-        <div class="btn_5 btn_dk">5</div>
-        <div class="btn_6 btn_dk">6</div>
+        <div class="btn_4 btn">4</div>
+        <div class="btn_5 btn">5</div>
+        <div class="btn_6 btn">6</div>
         <div class="btn_minus btn_orange">-</div>
-        <div class="btn_1 btn_dk">1</div>
-        <div class="btn_2 btn_dk">2</div>
-        <div class="btn_3 btn_dk">3</div>
+        <div class="btn_1 btn">1</div>
+        <div class="btn_2 btn">2</div>
+        <div class="btn_3 btn">3</div>
         <div class="btn_plus btn_orange">+</div>
       </div>
       <div class="dentaku_bottom">
@@ -214,14 +231,12 @@
           } else {
             x.innerHTML = x.innerHTML + "3";
           }
-          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "3";
           } else {
             y.innerHTML = y.innerHTML + "3";
           }
-          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_4.addEventListener("click", function () {
@@ -231,14 +246,12 @@
           } else {
             x.innerHTML = x.innerHTML + "4";
           }
-          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "4";
           } else {
             y.innerHTML = y.innerHTML + "4";
           }
-          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_5.addEventListener("click", function () {
@@ -248,14 +261,12 @@
           } else {
             x.innerHTML = x.innerHTML + "5";
           }
-          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "5";
           } else {
             y.innerHTML = y.innerHTML + "5";
           }
-          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_6.addEventListener("click", function () {
@@ -265,14 +276,12 @@
           } else {
             x.innerHTML = x.innerHTML + "6";
           }
-          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "6";
           } else {
             y.innerHTML = y.innerHTML + "6";
           }
-          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_7.addEventListener("click", function () {
@@ -282,14 +291,12 @@
           } else {
             x.innerHTML = x.innerHTML + "7";
           }
-          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "7";
           } else {
             y.innerHTML = y.innerHTML + "7";
           }
-          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_8.addEventListener("click", function () {
@@ -299,14 +306,12 @@
           } else {
             x.innerHTML = x.innerHTML + "8";
           }
-          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "8";
           } else {
             y.innerHTML = y.innerHTML + "8";
           }
-          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_9.addEventListener("click", function () {
@@ -316,14 +321,12 @@
           } else {
             x.innerHTML = x.innerHTML + "9";
           }
-          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "9";
           } else {
             y.innerHTML = y.innerHTML + "9";
           }
-          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
 
@@ -368,7 +371,7 @@
         x.style.background = "transparent";
         y.style.background = "red";
       });
-      //-
+      // -
       btn_minus.addEventListener("click", function () {
         select = "y";
         type = "-";
@@ -384,7 +387,7 @@
         x.style.background = "transparent";
         y.style.background = "red";
       });
-      // /
+      // / (割る)
       btn_div.addEventListener("click", function () {
         select = "y";
         type = "/";
@@ -394,7 +397,7 @@
       });
       // % 余り
       btn_percent.addEventListener("click", function () {
-        select = "x";
+        select = "y";
         type = "%";
         document.querySelector(".type").innerHTML = "%";
         x.style.background = "transparent";
@@ -431,7 +434,10 @@
         let display = document.querySelector(".x");
         let currentValue = parseFloat(display.innerHTML);
 
-        if (!isNAN(currentValue)) {
+        // 10 % 3 = 1
+        // 20 % 3 = 2
+
+        if (!isNaN(currentValue)) {
           let percentageValue = currentValue / 100;
           display.innerHTML = percentageValue;
         }
