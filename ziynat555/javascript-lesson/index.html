@@ -18,7 +18,7 @@
       }
       .pad {
         display: flex;
-        width: 540px;
+        width: 50px;
         height: 50px;
         justify-content: center;
         align-items: center;
@@ -27,6 +27,60 @@
         color: white;
         cursor: pointer;
         margin: 5px;
+      }
+      .dentaku {
+        display: grid;
+        grid-template-columns: 50px 50px 50px 50px;
+        grid-auto-rows: 50px;
+      }
+      .dentaku_bottom {
+        display: grid;
+        grid-template-columns: 100px 50px 50px;
+        grid-auto-rows: 50px;
+      }
+      .btn {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        background: #616161;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+      }
+      .btn_orange {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        background: orange;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+      }
+      .btn_dk {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        background: #474747;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+      }
+      .btn_zero {
+        display: flex;
+        width: 100px;
+        height: 50px;
+        background: #616161;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
       }
     </style>
   </head>
@@ -38,21 +92,28 @@
       <div>=</div>
       <div class="z">z</div>
     </div>
-    <div class="pad_container">
-      <div class="pad">1</div>
-      <div class="pad">2</div>
-      <div class="pad">3</div>
-      <div class="pad">4</div>
-      <div class="pad">5</div>
-      <div class="pad">6</div>
-      <div class="pad">7</div>
-      <div class="pad">8</div>
-      <div class="pad">9</div>
-      <div class="pad">=</div>
-      <div class="pad">+</div>
-      <div class="pad">-</div>
-      <div class="pad">*</div>
-      <div class="pad">/</div>
+    <div class="dentaku">
+      <div class="btn btn_dk">C</div>
+      <div class="btn btn_dk">±</div>
+      <div class="btn btn_dk">%</div>
+      <div class="btn_div btn_orange">÷</div>
+      <div class="btn_7 btn">7</div>
+      <div class="btn_8 btn">8</div>
+      <div class="btn_9 btn">9</div>
+      <div class="btn_multi btn_orange">x</div>
+      <div class="btn_4 btn">4</div>
+      <div class="btn_5 btn">5</div>
+      <div class="btn_6 btn">6</div>
+      <div class="btn_minus btn_orange">-</div>
+      <div class="btn_1 btn">1</div>
+      <div class="btn_2 btn">2</div>
+      <div class="btn_3 btn">3</div>
+      <div class="btn_plus btn_orange">+</div>
+    </div>
+    <div class="dentaku_bottom">
+      <div class="btn_zero">0</div>
+      <div class="btn">.</div>
+      <div class="btn_eq btn_orange">=</div>
     </div>
 
     <script>
@@ -62,20 +123,21 @@
       let y = document.querySelector(".y");
       let z = document.querySelector(".z");
 
-      let pad_1 = document.querySelectorAll(".pad")[0];
-      let pad_2 = document.querySelectorAll(".pad")[1];
-      let pad_3 = document.querySelectorAll(".pad")[2];
-      let pad_4 = document.querySelectorAll(".pad")[3];
-      let pad_5 = document.querySelectorAll(".pad")[4];
-      let pad_6 = document.querySelectorAll(".pad")[5];
-      let pad_7 = document.querySelectorAll(".pad")[6];
-      let pad_8 = document.querySelectorAll(".pad")[7];
-      let pad_9 = document.querySelectorAll(".pad")[8];
-      let pad_10 = document.querySelectorAll(".pad")[9];
-      let pad_11 = document.querySelectorAll(".pad")[10]; //+
-      let pad_12 = document.querySelectorAll(".pad")[11]; //-
-      let pad_13 = document.querySelectorAll(".pad")[12]; //*
-      let pad_14 = document.querySelectorAll(".pad")[13]; // /
+      let btn_zero = document.querySelector(".btn_zero");
+      let btn_1 = document.querySelector(".btn_1");
+      let btn_2 = document.querySelector(".btn_2");
+      let btn_3 = document.querySelector(".btn_3");
+      let btn_4 = document.querySelector(".btn_4");
+      let btn_5 = document.querySelector(".btn_5");
+      let btn_6 = document.querySelector(".btn_6");
+      let btn_7 = document.querySelector(".btn_7");
+      let btn_8 = document.querySelector(".btn_8");
+      let btn_9 = document.querySelector(".btn_9");
+      let btn_plus = document.querySelector(".btn_plus");
+      let btn_minus = document.querySelector(".btn_minus");
+      let btn_eq = document.querySelector(".btn_eq");
+      let btn_multi = document.querySelector(".btn_multi");
+      let btn_div = document.querySelector(".btn_div");
 
       x.style.background = "red";
 
@@ -90,89 +152,210 @@
         select = "y";
       });
 
-      pad_1.addEventListener("click", function () {
+      btn_zero.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML !== "x") {
+            x.innerHTML = x.innerHTML + "0";
+          }
+        } else {
+          if (y.innerHTML !== "y") {
+            y.innerHTML = x.innerHTML + "0";
+          }
+        }
+      });
+      btn_1.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "1";
+          } else {
+            x.innerHTML = x.innerHTML + "1";
+          }
+        } else {
+          if (y.innerHTML === "y") {
+            y.innerHTML = "1";
+          } else {
+            y.innerHTML = y.innerHTML + "1";
           }
         }
-        els;
       });
-      pad_2.addEventListener("click", function () {
+      btn_2.addEventListener("click", function () {
         if (select === "x") {
-          x.innerHTML = "2";
+          if (x.innerHTML === "x") {
+            x.innerHTML = "2";
+          } else {
+            x.innerHTML = x.innerHTML + "2";
+          }
         } else {
-          y.innerHTML = "2";
+          if (y.innerHTML === "y") {
+            y.innerHTML = "2";
+          } else {
+            y.innerHTML = y.innerHTML + "2";
+          }
         }
       });
-      pad_3.addEventListener("click", function () {
+      btn_3.addEventListener("click", function () {
         if (select === "x") {
-          x.innerHTML = "3";
+          if (x.innerHTML === "x") {
+            x.innerHTML = "3";
+          } else {
+            x.innerHTML = x.innerHTML + "3";
+          }
         } else {
-          y.innerHTML = "3";
+          if (y.innerHTML === "y") {
+            y.innerHTML = "3";
+          } else {
+            y.innerHTML = y.innerHTML + "3";
+          }
         }
       });
-      pad_4.addEventListener("click", function () {
+      btn_4.addEventListener("click", function () {
         if (select === "x") {
-          x.innerHTML = "4";
+          if (x.innerHTML === "x") {
+            x.innerHTML = "4";
+          } else {
+            x.innerHTML = x.innerHTML + "4";
+          }
         } else {
-          y.innerHTML = "4";
+          if (y.innerHTML === "y") {
+            y.innerHTML = "4";
+          } else {
+            y.innerHTML = y.innerHTML + "4";
+          }
         }
       });
-      pad_5.addEventListener("click", function () {
+      btn_5.addEventListener("click", function () {
         if (select === "x") {
-          x.innerHTML = "5";
+          if (x.innerHTML === "x") {
+            x.innerHTML = "5";
+          } else {
+            x.innerHTML = x.innerHTML + "5";
+          }
         } else {
-          y.innerHTML = "5";
+          if (y.innerHTML === "y") {
+            y.innerHTML = "5";
+          } else {
+            y.innerHTML = y.innerHTML + "5";
+          }
         }
       });
-      pad_6.addEventListener("click", function () {
+      btn_6.addEventListener("click", function () {
         if (select === "x") {
-          x.innerHTML = "6";
+          if (x.innerHTML === "x") {
+            x.innerHTML = "6";
+          } else {
+            x.innerHTML = x.innerHTML + "6";
+          }
         } else {
-          y.innerHTML = "6";
+          if (y.innerHTML === "y") {
+            y.innerHTML = "6";
+          } else {
+            y.innerHTML = y.innerHTML + "6";
+          }
         }
       });
-      pad_7.addEventListener("click", function () {
+      btn_7.addEventListener("click", function () {
         if (select === "x") {
-          x.innerHTML = "7";
+          if (x.innerHTML === "x") {
+            x.innerHTML = "7";
+          } else {
+            x.innerHTML = x.innerHTML + "7";
+          }
         } else {
-          y.innerHTML = "7";
+          if (y.innerHTML === "y") {
+            y.innerHTML = "7";
+          } else {
+            y.innerHTML = y.innerHTML + "7";
+          }
         }
       });
-      pad_8.addEventListener("click", function () {
+      btn_8.addEventListener("click", function () {
         if (select === "x") {
-          x.innerHTML = "8";
+          if (x.innerHTML === "x") {
+            x.innerHTML = "8";
+          } else {
+            x.innerHTML = x.innerHTML + "8";
+          }
         } else {
-          y.innerHTML = "8";
+          if (y.innerHTML === "y") {
+            y.innerHTML = "8";
+          } else {
+            y.innerHTML = y.innerHTML + "8";
+          }
         }
       });
-      pad_9.addEventListener("click", function () {
+      btn_9.addEventListener("click", function () {
         if (select === "x") {
-          x.innerHTML = "9";
+          if (x.innerHTML === "x") {
+            x.innerHTML = "9";
+          } else {
+            x.innerHTML = x.innerHTML + "9";
+          }
         } else {
-          y.innerHTML = "9";
+          if (y.innerHTML === "y") {
+            y.innerHTML = "9";
+          } else {
+            y.innerHTML = y.innerHTML + "9";
+          }
         }
       });
-      pad_10.addEventListener("click", function () {
+      // =
+      btn_eq.addEventListener("click", function () {
         console.log("=");
         let x = Number(document.querySelector(".x").innerHTML);
         let y = Number(document.querySelector(".y").innerHTML);
-        let z = x + y;
+        let z = 0;
+
+        // switch
+        switch (type) {
+          case "+":
+            z = x + y;
+            break;
+          case "-":
+            z = x - y;
+            break;
+          case "*":
+            z = x * y;
+            break;
+          case "/":
+            z = x / y;
+            break;
+        }
         document.querySelector(".z").innerHTML = z;
+        document.querySelector(".x").style.background = "red";
+        document.querySelector(".y").style.background = "transparent";
+        select = "x";
+        document.querySelector(".x").innerHTML = "x";
+        document.querySelector(".y").innerHTML = "y";
       });
-      //+
-      pad_11.addEventListener("click", function () {
+      // +
+      btn_plus.addEventListener("click", function () {
         select = "y";
         type = "+";
-
+        document.querySelector(".type").innerHTML = "+";
         x.style.background = "transparent";
         y.style.background = "red";
       });
-      //-
-      pad_11.addEventListener("click", function () {
+      // -
+      btn_minus.addEventListener("click", function () {
         select = "y";
         type = "-";
+        document.querySelector(".type").innerHTML = "-";
+        x.style.background = "transparent";
+        y.style.background = "red";
+      });
+      // +
+      btn_multi.addEventListener("click", function () {
+        select = "y";
+        type = "*";
+        document.querySelector(".type").innerHTML = "*";
+        x.style.background = "transparent";
+        y.style.background = "red";
+      });
+      // / (わる)
+      btn_div.addEventListener("click", function () {
+        select = "y";
+        type = "/";
+        document.querySelector(".type").innerHTML = "/";
         x.style.background = "transparent";
         y.style.background = "red";
       });
