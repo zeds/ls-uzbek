@@ -19,6 +19,7 @@ let btn_minus = document.querySelector(".btn_minus");
 let btn_multi = document.querySelector(".btn_multi");
 let btn_div = document.querySelector(".btn_div");
 let btn_eq = document.querySelector(".btn_eq");
+let btn_point = document.querySelector(".point");
 
 x.style.background = "red";
 
@@ -215,6 +216,8 @@ btn_eq.addEventListener("click", function () {
         case "/":
             z = x / y;
             break;
+        case "%":
+            z = x % y;
     }
 
     document.querySelector(".z").innerHTML = z;
@@ -225,6 +228,7 @@ btn_eq.addEventListener("click", function () {
     document.querySelector(".y").innerHTML = "y";
 
     select = "x";
+
 });
 // +
 btn_plus.addEventListener("click", function () {
@@ -258,3 +262,11 @@ btn_div.addEventListener("click", function () {
     select = "y";
     type = "/";
 });
+btn_point.addEventListener("click", function () {
+    document.querySelector(".point").innerHTML = "%";
+    x.style.background = "transparent";
+    y.style.background = "#A8AAFF";
+    select = "y";
+    type = "%";
+    console.log(btn_point);
+})
