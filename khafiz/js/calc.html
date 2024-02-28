@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
       body {
-        background: #fde4f2;
+        background: white;
         font-size: 30px;
       }
       .calc_container {
@@ -24,7 +24,7 @@
         align-items: center;
         border-radius: 5px;
         background: black;
-        color: blanchedalmond;
+        color: white;
         cursor: pointer;
         margin: 5px;
       }
@@ -52,9 +52,8 @@
         height: 50px;
         background: gray;
         border: 1px solid black;
-        cursor: pointer;
       }
-      .btn_0 {
+      .btn_zero {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -77,29 +76,44 @@
       <div class="equals">=</div>
       <div class="z">z</div>
     </div>
-
+    <div class="pad_container">
+      <div class="pad">1</div>
+      <div class="pad">2</div>
+      <div class="pad">3</div>
+      <div class="pad">4</div>
+      <div class="pad">5</div>
+      <div class="pad">6</div>
+      <div class="pad">7</div>
+      <div class="pad">8</div>
+      <div class="pad">9</div>
+      <div class="pad">=</div>
+      <div class="pad">+</div>
+      <div class="pad">-</div>
+      <div class="pad">*</div>
+      <div class="pad">/</div>
+    </div>
     <div class="dentaku">
       <div class="btn">C</div>
       <div class="btn">±</div>
       <div class="btn">%</div>
-      <div class="btn_div btn">÷</div>
-      <div class="btn_7 btn">7</div>
-      <div class="btn_8 btn">8</div>
-      <div class="btn_9 btn">9</div>
-      <div class="btn_multi btn">x</div>
-      <div class="btn_4 btn">4</div>
-      <div class="btn_5 btn">5</div>
-      <div class="btn_6 btn">6</div>
-      <div class="btn_minus btn">-</div>
-      <div class="btn_1 btn">1</div>
-      <div class="btn_2 btn">2</div>
-      <div class="btn_3 btn">3</div>
-      <div class="btn_plus btn">+</div>
+      <div class="btn">÷</div>
+      <div class="btn">7</div>
+      <div class="btn">8</div>
+      <div class="btn">9</div>
+      <div class="btn">x</div>
+      <div class="btn">4</div>
+      <div class="btn">5</div>
+      <div class="btn">6</div>
+      <div class="btn">-</div>
+      <div class="btn">1</div>
+      <div class="btn">2</div>
+      <div class="btn">3</div>
+      <div class="btn">+</div>
     </div>
     <div class="dentaku_bottom">
-      <div class="btn_0 btn">0</div>
+      <div class="btn_zero">0</div>
       <div class="btn">.</div>
-      <div class="btn_eq btn">=</div>
+      <div class="btn">=</div>
     </div>
 
     <script>
@@ -109,47 +123,35 @@
       let y = document.querySelector(".y");
       let z = document.querySelector(".z");
 
-      let btn_0 = document.querySelector(".btn_0");
-      let btn_1 = document.querySelector(".btn_1");
-      let btn_2 = document.querySelector(".btn_2");
-      let btn_3 = document.querySelector(".btn_3");
-      let btn_4 = document.querySelector(".btn_4");
-      let btn_5 = document.querySelector(".btn_5");
-      let btn_6 = document.querySelector(".btn_6");
-      let btn_7 = document.querySelector(".btn_7");
-      let btn_8 = document.querySelector(".btn_8");
-      let btn_9 = document.querySelector(".btn_9");
-      let btn_plus = document.querySelector(".btn_plus");
-      let btn_minus = document.querySelector(".btn_minus");
-      let btn_multi = document.querySelector(".btn_multi");
-      let btn_div = document.querySelector(".btn_div");
-      let btn_eq = document.querySelector(".btn_eq");
+      let pad_1 = document.querySelectorAll(".pad")[0];
+      let pad_2 = document.querySelectorAll(".pad")[1];
+      let pad_3 = document.querySelectorAll(".pad")[2];
+      let pad_4 = document.querySelectorAll(".pad")[3];
+      let pad_5 = document.querySelectorAll(".pad")[4];
+      let pad_6 = document.querySelectorAll(".pad")[5];
+      let pad_7 = document.querySelectorAll(".pad")[6];
+      let pad_8 = document.querySelectorAll(".pad")[7];
+      let pad_9 = document.querySelectorAll(".pad")[8];
+      let pad_10 = document.querySelectorAll(".pad")[9];
+      let pad_11 = document.querySelectorAll(".pad")[10]; // +
+      let pad_12 = document.querySelectorAll(".pad")[11]; // -
+      let pad_13 = document.querySelectorAll(".pad")[12]; // *
+      let pad_14 = document.querySelectorAll(".pad")[13]; // /
 
       x.style.background = "red";
 
       x.addEventListener("click", function () {
-        x.style.background = "#A8AAFF";
+        x.style.background = "#red";
         y.style.background = "transparent";
         select = "x";
       });
       y.addEventListener("click", function () {
         x.style.background = "transparent";
-        y.style.background = "#A8AAFF";
+        y.style.background = "red";
         select = "y";
       });
 
-      btn_0.addEventListener("click", function () {
-        if (select === "x") {
-          if (x.innerHTML !== "x") {
-            x.innerHTML = x.innerHTML + "0";
-          }
-        } else {
-          if (y.innerHTML !== "y") {
-            y.innerHTML = y.innerHTML + "0";
-          }
-        }
-      });
-      btn_1.addEventListener("click", function () {
+      pad_1.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "1";
@@ -164,7 +166,7 @@
           }
         }
       });
-      btn_2.addEventListener("click", function () {
+      pad_2.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "2";
@@ -179,7 +181,7 @@
           }
         }
       });
-      btn_3.addEventListener("click", function () {
+      pad_3.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "3";
@@ -194,7 +196,7 @@
           }
         }
       });
-      btn_4.addEventListener("click", function () {
+      pad_4.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "4";
@@ -209,7 +211,7 @@
           }
         }
       });
-      btn_5.addEventListener("click", function () {
+      pad_5.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "5";
@@ -224,7 +226,7 @@
           }
         }
       });
-      btn_6.addEventListener("click", function () {
+      pad_6.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "6";
@@ -239,7 +241,7 @@
           }
         }
       });
-      btn_7.addEventListener("click", function () {
+      pad_7.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "7";
@@ -254,15 +256,13 @@
           }
         }
       });
-      btn_8.addEventListener("click", function () {
+      pad_8.addEventListener("click", function () {
         if (select === "x") {
-          if (val === null)
-            if (val === undefined)
-              if (x.innerHTML === "x") {
-                x.innerHTML = "8";
-              } else {
-                x.innerHTML = x.innerHTML + "8";
-              }
+          if (x.innerHTML === "x") {
+            x.innerHTML = "8";
+          } else {
+            x.innerHTML = x.innerHTML + "8";
+          }
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "8";
@@ -271,7 +271,7 @@
           }
         }
       });
-      btn_9.addEventListener("click", function () {
+      pad_9.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "9";
@@ -282,31 +282,28 @@
           if (y.innerHTML === "y") {
             y.innerHTML = "9";
           } else {
-            y.innerHTML = y.innerHTML + "9";
+            y.innerHTML = y.innerHTML + "";
           }
         }
       });
 
       // +
-      btn_eq.addEventListener("click", function () {
+      pad_10.addEventListener("click", function () {
+        console.log("=");
         let x = Number(document.querySelector(".x").innerHTML);
         let y = Number(document.querySelector(".y").innerHTML);
-
-        switch (type) {
-          case "+":
-            z = x + y;
-            break;
-          case "-":
-            z = x - y;
-            break;
-          case "*":
-            z = x * y;
-            break;
-          case "/":
-            z = x / y;
-            break;
+        if (type === "+") {
+          z = x + y;
         }
-
+        if (type === "-") {
+          z = x - y;
+        }
+        if (type === "*") {
+          z = x * y;
+        }
+        if (type === "/") {
+          z = x / y;
+        }
         document.querySelector(".z").innerHTML = z;
         document.querySelector(".x").style.background = "#A8AAFF";
         document.querySelector(".y").style.background = "transparent";
@@ -317,7 +314,7 @@
         select = "x";
       });
       // +
-      btn_plus.addEventListener("click", function () {
+      pad_11.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "+";
         x.style.background = "transparent";
         y.style.background = "#A8AAFF";
@@ -325,7 +322,7 @@
         type = "+";
       });
       // -
-      btn_minus.addEventListener("click", function () {
+      pad_12.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "-";
         x.style.background = "transparent";
         y.style.background = "#A8AAFF";
@@ -333,7 +330,7 @@
         type = "-";
       });
       // *
-      btn_multi.addEventListener("click", function () {
+      pad_13.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "*";
         x.style.background = "transparent";
         y.style.background = "#A8AAFF";
@@ -341,7 +338,7 @@
         type = "*";
       });
       // /(割る)
-      btn_div.addEventListener("click", function () {
+      pad_14.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "/";
         x.style.background = "transparent";
         y.style.background = "#A8AAFF";
