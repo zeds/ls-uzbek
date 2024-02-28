@@ -157,7 +157,6 @@
       let btn_eq = document.querySelector(".btn_eq");
       let btn_p = document.querySelector(".btn_p");
       let btn_c = document.querySelector(".btn_c");
-      let btn_pm = document.querySelector(".btn_pm");
 
       x.style.background = "#ffbb3c";
 
@@ -339,8 +338,8 @@
           case "%":
             z = x % y;
             break;
-          case "":
-            z = x % y;
+          case "c":
+            (x = 0), (y = 0);
             break;
         }
 
@@ -390,24 +389,10 @@
       });
       btn_c.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "c";
-        x.style.background = "#ffbb3c";
-        y.style.background = "transparent";
-        select = "x";
-        type = "+";
-        document.querySelector(".x").innerHTML = "x";
-        document.querySelector(".plus").innerHTML = "+";
-        document.querySelector(".y").innerHTML = "y";
-        document.querySelector(".z").innerHTML = "z";
-      });
-      btn_pm.addEventListener("click", function () {
-        if (select === "x")
-          if (x.innerHTML !== "x") {
-            x.innerHTML = x.innerHTML * -1;
-          }
-        if (select === "y")
-          if (y.innerHTML !== "y") {
-            y.innerHTML = y.innerHTML * -1;
-          }
+        x.style.background = "transparent";
+        y.style.background = "#ffbb3c";
+        select = "y";
+        type = "x";
       });
     </script>
   </body>
