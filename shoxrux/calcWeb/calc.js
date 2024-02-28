@@ -265,7 +265,7 @@ btn_div.addEventListener("click", function () {
     type = "/";
 });
 btn_point.addEventListener("click", function () {
-    document.querySelector(".point").innerHTML = "%";
+    document.querySelector(".plus").innerHTML = "%";
     x.style.background = "transparent";
     y.style.background = "#A8AAFF";
     select = "y";
