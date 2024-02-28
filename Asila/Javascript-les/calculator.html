@@ -147,9 +147,9 @@
       </div>
 
       <div class="dentaku">
-        <div class="btn">C</div>
-        <div class="btn">±</div>
-        <div class="btn">%</div>
+        <div class="btn_clear btn">C</div>
+        <div class="btn_plus_minus btn">±</div>
+        <div class="btn_per btn">%</div>
         <div class="btn_div btn">÷</div>
         <div class="btn_7 btn">7</div>
         <div class="btn_8 btn">8</div>
@@ -192,6 +192,9 @@
       let btn_multi = document.querySelector(".btn_multi");
       let btn_div = document.querySelector(".btn_div");
       let btn_eq = document.querySelector(".btn_eq");
+      let btn_clear = document.querySelector(".btn_clear");
+      let btn_per = document.querySelector(".btn_per");
+      let btn_plus_minus = document.querySelector(".btn_plus_minus");
 
       // x.style.background = "pink";
 
@@ -373,6 +376,9 @@
           case "/":
             z = x / y;
             break;
+          case "%":
+            z = x % y;
+            break;
         }
 
         document.querySelector(".z").innerHTML = z;
@@ -415,6 +421,40 @@
         y.style.background = "6b6b76";
         select = "y";
         type = "/";
+      });
+      btn_per.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "%";
+        x.style.background = "transparent";
+        y.style.background = "6b6b76";
+        select = "y";
+        type = "%";
+      });
+
+      btn_clear.addEventListener("click", function () {
+        // document.querySelector(".plus").innerHTML = "%";
+        // y.style.background = "6b6b76";
+        x.style.background = "6b6b76";
+        y.style.background = "transparent";
+        select = "x";
+        type = "+";
+        document.querySelector(".x").innerHTML = "x";
+        document.querySelector(".plus").innerHTML = "+";
+        document.querySelector(".y").innerHTML = "y";
+        document.querySelector(".z").innerHTML = "z";
+      });
+
+      btn_plus_minus.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML !== "x") x.innerHTML = x.innerHTML * -1;
+        }
+        if (select === "y") {
+          if (y.innerHTML !== "y") y.innerHTML = y.innerHTML * -1;
+        }
+
+        // x.innerHTML = x.innerHTML * "-1"
+        // document.querySelector(".x").innerHTML = "x";
+        // document.querySelector(".y").innerHTML = "y";
+        // x.innerHTML = "-7";
       });
     </script>
   </body>
