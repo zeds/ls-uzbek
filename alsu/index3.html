@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
       body {
-        background: cadetblue;
+        background: white;
         font-size: 30px;
       }
       .calc_container {
@@ -28,6 +28,36 @@
         cursor: pointer;
         margin: 5px;
       }
+      .btn_div,
+      .btn_minus,
+      .btn_plus,
+      .btn_multi,
+      .btn_eq {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background: #ffbb3c;
+        border: 1px solid black;
+        color: white;
+        cursor: pointer;
+        border-radius: 25px;
+      }
+      .btn_c,
+      .btn_pm,
+      .btn_p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background: gray;
+        border: 1px solid black;
+        color: white;
+        cursor: pointer;
+        border-radius: 25px;
+      }
       .x,
       .y,
       .z,
@@ -39,6 +69,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 5px;
+        border-radius: 25px;
       }
       .dentaku {
         display: grid;
@@ -50,26 +81,19 @@
         align-items: center;
         width: 50px;
         height: 50px;
-        background: gray;
+        background: #9e9e9e;
         border: 1px solid black;
         cursor: pointer;
+        color: white;
+        border-radius: 25px;
       }
       .btn_0 {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50px;
-        height: 50px;
-        background: gray;
-        border: 1px solid black;
-      }
-      .btn_zero {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: 100px;
         height: 50px;
-        background: gray;
+        background: #9e9e9e;
         border: 1px solid black;
       }
       .dentaku_bottom {
@@ -86,27 +110,12 @@
       <div class="equals">=</div>
       <div class="z">z</div>
     </div>
-    <div class="pad_container">
-      <div class="pad">1</div>
-      <div class="pad">2</div>
-      <div class="pad">3</div>
-      <div class="pad">4</div>
-      <div class="pad">5</div>
-      <div class="pad">6</div>
-      <div class="pad">7</div>
-      <div class="pad">8</div>
-      <div class="pad">9</div>
-      <div class="pad">=</div>
-      <div class="pad">+</div>
-      <div class="pad">-</div>
-      <div class="pad">*</div>
-      <div class="pad">/</div>
-    </div>
+
     <div class="dentaku">
-      <div class="btn">C</div>
-      <div class="btn">±</div>
-      <div class="btn">%</div>
-      <div class="btn_div btn">÷</div>
+      <div class="btn_c">C</div>
+      <div class="btn_pm">±</div>
+      <div class="btn_p">%</div>
+      <div class="btn_div">÷</div>
       <div class="btn_7 btn">7</div>
       <div class="btn_8 btn">8</div>
       <div class="btn_9 btn">9</div>
@@ -114,16 +123,16 @@
       <div class="btn_4 btn">4</div>
       <div class="btn_5 btn">5</div>
       <div class="btn_6 btn">6</div>
-      <div class="btn">-</div>
+      <div class="btn_minus">-</div>
       <div class="btn_1 btn">1</div>
       <div class="btn_2 btn">2</div>
       <div class="btn_3 btn">3</div>
-      <div class="btn">+</div>
+      <div class="btn_plus">+</div>
     </div>
     <div class="dentaku_bottom">
-      <div class="btn_zero">0</div>
+      <div class="btn_0 btn">0</div>
       <div class="btn">.</div>
-      <div class="btn">=</div>
+      <div class="btn_eq">=</div>
     </div>
 
     <script>
@@ -133,25 +142,30 @@
       let y = document.querySelector(".y");
       let z = document.querySelector(".z");
 
-      let pad_1 = document.querySelectorAll(".pad")[0];
-      let pad_2 = document.querySelectorAll(".pad")[1];
-      let pad_3 = document.querySelectorAll(".pad")[2];
-      let pad_4 = document.querySelectorAll(".pad")[3];
-      let pad_5 = document.querySelectorAll(".pad")[4];
-      let pad_6 = document.querySelectorAll(".pad")[5];
-      let pad_7 = document.querySelectorAll(".pad")[6];
-      let pad_8 = document.querySelectorAll(".pad")[7];
-      let pad_9 = document.querySelectorAll(".pad")[8];
-      let pad_10 = document.querySelectorAll(".pad")[9];
-      let pad_11 = document.querySelectorAll(".pad")[10]; // +
-      let pad_12 = document.querySelectorAll(".pad")[11]; // -
-      let pad_13 = document.querySelectorAll(".pad")[12]; // *
-      let pad_14 = document.querySelectorAll(".pad")[13]; // /
+      let btn_0 = document.querySelector(".btn_0");
+      let btn_1 = document.querySelector(".btn_1");
+      let btn_2 = document.querySelector(".btn_2");
+      let btn_3 = document.querySelector(".btn_3");
+      let btn_4 = document.querySelector(".btn_4");
+      let btn_5 = document.querySelector(".btn_5");
+      let btn_6 = document.querySelector(".btn_6");
+      let btn_7 = document.querySelector(".btn_7");
+      let btn_8 = document.querySelector(".btn_8");
+      let btn_9 = document.querySelector(".btn_9");
+      let btn_plus = document.querySelector(".btn_plus");
+      let btn_minus = document.querySelector(".btn_minus");
+      let btn_multi = document.querySelector(".btn_multi"); // ✖️
+      let btn_div = document.querySelector(".btn_div"); // ➗
+      let btn_c = document.querySelector(".btn_c");
+      let btn_pm = document.querySelector(".btn_pm");
+      let btn_p = document.querySelector(".btn_p");
 
-      x.style.background = "red";
+      let btn_eq = document.querySelector(".btn_eq");
+      x.style.background = "#ffbb3c";
 
       x.addEventListener("click", function () {
         x.style.background = "#A8AAFF";
+
         y.style.background = "transparent";
         select = "x";
       });
@@ -161,7 +175,18 @@
         select = "y";
       });
 
-      pad_1.addEventListener("click", function () {
+      btn_0.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML !== "x") {
+            x.innerHTML = x.innerHTML + "0";
+          }
+        } else {
+          if (y.innerHTML !== "y") {
+            y.innerHTML = y.innerHTML + "0";
+          }
+        }
+      });
+      btn_1.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "1";
@@ -176,7 +201,7 @@
           }
         }
       });
-      pad_2.addEventListener("click", function () {
+      btn_2.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "2";
@@ -191,7 +216,7 @@
           }
         }
       });
-      pad_3.addEventListener("click", function () {
+      btn_3.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "3";
@@ -206,7 +231,7 @@
           }
         }
       });
-      pad_4.addEventListener("click", function () {
+      btn_4.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "4";
@@ -221,7 +246,7 @@
           }
         }
       });
-      pad_5.addEventListener("click", function () {
+      btn_5.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "5";
@@ -236,7 +261,7 @@
           }
         }
       });
-      pad_6.addEventListener("click", function () {
+      btn_6.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "6";
@@ -251,7 +276,7 @@
           }
         }
       });
-      pad_7.addEventListener("click", function () {
+      btn_7.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "7";
@@ -266,7 +291,7 @@
           }
         }
       });
-      pad_8.addEventListener("click", function () {
+      btn_8.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "8";
@@ -281,7 +306,7 @@
           }
         }
       });
-      pad_9.addEventListener("click", function () {
+      btn_9.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML === "x") {
             x.innerHTML = "9";
@@ -292,30 +317,36 @@
           if (y.innerHTML === "y") {
             y.innerHTML = "9";
           } else {
-            y.innerHTML = y.innerHTML + "";
+            y.innerHTML = y.innerHTML + "9";
           }
         }
       });
 
       // +
-      pad_10.addEventListener("click", function () {
-        console.log("=");
+      btn_eq.addEventListener("click", function () {
         let x = Number(document.querySelector(".x").innerHTML);
         let y = Number(document.querySelector(".y").innerHTML);
-        if (type === "+") {
-          z = x + y;
+
+        switch (type) {
+          case "+":
+            z = x + y;
+            break;
+          case "-":
+            z = x - y;
+            break;
+          case "*":
+            z = x * y;
+            break;
+          case "/":
+            z = x / y;
+            break;
+          case "%":
+            z = x % y;
+            break;
         }
-        if (type === "-") {
-          z = x - y;
-        }
-        if (type === "*") {
-          z = x * y;
-        }
-        if (type === "/") {
-          z = x / y;
-        }
+
         document.querySelector(".z").innerHTML = z;
-        document.querySelector(".x").style.background = "#A8AAFF";
+        document.querySelector(".x").style.background = "#ffbb3c";
         document.querySelector(".y").style.background = "transparent";
 
         document.querySelector(".x").innerHTML = "x";
@@ -324,37 +355,73 @@
         select = "x";
       });
       // +
-      pad_11.addEventListener("click", function () {
+      btn_plus.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "+";
         x.style.background = "transparent";
-        y.style.background = "#A8AAFF";
+        y.style.background = "#ffbb3c";
         select = "y";
         type = "+";
       });
       // -
-      pad_12.addEventListener("click", function () {
+      btn_minus.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "-";
         x.style.background = "transparent";
-        y.style.background = "#A8AAFF";
+        y.style.background = "#ffbb3c";
         select = "y";
         type = "-";
       });
       // *
-      pad_13.addEventListener("click", function () {
+      btn_multi.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "*";
         x.style.background = "transparent";
-        y.style.background = "#A8AAFF";
+        y.style.background = "#ffbb3c";
         select = "y";
         type = "*";
       });
       // /(割る)
-      pad_14.addEventListener("click", function () {
+      btn_div.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "/";
         x.style.background = "transparent";
-        y.style.background = "#A8AAFF";
+        y.style.background = "#ffbb3c";
         select = "y";
         type = "/";
       });
+      btn_p.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "/";
+        x.style.background = "transparent";
+        y.style.background = "#ffbb3c";
+        select = "y";
+        type = "%";
+      });
+      btn_c.addEventListener("click", function () {
+        x.innerHTML = "x";
+        y.innerHTML = "y";
+        z.innerHTML = "z";
+        zero.innerHTML = "0";
+        select = "x";
+        type = "+";
+        document.querySelector(".x").style.background = "#fab012";
+        document.querySelector(".y").style.background = "transparent";
+        document.querySelector(".plus").innerHTML = "+";
+      });
+      btn_pm.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML !== "x") {
+            x.innerHTML = x.innerHTML * -1;
+          }
+        }
+        if (select === "y") {
+          if (y.innerHTML !== "y") {
+            y.innerHTML = y.innerHTML * -1;
+          }
+        }
+      });
+      // for (let index = 0; index < array.length; index++) {
+      //     const element = array[index];
+
+      // }
+      // =======
+      // >>>>>>> b888ead46ff05aa32fd56602dc1cdca569c0b06b
     </script>
   </body>
 </html>
