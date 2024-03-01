@@ -245,8 +245,8 @@ btn_plus.addEventListener("click", function () {
     y.style.background = "#A8AAFF";
     select = "y";
     type = "+";
-    ans.classList.toggle("hidden");
-    myTimer = setInterval(myTimer, 100)
+    // ans.classList.toggle("hidden");
+    // myTimer = setInterval(myTimer, 100)
 });
 // -
 btn_minus.addEventListener("click", function () {
