@@ -63,6 +63,7 @@ body {
   height: 48px;
   background: #787777;
   cursor: pointer;
+  border-radius: 24px;
 }
 
 .btn_clear,
@@ -72,9 +73,10 @@ body {
   justify-content: center;
   align-items: center;
   width: 48px;
-  height: 47px;
+  height: 48px;
   background: #333333;
   cursor: pointer;
+  border-radius: 24px;
   
 }
 
@@ -91,6 +93,7 @@ body {
   height: 48px;
   background: #fab012;
   cursor: pointer;
+  border-radius: 24px;
 }
 
 .btn_0 {
@@ -100,6 +103,7 @@ body {
   width: 98px;
   height: 48px;
   background: rgb(120, 119, 119);
+  border-radius: 24px;
 }
 
 .dentaku_bottom {
