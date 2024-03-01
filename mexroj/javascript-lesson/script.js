@@ -273,7 +273,7 @@ btn_div.addEventListener("click", function () {
 btn_clear.addEventListener("click", function () {
   x.innerHTML = "x";
   y.innerHTML = "y";
-  z.innerHTML = "z";
+  document.querySelector(".z").innerHTML = "z";
   ans.innerHTML = "0";
   select = "x";
   type = "+";
@@ -288,11 +288,13 @@ btn_plus_minus.addEventListener("click", function () {
     if (x.innerHTML !== "x") {
       x.innerHTML = x.innerHTML * -1;
     }
+    ans.innerHTML = x.innerHTML;
   }
   if (select === "y") {
     if (y.innerHTML !== "y") {
       y.innerHTML = y.innerHTML * -1;
     }
+    ans.innerHTML = y.innerHTML;
   }
 });
 // %
