@@ -36,9 +36,10 @@ body {
     color: white;
 }
 
-/* .ans.hidden {
+.ans.hidden {
     visibility: hidden;
-} */
+    /* display: none; */
+}
 
 .x,
 .y,
