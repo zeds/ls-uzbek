@@ -6,140 +6,149 @@
     <title>Document</title>
     <style>
       body {
-        background: white;
+        background: rgb(190, 215, 224);
         font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
+      }
+      .layout {
+        background: black;
+        height: 320px;
+        width: 235px;
+        padding-right: 10px;
+        padding-left: 25px;
+        border-radius: 10px;
       }
       .calc_container {
         display: flex;
-        margin-bottom: 10px;
-      }
-      .pad_container {
-        display: flex;
-      }
-      .pad {
-        display: flex;
-        width: 50px;
-        height: 50px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px;
-        background: black;
-        color: blanchedalmond;
-        cursor: pointer;
-        margin: 5px;
-      }
-      .btn_div,
-      .btn_minus,
-      .btn_plus,
-      .btn_eq {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        background: #ffbb3c;
-        border: 1px solid black;
-        color: white;
-        cursor: pointer;
-        border-radius: 25px;
-      }
-      .btn_c,
-      .btn_pm,
-      .btn_p {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        background: gray;
-        border: 1px solid black;
-        color: white;
-        cursor: pointer;
-        border-radius: 25px;
-      }
-      .x,
-      .y,
-      .z,
-      .plus,
-      .equals {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 5px;
+        margin-bottom: 1px;
+        justify-content: end;
+        background-color: black;
+        margin-right: 25px;
       }
       .dentaku {
         display: grid;
         grid-template-columns: 50px 50px 50px 50px;
-      }
-      .btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        background: #9e9e9e;
-        border: 1px solid black;
-        cursor: pointer;
-        color: white;
-        border-radius: 25px;
-      }
-      .btn_0 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100px;
-        height: 50px;
-        background: #9e9e9e;
-        border: 1px solid black;
+        grid-auto-rows: 50px;
       }
       .dentaku_bottom {
         display: grid;
         grid-template-columns: 100px 50px 50px;
+        grid-auto-rows: 50px;
+      }
+      .btn {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        background: #616161;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+        border-radius: 50%;
+        margin: 10px;
+      }
+      .btn_orange {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        background: orange;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+        border-radius: 50%;
+        margin: 10px;
+      }
+      .btn_dk {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        background: #474747;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+        border-radius: 50%;
+        margin: 10px;
+      }
+      .btn_zero {
+        display: flex;
+        width: 100px;
+        height: 50px;
+        background: #616161;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        color: white;
+        cursor: pointer;
+        border-radius: 20px;
+        margin: 10px;
+      }
+      .x,
+      .type,
+      .y,
+      .z,
+      .eql {
+        color: white;
+      }
+      .ans {
+        color: white;
+        display: flex;
+        justify-content: end;
       }
     </style>
   </head>
   <body>
-    <div class="calc_container">
-      <div class="x">x</div>
-      <div class="plus">+</div>
-      <div class="y">y</div>
-      <div class="equals">=</div>
-      <div class="z">z</div>
-    </div>
-
-    <div class="dentaku">
-      <div class="btn_c">C</div>
-      <div class="btn_pm">±</div>
-      <div class="btn_p">%</div>
-      <div class="btn_div">÷</div>
-      <div class="btn_7 btn">7</div>
-      <div class="btn_8 btn">8</div>
-      <div class="btn_9 btn">9</div>
-      <div class="btn_div">x</div>
-      <div class="btn_4 btn">4</div>
-      <div class="btn_5 btn">5</div>
-      <div class="btn_6 btn">6</div>
-      <div class="btn_minus">-</div>
-      <div class="btn_1 btn">1</div>
-      <div class="btn_2 btn">2</div>
-      <div class="btn_3 btn">3</div>
-      <div class="btn_plus">+</div>
-    </div>
-    <div class="dentaku_bottom">
-      <div class="btn_0 btn">0</div>
-      <div class="btn">.</div>
-      <div class="btn_eq">=</div>
+    <div class="layout">
+      <div class="calc_container">
+        <div class="x">x</div>
+        <div class="type">+</div>
+        <div class="y">y</div>
+        <div class="eql">=</div>
+        <div class="z">z</div>
+      </div>
+      <div class="ans">0</div>
+      <div class="dentaku">
+        <div class="btn btn_dk" onclick="clearInput()">C</div>
+        <div class="btn_plus_minus btn_dk">±</div>
+        <!-- <div class="btn btn_dk" onclick="calculatePercentage()">%</div> -->
+        <div class="btn_percent btn_dk">%</div>
+        <div class="btn_div btn_orange">÷</div>
+        <div class="btn_7 btn">7</div>
+        <div class="btn_8 btn">8</div>
+        <div class="btn_9 btn">9</div>
+        <div class="btn_multi btn_orange">x</div>
+        <div class="btn_4 btn">4</div>
+        <div class="btn_5 btn">5</div>
+        <div class="btn_6 btn">6</div>
+        <div class="btn_minus btn_orange">-</div>
+        <div class="btn_1 btn">1</div>
+        <div class="btn_2 btn">2</div>
+        <div class="btn_3 btn">3</div>
+        <div class="btn_plus btn_orange">+</div>
+      </div>
+      <div class="dentaku_bottom">
+        <div class="btn_zero">0</div>
+        <div class="btn">.</div>
+        <div class="btn_eq btn_orange">=</div>
+      </div>
     </div>
 
     <script>
       let select = "x";
-      let type = "+"; // + - * /
+      let type = "+";
       let x = document.querySelector(".x");
       let y = document.querySelector(".y");
       let z = document.querySelector(".z");
-      let btn_0 = document.querySelector(".btn_0");
+      let ans = document.querySelector(".ans");
+
+      let btn_zero = document.querySelector(".btn_zero");
       let btn_1 = document.querySelector(".btn_1");
       let btn_2 = document.querySelector(".btn_2");
       let btn_3 = document.querySelector(".btn_3");
@@ -151,23 +160,26 @@
       let btn_9 = document.querySelector(".btn_9");
       let btn_plus = document.querySelector(".btn_plus");
       let btn_minus = document.querySelector(".btn_minus");
+      let btn_eq = document.querySelector(".btn_eq");
       let btn_multi = document.querySelector(".btn_multi");
       let btn_div = document.querySelector(".btn_div");
-      let btn_eq = document.querySelector(".btn_eq");
-      x.style.background = "#ffbb3c";
+      let btn_percent = document.querySelector(".btn_percent");
+      let btn_plus_minus = document.querySelector(".btn_plus_minus");
+
+      x.style.background = "red";
 
       x.addEventListener("click", function () {
-        x.style.background = "#A8AAFF";
+        x.style.background = "red";
         y.style.background = "transparent";
         select = "x";
       });
       y.addEventListener("click", function () {
         x.style.background = "transparent";
-        y.style.background = "#A8AAFF";
+        y.style.background = "red";
         select = "y";
       });
 
-      btn_0.addEventListener("click", function () {
+      btn_zero.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML + "0";
@@ -185,12 +197,14 @@
           } else {
             x.innerHTML = x.innerHTML + "1";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "1";
           } else {
             y.innerHTML = y.innerHTML + "1";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_2.addEventListener("click", function () {
@@ -200,12 +214,14 @@
           } else {
             x.innerHTML = x.innerHTML + "2";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "2";
           } else {
             y.innerHTML = y.innerHTML + "2";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_3.addEventListener("click", function () {
@@ -314,11 +330,14 @@
         }
       });
 
-      // +
+      // =
       btn_eq.addEventListener("click", function () {
+        console.log("=");
         let x = Number(document.querySelector(".x").innerHTML);
         let y = Number(document.querySelector(".y").innerHTML);
+        let z = 0;
 
+        // switch
         switch (type) {
           case "+":
             z = x + y;
@@ -332,49 +351,97 @@
           case "/":
             z = x / y;
             break;
+          case "%":
+            z = x % y;
+            break;
         }
-
+        document.querySelector(".ans").innerHTML = z;
         document.querySelector(".z").innerHTML = z;
-        document.querySelector(".x").style.background = "#ffbb3c";
+        document.querySelector(".x").style.background = "red";
         document.querySelector(".y").style.background = "transparent";
-
+        select = "x";
         document.querySelector(".x").innerHTML = "x";
         document.querySelector(".y").innerHTML = "y";
-
-        select = "x";
       });
       // +
       btn_plus.addEventListener("click", function () {
-        document.querySelector(".plus").innerHTML = "+";
-        x.style.background = "transparent";
-        y.style.background = "#ffbb3c";
         select = "y";
         type = "+";
+        document.querySelector(".type").innerHTML = "+";
+        x.style.background = "transparent";
+        y.style.background = "red";
       });
       // -
       btn_minus.addEventListener("click", function () {
-        document.querySelector(".plus").innerHTML = "-";
-        x.style.background = "transparent";
-        y.style.background = "#ffbb3c";
         select = "y";
         type = "-";
+        document.querySelector(".type").innerHTML = "-";
+        x.style.background = "transparent";
+        y.style.background = "red";
       });
       // *
       btn_multi.addEventListener("click", function () {
-        document.querySelector(".plus").innerHTML = "*";
-        x.style.background = "transparent";
-        y.style.background = "#ffbb3c";
         select = "y";
         type = "*";
-      });
-      // /(割る)
-      btn_div.addEventListener("click", function () {
-        document.querySelector(".plus").innerHTML = "/";
+        document.querySelector(".type").innerHTML = "*";
         x.style.background = "transparent";
-        y.style.background = "#ffbb3c";
+        y.style.background = "red";
+      });
+      // / (割る)
+      btn_div.addEventListener("click", function () {
         select = "y";
         type = "/";
+        document.querySelector(".type").innerHTML = "/";
+        x.style.background = "transparent";
+        y.style.background = "red";
       });
+      // % 余り
+      btn_percent.addEventListener("click", function () {
+        select = "y";
+        type = "%";
+        document.querySelector(".type").innerHTML = "%";
+        x.style.background = "transparent";
+        y.style.background = "red";
+      });
+      // ±
+      btn_plus_minus.addEventListener("click", function () {
+        let x = document.querySelector(".x").innerHTML;
+        let y = document.querySelector(".y").innerHTML;
+
+        if (select == "x") {
+          x = x * -1;
+          document.querySelector(".x").innerHTML = x;
+        } else {
+          y = y * -1;
+          document.querySelector(".y").innerHTML = y;
+        }
+      });
+      function clearInput() {
+        const x = document.querySelector(".x");
+        const y = document.querySelector(".y");
+        const z = document.querySelector(".z");
+        const ans = document.querySelector(".ans");
+        x.innerHTML = "x";
+        y.innerHTML = "y";
+        z.innerHTML = "z";
+        ans.innerHTML = "0";
+
+        select = "x";
+        x.style.background = "red";
+        y.style.background = "transparent";
+      }
+      function calculatePercentage() {
+        let display = document.querySelector(".x");
+        let currentValue = parseFloat(display.innerHTML);
+
+        // 10 % 3 = 1
+        // 20 % 3 = 2
+
+        if (!isNaN(currentValue)) {
+          let percentageValue = currentValue / 100;
+          display.innerHTML = percentageValue;
+        }
+      }
     </script>
   </body>
 </html>

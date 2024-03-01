@@ -4,6 +4,7 @@ body {
 }
 .calculator {
   /* width: 200px; */
+  background-color: yellowgreen;
   border: 5px solid black;
   color: white;
   padding: 5px;
@@ -15,9 +16,20 @@ body {
 .calc_container {
   background-color: rgb(1, 1, 7);
   display: flex;
-  margin-bottom: 10px;
+  margin: 30px;
 }
-
+.ans {
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  background-color: green;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: white;
+}
 .x,
 .y,
 .z,
@@ -55,7 +67,7 @@ body {
   border: 1px solid black;
   cursor: pointer;
 }
-.btn_calc {
+.btn_plus_minus {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,4 +149,5 @@ body {
 .dentaku_bottom {
   display: grid;
   grid-template-columns: 100px 50px 50px;
+  margin-bottom: 30px;
 }

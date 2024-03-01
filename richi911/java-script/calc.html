@@ -9,24 +9,16 @@
         background: rgb(190, 215, 214);
         font-size: 30px;
       }
+      .layout {
+        background: black;
+        border: 5px solid black;
+        height: 342px;
+        width: 201.5px;
+        border-radius: 5px;
+      }
       .calc_container {
         display: flex;
         margin-bottom: 10px;
-      }
-      .pad_container {
-        display: flex;
-      }
-      .pad {
-        display: flex;
-        width: 50px;
-        height: 50px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px;
-        background: black;
-        color: white;
-        cursor: pointer;
-        margin: 5px;
       }
       .dentaku {
         display: grid;
@@ -82,38 +74,55 @@
         color: white;
         cursor: pointer;
       }
+      .x,
+      .type,
+      .y,
+      .z,
+      .eql {
+        color: white;
+      }
+      .ans {
+        color: white;
+        font-size: 40px;
+        display: flex;
+        justify-content: end;
+        padding-right: 5px;
+      }
     </style>
   </head>
   <body>
-    <div class="calc_container">
-      <div class="x">x</div>
-      <div class="type">+</div>
-      <div class="y">y</div>
-      <div>=</div>
-      <div class="z">z</div>
-    </div>
-    <div class="dentaku">
-      <div class="btn btn_dk">C</div>
-      <div class="btn btn_dk">±</div>
-      <div class="btn btn_dk">%</div>
-      <div class="btn_div btn_orange">÷</div>
-      <div class="btn_7 btn_dk">7</div>
-      <div class="btn_8 btn_dk">8</div>
-      <div class="btn_9 btn_dk">9</div>
-      <div class="btn_multi btn_orange">x</div>
-      <div class="btn_4 btn_dk">4</div>
-      <div class="btn_5 btn_dk">5</div>
-      <div class="btn_6 btn_dk">6</div>
-      <div class="btn_minus btn_orange">-</div>
-      <div class="btn_1 btn_dk">1</div>
-      <div class="btn_2 btn_dk">2</div>
-      <div class="btn_3 btn_dk">3</div>
-      <div class="btn_plus btn_orange">+</div>
-    </div>
-    <div class="dentaku_bottom">
-      <div class="btn_zero">0</div>
-      <div class="btn">.</div>
-      <div class="btn_eq btn_orange">=</div>
+    <div class="layout">
+      <div class="calc_container">
+        <div class="x">x</div>
+        <div class="type">+</div>
+        <div class="y">y</div>
+        <div class="eql">=</div>
+        <div class="z">z</div>
+      </div>
+      <div class="ans">0</div>
+      <div class="dentaku">
+        <div class="btn_dk" onclick="clearInput()">C</div>
+        <div class="btn_plus_minus btn_dk">±</div>
+        <div class="btn_percent btn_dk">%</div>
+        <div class="btn_div btn_orange">÷</div>
+        <div class="btn_7 btn_dk">7</div>
+        <div class="btn_8 btn_dk">8</div>
+        <div class="btn_9 btn_dk">9</div>
+        <div class="btn_multi btn_orange">x</div>
+        <div class="btn_4 btn_dk">4</div>
+        <div class="btn_5 btn_dk">5</div>
+        <div class="btn_6 btn_dk">6</div>
+        <div class="btn_minus btn_orange">-</div>
+        <div class="btn_1 btn_dk">1</div>
+        <div class="btn_2 btn_dk">2</div>
+        <div class="btn_3 btn_dk">3</div>
+        <div class="btn_plus btn_orange">+</div>
+      </div>
+      <div class="dentaku_bottom">
+        <div class="btn_zero">0</div>
+        <div class="btn">.</div>
+        <div class="btn_eq btn_orange">=</div>
+      </div>
     </div>
 
     <script>
@@ -122,6 +131,7 @@
       let x = document.querySelector(".x");
       let y = document.querySelector(".y");
       let z = document.querySelector(".z");
+      let ans = document.querySelector(".ans");
 
       let btn_zero = document.querySelector(".btn_zero");
       let btn_1 = document.querySelector(".btn_1");
@@ -138,6 +148,8 @@
       let btn_eq = document.querySelector(".btn_eq");
       let btn_multi = document.querySelector(".btn_multi");
       let btn_div = document.querySelector(".btn_div");
+      let btn_percent = document.querySelector(".btn_percent");
+      let btn_plus_minus = document.querySelector(".btn_plus_minus");
 
       x.style.background = "red";
 
@@ -170,12 +182,14 @@
           } else {
             x.innerHTML = x.innerHTML + "1";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "1";
           } else {
             y.innerHTML = y.innerHTML + "1";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_2.addEventListener("click", function () {
@@ -185,12 +199,14 @@
           } else {
             x.innerHTML = x.innerHTML + "2";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "2";
           } else {
             y.innerHTML = y.innerHTML + "2";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_3.addEventListener("click", function () {
@@ -200,12 +216,14 @@
           } else {
             x.innerHTML = x.innerHTML + "3";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "3";
           } else {
             y.innerHTML = y.innerHTML + "3";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_4.addEventListener("click", function () {
@@ -215,12 +233,14 @@
           } else {
             x.innerHTML = x.innerHTML + "4";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "4";
           } else {
             y.innerHTML = y.innerHTML + "4";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_5.addEventListener("click", function () {
@@ -230,12 +250,14 @@
           } else {
             x.innerHTML = x.innerHTML + "5";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "5";
           } else {
             y.innerHTML = y.innerHTML + "5";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_6.addEventListener("click", function () {
@@ -245,12 +267,14 @@
           } else {
             x.innerHTML = x.innerHTML + "6";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "6";
           } else {
             y.innerHTML = y.innerHTML + "6";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_7.addEventListener("click", function () {
@@ -260,12 +284,14 @@
           } else {
             x.innerHTML = x.innerHTML + "7";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "7";
           } else {
             y.innerHTML = y.innerHTML + "7";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_8.addEventListener("click", function () {
@@ -275,12 +301,14 @@
           } else {
             x.innerHTML = x.innerHTML + "8";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "8";
           } else {
             y.innerHTML = y.innerHTML + "8";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
       btn_9.addEventListener("click", function () {
@@ -290,12 +318,14 @@
           } else {
             x.innerHTML = x.innerHTML + "9";
           }
+          ans.innerHTML = document.querySelector(".x").innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "9";
           } else {
             y.innerHTML = y.innerHTML + "9";
           }
+          ans.innerHTML = document.querySelector(".y").innerHTML;
         }
       });
 
@@ -320,7 +350,11 @@
           case "/":
             z = x / y;
             break;
+          case "%":
+            z = x % y;
+            break;
         }
+        document.querySelector(".ans").innerHTML = z;
         document.querySelector(".z").innerHTML = z;
         document.querySelector(".x").style.background = "red";
         document.querySelector(".y").style.background = "transparent";
@@ -360,6 +394,50 @@
         x.style.background = "transparent";
         y.style.background = "red";
       });
+      // % 余り
+      btn_percent.addEventListener("click", function () {
+        select = "x";
+        type = "%";
+        document.querySelector(".type").innerHTML = "%";
+        x.style.background = "transparent";
+        y.style.background = "red";
+      });
+      // ±
+      btn_plus_minus.addEventListener("click", function () {
+        let x = document.querySelector(".x").innerHTML;
+        let y = document.querySelector(".y").innerHTML;
+
+        if (select == "x") {
+          x = x * -1;
+          document.querySelector(".x").innerHTML = x;
+        } else {
+          y = y * -1;
+          document.querySelector(".y").innerHTML = y;
+        }
+      });
+      function clearInput() {
+        const x = document.querySelector(".x");
+        const y = document.querySelector(".y");
+        const z = document.querySelector(".z");
+        const ans = document.querySelector(".ans");
+        x.innerHTML = "x";
+        y.innerHTML = "y";
+        z.innerHTML = "z";
+        ans.innerHTML = "0";
+
+        select = "x";
+        x.style.background = "red";
+        y.style.background = "transparent";
+      }
+      function calculatePercentage() {
+        let display = document.querySelector(".x");
+        let currentValue = parseFloat(display.innerHTML);
+
+        if (!isNAN(currentValue)) {
+          let percentageValue = currentValue / 100;
+          display.innerHTML = percentageValue;
+        }
+      }
     </script>
   </body>
 </html>
