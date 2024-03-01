@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calc-wrapper">
+      <table>
+        <thread>
+          <tr>
+            <th>
+              <input class="inputValue" disabled type="text" />
+            </th>
+          </tr>
+        </thread>
+        <tbody>
+          <tr>
+            <td onclick="myClear()" class="remove-element c">C</td>
+            <td class="remove-element r">R</td>
+          </tr>
+          <tr>
+            <td onclick="myFunction(7)" class="num">7</td>
+            <td onclick="myFunction(8)" class="num">8</td>
+            <td onclick="myFunction(9)" class="num">9</td>
+            <td onclick="myFunction('+')" data-sign="+" class="sign">+</td>
+          </tr>
+          <tr>
+            <td onclick="myFunction(6)" class="num">6</td>
+            <td onclick="myFunction(5)" class="num">5</td>
+            <td onclick="myFunction(4)" class="num">4</td>
+            <td onclick="myFunction('*')" data-sign="*" class="sign">x</td>
+          </tr>
+          <tr>
+            <td onclick="myFunction(3)" class="num">3</td>
+            <td onclick="myFunction(2)" class="num">2</td>
+            <td onclick="myFunction(1)" class="num">1</td>
+            <td onclick="myFunction('-')" data-sign="-" class="sign">-</td>
+          </tr>
+          <tr>
+            <td class="dot">.</td>
+            <td class="num">0</td>
+            <td class="equal">=</td>
+            <td onclick="myFunction('/')" data-sign="/" class="sign">/</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

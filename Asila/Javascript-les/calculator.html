@@ -134,6 +134,18 @@
       .btn_0 {
         background: #6b6b76;
       }
+      .ans {
+        background: rgb(74, 73, 77);
+        width: 200px;
+        margin: 0 auto;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(221, 221, 223);
+        border-top: none;
+        font-size: 35px;
+      }
     </style>
   </head>
   <body>
@@ -145,11 +157,11 @@
         <div class="equals">=</div>
         <div class="z">z</div>
       </div>
-
+      <div class="ans">0</div>
       <div class="dentaku">
-        <div class="btn">C</div>
-        <div class="btn">±</div>
-        <div class="btn">%</div>
+        <div class="btn_clear btn">C</div>
+        <div class="btn_plus_minus btn">±</div>
+        <div class="btn_per btn">%</div>
         <div class="btn_div btn">÷</div>
         <div class="btn_7 btn">7</div>
         <div class="btn_8 btn">8</div>
@@ -192,6 +204,10 @@
       let btn_multi = document.querySelector(".btn_multi");
       let btn_div = document.querySelector(".btn_div");
       let btn_eq = document.querySelector(".btn_eq");
+      let btn_clear = document.querySelector(".btn_clear");
+      let btn_per = document.querySelector(".btn_per");
+      let btn_plus_minus = document.querySelector(".btn_plus_minus");
+      let ans = document.querySelector(".ans");
 
       // x.style.background = "pink";
 
@@ -211,10 +227,12 @@
           if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML + "0";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML !== "y") {
             y.innerHTML = y.innerHTML + "0";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_1.addEventListener("click", function () {
@@ -224,12 +242,14 @@
           } else {
             x.innerHTML = x.innerHTML + "1";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "1";
           } else {
             y.innerHTML = y.innerHTML + "1";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_2.addEventListener("click", function () {
@@ -239,12 +259,14 @@
           } else {
             x.innerHTML = x.innerHTML + "2";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "2";
           } else {
             y.innerHTML = y.innerHTML + "2";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_3.addEventListener("click", function () {
@@ -254,12 +276,14 @@
           } else {
             x.innerHTML = x.innerHTML + "3";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "3";
           } else {
             y.innerHTML = y.innerHTML + "3";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_4.addEventListener("click", function () {
@@ -269,12 +293,14 @@
           } else {
             x.innerHTML = x.innerHTML + "4";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "4";
           } else {
             y.innerHTML = y.innerHTML + "4";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_5.addEventListener("click", function () {
@@ -284,12 +310,14 @@
           } else {
             x.innerHTML = x.innerHTML + "5";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "5";
           } else {
             y.innerHTML = y.innerHTML + "5";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_6.addEventListener("click", function () {
@@ -299,12 +327,14 @@
           } else {
             x.innerHTML = x.innerHTML + "6";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "6";
           } else {
             y.innerHTML = y.innerHTML + "6";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_7.addEventListener("click", function () {
@@ -314,12 +344,14 @@
           } else {
             x.innerHTML = x.innerHTML + "7";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "7";
           } else {
             y.innerHTML = y.innerHTML + "7";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_8.addEventListener("click", function () {
@@ -331,12 +363,14 @@
               } else {
                 x.innerHTML = x.innerHTML + "8";
               }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "8";
           } else {
             y.innerHTML = y.innerHTML + "8";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_9.addEventListener("click", function () {
@@ -346,12 +380,14 @@
           } else {
             x.innerHTML = x.innerHTML + "9";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "9";
           } else {
             y.innerHTML = y.innerHTML + "9";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
 
@@ -373,9 +409,13 @@
           case "/":
             z = x / y;
             break;
+          case "%":
+            z = x % y;
+            break;
         }
 
         document.querySelector(".z").innerHTML = z;
+        document.querySelector(".ans").innerHTML = z;
         document.querySelector(".x").style.background = "#6b6b76";
         document.querySelector(".y").style.background = "transparent";
 
@@ -415,6 +455,41 @@
         y.style.background = "6b6b76";
         select = "y";
         type = "/";
+      });
+      btn_per.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "%";
+        x.style.background = "transparent";
+        y.style.background = "6b6b76";
+        select = "y";
+        type = "%";
+      });
+
+      btn_clear.addEventListener("click", function () {
+        // document.querySelector(".plus").innerHTML = "%";
+        // y.style.background = "6b6b76";
+        x.style.background = "6b6b76";
+        y.style.background = "transparent";
+        select = "x";
+        type = "+";
+        document.querySelector(".x").innerHTML = "x";
+        document.querySelector(".plus").innerHTML = "+";
+        document.querySelector(".y").innerHTML = "y";
+        document.querySelector(".z").innerHTML = "z";
+        ans.innerHTML = "0";
+      });
+
+      btn_plus_minus.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML !== "x") x.innerHTML = x.innerHTML * -1;
+        }
+        if (select === "y") {
+          if (y.innerHTML !== "y") y.innerHTML = y.innerHTML * -1;
+        }
+
+        // x.innerHTML = x.innerHTML * "-1"
+        // document.querySelector(".x").innerHTML = "x";
+        // document.querySelector(".y").innerHTML = "y";
+        // x.innerHTML = "-7";
       });
     </script>
   </body>
