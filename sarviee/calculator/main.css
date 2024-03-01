@@ -1,0 +1,113 @@
+body {
+  background: #5c5c5c;
+  font-size: 30px;
+}
+
+.calculator {
+  top: 10%;
+  right: 40%;
+  position: absolute;
+  /* width: 200px; */
+  color: white;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc_container {
+  display: flex;
+  margin: 15px;
+  border-radius: 5px;
+  color: white;
+}
+
+.zero {
+  padding: 0 10px;
+  width: 184px;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  background-color: #5c5c5c;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: white;
+}
+
+.x,
+.y,
+.z,
+.plus,
+.equals {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.dentaku {
+  display: grid;
+  margin: 5px;
+  grid-template-columns: 50px 50px 50px 50px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: #787777;
+  cursor: pointer;
+  border-radius: 24px;
+}
+
+.btn_clear,
+.btn_percent,
+.btn_pm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: #333333;
+  cursor: pointer;
+  border-radius: 24px;
+  
+}
+
+.btn_plus,
+.btn_minus,
+.btn_multi,
+.btn_div,
+.btn_eq
+ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: #fab012;
+  cursor: pointer;
+  border-radius: 24px;
+}
+
+.btn_0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98px;
+  height: 48px;
+  background: rgb(120, 119, 119);
+  border-radius: 24px;
+}
+
+.dentaku_bottom {
+  display: grid;
+  grid-template-columns: 100px 50px 50px;
+  margin-bottom: 30px;
+}
