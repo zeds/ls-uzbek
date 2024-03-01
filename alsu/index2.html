@@ -17,13 +17,16 @@
         padding: 0 10px;
         width: 50px;
         height: 50px;
-
         margin: 5px;
         background-color: #5c5c5c;
         display: flex;
         justify-content: center;
         align-items: center;
         color: white;
+      }
+      .ans.hidden {
+        visibility: hidden;
+        /* display: none; */
       }
       .pad_container {
         display: flex;
@@ -369,6 +372,11 @@
 
         select = "x";
       });
+      function myTrigger() {
+        ans.classList.toggle("hidden");
+        clearInterval(myTimeout);
+        myTimeout = null;
+      }
       // +
       btn_plus.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "+";
@@ -376,6 +384,8 @@
         y.style.background = "#ffbb3c";
         select = "y";
         type = "+";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // -
       btn_minus.addEventListener("click", function () {
@@ -384,6 +394,8 @@
         y.style.background = "#ffbb3c";
         select = "y";
         type = "-";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // *
       btn_multi.addEventListener("click", function () {
@@ -392,6 +404,8 @@
         y.style.background = "#ffbb3c";
         select = "y";
         type = "*";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // /(割る)
       btn_div.addEventListener("click", function () {
@@ -400,6 +414,8 @@
         y.style.background = "#ffbb3c";
         select = "y";
         type = "/";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       btn_p.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "/";
@@ -407,6 +423,8 @@
         y.style.background = "#ffbb3c";
         select = "y";
         type = "%";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       btn_c.addEventListener("click", function () {
         x.innerHTML = "x";
@@ -418,6 +436,8 @@
         document.querySelector(".x").style.background = "#fab012";
         document.querySelector(".y").style.background = "transparent";
         document.querySelector(".plus").innerHTML = "+";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       btn_pm.addEventListener("click", function () {
         if (select === "x") {
@@ -430,6 +450,8 @@
             y.innerHTML = y.innerHTML * -1;
           }
         }
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // for (let index = 0; index < array.length; index++) {
       //     const element = array[index];
