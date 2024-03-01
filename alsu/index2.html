@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
       body {
-        background: white;
+        background: cadetblue;
         font-size: 30px;
       }
       .calc_container {
@@ -30,6 +30,7 @@
       }
       .btn_div,
       .btn_minus,
+      .btn_multi,
       .btn_plus,
       .btn_eq {
         display: flex;
@@ -41,6 +42,7 @@
         border: 1px solid black;
         color: white;
         cursor: pointer;
+        border-radius: 25px;
       }
       .btn_c,
       .btn_pm,
@@ -54,6 +56,7 @@
         border: 1px solid black;
         color: white;
         cursor: pointer;
+        border-radius: 25px;
       }
       .x,
       .y,
@@ -81,6 +84,7 @@
         border: 1px solid black;
         cursor: pointer;
         color: white;
+        border-radius: 25px;
       }
       .btn_0 {
         display: flex;
@@ -114,7 +118,7 @@
       <div class="btn_7 btn">7</div>
       <div class="btn_8 btn">8</div>
       <div class="btn_9 btn">9</div>
-      <div class="btn_div">x</div>
+      <div class="btn_multi">x</div>
       <div class="btn_4 btn">4</div>
       <div class="btn_5 btn">5</div>
       <div class="btn_6 btn">6</div>
@@ -152,6 +156,10 @@
       let btn_multi = document.querySelector(".btn_multi");
       let btn_div = document.querySelector(".btn_div");
       let btn_eq = document.querySelector(".btn_eq");
+      let btn_percent = document.querySelector(".btn_p");
+      let btn_clear = document.querySelector(".btn_c");
+      let btn_plus_minus = document.querySelector(".btn_pm");
+
       x.style.background = "#ffbb3c";
 
       x.addEventListener("click", function () {
@@ -283,13 +291,11 @@
       });
       btn_8.addEventListener("click", function () {
         if (select === "x") {
-          if (val === null)
-            if (val === undefined)
-              if (x.innerHTML === "x") {
-                x.innerHTML = "8";
-              } else {
-                x.innerHTML = x.innerHTML + "8";
-              }
+          if (x.innerHTML === "x") {
+            x.innerHTML = "8";
+          } else {
+            x.innerHTML = x.innerHTML + "8";
+          }
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "8";
@@ -331,6 +337,9 @@
             break;
           case "/":
             z = x / y;
+            break;
+          case "%":
+            z = x % y;
             break;
         }
 
@@ -375,6 +384,53 @@
         select = "y";
         type = "/";
       });
+      // C: clear
+      btn_clear.addEventListener("click", function () {
+        x.style.background = "#A8AAFF";
+        y.style.background = "transparent";
+        select = "x";
+        type = "+";
+        document.querySelector(".x").innerHTML = "x";
+        document.querySelector(".plus").innerHTML = "+";
+        document.querySelector(".y").innerHTML = "y";
+        document.querySelector(".z").innerHTML = "z";
+      });
+      // ±
+      btn_plus_minus.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML !== "x") {
+            x.innerHTML = x.innerHTML * -1;
+          }
+        }
+        if (select === "y") {
+          if (y.innerHTML !== "y") {
+            y.innerHTML = y.innerHTML * -1;
+          }
+        }
+      });
+      // %
+      btn_percent.addEventListener("click", function () {
+        document.querySelector(".percent").innerHTML = "%";
+        x.style.background = "transparent";
+        y.style.background = "#A8AAFF";
+        select = "y";
+        type = "%";
+      });
+      // <<<<<<< HEAD
+      btn_point.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "%";
+        x.style.background = "transparent";
+        y.style.background = "#A8AAFF";
+        select = "y";
+        type = "%";
+        console.log(btn_point);
+      });
+      // for (let index = 0; index < array.length; index++) {
+      //     const element = array[index];
+
+      // }
+      // =======
+      // >>>>>>> b888ead46ff05aa32fd56602dc1cdca569c0b06b
     </script>
   </body>
 </html>
