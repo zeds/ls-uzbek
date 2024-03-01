@@ -328,3 +328,8 @@ btn_percent.addEventListener("click", function () {
     ans.classList.toggle("hidden");
     myTimeout = setInterval(myTrigger, 50); // 0.5s
 });
+
+
+let nameBoy = ["name1", "name2"];
+console.log(nameBoy[1] + ' ' + nameBoy[1]);
+
