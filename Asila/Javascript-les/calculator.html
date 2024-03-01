@@ -481,11 +481,14 @@
       btn_plus_minus.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML !== "x") x.innerHTML = x.innerHTML * -1;
+          ans.innerHTML = x.innerHTML;
         }
+        
         if (select === "y") {
           if (y.innerHTML !== "y") y.innerHTML = y.innerHTML * -1;
+          ans.innerHTML = y.innerHTML;
         }
-
+        
         // x.innerHTML = x.innerHTML * "-1"
         // document.querySelector(".x").innerHTML = "x";
         // document.querySelector(".y").innerHTML = "y";
