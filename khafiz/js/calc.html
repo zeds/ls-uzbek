@@ -9,21 +9,36 @@
         background: white;
         font-size: 30px;
       }
-      .box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .calculator {
-        height: 400px;
-        width: 250px;
-        display: grid;
 
-        background: peachpuff;
+      .calculator {
+        top: 10%;
+        right: 40%;
+        position: absolute;
+        /* width: 200px; */
+        color: white;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .ans {
+        padding: 0 10px;
+        width: 184px;
+        height: 50px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        background-color: #007f8094;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        color: white;
       }
       .calc_container {
         display: flex;
         margin-bottom: 10px;
+        margin: 15px;
+        border-radius: 5px;
       }
       .pad_container {
         display: flex;
@@ -124,6 +139,8 @@
           <div class="z">z</div>
         </div>
 
+        <div class="ans">0</div>
+
         <div class="dentaku">
           <div class="btn_c">C</div>
           <div class="btn_pm">±</div>
@@ -173,6 +190,7 @@
       let btn_p = document.querySelector(".btn_p");
       let btn_c = document.querySelector(".btn_c");
       let btn_pm = document.querySelector(".btn_pm");
+      let ans = document.querySelector(".ans");
 
       x.style.background = "#ffbb3c";
 
@@ -192,10 +210,12 @@
           if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML + "0";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML !== "y") {
             y.innerHTML = y.innerHTML + "0";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_1.addEventListener("click", function () {
@@ -205,12 +225,14 @@
           } else {
             x.innerHTML = x.innerHTML + "1";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "1";
           } else {
             y.innerHTML = y.innerHTML + "1";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_2.addEventListener("click", function () {
@@ -220,12 +242,14 @@
           } else {
             x.innerHTML = x.innerHTML + "2";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "2";
           } else {
             y.innerHTML = y.innerHTML + "2";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_3.addEventListener("click", function () {
@@ -235,12 +259,14 @@
           } else {
             x.innerHTML = x.innerHTML + "3";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "3";
           } else {
             y.innerHTML = y.innerHTML + "3";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_4.addEventListener("click", function () {
@@ -250,12 +276,14 @@
           } else {
             x.innerHTML = x.innerHTML + "4";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "4";
           } else {
             y.innerHTML = y.innerHTML + "4";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_5.addEventListener("click", function () {
@@ -265,12 +293,14 @@
           } else {
             x.innerHTML = x.innerHTML + "5";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "5";
           } else {
             y.innerHTML = y.innerHTML + "5";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_6.addEventListener("click", function () {
@@ -280,12 +310,14 @@
           } else {
             x.innerHTML = x.innerHTML + "6";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "6";
           } else {
             y.innerHTML = y.innerHTML + "6";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_7.addEventListener("click", function () {
@@ -295,12 +327,14 @@
           } else {
             x.innerHTML = x.innerHTML + "7";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "7";
           } else {
             y.innerHTML = y.innerHTML + "7";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_8.addEventListener("click", function () {
@@ -310,12 +344,14 @@
           } else {
             x.innerHTML = x.innerHTML + "8";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "8";
           } else {
             y.innerHTML = y.innerHTML + "8";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_9.addEventListener("click", function () {
@@ -325,12 +361,14 @@
           } else {
             x.innerHTML = x.innerHTML + "9";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "9";
           } else {
             y.innerHTML = y.innerHTML + "9";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
 
@@ -360,6 +398,8 @@
         }
 
         document.querySelector(".z").innerHTML = z;
+        document.querySelector(".ans").innerHTML = z;
+
         document.querySelector(".x").style.background = "#ffbb3c";
         document.querySelector(".y").style.background = "transparent";
 
