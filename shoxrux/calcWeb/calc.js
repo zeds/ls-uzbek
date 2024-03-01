@@ -19,16 +19,10 @@ let btn_minus = document.querySelector(".btn_minus");
 let btn_multi = document.querySelector(".btn_multi");
 let btn_div = document.querySelector(".btn_div");
 let btn_eq = document.querySelector(".btn_eq");
-// <<<<<<< HEAD
-let btn_point = document.querySelector(".point");
-let btn_cancel = document.querySelector(".cancel");
-
-// =======
-let btn_clear = document.querySelector(".clear");
-let btn_plus_minus = document.querySelector(".plus_minus");
-let btn_percent = document.querySelector(".percent");
-// >>>>>>> b888ead46ff05aa32fd56602dc1cdca569c0b06b
-
+let btn_clear = document.querySelector(".btn_clear");
+let btn_percent = document.querySelector(".btn_percent");
+let btn_plus_minus = document.querySelector(".btn_plus_minus");
+let ans = document.querySelector(".ans");
 x.style.background = "#A8AAFF";
 
 x.addEventListener("click", function () {
@@ -47,10 +41,12 @@ btn_0.addEventListener("click", function () {
         if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML + "0";
         }
+        ans.innerHTML = x.innerHTML;
     } else {
         if (y.innerHTML !== "y") {
             y.innerHTML = y.innerHTML + "0";
         }
+        ans.innerHTML = y.innerHTML;
     }
 });
 btn_1.addEventListener("click", function () {
@@ -60,12 +56,14 @@ btn_1.addEventListener("click", function () {
         } else {
             x.innerHTML = x.innerHTML + "1";
         }
+        ans.innerHTML = x.innerHTML;
     } else {
         if (y.innerHTML === "y") {
             y.innerHTML = "1";
         } else {
             y.innerHTML = y.innerHTML + "1";
         }
+        ans.innerHTML = y.innerHTML;
     }
 });
 btn_2.addEventListener("click", function () {
@@ -75,12 +73,14 @@ btn_2.addEventListener("click", function () {
         } else {
             x.innerHTML = x.innerHTML + "2";
         }
+        ans.innerHTML = x.innerHTML;
     } else {
         if (y.innerHTML === "y") {
             y.innerHTML = "2";
         } else {
             y.innerHTML = y.innerHTML + "2";
         }
+        ans.innerHTML = y.innerHTML;
     }
 });
 btn_3.addEventListener("click", function () {
@@ -90,12 +90,14 @@ btn_3.addEventListener("click", function () {
         } else {
             x.innerHTML = x.innerHTML + "3";
         }
+        ans.innerHTML = x.innerHTML;
     } else {
         if (y.innerHTML === "y") {
             y.innerHTML = "3";
         } else {
             y.innerHTML = y.innerHTML + "3";
         }
+        ans.innerHTML = y.innerHTML;
     }
 });
 btn_4.addEventListener("click", function () {
@@ -105,12 +107,14 @@ btn_4.addEventListener("click", function () {
         } else {
             x.innerHTML = x.innerHTML + "4";
         }
+        ans.innerHTML = x.innerHTML;
     } else {
         if (y.innerHTML === "y") {
             y.innerHTML = "4";
         } else {
             y.innerHTML = y.innerHTML + "4";
         }
+        ans.innerHTML = y.innerHTML;
     }
 });
 btn_5.addEventListener("click", function () {
@@ -120,12 +124,14 @@ btn_5.addEventListener("click", function () {
         } else {
             x.innerHTML = x.innerHTML + "5";
         }
+        ans.innerHTML = x.innerHTML;
     } else {
         if (y.innerHTML === "y") {
             y.innerHTML = "5";
         } else {
             y.innerHTML = y.innerHTML + "5";
         }
+        ans.innerHTML = y.innerHTML;
     }
 });
 btn_6.addEventListener("click", function () {
@@ -135,12 +141,14 @@ btn_6.addEventListener("click", function () {
         } else {
             x.innerHTML = x.innerHTML + "6";
         }
+        ans.innerHTML = x.innerHTML;
     } else {
         if (y.innerHTML === "y") {
             y.innerHTML = "6";
         } else {
             y.innerHTML = y.innerHTML + "6";
         }
+        ans.innerHTML = y.innerHTML;
     }
 });
 btn_7.addEventListener("click", function () {
@@ -150,31 +158,16 @@ btn_7.addEventListener("click", function () {
         } else {
             x.innerHTML = x.innerHTML + "7";
         }
+        ans.innerHTML = x.innerHTML;
     } else {
         if (y.innerHTML === "y") {
             y.innerHTML = "7";
         } else {
             y.innerHTML = y.innerHTML + "7";
         }
+        ans.innerHTML = y.innerHTML;
     }
 });
-// btn_8.addEventListener("click", function () {
-//   if (select === "x") {
-//     if (x.innerHTML === "x")
-//       if (val === undefined)
-//         if (x.innerHTML === "x") {
-//           x.innerHTML = "8";
-//         } else {
-//           x.innerHTML = x.innerHTML + "8";
-//         }
-//   } else {
-//     if (y.innerHTML === "y") {
-//       y.innerHTML = "8";
-//     } else {
-//       y.innerHTML = y.innerHTML + "8";
-//     }
-//   }
-// });
 btn_8.addEventListener("click", function () {
     if (select === "x") {
         if (x.innerHTML === "x") {
@@ -182,12 +175,14 @@ btn_8.addEventListener("click", function () {
         } else {
             x.innerHTML = x.innerHTML + "8";
         }
+        ans.innerHTML = x.innerHTML;
     } else {
         if (y.innerHTML === "y") {
             y.innerHTML = "8";
         } else {
             y.innerHTML = y.innerHTML + "8";
         }
+        ans.innerHTML = y.innerHTML;
     }
 });
 btn_9.addEventListener("click", function () {
@@ -197,16 +192,19 @@ btn_9.addEventListener("click", function () {
         } else {
             x.innerHTML = x.innerHTML + "9";
         }
+        ans.innerHTML = x.innerHTML;
     } else {
         if (y.innerHTML === "y") {
             y.innerHTML = "9";
         } else {
             y.innerHTML = y.innerHTML + "9";
         }
+        ans.innerHTML = y.innerHTML;
     }
 });
 
-// =
+// +
+
 btn_eq.addEventListener("click", function () {
     let x = Number(document.querySelector(".x").innerHTML);
     let y = Number(document.querySelector(".y").innerHTML);
@@ -226,9 +224,11 @@ btn_eq.addEventListener("click", function () {
             break;
         case "%":
             z = x % y;
+            break;
     }
 
     document.querySelector(".z").innerHTML = z;
+    document.querySelector(".ans").innerHTML = z;
     document.querySelector(".x").style.background = "#A8AAFF";
     document.querySelector(".y").style.background = "transparent";
 
@@ -255,7 +255,7 @@ btn_minus.addEventListener("click", function () {
 });
 // *
 btn_multi.addEventListener("click", function () {
-    document.querySelector(".plus").innerHTML = "*";
+    document.querySelector(".plus").innerHTML = "×";
     x.style.background = "transparent";
     y.style.background = "#A8AAFF";
     select = "y";
@@ -263,23 +263,25 @@ btn_multi.addEventListener("click", function () {
 });
 // /(割る)
 btn_div.addEventListener("click", function () {
-    document.querySelector(".plus").innerHTML = "/";
+    document.querySelector(".plus").innerHTML = "÷";
     x.style.background = "transparent";
     y.style.background = "#A8AAFF";
     select = "y";
     type = "/";
 });
-// C: clear
+// clear
 btn_clear.addEventListener("click", function () {
-    x.style.background = "#A8AAFF";
-    y.style.background = "transparent";
+    x.innerHTML = "x";
+    y.innerHTML = "y";
+    z.innerHTML = "z";
+    ans.innerHTML = "0";
     select = "x";
     type = "+";
-    document.querySelector(".x").innerHTML = "x";
+    document.querySelector(".x").style.background = "#A8AAFF";
+    document.querySelector(".y").style.background = "transparent";
     document.querySelector(".plus").innerHTML = "+";
-    document.querySelector(".y").innerHTML = "y";
-    document.querySelector(".z").innerHTML = "z";
 });
+
 // ±
 btn_plus_minus.addEventListener("click", function () {
     if (select === "x") {
@@ -301,19 +303,3 @@ btn_percent.addEventListener("click", function () {
     select = "y";
     type = "%";
 });
-// <<<<<<< HEAD
-btn_point.addEventListener("click", function () {
-    document.querySelector(".plus").innerHTML = "%";
-    x.style.background = "transparent";
-    y.style.background = "#A8AAFF";
-    select = "y";
-    type = "%";
-    console.log(btn_point);
-})
-
-// for (let index = 0; index < array.length; index++) {
-//     const element = array[index];
-
-// }
-// =======
-// >>>>>>> b888ead46ff05aa32fd56602dc1cdca569c0b06b
