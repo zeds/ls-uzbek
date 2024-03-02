@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +13,18 @@
 			.calc_container {
 				display: flex;
 				margin-bottom: 10px;
+			}
+			.ans {
+				padding: 0 10px;
+				width: 170px;
+				height: 50px;
+
+				margin: 5px;
+				background-color: #5c5c5c;
+				display: flex;
+				justify-content: end;
+				align-items: center;
+				color: white;
 			}
 			.pad_container {
 				display: flex;
@@ -31,6 +44,7 @@
 			.btn_div,
 			.btn_minus,
 			.btn_plus,
+			.btn_multi,
 			.btn_eq {
 				display: flex;
 				justify-content: center;
@@ -41,6 +55,7 @@
 				border: 1px solid black;
 				color: white;
 				cursor: pointer;
+				border-radius: 25px;
 			}
 			.btn_c,
 			.btn_pm,
@@ -54,6 +69,7 @@
 				border: 1px solid black;
 				color: white;
 				cursor: pointer;
+				border-radius: 25px;
 			}
 			.x,
 			.y,
@@ -66,6 +82,7 @@
 				align-items: center;
 				justify-content: center;
 				border-radius: 5px;
+				border-radius: 25px;
 			}
 			.dentaku {
 				display: grid;
@@ -81,6 +98,7 @@
 				border: 1px solid black;
 				cursor: pointer;
 				color: white;
+				border-radius: 25px;
 			}
 			.btn_0 {
 				display: flex;
@@ -105,7 +123,7 @@
 			<div class="equals">=</div>
 			<div class="z">z</div>
 		</div>
-
+		<div class="ans">0</div>
 		<div class="dentaku">
 			<div class="btn_c">C</div>
 			<div class="btn_pm">±</div>
@@ -114,7 +132,7 @@
 			<div class="btn_7 btn">7</div>
 			<div class="btn_8 btn">8</div>
 			<div class="btn_9 btn">9</div>
-			<div class="btn_multi btn">x</div>
+			<div class="btn_multi">x</div>
 			<div class="btn_4 btn">4</div>
 			<div class="btn_5 btn">5</div>
 			<div class="btn_6 btn">6</div>
@@ -129,6 +147,157 @@
 			<div class="btn">.</div>
 			<div class="btn_eq">=</div>
 		</div>
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: white;
+        font-size: 30px;
+      }
+      .calc_container {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      .ans {
+        padding: 0 10px;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        background-color: #5c5c5c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+      .ans.hidden {
+        visibility: hidden;
+        /* display: none; */
+      }
+      .pad_container {
+        display: flex;
+      }
+      .pad {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background: black;
+        color: blanchedalmond;
+        cursor: pointer;
+        margin: 5px;
+      }
+      .btn_div,
+      .btn_minus,
+      .btn_plus,
+      .btn_multi,
+      .btn_eq {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background: #ffbb3c;
+        border: 1px solid black;
+        color: white;
+        cursor: pointer;
+        border-radius: 25px;
+      }
+      .btn_c,
+      .btn_pm,
+      .btn_p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background: gray;
+        border: 1px solid black;
+        color: white;
+        cursor: pointer;
+        border-radius: 25px;
+      }
+      .x,
+      .y,
+      .z,
+      .plus,
+      .equals {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        border-radius: 25px;
+      }
+      .dentaku {
+        display: grid;
+        grid-template-columns: 50px 50px 50px 50px;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background: #9e9e9e;
+        border: 1px solid black;
+        cursor: pointer;
+        color: white;
+        border-radius: 25px;
+      }
+      .btn_0 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 50px;
+        background: #9e9e9e;
+        border: 1px solid black;
+      }
+      .dentaku_bottom {
+        display: grid;
+        grid-template-columns: 100px 50px 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calc_container">
+      <div class="x">x</div>
+      <div class="plus">+</div>
+      <div class="y">y</div>
+      <div class="equals">=</div>
+      <div class="z">z</div>
+    </div>
+    <div class="ans">0</div>
+    <div class="dentaku">
+      <div class="btn_c">C</div>
+      <div class="btn_pm">±</div>
+      <div class="btn_p">%</div>
+      <div class="btn_div">÷</div>
+      <div class="btn_7 btn">7</div>
+      <div class="btn_8 btn">8</div>
+      <div class="btn_9 btn">9</div>
+      <div class="btn_multi">x</div>
+      <div class="btn_4 btn">4</div>
+      <div class="btn_5 btn">5</div>
+      <div class="btn_6 btn">6</div>
+      <div class="btn_minus">-</div>
+      <div class="btn_1 btn">1</div>
+      <div class="btn_2 btn">2</div>
+      <div class="btn_3 btn">3</div>
+      <div class="btn_plus">+</div>
+    </div>
+    <div class="dentaku_bottom">
+      <div class="btn_0 btn">0</div>
+      <div class="btn">.</div>
+      <div class="btn_eq">=</div>
+    </div>
+>>>>>>> 42e853a89aeea5a6642449ce9b3a8d213acc51b3
 
 		<script>
 			let select = "x";
@@ -151,12 +320,17 @@
 			let btn_minus = document.querySelector(".btn_minus");
 			let btn_multi = document.querySelector(".btn_multi"); // ✖️
 			let btn_div = document.querySelector(".btn_div"); // ➗
+			let btn_c = document.querySelector(".btn_c");
+			let btn_pm = document.querySelector(".btn_pm");
+			let btn_p = document.querySelector(".btn_p");
+			let ans = document.querySelector(".ans");
 
 			let btn_eq = document.querySelector(".btn_eq");
 			x.style.background = "#ffbb3c";
 
 			x.addEventListener("click", function () {
 				x.style.background = "#A8AAFF";
+
 				y.style.background = "transparent";
 				select = "x";
 			});
@@ -171,10 +345,12 @@
 					if (x.innerHTML !== "x") {
 						x.innerHTML = x.innerHTML + "0";
 					}
+					ans.innerHTML = x.innerHTML;
 				} else {
 					if (y.innerHTML !== "y") {
 						y.innerHTML = y.innerHTML + "0";
 					}
+					ans.innerHTML = y.innerHTML;
 				}
 			});
 			btn_1.addEventListener("click", function () {
@@ -184,12 +360,14 @@
 					} else {
 						x.innerHTML = x.innerHTML + "1";
 					}
+					ans.innerHTML = x.innerHTML;
 				} else {
 					if (y.innerHTML === "y") {
 						y.innerHTML = "1";
 					} else {
 						y.innerHTML = y.innerHTML + "1";
 					}
+					ans.innerHTML = y.innerHTML;
 				}
 			});
 			btn_2.addEventListener("click", function () {
@@ -199,12 +377,14 @@
 					} else {
 						x.innerHTML = x.innerHTML + "2";
 					}
+					ans.innerHTML = x.innerHTML;
 				} else {
 					if (y.innerHTML === "y") {
 						y.innerHTML = "2";
 					} else {
 						y.innerHTML = y.innerHTML + "2";
 					}
+					ans.innerHTML = y.innerHTML;
 				}
 			});
 			btn_3.addEventListener("click", function () {
@@ -214,12 +394,14 @@
 					} else {
 						x.innerHTML = x.innerHTML + "3";
 					}
+					ans.innerHTML = x.innerHTML;
 				} else {
 					if (y.innerHTML === "y") {
 						y.innerHTML = "3";
 					} else {
 						y.innerHTML = y.innerHTML + "3";
 					}
+					ans.innerHTML = y.innerHTML;
 				}
 			});
 			btn_4.addEventListener("click", function () {
@@ -229,12 +411,14 @@
 					} else {
 						x.innerHTML = x.innerHTML + "4";
 					}
+					ans.innerHTML = x.innerHTML;
 				} else {
 					if (y.innerHTML === "y") {
 						y.innerHTML = "4";
 					} else {
 						y.innerHTML = y.innerHTML + "4";
 					}
+					ans.innerHTML = y.innerHTML;
 				}
 			});
 			btn_5.addEventListener("click", function () {
@@ -244,12 +428,14 @@
 					} else {
 						x.innerHTML = x.innerHTML + "5";
 					}
+					ans.innerHTML = x.innerHTML;
 				} else {
 					if (y.innerHTML === "y") {
 						y.innerHTML = "5";
 					} else {
 						y.innerHTML = y.innerHTML + "5";
 					}
+					ans.innerHTML = y.innerHTML;
 				}
 			});
 			btn_6.addEventListener("click", function () {
@@ -259,12 +445,14 @@
 					} else {
 						x.innerHTML = x.innerHTML + "6";
 					}
+					ans.innerHTML = x.innerHTML;
 				} else {
 					if (y.innerHTML === "y") {
 						y.innerHTML = "6";
 					} else {
 						y.innerHTML = y.innerHTML + "6";
 					}
+					ans.innerHTML = y.innerHTML;
 				}
 			});
 			btn_7.addEventListener("click", function () {
@@ -274,29 +462,31 @@
 					} else {
 						x.innerHTML = x.innerHTML + "7";
 					}
+					ans.innerHTML = x.innerHTML;
 				} else {
 					if (y.innerHTML === "y") {
 						y.innerHTML = "7";
 					} else {
 						y.innerHTML = y.innerHTML + "7";
 					}
+					ans.innerHTML = y.innerHTML;
 				}
 			});
 			btn_8.addEventListener("click", function () {
 				if (select === "x") {
-					if (val === null)
-						if (val === undefined)
-							if (x.innerHTML === "x") {
-								x.innerHTML = "8";
-							} else {
-								x.innerHTML = x.innerHTML + "8";
-							}
+					if (x.innerHTML === "x") {
+						x.innerHTML = "8";
+					} else {
+						x.innerHTML = x.innerHTML + "8";
+					}
+					ans.innerHTML = x.innerHTML;
 				} else {
 					if (y.innerHTML === "y") {
 						y.innerHTML = "8";
 					} else {
 						y.innerHTML = y.innerHTML + "8";
 					}
+					ans.innerHTML = y.innerHTML;
 				}
 			});
 			btn_9.addEventListener("click", function () {
@@ -306,12 +496,14 @@
 					} else {
 						x.innerHTML = x.innerHTML + "9";
 					}
+					ans.innerHTML = x.innerHTML;
 				} else {
 					if (y.innerHTML === "y") {
 						y.innerHTML = "9";
 					} else {
 						y.innerHTML = y.innerHTML + "9";
 					}
+					ans.innerHTML = y.innerHTML;
 				}
 			});
 
@@ -333,15 +525,21 @@
 					case "/":
 						z = x / y;
 						break;
+					case "%":
+						z = x % y;
+						break;
 				}
 
 				document.querySelector(".z").innerHTML = z;
+				document.querySelector(".ans").innerHTML = z;
+
 				document.querySelector(".x").style.background = "#ffbb3c";
 				document.querySelector(".y").style.background = "transparent";
 
 				document.querySelector(".x").innerHTML = "x";
 				document.querySelector(".y").innerHTML = "y";
 
+<<<<<<< HEAD
 				select = "x";
 			});
 			// +
@@ -376,6 +574,130 @@
 				select = "y";
 				type = "/";
 			});
+			btn_p.addEventListener("click", function () {
+				document.querySelector(".plus").innerHTML = "/";
+				x.style.background = "transparent";
+				y.style.background = "#ffbb3c";
+				select = "y";
+				type = "%";
+			});
+			btn_c.addEventListener("click", function () {
+				x.innerHTML = "x";
+				y.innerHTML = "y";
+				document.querySelector(".z").innerHTML = "z";
+				select = "x";
+				type = "+";
+				document.querySelector(".x").style.background = "#fab012";
+				document.querySelector(".y").style.background = "transparent";
+				document.querySelector(".plus").innerHTML = "+";
+=======
+        select = "x";
+      });
+      function myTrigger() {
+        ans.classList.toggle("hidden");
+        clearInterval(myTimeout);
+        myTimeout = null;
+      }
+      // +
+      btn_plus.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "+";
+        x.style.background = "transparent";
+        y.style.background = "#ffbb3c";
+        select = "y";
+        type = "+";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      // -
+      btn_minus.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "-";
+        x.style.background = "transparent";
+        y.style.background = "#ffbb3c";
+        select = "y";
+        type = "-";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      // *
+      btn_multi.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "*";
+        x.style.background = "transparent";
+        y.style.background = "#ffbb3c";
+        select = "y";
+        type = "*";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      // /(割る)
+      btn_div.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "/";
+        x.style.background = "transparent";
+        y.style.background = "#ffbb3c";
+        select = "y";
+        type = "/";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      btn_p.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "/";
+        x.style.background = "transparent";
+        y.style.background = "#ffbb3c";
+        select = "y";
+        type = "%";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      btn_c.addEventListener("click", function () {
+        x.innerHTML = "x";
+        y.innerHTML = "y";
+        document.querySelector(".z").innerHTML = "z";
+        zero.innerHTML = "0";
+        select = "x";
+        type = "+";
+        document.querySelector(".x").style.background = "#fab012";
+        document.querySelector(".y").style.background = "transparent";
+        document.querySelector(".plus").innerHTML = "+";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      btn_pm.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML !== "x") {
+            x.innerHTML = x.innerHTML * -1;
+          }
+        }
+        if (select === "y") {
+          if (y.innerHTML !== "y") {
+            y.innerHTML = y.innerHTML * -1;
+          }
+        }
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      // for (let index = 0; index < array.length; index++) {
+      //     const element = array[index];
+>>>>>>> 42e853a89aeea5a6642449ce9b3a8d213acc51b3
+
+				document.querySelector(".ans").innerHTML = "0";
+			});
+			btn_pm.addEventListener("click", function () {
+				if (select === "x") {
+					if (x.innerHTML !== "x") {
+						x.innerHTML = x.innerHTML * -1;
+					}
+				}
+				if (select === "y") {
+					if (y.innerHTML !== "y") {
+						y.innerHTML = y.innerHTML * -1;
+					}
+				}
+			});
+			// for (let index = 0; index < array.length; index++) {
+			//     const element = array[index];
+
+			// }
+			// =======
+			// >>>>>>> b888ead46ff05aa32fd56602dc1cdca569c0b06b
 		</script>
 	</body>
 </html>

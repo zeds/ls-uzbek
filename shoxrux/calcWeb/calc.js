@@ -203,6 +203,14 @@ btn_9.addEventListener("click", function () {
     }
 });
 
+let myTimeout = null;
+
+function myTrigger() {
+    ans.classList.toggle("hidden");
+    clearInterval(myTimeout);
+    myTimeout = null;
+}
+
 // +
 
 btn_eq.addEventListener("click", function () {
@@ -244,6 +252,8 @@ btn_plus.addEventListener("click", function () {
     y.style.background = "#A8AAFF";
     select = "y";
     type = "+";
+    ans.classList.toggle("hidden");
+    myTimeout = setInterval(myTrigger, 50); // 0.5s
 });
 // -
 btn_minus.addEventListener("click", function () {
@@ -252,6 +262,8 @@ btn_minus.addEventListener("click", function () {
     y.style.background = "#A8AAFF";
     select = "y";
     type = "-";
+    ans.classList.toggle("hidden");
+    myTimeout = setInterval(myTrigger, 50); // 0.5s
 });
 // *
 btn_multi.addEventListener("click", function () {
@@ -260,6 +272,8 @@ btn_multi.addEventListener("click", function () {
     y.style.background = "#A8AAFF";
     select = "y";
     type = "*";
+    ans.classList.toggle("hidden");
+    myTimeout = setInterval(myTrigger, 50); // 0.5s
 });
 // /(割る)
 btn_div.addEventListener("click", function () {
@@ -268,12 +282,15 @@ btn_div.addEventListener("click", function () {
     y.style.background = "#A8AAFF";
     select = "y";
     type = "/";
+    ans.classList.toggle("hidden");
+    myTimeout = setInterval(myTrigger, 50); // 0.5s
 });
 // clear
 btn_clear.addEventListener("click", function () {
     x.innerHTML = "x";
     y.innerHTML = "y";
-    z.innerHTML = "z";
+    document.querySelector(".z").innerHTML = "z";
+    document.querySelector(".ans").innerHTML = "z";
     ans.innerHTML = "0";
     select = "x";
     type = "+";
@@ -287,13 +304,19 @@ btn_plus_minus.addEventListener("click", function () {
     if (select === "x") {
         if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML * -1;
+            ans.innerHTML = x.innerHTML;
         }
+
     }
     if (select === "y") {
         if (y.innerHTML !== "y") {
             y.innerHTML = y.innerHTML * -1;
+            ans.innerHTML = y.innerHTML;
         }
+
     }
+    ans.classList.toggle("hidden");
+    myTimeout = setInterval(myTrigger, 50); // 0.5s
 });
 // %
 btn_percent.addEventListener("click", function () {
@@ -302,4 +325,6 @@ btn_percent.addEventListener("click", function () {
     y.style.background = "#A8AAFF";
     select = "y";
     type = "%";
+    ans.classList.toggle("hidden");
+    myTimeout = setInterval(myTrigger, 50); // 0.5s
 });

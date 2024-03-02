@@ -140,12 +140,17 @@
         margin: 0 auto;
         height: 40px;
         display: flex;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
         color: rgb(221, 221, 223);
         border-top: none;
         font-size: 35px;
       }
+      .ans.hidden {
+				visibility: hidden;
+				/* display: none; */
+			}
+		</style>
     </style>
   </head>
   <body>
@@ -183,6 +188,7 @@
       </div>
     </div>
     <script>
+      let myTimeout = null;
       let select = "x";
       let type = "+"; // + - * /
       let x = document.querySelector(".x");
@@ -356,8 +362,8 @@
       });
       btn_8.addEventListener("click", function () {
         if (select === "x") {
-          if (val === null)
-            if (val === undefined)
+          // if (val === null)
+          //   if (val === undefined)
               if (x.innerHTML === "x") {
                 x.innerHTML = "8";
               } else {
@@ -424,6 +430,12 @@
 
         select = "x";
       });
+      
+			function myTrigger() {
+				ans.classList.toggle("hidden");
+				clearInterval(myTimeout);
+				myTimeout = null;
+			}
       // +
       btn_plus.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "+";
@@ -431,6 +443,10 @@
         y.style.background = "6b6b76";
         select = "y";
         type = "+";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // -
       btn_minus.addEventListener("click", function () {
@@ -439,6 +455,10 @@
         y.style.background = "#6b6b76";
         select = "y";
         type = "-";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // *
       btn_multi.addEventListener("click", function () {
@@ -447,6 +467,10 @@
         y.style.background = "6b6b76";
         select = "y";
         type = "*";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // /(割る)
       btn_div.addEventListener("click", function () {
@@ -455,6 +479,10 @@
         y.style.background = "6b6b76";
         select = "y";
         type = "/";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       btn_per.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "%";
@@ -462,6 +490,10 @@
         y.style.background = "6b6b76";
         select = "y";
         type = "%";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
       });
 
       btn_clear.addEventListener("click", function () {
@@ -476,16 +508,27 @@
         document.querySelector(".y").innerHTML = "y";
         document.querySelector(".z").innerHTML = "z";
         ans.innerHTML = "0";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
       });
 
       btn_plus_minus.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML !== "x") x.innerHTML = x.innerHTML * -1;
+          ans.innerHTML = x.innerHTML;
         }
+        
         if (select === "y") {
           if (y.innerHTML !== "y") y.innerHTML = y.innerHTML * -1;
+          ans.innerHTML = y.innerHTML;
         }
 
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
+        
         // x.innerHTML = x.innerHTML * "-1"
         // document.querySelector(".x").innerHTML = "x";
         // document.querySelector(".y").innerHTML = "y";

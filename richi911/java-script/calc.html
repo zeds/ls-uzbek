@@ -437,6 +437,7 @@
         let x = document.querySelector(".x").innerHTML;
         let y = document.querySelector(".y").innerHTML;
 
+<<<<<<< HEAD
         if (select == "x") {
           x = x * -1;
           document.querySelector(".x").innerHTML = x;
@@ -444,6 +445,17 @@
           y = y * -1;
           document.querySelector(".y").innerHTML = y;
         }
+=======
+				if (select == "x") {
+					x = x * -1;
+					document.querySelector(".x").innerHTML = x;
+					ans.innerHTML = x;
+				} else {
+					y = y * -1;
+					document.querySelector(".y").innerHTML = y;
+					ans.innerHTML = y;
+				}
+>>>>>>> dd728c68a7a725af940f0900822e1b24c9806c8b
 
         ans.classList.toggle("hidden");
         myTimeout = setInterval(myTrigger, 50); // 20fps

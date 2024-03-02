@@ -9,9 +9,36 @@
         background: white;
         font-size: 30px;
       }
+
+      .calculator {
+        top: 10%;
+        right: 40%;
+        position: absolute;
+        /* width: 200px; */
+        color: white;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .ans {
+        padding: 0 10px;
+        width: 184px;
+        height: 50px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        background-color: #007f8094;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        color: white;
+      }
       .calc_container {
         display: flex;
         margin-bottom: 10px;
+        margin: 15px;
+        border-radius: 5px;
       }
       .pad_container {
         display: flex;
@@ -102,38 +129,43 @@
     </style>
   </head>
   <body>
-    <div class="calc_container">
-      <div class="x">x</div>
-      <div class="plus">+</div>
-      <div class="y">y</div>
-      <div class="equals">=</div>
-      <div class="z">z</div>
-    </div>
+    <div class="box">
+      <div class="calculator">
+        <div class="calc_container">
+          <div class="x">x</div>
+          <div class="plus">+</div>
+          <div class="y">y</div>
+          <div class="equals">=</div>
+          <div class="z">z</div>
+        </div>
 
-    <div class="dentaku">
-      <div class="btn_c">C</div>
-      <div class="btn_pm">±</div>
-      <div class="btn_p">%</div>
-      <div class="btn_div">÷</div>
-      <div class="btn_7 btn">7</div>
-      <div class="btn_8 btn">8</div>
-      <div class="btn_9 btn">9</div>
-      <div class="btn_multi">x</div>
-      <div class="btn_4 btn">4</div>
-      <div class="btn_5 btn">5</div>
-      <div class="btn_6 btn">6</div>
-      <div class="btn_minus">-</div>
-      <div class="btn_1 btn">1</div>
-      <div class="btn_2 btn">2</div>
-      <div class="btn_3 btn">3</div>
-      <div class="btn_plus">+</div>
-    </div>
-    <div class="dentaku_bottom">
-      <div class="btn_0 btn">0</div>
-      <div class="btn">.</div>
-      <div class="btn_eq">=</div>
-    </div>
+        <div class="ans">0</div>
 
+        <div class="dentaku">
+          <div class="btn_c">C</div>
+          <div class="btn_pm">±</div>
+          <div class="btn_p">%</div>
+          <div class="btn_div">÷</div>
+          <div class="btn_7 btn">7</div>
+          <div class="btn_8 btn">8</div>
+          <div class="btn_9 btn">9</div>
+          <div class="btn_multi">x</div>
+          <div class="btn_4 btn">4</div>
+          <div class="btn_5 btn">5</div>
+          <div class="btn_6 btn">6</div>
+          <div class="btn_minus">-</div>
+          <div class="btn_1 btn">1</div>
+          <div class="btn_2 btn">2</div>
+          <div class="btn_3 btn">3</div>
+          <div class="btn_plus">+</div>
+        </div>
+        <div class="dentaku_bottom">
+          <div class="btn_0 btn">0</div>
+          <div class="btn">.</div>
+          <div class="btn_eq">=</div>
+        </div>
+      </div>
+    </div>
     <script>
       let select = "x";
       let type = "+";
@@ -158,6 +190,7 @@
       let btn_p = document.querySelector(".btn_p");
       let btn_c = document.querySelector(".btn_c");
       let btn_pm = document.querySelector(".btn_pm");
+      let ans = document.querySelector(".ans");
 
       x.style.background = "#ffbb3c";
 
@@ -177,10 +210,12 @@
           if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML + "0";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML !== "y") {
             y.innerHTML = y.innerHTML + "0";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_1.addEventListener("click", function () {
@@ -190,12 +225,14 @@
           } else {
             x.innerHTML = x.innerHTML + "1";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "1";
           } else {
             y.innerHTML = y.innerHTML + "1";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_2.addEventListener("click", function () {
@@ -205,12 +242,14 @@
           } else {
             x.innerHTML = x.innerHTML + "2";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "2";
           } else {
             y.innerHTML = y.innerHTML + "2";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_3.addEventListener("click", function () {
@@ -220,12 +259,14 @@
           } else {
             x.innerHTML = x.innerHTML + "3";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "3";
           } else {
             y.innerHTML = y.innerHTML + "3";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_4.addEventListener("click", function () {
@@ -235,12 +276,14 @@
           } else {
             x.innerHTML = x.innerHTML + "4";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "4";
           } else {
             y.innerHTML = y.innerHTML + "4";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_5.addEventListener("click", function () {
@@ -250,12 +293,14 @@
           } else {
             x.innerHTML = x.innerHTML + "5";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "5";
           } else {
             y.innerHTML = y.innerHTML + "5";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_6.addEventListener("click", function () {
@@ -265,12 +310,14 @@
           } else {
             x.innerHTML = x.innerHTML + "6";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "6";
           } else {
             y.innerHTML = y.innerHTML + "6";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_7.addEventListener("click", function () {
@@ -280,12 +327,14 @@
           } else {
             x.innerHTML = x.innerHTML + "7";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "7";
           } else {
             y.innerHTML = y.innerHTML + "7";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_8.addEventListener("click", function () {
@@ -295,12 +344,14 @@
           } else {
             x.innerHTML = x.innerHTML + "8";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "8";
           } else {
             y.innerHTML = y.innerHTML + "8";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_9.addEventListener("click", function () {
@@ -310,12 +361,14 @@
           } else {
             x.innerHTML = x.innerHTML + "9";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "9";
           } else {
             y.innerHTML = y.innerHTML + "9";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
 
@@ -345,6 +398,8 @@
         }
 
         document.querySelector(".z").innerHTML = z;
+        document.querySelector(".ans").innerHTML = z;
+
         document.querySelector(".x").style.background = "#ffbb3c";
         document.querySelector(".y").style.background = "transparent";
 
@@ -389,15 +444,15 @@
         type = "%";
       });
       btn_c.addEventListener("click", function () {
-        document.querySelector(".plus").innerHTML = "c";
-        x.style.background = "#ffbb3c";
-        y.style.background = "transparent";
+        x.innerHTML = "x";
+        y.innerHTML = "y";
+        z.innerHTML = "z";
+        ans.innerHTML = "0";
         select = "x";
         type = "+";
-        document.querySelector(".x").innerHTML = "x";
+        document.querySelector(".x").style.background = "#A8AAFF";
+        document.querySelector(".y").style.background = "transparent";
         document.querySelector(".plus").innerHTML = "+";
-        document.querySelector(".y").innerHTML = "y";
-        document.querySelector(".z").innerHTML = "z";
       });
       btn_pm.addEventListener("click", function () {
         if (select === "x")
