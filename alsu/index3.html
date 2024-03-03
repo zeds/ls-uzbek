@@ -9,9 +9,25 @@
         background: white;
         font-size: 30px;
       }
+
       .calc_container {
         display: flex;
         margin-bottom: 10px;
+      }
+      .ans {
+        padding: 0 10px;
+        width: 170px;
+        height: 50px;
+        margin: 5px;
+        background-color: #5c5c5c;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        color: white;
+      }
+      .ans.hidden {
+        visibility: hidden;
+        /* display: none; */
       }
       .pad_container {
         display: flex;
@@ -110,7 +126,7 @@
       <div class="equals">=</div>
       <div class="z">z</div>
     </div>
-
+    <div class="ans">0</div>
     <div class="dentaku">
       <div class="btn_c">C</div>
       <div class="btn_pm">±</div>
@@ -159,6 +175,7 @@
       let btn_c = document.querySelector(".btn_c");
       let btn_pm = document.querySelector(".btn_pm");
       let btn_p = document.querySelector(".btn_p");
+      let ans = document.querySelector(".ans");
 
       let btn_eq = document.querySelector(".btn_eq");
       x.style.background = "#ffbb3c";
@@ -180,10 +197,12 @@
           if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML + "0";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML !== "y") {
             y.innerHTML = y.innerHTML + "0";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_1.addEventListener("click", function () {
@@ -193,12 +212,14 @@
           } else {
             x.innerHTML = x.innerHTML + "1";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "1";
           } else {
             y.innerHTML = y.innerHTML + "1";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_2.addEventListener("click", function () {
@@ -208,12 +229,14 @@
           } else {
             x.innerHTML = x.innerHTML + "2";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "2";
           } else {
             y.innerHTML = y.innerHTML + "2";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_3.addEventListener("click", function () {
@@ -223,12 +246,14 @@
           } else {
             x.innerHTML = x.innerHTML + "3";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "3";
           } else {
             y.innerHTML = y.innerHTML + "3";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_4.addEventListener("click", function () {
@@ -238,12 +263,14 @@
           } else {
             x.innerHTML = x.innerHTML + "4";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "4";
           } else {
             y.innerHTML = y.innerHTML + "4";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_5.addEventListener("click", function () {
@@ -253,12 +280,14 @@
           } else {
             x.innerHTML = x.innerHTML + "5";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "5";
           } else {
             y.innerHTML = y.innerHTML + "5";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_6.addEventListener("click", function () {
@@ -268,12 +297,14 @@
           } else {
             x.innerHTML = x.innerHTML + "6";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "6";
           } else {
             y.innerHTML = y.innerHTML + "6";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_7.addEventListener("click", function () {
@@ -283,12 +314,14 @@
           } else {
             x.innerHTML = x.innerHTML + "7";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "7";
           } else {
             y.innerHTML = y.innerHTML + "7";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_8.addEventListener("click", function () {
@@ -298,12 +331,14 @@
           } else {
             x.innerHTML = x.innerHTML + "8";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "8";
           } else {
             y.innerHTML = y.innerHTML + "8";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
       btn_9.addEventListener("click", function () {
@@ -313,12 +348,14 @@
           } else {
             x.innerHTML = x.innerHTML + "9";
           }
+          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML === "y") {
             y.innerHTML = "9";
           } else {
             y.innerHTML = y.innerHTML + "9";
           }
+          ans.innerHTML = y.innerHTML;
         }
       });
 
@@ -346,6 +383,8 @@
         }
 
         document.querySelector(".z").innerHTML = z;
+        document.querySelector(".ans").innerHTML = z;
+
         document.querySelector(".x").style.background = "#ffbb3c";
         document.querySelector(".y").style.background = "transparent";
 
@@ -354,6 +393,24 @@
 
         select = "x";
       });
+      let myTimer = null;
+
+      function displayHello() {
+        if (ans.innerHTML === "999") {
+          ans.innerHTML = "";
+        } else {
+          ans.innerHTML = "999";
+        }
+
+        // clearInterval(myTimer);
+      }
+      let myTimeout = null;
+
+      function myTrigger() {
+        ans.classList.toggle("hidden");
+        clearInterval(myTimeout);
+        myTimeout = null;
+      }
       // +
       btn_plus.addEventListener("click", function () {
         document.querySelector(".plus").innerHTML = "+";
@@ -361,6 +418,8 @@
         y.style.background = "#ffbb3c";
         select = "y";
         type = "+";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // -
       btn_minus.addEventListener("click", function () {
@@ -369,6 +428,8 @@
         y.style.background = "#ffbb3c";
         select = "y";
         type = "-";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // *
       btn_multi.addEventListener("click", function () {
@@ -377,6 +438,8 @@
         y.style.background = "#ffbb3c";
         select = "y";
         type = "*";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // /(割る)
       btn_div.addEventListener("click", function () {
@@ -385,36 +448,46 @@
         y.style.background = "#ffbb3c";
         select = "y";
         type = "/";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       btn_p.addEventListener("click", function () {
-        document.querySelector(".plus").innerHTML = "/";
+        document.querySelector(".plus").innerHTML = "%";
         x.style.background = "transparent";
         y.style.background = "#ffbb3c";
         select = "y";
         type = "%";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       btn_c.addEventListener("click", function () {
         x.innerHTML = "x";
         y.innerHTML = "y";
-        z.innerHTML = "z";
+        document.querySelector(".z").innerHTML = "z";
         zero.innerHTML = "0";
         select = "x";
         type = "+";
         document.querySelector(".x").style.background = "#fab012";
         document.querySelector(".y").style.background = "transparent";
         document.querySelector(".plus").innerHTML = "+";
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       btn_pm.addEventListener("click", function () {
         if (select === "x") {
           if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML * -1;
           }
+          ans.innerHTML = x.innerHTML;
         }
         if (select === "y") {
           if (y.innerHTML !== "y") {
             y.innerHTML = y.innerHTML * -1;
           }
+          ans.innerHTML = y.innerHTML;
         }
+        ans.classList.toggle("hidden");
+        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // for (let index = 0; index < array.length; index++) {
       //     const element = array[index];
