@@ -5,15 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *::after,
+      *::before {
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
       body {
-        background: rgb(190, 215, 224);
+        background-color: rgba(0, 0, 0, 0.4);
+        font-family: "Mukta", sans-serif;
+        min-height: 100vh;
+      }
+      /* body {
+        background: #fde4f2;
         font-size: 30px;
+      } */
+      .container {
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 230px;
+        box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+        overflow: hidden;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: transform 0.1s ease;
+
+        /* margin: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        padd
+        border: 2px solid black;
+        width: 210px;
+        height: 310px;
+        border-radius: 20px; */
       }
       .calc_container {
+        width: 200px;
         display: flex;
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
+        border: 1px solid black;
       }
-      .pad_container {
+      /* .pad_container {
         display: flex;
       }
       .pad {
@@ -24,132 +66,474 @@
         align-items: center;
         border-radius: 5px;
         background: black;
-        color: white;
+        color: blanchedalmond;
         cursor: pointer;
         margin: 5px;
+      } */
+      .x,
+      .y,
+      .z,
+      .plus,
+      .equals {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* border-radius: 5px; */
+        background: rgb(74, 73, 77);
+        color: rgb(217, 216, 221);
       }
+      .dentaku {
+        display: grid;
+        grid-template-columns: 50px 50px 50px 50px;
+        color: rgb(221, 221, 223);
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background: rgb(89, 88, 94);
+        border: 1px solid rgb(83, 76, 96);
+        cursor: pointer;
+        color: rgb(221, 221, 223);
+      }
+      .btn_0 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 50px;
+        color: rgb(221, 221, 223);
+        /* background: rgb(153, 152, 152); */
+        border: 1px solid rgb(83, 76, 96);
+      }
+      .dentaku_bottom {
+        display: grid;
+        grid-template-columns: 100px 50px 50px;
+      }
+      .btn_div,
+      .btn_multi,
+      .btn_minus,
+      .btn_plus,
+      .btn_eq {
+        background: rgb(244, 153, 40);
+      }
+      .btn_7,
+      .btn_8,
+      .btn_9,
+      .btn_4,
+      .btn_5,
+      .btn_6,
+      .btn_1,
+      .btn_2,
+      .btn_3,
+      .btn_n,
+      .btn_0 {
+        background: #6b6b76;
+      }
+      .ans {
+        background: rgb(74, 73, 77);
+        width: 200px;
+        margin: 0 auto;
+        height: 40px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        color: rgb(221, 221, 223);
+        border-top: none;
+        font-size: 35px;
+      }
+      .ans.hidden {
+				visibility: hidden;
+				/* display: none; */
+			}
+		</style>
     </style>
   </head>
   <body>
-    <div class="calc_container">
-      <div class="x">x</div>
-      <div>+</div>
-      <div class="y">y</div>
-      <div>=</div>
-      <div class="z">z</div>
+    <div class="container">
+      <div class="calc_container">
+        <div class="x">x</div>
+        <div class="plus">+</div>
+        <div class="y">y</div>
+        <div class="equals">=</div>
+        <div class="z">z</div>
+      </div>
+      <div class="ans">0</div>
+      <div class="dentaku">
+        <div class="btn_clear btn">C</div>
+        <div class="btn_plus_minus btn">±</div>
+        <div class="btn_per btn">%</div>
+        <div class="btn_div btn">÷</div>
+        <div class="btn_7 btn">7</div>
+        <div class="btn_8 btn">8</div>
+        <div class="btn_9 btn">9</div>
+        <div class="btn_multi btn">x</div>
+        <div class="btn_4 btn">4</div>
+        <div class="btn_5 btn">5</div>
+        <div class="btn_6 btn">6</div>
+        <div class="btn_minus btn">-</div>
+        <div class="btn_1 btn">1</div>
+        <div class="btn_2 btn">2</div>
+        <div class="btn_3 btn">3</div>
+        <div class="btn_plus btn">+</div>
+      </div>
+      <div class="dentaku_bottom">
+        <div class="btn_0 btn">0</div>
+        <div class="btn_n btn">.</div>
+        <div class="btn_eq btn">=</div>
+      </div>
     </div>
-    <div class="pad_container">
-      <div class="pad">1</div>
-      <div class="pad">2</div>
-      <div class="pad">3</div>
-      <div class="pad">4</div>
-      <div class="pad">5</div>
-      <div class="pad">6</div>
-      <div class="pad">7</div>
-      <div class="pad">8</div>
-      <div class="pad">9</div>
-      <div class="pad">=</div>
-    </div>
+    <script>
+      let myTimeout = null;
+      let select = "x";
+      let type = "+"; // + - * /
+      let x = document.querySelector(".x");
+      let y = document.querySelector(".y");
+      let z = document.querySelector(".z");
+
+      let btn_0 = document.querySelector(".btn_0");
+      let btn_1 = document.querySelector(".btn_1");
+      let btn_2 = document.querySelector(".btn_2");
+      let btn_3 = document.querySelector(".btn_3");
+      let btn_4 = document.querySelector(".btn_4");
+      let btn_5 = document.querySelector(".btn_5");
+      let btn_6 = document.querySelector(".btn_6");
+      let btn_7 = document.querySelector(".btn_7");
+      let btn_8 = document.querySelector(".btn_8");
+      let btn_9 = document.querySelector(".btn_9");
+      let btn_plus = document.querySelector(".btn_plus");
+      let btn_minus = document.querySelector(".btn_minus");
+      let btn_multi = document.querySelector(".btn_multi");
+      let btn_div = document.querySelector(".btn_div");
+      let btn_eq = document.querySelector(".btn_eq");
+      let btn_clear = document.querySelector(".btn_clear");
+      let btn_per = document.querySelector(".btn_per");
+      let btn_plus_minus = document.querySelector(".btn_plus_minus");
+      let ans = document.querySelector(".ans");
+
+      // x.style.background = "pink";
+
+      x.addEventListener("click", function () {
+        x.style.background = "#6b6b76";
+        y.style.background = "transparent";
+        select = "x";
+      });
+      y.addEventListener("click", function () {
+        x.style.background = "transparent";
+        y.style.background = "6b6b76";
+        select = "y";
+      });
+
+      btn_0.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML !== "x") {
+            x.innerHTML = x.innerHTML + "0";
+          }
+          ans.innerHTML = x.innerHTML;
+        } else {
+          if (y.innerHTML !== "y") {
+            y.innerHTML = y.innerHTML + "0";
+          }
+          ans.innerHTML = y.innerHTML;
+        }
+      });
+      btn_1.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML === "x") {
+            x.innerHTML = "1";
+          } else {
+            x.innerHTML = x.innerHTML + "1";
+          }
+          ans.innerHTML = x.innerHTML;
+        } else {
+          if (y.innerHTML === "y") {
+            y.innerHTML = "1";
+          } else {
+            y.innerHTML = y.innerHTML + "1";
+          }
+          ans.innerHTML = y.innerHTML;
+        }
+      });
+      btn_2.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML === "x") {
+            x.innerHTML = "2";
+          } else {
+            x.innerHTML = x.innerHTML + "2";
+          }
+          ans.innerHTML = x.innerHTML;
+        } else {
+          if (y.innerHTML === "y") {
+            y.innerHTML = "2";
+          } else {
+            y.innerHTML = y.innerHTML + "2";
+          }
+          ans.innerHTML = y.innerHTML;
+        }
+      });
+      btn_3.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML === "x") {
+            x.innerHTML = "3";
+          } else {
+            x.innerHTML = x.innerHTML + "3";
+          }
+          ans.innerHTML = x.innerHTML;
+        } else {
+          if (y.innerHTML === "y") {
+            y.innerHTML = "3";
+          } else {
+            y.innerHTML = y.innerHTML + "3";
+          }
+          ans.innerHTML = y.innerHTML;
+        }
+      });
+      btn_4.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML === "x") {
+            x.innerHTML = "4";
+          } else {
+            x.innerHTML = x.innerHTML + "4";
+          }
+          ans.innerHTML = x.innerHTML;
+        } else {
+          if (y.innerHTML === "y") {
+            y.innerHTML = "4";
+          } else {
+            y.innerHTML = y.innerHTML + "4";
+          }
+          ans.innerHTML = y.innerHTML;
+        }
+      });
+      btn_5.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML === "x") {
+            x.innerHTML = "5";
+          } else {
+            x.innerHTML = x.innerHTML + "5";
+          }
+          ans.innerHTML = x.innerHTML;
+        } else {
+          if (y.innerHTML === "y") {
+            y.innerHTML = "5";
+          } else {
+            y.innerHTML = y.innerHTML + "5";
+          }
+          ans.innerHTML = y.innerHTML;
+        }
+      });
+      btn_6.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML === "x") {
+            x.innerHTML = "6";
+          } else {
+            x.innerHTML = x.innerHTML + "6";
+          }
+          ans.innerHTML = x.innerHTML;
+        } else {
+          if (y.innerHTML === "y") {
+            y.innerHTML = "6";
+          } else {
+            y.innerHTML = y.innerHTML + "6";
+          }
+          ans.innerHTML = y.innerHTML;
+        }
+      });
+      btn_7.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML === "x") {
+            x.innerHTML = "7";
+          } else {
+            x.innerHTML = x.innerHTML + "7";
+          }
+          ans.innerHTML = x.innerHTML;
+        } else {
+          if (y.innerHTML === "y") {
+            y.innerHTML = "7";
+          } else {
+            y.innerHTML = y.innerHTML + "7";
+          }
+          ans.innerHTML = y.innerHTML;
+        }
+      });
+      btn_8.addEventListener("click", function () {
+        if (select === "x") {
+          // if (val === null)
+          //   if (val === undefined)
+              if (x.innerHTML === "x") {
+                x.innerHTML = "8";
+              } else {
+                x.innerHTML = x.innerHTML + "8";
+              }
+          ans.innerHTML = x.innerHTML;
+        } else {
+          if (y.innerHTML === "y") {
+            y.innerHTML = "8";
+          } else {
+            y.innerHTML = y.innerHTML + "8";
+          }
+          ans.innerHTML = y.innerHTML;
+        }
+      });
+      btn_9.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML === "x") {
+            x.innerHTML = "9";
+          } else {
+            x.innerHTML = x.innerHTML + "9";
+          }
+          ans.innerHTML = x.innerHTML;
+        } else {
+          if (y.innerHTML === "y") {
+            y.innerHTML = "9";
+          } else {
+            y.innerHTML = y.innerHTML + "9";
+          }
+          ans.innerHTML = y.innerHTML;
+        }
+      });
+
+      // +
+      btn_eq.addEventListener("click", function () {
+        let x = Number(document.querySelector(".x").innerHTML);
+        let y = Number(document.querySelector(".y").innerHTML);
+
+        switch (type) {
+          case "+":
+            z = x + y;
+            break;
+          case "-":
+            z = x - y;
+            break;
+          case "*":
+            z = x * y;
+            break;
+          case "/":
+            z = x / y;
+            break;
+          case "%":
+            z = x % y;
+            break;
+        }
+
+        document.querySelector(".z").innerHTML = z;
+        document.querySelector(".ans").innerHTML = z;
+        document.querySelector(".x").style.background = "#6b6b76";
+        document.querySelector(".y").style.background = "transparent";
+
+        document.querySelector(".x").innerHTML = "x";
+        document.querySelector(".y").innerHTML = "y";
+
+        select = "x";
+      });
+      
+			function myTrigger() {
+				ans.classList.toggle("hidden");
+				clearInterval(myTimeout);
+				myTimeout = null;
+			}
+      // +
+      btn_plus.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "+";
+        x.style.background = "transparent";
+        y.style.background = "6b6b76";
+        select = "y";
+        type = "+";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      // -
+      btn_minus.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "-";
+        x.style.background = "transparent";
+        y.style.background = "#6b6b76";
+        select = "y";
+        type = "-";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      // *
+      btn_multi.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "*";
+        x.style.background = "transparent";
+        y.style.background = "6b6b76";
+        select = "y";
+        type = "*";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      // /(割る)
+      btn_div.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "/";
+        x.style.background = "transparent";
+        y.style.background = "6b6b76";
+        select = "y";
+        type = "/";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+      btn_per.addEventListener("click", function () {
+        document.querySelector(".plus").innerHTML = "%";
+        x.style.background = "transparent";
+        y.style.background = "6b6b76";
+        select = "y";
+        type = "%";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+
+      btn_clear.addEventListener("click", function () {
+        // document.querySelector(".plus").innerHTML = "%";
+        // y.style.background = "6b6b76";
+        x.style.background = "6b6b76";
+        y.style.background = "transparent";
+        select = "x";
+        type = "+";
+        document.querySelector(".x").innerHTML = "x";
+        document.querySelector(".plus").innerHTML = "+";
+        document.querySelector(".y").innerHTML = "y";
+        document.querySelector(".z").innerHTML = "z";
+        ans.innerHTML = "0";
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
+      });
+
+      btn_plus_minus.addEventListener("click", function () {
+        if (select === "x") {
+          if (x.innerHTML !== "x") x.innerHTML = x.innerHTML * -1;
+          ans.innerHTML = x.innerHTML;
+        }
+        
+        if (select === "y") {
+          if (y.innerHTML !== "y") y.innerHTML = y.innerHTML * -1;
+          ans.innerHTML = y.innerHTML;
+        }
+
+        
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); // 20fps
+        
+        // x.innerHTML = x.innerHTML * "-1"
+        // document.querySelector(".x").innerHTML = "x";
+        // document.querySelector(".y").innerHTML = "y";
+        // x.innerHTML = "-7";
+      });
+    </script>
   </body>
-  <script>
-    let select = "x";
-    let x = document.querySelector(".x");
-    let y = document.querySelector(".y");
-    let z = document.querySelector(".z");
-
-    let pad_1 = document.querySelectorAll(".pad")[0];
-    let pad_2 = document.querySelectorAll(".pad")[1];
-    let pad_3 = document.querySelectorAll(".pad")[2];
-    let pad_4 = document.querySelectorAll(".pad")[3];
-    let pad_5 = document.querySelectorAll(".pad")[4];
-    let pad_6 = document.querySelectorAll(".pad")[5];
-    let pad_7 = document.querySelectorAll(".pad")[6];
-    let pad_8 = document.querySelectorAll(".pad")[7];
-    let pad_9 = document.querySelectorAll(".pad")[8];
-    let pad_10 = document.querySelectorAll(".pad")[9];
-
-    x.style.backgroud = "red";
-
-    x.addEventListener("click", function () {
-      x.style.background = "red";
-      y.style.background = "transparent";
-      select = "x";
-    });
-    y.addEventListener("click", function () {
-      x.style.background = "transparent";
-      y.style.background = "red";
-      select = "y";
-    });
-
-    pad_1.addEventListener("click", function () {
-      if (select === "x") {
-        x.innerHTML = "1";
-      } else {
-        y.innerHTML = "1";
-      }
-    });
-    pad_2.addEventListener("click", function () {
-      if (select === "x") {
-        x.innerHTML = "2";
-      } else {
-        y.innerHTML = "2";
-      }
-    });
-    pad_3.addEventListener("click", function () {
-      if (select === "x") {
-        x.innerHTML = "3";
-      } else {
-        y.innerHTML = "3";
-      }
-    });
-    pad_4.addEventListener("click", function () {
-      if (select === "x") {
-        x.innerHTML = "4";
-      } else {
-        y.innerHTML = "4";
-      }
-    });
-    pad_5.addEventListener("click", function () {
-      if (select === "x") {
-        x.innerHTML = "5";
-      } else {
-        y.innerHTML = "5";
-      }
-    });
-    pad_6.addEventListener("click", function () {
-      if (select === "x") {
-        x.innerHTML = "6";
-      } else {
-        y.innerHTML = "6";
-      }
-    });
-    pad_7.addEventListener("click", function () {
-      if (select === "x") {
-        x.innerHTML = "7";
-      } else {
-        y.innerHTML = "7";
-      }
-    });
-    pad_8.addEventListener("click", function () {
-      if (select === "x") {
-        x.innerHTML = "8";
-      } else {
-        y.innerHTML = "8";
-      }
-    });
-    pad_9.addEventListener("click", function () {
-      if (select === "x") {
-        x.innerHTML = "9";
-      } else {
-        y.innerHTML = "9";
-      }
-    });
-    pad_10.addEventListener("click", function () {
-      console.log("=");
-      let x = Number(document.querySelector(".x").innerHTML);
-      let y = Number(document.querySelector(".y").innerHTML);
-      let z = x + y;
-      document.querySelector(".z").innerHTML = z.toString();
-    });
-  </script>
 </html>

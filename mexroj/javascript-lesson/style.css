@@ -1,33 +1,159 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 body {
-  width: 100%;
-  height: 100vh;
-  background-color: skyblue;
-  font-family: "Roboto", sans-serif;
-  font-size: 30px;
+	background: #fde4f2;
+	font-size: 30px;
 }
-.calc-container {
-  display: flex;
-  color: black;
-  margin: 10px;
+.calculator {
+	/* width: 200px; */
+	background-color: yellowgreen;
+	border: 5px solid black;
+	color: white;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
-.pad-container {
-  display: flex;
-  gap: 10px;
-  margin: 10px;
+.calc_container {
+	background-color: rgb(1, 1, 7);
+	display: none;
+	/* display: flex; */
+	margin: 30px;
 }
-.pad {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.ans {
+	width: 200px;
+	height: 50px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	border: 1px solid black;
+	background-color: green;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	color: white;
+}
+.ans.hidden {
+	visibility: hidden;
+	/* display: none; */
+}
+
+.x,
+.y,
+.z,
+.plus,
+.equals {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+}
+.dentaku {
+	display: grid;
+	margin: 0;
+	grid-template-columns: 50px 50px 50px 50px;
+}
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: rgb(120, 119, 119);
+	border: 1px solid black;
+	cursor: pointer;
+}
+.btn_clear {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: rgb(76, 67, 86);
+	border: 1px solid black;
+	cursor: pointer;
+}
+.btn_plus_minus {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: rgb(76, 67, 86);
+	border: 1px solid black;
+	cursor: pointer;
+}
+.btn_percent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: rgb(76, 67, 86);
+	border: 1px solid black;
+	cursor: pointer;
+}
+.btn_div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: orange;
+	border: 1px solid black;
+	cursor: pointer;
+}
+.btn_multi {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: orange;
+	border: 1px solid black;
+	cursor: pointer;
+}
+.btn_minus {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: orange;
+	border: 1px solid black;
+	cursor: pointer;
+}
+.btn_plus {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: orange;
+	border: 1px solid black;
+	cursor: pointer;
+}
+.btn_eq {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: orange;
+	border: 1px solid black;
+	cursor: pointer;
+}
+.btn_0 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 50px;
+	background: rgb(120, 119, 119);
+	border: 1px solid black;
+}
+.dentaku_bottom {
+	display: grid;
+	grid-template-columns: 100px 50px 50px;
+	margin-bottom: 30px;
 }

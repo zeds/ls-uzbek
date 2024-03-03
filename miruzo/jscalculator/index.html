@@ -6,20 +6,26 @@
     <title>Document</title>
     <style>
       body {
-        background: rgb(190, 215, 214);
+        background: rgb(190, 215, 224);
         font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
       }
       .layout {
-        background: burlywood;
-        border: 5px solid black;
-        height: 297px;
-        width: 201px;
-        border-radius: 5px;
+        background: black;
+        height: 380px;
+        width: 235px;
+        padding-right: 10px;
+        padding-left: 25px;
+        border-radius: 10px;
       }
       .calc_container {
-        /* display: flex; */
-        display: none;
-        margin-bottom: 10px;
+        display: flex;
+        margin-bottom: 1px;
+        justify-content: end;
+        background-color: black;
       }
       .dentaku {
         display: grid;
@@ -35,12 +41,14 @@
         display: flex;
         width: 50px;
         height: 50px;
-        background: #474747;
+        background: #616161;
         justify-content: center;
         align-items: center;
         border: 1px solid black;
         cursor: pointer;
         color: white;
+        border-radius: 50%;
+        margin: 10px;
       }
       .btn_orange {
         display: flex;
@@ -52,6 +60,8 @@
         border: 1px solid black;
         cursor: pointer;
         color: white;
+        border-radius: 50%;
+        margin: 10px;
       }
       .btn_dk {
         display: flex;
@@ -63,36 +73,34 @@
         border: 1px solid black;
         cursor: pointer;
         color: white;
+        border-radius: 50%;
+        margin: 10px;
       }
       .btn_zero {
         display: flex;
         width: 100px;
         height: 50px;
-        background: #474747;
+        background: #616161;
         justify-content: center;
         align-items: center;
         border: 1px solid black;
         color: white;
         cursor: pointer;
+        border-radius: 20px;
+        margin: 10px;
       }
       .x,
       .type,
       .y,
       .z,
       .eql {
-        margin-left: 2px;
         color: black;
       }
       .ans {
-        color: black;
-        font-size: 40px;
+        color: white;
         display: flex;
         justify-content: end;
-        padding-right: 5px;
-      }
-      .ans.hidden {
-        visibility: hidden;
-        /* display: none; */
+        margin-right: 30px;
       }
     </style>
   </head>
@@ -107,21 +115,22 @@
       </div>
       <div class="ans">0</div>
       <div class="dentaku">
-        <div class="btn_dk" onclick="clearInput()">C</div>
+        <div class="btn btn_dk" onclick="clearInput()">C</div>
         <div class="btn_plus_minus btn_dk">±</div>
+        <!-- <div class="btn btn_dk" onclick="calculatePercentage()">%</div> -->
         <div class="btn_percent btn_dk">%</div>
         <div class="btn_div btn_orange">÷</div>
-        <div class="btn_7 btn_dk">7</div>
-        <div class="btn_8 btn_dk">8</div>
-        <div class="btn_9 btn_dk">9</div>
+        <div class="btn_7 btn">7</div>
+        <div class="btn_8 btn">8</div>
+        <div class="btn_9 btn">9</div>
         <div class="btn_multi btn_orange">x</div>
-        <div class="btn_4 btn_dk">4</div>
-        <div class="btn_5 btn_dk">5</div>
-        <div class="btn_6 btn_dk">6</div>
+        <div class="btn_4 btn">4</div>
+        <div class="btn_5 btn">5</div>
+        <div class="btn_6 btn">6</div>
         <div class="btn_minus btn_orange">-</div>
-        <div class="btn_1 btn_dk">1</div>
-        <div class="btn_2 btn_dk">2</div>
-        <div class="btn_3 btn_dk">3</div>
+        <div class="btn_1 btn">1</div>
+        <div class="btn_2 btn">2</div>
+        <div class="btn_3 btn">3</div>
         <div class="btn_plus btn_orange">+</div>
       </div>
       <div class="dentaku_bottom">
@@ -132,8 +141,6 @@
     </div>
 
     <script>
-      let myTimeout = null;
-
       let select = "x";
       let type = "+";
       let x = document.querySelector(".x");
@@ -177,12 +184,10 @@
           if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML + "0";
           }
-          ans.innerHTML = x.innerHTML;
         } else {
           if (y.innerHTML !== "y") {
             y.innerHTML = y.innerHTML + "0";
           }
-          ans.innerHTML = y.innerHTML;
         }
       });
       btn_1.addEventListener("click", function () {
@@ -372,13 +377,6 @@
         document.querySelector(".x").innerHTML = "x";
         document.querySelector(".y").innerHTML = "y";
       });
-
-      function myTrigger() {
-        ans.classList.toggle("hidden");
-        clearInterval(myTimeout);
-        myTimeout = null;
-      }
-
       // +
       btn_plus.addEventListener("click", function () {
         select = "y";
@@ -386,20 +384,14 @@
         document.querySelector(".type").innerHTML = "+";
         x.style.background = "transparent";
         y.style.background = "red";
-
-        ans.classList.toggle("hidden");
-        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
-      //-
+      // -
       btn_minus.addEventListener("click", function () {
         select = "y";
         type = "-";
         document.querySelector(".type").innerHTML = "-";
         x.style.background = "transparent";
         y.style.background = "red";
-
-        ans.classList.toggle("hidden");
-        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // *
       btn_multi.addEventListener("click", function () {
@@ -408,20 +400,14 @@
         document.querySelector(".type").innerHTML = "*";
         x.style.background = "transparent";
         y.style.background = "red";
-
-        ans.classList.toggle("hidden");
-        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
-      // /
+      // / (割る)
       btn_div.addEventListener("click", function () {
         select = "y";
         type = "/";
         document.querySelector(".type").innerHTML = "/";
         x.style.background = "transparent";
         y.style.background = "red";
-
-        ans.classList.toggle("hidden");
-        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // % 余り
       btn_percent.addEventListener("click", function () {
@@ -430,27 +416,19 @@
         document.querySelector(".type").innerHTML = "%";
         x.style.background = "transparent";
         y.style.background = "red";
-
-        ans.classList.toggle("hidden");
-        myTimeout = setInterval(myTrigger, 50); // 20fps
       });
       // ±
       btn_plus_minus.addEventListener("click", function () {
-        if (select === "x") {
-          if (x.innerHTML !== "x") {
-            x.innerHTML = x.innerHTML * -1;
-          }
-          ans.innerHTML = x.innerHTML;
-        }
-        if (select === "y") {
-          if (y.innerHTML !== "y") {
-            y.innerHTML = y.innerHTML * -1;
-          }
-          ans.innerHTML = y.innerHTML;
-        }
+        let x = document.querySelector(".x").innerHTML;
+        let y = document.querySelector(".y").innerHTML;
 
-        ans.classList.toggle("hidden");
-        myTimeout = setInterval(myTrigger, 50); // 20fps
+        if (select == "x") {
+          x = x * -1;
+          document.querySelector(".x").innerHTML = x;
+        } else {
+          y = y * -1;
+          document.querySelector(".y").innerHTML = y;
+        }
       });
       function clearInput() {
         const x = document.querySelector(".x");
@@ -465,6 +443,18 @@
         select = "x";
         x.style.background = "red";
         y.style.background = "transparent";
+      }
+      function calculatePercentage() {
+        let display = document.querySelector(".x");
+        let currentValue = parseFloat(display.innerHTML);
+
+        // 10 % 3 = 1
+        // 20 % 3 = 2
+
+        if (!isNaN(currentValue)) {
+          let percentageValue = currentValue / 100;
+          display.innerHTML = percentageValue;
+        }
       }
     </script>
   </body>
