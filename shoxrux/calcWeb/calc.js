@@ -40,13 +40,15 @@ btn_0.addEventListener("click", function () {
     if (select === "x") {
         if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML + "0";
+            ans.innerHTML = x.innerHTML;
         }
-        ans.innerHTML = x.innerHTML;
+
     } else {
         if (y.innerHTML !== "y") {
             y.innerHTML = y.innerHTML + "0";
+            ans.innerHTML = y.innerHTML;
         }
-        ans.innerHTML = y.innerHTML;
+
     }
 });
 btn_1.addEventListener("click", function () {
@@ -263,7 +265,7 @@ btn_minus.addEventListener("click", function () {
     select = "y";
     type = "-";
     ans.classList.toggle("hidden");
-    myTimeout = setInterval(myTrigger, 50); // 0.5s
+    myTimeout = setInterval(myTrigger, 40); // 0.5s
 });
 // *
 btn_multi.addEventListener("click", function () {
@@ -328,3 +330,12 @@ btn_percent.addEventListener("click", function () {
     ans.classList.toggle("hidden");
     myTimeout = setInterval(myTrigger, 50); // 0.5s
 });
+
+
+// let person = prompt("Please enter your name", "");
+// let equor = document.querySelector(".z");
+
+// if (person != null) {
+//     document.querySelector(".practic").innerHTML =
+//         "Hello " + person + equor;
+// }

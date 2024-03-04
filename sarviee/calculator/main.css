@@ -107,6 +107,7 @@ body {
 	height: 48px;
 	background: rgb(120, 119, 119);
 	border-radius: 24px;
+	cursor: pointer;
 }
 
 .dentaku_bottom {

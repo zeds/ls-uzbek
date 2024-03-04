@@ -164,3 +164,7 @@ body {
     grid-template-columns: 100px 50px 50px;
     margin-bottom: 30px;
 }
+
+.practic {
+    color: black;
+}
