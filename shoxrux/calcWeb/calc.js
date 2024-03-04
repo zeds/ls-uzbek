@@ -263,7 +263,7 @@ btn_minus.addEventListener("click", function () {
     select = "y";
     type = "-";
     ans.classList.toggle("hidden");
-    myTimeout = setInterval(myTrigger, 50); // 0.5s
+    myTimeout = setInterval(myTrigger, 40); // 0.5s
 });
 // *
 btn_multi.addEventListener("click", function () {
