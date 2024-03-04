@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <title>calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator_layout">
+            <div class="formula">
+                <div class="x">x</div>
+                <div class="type">+</div>
+                <div class="y">y</div>
+                <div class="eql">=</div>
+                <div class="z">z</div>
+            </div>
+            <div class="answer_box">
+                <div class="answer">0</div>
+            </div>
+
+            <!--電卓機能ボタン-->
+            <div class="calculator_button_container">
+                <div class="calculator_button" onclick="Allclear()">C</div>
+                <div class="button_plus_minus calculator_button">±</div>
+                <div class="button_percent calculator_button">%</div>
+                <div class="button_div calculator_button_formula">÷</div>
+                <div class="button7 calculator_button">7</div>
+                <div class="button8 calculator_button">8</div>
+                <div class="button9 calculator_button">9</div>
+                <div class="button_mul calculator_button_formula">x</div>
+                <div class="button4 calculator_button">4</div>
+                <div class="button5 calculator_button">5</div>
+                <div class="button6 calculator_button">6</div>
+                <div class="button_sub calculator_button_formula">-</div>
+                <div class="button1 calculator_button">1</div>
+                <div class="button2 calculator_button">2</div>
+                <div class="button3 calculator_button">3</div>
+                <div class="button_plus calculator_button_formula">+</div>
+            </div>
+            <div class="calculator_0oreq_button">
+                <div class="button0">0</div>
+                <div class="calculator_button">.</div>
+                <div class="button_eq calculator_button_formula">=</div>
+            </div>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+
+</html>
