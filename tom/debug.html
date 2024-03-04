@@ -3,146 +3,21 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-			rel="stylesheet"
-		/>
 		<title>Document</title>
 		<style>
-			* {
-				padding: 0%;
-				margin: 0;
-				box-sizing: border-box;
-			}
-			body {
-				font-size: 20px;
-			}
-			.container {
-				width: 100%;
-				height: 100vh;
-				/* background: orange; */
-			}
-			.header_frame {
-				margin-top: 10px;
-				width: 100%;
-				height: 40px;
-				/* background: silver; */
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-			}
-			.header_frame img {
-				height: 70%;
-				margin-left: 10px;
-				margin-right: 10px;
-			}
-			.search_container {
-				display: flex;
-				height: 40px;
-				/* background: pink; */
-			}
-			.search_container input {
-				width: 540px;
-				height: 100%;
-				/* background: pink; */
-				border-radius: 20px 0 0 20px;
-				border: solid 1px black;
-				border-right: none;
-			}
-			.search_container button {
-				width: 60px;
-				height: 100%;
-				border-radius: 0 20px 20px 0;
-				border: solid 1px black;
-			}
-			.search_container button img {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-			.mic_icon {
-				width: 40px;
-				height: 40px;
-				border-radius: 20px;
-				margin-left: 14px;
-				background: #f2f2f2;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				position: relative;
-			}
-			.mic_icon img {
-				margin-left: 0;
-			}
-			.mic_icon:hover {
-				background: #d0d0d0;
-			}
-			.right_frame {
-				height: 100%;
-				width: 150px;
-				/* background: green; */
-				display: flex;
-				align-items: center;
-				display: flex;
-				justify-content: space-evenly;
-			}
-			.right_frame img:last-child {
-				border-radius: 20px;
-				height: 70%;
-			}
-			.search_button {
-				position: relative;
-				background: yellow;
-			}
-			.search_button:hover .tooltip-text {
-				background: green;
-				opacity: 1;
-				visibility: visible;
-			}
-			.tooltip-text {
-				/* opacity: 0;
-				visibility: hidden; */
-				white-space: nowrap; /* テキストを折り返さない */
-				position: absolute;
-				right: 0;
-				bottom: -50px;
-				display: inline-block;
-				padding: 10px;
-				font-size: 0.8rem;
-				line-height: 1.3;
-				background: #333;
-				color: #fff;
-				border-radius: 3px;
-				transition: 0.3s ease-in;
+			.box {
+				width: 500px;
+				height: 100px;
+				background: skyblue;
 			}
 		</style>
 	</head>
+
 	<body>
-		<div class="container">
-			<div class="header_frame">
-				<img src="icon/youtubelog.svg" />
-				<div class="search_container">
-					<input type="text" />
-					<button class="search_button">
-						<span class="tooltip-text">検索</span
-						><img src="search-outline.svg" />
-					</button>
-					<div class="mic_icon">
-						<span class="tooltip-text">音声で検索</span>
-						<img src="icon/mic.svg" />
-					</div>
-				</div>
-				<div class="right_frame">
-					<div class="movie_icon">
-						<span class="tooltip-text">音声で検索</span>
-						<img src="icon/movie.svg" />
-					</div>
-					<div <img src="icon/bell.svg" />
-					<img src="image/rasm3.jpg" />
-				</div>
-			</div>
+		<h1>Hello world</h1>
+		<div class="box">
+			チェックイン時間
+			<p>土曜日：14pm</p>
 		</div>
 	</body>
 </html>
