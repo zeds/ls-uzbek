@@ -330,13 +330,9 @@ btn_percent.addEventListener("click", function () {
 });
 
 
-let nameBoy = ["name1", "name2"];
-console.log(nameBoy[1] + ' ' + nameBoy[1]);
+let person = prompt("Please enter your name", "Harry Potter");
 
-let h1 = document.querySelector(".practic");
-setInterval(function () {
-    h1.innerHTML = "Heloo"
-}, clearInterval(h1), 2)
-
-window.scrollBy(100, 100);
-alert(window.scrollX + window.scrollY);
+if (person != null) {
+    document.querySelector(".practic").innerHTML =
+        "Hello " + person;
+}
