@@ -330,9 +330,9 @@ btn_percent.addEventListener("click", function () {
 });
 
 
-let person = prompt("Please enter your name", "Harry Potter");
+// let person = prompt("Please enter your name", "Harry Potter");
 
-if (person != null) {
-    document.querySelector(".practic").innerHTML =
-        "Hello " + person;
-}
+// if (person != null) {
+//     document.querySelector(".practic").innerHTML =
+//         "Hello " + person;
+// }
