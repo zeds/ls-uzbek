@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculator Layout</title>
+		<style>
+			body {
+				background: rgb(190, 215, 214);
+				font-size: 30px;
+				margin: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+			.calculator_layout {
+				background: #67d0ff;
+				border: 5px solid black;
+				height: 298px;
+				width: 201px;
+				border-radius: 5px;
+			}
+			.calculator_display {
+				display: none;
+				margin-bottom: 10px;
+			}
+			.electronic_calculator {
+				display: grid;
+				grid-template-columns: 50px 50px 50px 50px;
+				grid-auto-rows: 50px;
+			}
+			.electronic_calculator_bottom {
+				grid-template-columns: 100px 50px 50px;
+				grid-auto-rows: 50px;
+			}
+			.calculator_button {
+				display: flex;
+				width: 50px;
+				height: 50px;
+				background: #474747;
+				justify-content: center;
+				align-items: center;
+				border: 1px solid black;
+				cursor: pointer;
+				color: white;
+			}
+			.calculator_button_orange {
+				background: #c45dff;
+			}
+			.calculator_button_zero {
+				width: 100px;
+			}
+			.display_value_variable_x,
+			.display_value_operator_plus,
+			.display_value_variable_y,
+			.display_value_operator_equal,
+			.display_value_result_z {
+				margin-left: 2px;
+				color: black;
+			}
+			.calculator_result {
+				color: black;
+				font-size: 40px;
+				display: flex;
+				justify-content: end;
+				padding-right: 5px;
+			}
+			.calculator_result_hidden {
+				visibility: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="calculator_layout">
+			<div class="calculator_display">
+				<div class="display_value_variable_x">x</div>
+				<div class="display_value_operator_plus">+</div>
+				<div class="display_value_variable_y">y</div>
+				<div class="display_value_operator_equal">=</div>
+				<div class="display_value_result_z">z</div>
+			</div>
+			<div class="calculator_result">0</div>
+			<div class="electronic_calculator">
+				<div class="calculator_button" onclick="clearInput()">C</div>
+				<div class="calculator_button calculator_button_plus_minus">±</div>
+				<div class="calculator_button calculator_button_percent">%</div>
+				<div
+					class="calculator_button calculator_button_orange calculator_button_divide"
+				>
+					÷
+				</div>
+				<div class="calculator_button calculator_button_number_7">7</div>
+				<div class="calculator_button calculator_button_number_8">8</div>
+				<div class="calculator_button calculator_button_number_9">9</div>
+				<div
+					class="calculator_button calculator_button_orange calculator_button_multiply"
+				>
+					x
+				</div>
+				<div class="calculator_button calculator_button_number_4">4</div>
+				<div class="calculator_button calculator_button_number_5">5</div>
+				<div class="calculator_button calculator_button_number_6">6</div>
+				<div
+					class="calculator_button calculator_button_orange calculator_button_subtract"
+				>
+					-
+				</div>
+				<div class="calculator_button calculator_button_number_1">1</div>
+				<div class="calculator_button calculator_button_number_2">2</div>
+				<div class="calculator_button calculator_button_number_3">3</div>
+				<div
+					class="calculator_button calculator_button_orange calculator_button_add"
+				>
+					+
+				</div>
+			</div>
+			<div class="electronic_calculator_bottom">
+				<div class="calculator_button calculator_button_zero">0</div>
+				<div class="calculator_button">.</div>
+				<div
+					class="calculator_button calculator_button_orange calculator_button_equals"
+				>
+					=
+				</div>
+			</div>
+		</div>
+
+		<script>
+			let myTimeout = null
+
+			let select = 'x'
+			let display_value_operator_plus = '+'
+			let display_value_variable_x = document.querySelector(
+				'.display_value_variable_x'
+			)
+			let display_value_variable_y = document.querySelector(
+				'.display_value_variable_y'
+			)
+			let display_value_variable_z = document.querySelector(
+				'.display_value_variable_z'
+			)
+			let calculator_result = document.querySelector('.calculator_result')
+
+			let calculator_button_zero = document.querySelector(
+				'.calculator_button_zero'
+			)
+			let calculator_button_number_1 = document.querySelector(
+				'.calculator_button_number_1'
+			)
+			let calculator_button_number_2 = document.querySelector(
+				'.calculator_button_number_2'
+			)
+			let calculator_button_number_3 = document.querySelector(
+				'.calculator_button_number_3'
+			)
+			let calculator_button_number_4 = document.querySelector(
+				'.calculator_button_number_4'
+			)
+			let calculator_button_number_5 = document.querySelector(
+				'.calculator_button_number_5'
+			)
+			let calculator_button_number_6 = document.querySelector(
+				'.calculator_button_number_6'
+			)
+			let calculator_button_number_7 = document.querySelector(
+				'.calculator_button_number_7'
+			)
+			let calculator_button_number_8 = document.querySelector(
+				'.calculator_button_number_8'
+			)
+			let calculator_button_number_9 = document.querySelector(
+				'.calculator_button_number_9'
+			)
+			let calculator_button_add = document.querySelector(
+				'.calculator_button_add'
+			)
+			let calculator_button_subtract = document.querySelector(
+				'.calculator_button_subtract'
+			)
+			let calculator_button_equals = document.querySelector(
+				'.calculator_button_equals'
+			)
+			let calculator_button_multiply = document.querySelector(
+				'.calculator_button_multiply'
+			)
+			let calculator_button_divide = document.querySelector(
+				'.calculator_button_divide'
+			)
+			let calculator_button_percent = document.querySelector(
+				'.calculator_button_percent'
+			)
+			let calculator_button_plus_minus = document.querySelector(
+				'.calculator_button_plus_minus'
+			)
+
+			display_value_variable_x.style.background = 'red'
+
+			display_value_variable_x.addEventListener('click', function () {
+				display_value_variable_x.style.background = 'red'
+				display_value_variable_y.style.background = 'transparent'
+				select = 'x'
+			})
+			display_value_variable_y.addEventListener('click', function () {
+				display_value_variable_x.style.background = 'transparent'
+				display_value_variable_y.style.background = 'red'
+				select = 'y'
+			})
+
+			calculator_button_zero.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML === 'x') {
+						display_value_variable_x.innerHTML = '0'
+					} else {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML + '0'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_x'
+					).innerHTML
+				} else {
+					if (display_value_variable_y.innerHTML === 'y') {
+						display_value_variable_y.innerHTML = '0'
+					} else {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML + '0'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_y'
+					).innerHTML
+				}
+			})
+			calculator_button_number_1.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML === 'x') {
+						display_value_variable_x.innerHTML = '1'
+					} else {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML + '1'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_x'
+					).innerHTML
+				} else {
+					if (display_value_variable_y.innerHTML === 'y') {
+						display_value_variable_y.innerHTML = '1'
+					} else {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML + '1'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_y'
+					).innerHTML
+				}
+			})
+			calculator_button_number_2.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML === 'x') {
+						display_value_variable_x.innerHTML = '2'
+					} else {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML + '2'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_x'
+					).innerHTML
+				} else {
+					if (display_value_variable_y.innerHTML === 'y') {
+						display_value_variable_y.innerHTML = '2'
+					} else {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML + '2'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_y'
+					).innerHTML
+				}
+			})
+			calculator_button_number_3.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML === 'x') {
+						display_value_variable_x.innerHTML = '3'
+					} else {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML + '3'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_x'
+					).innerHTML
+				} else {
+					if (display_value_variable_y.innerHTML === 'y') {
+						display_value_variable_y.innerHTML = '3'
+					} else {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML + '3'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_y'
+					).innerHTML
+				}
+			})
+			calculator_button_number_4.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML === 'x') {
+						display_value_variable_x.innerHTML = '4'
+					} else {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML + '4'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_x'
+					).innerHTML
+				} else {
+					if (display_value_variable_y.innerHTML === 'y') {
+						display_value_variable_y.innerHTML = '4'
+					} else {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML + '4'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_y'
+					).innerHTML
+				}
+			})
+			calculator_button_number_5.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML === 'x') {
+						display_value_variable_x.innerHTML = '5'
+					} else {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML + '5'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_x'
+					).innerHTML
+				} else {
+					if (display_value_variable_y.innerHTML === 'y') {
+						display_value_variable_y.innerHTML = '5'
+					} else {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML + '5'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_y'
+					).innerHTML
+				}
+			})
+			calculator_button_number_6.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML === 'x') {
+						display_value_variable_x.innerHTML = '6'
+					} else {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML + '6'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_x'
+					).innerHTML
+				} else {
+					if (display_value_variable_y.innerHTML === 'y') {
+						display_value_variable_y.innerHTML = '6'
+					} else {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML + '6'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_y'
+					).innerHTML
+				}
+			})
+			calculator_button_number_7.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML === 'x') {
+						display_value_variable_x.innerHTML = '7'
+					} else {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML + '7'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_x'
+					).innerHTML
+				} else {
+					if (display_value_variable_y.innerHTML === 'y') {
+						display_value_variable_y.innerHTML = '7'
+					} else {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML + '7'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_y'
+					).innerHTML
+				}
+			})
+			calculator_button_number_8.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML === 'x') {
+						display_value_variable_x.innerHTML = '8'
+					} else {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML + '8'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_x'
+					).innerHTML
+				} else {
+					if (display_value_variable_y.innerHTML === 'y') {
+						display_value_variable_y.innerHTML = '8'
+					} else {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML + '8'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_y'
+					).innerHTML
+				}
+			})
+			calculator_button_number_9.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML === 'x') {
+						display_value_variable_x.innerHTML = '9'
+					} else {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML + '9'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_x'
+					).innerHTML
+				} else {
+					if (display_value_variable_y.innerHTML === 'y') {
+						display_value_variable_y.innerHTML = '9'
+					} else {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML + '9'
+					}
+					calculator_result.innerHTML = document.querySelector(
+						'.display_value_variable_y'
+					).innerHTML
+				}
+			})
+
+			// イコール
+			calculator_button_equals.addEventListener('click', function () {
+				console.log('=')
+				let display_value_variable_x = Number(
+					document.querySelector('.display_value_variable_x').innerHTML
+				)
+				let display_value_variable_y = Number(
+					document.querySelector('.display_value_variable_y').innerHTML
+				)
+				let display_value_result_z = 0
+
+				// Switch
+				switch (display_value_operator_plus) {
+					case '+':
+						z = x + y
+						break
+					case '-':
+						z = x - y
+						break
+					case '*':
+						z = x * y
+						break
+					case '/':
+						z = x / y
+						break
+					case '%':
+						z = x % y
+						break
+				}
+				document.querySelector('.calculator_result').innerHTML = z
+				document.querySelector('.display_value_result_z').innerHTML = z
+				document.querySelector('.display_value_variable_x').style.background =
+					'red'
+				document.querySelector('.display_value_variable_y').style.background =
+					'transparent'
+				select = 'x'
+				document.querySelector('.display_value_variable_x').innerHTML = 'x'
+				document.querySelector('.display_value_variable_y').innerHTML = 'y'
+			})
+
+			function myTrigger() {
+				calculator_result.classList.toggle('hidden')
+				clearInterval(myTimeout)
+				myTimeout = null
+			}
+
+			// 足す
+			calculator_button_add.addEventListener('click', function () {
+				select = 'y'
+				display_value_operator_plus = '+'
+				document.querySelector('.display_value_operator_plus').innerHTML = '+'
+				display_value_variable_x.style.background = 'transparent'
+				display_value_variable_y.style.background = 'red'
+
+				calculator_result.classList.toggle('hidden')
+				myTimeout = setInterval(myTrigger, 50) // 20fps
+			})
+			// 引く
+			calculator_button_subtract.addEventListener('click', function () {
+				select = 'y'
+				display_value_operator_plus = '-'
+				document.querySelector('.display_value_operator_plus').innerHTML = '-'
+				display_value_variable_x.style.background = 'transparent'
+				display_value_variable_y.style.background = 'red'
+
+				calculator_result.classList.toggle('hidden')
+				myTimeout = setInterval(myTrigger, 50) // 20fps
+			})
+			// 掛ける
+			calculator_button_multiply.addEventListener('click', function () {
+				select = 'y'
+				display_value_operator_plus = '*'
+				document.querySelector('.display_value_operator_plus').innerHTML = '*'
+				display_value_variable_x.style.background = 'transparent'
+				display_value_variable_y.style.background = 'red'
+
+				calculator_result.classList.toggle('hidden')
+				myTimeout = setInterval(myTrigger, 50) // 20fps
+			})
+			// 割る
+			calculator_button_divide.addEventListener('click', function () {
+				select = 'y'
+				display_value_operator_plus = '/'
+				document.querySelector('.display_value_operator_plus').innerHTML = '/'
+				display_value_variable_x.style.background = 'transparent'
+				display_value_variable_y.style.background = 'red'
+
+				calculator_result.classList.toggle('hidden')
+				myTimeout = setInterval(myTrigger, 50) // 20fps
+			})
+			// 余り
+			calculator_button_percent.addEventListener('click', function () {
+				select = 'y'
+				display_value_operator_plus = '%'
+				document.querySelector('.display_value_operator_plus').innerHTML = '%'
+				display_value_variable_x.style.background = 'transparent'
+				display_value_variable_y.style.background = 'red'
+
+				calculator_result.classList.toggle('hidden')
+				myTimeout = setInterval(myTrigger, 50) // 20fps
+			})
+			// ±
+			calculator_button_plus_minus.addEventListener('click', function () {
+				if (select === 'x') {
+					if (display_value_variable_x.innerHTML !== 'x') {
+						display_value_variable_x.innerHTML =
+							display_value_variable_x.innerHTML * -1
+					}
+					calculator_result.innerHTML = display_value_variable_x.innerHTML
+				}
+				if (select === 'y') {
+					if (display_value_variable_y.innerHTML !== 'y') {
+						display_value_variable_y.innerHTML =
+							display_value_variable_y.innerHTML * -1
+					}
+					calculator_result.innerHTML = y.innerHTML
+				}
+
+				calculator_result.classList.toggle('hidden')
+				myTimeout = setInterval(myTrigger, 50) // 20fps
+			})
+			function clearInput() {
+				const display_value_variable_x = document.querySelector(
+					'.display_value_variable_x'
+				)
+				const display_value_variable_y = document.querySelector(
+					'.display_value_variable_y'
+				)
+				const display_value_result_z = document.querySelector(
+					'.display_value_result_z'
+				)
+				const calculator_result = document.querySelector('.calculator_result')
+				display_value_variable_x.innerHTML = 'x'
+				display_value_variable_y.innerHTML = 'y'
+				display_value_result_z.innerHTML = 'z'
+				calculator_result.innerHTML = '0'
+
+				select = 'x'
+				display_value_variable_x.style.background = 'red'
+				display_value_variable_y.style.background = 'transparent'
+			}
+		</script>
+	</body>
+</html>
