@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 30px;
+            background:grey;
+        }
+        .calc_container{
+            display: flex;
+            margin: 15px;
+            border-radius: 5px;
+            color: white;
+        }
+        .x,
+        .y,
+        .z,
+        .plus,
+        .equals{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .ans{
+            width: 185px;
+            height: 50px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            margin-bottom: 5px;
+            padding: 0 10px;
+            border-radius: 25px;
+            background: black;
+            color: white;
+            margin-top: 5px;
+        }
+        .ans.hidden{
+            visibility: hidden;
+        }
+        .pad {
+            display: grid;
+            grid-template-columns: 50px 50px 50px 50px;
+        }
+        .items{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            background: #787777;
+        }
+        .items_cl,
+        .items_per,
+        .items_pm {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 25px;
+            cursor: pointer;
+            background: #333333;
+            color: white;
+        }
+        .items_plus,
+        .items_minus,
+        .items_mx,
+        .items_div,
+        .items_eq{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 25px;
+            cursor: pointer;
+            background:#fab012;
+        }
+        .items_0 {
+            width: 100px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 25px;
+            background: #787777;
+            cursor: pointer;
+        }
+        .pad_bottom {
+            display: grid;
+            grid-template-columns: 100px 50px 50px;
+            margin-bottom: 0px;
+        }
+        .box{
+            width: 210px;
+            height: 320px;
+            display: flex;
+            background: skyblue;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc_container">
+        <div class="x">x</div>
+        <div class="plus">+</div>
+        <div class="y">y</div>
+        <div class="equals">=</div>
+        <div class="z">z</div>
+    </div>
+    <div class="box">
+            <div class="ans">0</div>
+
+    <div class="pad">
+        <div class="items_cl">C</div>
+        <div class="items_pm">±</div>
+        <div class="items_per">%</div>
+        <div class="items_div">÷</div>
+        <div class="items_7 items">7</div>
+        <div class="items_8 items">8</div>
+        <div class="items_9 items">9</div>
+        <div class="items_mx">*</div>
+        <div class="items_4 items">4</div>
+        <div class="items_5 items">5</div>
+        <div class="items_6 items">6</div>
+        <div class="items_minus">-</div>
+        <div class="items_1 items">1</div>
+        <div class="items_2 items">2</div>
+        <div class="items_3 items">3</div>
+        <div class="items_plus">+</div>
+    </div>
+    <div class="pad_bottom">
+        <div class="items_0">0</div>
+        <div class="items_dot items">.</div>
+        <div class="items_eq">=</div>
+    </div>
+</div>
+
+
+    <script>
+let myTimeout=null;
+
+let select = "x";
+let type = "+";
+let x = document.querySelector(".x");
+let y = document.querySelector(".y");
+let z = document.querySelector(".z");
+
+let items_0 = document.querySelector(".items_0");
+let items_1 = document.querySelector(".items_1");
+let items_2 = document.querySelector(".items_2");
+let items_3 = document.querySelector(".items_3");
+let items_4 = document.querySelector(".items_4");
+let items_5 = document.querySelector(".items_5");
+let items_6 = document.querySelector(".items_6");
+let items_7 = document.querySelector(".items_7");
+let items_8 = document.querySelector(".items_8");
+let items_9 = document.querySelector(".items_9");
+let items_dot = document.querySelector(".items_dot");
+let items_plus = document.querySelector(".items_plus");
+let items_minus = document.querySelector(".items_minus");
+let items_mx = document.querySelector(".items_mx");
+let items_div = document.querySelector(".items_div");
+let items_eq = document.querySelector(".items_eq");
+let items_cl = document.querySelector(".items_cl");
+let items_per = document.querySelector(".items_per");
+let items_pm = document.querySelector(".items_pm");
+let ans = document.querySelector(".ans");
+x.style.background = "#fab012";
+
+x.addEventListener("click", function(){
+    x.style.background = "#fab012";
+    y.style.background = "transparent";
+    select = "x";
+});
+y.addEventListener("click", function(){
+    x.style.background = "transparent";
+    y.style.background = "fab012";
+    select = "y";
+});
+items_0.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML !== "x"){
+            x.innerHTML = x.innerHTML + "0";
+        }
+        ans.innerHTML = x.innerHTML;
+    } else {
+        if (y.innerHTML !== "y"){
+            y.innerHTML = y.innerHTML + "0";
+        }
+        ans.innerHTML = y. innerHTML;
+    }
+});
+items_1.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML ==="x"){
+            x.innerHTML = "1"
+        }else {
+            x.innerHTML = x.innerHTML + "1";
+        }
+        ans.innerHTML = x.innerHTML;
+    }
+    if (select ==="y"){
+        if (y.innerHTML ==="y"){
+            y.innerHTML = "1";
+        }else {
+            y.innerHTML = y.innerHTML + "1";
+        }
+        ans.innerHTML = y.innerHTML;
+    }
+});
+items_2.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML ==="x"){
+            x.innerHTML = "2"
+        }else {
+            x.innerHTML = x.innerHTML + "2";
+        }
+        ans.innerHTML = x.innerHTML;
+    }
+    if (select ==="y"){
+        if (y.innerHTML ==="y"){
+            y.innerHTML = "2";
+        }else {
+            y.innerHTML = y.innerHTML + "2";
+        }
+        ans.innerHTML = y.innerHTML;
+    }
+});
+items_3.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML ==="x"){
+            x.innerHTML = "3"
+        }else {
+            x.innerHTML = x.innerHTML + "3";
+        }
+        ans.innerHTML = x.innerHTML;
+    }
+    if (select ==="y"){
+        if (y.innerHTML ==="y"){
+            y.innerHTML = "3";
+        }else {
+            y.innerHTML = y.innerHTML + "3";
+        }
+        ans.innerHTML = y.innerHTML;
+    }
+});
+items_4.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML ==="x"){
+            x.innerHTML = "4"
+        }else {
+            x.innerHTML = x.innerHTML + "4";
+        }
+        ans.innerHTML = x.innerHTML;
+    }
+    if (select ==="y"){
+        if (y.innerHTML ==="y"){
+            y.innerHTML = "4";
+        }else {
+            y.innerHTML = y.innerHTML + "4";
+        }
+        ans.innerHTML = y.innerHTML;
+    }
+});
+items_5.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML ==="x"){
+            x.innerHTML = "5"
+        }else {
+            x.innerHTML = x.innerHTML + "5";
+        }
+        ans.innerHTML = x.innerHTML;
+    }
+    if (select ==="y"){
+        if (y.innerHTML ==="y"){
+            y.innerHTML = "5";
+        }else {
+            y.innerHTML = y.innerHTML + "5";
+        }
+        ans.innerHTML = y.innerHTML;
+    }
+});
+items_6.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML ==="x"){
+            x.innerHTML = "6"
+        }else {
+            x.innerHTML = x.innerHTML + "6";
+        }
+        ans.innerHTML = x.innerHTML;
+    }
+    if (select ==="y"){
+        if (y.innerHTML ==="y"){
+            y.innerHTML = "6";
+        }else {
+            y.innerHTML = y.innerHTML + "6";
+        }
+        ans.innerHTML = y.innerHTML;
+    }
+});
+items_7.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML ==="x"){
+            x.innerHTML = "7"
+        }else {
+            x.innerHTML = x.innerHTML + "7";
+        }
+        ans.innerHTML = x.innerHTML;
+    }
+    if (select ==="y"){
+        if (y.innerHTML ==="y"){
+            y.innerHTML = "7";
+        }else {
+            y.innerHTML = y.innerHTML + "7";
+        }
+        ans.innerHTML = y.innerHTML;
+    }
+});
+items_8.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML ==="x"){
+            x.innerHTML = "8"
+        }else {
+            x.innerHTML = x.innerHTML + "8";
+        }
+        ans.innerHTML = x.innerHTML;
+    }
+    if (select ==="y"){
+        if (y.innerHTML ==="y"){
+            y.innerHTML = "8";
+        }else {
+            y.innerHTML = y.innerHTML + "8";
+        }
+        ans.innerHTML = y.innerHTML;
+    }
+});
+items_9.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML ==="x"){
+            x.innerHTML = "9"
+        }else {
+            x.innerHTML = x.innerHTML + "9";
+        }
+        ans.innerHTML = x.innerHTML;
+    }
+    if (select ==="y"){
+        if (y.innerHTML ==="y"){
+            y.innerHTML = "9";
+        }else {
+            y.innerHTML = y.innerHTML + "9";
+        }
+        ans.innerHTML = y.innerHTML;
+    }
+});
+items_dot.addEventListener("click", function(){
+    if (select === "x"){
+        if (x.innerHTML ==="x"){
+            x.innerHTML = "."
+        }else {
+            x.innerHTML = x.innerHTML + ".";
+        }
+        ans.innerHTML = x.innerHTML;
+    }
+    if (select ==="y"){
+        if (y.innerHTML ==="y"){
+            y.innerHTML = ".";
+        }else {
+            y.innerHTML = y.innerHTML + ".";
+        }
+        ans.innerHTML = y.innerHTML;
+    }
+});
+
+items_eq.addEventListener("click", function(){
+    let x = Number(document.querySelector(".x").innerHTML);
+    let y = Number(document.querySelector(".y").innerHTML);
+
+    switch(type){
+        case "+": 
+        z = x + y;
+        break;
+        case "-":
+            z = x - y;
+            break;
+        case "*": 
+        z = x * y;
+        break;
+        case "/": 
+        z  = x / y;
+        break; 
+        case "%": 
+        z = x % y;
+        break; 
+    }
+    document.querySelector(".z").innerHTML = z;
+    document.querySelector(".ans").innerHTML = z;
+    document.querySelector(".x").style.background = "#fab012";
+    document.querySelector(".y").style.background = "transparent";
+
+    document.querySelector(".x").innerHTML = "x";
+    document.querySelector(".y").innerHTML = "y";
+    select = "x";
+});
+
+function myTrigger() {
+				ans.classList.toggle("hidden");
+				clearInterval(myTimeout);
+				myTimeout = null;
+			}
+
+			
+			items_plus.addEventListener("click", function () {
+				document.querySelector(".plus").innerHTML = "+";
+				x.style.background = "transparent";
+				y.style.background = "#fab012";
+				select = "y";
+				type = "+";
+
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); 
+			});
+			
+			items_minus.addEventListener("click", function () {
+				document.querySelector(".plus").innerHTML = "-";
+				x.style.background = "transparent";
+				y.style.background = "#fab012";
+				select = "y";
+				type = "-";
+
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); 
+			});
+			
+			items_mx.addEventListener("click", function () {
+				document.querySelector(".plus").innerHTML = "*";
+				x.style.background = "transparent";
+				y.style.background = "#fab012";
+				select = "y";
+				type = "*";
+
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); 
+			});
+			
+			items_div.addEventListener("click", function () {
+				document.querySelector(".plus").innerHTML = "÷";
+				x.style.background = "transparent";
+				y.style.background = "#fab012";
+				select = "y";
+				type = "/";
+
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); 
+			});
+			
+			items_cl.addEventListener("click", function () {
+				x.innerHTML = "x";
+				y.innerHTML = "y";
+				document.querySelector(".z").innerHTML = "z";
+				ans.innerHTML = "0";
+				select = "x";
+				type = "+";
+				document.querySelector(".x").style.background = "#fab012";
+				document.querySelector(".y").style.background = "transparent";
+				document.querySelector(".plus").innerHTML = "+";
+			});
+
+			items_pm.addEventListener("click", function () {
+				if (select === "x") {
+					if (x.innerHTML !== "x") {
+						x.innerHTML = x.innerHTML * -1;
+					}
+					ans.innerHTML = x.innerHTML;
+				}
+				if (select === "y") {
+					if (y.innerHTML !== "y") {
+						y.innerHTML = y.innerHTML * -1;
+					}
+					ans.innerHTML = y.innerHTML;
+				}
+
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); 
+			});
+		
+			items_per.addEventListener("click", function () {
+				document.querySelector(".plus").innerHTML = "%";
+				x.style.background = "transparent";
+				y.style.background = "#fab012";
+				select = "y";
+				type = "%";
+
+				ans.classList.toggle("hidden");
+				myTimeout = setInterval(myTrigger, 50); 
+			});
+    </script>
+</body>
+</html>
