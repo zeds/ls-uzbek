@@ -19,11 +19,11 @@
         width: 170px;
         height: 50px;
         margin: 5px;
-        background-color: #5c5c5c;
+        background-color: white;
         display: flex;
         justify-content: end;
         align-items: center;
-        color: white;
+        color: #ffbb3c;
       }
       .ans.hidden {
         visibility: hidden;
@@ -393,17 +393,8 @@
 
         select = "x";
       });
-      let myTimer = null;
 
-      function displayHello() {
-        if (ans.innerHTML === "999") {
-          ans.innerHTML = "";
-        } else {
-          ans.innerHTML = "999";
-        }
 
-        // clearInterval(myTimer);
-      }
       let myTimeout = null;
 
       function myTrigger() {
@@ -464,7 +455,7 @@
         x.innerHTML = "x";
         y.innerHTML = "y";
         document.querySelector(".z").innerHTML = "z";
-        zero.innerHTML = "0";
+        ans.innerHTML = "0";
         select = "x";
         type = "+";
         document.querySelector(".x").style.background = "#fab012";
@@ -489,13 +480,6 @@
         ans.classList.toggle("hidden");
         myTimeout = setInterval(myTrigger, 50); // 20fps
       });
-
-      // for (let index = 0; index < array.length; index++) {
-      //     const element = array[index];
-
-      // }
-      // =======
-      // >>>>>>> b888ead46ff05aa32fd56602dc1cdca569c0b06b
     </script>
   </body>
 </html>
