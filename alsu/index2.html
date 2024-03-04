@@ -397,9 +397,10 @@
 			let myTimeout = null;
 
 			function myTrigger() {
+				// 50msecしたら、ansを表示している。
 				ans.classList.toggle("hidden");
 				clearInterval(myTimeout);
-				myTimeout = null;
+				// myTimeout = null;
 			}
 			// +
 			btn_plus.addEventListener("click", function () {
@@ -408,7 +409,7 @@
 				y.style.background = "#ffbb3c";
 				select = "y";
 				type = "+";
-				ans.classList.toggle("hidden");
+				ans.classList.toggle("hidden"); // ボタンを押した時にansを消している
 				myTimeout = setInterval(myTrigger, 50); // 20fps
 			});
 			// -
