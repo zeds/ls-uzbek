@@ -40,13 +40,15 @@ btn_0.addEventListener("click", function () {
     if (select === "x") {
         if (x.innerHTML !== "x") {
             x.innerHTML = x.innerHTML + "0";
+            ans.innerHTML = x.innerHTML;
         }
-        ans.innerHTML = x.innerHTML;
+
     } else {
         if (y.innerHTML !== "y") {
             y.innerHTML = y.innerHTML + "0";
+            ans.innerHTML = y.innerHTML;
         }
-        ans.innerHTML = y.innerHTML;
+
     }
 });
 btn_1.addEventListener("click", function () {
@@ -330,9 +332,10 @@ btn_percent.addEventListener("click", function () {
 });
 
 
-let person = prompt("Please enter your name", "Harry Potter");
+// let person = prompt("Please enter your name", "");
+// let equor = document.querySelector(".z");
 
-if (person != null) {
-    document.querySelector(".practic").innerHTML =
-        "Hello " + person;
-}
+// if (person != null) {
+//     document.querySelector(".practic").innerHTML =
+//         "Hello " + person + equor;
+// }
