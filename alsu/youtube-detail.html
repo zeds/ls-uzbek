@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
       * {
@@ -31,28 +32,39 @@
         height: 100vh;
         background: lightgray;
       }
+      header {
+        width: 100%;
+        height: 56px;
+        background: skyblue;
+      }
+      main {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        max-width: 1480px;
+        margin: 0 auto;
+      }
+      .left_contents {
+        height: 700px;
+        background: orange;
+      }
+      .right_contents {
+        height: 100vh;
+        background: pink;
+      }
+      @media (width < 980px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div id="animal">猫</div>
-      <button id="change">犬にしてください</button>
+      <header></header>
+      <main>
+        <div class="left_contents">ああああああ</div>
+        <div class="right_contents">いいいいいいいいい</div>
+      </main>
     </div>
-    <script>
-      const animal = document.querySelector("#animal");
-      const bt = document.querySelector("#change");
-
-      bt.onclick = () => {
-        if (animal.innerHTML === "犬") {
-          animal.innerHTML = "猫";
-          animal.style.background = "red";
-          animal.style.color = "white";
-        } else {
-          animal.innerHTML = "犬";
-          animal.style.background = "blue";
-          animal.style.color = "black";
-        }
-      };
-    </script>
   </body>
 </html>

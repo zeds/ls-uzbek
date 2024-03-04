@@ -158,7 +158,7 @@
 				visibility: visible;
 			}
 			.video:hover {
-				background: gray;
+				background: #d0d0d0;
 			}
 			.bell {
 				width: 40px;
@@ -174,7 +174,7 @@
 				visibility: visible;
 			}
 			.bell:hover {
-				background: gray;
+				background: #d0d0d0;
 			}
 
 			/*********(navigation)***********/
@@ -244,7 +244,7 @@
 			}
 			.tag:hover {
 				cursor: pointer;
-				background: bisque;
+				background: #d0d0d0;
 			}
 			/**********(article-container)*********/
 
@@ -262,12 +262,13 @@
 			}
 			.article img {
 				width: 100%;
-                aspect-ratio: 3/2;
                 border-radius: 15px;
+                aspect-ratio: 3/2;
 			}
 			.description {
 				display: flex;
 				gap: 10px;
+				margin-top: 10px;
 			}
 			.description img {
 				width: 36px;
@@ -291,78 +292,101 @@
 				font-size: 14px;
 			}
 			/**********(grid)**********/
-			
-			@media (width < 648px) {
-				.articles {
-					grid-template-columns: 1fr;
-				}
-				nav {
-					display: none;
-				}
-				.articles {
-					padding-left: 20px;
-				}
-				.tag_container {
-					padding-left: 20px;
-				}
-				.search_container {
-					margin: 0 2rem 0 1rem;
-				}
-			}
-			@media (648px <= width < 768px) {
-				.articles {
-					grid-template-columns: 1fr 1fr;
-				}
-				.articles {
-					padding-left: 100px;
-				}
-				.tag_container {
-					padding-left: 100px;
-				}
 
-				nav li {
-					flex-direction: column;
-					gap: 5px;
-					font-size: 10px;
-					width: 60px;
-					align-items: center;
-					padding: 10px;
-					margin-bottom: 10px;
-				}
-				nav li div {
-					overflow: hidden;
-					display: -webkit-box;
-					-webkit-box-orient: vertical;
-					-webkit-line-clamp: 1;
-				}
+				@media (width < 648px) {
+			.articles {
+			grid-template-columns: 1fr;
 			}
-			@media (768px <= width < 1024px) {
-				.articles {
-					grid-template-columns: 1fr 1fr 1fr;
-				}
-				.articles {
-					padding-left: 100px;
-				}
-				.tag_container {
-					padding-left: 100px;
-				}
+			nav {
+			display: none;
+			}
+			.articles {
+			padding-left: 20px;
+			}
+			.tag_container {
+			padding-left: 20px;
+			}
+			.search_container {
+			margin: 0 2rem 0 1rem;
+			}
+		}
+		@media (648px <= width < 768px) {
+			.articles {
+			grid-template-columns: 1fr 1fr;
+			}
+			nav {
+			display: none;
+			}
+			.articles {
+			padding-left: 20px;
+			}
+			.tag_container {
+			padding-left: 20px;
+			}
+		}
+		@media (768px <= width < 1024px) {
+			.articles {
+			grid-template-columns: 1fr 1fr;
+			}
+			.articles {
+			padding-left: 100px;
+			}
+			.tag_container {
+			padding-left: 100px;
+			}
+			nav li {
+			flex-direction: column;
+			gap: 5px;
+			font-size: 10px;
+			width: 60px;
+			align-items: center;
+			padding: 10px;
+			margin-bottom: 10px;
+			}
+			nav li div {
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 1;
+			}
+		}
+		@media (1024px <= width < 1280px) {
+			.articles {
+			grid-template-columns: 1fr 1fr 1fr;
+			}
+			.articles {
+			padding-left: 100px;
+			}
+			.tag_container {
+			padding-left: 100px;
+			}
 
-				nav li {
-					flex-direction: column;
-					gap: 5px;
-					font-size: 10px;
-					width: 60px;
-					align-items: center;
-					padding: 10px;
-					margin-bottom: 10px;
-				}
-				nav li div {
-					overflow: hidden;
-					display: -webkit-box;
-					-webkit-box-orient: vertical;
-					-webkit-line-clamp: 1;
-				}
+			nav li {
+			flex-direction: column;
+			gap: 5px;
+			font-size: 10px;
+			width: 60px;
+			align-items: center;
+			padding: 10px;
+			margin-bottom: 10px;
 			}
+			nav li div {
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 1;
+			}
+		}
+		@media (1280px <= width < 1536px) {
+			.articles {
+			grid-template-columns: 1fr 1fr 1fr;
+			}
+		}
+		@media (1536px <= width) {
+			.articles {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			}
+		}
 		</style>
 	</head>
 	<body>
@@ -404,42 +428,6 @@
 				<li>
 					<img src="icon/menu_channels (2).svg" />
 					<div>登録チャンネル</div>
-				</li>
-				<li>
-					<img src="icon/menu_music.svg" />
-					<div>Youtube Music</div>
-				</li>
-				<li>
-					<img src="icon/menu_music.svg" />
-					<div>Youtube Music</div>
-				</li>
-				<li>
-					<img src="icon/menu_music.svg" />
-					<div>Youtube Music</div>
-				</li>
-				<li>
-					<img src="icon/menu_music.svg" />
-					<div>Youtube Music</div>
-				</li>
-				<li>
-					<img src="icon/menu_music.svg" />
-					<div>Youtube Music</div>
-				</li>
-				<li>
-					<img src="icon/menu_music.svg" />
-					<div>Youtube Music</div>
-				</li>
-				<li>
-					<img src="icon/menu_music.svg" />
-					<div>Youtube Music</div>
-				</li>
-				<li>
-					<img src="icon/menu_music.svg" />
-					<div>Youtube Music</div>
-				</li>
-				<li>
-					<img src="icon/menu_music.svg" />
-					<div>Youtube Music</div>
 				</li>
 				<li>
 					<img src="icon/menu_music.svg" />
