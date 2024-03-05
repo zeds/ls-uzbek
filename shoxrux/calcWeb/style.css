@@ -4,6 +4,8 @@ body {
 }
 
 .calculator {
+    border: 1px rgb(168, 170, 255) solid;
+    border-radius: 10px;
     top: 10%;
     right: 40%;
     position: absolute;
@@ -151,6 +153,7 @@ body {
 }
 
 .btn_0 {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
