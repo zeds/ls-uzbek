@@ -4,11 +4,13 @@ body {
 }
 
 .calculator {
-  top: 10%;
+  top: 20%;
   right: 40%;
   position: absolute;
   color: white;
   padding: 5px;
+  background: #1c82b1;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +30,8 @@ body {
   height: 50px;
   margin: 0 auto;
   margin-bottom: 5px;
-  background-color: #f84f4f00;
+  background-color: #fc6d6d;
+  border-radius: 10px;
   display: flex;
   justify-content: end;
   align-items: center;
