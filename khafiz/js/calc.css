@@ -1,0 +1,114 @@
+body {
+  background: #ff606000;
+  font-size: 30px;
+}
+
+.calculator {
+  top: 10%;
+  right: 40%;
+  position: absolute;
+  color: white;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc_container {
+  display: none;
+  margin: 15px;
+  border-radius: 5px;
+  color: white;
+}
+
+.ans {
+  padding: 0 10px;
+  width: 184px;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  background-color: #f84f4f00;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: rgb(2, 0, 0);
+}
+.ans.hidden {
+  visibility: hidden;
+}
+
+.x,
+.y,
+.z,
+.plus,
+.equals {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.dentaku {
+  display: grid;
+  margin: 5px;
+  grid-template-columns: 50px 50px 50px 50px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: #787777;
+  cursor: pointer;
+  border-radius: 24px;
+}
+
+.btn_c,
+.btn_p,
+.btn_pm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: #3f3f3f;
+  cursor: pointer;
+  border-radius: 24px;
+}
+
+.btn_plus,
+.btn_minus,
+.btn_multi,
+.btn_div,
+.btn_eq {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: #f8e801;
+  cursor: pointer;
+  border-radius: 24px;
+}
+
+.btn_0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98px;
+  height: 48px;
+  background: rgb(120, 119, 119);
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.dentaku_bottom {
+  display: grid;
+  grid-template-columns: 100px 50px 50px;
+  margin-bottom: 30px;
+}
