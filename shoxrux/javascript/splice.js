@@ -1,9 +1,9 @@
 
 
-let fruits = [1, 2];
-fruits.map(num => num * 2);
-let mevalar = document.querySelector(".meva").innerHTML = fruits;
-fruits.join();
+// let fruits = ['olma-1', 'olma-2', 'olma-3', 'olma-4', 1, 2];
+// fruits.map(num => num * 2);
+// let mevalar = document.querySelector(".meva").innerHTML = fruits;
+// fruits.join();
 // = fruits.indexOf('olma-1');
 
 // document.querySelector(".include").innerHTML = 'sizning elementingiz jadvalning' + ' ' + mevalar + ' ' + 'qatorida';
