@@ -339,3 +339,10 @@ btn_percent.addEventListener("click", function () {
 //     document.querySelector(".practic").innerHTML =
 //         "Hello " + person + equor;
 // }
+const fruits = ["ばなな", "りんご", "みかん"]
+fruits.push("いちご")
+fruits.unshift("メロン")
+fruits.pop()
+fruits.shift()
+fruits.splice(2, 0, "みかん");
+fruits.push("メロン");

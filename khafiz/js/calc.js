@@ -1,9 +1,8 @@
 let select = "x";
-let type = "+"; // + - * /
+let type = "+";
 let x = document.querySelector(".x");
 let y = document.querySelector(".y");
 let z = document.querySelector(".z");
-
 let btn_0 = document.querySelector(".btn_0");
 let btn_1 = document.querySelector(".btn_1");
 let btn_2 = document.querySelector(".btn_2");
@@ -19,11 +18,12 @@ let btn_minus = document.querySelector(".btn_minus");
 let btn_multi = document.querySelector(".btn_multi");
 let btn_div = document.querySelector(".btn_div");
 let btn_eq = document.querySelector(".btn_eq");
-let btn_clear = document.querySelector(".btn_clear");
-let btn_percent = document.querySelector(".btn_percent");
-let btn_plus_minus = document.querySelector(".btn_plus_minus");
+let btn_p = document.querySelector(".btn_p");
+let btn_c = document.querySelector(".btn_c");
+let btn_pm = document.querySelector(".btn_pm");
 let ans = document.querySelector(".ans");
-x.style.background = "A8AAFF";
+
+x.style.background = "#A8AAFF";
 
 x.addEventListener("click", function () {
   x.style.background = "#A8AAFF";
@@ -40,7 +40,6 @@ btn_0.addEventListener("click", function () {
   if (select === "x") {
     if (x.innerHTML !== "x") {
       x.innerHTML = x.innerHTML + "0";
-<<<<<<< HEAD
       ans.innerHTML = x.innerHTML;
     }
   } else {
@@ -48,15 +47,6 @@ btn_0.addEventListener("click", function () {
       y.innerHTML = y.innerHTML + "0";
       ans.innerHTML = y.innerHTML;
     }
-=======
-    }
-    ans.innerHTML = x.innerHTML;
-  } else {
-    if (y.innerHTML !== "y") {
-      y.innerHTML = y.innerHTML + "0";
-    }
-    ans.innerHTML = y.innerHTML;
->>>>>>> f6c22d9200e5705b61a80930c6d9a9e54e3a0abd
   }
 });
 btn_1.addEventListener("click", function () {
@@ -213,7 +203,6 @@ btn_9.addEventListener("click", function () {
   }
 });
 
-// =
 btn_eq.addEventListener("click", function () {
   let x = Number(document.querySelector(".x").innerHTML);
   let y = Number(document.querySelector(".y").innerHTML);
@@ -234,11 +223,15 @@ btn_eq.addEventListener("click", function () {
     case "%":
       z = x % y;
       break;
+    case "":
+      z = x % y;
+      break;
   }
 
   document.querySelector(".z").innerHTML = z;
   document.querySelector(".ans").innerHTML = z;
-  document.querySelector(".x").style.background = "#A8AAFF";
+
+  document.querySelector(".x").style.background = "#ffbb3c";
   document.querySelector(".y").style.background = "transparent";
 
   document.querySelector(".x").innerHTML = "x";
@@ -247,18 +240,6 @@ btn_eq.addEventListener("click", function () {
   select = "x";
 });
 
-let myTimer = null;
-
-function displayHello() {
-  if (ans.innerHTML === "999") {
-    ans.innerHTML = "";
-  } else {
-    ans.innerHTML = "999";
-  }
-
-  // clearInterval(myTimer);
-}
-
 let myTimeout = null;
 
 function myTrigger() {
@@ -266,53 +247,57 @@ function myTrigger() {
   clearInterval(myTimeout);
   myTimeout = null;
 }
-
-// +
 btn_plus.addEventListener("click", function () {
   document.querySelector(".plus").innerHTML = "+";
   x.style.background = "transparent";
-  y.style.background = "#A8AAFF";
+  y.style.background = "#ffbb3c";
   select = "y";
   type = "+";
 
   ans.classList.toggle("hidden");
-  myTimeout = setInterval(myTrigger, 50); // 0.5s
+  myTimeout = setInterval(myTrigger, 50);
 });
-// -
 btn_minus.addEventListener("click", function () {
   document.querySelector(".plus").innerHTML = "-";
   x.style.background = "transparent";
-  y.style.background = "#A8AAFF";
+  y.style.background = "#ffbb3c";
   select = "y";
   type = "-";
 
   ans.classList.toggle("hidden");
-  myTimeout = setInterval(myTrigger, 50); // 0.5s
+  myTimeout = setInterval(myTrigger, 50);
 });
-// *
 btn_multi.addEventListener("click", function () {
-  document.querySelector(".plus").innerHTML = "×";
+  document.querySelector(".plus").innerHTML = "x";
   x.style.background = "transparent";
-  y.style.background = "#A8AAFF";
+  y.style.background = "#ffbb3c";
   select = "y";
   type = "*";
 
   ans.classList.toggle("hidden");
-  myTimeout = setInterval(myTrigger, 50); // 0.5s
+  myTimeout = setInterval(myTrigger, 50);
 });
-// /(割る)
 btn_div.addEventListener("click", function () {
-  document.querySelector(".plus").innerHTML = "÷";
+  document.querySelector(".plus").innerHTML = "/";
   x.style.background = "transparent";
-  y.style.background = "#A8AAFF";
+  y.style.background = "#ffbb3c";
   select = "y";
   type = "/";
 
   ans.classList.toggle("hidden");
-  myTimeout = setInterval(myTrigger, 50); // 0.5s
+  myTimeout = setInterval(myTrigger, 50);
 });
-// clear
-btn_clear.addEventListener("click", function () {
+btn_p.addEventListener("click", function () {
+  document.querySelector(".plus").innerHTML = "%";
+  x.style.background = "transparent";
+  y.style.background = "#ffbb3c";
+  select = "y";
+  type = "%";
+
+  ans.classList.toggle("hidden");
+  myTimeout = setInterval(myTrigger, 50);
+});
+btn_c.addEventListener("click", function () {
   x.innerHTML = "x";
   y.innerHTML = "y";
   document.querySelector(".z").innerHTML = "z";
@@ -322,36 +307,17 @@ btn_clear.addEventListener("click", function () {
   document.querySelector(".x").style.background = "#A8AAFF";
   document.querySelector(".y").style.background = "transparent";
   document.querySelector(".plus").innerHTML = "+";
-
-  ans.classList.toggle("hidden");
-  myTimeout = setInterval(myTrigger, 50); // 0.5s
 });
-
-// ±
-btn_plus_minus.addEventListener("click", function () {
-  if (select === "x") {
+btn_pm.addEventListener("click", function () {
+  if (select === "x")
     if (x.innerHTML !== "x") {
       x.innerHTML = x.innerHTML * -1;
     }
-    ans.innerHTML = x.innerHTML;
-  }
-  if (select === "y") {
+  if (select === "y")
     if (y.innerHTML !== "y") {
       y.innerHTML = y.innerHTML * -1;
     }
-    ans.innerHTML = y.innerHTML;
-  }
-  ans.classList.toggle("hidden");
-  myTimeout = setInterval(myTrigger, 50); // 0.5s
-});
-// %
-btn_percent.addEventListener("click", function () {
-  document.querySelector(".plus").innerHTML = "%";
-  x.style.background = "transparent";
-  y.style.background = "#A8AAFF";
-  select = "y";
-  type = "%";
 
   ans.classList.toggle("hidden");
-  myTimeout = setInterval(myTrigger, 50); // 0.5s
+  myTimeout = setInterval(myTrigger, 50);
 });
