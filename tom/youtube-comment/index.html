@@ -7,9 +7,12 @@
 		<title>Document</title>
 		<style>
 			/* .added_comment {
-      background: red;
-    }
-    */
+				background: red;
+			} */
+
+			.box {
+				display: flex;
+			}
 		</style>
 	</head>
 
@@ -21,6 +24,11 @@
 		<div id="div1"></div>
 
 		<script language="javascript" type="text/javascript">
+			const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+			fruits.splice(2, 1, "Lemon", "Kiwi");
+			console.log("fruits=", fruits);
+
 			const div1 = document.getElementById("div1");
 
 			const comments = [
@@ -42,13 +50,15 @@
 			];
 
 			// deleteComment("0a2c283a-0af7-4089-a9b2-4f2b850b4244")
-
 			function deleteComment(id) {
 				for (let i = 0; i < comments.length; i++) {
 					if (id === comments[i].id) {
-						alert(comments[i].comment + "を削除しますか？");
+						// alert(comments[i].comment + "を削除しますか？");
+						comments.splice(i, 1);
 					}
 				}
+				console.log("comments=", comments);
+				showComments();
 			}
 
 			function generateUUID() {
@@ -74,18 +84,26 @@
 				clearComments();
 
 				for (let i = 0; i < comments.length; i++) {
+					const box = document.createElement("div");
+					box.className = "box";
+
 					const newDiv1 = document.createElement("div");
 					newDiv1.className = "added_comment";
 					newDiv1.innerHTML = comments[i].name + " " + comments[i].comment;
 
 					const button = document.createElement("button");
 					button.innerHTML = "削除";
+					button.className = "added_comment";
 					button.addEventListener("click", function () {
 						deleteComment(comments[i].id);
 					});
 					// <div class="added_comment">鈴木 明日にして</div>
-					div1.appendChild(newDiv1);
-					div1.appendChild(button);
+					// div1.appendChild(newDiv1);
+					// div1.appendChild(button);
+					box.appendChild(newDiv1);
+					box.appendChild(button);
+
+					div1.appendChild(box);
 				}
 				console.log(comments);
 			};
