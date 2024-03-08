@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="search" type="text">
+    <button id="btn">comment</button>
+    <div id="div1"></div>
+
+
+    <script>
+        const div1 = document.getElementById("div1");
+        const comments = [{ name: "shoxrux", comment: "japan" }];
+
+        showComments = () => {
+            for (let i = 0; i < comments.length; i++) {
+                const newDiv1 = document.createElement("div");
+                newDiv1.innerHTML = comments[i].name + ' :' + comments[i].comment;
+                div1.appendChild(newDiv1);
+            }
+
+
+        }
+
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", function () {
+            const clearComments = () => {
+                const all = document.querySelectorAll(".comments");
+                for (let i = 0; i < all.length; i++) {
+                    all[i].remove();
+                }
+            }
+
+            clearComments()
+
+            const value = document.getElementById("search").value;
+            const obj = {
+                name: "shoxrux",
+                comment: value
+            }
+
+            comments.unshift(obj);
+            clearComments();
+            showComments();
+            console.log(value);
+
+        })
+
+    </script>
+</body>
+
+</html>
