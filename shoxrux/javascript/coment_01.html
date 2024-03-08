@@ -9,14 +9,17 @@
 </head>
 
 <body>
-    <input id="search" type="text">
-    <button id="btn">comment</button>
+    <input id="search" type="text" placeholder="コメント">
+    <button id="btn">コメント</button>
     <div id="div1"></div>
 
 
     <script>
         const div1 = document.getElementById("div1");
-        const comments = [{ name: "shoxrux", comment: "japan" }];
+        const comments = [
+            { name: "友見", comment: "優しい二匹に癒されます" },
+            { name: "ly9", comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀" },
+            { name: "akea", comment: "そうなのねー😢 家族だね😭" },];
 
         showComments = () => {
             for (let i = 0; i < comments.length; i++) {
