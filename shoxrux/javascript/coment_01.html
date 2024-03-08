@@ -3,54 +3,55 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Element Example</title>
-    <style>
-        /* CSS styling for input and button */
-        #inputText {
-            padding: 10px;
-            font-size: 16px;
-        }
-
-        #addButton {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        #container {
-            margin-top: 20px;
-        }
-
-        .newElement {
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-    </style>
+    <title>Document</title>
 </head>
 
 <body>
-    <div id="container">
-        <input type="text" id="inputText" placeholder="コメント">
-        <button id="addButton">コメント</button>
-    </div>
-    <div id="output"></div>
+    <input id="search" type="text">
+    <button id="btn">comment</button>
+    <div id="div1"></div>
+
 
     <script>
-        // JavaScript code to create new element from input
-        document.getElementById("addButton").addEventListener("click", function () {
-            var inputValue = document.getElementById("inputText").value;
+        const div1 = document.getElementById("div1");
+        const comments = [{ name: "shoxrux", comment: "japan" }];
 
-            // Create a new element
-            var newElement = document.createElement("div");
-            newElement.classList.add("newElement");
-            newElement.textContent = inputValue;
+        showComments = () => {
+            for (let i = 0; i < comments.length; i++) {
+                const newDiv1 = document.createElement("div");
+                newDiv1.innerHTML = comments[i].name + ' :' + comments[i].comment;
+                div1.appendChild(newDiv1);
+            }
 
-            document.getElementById("output").appendChild(newElement);
 
-            document.getElementById("inputText").value = "";
-        });
+        }
+
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", function () {
+            const clearComments = () => {
+                const all = document.querySelectorAll(".comments");
+                for (let i = 0; i < all.length; i++) {
+                    all[i].remove();
+                }
+            }
+
+            clearComments()
+
+            const value = document.getElementById("search").value;
+            const obj = {
+                name: "shoxrux",
+                comment: value
+            }
+
+            comments.unshift(obj);
+            clearComments();
+            showComments();
+            console.log(value);
+
+        })
+
     </script>
 </body>
 
