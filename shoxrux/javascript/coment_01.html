@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Element Example</title>
+    <style>
+        /* CSS styling for input and button */
+        #inputText {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #addButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #container {
+            margin-top: 20px;
+        }
+
+        .newElement {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <input type="text" id="inputText" placeholder="コメント">
+        <button id="addButton">コメント</button>
+    </div>
+    <div id="output"></div>
+
+    <script>
+        // JavaScript code to create new element from input
+        document.getElementById("addButton").addEventListener("click", function () {
+            var inputValue = document.getElementById("inputText").value;
+
+            // Create a new element
+            var newElement = document.createElement("div");
+            newElement.classList.add("newElement");
+            newElement.textContent = inputValue;
+
+            document.getElementById("output").appendChild(newElement);
+
+            document.getElementById("inputText").value = "";
+        });
+    </script>
+</body>
+
+</html>

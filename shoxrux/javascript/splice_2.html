@@ -1,36 +1,108 @@
-< !DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+        }
 
-    <body>
-        <div class="ans">ここに答え</div>
+        .commentButton {
+            background-color: #f2f2f2;
+            color: #909090;
+            border: none;
+            border-radius: 20px;
+            padding: 7px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="inputText" placeholder="コメント"><button class="commentButton">コメント</button>
+
+    <div class="comments"></div>
 
 
-        <script>
-            const arr = ["バナナ", "リンゴ", "みかん"]
-
-            // arr.splice(0,1)
-            arr.splice(0, 2, "メロン", "イチゴ")
-            document.querySelector(".ans").innerHTML = arr
-
-                        // shox
-                        // let ansSplice = document.querySelector(".ans").arr.splice(0,1);
-                        // ansSplice.pop();
 
 
+    <script>
 
-                        //mexroj
-                        // document.querySelector(".ans").innerHTML =arr[1];
+        const comments = [
+            { name: "友見", comment: "優しい二匹に癒されます" },
+            { name: "ly9", comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀" },
+            { name: "akea", comment: "そうなのねー😢 家族だね😭" },
+        ]
+
+        const divComments = document.querySelector(".comments")
 
 
-        </script>
+        //コメントボタンが押されたら、alert("押された")
 
-    </body>
+        // alsu
+        // document.querySelector(".commentButton").addEventListener("click", function (){
+        //   alert("押された")
+        // })
 
-    </html>
+        // asila
+        // document.querySelector(".commentButton").addEventListener("click", function (){
+        //   alert("押された")
+        // })
+
+
+        // document.querySelector(".commentButton").addEventListener("click", function (){
+        //   alert("ok")
+        // })
+
+
+        // khafiz
+        // document.querySelector(".commentButton").addEventListener("click", function (){
+        // alert("ok)
+        // })
+
+
+        //shox
+        //    1
+        // document.querySelector(".commentButton").addEventListener("click", function(){ alert("押された!"); });
+        //2
+        const inputText = document.getElementById("inputText").value;
+        document.querySelector(".commentButton").addEventListener("click", function () {
+            console.log(inputText)
+            let obj = { name: "shox", comment: inputText }
+            comments.unshift(obj)
+
+            console.log(comments)
+        });
+        // shox
+
+
+
+
+
+
+
+
+
+
+
+
+
+        for (let i = 0; i < comments.length; i++) {
+            let newDiv = document.createElement("div");
+            newDiv.innerHTML = comments[i].name + " ：" + comments[i].comment;
+            divComments.appendChild(newDiv);
+        }
+
+
+
+    // document.querySelector(".ans").innerHTML = obj.ringo
+    </script>
+
+</body>
+
+</html>
