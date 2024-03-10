@@ -40,7 +40,6 @@ btn_0.addEventListener("click", function () {
   if (select === "x") {
     if (x.innerHTML !== "x") {
       x.innerHTML = x.innerHTML + "0";
-<<<<<<< HEAD
       ans.innerHTML = x.innerHTML;
     }
   } else {
@@ -48,16 +47,8 @@ btn_0.addEventListener("click", function () {
       y.innerHTML = y.innerHTML + "0";
       ans.innerHTML = y.innerHTML;
     }
-=======
-    }
-    ans.innerHTML = x.innerHTML;
-  } else {
-    if (y.innerHTML !== "y") {
-      y.innerHTML = y.innerHTML + "0";
-    }
-    ans.innerHTML = y.innerHTML;
->>>>>>> f6c22d9200e5705b61a80930c6d9a9e54e3a0abd
   }
+  ans.innerHTML = x.innerHTML;
 });
 btn_1.addEventListener("click", function () {
   if (select === "x") {

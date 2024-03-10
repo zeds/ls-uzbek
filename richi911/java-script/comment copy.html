@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .added_comment {
+      background: red;
+    }
+    */
+    </style>
+  </head>
+
+  <body>
+    <input type="text" id="name" placeholder="お名前" />
+    <input type="text" id="search" placeholder="コメント" />
+
+    <button id="btn">コメント</button>
+    <div id="div1"></div>
+
+    <script language="javascript" type="text/javascript">
+      const div1 = document.getElementById("div1");
+
+      const comments = [
+        {
+          id: "asdlfkasjfdas",
+          name: "佐藤",
+          comment: "優しい二匹に癒されます",
+        },
+        {
+          id: "afasdfasdfa",
+          name: "高橋",
+          comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+        },
+        {
+          id: "adfasdfsaf",
+          name: "山田",
+          comment: "そうなのねー😢 家族だね😭",
+        },
+      ];
+
+      const showComments = () => {
+        clearComments();
+
+        for (let i = 0; i < comments.length; i++) {
+          const newDiv1 = document.createElement("div");
+          newDiv1.className = "added_comment";
+          newDiv1.innerHTML = comments[i].name + " " + comments[i].comment;
+          // <div class="added_comment">鈴木 明日にして</div>
+
+          div1.appendChild(newDiv1);
+        }
+        console.log(comments);
+      };
+
+      const clearComments = () => {
+        const all = document.querySelectorAll(".added_comment");
+        for (let i = 0; i < all.length; i++) {
+          all[i].remove();
+        }
+      };
+
+      //コメントボタンが押された時、addEventListerで書いてください=>リッチさん
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", function () {
+        const inputName = document.getElementById("name").value;
+        const inputComment = document.getElementById("search").value;
+
+        const obj = {
+          name: inputName,
+          comment: inputComment,
+        };
+        comments.unshift(obj);
+        showComments();
+        document.getElementById("name").value = "";
+        document.getElementById("search").value = "";
+        document.getElementById("name").focus();
+      });
+
+      showComments();
+    </script>
+  </body>
+</html>
