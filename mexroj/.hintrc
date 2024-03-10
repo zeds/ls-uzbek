@@ -3,21 +3,11 @@
     "development"
   ],
   "hints": {
-    "axe/text-alternatives": "off",
-    "axe/name-role-value": [
-      "default",
-      {
-        "button-name": "off"
-      }
-    ],
     "button-type": "off",
-    "detect-css-reflows/composite": "off",
-    "compat-api/css": [
+    "axe/forms": [
       "default",
       {
-        "ignore": [
-          "scrollbar-width"
-        ]
+        "label": "off"
       }
     ]
   }
