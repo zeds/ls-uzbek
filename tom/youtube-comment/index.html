@@ -7,23 +7,29 @@
 		<title>Document</title>
 		<style>
 			/* .added_comment {
-				background: red;
-			} */
+        background: red;
+      }
+     */
 
 			.box {
 				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				/* background: red; */
+				margin-bottom: 5px;
 			}
 		</style>
 	</head>
 
 	<body>
 		<input type="text" id="name" placeholder="お名前" />
-		<input type="text" id="search" placeholder="コメント" />
+		<input type="text" id="comment" placeholder="コメント" />
 
-		<button id="btn">コメント</button>
+		<button id="btnComment">コメント</button>
 		<div id="div1"></div>
 
 		<script language="javascript" type="text/javascript">
+			let editMode = false; // 編集ボタンが押された時に、editMode = true
 			const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
 			fruits.splice(2, 1, "Lemon", "Kiwi");
@@ -53,7 +59,6 @@
 			function deleteComment(id) {
 				for (let i = 0; i < comments.length; i++) {
 					if (id === comments[i].id) {
-						// alert(comments[i].comment + "を削除しますか？");
 						comments.splice(i, 1);
 					}
 				}
@@ -87,21 +92,39 @@
 					const box = document.createElement("div");
 					box.className = "box";
 
-					const newDiv1 = document.createElement("div");
-					newDiv1.className = "added_comment";
-					newDiv1.innerHTML = comments[i].name + " " + comments[i].comment;
+					const divComment = document.createElement("div");
+					divComment.className = "added_comment";
+					divComment.innerHTML =
+						comments[i].name + " " + comments[i].comment;
 
-					const button = document.createElement("button");
-					button.innerHTML = "削除";
-					button.className = "added_comment";
-					button.addEventListener("click", function () {
+					//編集ボタン
+					const editButton = document.createElement("button");
+					editButton.innerHTML = "編集";
+					editButton.className = "added_comment";
+					editButton.addEventListener("click", function () {
+						// alert("名前:" + comments[i].name)
+						// alert("コメント:" + comments[i].comment)
+						document.getElementById("name").value = comments[i].name;
+						document.getElementById("comment").value =
+							comments[i].comment;
+					});
+
+					//削除ボタン
+					const deleteButton = document.createElement("button");
+					deleteButton.innerHTML = "削除";
+					deleteButton.className = "added_comment";
+					deleteButton.addEventListener("click", function () {
 						deleteComment(comments[i].id);
 					});
-					// <div class="added_comment">鈴木 明日にして</div>
-					// div1.appendChild(newDiv1);
-					// div1.appendChild(button);
-					box.appendChild(newDiv1);
-					box.appendChild(button);
+
+					// divRightの中に、ボタンを入れる
+					const divRight = document.createElement("div");
+					divRight.className = "added_comment";
+					divRight.appendChild(editButton);
+					divRight.appendChild(deleteButton);
+
+					box.appendChild(divComment);
+					box.appendChild(divRight);
 
 					div1.appendChild(box);
 				}
@@ -116,22 +139,32 @@
 			};
 
 			//コメントボタンが押された時、addEventListerで書いてください=>リッチさん
-			const btn = document.getElementById("btn");
-			btn.addEventListener("click", function () {
-				const inputName = document.getElementById("name").value;
-				const inputComment = document.getElementById("search").value;
-				const commentId = generateUUID();
+			const btnComment = document.getElementById("btnComment");
 
-				const obj = {
-					id: commentId,
-					name: inputName,
-					comment: inputComment,
-				};
-				comments.unshift(obj);
-				showComments();
-				document.getElementById("name").value = "";
-				document.getElementById("search").value = "";
-				document.getElementById("name").focus();
+			btnComment.addEventListener("click", function () {
+				// 宿題
+				if (editMode === true) {
+					// idから修正する配列をみつける
+					// 中身を置き換える
+					// 再表示表示
+
+					editMode = false;
+				} else {
+					const inputName = document.getElementById("name").value;
+					const inputComment = document.getElementById("comment").value;
+					const commentId = generateUUID();
+
+					const obj = {
+						id: commentId,
+						name: inputName,
+						comment: inputComment,
+					};
+					comments.unshift(obj);
+					showComments();
+					document.getElementById("name").value = "";
+					document.getElementById("comment").value = "";
+					document.getElementById("name").focus();
+				}
 			});
 
 			showComments();
