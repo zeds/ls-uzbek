@@ -1,150 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			/* .added_comment {
+        background: red;
+      } */
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    img {
-      width: 20px;
-      height: 20px;
-      border-radius: 10px;
-    }
+			.box {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				/* background: blue; */
+				/* margin-bottom: 5px; */
+			}
+		</style>
+	</head>
 
-    .commentButton {
-      background-color: #f2f2f2;
-      color: #909090;
-      border: none;
-      border-radius: 20px;
-      padding: 7px 10px;
-    }
-  </style>
-</head>
+	<body>
+		<input type="text" id="name" placeholder="お名前" />
+		<input type="text" id="comment" placeholder="コメント" />
 
-<body>
-  <input type="text" id="inputText" placeholder="コメント"><button class="commentButton">コメント</button>
+		<button id="btnComment">コメント</button>
+		<div id="div1"></div>
 
-  <div class="comments"></div>
+		<script language="javascript" type="text/javascript">
+			let editIndex = 0;
+			let editMode = false;
+			const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
+			fruits.splice(2, 1, "Lemon", "Kiwi");
+			console.log("fruits=", fruits);
 
+			const div1 = document.getElementById("div1");
 
+			const comments = [
+				{
+					id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+					name: "佐藤",
+					comment: "優しい二匹に癒されます",
+				},
+				{
+					id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
+					name: "高橋",
+					comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+				},
+				{
+					id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
+					name: "山田",
+					comment: "そうなのねー😢 家族だね😭",
+				},
+			];
 
-  <script>
+			//削除ボタンが押された
+			function deleteComment(id) {
+				for (let i = 0; i < comments.length; i++) {
+					if (id === comments[i].id) {
+						comments.splice(i, 1);
+					}
+				}
+				console.log("comments=", comments);
+				showComments();
+			}
 
-    const comments = [
-      {name: "友見", comment: "優しい二匹に癒されます"},
-      {name: "ly9", comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀"},
-      {name: "akea", comment: "そうなのねー😢 家族だね😭"},
-    ]
+			function generateUUID() {
+				var d = new Date().getTime();
+				if (
+					typeof performance !== "undefined" &&
+					typeof performance.now === "function"
+				) {
+					d += performance.now();
+				}
+				return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+					/[xy]/g,
+					function (c) {
+						var r = (d + Math.random() * 16) % 16 | 0;
+						d = Math.floor(d / 16);
+						return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
+					}
+				);
+			}
 
-    const divComments = document.querySelector(".comments")
+			const showComments = () => {
+				clearComments();
 
+				for (let i = 0; i < comments.length; i++) {
+					const box = document.createElement("div");
+					box.className = "box";
 
-    //コメントボタンが押されたら、alert("押された")
+					const divComment = document.createElement("div");
+					divComment.className = "added_comment";
+					divComment.innerHTML =
+						comments[i].name + " : " + comments[i].comment;
 
-    // alsu
-    // document.querySelector(".commentButton").addEventListener("click", function (){
-    //   alert("押された")
-    // })
+					const editButton = document.createElement("button");
+					editButton.innerHTML = "編集";
+					editButton.className = "added_comment";
 
-    // asila
-    // document.querySelector(".commentButton").addEventListener("click", function (){
-    // //   alert("押された")
-    // let newComment = {
-    //   name: "asila",
-    //   comment:document.getElementById("inputText").value") 
-    // }    // })
+					//編集ボタンが押された
+					editButton.addEventListener("click", function () {
+						editIndex = i;
+						document.getElementById("name").value = comments[i].name;
+						document.getElementById("comment").value =
+							comments[i].comment;
+						editMode = true;
+						document.getElementById("btnComment").innerHTML = "編集完了";
+					});
 
+					const deleteButton = document.createElement("button");
+					deleteButton.innerHTML = "編集";
+					deleteButton.className = "added_comment";
+					deleteButton.addEventListener("click", function () {
+						deleteComment(comments[i].id);
+					});
 
-    // document.querySelector(".commentButton").addEventListener("click", function (){
-    //   alert("ok")
-    // })
+					const divRight = document.createElement("div");
+					divRight.className = "added_comment";
+					divRight.appendChild(editButton);
+					divRight.appendChild(deleteButton);
 
+					box.appendChild(divComment);
+					box.appendChild(divRight);
 
-    // khafiz
-    // document.querySelector(".commentButton").addEventListener("click", function (){
-    // alert("ok)
-    // })
+					div1.appendChild(box);
+				}
+				console.log(comments);
+			};
 
+			const clearComments = () => {
+				const all = document.querySelectorAll(".added_comment");
+				for (let i = 0; i < all.length; i++) {
+					all[i].remove();
+				}
+			};
 
-    //shox
-    //    1
-    // document.querySelector(".commentButton").addEventListener("click", function(){ alert("押された!"); });
-    //2
-    // document.querySelector(".commentButton").addEventListener("click", function () {
-    //   const inputText = document.getElementById("inputText").value;
-    //   console.log(inputText)
-    //   alert(inputText)
-    //   let obj = {name: "shox", comment: inputText}
-    //   comments.unshift(obj)
+			const btnComment = document.getElementById("btnComment");
 
-    //   console.log(comments)
-    // });
-    // shox
+			//コメントボタン、または編集完了ボタンが押された
+			btnComment.addEventListener("click", function () {
+				const inputName = document.getElementById("name").value;
+				const inputComment = document.getElementById("comment").value;
 
+				if (editMode === true) {
+					comments[editIndex].name = inputName;
+					comments[editIndex].comment = inputComment;
+					showComments();
 
-    // sarvi
-    // document.querySelector(".commentButton").addEventListener("click", function (){
-    //   alert("押された！")
-    // });
+					editMode = false;
+					document.getElementById("btnComment").innerHTML = "コメント";
+				} else {
+					const commentId = generateUUID();
 
+					const obj = {
+						id: commentId,
+						name: inputName,
+						comment: inputComment,
+					};
+					comments.unshift(obj);
+					showComments();
+					document.getElementById("name").value = "";
+					document.getElementById("comment").value = "";
+					document.getElementById("name").focus();
+				}
+			});
 
-
-
-
-
-
-
-    for ( let i = 0 ; i < comments.length ; i++ ){
-      let newDiv = document.createElement("div");
-      newDiv.className = "comment"
-      newDiv.innerHTML = comments[i].comment;
-      divComments.appendChild(newDiv);
-    }
-
-    //mexroj
-    document.querySelector(".commentButton").addEventListener("click", function () {
-
-      const clearComments = () => {
-        const all = document.querySelectorAll(".comments");
-        for (let i = 0; i < all.length; i++) {
-          all[i].remove();
-        }
-      }
-
-      clearComments()
-
-      let newComment = {
-        name: "mex",
-        comment: document.getElementById("inputText").value
-      }
-      comments.unshift(newComment)
-      console.log(comments)
-
-
-      for ( let i = 0 ; i < comments.length ; i++ ){
-        let newDiv = document.createElement("div");
-        newDiv.innerHTML = comments[i].comment;
-        divComments.appendChild(newDiv);
-      }
-
-    })
-
-
-    // shox
-    // for (let i = 0; i < comments.length; i++) {
-    //   let newDiv = document.createElement("div");
-    //   newDiv.innerHTML = comments[i].name + " ：" + comments[i].comment;
-    //   divComments.appendChild(newDiv);
-    // }
-
-
-
-    // document.querySelector(".ans").innerHTML = obj.ringo
-  </script>
-
-</body>
-
+			showComments();
+		</script>
+	</body>
 </html>
