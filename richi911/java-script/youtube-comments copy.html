@@ -28,6 +28,7 @@
     <div id="div1"></div>
 
     <script language="javascript" type="text/javascript">
+      let editIndex = 0;
       let editMode = false;
       const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
@@ -54,6 +55,7 @@
         },
       ];
 
+      //削除ボタンが押された
       function deleteComment(id) {
         for (let i = 0; i < comments.length; i++) {
           if (id === comments[i].id) {
@@ -91,14 +93,19 @@
 
           const divComment = document.createElement("div");
           divComment.className = "added_comment";
-          divComment.innerHTML = comments[i].name + "  " + comments[i].comment;
+          divComment.innerHTML = comments[i].name + " : " + comments[i].comment;
 
           const editButton = document.createElement("button");
           editButton.innerHTML = "編集";
           editButton.className = "added_comment";
+
+          //編集ボタンが押された
           editButton.addEventListener("click", function () {
+            editIndex = i;
             document.getElementById("name").value = comments[i].name;
             document.getElementById("comment").value = comments[i].comment;
+            editMode = true;
+            document.getElementById("btnComment").innerHTML = "編集完了";
           });
 
           const deleteButton = document.createElement("button");
@@ -130,12 +137,19 @@
 
       const btnComment = document.getElementById("btnComment");
 
+      //コメントボタン、または編集完了ボタンが押された
       btnComment.addEventListener("click", function () {
+        const inputName = document.getElementById("name").value;
+        const inputComment = document.getElementById("comment").value;
+
         if (editMode === true) {
+          comments[editIndex].name = inputName;
+          comments[editIndex].comment = inputComment;
+          showComments();
+
           editMode = false;
+          document.getElementById("btnComment").innerHTML = "コメント";
         } else {
-          const inputName = document.getElementById("name").value;
-          const inputComment = document.getElementById("comment").value;
           const commentId = generateUUID();
 
           const obj = {
