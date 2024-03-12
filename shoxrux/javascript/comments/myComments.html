@@ -21,8 +21,14 @@
 
     .ans {
         background-color: rgb(219, 219, 219);
-        padding: 5px 15px;
+        padding: 10px 35px;
         border-radius: 10px;
+    }
+
+    .clear {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
     }
 
     .enter_value {
@@ -56,8 +62,8 @@
 
 
     <script>
-
-
+        let editing = true;
+        // 1
         const comments = [
             {
                 id: "4f550e71-9705-42bb-85d9-5826e08780f7",
@@ -76,43 +82,102 @@
             },
 
         ];
+        // 1
 
-        // show comments ===========>start
+        //2 show comments ===========>start
         function showComments() {
             for (let i = 0; i < comments.length; i++) {
-                const elem = document.createElement("div");
+                let waku = document.createElement("div");
+                waku.classList = "clear"
+
+                // new values
+                let elem = document.createElement("div");
                 elem.classList = "clear"
                 elem.innerHTML = comments[i].name + ' : ' + comments[i].comment;
-                ans.appendChild(elem);
+                waku.appendChild(elem);
+
+                // izmentiz btn
+                elem = document.createElement("button");
+                elem.classList = "clear"  // <button class="clear">削除</button>
+                elem.innerHTML = "編集"
+                waku.appendChild(elem);
+                elem.addEventListener("click", function () {
+
+                    // 仮
+                    document.getElementById("name").value = "佐藤"
+                    document.getElementById("comment").value = "優しい二匹に癒されます"
+
+                    // 宿題
+                    // クリックされた行の名前と、コメントを取得して、
+                    // inputに表示
+
+                    document.getElementById("commentButton").innerHTML = "編集"
+                    editing = true;
+
+                })
+                // izmentiz btn
+
+
+                // =====button=====
+                elem = document.createElement("button");
+                elem.classList = "clear"
+                elem.innerHTML = '編集'
+                waku.appendChild(elem);
+
+                elem.addEventListener("click", function () {
+                    alert("commentの" + i + "番目を削除しました")
+                    comments.splice(i, 1)
+                    clearComments();
+                    showComments();
+                })
+                // =====button=====
+
+                ans.appendChild(waku);
             }
         }
 
-        // show comments ===========>end
+        //2 show comments ===========>end
 
-        // clear comment ===========>start
+        //3 clear comment ===========>start
         function clearComments() {
-            const all = document.querySelectorAll(".added_comment");
+            const all = document.querySelectorAll(".clear");
             for (let i = 0; i < all.length; i++) {
                 all[i].remove();
             }
         }
-        // clear comment ===========>end
+        //3 clear comment ===========>end
 
         const ans = document.querySelector(".ans");
         const commentButton = document.getElementById("commentButton");
 
-        // btn ======comment=====>
+        //4 btn ======comment=====>
 
         commentButton.addEventListener("click", function () {
+            if (editing !== true) {
+                alert("編集モードです")
+                // 宿題
+                // inputに入力された値を取得
+                // それを、comments arrayの書き換える
 
+                editing = false
+            } else {
+                alert("コメントモードです")
+            }
             let obj = {
                 id: "4f550e71-9705-42bb-85d9-5826e08780f7",
-                name: "Shoxrux",
-                comment: "Assalomualaykum",
+                name: document.getElementById('name').value,
+                comment: document.getElementById('comment').value,
             };
             comments.unshift(obj);
+            clearComments();
             showComments();
-        })
+        });
+        //4 btn ======comment=====>
+
+        // if (obj.name === '' || obj.comment === '') {
+        //     alert("please enter name and comment!");
+        //     return;
+        // }
         // btn ======comment=====>
 
         // elem.innerHTML = "Shoxrux";
