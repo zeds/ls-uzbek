@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+
+    .container {
+        background-color: rgb(181, 255, 251);
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .ans {
+        background-color: rgb(219, 219, 219);
+        padding: 5px 15px;
+        border-radius: 10px;
+    }
+
+    .enter_value {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+
+    .enter_value input {
+        outline: none;
+    }
+
+    .enter_value #commentButton {
+        cursor: pointer;
+        outline: none;
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <div class="ans">
+            <div class="enter_value">
+                <input type="text" id="name" placeholder="お名前">
+                <input type="text" id="comment" placeholder="コメント">
+                <button id="commentButton">コメント</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+
+        const comments = [
+            {
+                id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+                name: "佐藤",
+                comment: "優しい二匹に癒されます",
+            },
+            {
+                id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
+                name: "高橋",
+                comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+            },
+            {
+                id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
+                name: "山田",
+                comment: "そうなのねー😢 家族だね😭",
+            },
+
+        ];
+
+        // show comments ===========>start
+        function showComments() {
+            for (let i = 0; i < comments.length; i++) {
+                const elem = document.createElement("div");
+                elem.classList = "clear"
+                elem.innerHTML = comments[i].name + ' : ' + comments[i].comment;
+                ans.appendChild(elem);
+            }
+        }
+
+        // show comments ===========>end
+
+        // clear comment ===========>start
+        function clearComments() {
+            const all = document.querySelectorAll(".added_comment");
+            for (let i = 0; i < all.length; i++) {
+                all[i].remove();
+            }
+        }
+        // clear comment ===========>end
+
+        const ans = document.querySelector(".ans");
+        const commentButton = document.getElementById("commentButton");
+
+        // btn ======comment=====>
+
+        commentButton.addEventListener("click", function () {
+
+            let obj = {
+                id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+                name: "Shoxrux",
+                comment: "Assalomualaykum",
+            };
+            comments.unshift(obj);
+            showComments();
+        })
+        // btn ======comment=====>
+
+        // elem.innerHTML = "Shoxrux";
+        // ans.appendChild(elem);
+
+
+
+        showComments();
+
+    </script>
+
+
+</body>
+
+</html>

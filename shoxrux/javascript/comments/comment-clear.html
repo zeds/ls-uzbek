@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="name" type="text" placeholder="Enter your name">
+    <input id="comment" type="text" placeholder="comment here">
+    <button id="commentButton">コメント</button>
+    <button id="clearButton">clear</button>
+
+    <div id="lists">
+
+    </div>
+
+    <script>
+        const comments = [
+            {
+                id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+                name: "佐藤",
+                comment: "優しい二匹に癒されます",
+            },
+            {
+                id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
+                name: "高橋",
+                comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+            },
+            {
+                id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
+                name: "山田",
+                comment: "そうなのねー😢 家族だね😭",
+            },
+        ];
+
+        document.getElementById("commentButton").addEventListener("click", function () {
+            let parent = document.getElementById("lists")
+            // inputの値を取得
+            // オブジェクトを作成 { name: xxxx, comment: xxx}
+            // commentsにオブジェクトを追加
+            let name = document.getElementById("name").value;
+            let comment = document.getElementById("comment").value;
+            let obj = { id: "111", name: name, comment }
+            comments.unshift(obj)
+
+            // 今表示されているコメントを全て消す
+            clearElements()
+
+            // commentsを表示
+            showComments()
+
+        })
+
+        document.getElementById("clearButton").addEventListener("click", function () {
+            clearElements()
+            comments.splice(0, comments.length)
+        })
+
+        function showComments() {
+            let parent = document.getElementById("lists")
+
+            // commentsを表示したい
+            for (let i = 0; i < comments.length; i++) {
+                let elem = document.createElement("div")
+                elem.className = "elem"
+                elem.innerHTML = comments[i].name + " " + comments[i].comment
+                parent.appendChild(elem)
+            }
+
+        }
+
+        function clearElements() {
+            const all = document.querySelectorAll(".elem");
+            for (let i = 0; i < all.length; i++) {
+                all[i].remove();
+            }
+        }
+
+        // commentsを表示
+        showComments()
+
+
+    </script>
+
+</body>
+
+</html>
