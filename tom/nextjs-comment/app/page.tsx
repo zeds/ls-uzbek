@@ -18,8 +18,13 @@ export default function Home() {
 	const refComment = useRef(null);
 
 	useEffect(() => {
+
+		let x = 18
+		console.log("x=", x)
+		
 		const comments = [
 			{
+				
 				id: "4f550e71-9705-42bb-85d9-5826e08780f7",
 				name: "佐藤",
 				comment: "優しい二匹に癒されます",
@@ -35,8 +40,10 @@ export default function Home() {
 				comment: "そうなのねー😢 家族だね😭",
 			},
 		];
+		console.log("name=",comments[2].name)
 		setDataComments(comments);
 	}, []);
+
 
 	const clickComment = () => {
 		console.log(inputName);
