@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .ans {
-        background: skyblue;
-      }
 
-      .clear {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5px;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .ans {
+      background: skyblue;
+    }
 
-  <body>
-    <input type="text" id="name" placeholder="お名前" />
-    <input type="text" id="comment" placeholder="コメント" />
-    <button id="commentButton">コメント</button>
-    <div class="ans"></div>
+    .clear {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="text" id="name" placeholder="お名前">
+  <input type="text" id="comment" placeholder="コメント">
+  <button id="commentButton">コメント</button>
+  <div class="ans">
     <!-- <div class="clear">佐藤</div>
       <div class="clear">高橋</div>
       <div class="clear">山田</div>
@@ -31,9 +33,9 @@
     <script>
       let editing = false;
 
-      const fruits = ["apple", "banana", "orange"];
-      fruits.splice(1, 1);
-      console.log("fruits=", fruits);
+      const fruits = ['apple', 'banana', 'orange'];
+      fruits.splice(1, 1)
+      console.log("fruits=", fruits)
 
       const comments = [
         {
@@ -55,41 +57,50 @@
       // comments.splice(1,1)
       // console.log("comments=", comments)
 
+
+
       // commentsを表示
       function showComments() {
         for (let i = 0; i < comments.length; i++) {
+
           // コメントと削除ボタン用のdivを作る
           let waku = document.createElement("div");
-          waku.classList = "clear";
+          waku.classList = "clear"
 
-          // 佐藤： おはようございます
+          // 佐藤： おはようございます          
           let elem = document.createElement("div");
-          elem.classList = "clear"; // <div class="clear">佐藤:あいうえお</div>
+          elem.classList = "clear"  // <div class="clear">佐藤:あいうえお</div>
           elem.innerHTML = comments[i].name + ": " + comments[i].comment;
           waku.appendChild(elem);
 
           // 編集ボタン
           elem = document.createElement("button");
-          elem.classList = "clear"; // <button class="clear">編集</button>
-          elem.innerHTML = "編集";
+          elem.classList = "clear"  // <button class="clear">削除</button>
+          elem.innerHTML = "編集"
           waku.appendChild(elem);
           elem.addEventListener("click", function () {
-            // 仮
-            document.getElementById("name").value = comments[i].name;
-            document.getElementById("comment").value = comments[i].comment;
 
-            // 宿題
+            // 仮
+            document.getElementById("name").value = "佐藤"
+            document.getElementById("comment").value = "優しい二匹に癒されます"
+
+            // 
             // クリックされた行の名前と、コメントを取得して、
             // inputに表示
-
-            document.getElementById("commentButton").innerHTML = "編集";
+            
+            document.getElementById("commentButton").innerHTML = "編集"
             editing = true;
-          });
+
+
+
+          })
+
+
 
           // 削除ボタン
           elem = document.createElement("button");
-          elem.classList = "clear"; // <button class="clear">削除</button>
-          elem.innerHTML = "削除";
+          elem.classList = "clear"  // <button class="clear">削除</button>
+          elem.innerHTML = "削除"
 
           waku.appendChild(elem);
 
@@ -98,7 +109,7 @@
             comments.splice(i, 1);
             clearComments();
             showComments();
-          });
+          })
 
           ans.appendChild(waku);
         }
@@ -110,7 +121,7 @@
         for (let i = 0; i < all.length; i++) {
           all[i].remove();
         }
-      }
+      };
 
       const ans = document.querySelector(".ans");
 
@@ -119,15 +130,15 @@
       // コメントボタン
       commentButton.addEventListener("click", () => {
         if (editing === true) {
-          alert("編集モードです");
-          // 宿題
+          alert("編集モードです")
           // inputに入力された値を取得
           // それを、comments arrayの書き換える
-
-          editing = false;
+          
+          editing = false
         } else {
-          alert("コメントモードです");
+          alert("コメントモードです")
         }
+
 
         let obj = {
           id: "4f550e71-9705-42bb-85d9-5826e08780f7",
@@ -135,17 +146,46 @@
           comment: document.getElementById("comment").value,
         };
 
+
+        // SHOX 👍
+        // if (obj.name === "" || obj.comment === "") {
+        //   alert("名前とコメントを入力してください");
+        //   return;
+        // }
+
+        //mexroj　👍
+        // if (obj.name === "") {
+        //   alert("nameは　まだ")
+        //   return;
+        // } else {
+        //   if (obj.comment === ""){
+        //     alert("commentは　まだ")
+        //     return;
+        //   }
+        // }
+
+        //sarvie　👍
+        // if (obj.name === "" || obj.comment === "") {
+        //   alert("Please write a name and a comment");
+        //   return;
+        // }
+
         //alsu　👍
         if (obj.name === "" || obj.comment === "") {
-          alert("nameとcommentは まだ");
+          alert("nameとcommentは　まだ")
           return;
         }
-        comments.unshift(obj);
-        clearComments();
-        showComments();
-      });
 
-      showComments();
+
+        comments.unshift(obj);
+        clearComments()
+        showComments();
+      })
+
+      showComments()
+
     </script>
-  </body>
+
+</body>
+
 </html>

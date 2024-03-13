@@ -9,6 +9,13 @@
       {
         "label": "off"
       }
-    ]
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "highest-available-document-mode": "off"
   }
 }

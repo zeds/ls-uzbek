@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        background: gray;
+        justify-content: space-between;
+      }
+
+      .item {
+        display: flex;
+        width: 156px;
+        height: 40px;
+        background: #0bd;
+        color: #fff;
+        margin: 10px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .icon {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background: orange;
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+      }
+      .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .search input {
+        width: 70%;
+        height: 28px;
+        border-radius: 10px 0 0 10px;
+      }
+      .search .photo {
+        background: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 10px 10px 0;
+        border: 2px solid #000000;
+        border-left: none;
+      }
+      .search img {
+        width: 20px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="item"><img src="youtube.svg" /></div>
+      <div class="item">
+        <div class="search">
+          <input type="text" placeholder="検索" />
+          <div class="photo"><img src="search.svg" /></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon"><img src="video.svg" /></div>
+        <div class="icon"><img src="bell.svg" /></div>
+        <div class="icon"><img src="tom.jpeg" /></div>
+      </div>
+    </div>
+  </body>
+</html>
