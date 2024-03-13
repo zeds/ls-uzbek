@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .ans {
-        background: skyblue;
+      /* .added_comment {
+        background: red;
       }
+     */
 
-      .clear {
+      .box {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        /* background: red; */
         margin-bottom: 5px;
       }
     </style>
@@ -21,19 +24,18 @@
   <body>
     <input type="text" id="name" placeholder="お名前" />
     <input type="text" id="comment" placeholder="コメント" />
-    <button id="commentButton">コメント</button>
-    <div class="ans"></div>
-    <!-- <div class="clear">佐藤</div>
-      <div class="clear">高橋</div>
-      <div class="clear">山田</div>
-  </div> -->
 
-    <script>
-      let editing = false;
+    <button id="btnComment">コメント</button>
+    <div id="div1"></div>
 
-      const fruits = ["apple", "banana", "orange"];
-      fruits.splice(1, 1);
+    <script language="javascript" type="text/javascript">
+      let editMode = false; // 編集ボタンが押された時に、editMode = true
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+      fruits.splice(2, 1, "Lemon", "Kiwi");
       console.log("fruits=", fruits);
+
+      const div1 = document.getElementById("div1");
 
       const comments = [
         {
@@ -52,97 +54,115 @@
           comment: "そうなのねー😢 家族だね😭",
         },
       ];
-      // comments.splice(1,1)
-      // console.log("comments=", comments)
 
-      // commentsを表示
-      function showComments() {
+      // deleteComment("0a2c283a-0af7-4089-a9b2-4f2b850b4244")
+      function deleteComment(id) {
         for (let i = 0; i < comments.length; i++) {
-          // コメントと削除ボタン用のdivを作る
-          let waku = document.createElement("div");
-          waku.classList = "clear";
-
-          // 佐藤： おはようございます
-          let elem = document.createElement("div");
-          elem.classList = "clear"; // <div class="clear">佐藤:あいうえお</div>
-          elem.innerHTML = comments[i].name + ": " + comments[i].comment;
-          waku.appendChild(elem);
-
-          // 編集ボタン
-          elem = document.createElement("button");
-          elem.classList = "clear"; // <button class="clear">編集</button>
-          elem.innerHTML = "編集";
-          waku.appendChild(elem);
-          elem.addEventListener("click", function () {
-            // 仮
-            document.getElementById("name").value = comments[i].name;
-            document.getElementById("comment").value = comments[i].comment;
-
-            // 宿題
-            // クリックされた行の名前と、コメントを取得して、
-            // inputに表示
-
-            document.getElementById("commentButton").innerHTML = "編集";
-            editing = true;
-          });
-
-          // 削除ボタン
-          elem = document.createElement("button");
-          elem.classList = "clear"; // <button class="clear">削除</button>
-          elem.innerHTML = "削除";
-
-          waku.appendChild(elem);
-
-          elem.addEventListener("click", function () {
-            // alert("commentの" + i + "番目を削除しました")
+          if (id === comments[i].id) {
             comments.splice(i, 1);
-            clearComments();
-            showComments();
-          });
-
-          ans.appendChild(waku);
+          }
         }
+        console.log("comments=", comments);
+        showComments();
       }
 
-      // コメントを消す
-      function clearComments() {
-        const all = document.querySelectorAll(".clear");
+      function generateUUID() {
+        // Public Domain/MIT
+        var d = new Date().getTime();
+        if (
+          typeof performance !== "undefined" &&
+          typeof performance.now === "function"
+        ) {
+          d += performance.now(); //use high-precision timer if available
+        }
+        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+          /[xy]/g,
+          function (c) {
+            var r = (d + Math.random() * 16) % 16 | 0;
+            d = Math.floor(d / 16);
+            return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
+          }
+        );
+      }
+
+      const showComments = () => {
+        clearComments();
+
+        for (let i = 0; i < comments.length; i++) {
+          const box = document.createElement("div");
+          box.className = "box";
+
+          const divComment = document.createElement("div");
+          divComment.className = "added_comment";
+          divComment.innerHTML = comments[i].name + " " + comments[i].comment;
+
+          //編集ボタン
+          const editButton = document.createElement("button");
+          editButton.innerHTML = "編集";
+          editButton.className = "added_comment";
+          editButton.addEventListener("click", function () {
+            // alert("名前:" + comments[i].name)
+            // alert("コメント:" + comments[i].comment)
+            document.getElementById("name").value = comments[i].name;
+            document.getElementById("comment").value = comments[i].comment;
+          });
+
+          //削除ボタン
+          const deleteButton = document.createElement("button");
+          deleteButton.innerHTML = "削除";
+          deleteButton.className = "added_comment";
+          deleteButton.addEventListener("click", function () {
+            deleteComment(comments[i].id);
+          });
+
+          // divRightの中に、ボタンを入れる
+          const divRight = document.createElement("div");
+          divRight.className = "added_comment";
+          divRight.appendChild(editButton);
+          divRight.appendChild(deleteButton);
+
+          box.appendChild(divComment);
+          box.appendChild(divRight);
+
+          div1.appendChild(box);
+        }
+        console.log(comments);
+      };
+
+      const clearComments = () => {
+        const all = document.querySelectorAll(".added_comment");
         for (let i = 0; i < all.length; i++) {
           all[i].remove();
         }
-      }
+      };
 
-      const ans = document.querySelector(".ans");
+      //コメントボタンが押された時、addEventListerで書いてください=>リッチさん
+      const btnComment = document.getElementById("btnComment");
 
-      const commentButton = document.getElementById("commentButton");
+      btnComment.addEventListener("click", function () {
+        // 宿題
+        if (editMode === true) {
+          // idから修正する配列をみつける
+          // 中身を置き換える
+          // 再表示表示
 
-      // コメントボタン
-      commentButton.addEventListener("click", () => {
-        if (editing === true) {
-          alert("編集モードです");
-          // 宿題
-          // inputに入力された値を取得
-          // それを、comments arrayの書き換える
-
-          editing = false;
+          editMode = false;
         } else {
-          alert("コメントモードです");
-        }
+          const inputName = document.getElementById("name").value;
+          const inputComment = document.getElementById("comment").value;
+          const commentId = generateUUID();
 
-        let obj = {
-          id: "4f550e71-9705-42bb-85d9-5826e08780f7",
-          name: document.getElementById("name").value,
-          comment: document.getElementById("comment").value,
-        };
-
-        //alsu　👍
-        if (obj.name === "" || obj.comment === "") {
-          alert("nameとcommentは まだ");
-          return;
+          const obj = {
+            id: commentId,
+            name: inputName,
+            comment: inputComment,
+          };
+          comments.unshift(obj);
+          showComments();
+          document.getElementById("name").value = "";
+          document.getElementById("comment").value = "";
+          document.getElementById("name").focus();
         }
-        comments.unshift(obj);
-        clearComments();
-        showComments();
       });
 
       showComments();
