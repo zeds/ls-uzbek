@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .ans {
+        background: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Name" />
+    <input type="text" placeholder="Comment" />
+    <button>comment</button>
+
+    <div class="ans">
+      <!-- <div>佐藤</div>
+      <div>高橋</div>
+      <div>山</div> -->
+    </div>
+    <script>
+      const comments = [
+        {
+          id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+          name: "Tom",
+          comment: "Moorning",
+        }
+        {
+          id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+          name: "佐藤",
+          comment: "優しい二匹に癒されます",
+        },
+        {
+          id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
+          name: "高橋",
+          comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+        },
+        {
+          id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
+          name: "山田",
+          comment: "そうなのねー😢 家族だね😭",
+        },
+      ];
+
+      const ans = document.querySelector(".ans");
+      let obj = {
+        id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+          name: "Tom",
+          comment: "Moorning",
+      };
+      comments.unshift()
+
+      for (let i = 0; i < comments.length; i++) {
+        let elem = document.createElement("div");
+        elem.innerHTML = comments[i].name + " : " + comments[i].comment;
+                ans.appendChild(elem);
+      }
+
+      //shunarsalarni forda qilsak yuqoridagiday boladi
+      //  let elem = document.createElement('div');
+      //  elem.innerHTML = "佐藤"
+
+      //  ans.appendChild(elem);
+
+      //  elem = document.createElement('div');
+      //  elem.innerHTML = "高橋"
+
+      //  ans.appendChild(elem);
+
+      //  elem = document.createElement('div');
+      //  elem.innerHTML = "高橋"
+
+      //  ans.appendChild(elem);
+
+      //  ans.innerHTML = JSON.stringify(comments);
+      //  for (let i = 0; i < comment.length)
+    </script>
+  </body>
+</html>
