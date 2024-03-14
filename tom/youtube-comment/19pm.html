@@ -126,15 +126,15 @@
 				let editButton = document.createElement("button");
 				editButton.innerHTML = "編集";
 
+
+
 				// 編集ボタン
 				editButton.addEventListener("click", function () {
 					editMode = true;
 					indexComment = i;
 					document.getElementById("name").value = comments[i].name;
-					document.getElementById("comment").value =
-						comments[i].comment;
-					document.getElementById("commentButton").innerHTML =
-						"編集完了";
+					document.getElementById("comment").value = comments[i].comment;
+					document.getElementById("commentButton").innerHTML = "編集完了";
 					// comments[i].name = "鈴木";
 					// clearElements();
 					// showComments();
