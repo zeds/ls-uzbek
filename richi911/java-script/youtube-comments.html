@@ -9,14 +9,13 @@
 	<style>
 		/* .added_comment {
         background: red;
-      }
-     */
+      } */
 
 		.box {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			/* background: red; */
+			/* background: blue; */
 			margin-bottom: 5px;
 		}
 	</style>
@@ -30,7 +29,8 @@
 	<div id="div1"></div>
 
 	<script language="javascript" type="text/javascript">
-		let editMode = false; // 編集ボタンが押された時に、editMode = true
+		let editIndex = 0;
+		let editMode = false;
 		const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
 		fruits.splice(2, 1, "Lemon", "Kiwi");
@@ -56,7 +56,7 @@
 			},
 		];
 
-		// deleteComment("0a2c283a-0af7-4089-a9b2-4f2b850b4244")
+		//削除ボタンが押された
 		function deleteComment(id) {
 			for (let i = 0; i < comments.length; i++) {
 				if (id === comments[i].id) {
@@ -68,13 +68,12 @@
 		}
 
 		function generateUUID() {
-			// Public Domain/MIT
 			var d = new Date().getTime();
 			if (
 				typeof performance !== "undefined" &&
 				typeof performance.now === "function"
 			) {
-				d += performance.now(); //use high-precision timer if available
+				d += performance.now();
 			}
 			return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
 				/[xy]/g,
@@ -96,29 +95,29 @@
 				const divComment = document.createElement("div");
 				divComment.className = "added_comment";
 				divComment.innerHTML =
-					comments[i].name + " " + comments[i].comment;
+					comments[i].name + " : " + comments[i].comment;
 
-				//編集ボタン
 				const editButton = document.createElement("button");
 				editButton.innerHTML = "編集";
 				editButton.className = "added_comment";
+
+				//編集ボタンが押された
 				editButton.addEventListener("click", function () {
-					// alert("名前:" + comments[i].name)
-					// alert("コメント:" + comments[i].comment)
+					editIndex = i;
 					document.getElementById("name").value = comments[i].name;
 					document.getElementById("comment").value =
 						comments[i].comment;
+					editMode = true;
+					document.getElementById("btnComment").innerHTML = "編集完了";
 				});
 
-				//削除ボタン
 				const deleteButton = document.createElement("button");
-				deleteButton.innerHTML = "削除";
+				deleteButton.innerHTML = "編集";
 				deleteButton.className = "added_comment";
 				deleteButton.addEventListener("click", function () {
 					deleteComment(comments[i].id);
 				});
 
-				// divRightの中に、ボタンを入れる
 				const divRight = document.createElement("div");
 				divRight.className = "added_comment";
 				divRight.appendChild(editButton);
@@ -139,20 +138,21 @@
 			}
 		};
 
-		//コメントボタンが押された時、addEventListerで書いてください=>リッチさん
 		const btnComment = document.getElementById("btnComment");
 
+		//コメントボタン、または編集完了ボタンが押された
 		btnComment.addEventListener("click", function () {
-			// 宿題
+			const inputName = document.getElementById("name").value;
+			const inputComment = document.getElementById("comment").value;
+
 			if (editMode === true) {
-				// idから修正する配列をみつける
-				// 中身を置き換える
-				// 再表示表示
+				comments[editIndex].name = inputName;
+				comments[editIndex].comment = inputComment;
+				showComments();
 
 				editMode = false;
+				document.getElementById("btnComment").innerHTML = "コメント";
 			} else {
-				const inputName = document.getElementById("name").value;
-				const inputComment = document.getElementById("comment").value;
 				const commentId = generateUUID();
 
 				const obj = {

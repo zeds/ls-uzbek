@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .ans {
+        background: skyblue;
+      }
+      .clear {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="name" placeholder="Name" />
+    <input type="text" id="comment" placeholder="Comment" />
+    <button id="commentButton">comment</button>
+
+    <div class="ans">
+      <!-- <div class="clear">佐藤</div>
+      <div class="clear">高橋</div>
+      <div class="clear">山</div> -->
+    </div>
+    <script>
+      let editing = false;
+      const comments = [
+        // {
+        //   id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+        //   name: "Tom",
+        //   comment: "Moorning",
+        // }
+        {
+          id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+          name: "佐藤",
+          comment: "優しい二匹に癒されます",
+        },
+        {
+          id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
+          name: "高橋",
+          comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+        },
+        {
+          id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
+          name: "山田",
+          comment: "そうなのねー😢 家族だね😭",
+        },
+      ];
+      //comment show
+      function showComments() {
+        for (let i = 0; i < comments.length; i++) {
+          //coomnet and clear div
+          let waku = document.createElement("div");
+          waku.classList = "clear";
+          //comment
+          let elem = document.createElement("div");
+          elem.classList = "clear"; //<div class="clear">Tom</div>
+          elem.innerHTML = comments[i].name + ": " + comments[i].comment;
+          waku.appendChild(elem);
+          // ans.appendChild(elem);
+
+          //henshuubutton
+          elem = document.createElement("button");
+          elem.classList = "clear"; //<div class="clear">Tom</div>
+          elem.innerHTML = "Edit";
+          waku.appendChild(elem);
+          elem.addEventListener("click", function () {
+            document.getElementById("name").value = "tom";
+            document.getElementById("comment").value = "jumpalagi";
+            document.getElementById("commentButton").innerHTML = "edit";
+
+            // alert("comment's"+ " " + i + " number was cleared")
+            // comments.splice(i,1);
+            // clearComments();
+            // showComments();
+          });
+
+          //sakujo botan
+
+          elem = document.createElement("button");
+          elem.classList = "clear"; //<div class="clear">Tom</div>
+          elem.innerHTML = "henshuu";
+          waku.appendChild(elem);
+
+          elem.addEventListener("click", function () {
+            // alert("comment's"+ " " + i + " number was cleared")
+            comments.splice(i, 1);
+            clearComments();
+            showComments();
+          });
+
+          ans.appendChild(waku);
+        }
+      }
+      //comment clear
+      function clearComments() {
+        const all = document.querySelectorAll(".clear");
+        for (let i = 0; i < all.length; i++) {
+          all[i].remove();
+        }
+      }
+
+      const ans = document.querySelector(".ans");
+
+      const commentButton = document.getElementById("commentButton");
+      //comment butoon
+      commentButton.addEventListener("click", () => {
+        if (editing !== true) {
+          editing = false;
+          // alert("lala");
+          //inputni nyuuryokusareta woshuutokusuru
+        } else {
+          alert("papapa");
+        }
+        let obj = {
+          id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+          name: document.getElementById("name").value,
+          comment: document.getElementById("comment").value,
+        };
+
+        if (obj.name === "" || obj.comment === "") {
+          alert("Enter something");
+          return;
+        }
+
+        comments.unshift(obj);
+        clearComments();
+        showComments();
+      });
+
+      showComments();
+
+      //shunarsalarni forda qilsak yuqoridagiday boladi
+      //  let elem = document.createElement('div');
+      //  elem.innerHTML = "佐藤"
+
+      //  ans.appendChild(elem);
+
+      //  elem = document.createElement('div');
+      //  elem.innerHTML = "高橋"
+
+      //  ans.appendChild(elem);
+
+      //  elem = document.createElement('div');
+      //  elem.innerHTML = "高橋"
+
+      //  ans.appendChild(elem);
+
+      //  ans.innerHTML = JSON.stringify(comments);
+      //  for (let i = 0; i < comment.length)
+    </script>
+  </body>
+</html>
