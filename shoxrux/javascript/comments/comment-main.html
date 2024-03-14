@@ -22,27 +22,27 @@
     <button id="clearButton">clear</button>
 
     <div id="lists">
-        <div class="elem">
-            <div>佐藤 優しい二匹に癒されます</div>
-            <div>
-                <button>編集</button>
-                <button>削除</button>
-            </div>
-        </div>
-        <div class="elem">
-            <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
-            <div>
-                <button>編集</button>
-                <button>削除</button>
-            </div>
-        </div>
-        <div class="elem">
-            <div>山田 そうなのねー😢 家族だね😭</div>
-            <div>
-                <button>編集</button>
-                <button>削除</button>
-            </div>
-        </div>
+        <!-- <div class="elem">
+				<div>佐藤 優しい二匹に癒されます</div>
+				<div>
+					<button>編集</button>
+					<button>削除</button>
+				</div>
+			</div>
+			<div class="elem">
+				<div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+				<div>
+					<button>編集</button>
+					<button>削除</button>
+				</div>
+			</div>
+			<div class="elem">
+				<div>山田 そうなのねー😢 家族だね😭</div>
+				<div>
+					<button>編集</button>
+					<button>削除</button>
+				</div>
+			</div> -->
     </div>
     <!-- <div class="elem">佐藤 優しい二匹に癒されます</div>
 			1. <div></div> createElement
@@ -51,6 +51,9 @@
 			4. parent.appendChild(" <div class="elem">佐藤 優しい二匹に癒されます</div>") -->
 
     <script>
+
+        let editMode = false;
+
         const comments = [
             {
                 id: "4f550e71-9705-42bb-85d9-5826e08780f7",
@@ -81,6 +84,7 @@
                 let obj = { id: "111", name: name, comment };
                 comments.unshift(obj);
 
+
                 // 今表示されているコメントを全て消す
                 clearElements();
 
@@ -102,7 +106,40 @@
             for (let i = 0; i < comments.length; i++) {
                 let elem = document.createElement("div");
                 elem.className = "elem";
-                elem.innerHTML = comments[i].name + " " + comments[i].comment;
+
+                let comment = document.createElement("div");
+                comment.innerHTML = comments[i].name + " " + comments[i].comment;
+
+                elem.appendChild(comment);
+
+                let right = document.createElement("div");
+
+                let editButton = document.createElement("button");
+                editButton.innerHTML = "編集";
+
+                editButton.addEventListener("click", function () {
+                    editMode = true;
+                    document.getElementById("name").value = comments[i].name;
+                    document.getElementById("comment").value = comments[i].comment;
+
+                    document.getElementById("commentButton").innerHTML = "edit";
+
+                });
+
+                let deleteButton = document.createElement("button");
+                deleteButton.innerHTML = "削除";
+
+                deleteButton.addEventListener("click", function () {
+                    comments.splice(i, 1);
+                    clearElements();
+                    showComments();
+
+                });
+
+                right.appendChild(editButton);
+                right.appendChild(deleteButton);
+                elem.appendChild(right);
+
                 parent.appendChild(elem);
             }
         }
@@ -115,8 +152,8 @@
             }
         }
 
-			// commentsを表示
-			// showComments();
+        // commentsを表示
+        showComments();
     </script>
 </body>
 
