@@ -1,7 +1,14 @@
-.box {
+.lists {
+  background: skyblue;
+}
+
+.elem {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  /* background: red; */
+}
+
+.clear {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 5px;
 }
