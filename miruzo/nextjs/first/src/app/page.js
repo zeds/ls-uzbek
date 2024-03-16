@@ -1,6 +1,6 @@
 import React from 'react';
 
-function YourPage() {
+function cmn() {
   return (
     <div className="w-full h-screen p-5 flex justify-center">
       <div className="w-[700px]">
@@ -12,7 +12,7 @@ function YourPage() {
             type="text"
           />
           <input
-            className="p-2 rounded-md  border-blue-200 border-2 outline-none shadow-sm"
+            className="p-2 rounded-md border-blue-200 border-2 outline-none shadow-sm"
             placeholder="コメント..."
             type="text"
           />
@@ -40,5 +40,5 @@ function YourPage() {
   );
 }
 
-export default YourPage;
+export default cmn;
 
