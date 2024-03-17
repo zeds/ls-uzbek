@@ -13,6 +13,10 @@
         display: flex;
         justify-content: space-between;
     }
+
+    .left {
+        display: flex;
+    }
 </style>
 
 <body>
@@ -59,16 +63,25 @@
                 id: "4f550e71-9705-42bb-85d9-5826e08780f7",
                 name: "佐藤",
                 comment: "優しい二匹に癒されます",
+                age: 25,
+                like: 5,
+                img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
             },
             {
                 id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
                 name: "高橋",
                 comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+                age: 40,
+                like: 5,
+                img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
             },
             {
                 id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
                 name: "山田",
                 comment: "そうなのねー😢 家族だね😭",
+                age: 50,
+                like: 5,
+                img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
             },
         ];
 
@@ -82,7 +95,7 @@
                 // commentsにオブジェクトを追加
                 let name = document.getElementById("name").value;
                 let comment = document.getElementById("comment").value;
-                let obj = { id: "111", name: name, comment };
+                let obj = { id: "111", name: name, comment: comment, img: '', age: 20 };
 
                 if (editMode) {
                     comments[indexComment].name = name;
@@ -116,19 +129,47 @@
                 let elem = document.createElement("div");
                 elem.className = "elem";
 
-                let comment = document.createElement("div");
-                comment.innerHTML = comments[i].name + " " + comments[i].comment;
+                let left = document.createElement("div");
+                left.className = "left";
 
-                elem.appendChild(comment);
+                let img = document.createElement("img");
+                img.src = comments[i].img;
+                img.width = 40;
+                img.height = 40;
+                left.appendChild(img);
+
+
+
+
+                let comment = document.createElement("div");
+                comment.innerHTML = comments[i].name + " " + comments[i].age + "歳： " + comments[i].comment;
+
+                left.appendChild(comment);
+                elem.appendChild(left);
+
+
+
 
                 let right = document.createElement("div");
 
                 let editButton = document.createElement("button");
                 editButton.innerHTML = "編集";
 
-                let like = document.createElement("button")
 
 
+                let likeBtn = document.createElement("button");
+                // likeBtn.style.background = "transparent";
+                // likeBtn.style.border = "none";
+                if (comments[i].like !== 0) {
+                    likeBtn.innerHTML = '&#129505';
+                } else {
+                    likeBtn.innerHTML = '&#10084';
+                }
+                likeBtn.addEventListener("click", function () {
+                    comments[i].like++;
+                    clearElements();
+                    showComments();
+                })
                 // 編集ボタン
                 editButton.addEventListener("click", function () {
                     editMode = true;
@@ -149,7 +190,7 @@
                     clearElements();
                     showComments();
                 });
-
+                right.appendChild(likeBtn);
                 right.appendChild(editButton);
                 right.appendChild(deleteButton);
                 elem.appendChild(right);
