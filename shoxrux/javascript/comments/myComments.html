@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>myComment</title>
 </head>
 <style>
     body {
@@ -68,7 +68,8 @@
 
 
     <script>
-        let editing = true;
+        let editMode = false;
+        let indexComment = 0;
         // 1
         const comments = [
             {
@@ -109,6 +110,7 @@
                 waku.appendChild(elem);
                 elem.addEventListener("click", function () {
 
+                    // 
                     // 仮
                     document.getElementById("name").value = "佐藤"
                     document.getElementById("comment").value = "優しい二匹に癒されます"
@@ -121,6 +123,7 @@
                     editing = true;
 
                 })
+
                 // izmentiz btn
 
 
@@ -159,23 +162,22 @@
         //4 btn ======comment=====>
 
         commentButton.addEventListener("click", function () {
-            if (editing !== true) {
-                alert("編集モードです")
-                // 宿題
-                // inputに入力された値を取得
-                // それを、comments arrayの書き換える
 
-                editing = false
-            } else {
-                alert("コメントモードです")
-            }
             let obj = {
-                id: "4f550e71-9705-42bb-85d9-5826e08780f7",
-                name: document.getElementById('name').value,
-                comment: document.getElementById('comment').value,
+                id: "111", name: name, comment,
             };
-            comments.unshift(obj);
-            clearComments();
+            if (editMode) {
+                comments[indexComment].name = name;
+                comments[indexComment].comment = comment;
+                editMode = false;
+                document.getElementById("commentButton").innerHTML =
+                    "コメント";
+            } else {
+                comments.unshift(obj);
+            }
+            clearElements();
+
+            // commentsを表示
             showComments();
         });
         //4 btn ======comment=====>
@@ -185,7 +187,16 @@
             comments.splice(0, comments.length)
         })
 
+        function clearElements() {
+            const all = document.querySelectorAll(".elem");
 
+            for (let i = 0; i < all.length; i++) {
+                all[i].remove();
+            }
+        }
+
+        // commentsを表示
+        showComments();
         // if (obj.name === '' || obj.comment === '') {
         //     alert("please enter name and comment!");
         //     return;

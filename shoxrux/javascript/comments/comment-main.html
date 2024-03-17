@@ -51,8 +51,8 @@
 			4. parent.appendChild(" <div class="elem">佐藤 優しい二匹に癒されます</div>") -->
 
     <script>
+
         let editMode = false;
-        let indexComment = 0;
 
         const comments = [
             {
@@ -72,7 +72,6 @@
             },
         ];
 
-        // コメントボタン
         document
             .getElementById("commentButton")
             .addEventListener("click", function () {
@@ -83,16 +82,8 @@
                 let name = document.getElementById("name").value;
                 let comment = document.getElementById("comment").value;
                 let obj = { id: "111", name: name, comment };
+                comments.unshift(obj);
 
-                if (editMode) {
-                    comments[indexComment].name = name;
-                    comments[indexComment].comment = comment;
-                    editMode = false;
-                    document.getElementById("commentButton").innerHTML =
-                        "コメント";
-                } else {
-                    comments.unshift(obj);
-                }
 
                 // 今表示されているコメントを全て消す
                 clearElements();
@@ -126,18 +117,13 @@
                 let editButton = document.createElement("button");
                 editButton.innerHTML = "編集";
 
-
-
-                // 編集ボタン
                 editButton.addEventListener("click", function () {
                     editMode = true;
-                    indexComment = i;
                     document.getElementById("name").value = comments[i].name;
                     document.getElementById("comment").value = comments[i].comment;
-                    document.getElementById("commentButton").innerHTML = "編集完了";
-                    // comments[i].name = "鈴木";
-                    // clearElements();
-                    // showComments();
+
+                    document.getElementById("commentButton").innerHTML = "edit";
+
                 });
 
                 let deleteButton = document.createElement("button");
@@ -147,6 +133,7 @@
                     comments.splice(i, 1);
                     clearElements();
                     showComments();
+
                 });
 
                 right.appendChild(editButton);

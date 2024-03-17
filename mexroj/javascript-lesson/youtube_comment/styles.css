@@ -1,0 +1,14 @@
+.lists {
+  background: skyblue;
+}
+
+.elem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clear {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
