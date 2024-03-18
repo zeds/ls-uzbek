@@ -17,6 +17,10 @@
     .left {
         display: flex;
     }
+
+    .right {
+        display: flex;
+    }
 </style>
 
 <body>
@@ -156,7 +160,7 @@
                 editButton.innerHTML = "編集";
 
 
-
+                // like counter=====
                 let likeBtn = document.createElement("button");
                 likeBtn.innerHTML = '&#129505';
                 let likeIncrement = document.createElement("div");
@@ -164,8 +168,13 @@
 
                 function updateLike() {
                     likeIncrement.innerHTML = comments[i].like++;
+                    console.log(comments[i].like);
                 }
                 likeBtn.addEventListener("click", updateLike);
+                likeBtn.style.cursor = "pointer";
+                // like counter=====
+
+
 
                 // if (comments[i].like !== 0) {
                 //     likeBtn.innerHTML = '&#129505';
@@ -197,6 +206,7 @@
                     clearElements();
                     showComments();
                 });
+
                 right.appendChild(likeIncrement);
                 right.appendChild(likeBtn);
                 right.appendChild(editButton);
