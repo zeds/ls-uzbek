@@ -162,11 +162,10 @@
                 let likeIncrement = document.createElement("div");
                 likeIncrement.innerHTML = comments[i].like;
 
-                likeBtn.addEventListener("click", function () {
+                function updateLike() {
                     likeIncrement.innerHTML = comments[i].like++;
-
-                })
-
+                }
+                likeBtn.addEventListener("click", updateLike);
 
                 // if (comments[i].like !== 0) {
                 //     likeBtn.innerHTML = '&#129505';
