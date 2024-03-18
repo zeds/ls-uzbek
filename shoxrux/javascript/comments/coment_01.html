@@ -88,7 +88,9 @@
                 img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
             },
         ];
-
+        let noImg = "https://t3.ftcdn.net/jpg/06/18/70/66/360_F_618706630_YhhydEoN29BBM50E5eWBSlZmm2ec7EEC.jpg";
+        noImg.width = 40;
+        noImg.height = 40;
         // コメントボタン
         document
             .getElementById("commentButton")
@@ -99,7 +101,7 @@
                 // commentsにオブジェクトを追加
                 let name = document.getElementById("name").value;
                 let comment = document.getElementById("comment").value;
-                let obj = { id: "111", name: name, comment: comment, img: '', age: 20 };
+                let obj = { id: "111", name: name, comment: comment, img: noImg, age: 20, like: 0 };
 
                 if (editMode) {
                     comments[indexComment].name = name;

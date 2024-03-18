@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .elem {
+        display: grid;
+        justify-content: space-between;
+    }
+
+    .editBtn {
+        color: green;
+        margin-right: 10px;
+    }
+
+    .deleteBtn {
+        color: red;
+    }
+</style>
+
+
+<div id="lists"></div>
+
+
+
+
+<script>
+
+
+    const comments = [
+        {
+            id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+            name: "佐藤",
+            comment: "優しい二匹に癒されます",
+            age: 25,
+            like: 0,
+            img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
+        },
+        {
+            id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
+            name: "高橋",
+            comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+            age: 40,
+            like: 0,
+            img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
+        },
+        {
+            id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
+            name: "山田",
+            comment: "そうなのねー😢 家族だね😭",
+            age: 50,
+            like: 0,
+            img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
+        }, {
+            id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
+            name: "山田",
+            comment: "そうなのねー😢 家族だね😭",
+            age: 50,
+            like: 0,
+            img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
+        },
+    ];
+
+    function showComments() {
+        for (let i = 0; i < comments.length; i++) {
+
+            comments[i].name.classList = "cmtName";
+
+            const lists = document.getElementById("lists");
+            const elem = document.createElement("div");
+            elem.classList = "elem";
+
+            const text = document.createElement("div");
+            text.innerHTML = comments[i].name + ': ' + comments[i].comment;
+
+
+            let rightButtons = document.createElement('div');
+
+            let editButton = document.createElement("button");
+            editButton.innerHTML = "edit";
+            editButton.classList = "editBtn";
+
+            let deleteButton = document.createElement("button");
+            deleteButton.innerHTML = "delete";
+            deleteButton.classList = "deleteBtn";
+            deleteButton.addEventListener("click", function () {
+                comments.splice(i, 1);
+                // elem.remove();
+
+                let elemAll = document.querySelectorAll(".elem");
+                for (let k = 0; k < elemAll.length; k++) {
+                    elemAll[k].remove();
+                }
+                showComments();
+            })
+            // })
+
+            elem.appendChild(text);
+            elem.appendChild(rightButtons);
+            rightButtons.appendChild(editButton);
+            rightButtons.appendChild(deleteButton);
+
+            lists.appendChild(elem);
+
+        }
+    }
+    showComments();
+</script>
+
+<body>
+
+</body>
+
+</html>
