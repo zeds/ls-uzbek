@@ -64,7 +64,7 @@
                 name: "佐藤",
                 comment: "優しい二匹に癒されます",
                 age: 25,
-                like: 5,
+                like: 0,
                 img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
             },
             {
@@ -72,7 +72,7 @@
                 name: "高橋",
                 comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
                 age: 40,
-                like: 5,
+                like: 0,
                 img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
             },
             {
@@ -80,7 +80,7 @@
                 name: "山田",
                 comment: "そうなのねー😢 家族だね😭",
                 age: 50,
-                like: 5,
+                like: 0,
                 img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
             },
         ];
@@ -158,18 +158,26 @@
 
 
                 let likeBtn = document.createElement("button");
-                // likeBtn.style.background = "transparent";
-                // likeBtn.style.border = "none";
-                if (comments[i].like !== 0) {
-                    likeBtn.innerHTML = '&#129505';
-                } else {
-                    likeBtn.innerHTML = '&#10084';
-                }
+                likeBtn.innerHTML = '&#129505';
+                let likeIncrement = document.createElement("div");
+                likeIncrement.innerHTML = comments[i].like;
+
                 likeBtn.addEventListener("click", function () {
-                    comments[i].like++;
-                    clearElements();
-                    showComments();
+                    likeIncrement.innerHTML = comments[i].like++;
+
                 })
+
+
+                // if (comments[i].like !== 0) {
+                //     likeBtn.innerHTML = '&#129505';
+                // } else {
+                //     likeBtn.innerHTML = '&#10084';
+                // }
+                // likeBtn.addEventListener("click", function () {
+                //     comments[i].like++;
+                //     clearElements();
+                //     showComments();
+                // })
                 // 編集ボタン
                 editButton.addEventListener("click", function () {
                     editMode = true;
@@ -190,6 +198,7 @@
                     clearElements();
                     showComments();
                 });
+                right.appendChild(likeIncrement);
                 right.appendChild(likeBtn);
                 right.appendChild(editButton);
                 right.appendChild(deleteButton);
