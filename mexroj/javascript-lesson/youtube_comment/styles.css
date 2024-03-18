@@ -1,7 +1,15 @@
-.box {
+.elem {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  /* background: red; */
-  margin-bottom: 5px;
+  justify-content: space-between;
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }

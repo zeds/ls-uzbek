@@ -1,135 +1,146 @@
-let editMode = false; // 編集ボタンが押された時に、editMode = true
-
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-
-fruits.splice(2, 1, "Lemon", "Kiwi");
-console.log("fruits=", fruits);
-
-const div1 = document.getElementById("div1");
+let editMode = false;
+let indexComment = 0;
 
 const comments = [
   {
     id: "4f550e71-9705-42bb-85d9-5826e08780f7",
     name: "佐藤",
+    age: 20,
     comment: "優しい二匹に癒されます",
+    cntHeart: 0,
+    img_url:
+      "https://yt3.ggpht.com/C_WH4A2Q4p_w63JmEHKK8-jeWjM3HBwTMRIUsSD1IJMKvo0a9YbrN2h4iOukOECzJ8Duqkun=s68-c-k-c0x00ffffff-no-rj",
   },
   {
     id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
     name: "高橋",
+    age: 39,
     comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+    cntHeart: 0,
+    img_url:
+      "https://yt3.ggpht.com/C_WH4A2Q4p_w63JmEHKK8-jeWjM3HBwTMRIUsSD1IJMKvo0a9YbrN2h4iOukOECzJ8Duqkun=s68-c-k-c0x00ffffff-no-rj",
   },
   {
     id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
     name: "山田",
+    age: 48,
     comment: "そうなのねー😢 家族だね😭",
+    cntHeart: 0,
+    img_url:
+      "https://yt3.ggpht.com/C_WH4A2Q4p_w63JmEHKK8-jeWjM3HBwTMRIUsSD1IJMKvo0a9YbrN2h4iOukOECzJ8Duqkun=s68-c-k-c0x00ffffff-no-rj",
   },
 ];
 
-// deleteComment("0a2c283a-0af7-4089-a9b2-4f2b850b4244")
-function deleteComment(id) {
-  for (let i = 0; i < comments.length; i++) {
-    if (id === comments[i].id) {
-      comments.splice(i, 1);
-    }
+// コメントボタン
+document.getElementById("commentButton").addEventListener("click", function () {
+  let parent = document.getElementById("lists");
+  // inputの値を取得
+  // オブジェクトを作成 { name: xxxx, comment: xxx}
+  // commentsにオブジェクトを追加
+  let name = document.getElementById("name").value;
+  let comment = document.getElementById("comment").value;
+  let obj = { id: "111", name: name, comment: comment, age: 18, image_url: "" };
+
+  if (editMode) {
+    comments[indexComment].name = name;
+    comments[indexComment].comment = comment;
+    editMode = false;
+    document.getElementById("commentButton").innerHTML = "コメント";
+  } else {
+    comments.unshift(obj);
   }
-  console.log("comments=", comments);
+
+  // 今表示されているコメントを全て消す
+  clearElements();
+
+  // commentsを表示
   showComments();
-}
+});
 
-function generateUUID() {
-  // Public Domain/MIT
-  var d = new Date().getTime();
-  if (
-    typeof performance !== "undefined" &&
-    typeof performance.now === "function"
-  ) {
-    d += performance.now(); //use high-precision timer if available
-  }
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-    var r = (d + Math.random() * 16) % 16 | 0;
-    d = Math.floor(d / 16);
-    return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
-  });
-}
+//clearButton
 
-const showComments = () => {
-  clearComments();
+document.getElementById("clearButton").addEventListener("click", function () {
+  clearElements();
+  comments.splice(0, comments.length);
+});
+
+// commentsを表示したい
+function showComments() {
+  let parent = document.getElementById("lists");
 
   for (let i = 0; i < comments.length; i++) {
-    const box = document.createElement("div");
-    box.className = "box";
+    let elem = document.createElement("div");
+    elem.className = "elem";
 
-    const divComment = document.createElement("div");
-    divComment.className = "added_comment";
-    divComment.innerHTML = comments[i].name + " " + comments[i].comment;
+    let left = document.createElement("div");
+    left.className = "left";
 
-    //編集ボタン
-    const editButton = document.createElement("button");
+    let img = document.createElement("img");
+    img.src = comments[i].img_url;
+    left.appendChild(img);
+
+    let comment = document.createElement("div");
+    comment.innerHTML =
+      comments[i].name + comments[i].age + " 歳" + " " + comments[i].comment;
+    left.appendChild(comment);
+
+    let right = document.createElement("div");
+
+    //heartButton
+    let heartButton = document.createElement("button");
+    if (comments[i].cntHeart !== 0) {
+      heartButton.innerHTML = "❤️" + comments[i].cntHeart;
+    } else {
+      heartButton.innerHTML = "♡";
+    }
+    heartButton.addEventListener("click", function () {
+      comments[i].cntHeart++;
+      clearElements();
+      showComments();
+    });
+
+    // 編集ボタン
+    let editButton = document.createElement("button");
     editButton.innerHTML = "編集";
-    editButton.className = "added_comment";
+
     editButton.addEventListener("click", function () {
-      // alert("名前:" + comments[i].name)
-      // alert("コメント:" + comments[i].comment)
+      editMode = true;
+      indexComment = i;
       document.getElementById("name").value = comments[i].name;
       document.getElementById("comment").value = comments[i].comment;
+      document.getElementById("commentButton").innerHTML = "編集完了";
+      // comments[i].name = "鈴木";
+      // clearElements();
+      // showComments();
     });
 
     //削除ボタン
-    const deleteButton = document.createElement("button");
+    let deleteButton = document.createElement("button");
     deleteButton.innerHTML = "削除";
-    deleteButton.className = "added_comment";
+
     deleteButton.addEventListener("click", function () {
-      deleteComment(comments[i].id);
+      comments.splice(i, 1);
+      clearElements();
+      showComments();
     });
 
-    // divRightの中に、ボタンを入れる
-    const divRight = document.createElement("div");
-    divRight.className = "added_comment";
-    divRight.appendChild(editButton);
-    divRight.appendChild(deleteButton);
+    elem.appendChild(left);
+    right.appendChild(heartButton);
+    right.appendChild(editButton);
+    right.appendChild(deleteButton);
+    elem.appendChild(right);
 
-    box.appendChild(divComment);
-    box.appendChild(divRight);
-
-    div1.appendChild(box);
+    parent.appendChild(elem);
   }
-  console.log(comments);
-};
+}
 
-const clearComments = () => {
-  const all = document.querySelectorAll(".added_comment");
+function clearElements() {
+  const all = document.querySelectorAll(".elem");
+
   for (let i = 0; i < all.length; i++) {
     all[i].remove();
   }
-};
+}
 
-//コメントボタンが押された時、addEventListerで書いてください=>リッチさん
-const btnComment = document.getElementById("btnComment");
-
-btnComment.addEventListener("click", function () {
-  // 宿題
-  if (editMode === true) {
-    // idから修正する配列をみつける
-    // 中身を置き換える
-    // 再表示表示
-
-    editMode = false;
-  } else {
-    const inputName = document.getElementById("name").value;
-    const inputComment = document.getElementById("comment").value;
-    const commentId = generateUUID();
-
-    const obj = {
-      id: commentId,
-      name: inputName,
-      comment: inputComment,
-    };
-    comments.unshift(obj);
-    showComments();
-    document.getElementById("name").value = "";
-    document.getElementById("comment").value = "";
-    document.getElementById("name").focus();
-  }
-});
-
+// commentsを表示
 showComments();
