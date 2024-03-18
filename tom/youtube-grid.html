@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.grid-container {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr 1fr;
+				gap: 10px;
+			}
+			.article-container {
+				background: orange;
+			}
+			.article-container img {
+				width: 100%;
+				border-radius: 10px;
+			}
+			.description {
+				display: flex;
+			}
+			.description img {
+				border-radius: 18px;
+				width: 36px;
+				height: 36px;
+			}
+			.message {
+				display: none;
+			}
+			/* レスポンシブ */
+			@media (0px <= width < 680px) {
+				.grid-container {
+					grid-template-columns: 1fr;
+				}
+			}
+			@media (680px <= width < 1100px) {
+				.grid-container {
+					grid-template-columns: 1fr 1fr;
+				}
+				.message {
+					display: block;
+					background: red;
+				}
+			}
+			@media (1100px <= width < 1500px) {
+				.grid-container {
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+			}
+			@media (1500px <= width) {
+				.grid-container {
+					grid-template-columns: 1fr 1fr 1fr 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="message">680px <= width < 1100px</div>
+		<div class="grid-container">
+			<div class="article-container">
+				<img src="./handstand.webp" />
+				<div class="description">
+					<img src="./yama.jpg" />
+					<div class="text-container">
+						<div>【登録者2万人記念】質問に答えます</div>
+						<div>🌹ディアナちゃんねる</div>
+						<div>27万回</div>
+					</div>
+				</div>
+			</div>
+			<div class="article-container">
+				<img src="./handstand.webp" />
+				<div class="description">
+					<img src="./yama.jpg" />
+					<div class="text-container">
+						<div>【登録者2万人記念】質問に答えます</div>
+						<div>🌹ディアナちゃんねる</div>
+						<div>27万回</div>
+					</div>
+				</div>
+			</div>
+			<div class="article-container">
+				<img src="./handstand.webp" />
+				<div class="description">
+					<img src="./yama.jpg" />
+					<div class="text-container">
+						<div>【登録者2万人記念】質問に答えます</div>
+						<div>🌹ディアナちゃんねる</div>
+						<div>27万回</div>
+					</div>
+				</div>
+			</div>
+			<div class="article-container">
+				<img src="./handstand.webp" />
+				<div class="description">
+					<img src="./yama.jpg" />
+					<div class="text-container">
+						<div>【登録者2万人記念】質問に答えます</div>
+						<div>🌹ディアナちゃんねる</div>
+						<div>27万回</div>
+					</div>
+				</div>
+			</div>
+			<div class="article-container">
+				<img src="./handstand.webp" />
+				<div class="description">
+					<img src="./yama.jpg" />
+					<div class="text-container">
+						<div>【登録者2万人記念】質問に答えます</div>
+						<div>🌹ディアナちゃんねる</div>
+						<div>27万回</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
