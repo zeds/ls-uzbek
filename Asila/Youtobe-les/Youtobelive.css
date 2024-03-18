@@ -376,6 +376,6 @@ header {
 .conteinercomment {
   width: 1040px;
   height: 100vh;
-  margin-top: 20px;
-  margin-right: 24px;
+  padding-left: 24px;
+  padding-top: 20px;
 }
