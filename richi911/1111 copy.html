@@ -148,6 +148,12 @@
           let like = document.createElement("button");
           like.innerHTML = "👍";
 
+          like.addEventListener("click", function () {
+            if (comments[i].numberinput === 0) {
+              comments[i].numberinput;
+            }
+          });
+
           // 👍が押された
           like.addEventListener("click", function () {
             if (comments[i].like === 0) {
