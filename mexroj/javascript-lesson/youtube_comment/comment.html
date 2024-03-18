@@ -21,27 +21,27 @@
     <button id="clearButton">clear</button>
 
     <div id="lists">
-      <div class="elem">
-        <div>佐藤 優しい二匹に癒されます</div>
-        <div>
-          <button>編集</button>
-          <button>削除</button>
-        </div>
-      </div>
-      <div class="elem">
-        <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
-        <div>
-          <button>編集</button>
-          <button>削除</button>
-        </div>
-      </div>
-      <div class="elem">
-        <div>山田 そうなのねー😢 家族だね😭</div>
-        <div>
-          <button>編集</button>
-          <button>削除</button>
-        </div>
-      </div>
+      <!-- <div class="elem">
+				<div>佐藤 優しい二匹に癒されます</div>
+				<div>
+					<button>編集</button>
+					<button>削除</button>
+				</div>
+			</div>
+			<div class="elem">
+				<div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+				<div>
+					<button>編集</button>
+					<button>削除</button>
+				</div>
+			</div>
+			<div class="elem">
+				<div>山田 そうなのねー😢 家族だね😭</div>
+				<div>
+					<button>編集</button>
+					<button>削除</button>
+				</div>
+			</div> -->
     </div>
     <!-- <div class="elem">佐藤 優しい二匹に癒されます</div>
 			1. <div></div> createElement
@@ -50,6 +50,9 @@
 			4. parent.appendChild(" <div class="elem">佐藤 優しい二匹に癒されます</div>") -->
 
     <script>
+      let editMode = false;
+      let indexComment = 0;
+
       const comments = [
         {
           id: "4f550e71-9705-42bb-85d9-5826e08780f7",
@@ -68,6 +71,7 @@
         },
       ];
 
+      // コメントボタン
       document
         .getElementById("commentButton")
         .addEventListener("click", function () {
@@ -78,7 +82,15 @@
           let name = document.getElementById("name").value;
           let comment = document.getElementById("comment").value;
           let obj = { id: "111", name: name, comment };
-          comments.unshift(obj);
+
+          if (editMode) {
+            comments[indexComment].name = name;
+            comments[indexComment].comment = comment;
+            editMode = false;
+            document.getElementById("commentButton").innerHTML = "コメント";
+          } else {
+            comments.unshift(obj);
+          }
 
           // 今表示されているコメントを全て消す
           clearElements();
@@ -101,7 +113,42 @@
         for (let i = 0; i < comments.length; i++) {
           let elem = document.createElement("div");
           elem.className = "elem";
-          elem.innerHTML = comments[i].name + " " + comments[i].comment;
+
+          let comment = document.createElement("div");
+          comment.innerHTML = comments[i].name + " " + comments[i].comment;
+
+          elem.appendChild(comment);
+
+          let right = document.createElement("div");
+
+          let editButton = document.createElement("button");
+          editButton.innerHTML = "編集";
+
+          // 編集ボタン
+          editButton.addEventListener("click", function () {
+            editMode = true;
+            indexComment = i;
+            document.getElementById("name").value = comments[i].name;
+            document.getElementById("comment").value = comments[i].comment;
+            document.getElementById("commentButton").innerHTML = "編集完了";
+            // comments[i].name = "鈴木";
+            // clearElements();
+            // showComments();
+          });
+
+          let deleteButton = document.createElement("button");
+          deleteButton.innerHTML = "削除";
+
+          deleteButton.addEventListener("click", function () {
+            comments.splice(i, 1);
+            clearElements();
+            showComments();
+          });
+
+          right.appendChild(editButton);
+          right.appendChild(deleteButton);
+          elem.appendChild(right);
+
           parent.appendChild(elem);
         }
       }
@@ -115,7 +162,7 @@
       }
 
       // commentsを表示
-      // showComments();
+      showComments();
     </script>
   </body>
 </html>
