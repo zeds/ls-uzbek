@@ -1,0 +1,11 @@
+@media screen and (max-width: 960px) {
+    .container-video-list {
+      grid-template-columns: 1fr; /* Make the grid one column for smaller screens */
+    }
+    .video-list{
+        display: none;
+    }
+  }
+  .inc_like_size{
+    font-size: 10px;
+  }
