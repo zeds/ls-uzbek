@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        /* display: grid;
+      grid-template-columns: 1fr 400px; */
+      }
+      .recommends {
+        width: 400px;
+      }
+      .recommend {
+        display: flex;
+        height: 110px;
+        padding: 10px;
+      }
+      .recommend img {
+        height: 100%;
+      }
+      .video {
+        width: 100%;
+        background: red;
+      }
+      .video img {
+        width: 100%;
+      }
+      .tag_container {
+        height: 35px;
+        width: 100%;
+        background: skyblue;
+      }
+      .tag_list {
+        display: flex;
+        gap: 10px;
+      }
+      .tag_list img {
+        height: 32px;
+        width: 32px;
+        border-radius: 20px;
+      }
+      .tag_profile {
+        width: 100px;
+        height: 50px;
+        background: brown;
+      }
+      .tag_profile_1 {
+        color: white;
+      }
+      .tag_profile_2 {
+        color: white;
+      }
+      .tag {
+        height: 40px;
+        background: blue;
+        border-radius: 5px;
+        color: white;
+      }
+      .comments {
+        background: green;
+      }
+      @media (width < 980px) {
+        .container {
+          /* grid-template-columns: 1fr; */
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="container">
+        <div class="video">
+          <img src="lofi.webp" />
+          <div>
+            <p>ビデオ情報</p>
+            <div class="tag_container">
+              <div class="tag_list">
+                <img src="lofi.webp" />
+                <div class="tag_profile">
+                  <div class="tag_profile_1">Lofi Girl</div>
+                  <div class="tag_profile_2">3M subscribe</div>
+                </div>
+                <div class="tag">All</div>
+                <div class="tag">Mix</div>
+                <div class="tag">Live</div>
+                <div class="tag">Trending</div>
+                <div class="tag">Games</div>
+                <div class="tag">News</div>
+                <div class="tag">Learning</div>
+                <div class="tag">Fitness</div>
+                <div class="tag">Design</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="recommends">
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comments">
+        <div class="elem">
+          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+          <div>
+            <button>編集</button>
+            <button>削除</button>
+          </div>
+        </div>
+        <div class="elem">
+          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+          <div>
+            <button>編集</button>
+            <button>削除</button>
+          </div>
+        </div>
+        <div class="elem">
+          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+          <div>
+            <button>編集</button>
+            <button>削除</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
