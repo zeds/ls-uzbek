@@ -17,6 +17,10 @@
     .left {
         display: flex;
     }
+
+    .right {
+        display: flex;
+    }
 </style>
 
 <body>
@@ -64,7 +68,7 @@
                 name: "佐藤",
                 comment: "優しい二匹に癒されます",
                 age: 25,
-                like: 5,
+                like: 1,
                 img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
             },
             {
@@ -72,7 +76,7 @@
                 name: "高橋",
                 comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
                 age: 40,
-                like: 5,
+                like: 1,
                 img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
             },
             {
@@ -80,11 +84,13 @@
                 name: "山田",
                 comment: "そうなのねー😢 家族だね😭",
                 age: 50,
-                like: 5,
+                like: 1,
                 img: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg"
             },
         ];
-
+        let noImg = "https://t3.ftcdn.net/jpg/06/18/70/66/360_F_618706630_YhhydEoN29BBM50E5eWBSlZmm2ec7EEC.jpg";
+        noImg.width = 40;
+        noImg.height = 40;
         // コメントボタン
         document
             .getElementById("commentButton")
@@ -95,7 +101,7 @@
                 // commentsにオブジェクトを追加
                 let name = document.getElementById("name").value;
                 let comment = document.getElementById("comment").value;
-                let obj = { id: "111", name: name, comment: comment, img: '', age: 20 };
+                let obj = { id: "111", name: name, comment: comment, img: noImg, age: 20, like: 0 };
 
                 if (editMode) {
                     comments[indexComment].name = name;
@@ -156,10 +162,23 @@
                 editButton.innerHTML = "編集";
 
 
-
+                // like counter=====
                 let likeBtn = document.createElement("button");
-                // likeBtn.style.background = "transparent";
-                // likeBtn.style.border = "none";
+                likeBtn.innerHTML = '&#129505';
+                let likeIncrement = document.createElement("div");
+                likeIncrement.innerHTML = comments[i].like;
+
+
+                function updateLike() {
+                    likeIncrement.innerHTML = comments[i].like++;
+                    console.log(comments[i].like);
+                }
+                // likeBtn.addEventListener("click", updateLike);
+                likeBtn.style.cursor = "pointer";
+                // like counter=====
+
+
+
                 if (comments[i].like !== 0) {
                     likeBtn.innerHTML = '&#129505';
                 } else {
@@ -170,7 +189,6 @@
                     clearElements();
                     showComments();
                 })
-                // 編集ボタン
                 editButton.addEventListener("click", function () {
                     editMode = true;
                     indexComment = i;
@@ -190,6 +208,8 @@
                     clearElements();
                     showComments();
                 });
+
+                right.appendChild(likeIncrement);
                 right.appendChild(likeBtn);
                 right.appendChild(editButton);
                 right.appendChild(deleteButton);
