@@ -21,7 +21,7 @@
 		<button id="clearButton">clear</button>
 
 		<div id="lists">
-			<!-- <div class="elem">
+			<!-- <div class="elem">佐藤 優しい二匹に癒されます</div>
 				<div>佐藤 優しい二匹に癒されます</div>
 				<div>
 					<button>編集</button>
@@ -94,10 +94,17 @@
 
 				// commentsを表示したい
 				for (let i = 0; i < comments.length; i++) {
-					let elem = document.createElement("div");
-					elem.className = "elem";
-					elem.innerHTML = comments[i].name + " " + comments[i].comment;
-					parent.appendChild(elem);
+					let text = document.createElement("div");
+					text.className = "elem";
+					text.innerHTML = comments[i].name + " " + comments[i].comment;
+
+					// 削除ボタン
+					let deleteButton = document.createElement("button");
+					deleteButton.className = "elem";
+					deleteButton.innerHTML = "削除";
+
+					parent.appendChild(text);
+					parent.appendChild(deleteButton);
 				}
 			}
 

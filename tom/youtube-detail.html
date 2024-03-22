@@ -44,13 +44,19 @@
 				margin: 0 auto;
 			}
 			.left_contents {
-				height: 700px;
+				/* height: 700px; */
 				background: orange;
 			}
 			.right_contents {
 				height: 100vh;
 				background: pink;
 			}
+
+			iframe {
+				width: 100%;
+				aspect-ratio: 16/9;
+			}
+
 			@media (width < 980px) {
 				main {
 					grid-template-columns: 1fr;
@@ -62,9 +68,40 @@
 		<div class="container">
 			<header></header>
 			<main>
-				<div class="left_contents">ああああああ</div>
+				<div class="left_contents">
+					<iframe
+						src="https://www.youtube.com/embed/eZJx65ATvs0?si=Tv_sp5NctdBP2-pr"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen
+					></iframe>
+					<div>ビデオ情報</div>
+				</div>
 				<div class="right_contents">いいいいいいいいい</div>
 			</main>
+			<div class="comments">
+				<div class="elem">佐藤 優しい二匹に癒されます</div>
+				<div>佐藤 優しい二匹に癒されます</div>
+				<div>
+					<button>編集</button>
+					<button>削除</button>
+				</div>
+			</div>
+			<div class="elem">
+				<div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+				<div>
+					<button>編集</button>
+					<button>削除</button>
+				</div>
+			</div>
+			<div class="elem">
+				<div>山田 そうなのねー😢 家族だね😭</div>
+				<div>
+					<button>編集</button>
+					<button>削除</button>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
