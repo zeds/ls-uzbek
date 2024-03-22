@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .elem {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="list"></div>
+    <script>
+      const lists = document.getElementById("list");
+
+      const comments = [
+        {
+          id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+          name: "佐藤",
+          age: 49,
+          comment: "優しい二匹に癒されます",
+          cntHeart: 0,
+          image_url:
+            "https://yt3.ggpht.com/lzgaVr4cM4pQwFOucoi5pa4JZJJhBJ32PxqIJtISYXvy054v0JyWA7GoBtVDV5PvDq_1wJncWg=s68-c-k-c0x00ffffff-no-rj",
+        },
+        {
+          id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
+          name: "高橋",
+          age: 25,
+          comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+          cntHeart: 0,
+          image_url:
+            "https://yt3.ggpht.com/lzgaVr4cM4pQwFOucoi5pa4JZJJhBJ32PxqIJtISYXvy054v0JyWA7GoBtVDV5PvDq_1wJncWg=s68-c-k-c0x00ffffff-no-rj",
+        },
+        {
+          id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
+          name: "山田",
+          age: 37,
+          comment: "そうなのねー😢 家族だね😭",
+          cntHeart: 0,
+          image_url:
+            "https://yt3.ggpht.com/lzgaVr4cM4pQwFOucoi5pa4JZJJhBJ32PxqIJtISYXvy054v0JyWA7GoBtVDV5PvDq_1wJncWg=s68-c-k-c0x00ffffff-no-rj",
+        },
+      ];
+
+      function showComments() {
+        for (let i = 0; i < comments.length; i++) {
+          const lists = document.getElementById("list");
+          const elem = document.createElement("div");
+          elem.className = "elem";
+          const text = document.createElement("div");
+          text.innerHTML = comments[i].name + ": " + comments[i].comment;
+          const cont = document.createElement("div");
+          const editButton = document.createElement("button");
+          const deleteButton = document.createElement("button");
+          //ハートボタン追加
+          let heartButton = document.createElement("button");
+          console.log("h=", comments[i].cntHeart);
+          if (comments[i].cntHeart !== 0) {
+            heartButton.innerHtml = "❤";
+          } else {
+            heartButton.innerHTML = "♡";
+          }
+          editButton.innerHTML = "edit";
+
+          deleteButton.innerHTML = "delete";
+
+          elem.appendChild(text);
+          elem.appendChild(cont);
+          cont.appendChild(editButton);
+          cont.appendChild(deleteButton);
+          deleteButton.addEventListener("click", function () {
+            comments.splice(i, 1);
+            const elemAll = document.querySelectorAll(".elem");
+            for (let k = 0; k < elemAll.length; k++) {
+              elemAll[k].remove();
+            }
+
+            showComments();
+          });
+
+          lists.appendChild(elem);
+        }
+      }
+      showComments();
+    </script>
+  </body>
+</html>

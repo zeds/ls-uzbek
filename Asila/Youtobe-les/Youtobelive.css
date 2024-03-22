@@ -362,3 +362,20 @@ header {
 .share_button img {
   height: 50%;
 }
+.elem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.conteinercomment {
+  width: 1040px;
+  height: 100vh;
+  padding-left: 24px;
+  padding-top: 20px;
+}
