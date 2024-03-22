@@ -42,6 +42,7 @@ enterBtn.addEventListener("click",function(){
 
     comments.unshift(obj);
     showComments();
+    clearElements();
 });
 function showComments(){
     let parent = document.querySelector(".lists");
@@ -52,3 +53,21 @@ function showComments(){
         parent.appendChild(newComment);
     }
 }
+function clearElements() {
+    const all = document.querySelectorAll(".list");
+
+    for (let i = 0; i < all.length; i++) {
+        all[i].remove();
+    }
+}
+
+let dislikeBtn = document.querySelector(".dislike");
+let isImageOne = true;
+dislikeBtn.addEventListener("click",function(){
+    isImageOne = !isImageOne;
+    if(isImageOne){
+        dislikeBtn.src = "./article-img/dislike2.png";
+    }else{
+        dislikeBtn.src = "./article-img/dislike1.png";
+    }
+})

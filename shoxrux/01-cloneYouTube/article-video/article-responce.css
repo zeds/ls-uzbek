@@ -1,11 +1,16 @@
 @media screen and (max-width: 960px) {
-    .container-video-list {
-      grid-template-columns: 1fr; /* Make the grid one column for smaller screens */
-    }
-    .video-list{
-        display: none;
-    }
+  .container-video-list {
+    grid-template-columns: 1fr;
+    /* Make the grid one column for smaller screens */
   }
-  .inc_like_size{
+
+  .video-list {
+    grid-column: 1/2;
+    grid: 2/3;
+    margin: 15px;
+  }
+
+  .inc_like_size {
     font-size: 10px;
   }
+}
