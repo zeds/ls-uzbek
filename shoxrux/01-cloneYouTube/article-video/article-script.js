@@ -39,22 +39,26 @@ enterBtn.addEventListener("click",function(){
     let parent = document.querySelector(".lists");
     let comment = document.getElementById("input-comment").value;
     let obj = {comment:comment,id:"111"};
-
     comments.unshift(obj);
-    showComments();
+
+
     clearElements();
+    
+    showComments();
+ 
 });
 function showComments(){
     let parent = document.querySelector(".lists");
-
     for(let i = 0;i < comments.length;i++){
         let newComment = document.createElement("div");
+        newComment.className = "newComment";
         newComment.innerHTML = comments[i].comment;
+    
         parent.appendChild(newComment);
     }
 }
 function clearElements() {
-    const all = document.querySelectorAll(".list");
+    const all = document.querySelectorAll(".newComment");
 
     for (let i = 0; i < all.length; i++) {
         all[i].remove();
