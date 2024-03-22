@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.container {
+				display: flex;
+				gap: 5px;
+			}
+			.item:nth-child(1) {
+				width: 100%;
+			}
+			iframe {
+				width: 100%;
+				aspect-ratio: 16/9;
+			}
+			.recommend {
+				display: flex;
+				gap: 5px;
+				font-size: 14px;
+				width: 400px;
+				padding: 10px;
+			}
+			.recommend img {
+				width: 170px;
+			}
+			.item:nth-child(3) {
+				display: none;
+			}
+			@media (width < 980px) {
+				.container {
+					display: grid;
+					grid-template-columns: 1fr;
+				}
+				.comments {
+					display: none;
+				}
+				.recommend {
+					width: 100%;
+				}
+				.item:nth-child(3) {
+					display: block;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!--アイテム-->
+			<div class="item">
+				<iframe
+					src="https://www.youtube.com/embed/q-VNPpo9z0Y?si=XXVmp0fIA64ryp1M"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen
+				></iframe>
+
+				<!-- <img src="./russia.webp" /> -->
+				<div class="info">
+					<div>ビデオ情報</div>
+					<div>ビデオ情報</div>
+					<div>ビデオ情報</div>
+				</div>
+				<div class="comments">
+					<div class="elem">
+						<div>
+							高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+						</div>
+						<div>
+							<button>編集</button>
+							<button>削除</button>
+						</div>
+					</div>
+					<div class="elem">
+						<div>
+							高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+						</div>
+						<div>
+							<button>編集</button>
+							<button>削除</button>
+						</div>
+					</div>
+					<div class="elem">
+						<div>
+							高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+						</div>
+						<div>
+							<button>編集</button>
+							<button>削除</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="elem">
+					<div>
+						高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+					</div>
+					<div>
+						<button>編集</button>
+						<button>削除</button>
+					</div>
+				</div>
+				<div class="elem">
+					<div>
+						高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+					</div>
+					<div>
+						<button>編集</button>
+						<button>削除</button>
+					</div>
+				</div>
+				<div class="elem">
+					<div>
+						高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+					</div>
+					<div>
+						<button>編集</button>
+						<button>削除</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
