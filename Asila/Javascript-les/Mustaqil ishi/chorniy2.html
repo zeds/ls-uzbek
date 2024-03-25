@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        color: white;
+        background-color: blueviolet;
+        border: 5px solid black;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">Sizning umringizni aniqlaymiz</div>
+    <script>
+      const ism = prompt("Ismingizni kiriting: ");
+      const yosh = prompt("Yoshingizni kiriting: ");
+
+      const result = `Qadrli ${ism}. Siz ${
+        2024 - yosh
+      }yilda tug'ilgansiz. To'g'rimi:)? 
+		Shunda hozir siz ${yosh * 12} oy, ${yosh * 54}hafta, ${yosh * 365}kun, ${
+        yosh * 8760
+      }soat yashagansiz `;
+
+      alert(result);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube by Asila</title>
+    <style>
+      .container1 {
+        padding-top: 45px;
+        padding: 30px;
+        display: flex;
+        gap: 5px;
+      }
+      .item:nth-child(1) {
+        width: 100%;
+      }
+      /* .item:nth-child(1) {
+        width: 100;
+      } */
+
+      iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+      }
+      .recommend {
+        display: flex;
+        gap: 5px;
+        font-size: 14px;
+        width: 400px;
+        padding: 10px;
+      }
+      .recommend img {
+        width: 170px;
+      }
+
+      .item:nth-child(3) {
+        display: none;
+      }
+
+      @media (width < 980px) {
+        .container1 {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        .comments {
+          display: none;
+        }
+        .recommend {
+          width: 100%;
+        }
+        .item:nth-child(3) {
+          display: block;
+        }
+      }
+
+      /* narigi cssning copysi */
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        position: relative;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: lightgray;
+      }
+      header {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-left: 10px;
+        background: white;
+      }
+      .left_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .line {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+
+      .line:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+
+      /* HEADER */
+
+      .logo {
+        height: 20px;
+        cursor: pointer;
+      }
+
+      .search_container {
+        display: flex;
+        height: 40px;
+        flex-grow: 1;
+        margin: 0 5rem 0 5rem;
+        max-width: 666px;
+      }
+      .search_container input {
+        width: 100%;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        padding-left: 17px;
+        font-size: 16px;
+      }
+      .search_button {
+        width: 80px;
+        height: 100%;
+        border: solid 1px #d3d3d3;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+      }
+      .search_button img {
+        height: 50%;
+      }
+      .search_button:hover .tooltip-text {
+        opacity: 0.93;
+        visibility: visible;
+        background-color: #686868;
+      }
+      .search_button:hover {
+        background: #d0d0d0;
+      }
+      .mic_icon {
+        flex: 0 0 40px;
+        width: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+        position: relative;
+        cursor: pointer;
+      }
+      .mic_icon img {
+        height: 50%;
+      }
+      .mic_icon:hover .tooltip-text {
+        opacity: 0.93;
+        visibility: visible;
+        background-color: #686868;
+      }
+      .mic_icon:hover {
+        background: #d0d0d0;
+      }
+      .right_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 20px;
+      }
+      .profile {
+        border-radius: 20px;
+        height: 32px;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        bottom: -45px;
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
+        font-size: 12px;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+
+      .tooltip:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .tooltip:hover {
+        background: gray;
+      }
+      .movie {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .movie:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .movie:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+      .bell {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .bell:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .bell:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+      }
+      .article_container {
+        padding-left: 24px;
+        padding-right: 430px;
+        padding-top: 45px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      .article_video {
+        width: 100%;
+        aspect-ratio: 3/2;
+        margin-top: 30px;
+      }
+      .article_video img {
+        width: 1050px;
+        height: 380px;
+        border-radius: 12px;
+      }
+
+      .description {
+        display: flex;
+        gap: 10px;
+      }
+      .description img {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+      }
+      .text_container {
+        padding-top: 12px;
+      }
+      .title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+
+        line-height: 28px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #0f0f0f;
+      }
+      .author {
+        color: #0f0f0f;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+      }
+      .statistics {
+        color: #606060;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+      }
+      .bottom_icon {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .subscribe {
+        display: flex;
+        height: 40px;
+        flex-grow: 1;
+        margin-left: 0;
+      }
+      .icon_family {
+        display: flex;
+        padding-left: 20px;
+      }
+      .subscribe select {
+        width: 177px;
+        height: 36px;
+        border: solid 1px #d3d3d3;
+        border-radius: 0 20px 20px 0;
+        font-size: 14px;
+        line-height: 36px;
+      }
+
+      .subscribe_button {
+        width: 40px;
+        height: 35px;
+        border: solid 1px #d3d3d3;
+        border-right: none;
+        border-radius: 20px 0 0 20px;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+      }
+      .subscribe_button img {
+        height: 50%;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        bottom: -45px;
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
+        font-size: 12px;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+      .tooltip:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .tooltip:hover {
+        background: gray;
+      }
+      .left_icon {
+        display: flex;
+        padding-left: 200px;
+      }
+      .like {
+        display: flex;
+      }
+      .like_button {
+        width: 40px;
+        height: 35px;
+        border: solid 1px #d3d3d3;
+        border-right: none;
+        border-radius: 20px 0 0 20px;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+      }
+      .like_button:hover.tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .like_button img {
+        height: 50%;
+      }
+      .dislike_button {
+        width: 40px;
+        height: 35px;
+        border: solid 1px #d3d3d3;
+        border-right: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+      }
+      .dislike_button:hover.tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .dislike_button img {
+        height: 50%;
+      }
+      .share_button {
+        width: 177px;
+        height: 36px;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 20px 20px 20px;
+        font-size: 14px;
+        line-height: 36px;
+        padding-left: 20px;
+      }
+      .share_button img {
+        height: 50%;
+      }
+      .elem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 10px;
+      }
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .conteinercomment {
+        width: 1040px;
+        height: 100vh;
+        padding-left: 24px;
+        padding-top: 20px;
+      }
+      .elem {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER-->
+    <header class="header_container">
+      <div class="left_container">
+        <div class="line">
+          <img src="akar-icons--three-line-horizontal.svg" />
+        </div>
+
+        <img class="logo" src="YouTube_Logo_2017.svg.png" />
+      </div>
+
+      <div class="search_container">
+        <input type="text" placeholder="Search" />
+
+        <button class="search_button">
+          <div class="tooltip-text">Search</div>
+          <img src="search-outline.svg" />
+        </button>
+
+        <div class="mic_icon">
+          <div class="tooltip-text">Search with your voice</div>
+          <img src="baseline-mic (1).svg" />
+        </div>
+      </div>
+      <div class="right_container">
+        <div class="movie">
+          <div class="tooltip-text">Create</div>
+          <img src="movie.svg" />
+        </div>
+
+        <div class="bell">
+          <div class="tooltip-text">Notifications</div>
+          <img src="bell (1).svg" />
+        </div>
+
+        <img class="profile" src="Asila.jpg" />
+      </div>
+    </header>
+
+    <!-- MAIN-->
+    <div class="container1">
+      <div class="item">
+        <iframe
+          src="https://www.youtube.com/embed/16FGT15yisU?si=qb6cRfhRQeCwGqg7"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <!-- <img src="kitob.webp" /> -->
+        <div class="info">
+          <div class="text_container">
+            <div class="theme">
+              <div class="title">
+                O'rgatib bo'lmaydi, boshidan o'tkazishi kerak | Iqtibos podcast
+                #15
+              </div>
+            </div>
+            <div class="bottom_icon">
+              <div class="description">
+                <img src="aziz.jpg" />
+                <div class="user">
+                  <div class="author">Aziz Rakhimov</div>
+                  <div class="statistics">70,5 тыс. подписчиков</div>
+                </div>
+              </div>
+              <div class="icon_family">
+                <button class="subscribe_button">
+                  <div class="tooltip-text"></div>
+                  <img src="bell (1).svg" />
+                </button>
+                <div class="subscribe">
+                  <select>
+                    <option>Subscribe</option>
+                    <option>Unsubscribe</option>
+                  </select>
+                </div>
+                <div class="left_icon">
+                  <div class="like">
+                    <button class="like_button">
+                      <div class="tooltip-text">Liked</div>
+                      <img src="like.svg" />
+                    </button>
+                    <button class="dislike_button">
+                      <div class="tooltip-text">Disliked</div>
+                      <img src="dislike.svg" />
+                    </button>
+                  </div>
+                  <button class="share_button">
+                    <div class="tooltip-text">share</div>
+                    <img src="share.svg" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div>video information</div>
+          <div>video information</div> -->
+        </div>
+        <div class="comments">
+          <div class="elem">
+            <div>
+              Ingliz tilini bilmaganimga bu qadar afsuslanmaganman.Shu bugun
+              boshlashga qaror qildim. Olloh rozi bolsin sizdan.
+            </div>
+            <div>
+              <button>Edit</button>
+              <button>Delete</button>
+            </div>
+          </div>
+          <div class="elem">
+            <div>
+              Juda foydali video bo'lipti. Kitoblarni qanday saytlardan buyurtma
+              qilishingizni.
+            </div>
+            <div>
+              <button>Edit</button>
+              <button>Delete</button>
+            </div>
+          </div>
+          <div class="elem">
+            <div>
+              Youtubdan notification keldi siz video chiqazdi yangi deb
+              iftornimas shuni kutdim
+            </div>
+            <div>
+              <button>Edit</button>
+              <button>Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="recommend">
+          <img src="kitob.webp" />
+          <div>
+            <div>2024-yil uchun tanlangan 18ta kitob</div>
+            <div>Aziz Rakhimov</div>
+            <div>38,4 тыс. подписчиков</div>
+          </div>
+        </div>
+        <div class="recommend">
+          <img src="guz.webp" />
+          <div>
+            <div>11 yoshli wunderkind qizaloq hammani lol qoldirdi</div>
+            <div>Ibrat Farzandlari</div>
+            <div>38,4 тыс. подписчиков</div>
+          </div>
+        </div>
+
+        <div class="recommend">
+          <img src="xch.webp" />
+          <div>
+            <div>Eng zo'r yo'l- ozini ozgartirish</div>
+            <div>Aziz Rakhimov</div>
+            <div>38,4 тыс. подписчиков</div>
+          </div>
+        </div>
+
+        <div class="recommend">
+          <img src="hqdefault (1).jpg" />
+          <div>
+            <div>
+              Savdogarlar ustozi kitobi 10 daqiqada | Haqiqiy omad kaliti
+              kitobning mazmuni
+            </div>
+            <div>10 daqiqa</div>
+            <div>38,4 тыс. подписчиков</div>
+          </div>
+        </div>
+
+        <div class="recommend">
+          <img src="hqdefault (2).jpg" />
+          <div>
+            <div>Ingliz tilida kuniga 100= so'z yodlash sirlari</div>
+            <div>Otabek vlogs</div>
+            <div>38,4 тыс. подписчиков</div>
+          </div>
+        </div>
+        <div class="recommend">
+          <img src="guz.webp" />
+          <div>
+            <div>11 yoshli wunderkind qizaloq hammani lol qoldirdi</div>
+            <div>Ibrat Farzandlari</div>
+            <div>38,4 тыс. подписчиков</div>
+          </div>
+        </div>
+
+        <div class="recommend">
+          <img src="hqdefault (3).jpg" />
+          <div>
+            <div>2024-yil uchun tanlangan 18ta kitob</div>
+            <div>Aziz Rakhimov</div>
+            <div>38,4 тыс. подписчиков</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="elem">
+          <div>
+            Ingliz tilini bilmaganimga bu qadar afsuslanmaganman.Shu bugun
+            boshlashga qaror qildim. Olloh rozi bolsin sizdan.
+          </div>
+          <div>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+        </div>
+        <div class="elem">
+          <div>
+            Juda foydali video bo'lipti. Kitoblarni qanday saytlardan buyurtma
+            qilishingizni ham keyingi videolarinigizda aytib o'tsangiz.
+          </div>
+          <div>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+        </div>
+        <div class="elem">
+          <div>
+            Ingliz tilini bilmaganimga bu qadar afsuslanmaganman.Shu bugun
+            boshlashga qaror qildim. Olloh rozi bolsin sizdan.
+          </div>
+          <div>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

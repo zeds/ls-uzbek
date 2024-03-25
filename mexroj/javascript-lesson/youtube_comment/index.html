@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="name" type="text" placeholder="enter your name" /><input
+      id="comment"
+      type="text"
+      placeholder="comment here"
+    /><button id="commentButton">comment</button
+    ><button id="clearButton">clear</button>
+    <div id="lists"></div>
+    <script>
+      let editMode = false;
+      let indexComment = 0;
+
+      const comments = [
+        {
+          id: "4f550e71-9705-42bb-85d9-5826e08780f7",
+          name: "佐藤",
+          age: 20,
+          comment: "優しい二匹に癒されます",
+          cntHeart: 0,
+          img_url:
+            "https://yt3.ggpht.com/C_WH4A2Q4p_w63JmEHKK8-jeWjM3HBwTMRIUsSD1IJMKvo0a9YbrN2h4iOukOECzJ8Duqkun=s68-c-k-c0x00ffffff-no-rj",
+        },
+        {
+          id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
+          name: "高橋",
+          age: 39,
+          comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+          cntHeart: 0,
+          img_url:
+            "https://yt3.ggpht.com/C_WH4A2Q4p_w63JmEHKK8-jeWjM3HBwTMRIUsSD1IJMKvo0a9YbrN2h4iOukOECzJ8Duqkun=s68-c-k-c0x00ffffff-no-rj",
+        },
+        {
+          id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
+          name: "山田",
+          age: 48,
+          comment: "そうなのねー😢 家族だね😭",
+          cntHeart: 0,
+          img_url:
+            "https://yt3.ggpht.com/C_WH4A2Q4p_w63JmEHKK8-jeWjM3HBwTMRIUsSD1IJMKvo0a9YbrN2h4iOukOECzJ8Duqkun=s68-c-k-c0x00ffffff-no-rj",
+        },
+      ];
+
+      document
+        .getElementById("commentButton")
+        .addEventListener("click", function () {
+          let parent = document.getElementById("lists");
+
+          let name = document.getElementById("name").value;
+          let comment = document.getElementById("comment").value;
+          let obj = {
+            id: "8888",
+            name: name,
+            comment: comment,
+            age: 42,
+            image_url: "",
+          };
+        });
+    </script>
+  </body>
+</html>

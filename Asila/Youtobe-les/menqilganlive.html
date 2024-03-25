@@ -51,15 +51,14 @@
           <div class="text_container">
             <div class="theme">
               <div class="title">
-                #7 - Taqqoslash operatorlari. If va Else. Umumiy dasturlash
-                teoriyasi. Dasturlashni o'rganish kursi
+                O'rgatib bo'lmaydi, boshidan o'tkazishi kerak | Iqtibos podcast #15
               </div>
             </div>
             <div class="bottom_icon">
               <div class="description">
                 <img src="xushnud.jpg" />
                 <div class="user">
-                  <div class="author">Xushnudbek channel</div>
+                  <div class="author">Aziz Rakhimov</div>
                   <div class="statistics">70,5 тыс. подписчиков</div>
                 </div>
               </div>
@@ -100,6 +99,8 @@
       </div>
       <div class="articles"></div>
     </main>
+
+    
     <!-- shu yerdan comment boshlangan -->
     <div class="conteinercomment">
       <input id="name" type="text" placeholder="Enter your name" />
@@ -120,7 +121,7 @@
           name: "佐藤",
           // age: 49,
           comment: "優しい二匹に癒されます",
-          cntHeart: 6,
+          cntHeart: 0,
           image_url:
             "https://yt3.ggpht.com/lzgaVr4cM4pQwFOucoi5pa4JZJJhBJ32PxqIJtISYXvy054v0JyWA7GoBtVDV5PvDq_1wJncWg=s68-c-k-c0x00ffffff-no-rj",
         },
@@ -129,7 +130,7 @@
           name: "高橋",
           // age: 25,
           comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
-          cntHeart: 1,
+          cntHeart: 0,
           image_url:
             "https://yt3.ggpht.com/lzgaVr4cM4pQwFOucoi5pa4JZJJhBJ32PxqIJtISYXvy054v0JyWA7GoBtVDV5PvDq_1wJncWg=s68-c-k-c0x00ffffff-no-rj",
         },
@@ -138,7 +139,7 @@
           name: "山田",
           // age: 37,
           comment: "そうなのねー😢 家族だね😭",
-          cntHeart: 6,
+          cntHeart: 0,
           image_url:
             "https://yt3.ggpht.com/lzgaVr4cM4pQwFOucoi5pa4JZJJhBJ32PxqIJtISYXvy054v0JyWA7GoBtVDV5PvDq_1wJncWg=s68-c-k-c0x00ffffff-no-rj",
         },
@@ -215,11 +216,11 @@
           // ハートボタン追加
           let heartButton = document.createElement("button");
           if (comments[i].cntHeart !== 0) {
-            heartButton.innerHTML = "❤";
-          } else {
             heartButton.innerHTML = "♡";
+          } else {
+            heartButton.innerHTML = "❤";
           }
-          heartButton.innerHTML = "♡";
+          // heartButton.innerHTML = "♡";
           heartButton.addEventListener("click", function () {
             comments[i].cntHeart++;
             clearElements();

@@ -7,43 +7,42 @@
 		<title>Document</title>
 		<style>
 			.container {
-				display: grid; /*「Container」を「Grid Layout」に指定*/
-				grid-template-columns: 1fr 400px;
+				display: flex;
 				gap: 5px;
 			}
-			.item {
-				background: skyblue;
+			.item:nth-child(1) {
+				width: 100%;
 			}
-			.item:nth-child(2) {
-				grid-column: 2 / 3;
-				grid-row: 1 / 3;
-				background: pink;
+			iframe {
+				width: 100%;
+				aspect-ratio: 16/9;
 			}
 			.recommend {
 				display: flex;
-				height: 110px;
+				gap: 5px;
+				font-size: 14px;
+				width: 400px;
 				padding: 10px;
 			}
-
-			.item:nth-child(1) {
-				background: black;
-			}
-			.item:nth-child(1) img {
-				width: 100%;
+			.recommend img {
+				width: 170px;
 			}
 			.item:nth-child(3) {
-				background: green;
-			}
-			.info {
-				background: white;
+				display: none;
 			}
 			@media (width < 980px) {
 				.container {
+					display: grid;
 					grid-template-columns: 1fr;
 				}
-				.item:nth-child(2) {
-					grid-column: 1 / 2;
-					grid-row: 2 / 3;
+				.comments {
+					display: none;
+				}
+				.recommend {
+					width: 100%;
+				}
+				.item:nth-child(3) {
+					display: block;
 				}
 			}
 		</style>
@@ -52,13 +51,48 @@
 		<div class="container">
 			<!--アイテム-->
 			<div class="item">
-				<img src="./russia.webp" />
+				<iframe
+					src="https://www.youtube.com/embed/q-VNPpo9z0Y?si=XXVmp0fIA64ryp1M"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen
+				></iframe>
+
+				<!-- <img src="./russia.webp" /> -->
 				<div class="info">
-					<p>ビデオ情報</p>
-					<p>あああああ</p>
-					<p>あああああ</p>
-					<p>あああああ</p>
-					<p>あああああ</p>
+					<div>ビデオ情報</div>
+					<div>ビデオ情報</div>
+					<div>ビデオ情報</div>
+				</div>
+				<div class="comments">
+					<div class="elem">
+						<div>
+							高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+						</div>
+						<div>
+							<button>編集</button>
+							<button>削除</button>
+						</div>
+					</div>
+					<div class="elem">
+						<div>
+							高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+						</div>
+						<div>
+							<button>編集</button>
+							<button>削除</button>
+						</div>
+					</div>
+					<div class="elem">
+						<div>
+							高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+						</div>
+						<div>
+							<button>編集</button>
+							<button>削除</button>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="item">
@@ -142,30 +176,6 @@
 						<div>18万回視聴</div>
 					</div>
 				</div>
-				<div class="recommend">
-					<img src="./russia.webp" />
-					<div>
-						<div>ロシア人の私が日本人に帰化しない理由</div>
-						<div>🌹ディアナチャンネル🌹</div>
-						<div>18万回視聴</div>
-					</div>
-				</div>
-				<div class="recommend">
-					<img src="./russia.webp" />
-					<div>
-						<div>ロシア人の私が日本人に帰化しない理由</div>
-						<div>🌹ディアナチャンネル🌹</div>
-						<div>18万回視聴</div>
-					</div>
-				</div>
-				<div class="recommend">
-					<img src="./russia.webp" />
-					<div>
-						<div>ロシア人の私が日本人に帰化しない理由</div>
-						<div>🌹ディアナチャンネル🌹</div>
-						<div>18万回視聴</div>
-					</div>
-				</div>
 			</div>
 			<div class="item">
 				<div class="elem">
@@ -196,7 +206,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div class="item">item4</div> -->
 		</div>
 	</body>
 </html>
