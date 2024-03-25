@@ -10,6 +10,154 @@
         display: flex;
         gap: 5px;
       }
+      header {
+        /* background-color: chartreuse; */
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
+        display: grid;
+        grid-template-columns: 150px 1fr 160px;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-left: 20px;
+        background-color: aqua;
+        top: 0;
+      }
+      .left_container {
+        display: flex;
+        gap: 15px;
+      }
+      header .hamburger {
+        height: 20px;
+      }
+      header .logo {
+        height: 20px;
+        /* background: red; */
+      }
+      .search_container {
+        display: flex;
+        height: 40px;
+        flex-grow: 1;
+        margin: 0 5rem 0 5rem;
+        max-width: 666px;
+      }
+      .search_container input {
+        width: 100%;
+        /* height: 80%; */
+        border: solid 1px #d3d3d3;
+        border-radius: 20px 0 0 20px;
+        padding-left: 17px;
+        /* font-size: 16px; */
+      }
+      .search_button {
+        width: 64px;
+        /* height: 80%; */
+        border: solid 1px #d3d3d3;
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .search_button:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .search_button:hover {
+        background: #e0e0e0;
+      }
+      .mic_icon {
+        /* 親でdisplay: flexを指定しているが、親が縮むとmicの幅も縮んでしまう。 */
+        /* micは固定にしたいので、flex: 0 0 40px;と指定している。 */
+        flex: 0 0 40px;
+        width: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .mic_icon:hover .tooltip-text {
+        visibility: visible;
+      }
+      .mic_icon:hover {
+        background: #e0e0e0;
+      }
+      .right_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 20px;
+      }
+      .profile {
+        border-radius: 20px;
+        height: 32px;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        bottom: -45px;
+
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
+
+        font-size: 12px;
+        color: white;
+
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+
+      /* ホバー時にツールチップの非表示を解除 */
+      /* .tooltip:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+} */
+      /* .tooltip:hover {
+  background: gray;
+} */
+      .video {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .video:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .video:hover {
+        background: #e0e0e0;
+      }
+      .bell {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .bell:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .bell:hover {
+        background: #e0e0e0;
+      }
+
       .item:nth-child(1) {
         width: 100%;
       }
@@ -17,19 +165,13 @@
         width: 100%;
         aspect-ratio: 16/9;
       }
-      .recommend {
+      .article {
         display: flex;
+        font-size: 12px;
+        margin: 5px;
         gap: 5px;
-        font-size: 14px;
-        width: 400px;
-        padding: 10px;
       }
-      .recommend img {
-        width: 170px;
-      }
-      .item:nth-child(3) {
-        display: none;
-      }
+
       @media (width < 980px) {
         .container {
           display: grid;
@@ -54,6 +196,36 @@
     </style>
   </head>
   <body>
+    <header>
+      <div class="left_container">
+        <img class="hamburger" src="hamburger.svg" />
+        <img class="logo" src="youtube.svg" />
+      </div>
+
+      <div class="search_container">
+        <input type="text" placeholder="検索" />
+        <button class="search_button">
+          <div class="tooltip-text">検索</div>
+          <img src="search.svg" />
+        </button>
+        <div class="mic_icon">
+          <div class="tooltip-text">音声で検索</div>
+          <img src="mic.svg" />
+        </div>
+      </div>
+
+      <div class="right_container">
+        <div class="video">
+          <div class="tooltip-text">作成</div>
+          <img src="movie.svg" />
+        </div>
+        <div class="bell">
+          <div class="tooltip-text">通知</div>
+          <img src="bell.svg" />
+        </div>
+        <img class="profile" src="me.jpg" />
+      </div>
+    </header>
     <div class="container">
       <!--アイテム-->
       <div class="item">
@@ -72,377 +244,59 @@
           <div>ビデオ情報</div>
         </div>
       </div>
-      <div class="item">
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-        <div class="recommend">
-          <img src="rasm1.webp" />
-          <div>
-            <div>ロシア人の私が日本人に帰化しない理由</div>
-            <div>🌹ディアナチャンネル🌹</div>
-            <div>18万回視聴</div>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <input id="name" type="text" placeholder="Enter your name" />
-        <input id="comment" type="text" placeholder="comment here" />
-        <button id="commentButton">コメント</button>
-        <button id="clearButton">clear</button>
-        <div id="lists"></div>
-      </div>
+      <div id="recommends"></div>
     </div>
     <script>
-      let editMode = false;
-      let indexComment = 0;
+      const recommends = [
+        {
+          title: "aiueo-1",
+          author: "JForrest English",
+          statistics: "7.5万 回視聴",
+          img: "me.jpg",
+        },
 
-      const comments = [
         {
-          id: "4f550e71-9705-42bb-85d9-5826e08780f7",
-          name: "佐藤",
-          age: 20,
-          comment: "優しい二匹に癒されます",
-          cntHeart: 0,
-          img_url:
-            "https://yt3.ggpht.com/C_WH4A2Q4p_w63JmEHKK8-jeWjM3HBwTMRIUsSD1IJMKvo0a9YbrN2h4iOukOECzJ8Duqkun=s68-c-k-c0x00ffffff-no-rj",
+          title: "aiueo-2",
+          author: "JForrest English",
+          statistics: "7.5万 回視聴",
+          img: "me.jpg",
         },
+
         {
-          id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
-          name: "高橋",
-          age: 39,
-          comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
-          cntHeart: 0,
-          img_url:
-            "https://yt3.ggpht.com/C_WH4A2Q4p_w63JmEHKK8-jeWjM3HBwTMRIUsSD1IJMKvo0a9YbrN2h4iOukOECzJ8Duqkun=s68-c-k-c0x00ffffff-no-rj",
-        },
-        {
-          id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
-          name: "山田",
-          age: 48,
-          comment: "そうなのねー😢 家族だね😭",
-          cntHeart: 0,
-          img_url:
-            "https://yt3.ggpht.com/C_WH4A2Q4p_w63JmEHKK8-jeWjM3HBwTMRIUsSD1IJMKvo0a9YbrN2h4iOukOECzJ8Duqkun=s68-c-k-c0x00ffffff-no-rj",
+          title: "aiueo-3",
+          author: "JForrest English",
+          statistics: "7.5万 回視聴",
+          img: "me.jpg",
         },
       ];
+      const parent = document.getElementById("recommends");
 
-      // コメントボタン
-      document
-        .getElementById("commentButton")
-        .addEventListener("click", function () {
-          let parent = document.getElementById("lists");
-          // inputの値を取得
-          // オブジェクトを作成 { name: xxxx, comment: xxx}
-          // commentsにオブジェクトを追加
-          let name = document.getElementById("name").value;
-          let comment = document.getElementById("comment").value;
-          let obj = {
-            id: "111",
-            name: name,
-            comment: comment,
-            age: 18,
-            image_url: "",
-          };
+      for (let i = 0; i < recommends.length; i++) {
+        const article = document.createElement("div");
+        article.className = "article";
 
-          if (editMode) {
-            comments[indexComment].name = name;
-            comments[indexComment].comment = comment;
-            editMode = false;
-            document.getElementById("commentButton").innerHTML = "コメント";
-          } else {
-            comments.unshift(obj);
-          }
+        const img = document.createElement("img");
+        img.src = recommends[i].img;
+        article.appendChild(img);
 
-          // 今表示されているコメントを全て消す
-          clearElements();
+        const textContainer = document.createElement("div");
+        textContainer.className = "text_container";
 
-          // commentsを表示
-          showComments();
-        });
+        const title = document.createElement("div");
+        title.innerHTML = recommends[i].title;
+        textContainer.appendChild(title);
 
-      //clearButton
+        const author = document.createElement("div");
+        author.innerHTML = recommends[i].author;
+        textContainer.appendChild(author);
 
-      document
-        .getElementById("clearButton")
-        .addEventListener("click", function () {
-          clearElements();
-          comments.splice(0, comments.length);
-        });
+        const statistics = document.createElement("div");
+        statistics.innerHTML = "9y93r2y9y";
+        textContainer.appendChild(statistics);
 
-      // commentsを表示したい
-      function showComments() {
-        let parent = document.getElementById("lists");
-
-        for (let i = 0; i < comments.length; i++) {
-          let elem = document.createElement("div");
-          elem.className = "elem";
-
-          let left = document.createElement("div");
-          left.className = "left";
-
-          let img = document.createElement("img");
-          img.src = comments[i].img_url;
-          left.appendChild(img);
-
-          let comment = document.createElement("div");
-          comment.innerHTML =
-            comments[i].name +
-            comments[i].age +
-            " 歳" +
-            " " +
-            comments[i].comment;
-          left.appendChild(comment);
-
-          let right = document.createElement("div");
-
-          //heartButton
-          let heartButton = document.createElement("button");
-          if (comments[i].cntHeart !== 0) {
-            heartButton.innerHTML = "❤️" + comments[i].cntHeart;
-          } else {
-            heartButton.innerHTML = "♡";
-          }
-          heartButton.addEventListener("click", function () {
-            comments[i].cntHeart++;
-            clearElements();
-            showComments();
-          });
-
-          // 編集ボタン
-          let editButton = document.createElement("button");
-          editButton.innerHTML = "編集";
-
-          editButton.addEventListener("click", function () {
-            editMode = true;
-            indexComment = i;
-            document.getElementById("name").value = comments[i].name;
-            document.getElementById("comment").value = comments[i].comment;
-            document.getElementById("commentButton").innerHTML = "編集完了";
-            // comments[i].name = "鈴木";
-            // clearElements();
-            // showComments();
-          });
-
-          //削除ボタン
-          let deleteButton = document.createElement("button");
-          deleteButton.innerHTML = "削除";
-
-          deleteButton.addEventListener("click", function () {
-            comments.splice(i, 1);
-            clearElements();
-            showComments();
-          });
-
-          elem.appendChild(left);
-          right.appendChild(heartButton);
-          right.appendChild(editButton);
-          right.appendChild(deleteButton);
-          elem.appendChild(right);
-
-          parent.appendChild(elem);
-        }
+        article.appendChild(textContainer);
+        parent.appendChild(article);
       }
-
-      function clearElements() {
-        const all = document.querySelectorAll(".elem");
-
-        for (let i = 0; i < all.length; i++) {
-          all[i].remove();
-        }
-      }
-
-      // commentsを表示
-      showComments();
     </script>
   </body>
 </html>
