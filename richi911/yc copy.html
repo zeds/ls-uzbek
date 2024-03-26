@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        /* display: grid;
+      grid-template-columns: 1fr 400px; */
+      }
+      .recommends {
+        width: 400px;
+      }
+      .recommend {
+        display: flex;
+        height: 110px;
+        padding: 10px;
+      }
+      .recommend img {
+        height: 100%;
+      }
+      .video {
+        width: 100%;
+        /* background: red; */
+      }
+      .video_description {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .video img {
+        border-radius: 15px;
+        width: 100%;
+      }
+      .tag_container {
+        height: 58px;
+        width: 100%;
+        /* background: skyblue; */
+      }
+      .tag_list {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .tag_list img {
+        height: 48px;
+        width: 48px;
+        border-radius: 24px;
+        margin: 5px;
+      }
+      .tag_profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100px;
+        height: 55px;
+        /* background: brown; */
+      }
+      .tag_profile_1 {
+        /* background: pink; */
+      }
+      .tag_profile_2 {
+        /* background: yellow; */
+      }
+      .tag_subscribe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 30px;
+        background: red;
+        border-radius: 20px;
+        color: white;
+        size: 14px;
+      }
+      .tag_container_1 {
+        display: flex;
+        width: 740px;
+        justify-content: end;
+        align-content: center;
+        /* background: white; */
+      }
+      .tag_like {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px gray;
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 20px 0 0 20px;
+        width: 50px;
+        height: 30px;
+        background: lightgray;
+      }
+      .tag_dislike {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 20px 20px 0;
+        width: 60px;
+        height: 30px;
+        background: lightgray;
+      }
+      .tag_share {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px;
+        width: 100px;
+        height: 30px;
+        background: lightgray;
+      }
+      .tag_download {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px;
+        width: 100px;
+        height: 30px;
+        background: lightgray;
+      }
+      .tag_dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px;
+        width: 60px;
+        height: 30px;
+        background: lightgray;
+      }
+      .comments {
+        background: green;
+      }
+      @media (width < 980px) {
+        .container {
+          /* grid-template-columns: 1fr; */
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="container">
+        <div class="video">
+          <img src="lofi.webp" />
+          <div>
+            <div class="video_description">
+              lofi hip hop radio 📚 - beats to relax/study to
+            </div>
+            <div class="tag_container">
+              <div class="tag_list">
+                <img src="lofi.webp" />
+                <div class="tag_profile">
+                  <div class="tag_profile_1">Lofi Girl</div>
+                  <div class="tag_profile_2">3M subscribe</div>
+                </div>
+                <div class="tag_subscribe">Subscribe</div>
+                <div class="tag_container_1">
+                  <div class="tag_like">
+                    <img src="like.svg" />
+                  </div>
+                  <div class="tag_dislike">
+                    <img src="dislike.svg" />
+                  </div>
+                  <div class="tag_share"><img src="share.svg" />Share</div>
+                  <div class="tag_download">
+                    <img src="downloadbtn.svg" />Download
+                  </div>
+                  <div class="tag_dots">
+                    <img src="dots.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="recommends">
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+          <div class="recommend">
+            <img src="hq720.webp" />
+            <div>
+              <div>ロシア人の私が日本人に帰化しない理由</div>
+              <div>🌹ディアナチャンネル🌹</div>
+              <div>18万回視聴</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comments">
+        <div class="elem">
+          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+          <div>
+            <button>編集</button>
+            <button>削除</button>
+          </div>
+        </div>
+        <div class="elem">
+          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+          <div>
+            <button>編集</button>
+            <button>削除</button>
+          </div>
+        </div>
+        <div class="elem">
+          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+          <div>
+            <button>編集</button>
+            <button>削除</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

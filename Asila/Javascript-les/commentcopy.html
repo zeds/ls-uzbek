@@ -11,10 +11,18 @@
     .elem {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
   </style>
 
   <body>
+    
     <input id="name" type="text" placeholder="Enter your name" />
     <input id="comment" type="text" placeholder="comment here" />
     <button id="commentButton">コメント</button>
@@ -57,17 +65,29 @@
         {
           id: "4f550e71-9705-42bb-85d9-5826e08780f7",
           name: "佐藤",
+          age: 49,
           comment: "優しい二匹に癒されます",
+          cntHeart: 0,
+          image_url:
+            "https://yt3.ggpht.com/lzgaVr4cM4pQwFOucoi5pa4JZJJhBJ32PxqIJtISYXvy054v0JyWA7GoBtVDV5PvDq_1wJncWg=s68-c-k-c0x00ffffff-no-rj",
         },
         {
           id: "0a2c283a-0af7-4089-a9b2-4f2b850b4244",
           name: "高橋",
+          age: 25,
           comment: "いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀",
+          cntHeart: 1,
+          image_url:
+            "https://yt3.ggpht.com/lzgaVr4cM4pQwFOucoi5pa4JZJJhBJ32PxqIJtISYXvy054v0JyWA7GoBtVDV5PvDq_1wJncWg=s68-c-k-c0x00ffffff-no-rj",
         },
         {
           id: "07ae9121-d2c1-4d1d-8034-57a57fc3bbdb",
           name: "山田",
+          age: 37,
           comment: "そうなのねー😢 家族だね😭",
+          cntHeart: 0,
+          image_url:
+            "https://yt3.ggpht.com/lzgaVr4cM4pQwFOucoi5pa4JZJJhBJ32PxqIJtISYXvy054v0JyWA7GoBtVDV5PvDq_1wJncWg=s68-c-k-c0x00ffffff-no-rj",
         },
       ];
 
@@ -81,14 +101,15 @@
           // commentsにオブジェクトを追加
           let name = document.getElementById("name").value;
           let comment = document.getElementById("comment").value;
-          let obj = { id: "111", name: name, comment };
 
           if (editMode) {
+            // 編集の時
             comments[indexComment].name = name;
             comments[indexComment].comment = comment;
             editMode = false;
             document.getElementById("commentButton").innerHTML = "コメント";
           } else {
+            // 追加の時
             comments.unshift(obj);
           }
 
@@ -114,17 +135,42 @@
           let elem = document.createElement("div");
           elem.className = "elem";
 
-          let comment = document.createElement("div");
-          comment.innerHTML = comments[i].name + " " + comments[i].comment;
+          let left = document.createElement("div");
+          left.className = "left";
 
-          elem.appendChild(comment);
+          let img = document.createElement("img");
+          img.src = comments[i].image_url;
+          img.width = 40;
+          img.height = 40;
+          left.appendChild(img);
+          // elem.appendChild(img);
+
+          // 佐藤 49歳
+          let comment = document.createElement("div");
+          comment.innerHTML =
+            comments[i].name +
+            " " +
+            comments[i].age +
+            "歳 " +
+            comments[i].comment;
+          left.appendChild(comment);
+
+          elem.appendChild(left);
 
           let right = document.createElement("div");
 
-          let editButton = document.createElement("button");
-          editButton.innerHTML = "編集";
+          // ハートボタン追加
+          let heartButton = document.createElement("button");
+          heartButton.innerHTML = "♡";
+          heartButton.addEventListener("click", function () {
+            comments[i].cntHeart++;
+            clearElements();
+            showComments();
+          });
 
           // 編集ボタン
+          let editButton = document.createElement("button");
+          editButton.innerHTML = "編集";
           editButton.addEventListener("click", function () {
             editMode = true;
             indexComment = i;
@@ -136,9 +182,9 @@
             // showComments();
           });
 
+          // 削除ボタン
           let deleteButton = document.createElement("button");
           deleteButton.innerHTML = "削除";
-
           deleteButton.addEventListener("click", function () {
             comments.splice(i, 1);
             clearElements();

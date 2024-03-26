@@ -2,62 +2,201 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-			rel="stylesheet"
-		/>
 		<title>Document</title>
 		<style>
-			* {
-				padding: 0;
-				margin: 0;
-				box-sizing: border-box;
-			}
-			body {
-				font-family: "Roboto", sans-serif;
-				font-size: 20px;
-			}
 			.container {
-				width: 100%;
-				height: 100vh;
-				background: lightgray;
-			}
-			.grid_container {
-				width: 100%;
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr 1fr;
-				gap: 10px;
-				background: red;
-				padding: 20px;
+				display: grid; /*「Container」を「Grid Layout」に指定*/
+				grid-template-columns: 1fr 400px;
+				gap: 5px;
 			}
 			.item {
 				background: skyblue;
-				/* height: 300px; */
-				aspect-ratio: 1/1;
+			}
+			.item:nth-child(2) {
+				grid-column: 2 / 3;
+				grid-row: 1 / 3;
+				background: pink;
+			}
+			.recommend {
 				display: flex;
-				justify-content: center;
-				align-items: center;
+				height: 110px;
+				padding: 10px;
 			}
-			@media (max-width: 1240px) {
-				.grid_container {
-					grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+			.item:nth-child(1) {
+				background: black;
+			}
+			.item:nth-child(1) img {
+				width: 100%;
+			}
+			.item:nth-child(3) {
+				background: green;
+			}
+			.info {
+				background: white;
+			}
+			@media (width < 980px) {
+				.container {
+					grid-template-columns: 1fr;
 				}
-			}
-			@media (max-width: 800px) {
-				.grid_container {
-					grid-template-columns: 1fr 1fr;
+				.item:nth-child(2) {
+					grid-column: 1 / 2;
+					grid-row: 2 / 3;
 				}
 			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
-			<div class="grid_container">
-				<div class="item">あいうえお</div>
+			<!--アイテム-->
+			<div class="item">
+				<img src="./russia.webp" />
+				<div class="info">
+					<p>ビデオ情報</p>
+					<p>あああああ</p>
+					<p>あああああ</p>
+					<p>あああああ</p>
+					<p>あああああ</p>
+				</div>
 			</div>
+			<div class="item">
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+				<div class="recommend">
+					<img src="./russia.webp" />
+					<div>
+						<div>ロシア人の私が日本人に帰化しない理由</div>
+						<div>🌹ディアナチャンネル🌹</div>
+						<div>18万回視聴</div>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="elem">
+					<div>
+						高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+					</div>
+					<div>
+						<button>編集</button>
+						<button>削除</button>
+					</div>
+				</div>
+				<div class="elem">
+					<div>
+						高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+					</div>
+					<div>
+						<button>編集</button>
+						<button>削除</button>
+					</div>
+				</div>
+				<div class="elem">
+					<div>
+						高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+					</div>
+					<div>
+						<button>編集</button>
+						<button>削除</button>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="item">item4</div> -->
 		</div>
 	</body>
 </html>

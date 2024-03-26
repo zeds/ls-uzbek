@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Response HTML Page</title>
+  <style>
+    /* CSS for grid layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 600px 320px;
+      gap: 20px; /* Optional: Adds space between grid items */
+    }
+
+    /* CSS for grid items */
+    .grid-item {
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Optional: CSS for responsive design */
+    @media screen and (max-width: 960px) {
+      .grid-container {
+        grid-template-columns: 1fr; /* Make the grid one column for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-item">
+      <h2>Column 1 (600px)</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+    </div>
+    <div class="grid-item">
+      <h2>Column 2 (320px)</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+    </div>
+  </div>
+</body>
+</html>
