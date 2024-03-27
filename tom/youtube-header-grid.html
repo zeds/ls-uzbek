@@ -6,6 +6,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			.container {
+				padding: 0 20px;
+			}
+
 			header {
 				height: 56px;
 				display: grid;
@@ -15,7 +24,7 @@
 				gap: 10px;
 			}
 
-			.logo {
+			.logo-container {
 				height: 56px;
 				display: flex;
 				align-items: center;
@@ -23,7 +32,6 @@
 			.burger {
 				width: 24px;
 				height: 24px;
-				/* border-radius: 12px; */
 				padding: 8px;
 				display: flex;
 				justify-content: center;
@@ -37,18 +45,15 @@
 				height: 24px;
 			}
 			.logo-img {
-				width: 90px;
 				height: 56px;
 				padding: 18px 14px 18px 16px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 			}
-
-			.logo img {
+			.logo-img img {
 				height: 20px;
 			}
-
 			.search {
 				display: flex;
 				justify-content: center;
@@ -64,7 +69,7 @@
 				padding-left: 17px;
 			}
 			.search button {
-				height: 43px;
+				height: 40px;
 				width: 64px;
 				position: relative;
 				border-radius: 0 20px 20px 0;
@@ -141,12 +146,16 @@
 				visibility: visible;
 				position: absolute;
 			}
+			.avatar {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 
 			.avatar img {
 				height: 32px;
 				width: 32px;
 				border-radius: 16px;
-				padding: ;
 			}
 			.tooltip {
 				padding: 0 4px;
@@ -193,36 +202,38 @@
 	</head>
 
 	<body>
-		<header>
-			<div class="logo">
-				<div class="burger"><img src="burger.svg" /></div>
-				<div class="logo-img"><img src="logo.svg" /></div>
-			</div>
-			<div class="search">
-				<input type="text" placeholder="検索" />
-				<button class="search_button">
-					<div class="tooltip">検索</div>
-					<img src="search.svg" />
-				</button>
-				<div class="mic">
-					<img src="mic.svg" alt="" />
-					<div class="tooltip">音声で検索</div>
+		<div class="container">
+			<header>
+				<div class="logo-container">
+					<div class="burger"><img src="./images/burger.svg" /></div>
+					<div class="logo-img"><img src="./images/logo.svg" /></div>
 				</div>
-			</div>
+				<div class="search">
+					<input type="text" placeholder="検索" />
+					<button class="search_button">
+						<div class="tooltip">検索</div>
+						<img src="./images/search.svg" />
+					</button>
+					<div class="mic">
+						<img src="./images/mic.svg" alt="" />
+						<div class="tooltip">音声で検索</div>
+					</div>
+				</div>
 
-			<div class="profile">
-				<div class="video">
-					<img src="video.svg" />
-					<div class="tooltip">作成</div>
+				<div class="profile">
+					<div class="video">
+						<img src="./images/video.svg" />
+						<div class="tooltip">作成</div>
+					</div>
+					<div class="bell">
+						<img src="./images/bell.svg" />
+						<div class="tooltip">通知</div>
+					</div>
+					<div class="avatar">
+						<img src="./images/tom.jpeg" />
+					</div>
 				</div>
-				<div class="bell">
-					<img src="bell.svg" />
-					<div class="tooltip">通知</div>
-				</div>
-				<div class="avatar">
-					<img src="tom.jpeg" />
-				</div>
-			</div>
-		</header>
+			</header>
+		</div>
 	</body>
 </html>
