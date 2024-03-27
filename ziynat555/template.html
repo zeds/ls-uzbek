@@ -8,160 +8,132 @@
     <style>
       .container {
         display: flex;
-        /* display: grid;
-				grid-template-columns: 1fr 400px; */
+        gap: 5px;
       }
-      .recommends {
-        width: 400px;
+      .item:nth-child(1) {
+        width: 100%;
+      }
+      iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+      }
+      .video_description {
+        height: 60px;
+        width: 100%;
+        background: gray;
+      }
+      .profile img {
+        border-radius: 20px;
+        height: 40px;
+      }
+      .user_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100px;
+        height: 55px;
+      }
+      .user_info_name {
+        background: white;
+      }
+      .user_info_followers {
+        background: white;
+      }
+      .recommend_container {
+        height: 100%;
       }
       .recommend {
         display: flex;
-        height: 110px;
+        gap: 5px;
+        font-size: 14px;
         padding: 10px;
       }
       .recommend img {
-        height: 100%;
+        width: 170px;
       }
-      .video {
-        width: 100%;
-        background: red;
+      .recommend_title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
       }
-      .video img {
-        width: 100%;
+      .pc_comment_container {
+        display: block;
       }
-      /*.tag_container {
-        position: fixed;
-        z-index: 1;
-        top: 56px;
-        height: 56px;
-        width: 100%;
-        padding-left: 240px;
-        padding-bottom: 50px;
-        background: white;
+      .sp_comment_container {
+        display: none;
       }
-      .tag_list {
-        display: flex;
-        white-space: nowrap;
-        overflow-x: auto;
 
-        overflow-y: scroll;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      .tag {
-        flex: 0 0 auto;
-        margin-right: 10px;
-        background: #f2f2f2;
-        font-weight: 500;
-        font-size: 14px;
-        color: #0f0f0f;
-        margin: 12px 12px 12px 0;
-        padding: 5px 12px;
-        border-radius: 8px;
-      }
-      .tag:hover {
-        cursor: pointer;
-        background: #e5e5e5;
-      }*/
-      .comments {
-        background: green;
+      .item:nth-child(3) {
+        display: none;
       }
       @media (width < 980px) {
         .container {
-          /* grid-template-columns: 1fr; */
-          flex-direction: column;
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        .pc_comment_container {
+          display: none;
+        }
+        .sp_comment_container {
+          display: block;
+        }
+        .recommend {
+          width: 100%;
+        }
+        .item:nth-child(3) {
+          display: block;
         }
       }
     </style>
   </head>
   <body>
-    <div>
-      <div class="container">
-        <div class="video">
-          <img src="./russia.webp" />
+    <div class="container">
+      <!--アイテム-->
+      <div class="item">
+        <iframe
+          src="https://www.youtube.com/embed/rBadprLH1jM?si=KuPWVnlGGcQFV8NN"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+          title="YouTube video player" frameborder="0" allow="accelerometer;
+          autoplay; clipboard-write; encrypted-media; gyroscope;
+          picture-in-picture; web-share" allowfullscreen ></iframe
+        >
+
+        <!-- <img src="./russia.webp" /> -->
+        <div class="info">
           <div>
-            <p>ビデオ情報</p>
-            <p>あああああ</p>
-            <p>あああああ</p>
-            <p>あああああ</p>
-            <p>あああああ</p>
+            <h3>
+              Morning Piano Music | Piano music to Study, Work, Ambience,... 🎷
+              | Best Choice for Study, Work #2
+            </h3>
           </div>
         </div>
-
-        <div class="recommends">
-          <div class="recommend">
-            <img src="./russia.webp" />
-            <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+        <div class="video_description">
+          <div class="profile">
+            <img src="cutecat.jpg" />
+            <div class="user_info">
+              <div class="user_inf0_name">Aom♡</div>
+              <div class="user_inf0_followers"></div>
             </div>
           </div>
-          <div class="recommend">
-            <img src="./russia.webp" />
+        </div>
+        <div class="pc_comment_container">
+          <div class="elem">
+            <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
-            </div>
-          </div>
-          <div class="recommend">
-            <img src="./russia.webp" />
-            <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
-            </div>
-          </div>
-          <div class="recommend">
-            <img src="./russia.webp" />
-            <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
-            </div>
-          </div>
-          <div class="recommend">
-            <img src="./russia.webp" />
-            <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
-            </div>
-          </div>
-          <div class="recommend">
-            <img src="./russia.webp" />
-            <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
-            </div>
-          </div>
-          <div class="recommend">
-            <img src="./russia.webp" />
-            <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <button>編集</button>
+              <button>削除</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="comments">
-        <div class="elem">
-          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
-          <div>
-            <button>編集</button>
-            <button>削除</button>
-          </div>
-        </div>
-        <div class="elem">
-          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
-          <div>
-            <button>編集</button>
-            <button>削除</button>
-          </div>
-        </div>
+      <div class="recommend_container"></div>
+      <div class="sp_comment_container">
         <div class="elem">
           <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
           <div>
@@ -171,5 +143,106 @@
         </div>
       </div>
     </div>
+    <script>
+      const parent = document.querySelector(".recommend_container");
+      parent.style.width = "377px";
+      parent.style.background = "white";
+
+      const recommendData = [
+        {
+          img: "https://i.ytimg.com/vi/GgtrIykBuaA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB29LGAKDXD-ffHC0m95rnt3wxW-g",
+          title: "Luck Life — 'Lily' | Color Coded Lyrics",
+          user: "Kei Takahashi",
+          statistics: "271 thousand views - 2 years ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/sUwD3GRPJos/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDifblLIHzy8TAYchnYQvJzy5j_wA",
+          title:
+            "2.5-HOUR STUDY WITH ME / calm piano / 🚢 Yokohama Harbor at SUNSET🌃 ",
+          user: "Abao in Tokyo",
+          statistics: "15M views - 1 year ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/8pojxwXzD8w/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWh30uLs7NXjPtNr3vMe9twTAlYA",
+          title: "Blue Lock Best Moments That Broke The Internet!!!🤯🤯",
+          user: "Blue Lock TV",
+          statistics: "35thousand views - 1 year ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/gGCwgCe3WtQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQy58vAcnn12CdHWEKLzOvygsRzA",
+          title: "Scotland 4K - Scenic Relaxation Film With Celtic Music",
+          user: "Scenic Relaxation",
+          statistics: "1.7 million views - 2 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/2Ei2htcM1wk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCzndEwGtsvf1hmehSbKqf7NpiaUw",
+          title: "☆ Xianyun Cosplay Makeup Tutorial Genshin Impact 原神 ☆",
+          user: "Kleiner Pixel",
+          statistics: "36 thousand views - 8 days ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/N1-Jmq7BLFE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCyLpS3boh1ChcvVbXOTWBR6sWt5w",
+          title: "Bulgaria 8K HDR 60P (FUHD) Very beautiful place",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "900K Subscribers",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/9lVB1-c69Sw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB_-3sU4idKDIRdVpXRGxmz3IKHOA",
+          title: "The FUNNIEST Pet Videos of 2023! 🤣 | BEST Compilation",
+          user: "The Pet Collective",
+          statistics: "21M views - 3 months ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/erGJkZZsTds/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBpYR57VDJCHpegDRPDtHGvcAR-fQ",
+          title: "Amazing Places to visit in Japan - Travel Video",
+          user: "Joyous Travel",
+          statistics: "435 thousand views - 9 months ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/HrkbTa3AMvg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD9rVZaHdMvHgLvoqnpBtTZPjfuOw",
+          title:
+            "ENCHANTING COUNTRY COTTAGE TINY HOME w/ Waterfall & Outdoor Shower!",
+          user: "MikeWillTravel",
+          statistics: "703 thousand views - 2 years ago",
+        },
+      ];
+
+      for (let i = 0; i < recommendData.length; i++) {
+        const recommend = document.createElement("div");
+        recommend.style.width = "377px";
+        recommend.style.height = "94px";
+        recommend.style.background = "white";
+        recommend.style.marginBottom = "10px";
+        recommend.style.display = "flex";
+        recommend.style.fontSize = "12px";
+
+        const img = document.createElement("img");
+        img.src = recommendData[i].img;
+        img.style.height = "100%";
+
+        const description = document.createElement("div");
+        description.style.background = "white";
+
+        const title = document.createElement("div");
+        title.innerHTML = recommendData[i].title;
+        title.className = "recommend_title";
+        const user = document.createElement("div");
+        user.innerHTML = recommendData[i].user;
+        const statistics = document.createElement("div");
+        statistics.innerHTML = recommendData[i].statistics;
+
+        description.appendChild(title);
+        description.appendChild(user);
+        description.appendChild(statistics);
+
+        recommend.appendChild(img);
+        recommend.appendChild(description);
+
+        parent.appendChild(recommend);
+      }
+    </script>
   </body>
 </html>
