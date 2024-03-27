@@ -1,0 +1,431 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+        body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        }
+        .container {
+				width: 100%;
+				height: 56px;
+				/* background: pink; */
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 20px;
+				padding-left: 20px;
+			}
+			.left {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 169px;
+				height: 56px;
+				/* background: yellow; */
+				/* padding-left: 20px; */
+			}
+			.line {
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+				aspect-ratio: 1/1;
+				/* background: red; */
+				margin-right: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.line:hover {
+				background: #f2f3f3;
+			}
+			.logo {
+				width: 160px;
+				height: 40px;
+				/* background: red; */
+				/* margin-right: 20px; */
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.logo img {
+				width: 120px;
+				height: 22px;
+				margin-right: 10px;
+			}
+			.search {
+				max-width: 666px;
+				height: 40px;
+				/* background: red; */
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/* margin-right: 15px; */
+				flex-grow: 1;
+				margin: 0 10px 0 10px;
+			}
+			.search input {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				border-radius: 20px 0 0 20px;
+				padding-left: 17px;
+				/* background-color: blue; */
+				border: 1px solid rgb(228 225 225);
+			}
+			.search button {
+				width: 64px;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 0 20px 20px 0;
+				background: f2f3f3;
+				border: 1px solid rgb(228 225 225);
+				border-left: none;
+				background: #f8f8f8;
+				position: relative;
+			}
+			.search button:hover {
+				background: #f0f0f0;
+			}
+			.search button:hover .tooltip {
+				visibility: visible;
+				position: absolute;
+			}
+			.mic {
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+				background: #f2f3f3;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-left: 14px;
+				aspect-ratio: 1/1;
+				position: relative;
+			}
+			.mic:hover{
+				background: #d9d9d9;
+			}
+			.mic:hover .tooltip {
+				visibility: visible;
+				position: absolute;
+			}
+			.right {
+				height: 100%;
+				width: 150px;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				/* background-color: gray; */
+				margin-right: 15px;
+			}
+			.video {
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				/* background-color: bisque; */
+			}
+			.video:hover {
+				background: #e5e5e5;
+			}
+			.video:hover .tooltip {
+				visibility: visible;
+				position: absolute;
+			}
+			.bell {
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				/* background-color: bisque; */
+			}
+			.bell:hover {
+                background: #e5e5e5;
+			}
+			.bell:hover .tooltip {
+				visibility: visible;
+				position: absolute;
+			}
+			.profile {
+				/* background-color: bisque; */
+				width: 40px;
+				height: 34px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+			}
+			.profile img:hover {
+				background: #f2f3f3;
+			}
+			.profile img {
+				width: 32px;
+				height: 32px;
+				border-radius: 16px;
+				aspect-ratio: 1/1;
+			}
+			.tooltip {
+				width: 70px;
+				height: 30px;
+				border-radius: 5px;
+				background: gray;
+				position: absolute;
+				bottom: -45px;
+				/* left: 5px; */
+				visibility: hidden;
+				font-size: 15px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				white-space: nowrap;
+				font-size: 0.8rem;
+				line-height: 1.3;
+			}
+			.profile:hover .tooltip {
+				visibility: visible;
+				position: absolute;
+			}
+            main {
+                display: flex;
+                gap: 20px;
+            }
+        nav {
+        width: 200px;
+        padding: 12px;
+        }
+        li {
+        height: 40px;
+        width: 204px;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        font-size: 14px;
+        padding: 0 12px;
+        }
+        li:hover {
+        background: #f2f2f2;
+        border-radius: 10px;
+        }
+        li img {
+        height: 24px;
+        margin-right: 24px;
+        }
+        .lines {
+        width: 200px;
+        border: 0.5px solid #e5e5e5;
+        margin: 10px 0;
+        }
+        .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        padding-left: 15px;
+        }
+        .item {
+            /* background: orange; */
+            font-size: 15px;
+        }
+        .item img {
+            width: 100%;
+            border-radius: 12px;
+        }
+        .text_container {
+            display: flex;
+            gap: 12px;
+        }
+        .text_container img {
+            height: 36px;
+            width: 36px;
+            border-radius: 18px;
+            aspect-ratio: 1/1;
+            margin-left: 5px;
+        }
+        .sarlavha {
+                font-size: 16px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                line-height: 22px;
+                font-weight: 500;
+                color: #0f0f0f;
+            }
+        .text {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #606060;
+        }
+        .date {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #606060;
+        }
+        @media (0px <= width < 640px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (640px <= width < 1100px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (1100px <= width < 1500px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        @media (1500px <= width < 1600px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+        @media (width < 600px) {
+        li img {
+        height: 24px;
+        margin-right: 0;
+        margin-bottom: 5px;
+        }
+        li {
+            text-align: center;
+            width: 64px;
+            height: 74px;
+            padding: 16px 0 14px 0;
+            flex-direction: column;
+            font-size: 10px;
+            font-family: Arial, sans-serif;
+        }
+        .text{
+            width: 100%;
+            font-size: 16px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+        }
+        .lines{
+            display: none;
+        }
+        .secondary {
+            display: none;
+        }
+        }
+        </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="left">
+                    <div class="line"><img src="icon/three line.svg" alt="" /></div>
+                    <div class="logo"><img src="icon/logos--youtube.svg" alt="" /></div>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="検索" />
+                    <button><img src="icon/search.svg" alt="" /><div class="tooltip">SEARCH</div></button>
+                    <div class="mic"><img src="icon/mic.svg" alt="" /><div class="tooltip">MIC</div></div>
+                </div>
+                <div class="right">
+                    <div class="video"><img src="icon/movie.svg" alt="" /><div class="tooltip">MOVIE</div></div>
+                    <div class="bell"><img src="icon/bell.svg" alt="" /><div class="tooltip">BELL</div></div>
+                    <div class="profile"><img src="img/fomuse1.avif" alt="" />
+                    <div class="tooltip">PROFILE</div></div>
+                </div>
+            </div>
+            <main>
+    <nav>
+        <ul>
+        <li><img src="icon/menu_home.svg" /><div class="text"></div>ホーム</li>
+        <li><img src="icon/menu_short.svg" /><div class="text">ショート</div></li>
+        <li> <img src="icon/menu_channels (2).svg" /> <div class="text">登録チャンネル</div></li>
+        <li><img src="icon/menu_music.svg" /><div class="text">YouTube Music</div></li>
+        <div class="lines"></div>
+        <li class="secondary"><img src="icon/menu_history.svg" />履歴</li>
+        <li class="secondary"><img src="icon/bell.svg" /> My Chanel</li>
+        <li class="secondary"><img src="icon/movie.svg" />My vedio</li>
+        <li class="secondary"><img src="icon/gg--profile.svg" />オフライン</li>
+        <li class="secondary"><img src="icon/mic.svg" />もっと見る</li>
+        </ul>
+    </nav>
+    <div class="grid-container">
+        <div class="item"><img src="img/hq720.webp" alt="">
+    <div class="text_container"><img src="img/fomuse1.avif" alt="">
+            <div>
+            <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+            <div class="text">Nursery Rhymes and Kids Songs</div>
+        <div class="date">186 034 274 просмотра  2 года назад</div>
+</div>
+    </div>
+        </div>
+        <div class="item"><img src="img/hq720.webp" alt="">
+            <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                <div>
+                    <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                    <div class="text">Nursery Rhymes and Kids Songs</div>
+                <div class="date">186 034 274 просмотра  2 года назад</div>
+    </div>
+        </div>
+            </div>
+        <div class="item"><img src="img/hq720.webp" alt="">
+            <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                <div>
+                    <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                    <div class="text">Nursery Rhymes and Kids Songs</div>
+                <div class="date">186 034 274 просмотра  2 года назад</div>
+    </div>
+        </div></div>
+        <div class="item"><img src="img/hq720.webp" alt="">
+            <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                <div>
+                    <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                    <div class="text">Nursery Rhymes and Kids Songs</div>
+                <div class="date">186 034 274 просмотра  2 года назад</div>
+    </div>
+        </div>
+            </div>
+        <div class="item"><img src="img/hq720.webp" alt="">
+            <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                <div>
+                    <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                    <div class="text">Nursery Rhymes and Kids Songs</div>
+                <div class="date">186 034 274 просмотра  2 года назад</div>
+    </div>
+        </div>
+            </div>
+        <div class="item"><img src="img/hq720.webp" alt="">
+            <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                <div>
+                    <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                    <div class="text">Nursery Rhymes and Kids Songs</div>
+                <div class="date">186 034 274 просмотра  2 года назад</div>
+    </div>
+        </div>
+            </div>
+        </div>
+    </div></main>
+    </body>
+    </html>

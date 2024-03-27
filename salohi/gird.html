@@ -2,7 +2,12 @@
 <html lang="en">
     <html>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet"
+    />
     <title>box</title>
     <style>
       * {
@@ -11,7 +16,7 @@
         box-sizing: border-box;
         }
         body {
-        font-size: 40px;
+        font-size: 20px;
         font-family: "Roboto", sans-serif;
         }
         .container {
@@ -20,29 +25,129 @@
         background: powderblue;
 
         }
-        .article {
+        .grid-container {
         display: grid;
-        background: red;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
         }
         .item {
-        background: darkcyan;
-        aspect-ratio: 1/1;
-        margin: 10px;
+            /* background: orange; */
+            font-size: 15px;
         }
-
+        .item img {
+            width: 100%;
+            border-radius: 12px;
+        }
+        .text_container {
+            display: flex;
+            gap: 12px;
+        }
+        .text_container img {
+            height: 36px;
+            width: 36px;
+            border-radius: 18px;
+            aspect-ratio: 1/1;
+            margin-left: 5px;
+        }
+        .sarlavha {
+                font-size: 16px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                line-height: 22px;
+                font-weight: 500;
+                color: #0f0f0f;
+            }
+        .text {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #606060;
+        }
+        .date {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #606060;
+        }
+        @media (0px <= width < 640px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (640px <= width < 1100px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (1100px <= width < 1500px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        @media (1500px <= width < 1600px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
     </style>
         <body>
-        <div class="container">
-            <div class="article">
-            <div class="item">item1</div>
-            <div class="item">item2</div>
-            <div class="item">item3</div>
-            <div class="item">item4</div>
-            <div class="item">item5</div>
-            <div class="item">item6</div>
-            <div class="item">item7</div>
-            <div class="item">item8</div>
+        <div class="grid-container">
+            <div class="item"><img src="img/hq720.webp" alt="">
+        <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                <div>
+                <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                <div class="text">Nursery Rhymes and Kids Songs</div>
+            <div class="date">186 034 274 просмотра  2 года назад</div>
+    </div>
+        </div>
+            </div>
+            <div class="item"><img src="img/hq720.webp" alt="">
+                <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                    <div>
+                        <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                        <div class="text">Nursery Rhymes and Kids Songs</div>
+                    <div class="date">186 034 274 просмотра  2 года назад</div>
+        </div>
+            </div>
+                </div>
+            <div class="item"><img src="img/hq720.webp" alt="">
+                <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                    <div>
+                        <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                        <div class="text">Nursery Rhymes and Kids Songs</div>
+                    <div class="date">186 034 274 просмотра  2 года назад</div>
+        </div>
             </div></div>
+            <div class="item"><img src="img/hq720.webp" alt="">
+                <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                    <div>
+                        <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                        <div class="text">Nursery Rhymes and Kids Songs</div>
+                    <div class="date">186 034 274 просмотра  2 года назад</div>
+        </div>
+            </div>
+                </div>
+            <div class="item"><img src="img/hq720.webp" alt="">
+                <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                    <div>
+                        <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                        <div class="text">Nursery Rhymes and Kids Songs</div>
+                    <div class="date">186 034 274 просмотра  2 года назад</div>
+        </div>
+            </div>
+                </div>
+            <div class="item"><img src="img/hq720.webp" alt="">
+                <div class="text_container"><img src="img/fomuse1.avif" alt="">
+                    <div>
+                        <div class="sarlavha">The Fruit Friends Song - ChuChu TV Baby</div>
+                        <div class="text">Nursery Rhymes and Kids Songs</div>
+                    <div class="date">186 034 274 просмотра  2 года назад</div>
+        </div>
+            </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

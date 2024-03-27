@@ -8,63 +8,53 @@
     <style>
       .container {
         display: flex;
-        /* display: grid;
-				grid-template-columns: 1fr 400px; */
+        gap: 5px;
       }
-      .recommends {
-        width: 400px;
+      .item:nth-child(1) {
+        width: 100%;
+      }
+      .iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
       }
       .recommend {
         display: flex;
-        height: 110px;
+        gap: 5px;
+        font-size: 14px;
+        width: 400px;
         padding: 10px;
       }
       .recommend img {
-        height: 100%;
+        width: 170px;
+      }
+      .item:nth-child(3) {
+        display: none;
+      }
+      @media (width < 980px) {
+        .container {
+          display: flex;
+          grid-template-columns: 1fr;
+        }
+        .comments {
+          display: none;
+        }
+        .recommend {
+          width: 100%;
+        }
+        .item:nth-child(3) {
+          display: block;
+        }
       }
       .video {
-        width: 100%;
-        background: red;
-      }
-      .video img {
-        width: 100%;
-      }
-      .tag_container {
-        position: fixed;
-        z-index: 1;
-        top: 56px;
-        height: 56px;
-        width: 100%;
-        padding-left: 240px;
-        padding-bottom: 50px;
+        width: 80%;
         background: white;
       }
-      .tag_list {
-        display: flex;
-        white-space: nowrap;
-        overflow-x: auto;
-
-        overflow-y: scroll;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      .tag {
-        flex: 0 0 auto;
-        margin-right: 10px;
-        background: #f2f2f2;
-        font-weight: 500;
-        font-size: 14px;
-        color: #0f0f0f;
-        margin: 12px 12px 12px 0;
-        padding: 5px 12px;
-        border-radius: 8px;
-      }
-      .tag:hover {
-        cursor: pointer;
-        background: #e5e5e5;
+      .video img {
+        border-radius: 15px;
+        width: 100%;
       }
       .comments {
-        background: green;
+        background: white;
       }
       @media (width < 980px) {
         .container {
@@ -78,71 +68,86 @@
     <div>
       <div class="container">
         <div class="video">
-          <img src="surv.webp" />
+          <img src="cozy.webp" />
           <div>
-            <p>ビデオ情報</p>
-            <p>あああああ</p>
-            <p>あああああ</p>
-            <p>あああああ</p>
-            <p>あああああ</p>
+            <h3>
+              Morning Piano Music | Piano music to Study, Work, Ambience,... 🎷
+              | Best Choice for Study, Work #2
+            </h3>
           </div>
         </div>
-
-        <div class="recommends">
+        <!-- <div class="tag_container"> -->
+        <!-- <div class="tag_list"> -->
+        <!-- <img src="1unnamed (4).jpg" /> -->
+        <!-- <div class="tag_profile"> -->
+        <!-- <div class="tag_profile_1">Aom</div> -->
+        <!-- <div class="tag_profile_2">9,28 th views</div> -->
+        <!-- </div> -->
+        <!-- <div class="tag">Subscribe</div> -->
+        <!-- <div class="tag">Like</div> -->
+        <!-- <div class="tag">Dislike</div> -->
+        <!-- <div class="tag">Share</div> -->
+        <!-- <div class="tag">...</div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <div class="item">
           <div class="recommend">
-            <img src="surv.webp" />
+            <img src="Lily.webp" />
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <div>Luck Life — 'Lily' | Color Coded Lyrics</div>
+              <div>Kei Takahashi</div>
+              <div>271 thousand views - 2 years ago</div>
             </div>
           </div>
           <div class="recommend">
-            <img src="./russia.webp" />
+            <img src="study.webp" />
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <div>
+                2.5-HOUR STUDY WITH ME / calm piano / 🚢 Yokohama Harbor at
+                SUNSET🌃 /
+              </div>
+              <div>Abao in Tokyo</div>
+              <div>15M views - 1 year ago</div>
             </div>
           </div>
           <div class="recommend">
-            <img src="./russia.webp" />
+            <img src="BlueLock.webp" />
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <div>Blue Lock Best Moments That Broke The Internet!!!🤯🤯</div>
+              <div>Blue Lock TV</div>
+              <div>35thousand views - 1 year ago</div>
             </div>
           </div>
           <div class="recommend">
-            <img src="./russia.webp" />
+            <img src="Cosplay.webp" />
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <div>☆ Xianyun Cosplay Makeup Tutorial Genshin Impact 原神 ☆</div>
+              <div>Kleiner Pixel</div>
+              <div>36 thousand views - 8 days ago</div>
             </div>
           </div>
           <div class="recommend">
-            <img src="./russia.webp" />
+            <img src="animals.webp" />
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <div>The FUNNIEST Pet Videos of 2023! 🤣 | BEST Compilation</div>
+              <div>The Pet Collective</div>
+              <div>21M views - 3 months ago</div>
             </div>
           </div>
           <div class="recommend">
-            <img src="./russia.webp" />
+            <img src="sleep.webp" />
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <div>Before Bed Sleep Music | Soft crystal singing bowls</div>
+              <div>Sleeping Vibration</div>
+              <div>2.5M views - 1 year ago</div>
             </div>
           </div>
           <div class="recommend">
-            <img src="./russia.webp" />
+            <img src="Planet.webp" />
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <div>UNREAL PLANET | Places That Don't Seem Real</div>
+              <div>Lifeder.En</div>
+              <div>8.6M views - 2 months ago</div>
             </div>
           </div>
         </div>

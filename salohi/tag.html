@@ -12,41 +12,43 @@ rel="stylesheet"
 <title>Document</title>
 <style>
 * {
-padding: 0;
-margin: 0;
-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 body {
-font-family: "Roboto", sans-serif;
-font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
 }
 .container {
-width: 100%;
-height: 100vh;
-background: red;
+    width: 100%;
+    height: 100vh;
+    /* background: red; */
 }
 .tag_container {
-display: grid;
-height: 100px;
-/* grid-template-columns: 1fr 1fr 1fr 1fr; */
-grid-auto-flow: column;
-overflow-x: auto;
-overscroll-behavior-inline: contain;
-background: blue;
-gap: 12px;
-align-items: center;
+    display: grid;
+    height: 100px;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    /* background: blue; */
+    gap: 12px;
+    align-items: center;
+    padding: 0 10px;
 }
 .tag_container div {
-white-space: nowrap;
-background: #f2f2f2;
-border-radius: 8px;
-font-size: 14px;
-font-weight: 500;
-color: black;
-display: flex;
-justify-content: center;
-text-align: center;
-padding: 5px 8px;
+    white-space: nowrap;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 8px;
+}
+.tag_container div:hover{
+    background: #f2f3f3;
 }
 </style>
 </head>
