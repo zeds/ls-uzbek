@@ -46,13 +46,19 @@
 					display: block;
 				}
 			}
+			.article {
+				display: flex;
+				font-size: 12px;
+				margin: 5px;
+				gap: 5px;
+			}
 		</style>
 	</head>
 	<body>
 		<div>
 			<div class="container">
 				<div class="video">
-					<img src="./russia.webp" />
+					<img src="./images/russia.webp" />
 					<div>
 						<p>ビデオ情報</p>
 						<p>あああああ</p>
@@ -93,65 +99,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="recommends">
-					<div class="recommend">
-						<img src="./images/russia.webp" />
-						<div>
-							<div>ロシア人の私が日本人に帰化しない理由</div>
-							<div>🌹ディアナチャンネル🌹</div>
-							<div>18万回視聴</div>
-						</div>
-					</div>
-					<div class="recommend">
-						<img src="./russia.webp" />
-						<div>
-							<div>ロシア人の私が日本人に帰化しない理由</div>
-							<div>🌹ディアナチャンネル🌹</div>
-							<div>18万回視聴</div>
-						</div>
-					</div>
-					<div class="recommend">
-						<img src="./russia.webp" />
-						<div>
-							<div>ロシア人の私が日本人に帰化しない理由</div>
-							<div>🌹ディアナチャンネル🌹</div>
-							<div>18万回視聴</div>
-						</div>
-					</div>
-					<div class="recommend">
-						<img src="./russia.webp" />
-						<div>
-							<div>ロシア人の私が日本人に帰化しない理由</div>
-							<div>🌹ディアナチャンネル🌹</div>
-							<div>18万回視聴</div>
-						</div>
-					</div>
-					<div class="recommend">
-						<img src="./russia.webp" />
-						<div>
-							<div>ロシア人の私が日本人に帰化しない理由</div>
-							<div>🌹ディアナチャンネル🌹</div>
-							<div>18万回視聴</div>
-						</div>
-					</div>
-					<div class="recommend">
-						<img src="./russia.webp" />
-						<div>
-							<div>ロシア人の私が日本人に帰化しない理由</div>
-							<div>🌹ディアナチャンネル🌹</div>
-							<div>18万回視聴</div>
-						</div>
-					</div>
-					<div class="recommend">
-						<img src="./russia.webp" />
-						<div>
-							<div>ロシア人の私が日本人に帰化しない理由</div>
-							<div>🌹ディアナチャンネル🌹</div>
-							<div>18万回視聴</div>
-						</div>
-					</div>
-				</div>
+
+				<div id="recommends">あああ</div>
 			</div>
+
 			<div class="comments-2">
 				<div class="elem">
 					<div>
@@ -182,5 +133,60 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			const contents = [
+				{
+					title: "あいうえお-1",
+					author: "THE FIRST TAKE 1",
+					stats: "345万回視聴・7ヶ月",
+					img: "./images/russia.webp",
+				},
+				{
+					title: "あいうえお-2",
+					author: "THE FIRST TAKE 2",
+					stats: "345万回視聴・7ヶ月",
+					img: "./images/russia.webp",
+				},
+				{
+					title: "あいうえお-3",
+					author: "THE FIRST TAKE 3",
+					stats: "345万回視聴・7ヶ月",
+					img: "./images/russia.webp",
+				},
+			];
+			const parent = document.getElementById("recommends");
+
+			for (let i = 0; i < contents.length; i++) {
+				const article = document.createElement("div");
+				article.className = "article";
+
+				const img = document.createElement("img");
+				img.src = contents[i].img;
+				img.height = 60;
+				article.appendChild(img);
+
+				const textContainer = document.createElement("div");
+				textContainer.className = "text_container";
+
+				// タイトル
+				const title = document.createElement("div");
+				title.innerHTML = contents[i].title;
+				textContainer.appendChild(title);
+
+				// 著者
+				const author = document.createElement("div");
+				author.innerHTML = contents[i].author;
+				textContainer.appendChild(author);
+
+				// 統計情報
+				const stats = document.createElement("div");
+				stats.innerHTML = contents[i].stats;
+				textContainer.appendChild(stats);
+
+				article.appendChild(textContainer);
+
+				parent.appendChild(article);
+			}
+		</script>
 	</body>
 </html>
