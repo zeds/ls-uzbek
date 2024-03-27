@@ -6,27 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    .commnet-container{
-        width: 80%;
-        margin:  25px auto;
-    }
-</style>
+
 <body>
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="comment" placeholder="comment">
+    <button id="commentButton"> Enter</button>
+    <div class="list"></div>
+    <script>
 
-<div class="commnet-container">
-   <input type="text" placeholder="Enter Comment" class="input_comment">
-   <button class="cancel_btn">Cancel</button>
-   <button id="comment_btn">Enter</button>
+        comments = [{
+            naem: 'Shoxrux',
+            comment: 'love1'
+        }, {
+            naem: 'Shoxrux',
+            comment: 'love2'
+        }, {
+            naem: 'Shoxrux',
+            comment: 'love3'
+        }, {
+            naem: 'Shoxrux',
+            comment: 'love4'
+        }, {
+            naem: 'Shoxrux',
+            comment: 'love5'
+        }]
+        let enterBtn = document.getElementById("commentButton")
 
-    <div class="commentList">
+        enterBtn.addEventListener("click", function () {
+            let namew = document.getElementById("name").value;
+            let comment = document.getElementById("comment").value;
+            let newComment = {
+                naem: namew, comment: comment
+            }
+            comments.unshift(newComment)
+            for (let i = 0; i < comments.length; i++) {
+                let namew = document.getElementById("name").value;
+                let commentw = document.getElementById("comment").value;
+                // alert(name + "  " + comment);
 
-    </div>
-
-</div>
 
 
+                let forList = document.createElement("div")
+                let list = document.querySelector(".list");
+                forList.innerHTML = comments[i].comment;
+                list.appendChild(forList)
 
+
+            }
+        })
+    </script>
 
 </body>
 
