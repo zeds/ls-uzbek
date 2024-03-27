@@ -17,7 +17,30 @@
         width: 100%;
         aspect-ratio: 16/9;
       }
+      .video_description {
+        height: 60px;
+        width: 100%;
+        background: gray;
+      }
+      .profile img {
+        border-radius: 20px;
+        height: 40px;
+      }
+      .user_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100px;
+        height: 55px;
+      }
+      .user_info_name {
+        background: white;
+      }
+      .user_info_followers {
+        background: white;
+      }
       .recommend_container {
+        height: 100%;
       }
       .recommend {
         display: flex;
@@ -69,18 +92,35 @@
       <!--アイテム-->
       <div class="item">
         <iframe
-          src="https://www.youtube.com/embed/q-VNPpo9z0Y?si=XXVmp0fIA64ryp1M"
+          src="https://www.youtube.com/embed/rBadprLH1jM?si=KuPWVnlGGcQFV8NN"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
-        ></iframe>
+        >
+          title="YouTube video player" frameborder="0" allow="accelerometer;
+          autoplay; clipboard-write; encrypted-media; gyroscope;
+          picture-in-picture; web-share" allowfullscreen ></iframe
+        >
 
         <!-- <img src="./russia.webp" /> -->
         <div class="info">
-          <div>ビデオ情報</div>
-          <div>ビデオ情報</div>
-          <div>ビデオ情報</div>
+          <div>
+            <h3>
+              Morning Piano Music | Piano music to Study, Work, Ambience,... 🎷
+              | Best Choice for Study, Work #2
+            </h3>
+          </div>
+        </div>
+        <div class="video_description">
+          <div class="profile">
+            <img src="cutecat.jpg" />
+            <div class="user_info">
+              <div class="user_inf0_name">Aom♡</div>
+              <div class="user_inf0_followers"></div>
+            </div>
+          </div>
         </div>
         <div class="pc_comment_container">
           <div class="elem">
@@ -106,42 +146,40 @@
     <script>
       const parent = document.querySelector(".recommend_container");
       parent.style.width = "377px";
-      parent.style.background = "blue";
+      parent.style.background = "white";
 
       const recommendData = [
         {
-          img: "https://i.ytimg.com/vi/q-VNPpo9z0Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCTfzICpNJURsAUR7H5oKiwbRU1OQ",
-          title: "ロシアから日本を選んで住んだ理由。",
-          user: "🌹ディアナちゃんねる🌹",
-          statistics: "57,007 回視聴  2024/03/15",
+          img: "https://i.ytimg.com/vi/GgtrIykBuaA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB29LGAKDXD-ffHC0m95rnt3wxW-g",
+          title: "Luck Life — 'Lily' | Color Coded Lyrics",
+          user: "Kei Takahashi",
+          statistics: "271 thousand views - 2 years ago",
         },
         {
-          img: "https://i.ytimg.com/vi/JM75dAskORs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBTNuT62ywWpzAiB8-XMZJXdr6iEg",
+          img: "https://i.ytimg.com/vi/sUwD3GRPJos/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDifblLIHzy8TAYchnYQvJzy5j_wA",
           title:
-            "【ドーパミン中毒】スタンフォード大学医学部「冷たいシャワーの効果とは」／朝一番のエクササイズが効果的な理由／苦痛と快楽の感情はシーソーのように行き来する【PIVOT GLOBAL】",
-          user: "PIVOT 公式チャンネル",
-          statistics: "チャンネル登録者数 144万人",
+            "2.5-HOUR STUDY WITH ME / calm piano / 🚢 Yokohama Harbor at SUNSET🌃 ",
+          user: "Abao in Tokyo",
+          statistics: "15M views - 1 year ago",
         },
         {
-          img: "https://i.ytimg.com/vi/TO2t9esOUZA/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbmuO4gXa25PqUBzpwJhqHfOwsbw",
-          title:
-            "ИСТОРИИ СПАСАТЕЛЯ! Страшные истории на ночь.Страшилки на ночь.",
-          user: "DARK~PHIL",
-          statistics: "65万回視聴",
+          img: "https://i.ytimg.com/vi/8pojxwXzD8w/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWh30uLs7NXjPtNr3vMe9twTAlYA",
+          title: "Blue Lock Best Moments That Broke The Internet!!!🤯🤯",
+          user: "Blue Lock TV",
+          statistics: "35thousand views - 1 year ago",
         },
         {
-          img: "https://i.ytimg.com/vi/BH4ukdHaLmg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7AOL5WAISU0HpHDVqNF_ySb2yOw",
-          title:
-            "КВАРТИРА КОШМАРОВ! Страшные истории на ночь.Страшилки на ночь.",
-          user: "DARK~PHIL",
-          statistics: "21万回視聴",
+          img: "https://i.ytimg.com/vi/gGCwgCe3WtQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQy58vAcnn12CdHWEKLzOvygsRzA",
+          title: "Scotland 4K - Scenic Relaxation Film With Celtic Music",
+          user: "Scenic Relaxation",
+          statistics: "1.7 million views - 2 years ago",
         },
 
         {
-          img: "https://i.ytimg.com/vi/BFS9n4B_2xA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0XuNyVjX1z1FRManXoNmQKxlBSg",
-          title: "Bali in 8k ULTRA HD HDR - Paradise of Asia (60 FPS)",
-          user: "8K WORLD",
-          statistics: "3M Subscribers",
+          img: "https://i.ytimg.com/vi/2Ei2htcM1wk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCzndEwGtsvf1hmehSbKqf7NpiaUw",
+          title: "☆ Xianyun Cosplay Makeup Tutorial Genshin Impact 原神 ☆",
+          user: "Kleiner Pixel",
+          statistics: "36 thousand views - 8 days ago",
         },
 
         {
@@ -152,23 +190,23 @@
         },
 
         {
-          img: "https://i.ytimg.com/vi/rBadprLH1jM/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFEoPjAP&rs=AOn4CLDMnU74TxZBcC5ano3eLkdFn0SEFw",
+          img: "https://i.ytimg.com/vi/9lVB1-c69Sw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB_-3sU4idKDIRdVpXRGxmz3IKHOA",
+          title: "The FUNNIEST Pet Videos of 2023! 🤣 | BEST Compilation",
+          user: "The Pet Collective",
+          statistics: "21M views - 3 months ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/erGJkZZsTds/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBpYR57VDJCHpegDRPDtHGvcAR-fQ",
+          title: "Amazing Places to visit in Japan - Travel Video",
+          user: "Joyous Travel",
+          statistics: "435 thousand views - 9 months ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/HrkbTa3AMvg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD9rVZaHdMvHgLvoqnpBtTZPjfuOw",
           title:
-            "Morning Piano Music | Piano music to Study, Work, Ambience,... 🎷 | Best Choice for Study, Work #2",
-          user: "Aom",
-          statistics: "50 thousand Subscribers",
-        },
-        {
-          img: "https://i.ytimg.com/vi/RqooLet7B2Q/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAAbA9SZZz9H8rBTMfma5QFcRsdvw",
-          title: "BUMP OF CHICKEN「Sleep Walking Orchestra」",
-          user: "BUMP OF CHICKEN",
-          statistics: "342万回視聴",
-        },
-        {
-          img: "https://i.ytimg.com/vi/OEfz-pZPg24/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPH78BAUaVBNzeu9JLfJzxz_pIWw",
-          title: "ドラゴンボールGT OP DAN DAN 心魅かれてく",
-          user: "DEEN",
-          statistics: "219万回視聴",
+            "ENCHANTING COUNTRY COTTAGE TINY HOME w/ Waterfall & Outdoor Shower!",
+          user: "MikeWillTravel",
+          statistics: "703 thousand views - 2 years ago",
         },
       ];
 
@@ -176,7 +214,7 @@
         const recommend = document.createElement("div");
         recommend.style.width = "377px";
         recommend.style.height = "94px";
-        recommend.style.background = "red";
+        recommend.style.background = "white";
         recommend.style.marginBottom = "10px";
         recommend.style.display = "flex";
         recommend.style.fontSize = "12px";
@@ -186,7 +224,7 @@
         img.style.height = "100%";
 
         const description = document.createElement("div");
-        description.style.background = "pink";
+        description.style.background = "white";
 
         const title = document.createElement("div");
         title.innerHTML = recommendData[i].title;

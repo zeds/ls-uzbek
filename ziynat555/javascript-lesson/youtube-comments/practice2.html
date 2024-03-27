@@ -21,11 +21,22 @@
         display: flex;
         gap: 5px;
         font-size: 14px;
-        width: 400px;
         padding: 10px;
       }
       .recommend img {
         width: 170px;
+      }
+      .recommend_title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .pc_comment_container {
+        display: block;
+      }
+      .sp_comment_container {
+        display: none;
       }
       .item:nth-child(3) {
         display: none;
@@ -35,8 +46,11 @@
           display: flex;
           grid-template-columns: 1fr;
         }
-        .comments {
+        .pc_comment_container {
           display: none;
+        }
+        .sp_comment_container {
+          display: block;
         }
         .recommend {
           width: 100%;
@@ -45,134 +59,115 @@
           display: block;
         }
       }
-      .video {
-        width: 80%;
-        background: white;
-      }
-      .video img {
-        border-radius: 15px;
-        width: 100%;
-      }
-      .comments {
-        background: white;
-      }
-      @media (width < 980px) {
-        .container {
-          /* grid-template-columns: 1fr; */
-          flex-direction: column;
-        }
-      }
     </style>
   </head>
   <body>
-    <div>
-      <div class="container">
-        <div class="video">
-          <img src="cozy.webp" />
+    <div class="container">
+      <div class="video">
+        <img src="cozy.webp" />
+        <div>
+          <h3>
+            Morning Piano Music | Piano music to Study, Work, Ambience,... 🎷 |
+            Best Choice for Study, Work #2
+          </h3>
+        </div>
+      </div>
+      <!-- <div class="tag_container"> -->
+      <!-- <div class="tag_list"> -->
+      <!-- <img src="1unnamed (4).jpg" /> -->
+      <!-- <div class="tag_profile"> -->
+      <!-- <div class="tag_profile_1">Aom</div> -->
+      <!-- <div class="tag_profile_2">9,28 th views</div> -->
+      <!-- </div> -->
+      <!-- <div class="tag">Subscribe</div> -->
+      <!-- <div class="tag">Like</div> -->
+      <!-- <div class="tag">Dislike</div> -->
+      <!-- <div class="tag">Share</div> -->
+      <!-- <div class="tag">...</div> -->
+      <!-- </div> -->
+      <!-- </div> -->
+      <div class="item">
+        <div class="recommend">
+          <img src="Lily.webp" />
           <div>
-            <h3>
-              Morning Piano Music | Piano music to Study, Work, Ambience,... 🎷
-              | Best Choice for Study, Work #2
-            </h3>
+            <div>Luck Life — 'Lily' | Color Coded Lyrics</div>
+            <div>Kei Takahashi</div>
+            <div>271 thousand views - 2 years ago</div>
           </div>
         </div>
-        <!-- <div class="tag_container"> -->
-        <!-- <div class="tag_list"> -->
-        <!-- <img src="1unnamed (4).jpg" /> -->
-        <!-- <div class="tag_profile"> -->
-        <!-- <div class="tag_profile_1">Aom</div> -->
-        <!-- <div class="tag_profile_2">9,28 th views</div> -->
-        <!-- </div> -->
-        <!-- <div class="tag">Subscribe</div> -->
-        <!-- <div class="tag">Like</div> -->
-        <!-- <div class="tag">Dislike</div> -->
-        <!-- <div class="tag">Share</div> -->
-        <!-- <div class="tag">...</div> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <div class="item">
-          <div class="recommend">
-            <img src="Lily.webp" />
+        <div class="recommend">
+          <img src="study.webp" />
+          <div>
             <div>
-              <div>Luck Life — 'Lily' | Color Coded Lyrics</div>
-              <div>Kei Takahashi</div>
-              <div>271 thousand views - 2 years ago</div>
+              2.5-HOUR STUDY WITH ME / calm piano / 🚢 Yokohama Harbor at
+              SUNSET🌃 /
             </div>
+            <div>Abao in Tokyo</div>
+            <div>15M views - 1 year ago</div>
           </div>
-          <div class="recommend">
-            <img src="study.webp" />
-            <div>
-              <div>
-                2.5-HOUR STUDY WITH ME / calm piano / 🚢 Yokohama Harbor at
-                SUNSET🌃 /
-              </div>
-              <div>Abao in Tokyo</div>
-              <div>15M views - 1 year ago</div>
-            </div>
+        </div>
+        <div class="recommend">
+          <img src="BlueLock.webp" />
+          <div>
+            <div>Blue Lock Best Moments That Broke The Internet!!!🤯🤯</div>
+            <div>Blue Lock TV</div>
+            <div>35thousand views - 1 year ago</div>
           </div>
-          <div class="recommend">
-            <img src="BlueLock.webp" />
-            <div>
-              <div>Blue Lock Best Moments That Broke The Internet!!!🤯🤯</div>
-              <div>Blue Lock TV</div>
-              <div>35thousand views - 1 year ago</div>
-            </div>
+        </div>
+        <div class="recommend">
+          <img src="Cosplay.webp" />
+          <div>
+            <div>☆ Xianyun Cosplay Makeup Tutorial Genshin Impact 原神 ☆</div>
+            <div>Kleiner Pixel</div>
+            <div>36 thousand views - 8 days ago</div>
           </div>
-          <div class="recommend">
-            <img src="Cosplay.webp" />
-            <div>
-              <div>☆ Xianyun Cosplay Makeup Tutorial Genshin Impact 原神 ☆</div>
-              <div>Kleiner Pixel</div>
-              <div>36 thousand views - 8 days ago</div>
-            </div>
+        </div>
+        <div class="recommend">
+          <img src="animals.webp" />
+          <div>
+            <div>The FUNNIEST Pet Videos of 2023! 🤣 | BEST Compilation</div>
+            <div>The Pet Collective</div>
+            <div>21M views - 3 months ago</div>
           </div>
-          <div class="recommend">
-            <img src="animals.webp" />
-            <div>
-              <div>The FUNNIEST Pet Videos of 2023! 🤣 | BEST Compilation</div>
-              <div>The Pet Collective</div>
-              <div>21M views - 3 months ago</div>
-            </div>
+        </div>
+        <div class="recommend">
+          <img src="sleep.webp" />
+          <div>
+            <div>Before Bed Sleep Music | Soft crystal singing bowls</div>
+            <div>Sleeping Vibration</div>
+            <div>2.5M views - 1 year ago</div>
           </div>
-          <div class="recommend">
-            <img src="sleep.webp" />
-            <div>
-              <div>Before Bed Sleep Music | Soft crystal singing bowls</div>
-              <div>Sleeping Vibration</div>
-              <div>2.5M views - 1 year ago</div>
-            </div>
-          </div>
-          <div class="recommend">
-            <img src="Planet.webp" />
-            <div>
-              <div>UNREAL PLANET | Places That Don't Seem Real</div>
-              <div>Lifeder.En</div>
-              <div>8.6M views - 2 months ago</div>
-            </div>
+        </div>
+        <div class="recommend">
+          <img src="Planet.webp" />
+          <div>
+            <div>UNREAL PLANET | Places That Don't Seem Real</div>
+            <div>Lifeder.En</div>
+            <div>8.6M views - 2 months ago</div>
           </div>
         </div>
       </div>
-      <div class="comments">
-        <div class="elem">
-          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
-          <div>
-            <button>編集</button>
-            <button>削除</button>
-          </div>
+    </div>
+    <div class="comments">
+      <div class="elem">
+        <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+        <div>
+          <button>編集</button>
+          <button>削除</button>
         </div>
-        <div class="elem">
-          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
-          <div>
-            <button>編集</button>
-            <button>削除</button>
-          </div>
+      </div>
+      <div class="elem">
+        <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+        <div>
+          <button>編集</button>
+          <button>削除</button>
         </div>
-        <div class="elem">
-          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
-          <div>
-            <button>編集</button>
-            <button>削除</button>
-          </div>
+      </div>
+      <div class="elem">
+        <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+        <div>
+          <button>編集</button>
+          <button>削除</button>
         </div>
       </div>
     </div>
