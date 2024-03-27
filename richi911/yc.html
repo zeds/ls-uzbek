@@ -8,19 +8,44 @@
     <style>
       .container {
         display: flex;
-        /* display: grid;
-      grid-template-columns: 1fr 400px; */
+        gap: 5px;
+      }
+      .item:nth-child(1) {
+        width: 100%;
+      }
+      iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
       }
       .recommends {
-        width: 400px;
       }
       .recommend {
         display: flex;
+        gap: 5px;
+        font-size: 14px;
         height: 110px;
         padding: 10px;
       }
       .recommend img {
-        height: 100%;
+        width: 170px;
+      }
+      .item:nth-child(3) {
+        display: none;
+      }
+      @media (width < 980px) {
+        .container {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        .comments {
+          display: none;
+        }
+        .recommend {
+          width: 100%;
+        }
+        .item:nth-child(3) {
+          display: block;
+        }
       }
       .video {
         width: 100%;
@@ -146,101 +171,77 @@
     </style>
   </head>
   <body>
-    <div>
-      <div class="container">
-        <div class="video">
-          <img src="lofi.webp" />
-          <div>
-            <div class="video_description">
-              lofi hip hop radio 📚 - beats to relax/study to
+    <div class="container">
+      <!--アイテム-->
+      <div class="item">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/QoaDkejcHSc?si=xqB7QTuscgri12fj"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+
+        <!-- <img src="./russia.webp" /> -->
+        <div class="video_description">
+          lofi hip hop radio 📚 - beats to relax/study to
+        </div>
+        <div class="tag_container">
+          <div class="tag_list">
+            <img src="lofi.webp" />
+            <div class="tag_profile">
+              <div class="tag_profile_1">Lofi Girl</div>
+              <div class="tag_profile_2">3M subscribe</div>
             </div>
-            <div class="tag_container">
-              <div class="tag_list">
-                <img src="lofi.webp" />
-                <div class="tag_profile">
-                  <div class="tag_profile_1">Lofi Girl</div>
-                  <div class="tag_profile_2">3M subscribe</div>
-                </div>
-                <div class="tag_subscribe">Subscribe</div>
-                <div class="tag_container_1">
-                  <div class="tag_like">
-                    <img src="like.svg" />
-                  </div>
-                  <div class="tag_dislike">
-                    <img src="dislike.svg" />
-                  </div>
-                  <div class="tag_share"><img src="share.svg" />Share</div>
-                  <div class="tag_download">
-                    <img src="downloadbtn.svg" />Download
-                  </div>
-                  <div class="tag_dots">
-                    <img src="dots.svg" />
-                  </div>
-                </div>
+            <div class="tag_subscribe">Subscribe</div>
+            <div class="tag_container_1">
+              <div class="tag_like">
+                <img src="like.svg" />
+              </div>
+              <div class="tag_dislike">
+                <img src="dislike.svg" />
+              </div>
+              <div class="tag_share"><img src="share.svg" />Share</div>
+              <div class="tag_download">
+                <img src="downloadbtn.svg" />Download
+              </div>
+              <div class="tag_dots">
+                <img src="dots.svg" />
               </div>
             </div>
           </div>
         </div>
-        <div class="recommends">
-          <div class="recommend">
-            <img src="hq720.webp" />
+        <div class="comments">
+          <div class="elem">
+            <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <button>編集</button>
+              <button>削除</button>
             </div>
           </div>
-          <div class="recommend">
-            <img src="hq720.webp" />
+          <div class="elem">
+            <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <button>編集</button>
+              <button>削除</button>
             </div>
           </div>
-          <div class="recommend">
-            <img src="hq720.webp" />
+          <div class="elem">
+            <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
             <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
-            </div>
-          </div>
-          <div class="recommend">
-            <img src="hq720.webp" />
-            <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
-            </div>
-          </div>
-          <div class="recommend">
-            <img src="hq720.webp" />
-            <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
-            </div>
-          </div>
-          <div class="recommend">
-            <img src="hq720.webp" />
-            <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
-            </div>
-          </div>
-          <div class="recommend">
-            <img src="hq720.webp" />
-            <div>
-              <div>ロシア人の私が日本人に帰化しない理由</div>
-              <div>🌹ディアナチャンネル🌹</div>
-              <div>18万回視聴</div>
+              <button>編集</button>
+              <button>削除</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="comments">
+
+      <div id="recommends"></div>
+
+      <div class="item">
         <div class="elem">
           <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
           <div>
@@ -264,5 +265,26 @@
         </div>
       </div>
     </div>
+    <script>
+      const contents = [
+        { title: "1111-1", img: "lofi.webp" },
+        { title: "1111-2", img: "lofi.webp" },
+        { title: "1111-3", img: "lofi.webp" },
+        { title: "1111-4", img: "lofi.webp" },
+        { title: "1111-5", img: "lofi.webp" },
+      ];
+      const parent = document.getElementById("recommends");
+
+      for (let i = 0; i < contents.length; i++) {
+        const img = document.createElement("img");
+        img.src = contents[i].img;
+        img.height = 60;
+        parent.appendChild(img);
+
+        const child = document.createElement("div");
+        child.innerHTML = contents[i].title;
+        parent.appendChild(child);
+      }
+    </script>
   </body>
 </html>

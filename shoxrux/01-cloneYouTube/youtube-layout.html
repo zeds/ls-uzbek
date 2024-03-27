@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+    .container-article_viceo {
+        display: grid;
+        grid-template-columns: 1fr 0.3fr;
+
+    }
+
+    .videos {
+        background: red;
+        /* height: 400px; */
+    }
+
+    .videos video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .videos,
+    .playlist,
+    .comment-vodes,
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .playlist {
+        background: yellow;
+        height: 100%;
+        grid-row: 1/3;
+    }
+
+    .comment-vodes {
+        background: green;
+        height: 200px;
+        grid-column: 1/1;
+        grid-row: 2/3;
+    }
+
+    @media(width < 980px) {
+        .container-article_viceo {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .comment-vodes {
+            background: green;
+            height: 200px;
+            grid-column: 1/1;
+            grid-row: 3/3;
+        }
+
+        .playlist {
+            background: yellow;
+            grid-column: 1/2;
+            height: 200px;
+            grid-row: 2/3;
+        }
+    }
+
+    .setting_language_filter {
+        border-radius: 5px;
+    padding: 5px 10px;
+    justify-content: space-between;
+    border: 1px solid #EBECED;
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+   
+    }
+
+    .google_icon,
+    .chatgpt_icon,
+    .settings_icon,
+    .down-arrow_icon {
+        /* object-fit: cover; */
+        width: 20px;
+    }
+</style>
+
+<body>
+    <header class="header_container">
+        <div class="container">
+            <div class="left-container">
+                <img src="./img/burger-menu.svg" alt="" class="hamburger">
+                <img src="./img/youtubeicon.svg" alt="" class="youtubelogo">
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="検索">
+                <button class="search-btn">
+                    <img src="./img/search-icon.svg" alt="" class="search-icon">
+                    <div class="search-tooltip-text">調べる</div>
+                </button>
+                <div class="mic-icon">
+                    <img src="./img/mic-icon.svg" alt="" class="mic">
+                    <div class="mic-tooltip-text">音声で検索</div>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="upload-video">
+                    <img src="./img/upload-icon.svg" alt="" class="upload-video-icon">
+                    <div class="upload-tooltip-text">新しい</div>
+                </div>
+                <div class="notification">
+                    <img src="./img/notification-icon.svg" alt="" class="notification-icon">
+                    <div class="notification-tooltip-text">お知らせ</div>
+                </div>
+                <div class="profile">
+                    <img src="./img/unnamed.jpg" alt="" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container-article_viceo">
+        <div class="videos">
+            <video src="./videos/FAST_X___Won't_Back_Down_Official_Music_Video_NBA_YoungBoy,_Bailey.mp4"
+                controls></video>
+        </div>
+        <div class="playlist">
+            <h1>PLAYLIST</h1>
+        </div>
+        <div class="comment-vodes">
+            <h1>COMMENTS</h1>
+        </div>
+    </main>
+    <div class="setting_language_filter">
+        <img class="google_icon" src="./images/google-drive.png" />
+        <div class="filter-text">Transcript&Summary</div>
+        <div class="setting_chatgpt-icon">
+            <img class="chatgpt_icon" src="./images/chatgpt.png">
+            <img class="settings_icon" src="./images/settings.png">
+        </div>
+        <img class="down-arrow_icon" src="./images/down-arrow.png">
+
+    </div>
+</body>
+
+</html>
