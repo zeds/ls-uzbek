@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const ismlar = ["ahror", "asror", "abror", "sardor"];
+      const newIsmlar = [];
+
+      // console.log(ism)
+      ismlar.forEach(function (ism, index) {
+        const newIsm =
+          ism.charAt().toUpperCase() + ism.slice(1).toLowerCase() + "bek";
+        newIsmlar.push(newIsm);
+        //    console.log(newIsm, i)
+      });
+      console.log(newIsmlar);
+    </script>
+  </body>
+</html>

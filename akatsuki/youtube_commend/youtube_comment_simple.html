@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 5px;
+        }
+
+        .item:nth-child(1) {
+            width: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+
+        .recommend_container {}
+
+        .recommend {
+            display: flex;
+            gap: 5px;
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .recommend img {
+            width: 170px;
+        }
+
+        .recommend_title {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        .pc_comment_container {
+            display: block;
+        }
+
+        .sp_comment_container {
+            display: none;
+        }
+
+        .comment_icon {
+            aspect-ratio: "1/1";
+        }
+
+        .item:nth-child(3) {
+            display: none;
+        }
+
+        @media (width < 980px) {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .pc_comment_container {
+                display: none;
+            }
+
+            .sp_comment_container {
+                display: block;
+            }
+
+            .recommend {
+                width: 100%;
+            }
+
+            .item:nth-child(3) {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--アイテム-->
+        <div class="item">
+            <iframe src="https://www.youtube.com/embed/q-VNPpo9z0Y?si=XXVmp0fIA64ryp1M" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <!-- <img src="./russia.webp" /> -->
+            <div class="info">
+                <div>ビデオ情報</div>
+                <div>ビデオ情報</div>
+                <div>ビデオ情報</div>
+            </div>
+            <div class="pc_comment_container">
+                <!-- <div class="elem">
+						<div>
+							高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+						</div>
+						<div>
+							<button>編集</button>
+							<button>削除</button>
+						</div>
+					</div> -->
+            </div>
+        </div>
+        <div class="recommend_container"></div>
+        <div class="sp_comment_container">
+            <div class="elem">
+                <div>
+                    高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+                </div>
+                <div>
+                    <button>編集</button>
+                    <button>削除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const parent_recommend = document.querySelector(
+            ".recommend_container"
+        );
+        parent_recommend.style.width = "377px";
+        parent_recommend.style.background = "blue";
+
+        const recommendData = [
+            {
+                img: "https://i.ytimg.com/vi/q-VNPpo9z0Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCTfzICpNJURsAUR7H5oKiwbRU1OQ",
+                title: "ロシアから日本を選んで住んだ理由。",
+                user: "🌹ディアナちゃんねる🌹",
+                statistics: "57,007 回視聴  2024/03/15",
+            },
+            {
+                img: "https://i.ytimg.com/vi/JM75dAskORs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBTNuT62ywWpzAiB8-XMZJXdr6iEg",
+                title: "【ドーパミン中毒】スタンフォード大学医学部「冷たいシャワーの効果とは」／朝一番のエクササイズが効果的な理由／苦痛と快楽の感情はシーソーのように行き来する【PIVOT GLOBAL】",
+                user: "PIVOT 公式チャンネル",
+                statistics: "チャンネル登録者数 144万人",
+            },
+            {
+                img: "https://i.ytimg.com/vi/TO2t9esOUZA/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbmuO4gXa25PqUBzpwJhqHfOwsbw",
+                title: "ИСТОРИИ СПАСАТЕЛЯ! Страшные истории на ночь.Страшилки на ночь.",
+                user: "DARK~PHIL",
+                statistics: "65万回視聴",
+            },
+            {
+                img: "https://i.ytimg.com/vi/BH4ukdHaLmg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7AOL5WAISU0HpHDVqNF_ySb2yOw",
+                title: "КВАРТИРА КОШМАРОВ! Страшные истории на ночь.Страшилки на ночь.",
+                user: "DARK~PHIL",
+                statistics: "21万回視聴",
+            },
+
+            {
+                img: "https://i.ytimg.com/vi/BFS9n4B_2xA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0XuNyVjX1z1FRManXoNmQKxlBSg",
+                title: "Bali in 8k ULTRA HD HDR - Paradise of Asia (60 FPS)",
+                user: "8K WORLD",
+                statistics: "3M Subscribers",
+            },
+
+            {
+                img: "https://i.ytimg.com/vi/N1-Jmq7BLFE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCyLpS3boh1ChcvVbXOTWBR6sWt5w",
+                title: "Bulgaria 8K HDR 60P (FUHD) Very beautiful place",
+                user: "Jacob + Keitz Shwartz",
+                statistics: "900K Subscribers",
+            },
+
+            {
+                img: "https://i.ytimg.com/vi/rBadprLH1jM/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFEoPjAP&rs=AOn4CLDMnU74TxZBcC5ano3eLkdFn0SEFw",
+                title: "Morning Piano Music | Piano music to Study, Work, Ambience,... 🎷 | Best Choice for Study, Work #2",
+                user: "Aom",
+                statistics: "50 thousand Subscribers",
+            },
+            {
+                img: "https://i.ytimg.com/vi/RqooLet7B2Q/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAAbA9SZZz9H8rBTMfma5QFcRsdvw",
+                title: "BUMP OF CHICKEN「Sleep Walking Orchestra」",
+                user: "BUMP OF CHICKEN",
+                statistics: "342万回視聴",
+            },
+            {
+                img: "https://i.ytimg.com/vi/OEfz-pZPg24/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPH78BAUaVBNzeu9JLfJzxz_pIWw",
+                title: "ドラゴンボールGT OP DAN DAN 心魅かれてく",
+                user: "DEEN",
+                statistics: "219万回視聴",
+            },
+        ];
+
+        for (let i = 0; i < recommendData.length; i++) {
+            const recommend = document.createElement("div");
+            recommend.style.width = "377px";
+            recommend.style.height = "94px";
+            recommend.style.background = "red";
+            recommend.style.marginBottom = "10px";
+            recommend.style.display = "flex";
+            recommend.style.fontSize = "12px";
+
+            const img = document.createElement("img");
+            img.src = recommendData[i].img;
+            img.style.height = "100%";
+
+            const description = document.createElement("div");
+            description.style.background = "pink";
+
+            const title = document.createElement("div");
+            title.innerHTML = recommendData[i].title;
+            title.className = "recommend_title";
+            const user = document.createElement("div");
+            user.innerHTML = recommendData[i].user;
+            const statistics = document.createElement("div");
+            statistics.innerHTML = recommendData[i].statistics;
+
+            description.appendChild(title);
+            description.appendChild(user);
+            description.appendChild(statistics);
+
+            recommend.appendChild(img);
+            recommend.appendChild(description);
+
+            parent_recommend.appendChild(recommend);
+        }
+
+        const commentData = [
+            {
+                avatar:
+                    "https://yt3.ggpht.com/ytc/AIdro_nRl1MS09Ixhi9AmgZhImOwFP68aXitHVROI58D=s176-c-k-c0x00ffffff-no-rj",
+                user: "@kobekobe80",
+                title: "あいうえお",
+            },
+        ];
+
+        const parent_pc_comment = document.querySelector(
+            ".pc_comment_container"
+        );
+        const comment_box = document.createElement("div");
+        comment_box.style.background = "pink";
+        comment_box.style.display = "flex";
+        comment_box.style.padding = "10px";
+        comment_box.style.margin = "5px";
+
+        const comment_icon = document.createElement("img");
+        comment_icon.style.width = "40px";
+        comment_icon.style.height = "40px";
+        comment_icon.className = "comment_icon"
+        comment_icon.style.borderRadius = "20px";
+        comment_icon.src = commentData[0].avatar;
+
+        const comment_description = document.createElement("div");
+
+        const username = document.createElement("div");
+        username.innerHTML = commentData[0].user;
+
+        const title = document.createElement("div");
+        title.innerHTML = commentData[0].title;
+
+        const likes = document.createElement("div");
+        likes.innerHTML = "👍"
+
+        comment_description.appendChild(username);
+        comment_description.appendChild(title);
+        comment_description.appendChild(likes);
+
+        comment_box.appendChild(comment_icon);
+        comment_box.appendChild(comment_description);
+
+        parent_pc_comment.appendChild(comment_box);
+    </script>
+</body>
+
+</html>
