@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -58,4 +58,90 @@
 
 </body>
 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Slider</title>
+<style>
+    #slider-container {
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #slider {
+        width: 100%;
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slide {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    #prev {
+        left: 0;
+    }
+
+    #next {
+        right: 0;
+    }
+</style>
+</head>
+<body>
+<div id="slider-container">
+    <button class="slider-btn" id="prev" onclick="prevSlide()">&#10094;</button>
+    <div id="slider">
+        <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
+        <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+        <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
+        <!-- Add more images as needed -->
+    </div>
+    <button class="slider-btn" id="next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlide(slideIndex);
+
+    function prevSlide() {
+        showSlide(slideIndex -= 1);
+    }
+
+    function nextSlide() {
+        showSlide(slideIndex += 1);
+    }
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.slide');
+        if (index >= slides.length) {
+            slideIndex = 0;
+        }
+        if (index < 0) {
+            slideIndex = slides.length - 1;
+        }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+    }
+</script>
+</body>
 </html>
