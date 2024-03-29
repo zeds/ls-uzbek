@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+        background-color: lightblue;
+      }
+      /* .rasm img{
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .button-container {
+        width: 120px;
+      } */
+      .article-container {
+        display: grid;
+        grid-template-columns: 56px 1fr 120px;
+        background-color: lightgreen;
+        align-items: center;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+      }
+      /* .text-container { */
+      /* margin: 10px; */
+      /* margin-right: ; */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="article-container">
+        <!-- <div class="rasm">
+					<img src="./images/tom.jpeg" />
+				</div>
+
+				<div class="text-container">
+					<div class="user">@asilamamanova</div>
+					<div class="title">
+						Hozir ozimiz youtube commentini tuzib koryapmiz
+					</div>
+				</div>
+				<div class="button-container">
+					<button>Edit</button>
+					<button>Delete</button>
+				</div> -->
+      </div>
+    </div>
+    <script>
+      let parent = document.querySelector(".article-container");
+
+      let rasm = document.createElement("img");
+      rasm.className = "rasm";
+      rasm.src = "./images/tom.jpeg";
+      parent.appendChild(rasm);
+
+      let text_container = document.createElement("div");
+      text_container.className = "text_container";
+
+      let user = document.createElement("div");
+      user.className = "user";
+      user.innerHTML = "@asilamamanova";
+
+      let title = document.createElement("div");
+      title.className = "title";
+      title.innerHTML = "Hozir ozimiz youtube commentini tuzib koryapmiz";
+      text_container.appendChild(user);
+      text_container.appendChild(title);
+      parent.appendChild(text_container);
+
+      let buttonContainer = document.createElement("div");
+      buttonContainer.className = "button-container";
+      buttonContainer.style.display = "flex";
+      buttonContainer.style.gap = "10px";
+
+      let edit_button = document.createElement("button");
+      edit_button.innerHTML = "Edit";
+      edit_button.style.width = "50px";
+      edit_button.style.height = "30px";
+
+      let delete_button = document.createElement("button");
+      delete_button.innerHTML = "Delete";
+
+      buttonContainer.appendChild(edit_button);
+      buttonContainer.appendChild(delete_button);
+      parent.appendChild(buttonContainer);
+    </script>
+  </body>
+</html>

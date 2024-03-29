@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        /* background: lightgray; */
+        padding: 0 20px;
+      }
+      header {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
+
+        display: grid;
+        grid-template-columns: 169px 1fr 156px;
+        align-items: center;
+
+        padding: 0 16px;
+        gap: 10px;
+        background: white;
+      }
+      .logo_container {
+        height: 56px;
+        display: flex;
+        align-items: center;
+      }
+      .burger {
+        width: 24px;
+        height: 24px;
+        padding: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .burger:hover {
+        background: #f2f3f3;
+        cursor: pointer;
+      }
+      .burger img {
+        height: 24px;
+      }
+      .logo-img {
+        height: 56px;
+        padding: 18px 14px 18px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo-img img {
+        height: 20px;
+      }
+      .search_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 40px;
+      }
+      .search_container input {
+        max-width: 515px;
+        width: 80%;
+        height: 40px;
+        border-radius: 20px 0 0 20px;
+        border: solid 1px rgb(228, 225, 225);
+        padding-left: 17px;
+      }
+      .search_button {
+        height: 40px;
+        width: 64px;
+        border: solid 1px rgb(228, 255, 255);
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        position: relative;
+      }
+      .search_button:hover .tooltip-text {
+        opacity: 1;
+        background-color: #686868;
+        visibility: visible;
+        position: absolute;
+      }
+      .search_button:hover {
+        background: #d0d0d0;
+        cursor: pointer;
+      }
+      .mic_icon {
+        aspect-ratio: 1/1;
+        width: 40px;
+        height: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .mic_icon:hover .tooltip-text {
+        visibility: visible;
+      }
+      .mic_icon:hover {
+        background: #d0d0d0;
+        cursor: pointer;
+      }
+      .right_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 20px;
+      }
+      .profile {
+        border-radius: 20px;
+        height: 32px;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        bottom: -45px;
+
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
+
+        font-size: 12px;
+        color: white;
+
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+      .tooltip:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .tooltip:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+      .profile:hover .tooltip-text {
+        visibility: visible;
+      }
+      .profile:hover {
+        background: #d0d0d0;
+        cursor: pointer;
+      }
+      .video {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .video:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .video:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+      .bell {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .bell:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .bell:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+
+      @media (width < 648px) {
+        input {
+          background: red;
+          display: none;
+        }
+        .search button {
+          width: 40px;
+          height: 40px;
+          border: none;
+          border-radius: 20px;
+          background: none;
+        }
+        .search {
+          padding: 0;
+          justify-content: end;
+        }
+        .mic {
+          background: none;
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header_container">
+        <div class="logo_container">
+          <div class="burger"><img src="Images/burger.svg" /></div>
+          <img class="logo-img" src="Images/youtube (1).svg" />
+        </div>
+        <div class="search_container">
+          <input type="text" placeholder="Search" />
+
+          <button class="search_button">
+            <div class="tooltip-text">検索</div>
+            <img src="Images/search-outline.svg" />
+          </button>
+
+          <div class="mic_icon">
+            <div class="tooltip-text">音声で検索</div>
+            <img src="Images/mic.svg" />
+          </div>
+        </div>
+        <div class="right_container">
+          <div class="video">
+            <div class="tooltip-text">作成</div>
+            <img src="Images/recordingicon.svg" />
+          </div>
+
+          <div class="bell">
+            <div class="tooltip-text">通知</div>
+            <img src="Images/222.svg" />
+          </div>
+
+          <img class="profile" src="Images/1.jpg" />
+        </div>
+      </header>
+    </div>
+  </body>
+</html>

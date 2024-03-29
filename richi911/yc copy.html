@@ -24,41 +24,115 @@
       }
       .video {
         width: 100%;
-        background: red;
+        /* background: red; */
+      }
+      .video_description {
+        font-size: 20px;
+        font-weight: 700;
       }
       .video img {
+        border-radius: 15px;
         width: 100%;
       }
       .tag_container {
-        height: 35px;
+        height: 58px;
         width: 100%;
-        background: skyblue;
+        /* background: skyblue; */
       }
       .tag_list {
         display: flex;
+        align-items: center;
         gap: 10px;
       }
       .tag_list img {
-        height: 32px;
-        width: 32px;
-        border-radius: 20px;
+        height: 48px;
+        width: 48px;
+        border-radius: 24px;
+        margin: 5px;
       }
       .tag_profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 100px;
-        height: 50px;
-        background: brown;
+        height: 55px;
+        /* background: brown; */
       }
       .tag_profile_1 {
-        color: white;
+        /* background: pink; */
       }
       .tag_profile_2 {
-        color: white;
+        /* background: yellow; */
       }
-      .tag {
-        height: 40px;
-        background: blue;
-        border-radius: 5px;
+      .tag_subscribe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 30px;
+        background: red;
+        border-radius: 20px;
         color: white;
+        size: 14px;
+      }
+      .tag_container_1 {
+        display: flex;
+        width: 740px;
+        justify-content: end;
+        align-content: center;
+        /* background: white; */
+      }
+      .tag_like {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px gray;
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 20px 0 0 20px;
+        width: 50px;
+        height: 30px;
+        background: lightgray;
+      }
+      .tag_dislike {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 20px 20px 0;
+        width: 60px;
+        height: 30px;
+        background: lightgray;
+      }
+      .tag_share {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px;
+        width: 100px;
+        height: 30px;
+        background: lightgray;
+      }
+      .tag_download {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px;
+        width: 100px;
+        height: 30px;
+        background: lightgray;
+      }
+      .tag_dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px #d3d3d3;
+        border-radius: 20px;
+        width: 60px;
+        height: 30px;
+        background: lightgray;
       }
       .comments {
         background: green;
@@ -77,7 +151,9 @@
         <div class="video">
           <img src="lofi.webp" />
           <div>
-            <p>ビデオ情報</p>
+            <div class="video_description">
+              lofi hip hop radio 📚 - beats to relax/study to
+            </div>
             <div class="tag_container">
               <div class="tag_list">
                 <img src="lofi.webp" />
@@ -85,15 +161,22 @@
                   <div class="tag_profile_1">Lofi Girl</div>
                   <div class="tag_profile_2">3M subscribe</div>
                 </div>
-                <div class="tag">All</div>
-                <div class="tag">Mix</div>
-                <div class="tag">Live</div>
-                <div class="tag">Trending</div>
-                <div class="tag">Games</div>
-                <div class="tag">News</div>
-                <div class="tag">Learning</div>
-                <div class="tag">Fitness</div>
-                <div class="tag">Design</div>
+                <div class="tag_subscribe">Subscribe</div>
+                <div class="tag_container_1">
+                  <div class="tag_like">
+                    <img src="like.svg" />
+                  </div>
+                  <div class="tag_dislike">
+                    <img src="dislike.svg" />
+                  </div>
+                  <div class="tag_share"><img src="share.svg" />Share</div>
+                  <div class="tag_download">
+                    <img src="downloadbtn.svg" />Download
+                  </div>
+                  <div class="tag_dots">
+                    <img src="dots.svg" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
