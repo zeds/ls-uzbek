@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 10px;
+            padding: 5px 50px;
+        }
+
+        .item:nth-child(1) {
+            width: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+
+        .recommend_container {}
+
+        .recommend {
+            display: flex;
+            gap: 5px;
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .recommend img {
+            width: 170px;
+        }
+
+        .recommend_title {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        .pc_comment_container {
+            display: block;
+        }
+
+        .sp_comment_container {
+            display: none;
+        }
+
+        .item:nth-child(3) {
+            display: none;
+        }
+
+        @media (width < 980px) {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .pc_comment_container {
+                display: none;
+            }
+
+            .sp_comment_container {
+                display: block;
+            }
+
+            .recommend {
+                width: 100%;
+            }
+
+            .item:nth-child(3) {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--アイテム-->
+        <div class="item">
+            <iframe src="https://www.youtube.com/embed/q-VNPpo9z0Y?si=XXVmp0fIA64ryp1M" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+            <!-- <img src="./russia.webp" /> -->
+            <div class="info">
+                <div>ビデオ情報</div>
+                <div>ビデオ情報</div>
+                <div>ビデオ情報</div>
+            </div>
+            <div class="pc_comment_container">
+                <div class="elem">
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="recommend_container">
+        </div>
+        <div class="sp_comment_container">
+            <div class="elem">
+                <div>
+                    高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+                </div>
+                <div>
+                    <button>編集</button>
+                    <button>削除</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        //===================================================================================
+        //　　　　　　　　　　　　　　　おすすめ動画(Recommend)処理
+        //===================================================================================
+
+        const recommendData = [
+
+            {
+                img: "https://i.ytimg.com/vi/VkhEnvIy0yU/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBYA-RBzoTArAkivS-TfoAl_jo_AQ",
+                title: "Mili - YUBIKIRI-GENMAN -special edit-", user: "Mili", statistics: "68.5M 回視聴  2年前"
+            },
+            {
+                img: "https://i.ytimg.com/vi/EXTLJmYsaUQ/hqdefault.jpg?sqp=-oaymwE2CPYBEIoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARgUIBMofzAP&rs=AOn4CLAwxSpzfRCLhpGq-k4hLw12D2PKiw",
+                title: "A whole new world (English)", user: "chojang", statistics: "16.97M 回視聴  8年前"
+            },
+            {
+                img: "https://i.ytimg.com/vi/TVcLIfSC4OE/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCMej9mG-6ksgyyPFcRshxs2CG3-A",
+                title: "Mulan | I'll Make A Man Out Of You | Disney Sing-Along", user: "Disney", statistics: "1700M 回視聴  7年前"
+            },
+            {
+                img: "https://i.ytimg.com/vi/2XsgcE6G7FE/hqdefault.jpg?sqp=-oaymwE2CPYBEIoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AOAAtAFigIMCAAQARhlIFkoVDAP&rs=AOn4CLBr1iec1QY5h4_eWJJS-O34jgw5uw",
+                title: "天までとどけ 武田鉄矢 【ドラえもん のび太とアニマル惑星 主題歌】【ドラえもん50周年】", user: "トラちゃん", statistics: "2.9M万回視聴 4年前"
+            },
+
+            {
+                img: "https://i.ytimg.com/vi/j9rax18IghI/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbo9Lv1amlpUR48za5hwOdftWZng",
+                title: "Don't you see! （What a beautiful memory 2009）", user: "Zardofficial", statistics: "17.04M回視聴  15年前"
+            },
+
+            {
+                img: "https://i.ytimg.com/vi/aU9v6J_Kcuw/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC1j_4B-QW_iI3c8lYlbILeUwPOlw",
+                title: "アンジェラ・アキ - 手紙 ~拝啓 十五の君へ~ / THE FIRST TAKE", user: "THE FIRST TAKE", statistics: "4M回視聴 1ヶ月前"
+            },
+
+            {
+                img: "https://i.ytimg.com/vi/S7zdxJm70gI/hqdefault.jpg?sqp=-oaymwE2CPYBEIoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gGAAugCigIMCAAQARh_ICsoJDAP&rs=AOn4CLDi69CvFJ3yXf_2-iwKgkWps8F4LQ",
+                title: "何かいい事きっとある 島崎和歌子 【ドラえもん のび太とブリキの迷宮 主題歌】【ドラえもん50周年】", user: "トラちゃん", statistics: "3.5M回視聴 4年前"
+            },
+            {
+                img: "https://i.ytimg.com/vi/RqooLet7B2Q/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAAbA9SZZz9H8rBTMfma5QFcRsdvw",
+                title: "BUMP OF CHICKEN「Sleep Walking Orchestra」", user: "BUMP OF CHICKEN", statistics: "3.2M回視聴 3ヶ月前"
+            },
+            {
+                img: "https://i.ytimg.com/vi/OEfz-pZPg24/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPH78BAUaVBNzeu9JLfJzxz_pIWw",
+                title: "ドラゴンボールGT OP DAN DAN 心魅かれてく", user: "DEEN", statistics: "23.2万回視聴 2週前"
+            },
+        ]
+
+
+        const rec_parent = document.querySelector('.recommend_container');
+        rec_parent.style.width = "377px";
+        //rec_parent.style.padding = "4px";
+
+        for (let i = 0; i < recommendData.length; i++) {
+            //1.範囲を制作
+            const recommend = document.createElement('div')
+            recommend.style.width = "377px";
+            recommend.style.height = "94px";
+            recommend.style.borderRadius = "8px";
+            recommend.style.cursor = "pointer";
+            recommend.style.overflow = "hidden"
+            recommend.style.marginBottom = "10px"
+            recommend.style.display = "flex"
+            recommend.style.fontSize = "12px"
+
+            //2.おすすめの動画の表示する画像要素を作成する
+            const img = document.createElement('img');
+            img.style.borderRadius = "8px";
+            img.src = recommendData[i].img //從recommendData配列中設置圖像的來源URL
+            img.style.height = "100%";
+            img.style.width = "168px";
+
+            //3.<div>を制作する、中にはビデオタイトル、ユーザー名と再生回数
+            const description = document.createElement('div');
+            description.style.padding = "4px"
+
+
+            //3.1<div>を制作する、ビデオタイトルの要素を設定する
+            const title = document.createElement('div')
+            title.innerHTML = recommendData[i].title
+            title.className = "recommend_title"
+            title.style.fontWeight = 700;
+
+
+            //3.2<div>を制作する、ユーザー名の要素を設定する
+            const user = document.createElement('div')
+            user.innerHTML = recommendData[i].user
+            user.style.marginTop = "8px";
+            user.style.color = "#969696";
+
+            //3.3<div>を制作する、再生回数の要素を設定する
+            const statistics = document.createElement('div')
+            statistics.innerHTML = recommendData[i].statistics
+            statistics.style.color = "#969696";
+
+
+            //実装
+            description.appendChild(title)
+            description.appendChild(user)
+            description.appendChild(statistics)
+
+            recommend.appendChild(img)
+            recommend.appendChild(description)
+
+            rec_parent.appendChild(recommend)
+        }
+        //===================================================================================
+        //　　　　　　　　　　　　　　　ユーザーコメント(commend)処理
+        //===================================================================================
+
+        const My_commend = document.querySelector(".pc_comment_container")
+        My_commend.style.display = "flex";
+
+        //1.自分のユーザーアイコンを設定する
+        const My_img = document.createElement("img");
+        My_img.src = "スマブラ.webp"
+        My_img.style.padding = "5px";
+        My_img.style.width = "40px"
+        My_img.style.height = "40px"
+        My_img.style.borderRadius = "50%";
+        My_commend.appendChild(My_img)
+
+        //2.入力コメントを設定
+        const input_commend_container = document.createElement("div")
+        input_commend_container.style.width = "100%"
+        input_commend_container.style.padding = "0px 10px 15px 10px";
+
+        const post_input = document.createElement("input");
+        post_input.id = "comment";
+        post_input.placeholder = "コメントする";
+
+        post_input.style.width = "100%";
+        input_commend_container.appendChild(post_input);
+        My_commend.appendChild(input_commend_container);
+
+        const post_cancel_button = document.createElement("button");
+        post_cancel_button.innerHTML = "キャンセル";
+        const post_comment_button = document.createElement("button");
+        post_comment_button.innerHTML = "コメント";
+
+        input_commend_container.appendChild(post_cancel_button);
+        input_commend_container.appendChild(post_comment_button);
+    </script>
+</body>
+
+</html>

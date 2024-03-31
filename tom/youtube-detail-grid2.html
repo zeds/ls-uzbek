@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.container {
+				display: grid;
+				grid-template-columns: 1fr 400px;
+			}
+			.recommends {
+				width: 400px;
+			}
+			.recommend {
+				display: flex;
+				height: 110px;
+				padding: 10px;
+			}
+			.recommend img {
+				height: 100%;
+			}
+			.video {
+				width: 100%;
+				background: red;
+			}
+			.video img {
+				width: 100%;
+			}
+			.comments-1 {
+				background: green;
+			}
+			.comments-2 {
+				display: none;
+				background: blue;
+			}
+			@media (width < 980px) {
+				.container {
+					grid-template-columns: 1fr;
+				}
+				.comments-1 {
+					display: none;
+				}
+				.comments-2 {
+					display: block;
+				}
+			}
+			.article {
+				display: flex;
+				font-size: 12px;
+				margin: 5px;
+				gap: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="container">
+				<div class="video">
+					<img src="./images/russia.webp" />
+					<div>
+						<p>ビデオ情報</p>
+						<p>あああああ</p>
+						<p>あああああ</p>
+						<p>あああああ</p>
+						<p>あああああ</p>
+					</div>
+					<div class="comments-1">
+						<div class="elem">
+							<div>
+								高橋
+								いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+							</div>
+							<div>
+								<button>編集</button>
+								<button>削除</button>
+							</div>
+						</div>
+						<div class="elem">
+							<div>
+								高橋
+								いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+							</div>
+							<div>
+								<button>編集</button>
+								<button>削除</button>
+							</div>
+						</div>
+						<div class="elem">
+							<div>
+								高橋
+								いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+							</div>
+							<div>
+								<button>編集</button>
+								<button>削除</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="recommends">あああ</div>
+			</div>
+
+			<div class="comments-2">
+				<div class="elem">
+					<div>
+						高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+					</div>
+					<div>
+						<button>編集</button>
+						<button>削除</button>
+					</div>
+				</div>
+				<div class="elem">
+					<div>
+						高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+					</div>
+					<div>
+						<button>編集</button>
+						<button>削除</button>
+					</div>
+				</div>
+				<div class="elem">
+					<div>
+						高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+					</div>
+					<div>
+						<button>編集</button>
+						<button>削除</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			const contents = [
+				{
+					title: "あいうえお-1",
+					author: "THE FIRST TAKE 1",
+					stats: "345万回視聴・7ヶ月",
+					img: "./images/russia.webp",
+				},
+				{
+					title: "あいうえお-2",
+					author: "THE FIRST TAKE 2",
+					stats: "345万回視聴・7ヶ月",
+					img: "./images/russia.webp",
+				},
+				{
+					title: "あいうえお-3",
+					author: "THE FIRST TAKE 3",
+					stats: "345万回視聴・7ヶ月",
+					img: "./images/russia.webp",
+				},
+			];
+			const parent = document.getElementById("recommends");
+
+			for (let i = 0; i < contents.length; i++) {
+				const article = document.createElement("div");
+				article.className = "article";
+
+				const img = document.createElement("img");
+				img.src = contents[i].img;
+				img.height = 60;
+				article.appendChild(img);
+
+				const textContainer = document.createElement("div");
+				textContainer.className = "text_container";
+
+				// タイトル
+				const title = document.createElement("div");
+				title.innerHTML = contents[i].title;
+				textContainer.appendChild(title);
+
+				// 著者
+				const author = document.createElement("div");
+				author.innerHTML = contents[i].author;
+				textContainer.appendChild(author);
+
+				// 統計情報
+				const stats = document.createElement("div");
+				stats.innerHTML = contents[i].stats;
+				textContainer.appendChild(stats);
+
+				article.appendChild(textContainer);
+
+				parent.appendChild(article);
+			}
+		</script>
+	</body>
+</html>

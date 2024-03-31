@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			.body {
+				font-family: "Roboto", sans-serif;
+				font-size: 14px;
+			}
+
+			.comment_container {
+				display: grid;
+				grid-template-columns: 56px 1fr 120px;
+				gap: 10px;
+			}
+
+			.comment_container img {
+				width: 50px;
+				height: 50px;
+			}
+
+			.comment_content {
+				display: flex;
+				gap: 10px;
+			}
+
+			.comment_text_w {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			.comment-date {
+				margin-bottom: 10px;
+			}
+
+			.comment-text {
+				margin-bottom: 10px;
+			}
+
+			.buttons {
+				display: flex;
+				align-items: center;
+				background: pink;
+				gap: 10px;
+			}
+			.buttons button {
+				height: 30px;
+				width: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="comment_container">
+			<img src="./images/tom.jpeg" />
+			<div class="comment_content">
+				<div class="comment_text_w">
+					<div class="comment-author">@asil</div>
+					<div class="comment-date">5 days ago</div>
+					<div class="comment-text">
+						При всех недостатках и достоинствах этих книг приятно
+						сознавать, что их до сих пор читают и обсуждают, несмотря на
+						то, что мы перевели их много лет назад на совершенно
+						добровольной основе. До сих пор популярны!
+					</div>
+				</div>
+			</div>
+			<div class="buttons">
+				<button>編集</button>
+				<button>削除</button>
+			</div>
+		</div>
+	</body>
+</html>

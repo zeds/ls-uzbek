@@ -143,8 +143,41 @@
 				display: flex;
 				align-items: center;
 				justify-content: space-around;
-				/* background-color: gray; */
 				margin-right: 15px;
+				margin-right: 20px;
+			}
+			.profile {
+				border-radius: 18px;
+				height: 36px;
+				width: 36;
+			}
+
+			/**********(tooltip-text)***********/
+
+			.tooltip-text {
+				display: inline-block;
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: -40px;
+				padding: 10px;
+				white-space: nowrap;
+				font-size: 0.8rem;
+				line-height: 1.3;
+				background: #5d5d5d;
+				color: #fff;
+				border-radius: 3px;
+				transition: 0.3s ease-in;
+			}
+
+			.tooltip:hover .tooltip-text {
+				opacity: 1;
+				visibility: visible;
+			}
+			.tooltip:hover {
+				background: gray;
 			}
 			.video {
 				width: 40px;
@@ -354,17 +387,17 @@ Navigation ( tooltip )
 	aspect-ratio: 3/2;
 }
 .timescore {
-      bottom: 10px;
-      right: 8px;
-      font-size: 12px;
-      background: black;
-      color: white;
-      position: absolute;
-      border-radius: 5px;
-      padding: 3px;
+		bottom: 10px;
+		right: 8px;
+		font-size: 12px;
+		background: black;
+		color: white;
+		position: absolute;
+		border-radius: 5px;
+		padding: 3px;
     }
 	.timestatus {
-      position: relative;
+    position: relative;
     }
 .description {
 	display: flex;
@@ -497,6 +530,143 @@ Navigation ( tooltip )
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
+			.articles {
+				padding-left: 240px;
+				padding-right: 20px;
+				padding-top: 120px;
+				height: 100%;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 10px;
+			}
+			.article {
+				width: 100%;
+			}
+			.article img {
+				width: 100%;
+				border-radius: 15px;
+				aspect-ratio: 3/2;
+			}
+			.description {
+				display: flex;
+				gap: 10px;
+				margin-top: 10px;
+			}
+			.description img {
+				width: 36px;
+				height: 36px;
+				border-radius: 18px;
+			}
+			.title {
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				line-height: 22px;
+				font-size: 16px;
+				font-weight: 500;
+				color: #0f0f0f;
+			}
+			.user {
+				font-size: 14px;
+			}
+			.statistics {
+				font-size: 14px;
+			}
+			/**********(grid)**********/
+			@media (width < 648px) {
+				.articles {
+					grid-template-columns: 1fr;
+				}
+				nav {
+					display: none;
+				}
+				.articles {
+					padding-left: 20px;
+				}
+				.tag_container {
+					padding-left: 20px;
+				}
+				.search_container {
+					margin: 0 2rem 0 1rem;
+				}
+			}
+			@media (648px <= width < 768px) {
+				.articles {
+					grid-template-columns: 1fr 1fr;
+				}
+				nav {
+					display: none;
+				}
+				.articles {
+					padding-left: 20px;
+				}
+				.tag_container {
+					padding-left: 20px;
+				}
+			}
+			@media (768px <= width < 1024px) {
+				.articles {
+					grid-template-columns: 1fr 1fr;
+				}
+				.articles {
+					padding-left: 100px;
+				}
+				.tag_container {
+					padding-left: 100px;
+				}
+				nav li {
+					flex-direction: column;
+					gap: 5px;
+					font-size: 10px;
+					width: 60px;
+					align-items: center;
+					padding: 10px;
+					margin-bottom: 10px;
+				}
+				nav li div {
+					overflow: hidden;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 1;
+				}
+			}
+			@media (1024px <= width < 1280px) {
+				.articles {
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+				.articles {
+					padding-left: 100px;
+				}
+				.tag_container {
+					padding-left: 100px;
+				}
+				nav li {
+					flex-direction: column;
+					gap: 5px;
+					font-size: 10px;
+					width: 60px;
+					align-items: center;
+					padding: 10px;
+					margin-bottom: 10px;
+				}
+				nav li div {
+					overflow: hidden;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 1;
+				}
+			}
+			@media (1280px <= width < 1536px) {
+				.articles {
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+			}
+			@media (1536px <= width) {
+				.articles {
+					grid-template-columns: 1fr 1fr 1fr 1fr;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -570,6 +740,49 @@ Navigation ( tooltip )
 		</div>
 		<main>
 			<div class="article_container">
+			<div class="articles">
+				<div class="article">
+					<img src="img/fomuse2.avif" />
+					<div class="description">
+						<img src="img/fomuse1.avif" />
+						<div class="text_container">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="img/istockphoto5.jpg" />
+					<div class="description">
+						<img src="img/fomuse1.avif" />
+						<div class="text_container">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="img/fruit.avif" />
+					<div class="description">
+						<img src="img/fomuse1.avif" />
+						<div class="text_container">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
 				<div class="article">
 					<div class="timestatus">
 					<img src="img/mountain.jpeg" />
@@ -603,6 +816,35 @@ Navigation ( tooltip )
 					<img src="img/fomuse2.avif" />
 					<div class="timescore">50:40</div>
 				</div>
+					<img src="img/photo.jpg" />
+					<div class="description">
+						<img src="img/fomuse1.avif" />
+						<div class="text_container">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="img/photo2.webp" />
+					<div class="description">
+						<img src="img/fomuse1.avif" />
+						<div class="text_container">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="img/jackson-sophat-wUbNvDTsOIc-unsplash.jpg" />
 					<div class="description">
 						<img src="img/jackson-sophat-wUbNvDTsOIc-unsplash.jpg" />
 						<div class="text_container">
@@ -628,6 +870,12 @@ Navigation ( tooltip )
 							<div class="title">【Yostar】 ブルーアーカイブ総力戦</div>
 							<div class="user">＠bluearchive.jp</div>
 							<div class="statistics">58万回視聴・3 か月前</div>
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
 						</div>
 					</div>
 				</div>
@@ -688,6 +936,34 @@ Navigation ( tooltip )
 				</div>
 				<div class="article">
 					<img src="img/fruit.avif" />
+					<div class="description">
+						<img src="img/photo.jpg" />
+						<div class="text_container">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="img/fomuse2.avif" />
+					<div class="description">
+						<img src="img/fruit.avif" />
+						<div class="text_container">
+							<div class="title">
+								4 HOUR ENGLISH LESSON - ADVANCED ENGLISH VOCABULARY
+								(Confusing English Words)
+							</div>
+							<div class="user">JForrest English</div>
+							<div class="statistics">7.5万 回視聴</div>
+						</div>
+					</div>
+				</div>
+				<div class="article">
+					<img src="img/mountain.jpeg" />
 					<div class="description">
 						<img src="img/michael-dziedzic-qDG7XKJLKbs-unsplash.jpg" />
 						<div class="text_container">
