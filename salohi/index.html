@@ -24,12 +24,14 @@
         .container {
 				width: 100%;
 				height: 56px;
-				/* background: pink; */
+				background: pink;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
 				margin-top: 20px;
 				padding-left: 20px;
+                z-index: 2;
+                position: fixed;
 			}
 			.left {
 				display: flex;
@@ -216,6 +218,9 @@
         nav {
         width: 200px;
         padding: 12px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+        /* z-index: 1; */
         }
         li {
         height: 40px;
@@ -244,6 +249,8 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 10px;
         padding-left: 15px;
+        overflow-y: scroll;
+        overflow-x: scroll;
         }
         .item {
             /* background: orange; */
