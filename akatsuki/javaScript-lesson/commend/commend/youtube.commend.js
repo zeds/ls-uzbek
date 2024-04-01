@@ -146,13 +146,14 @@ My_commend.appendChild(My_img);
 const input_commend_container = document.createElement("div");
 input_commend_container.style.width = "100%";
 input_commend_container.style.padding = "0px 10px 15px 10px";
+
 //2.1入力inputを要素を設定
 const post_input = document.createElement("input");
 post_input.id = "comment";
-post_input.placeholder = "コメントする";
+post_input.placeholder = "コメントする...";
 post_input.style.width = "100%";
 post_input.style.border = "none";
-post_input.style.borderBottom = "1px solid black";
+post_input.style.borderBottom = "1px solid rgba(0,0,0,0.4)";
 //2.2 実装
 input_commend_container.appendChild(post_input);
 My_commend.appendChild(input_commend_container);
@@ -267,7 +268,6 @@ function showComment() {
     viewer_button_div.appendChild(viewer_edit_button);
     viewer_button_div.appendChild(viewer_delete_button);
     viewer_box.appendChild(viewer_button_div);
-
 
     //編集ボタンの機能実装
     viewer_edit_button.addEventListener("click", function () {
