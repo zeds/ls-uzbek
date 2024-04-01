@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>video layout</title>
     <style>
       .container {
         display: flex;
         gap: 5px;
       }
-
       .video_container {
         width: 100%;
       }
@@ -19,21 +18,150 @@
         width: 100%;
         aspect-ratio: 16/9;
       }
-
-      .recommend_container {
+      .video_title {
+        width: 100%;
+        color: rgb(15, 15, 15);
+        font-size: 20px;
+        font-weight: 700;
+        padding: 10px;
+      }
+      .description_container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: aqua;
+      }
+      .description_left {
+        display: flex;
+        align-items: center;
+      }
+      .mochimaru {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+      }
+      .channel_name {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+      }
+      .channel_name img {
+        margin-left: 3px;
+        width: 15px;
+        height: 15px;
+        object-fit: cover;
+      }
+      .channel_statistics {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        color: rgb(96, 96, 96);
+        font-size: 12px;
+        line-height: 18px;
+      }
+      .channel_buttons {
+        display: flex;
+        gap: 5px;
+      }
+      .member,
+      .subscribe {
+        width: 136px;
+        height: 36px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        border-radius: 18px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      .member {
+        background-color: rgb(15, 15, 15);
+        color: white;
+      }
+      .subscribe img {
+        height: 20px;
+      }
+      .description_right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-right: 5px;
+      }
+      .like_dislike {
+        display: flex;
+      }
+      .like_button {
+        width: 90px;
+        height: 35px;
+        border-radius: 20px 0 0 20px;
+        background: #f2f2f2;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        gap: 5px;
+        padding: 5px;
+      }
+      .like_button img {
+        height: 50%;
+      }
+      .vl {
+        width: 0;
+        height: 24px;
+        border: 0.5px solid lightgray;
+        margin-left: 10px;
+      }
+      .dislike_button {
+        width: 30px;
+        height: 35px;
+        background: #f2f2f2;
+        border-radius: 0 20px 20px 0;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+      }
+      .dislike_button img {
+        height: 50%;
+      }
+      @media (width < 600px) {
+        .description_container {
+          flex-direction: column;
+        }
       }
 
+      @media (600px <=width < 856px) {
+        .offline {
+          display: none;
+        }
+      }
+
+      @media (856px <=width < 1100px) {
+        .thanks {
+          display: none;
+        }
+      }
       .recommend {
         display: flex;
         gap: 5px;
         font-size: 14px;
         padding: 10px;
       }
-
       .recommend img {
         width: 170px;
       }
-
       .recommend_title {
         overflow: hidden;
         display: -webkit-box;
@@ -58,7 +186,7 @@
         border-bottom: 1px solid black;
       }
 
-      @media (width < 10px) {
+      @media (width < 980px) {
         .container {
           display: grid;
           grid-template-columns: 1fr;
@@ -88,18 +216,65 @@
       <!--アイテム-->
       <div class="video_container">
         <iframe
-          src="https://www.youtube.com/embed/q-VNPpo9z0Y?si=XXVmp0fIA64ryp1M"
+          src="https://www.youtube.com/embed/JRKJtnVVKsk?si=2-qo9BS3mlaERfsI"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
 
         <!-- <img src="./russia.webp" /> -->
         <div class="info">
-          <div>ビデオ情報</div>
-          <div>ビデオ情報</div>
-          <div>ビデオ情報</div>
+          <div class="video_title">
+            ランニングマシンを使いたくて後ろで順番待ちしてる猫たちがかわいすぎました笑
+          </div>
+        </div>
+        <div class="description_container">
+          <div class="description_left">
+            <img
+              class="mochimaru"
+              src="https://yt3.ggpht.com/H_KYY1eL4QGJftZL6iup3qPXp2YQE5lG5flpbcypOiP7xSv86dCOw1hsy6NwrDu7Wr83KNXzWds=s88-c-k-c0x00ffffff-no-rj"
+              alt=""
+            />
+            <div class="channel_info">
+              <div class="channel_name">
+                もちまる日記 <img src="./images/check.svg" alt="" />
+              </div>
+              <div class="channel_statistics">215万人 チャンネル登録者数</div>
+            </div>
+            <div class="channel_buttons">
+              <button class="member">メンバーになる</button>
+              <button class="subscribe">
+                <img src="./images/bell.svg" alt="" />登録済み
+                <img src="./images/down-arrow.svg" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="description_right">
+            <div class="like_dislike">
+              <button class="like_button">
+                <img src="./images/like.svg" alt="" />
+                <div class="tooltip-text">i like it</div>
+              </button>
+              <div class="vl"></div>
+              <button class="dislike_button">
+                <img src="./images/dislike.svg" alt="" />
+                <div class="tooltip-text">i disliked it</div>
+              </button>
+            </div>
+            <button class="share">
+              <img src="./images/share.svg" alt="" />
+              共有
+            </button>
+            <button class="offline">
+              <img src="./images/dowload.svg" alt="" />
+              オフライン
+            </button>
+            <button class="thanks">
+              <img src="./images/thanks.svg" alt="" />thanks
+            </button>
+          </div>
         </div>
         <div class="post_container">
           <!-- ここからコメントを投稿する -->
@@ -118,15 +293,8 @@
         </div>
       </div>
       <div class="recommend_container"></div>
-      <div class="sp_comment_container">
-        <div class="elem">
-          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
-          <div>
-            <button>編集</button>
-            <button>削除</button>
-          </div>
-        </div>
-      </div>
+      <div class="pc_comment_container"></div>
+      <div class="sp_comment_container"></div>
     </div>
     <script>
       const parent_recommend = document.querySelector(".recommend_container");
@@ -314,6 +482,7 @@
       const parent_sp_comment = document.querySelector(".sp_comment_container");
 
       console.log("commentData.length=", commentData.length);
+
       function showComments() {
         for (let i = 0; i < commentData.length; i++) {
           const comment_box = document.createElement("div");
@@ -345,6 +514,11 @@
           comment_button.appendChild(edit_button);
           comment_button.appendChild(delete_button);
 
+          //editButton
+          edit_button.addEventListener("click", function () {
+            alert(`${i}番目が押されました`);
+          });
+
           //削除ボタンが押された時
           delete_button.addEventListener("click", function () {
             // alert(`${i}番目が押されました`);
@@ -363,7 +537,7 @@
           comment_box.appendChild(comment_button);
 
           parent_pc_comment.appendChild(comment_box);
-          // parent_sp_comment.appendChild(comment_box);
+          parent_sp_comment.appendChild(comment_box);
         }
       }
 
@@ -372,7 +546,7 @@
       post_container.style.display = "flex";
 
       const img = document.createElement("img");
-      img.src = "./images/tom.jpeg";
+      img.src = "./images/me.jpg";
       img.style.width = "40px";
       img.style.height = "40px";
 
@@ -401,8 +575,8 @@
       post_comment_button.addEventListener("click", function () {
         let comment = document.getElementById("comment").value;
         let obj = {
-          avatar: "./images/tom.jpeg",
-          user: "@tom",
+          avatar: "./images/me.jpg",
+          user: "@sayfullayevmexroj",
           title: comment,
         };
 
