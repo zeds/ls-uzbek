@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   * {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			li {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+
+			body {
+				font-family: "Roboto", sans-serif;
+				font-size: 20px;
+			}
+			.container {
+				width: 100%;
+				height: 100vh;
+				background: lightgray;
+			}
+    .article-container img{
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+    }
+  
+    .article-container{
+        border-radius: 10px;
+        padding: 10px;
+        background: #86c8ff;
+        margin: 0 auto;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 51px 1fr 120px;
+        align-items: center;
+    }
+    .button-container{
+        display: flex;
+        align-items: center;
+    }
+    .user{
+        font-weight: 600;
+    }
+    .user span{
+        font-weight: 500;
+        font-size: 12px;
+        color: rgb(61, 61, 61);
+    }
+    .jsBtnEdit,
+    .jsBtnDelete
+    {
+        border: 1px solid rgb(119, 119, 119);
+        cursor: pointer;
+        margin-left: 5px;
+        width: 60px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    .button-container button{
+        border: 1px solid rgb(119, 119, 119);
+        cursor: pointer;
+        margin-left: 5px;
+        width: 60px;
+        padding: 5px 15px;
+        border-radius: 10px;
+    }
+    .text-container{
+        margin-left: 10px;
+    }
+    /* js */
+
+    .imgJs{
+        border-radius: 25px;
+    }
+    .article_containerJs{
+        align-items: center;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 51px 1fr 120px;
+    }
+    .article-container-js{
+        align-items: center;
+        border-radius: 10px;
+        width: 80%;
+        margin:  0 auto;
+        margin-top: 20px;
+        background: #fbff00;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="article-container">
+            <img src="./img/fff.jpg" alt="">
+            <div class="text-container">
+                <div class="user">@Shoxrux <span>5 min</span></div>
+                <div class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, enim.❤</div>
+            </div>
+            <div class="button-container">
+                <button>edit</button>
+                <button>delete</button>
+            </div>
+        </div>
+        <div class="article-container-js"></div>
+    </div>
+    <script>
+        let article_list = document.querySelector(".article-container-js");
+        let article_containerJs = document.createElement("div");
+
+        let img = document.createElement("img")
+        img.src = "./img/fff.jpg"
+        img.className = "imgJs"
+        img.width = 50;
+        img.height = 50;
+
+        let text_container = document.createElement("div");
+        let user = document.createElement("div");
+        let title = document.createElement("div");
+        user.innerHTML = "@Shoxrux";
+        title.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, enim.❤";
+
+        text_container.appendChild(user);
+        text_container.appendChild(title);
+        text_container.className = "text_containerJs";
+
+        article_containerJs.className = "article_containerJs";
+
+        let btnContainer = document.createElement("div");
+        btnContainer.style.display = "flex";
+        let ediBtn = document.createElement("button");
+        let deleteBtn = document.createElement("button");
+        ediBtn.innerHTML = "edit"
+        deleteBtn.innerHTML = "delete"
+        ediBtn.className = "jsBtnEdit"
+        deleteBtn.className = "jsBtnDelete"
+        btnContainer.appendChild(ediBtn)
+        btnContainer.appendChild(deleteBtn)
+
+        article_containerJs.appendChild(img)
+        article_containerJs.appendChild(text_container);
+        article_containerJs.appendChild(btnContainer);
+        article_list.appendChild(article_containerJs)
+    </script>
+</body>
+
+</html>

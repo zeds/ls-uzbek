@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,28 +6,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    .commnet-container{
-        width: 80%;
-        margin:  25px auto;
-    }
-</style>
+
 <body>
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="comment" placeholder="comment">
+    <button id="commentButton"> Enter</button>
+    <div class="list"></div>
+    <script>
 
-<div class="commnet-container">
-   <input type="text" placeholder="Enter Comment" class="input_comment">
-   <button class="cancel_btn">Cancel</button>
-   <button id="comment_btn">Enter</button>
+        comments = [{
+            naem: 'Shoxrux',
+            comment: 'love1'
+        }, {
+            naem: 'Shoxrux',
+            comment: 'love2'
+        }, {
+            naem: 'Shoxrux',
+            comment: 'love3'
+        }, {
+            naem: 'Shoxrux',
+            comment: 'love4'
+        }, {
+            naem: 'Shoxrux',
+            comment: 'love5'
+        }]
+        let enterBtn = document.getElementById("commentButton")
 
-    <div class="commentList">
+        enterBtn.addEventListener("click", function () {
+            let namew = document.getElementById("name").value;
+            let comment = document.getElementById("comment").value;
+            let newComment = {
+                naem: namew, comment: comment
+            }
+            comments.unshift(newComment)
+            for (let i = 0; i < comments.length; i++) {
+                let namew = document.getElementById("name").value;
+                let commentw = document.getElementById("comment").value;
+                // alert(name + "  " + comment);
 
-    </div>
-
-</div>
 
 
+                let forList = document.createElement("div")
+                let list = document.querySelector(".list");
+                forList.innerHTML = comments[i].comment;
+                list.appendChild(forList)
 
+
+            }
+        })
+    </script>
 
 </body>
 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Slider</title>
+<style>
+    #slider-container {
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #slider {
+        width: 100%;
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slide {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    #prev {
+        left: 0;
+    }
+
+    #next {
+        right: 0;
+    }
+</style>
+</head>
+<body>
+<div id="slider-container">
+    <button class="slider-btn" id="prev" onclick="prevSlide()">&#10094;</button>
+    <div id="slider">
+        <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
+        <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+        <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
+        <!-- Add more images as needed -->
+    </div>
+    <button class="slider-btn" id="next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlide(slideIndex);
+
+    function prevSlide() {
+        showSlide(slideIndex -= 1);
+    }
+
+    function nextSlide() {
+        showSlide(slideIndex += 1);
+    }
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.slide');
+        if (index >= slides.length) {
+            slideIndex = 0;
+        }
+        if (index < 0) {
+            slideIndex = slides.length - 1;
+        }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+    }
+</script>
+</body>
 </html>

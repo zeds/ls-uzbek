@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .body {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+    }
+    .comments_container {
+      display: grid;
+      grid-template-columns: 56px 1fr 100px;
+      gap: 10px;
+    }
+    .img_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .img_container img {
+      height: 40px;
+      width: 40px;
+      border-radius: 20px;
+    }
+    .comments_container_elements {
+      display: grid;
+      height: 50px;
+      width: 100%;
+    }
+    .user {
+      display: flex;
+      flex-direction: center;
+      align-items: center;
+      font-size: 14px;
+    }
+    .title {
+      display: flex;
+      flex-direction: center;
+      align-items: center;
+      font-size: 14px;
+    }
+    .like-dislike {
+      display: flex;
+    }
+    .like-dislike button {
+      width: 50px;
+    }
+    .button_container {
+      display: flex;
+      background: pink;
+      align-items: center;
+      gap: 10px;
+    }
+    .button_container button {
+      width: 30px;
+    }
+  </style>
+  <body>
+    <!-- <div class="container">
+      <div class="comments_container">
+        <div class="img_container">
+          <img src="Images/profileimg.jpg" />
+        </div>
+        <div class="comments_container_elements">
+          <div class="user">richi911</div>
+          <div class="title">Very good video! Plese do more!</div>
+          <div class="like-dislike">
+            <button>Like</button>
+            <button>Dislike</button>
+          </div>
+        </div>
+        <div class="button_container">
+          <button>編集</button>
+          <button>削除</button>
+        </div>
+      </div>
+    </div> -->
+    <script>
+      const container = document.createElement("#container");
+
+      const comments_container = document.createElement("div");
+      comments_container.style.display = "grid";
+      comments_container.style.background = "red";
+
+      const img = document.createElement("img");
+      img.src = container.appendChild(comments_container);
+    </script>
+  </body>
+</html>
