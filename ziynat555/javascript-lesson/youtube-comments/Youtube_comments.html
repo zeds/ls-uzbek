@@ -226,6 +226,14 @@
         width: 100%;
         margin-top: 15px;
         margin-bottom: 15px;
+        justify-content: space-between;
+        margin-right: 20px;
+      }
+      .description-left {
+        display: flex;
+      }
+      .description-right {
+        display: flex;
       }
       .user {
         background: white;
@@ -376,16 +384,22 @@
           </div>
         </div>
         <div class="description_container">
-          <img src="CAT.jpg" />
-          <div class="user">
-            <div>Aom♡</div>
-            <div>50 thousand subscribers</div>
-          </div>
-          <div class="description_button">
-            <div class="description_button text-white">Subscription</div>
-            <div class="description_button text-black">
-              <img src="bell.svg" />Notification<img src="down-light.svg" />
+          <div class="description-left">
+            <img src="CAT.jpg" />
+            <div class="user">
+              <div>Aom♡</div>
+              <div>50 thousand subscribers</div>
             </div>
+            <div class="description_button">
+              <div class="description_button text-white">Subscription</div>
+              <div class="description_button text-black">
+                <img src="bell.svg" />Notification<img
+                  src="ph--arrow-down-thin.svg"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="description-right">
             <div class="description_button text-black">
               <img src="like.svg" />Like
             </div>
@@ -396,7 +410,7 @@
               <img src="share.svg" />Share
             </div>
             <div class="description_button text-black">
-              <img src="save.svg" />Offline
+              <img src="cut.svg" />Clip
             </div>
           </div>
         </div>
