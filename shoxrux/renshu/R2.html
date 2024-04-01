@@ -1,157 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-   * {
-				padding: 0;
-				margin: 0;
-				box-sizing: border-box;
-			}
-			li {
-				list-style: none;
-			}
-			a {
-				text-decoration: none;
-			}
-
-			body {
-				font-family: "Roboto", sans-serif;
-				font-size: 20px;
-			}
-			.container {
-				width: 100%;
-				height: 100vh;
-				background: lightgray;
-			}
-    .article-container img{
-        margin-right: 10px;
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
-    }
-  
-    .article-container{
-        border-radius: 10px;
-        padding: 10px;
-        background: #86c8ff;
-        margin: 0 auto;
-        width: 80%;
-        display: grid;
-        grid-template-columns: 51px 1fr 120px;
-        align-items: center;
-    }
-    .button-container{
+    <style>
+      .container {
         display: flex;
-        align-items: center;
-    }
-    .user{
-        font-weight: 600;
-    }
-    .user span{
-        font-weight: 500;
-        font-size: 12px;
-        color: rgb(61, 61, 61);
-    }
-    .jsBtnEdit,
-    .jsBtnDelete
-    {
-        border: 1px solid rgb(119, 119, 119);
-        cursor: pointer;
-        margin-left: 5px;
-        width: 60px;
-        height: 30px;
-        border-radius: 10px;
-    }
-    .button-container button{
-        border: 1px solid rgb(119, 119, 119);
-        cursor: pointer;
-        margin-left: 5px;
-        width: 60px;
-        padding: 5px 15px;
-        border-radius: 10px;
-    }
-    .text-container{
-        margin-left: 10px;
-    }
-    /* js */
+        gap: 5px;
+      }
 
-    .imgJs{
-        border-radius: 25px;
-    }
-    .article_containerJs{
-        align-items: center;
+      .video_container {
+        width: 100%;
+      }
+
+      iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+      }
+
+      .recommend_container {}
+
+      .recommend {
+        display: flex;
+        gap: 5px;
+        font-size: 14px;
         padding: 10px;
-        display: grid;
-        grid-template-columns: 51px 1fr 120px;
-    }
-    .article-container-js{
-        align-items: center;
-        border-radius: 10px;
-        width: 80%;
-        margin:  0 auto;
-        margin-top: 20px;
-        background: #fbff00;
-    }
-</style>
+      }
 
-<body>
+      .recommend img {
+        width: 170px;
+      }
+
+      .recommend_title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .pc_comment_container {
+        display: block;
+      }
+
+      .sp_comment_container {
+        display: none;
+      }
+
+      .comment_icon {
+        aspect-ratio: "1/1";
+      }
+
+      #comment {
+        border: none;
+        border-bottom: 1px solid black;
+      }
+
+      @media (width < 10px) {
+        .container {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        .pc_comment_container {
+          display: none;
+        }
+
+        .sp_comment_container {
+          display: block;
+        }
+
+        .recommend {
+          width: 100%;
+        }
+
+        .item:nth-child(3) {
+          display: block;
+        }\
+      }
+    </style>
+  </head>
+
+  <body>
     <div class="container">
-        <div class="article-container">
-            <img src="./img/fff.jpg" alt="">
-            <div class="text-container">
-                <div class="user">@Shoxrux <span>5 min</span></div>
-                <div class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, enim.❤</div>
-            </div>
-            <div class="button-container">
-                <button>edit</button>
-                <button>delete</button>
-            </div>
+      <!--アイテム-->
+      <div class="video_container">
+        <iframe
+          src="https://www.youtube.com/embed/q-VNPpo9z0Y?si=XXVmp0fIA64ryp1M"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+
+        <!-- <img src="./russia.webp" /> -->
+        <div class="info">
+          <div>ビデオ情報</div>
+          <div>ビデオ情報</div>
+          <div>ビデオ情報</div>
         </div>
-        <div class="article-container-js"></div>
+        <div class="post_container">
+          <!-- ここからコメントを投稿する -->
+        </div>
+
+        <div class="pc_comment_container">
+          <!-- <div class="elem">
+            <div>
+              高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+            </div>
+            <div>
+              <button>編集</button>
+              <button>削除</button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="recommend_container"></div>
+      <div class="sp_comment_container">
+        <div class="elem">
+          <div>
+            高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+          </div>
+          <div>
+            <button>編集</button>
+            <button>削除</button>
+          </div>
+        </div>
+      </div>
     </div>
     <script>
-        let article_list = document.querySelector(".article-container-js");
-        let article_containerJs = document.createElement("div");
+      const parent_recommend = document.querySelector(
+        ".recommend_container"
+      );
+      parent_recommend.style.width = "377px";
+      parent_recommend.style.background = "blue";
 
-        let img = document.createElement("img")
-        img.src = "./img/fff.jpg"
-        img.className = "imgJs"
-        img.width = 50;
-        img.height = 50;
+      const recommendData = [
+        {
+          img: "https://i.ytimg.com/vi/q-VNPpo9z0Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCTfzICpNJURsAUR7H5oKiwbRU1OQ",
+          title: "ロシアから日本を選んで住んだ理由。",
+          user: "🌹ディアナちゃんねる🌹",
+          statistics: "57,007 回視聴  2024/03/15",
+        },
+        {
+          img: "https://i.ytimg.com/vi/JM75dAskORs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBTNuT62ywWpzAiB8-XMZJXdr6iEg",
+          title: "【ドーパミン中毒】スタンフォード大学医学部「冷たいシャワーの効果とは」／朝一番のエクササイズが効果的な理由／苦痛と快楽の感情はシーソーのように行き来する【PIVOT GLOBAL】",
+          user: "PIVOT 公式チャンネル",
+          statistics: "チャンネル登録者数 144万人",
+        },
+        {
+          img: "https://i.ytimg.com/vi/TO2t9esOUZA/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbmuO4gXa25PqUBzpwJhqHfOwsbw",
+          title: "ИСТОРИИ СПАСАТЕЛЯ! Страшные истории на ночь.Страшилки на ночь.",
+          user: "DARK~PHIL",
+          statistics: "65万回視聴",
+        },
+        {
+          img: "https://i.ytimg.com/vi/BH4ukdHaLmg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7AOL5WAISU0HpHDVqNF_ySb2yOw",
+          title: "КВАРТИРА КОШМАРОВ! Страшные истории на ночь.Страшилки на ночь.",
+          user: "DARK~PHIL",
+          statistics: "21万回視聴",
+        },
 
-        let text_container = document.createElement("div");
-        let user = document.createElement("div");
-        let title = document.createElement("div");
-        user.innerHTML = "@Shoxrux";
-        title.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, enim.❤";
+        {
+          img: "https://i.ytimg.com/vi/BFS9n4B_2xA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0XuNyVjX1z1FRManXoNmQKxlBSg",
+          title: "Bali in 8k ULTRA HD HDR - Paradise of Asia (60 FPS)",
+          user: "8K WORLD",
+          statistics: "3M Subscribers",
+        },
 
-        text_container.appendChild(user);
-        text_container.appendChild(title);
-        text_container.className = "text_containerJs";
+        {
+          img: "https://i.ytimg.com/vi/N1-Jmq7BLFE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCyLpS3boh1ChcvVbXOTWBR6sWt5w",
+          title: "Bulgaria 8K HDR 60P (FUHD) Very beautiful place",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "900K Subscribers",
+        },
 
-        article_containerJs.className = "article_containerJs";
+        {
+          img: "https://i.ytimg.com/vi/rBadprLH1jM/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFEoPjAP&rs=AOn4CLDMnU74TxZBcC5ano3eLkdFn0SEFw",
+          title: "Morning Piano Music | Piano music to Study, Work, Ambience,... 🎷 | Best Choice for Study, Work #2",
+          user: "Aom",
+          statistics: "50 thousand Subscribers",
+        },
+        {
+          img: "https://i.ytimg.com/vi/RqooLet7B2Q/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAAbA9SZZz9H8rBTMfma5QFcRsdvw",
+          title: "BUMP OF CHICKEN「Sleep Walking Orchestra」",
+          user: "BUMP OF CHICKEN",
+          statistics: "342万回視聴",
+        },
+        // Sarviee
+        {
+          img: "https://i.ytimg.com/vi/1N-I7vNVYVQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrBrRV3JQn4-8bnLiahdxCGa_I-A",
+          title: "Cottagecore Spring Hobbies 🌷🍓🐇 | Making Strawberry Cookies |",
+          user: "Our Cottage Life",
+          statistics: "46K views  2 weeks ago",
+        },
+        // shox
+        {
+          img: "https://i.ytimg.com/vi/ncUTNE6D39M/hq720.jpg?sqp=- oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOjYm_cjlGPXFQV0BZPYHIMX-4yw ",
+          title: "FAST X | Won't Back Down (Official Music Video) - NBA YoungBoy, Bailey Zimmerman, Dermot Kennedy",
+          user: "YoungBoy Never Broken",
+          statistics: "10万回視聴",
+        },
+        //Asila
+        {
+          img: "https://i.ytimg.com/vi/AnErrgFRWV4/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLATKBtEcTwQn8zPaKgEYujNFV8Ntw",
+          title: "Sizga yetib bo'lmay qoladi www | Iqtibos podcast #23",
+          user: "Aziz Rakhimov",
+          statistics: "52K views  2 weeks ago",
+        },
+        //alsu
+        {
+          img: "https://i.ytimg.com/vi/OEfz-pZPg24/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPH78BAUaVBNzeu9JLfJzxz_pIWw",
+          title: "A Mellow Morning In Tokyo - (𝙿𝚕𝚊𝚢𝚕𝚒𝚜𝚝) 𝙻𝚊𝚖𝚙, 𝙸𝚌𝚑𝚒𝚔𝚘 𝙰𝚘𝚋𝚊, 𝙼𝚊𝚖𝚎𝚛𝚒𝚌𝚘,フレネシ",
+          user: "Hangout Session",
+          statistics: "7万回視聴",
+        },
+        //mexroj
+        {
+          img: "https://i.ytimg.com/vi/rBadprLH1jM/hq720.jpg",
+          title: "temani qattimi",
+          user: "mexroj",
+          statistics: "1M views",
+        },
+      ];
 
-        let btnContainer = document.createElement("div");
-        btnContainer.style.display = "flex";
-        let ediBtn = document.createElement("button");
-        let deleteBtn = document.createElement("button");
-        ediBtn.innerHTML = "edit"
-        deleteBtn.innerHTML = "delete"
-        ediBtn.className = "jsBtnEdit"
-        deleteBtn.className = "jsBtnDelete"
-        btnContainer.appendChild(ediBtn)
-        btnContainer.appendChild(deleteBtn)
+      for (let i = 0; i < recommendData.length; i++) {
+        const recommend = document.createElement("div");
+        recommend.style.width = "377px";
+        recommend.style.height = "94px";
+        recommend.style.background = "red";
+        recommend.style.marginBottom = "10px";
+        recommend.style.display = "flex";
+        recommend.style.fontSize = "12px";
 
-        article_containerJs.appendChild(img)
-        article_containerJs.appendChild(text_container);
-        article_containerJs.appendChild(btnContainer);
-        article_list.appendChild(article_containerJs)
+        const img = document.createElement("img");
+        img.src = recommendData[i].img;
+        img.style.height = "100%";
+
+        const description = document.createElement("div");
+        description.style.background = "pink";
+
+        const title = document.createElement("div");
+        title.innerHTML = recommendData[i].title;
+        title.className = "recommend_title";
+        const user = document.createElement("div");
+        user.innerHTML = recommendData[i].user;
+        const statistics = document.createElement("div");
+        statistics.innerHTML = recommendData[i].statistics;
+
+        description.appendChild(title);
+        description.appendChild(user);
+        description.appendChild(statistics);
+
+        recommend.appendChild(img);
+        recommend.appendChild(description);
+
+        parent_recommend.appendChild(recommend);
+      }
+
+      const commentData = [
+        {
+          avatar:
+            "https://yt3.ggpht.com/ytc/AIdro_myvH7b_HnK4bGTriXHPDN8em2LEIWBbek8J0FNKo0rQD8ZCW9JmvaIEjxiNg1o=s88-c-k-c0x00ffffff-no-rj",
+          user: "@shuhratsattorov1021",
+          title: "Aktyor, qo'shiqchi, sportchilarga muxlis fanat bo'linar edi Ilim axliga muxlis fanat bo'lish vaqti yana keldi.",
+        },
+        // Sarvie
+        {
+          avatar:
+            "https://yt3.ggpht.com/-76XG7nkFvP7s-gIh3DIvqHmpAPzIqzSAz6oEzsY7-Qv_QpJVDVn9_PP3yvTu8I_5ZHZZJfI1A=s88-c-k-c0x00ffffff-no-rj",
+          user: "@PhanLynne",
+          title: "The vocals express emotions so strongly that it makes you feel like you're being engulfed by the waves of emotion in the song. This song feels like it takes you on a journey of the mind. I think it will leave a lasting impression when listening to it. The combination of the delicate expression of the voice and the beauty of the melody is truly touching.",
+        },
+        //Asila
+        {
+          avatar:
+            "https://yt3.ggpht.com/JMI3XYUuTx44r1J9ve_Gwo9jdhh7z7dTTjg8r3PDGmGxvlGu_Cnxr_lR7_XeiiObo4nd-H-exQ=s88-c-k-c0x00ffffff-no-rj",
+          user: "@asilamamanova",
+          title: "Kutib turgandik🎉.Hammasini eshitib chiqdik, bir boshidan.Juda foydali bo'layapti.O'tgan galki hayotim uchun katta katta anglashlar berdi",
+        },
+        // shox
+        {
+          avatar:
+            "https://champlaincrossover.org/wp-content/uploads/2022/04/gEeThz9M5G9N72JH2dXadQ-900x450.jpg",
+          user: "@YoungBoyNeverBroken",
+          title: "The Fast and Furious Franchise: Why Is It so Popular? - The Crossover",
+        },
+        //alsu
+        {
+          avatar: "https://i.ytimg.com/vi/rBadprLH1jM/hq720.jpg",
+          user: "@Hangout Session",
+          title: "A Mellow Morning In Tokyo - (𝙿𝚕𝚊𝚢𝚕𝚒𝚜𝚝) ",
+        },
+
+        {
+          avatar:
+            "https://yt3.ggpht.com/JMI3XYUuTx44r1J9ve_Gwo9jdhh7z7dTTjg8r3PDGmGxvlGu_Cnxr_lR7_XeiiObo4nd-H-exQ=s88-c-k-c0x00ffffff-no-rj",
+          user: "@Momokso",
+          title: "Daydreaming of a Road Trip",
+        },
+      ];
+
+      const parent_pc_comment = document.querySelector(
+        ".pc_comment_container"
+      );
+      const parent_sp_comment = document.querySelector(
+        ".sp_comment_container"
+      );
+
+      console.log("commentData.length=", commentData.length);
+      function showComments() {
+        for (let i = 0; i < commentData.length; i++) {
+          const comment_box = document.createElement("div");
+          comment_box.style.display = "flex";
+          comment_box.style.alignItems = "center";
+          comment_box.className = "comment_box";
+
+          const comment_img = document.createElement("img");
+          comment_img.src = commentData[i].avatar;
+          comment_img.style.width = "40px";
+          comment_img.style.height = "40px";
+
+          // userとタイトルの親
+          const comment_desc = document.createElement("div");
+          const comment_user = document.createElement("div");
+          comment_user.innerHTML = commentData[i].user;
+          const comment_title = document.createElement("div");
+          comment_title.innerHTML = commentData[i].title;
+          comment_desc.appendChild(comment_user);
+          comment_desc.appendChild(comment_title);
+
+          // ボタンの親
+          const comment_button = document.createElement("div");
+          comment_button.display = "flex";
+          const edit_button = document.createElement("button");
+          edit_button.innerHTML = "編集";
+          const delete_button = document.createElement("button");
+          delete_button.innerHTML = "削除";
+          comment_button.appendChild(edit_button);
+          comment_button.appendChild(delete_button);
+
+          //削除ボタンが押された時
+          delete_button.addEventListener("click", function () {
+            // alert(`${i}番目が押されました`);
+            commentData.splice(i, 1);
+
+            const elemAll = document.querySelectorAll(".comment_box");
+            for (let k = 0; k < elemAll.length; k++) {
+              elemAll[k].remove();
+            }
+
+            showComments();
+          });
+
+          comment_box.appendChild(comment_img);
+          comment_box.appendChild(comment_desc);
+          comment_box.appendChild(comment_button);
+
+          parent_pc_comment.appendChild(comment_box);
+          // parent_sp_comment.appendChild(comment_box);
+        }
+      }
+
+      // コメント投稿部分を作成
+      const post_container = document.querySelector(".post_container");
+      post_container.style.display = "flex";
+
+      const img = document.createElement("img");
+      img.src = "./images/tom.jpeg";
+      img.style.width = "40px";
+      img.style.height = "40px";
+
+      post_container.appendChild(img);
+
+      const post_input_container = document.createElement("div");
+      post_input_container.style.width = "100%";
+      post_input_container.style.padding = "0 10px 5px 10px";
+
+      const post_input = document.createElement("input");
+      post_input.id = "comment";
+      post_input.placeholder = "コメントする";
+
+      post_input.style.width = "100%";
+      post_input_container.appendChild(post_input);
+      post_container.appendChild(post_input_container);
+
+      const post_cancel_button = document.createElement("button");
+      post_cancel_button.innerHTML = "キャンセル";
+      const post_comment_button = document.createElement("button");
+      post_comment_button.innerHTML = "コメント";
+
+      post_input_container.appendChild(post_cancel_button);
+      post_input_container.appendChild(post_comment_button);
+
+      post_comment_button.addEventListener("click", function () {
+        let comment = document.getElementById("comment").value;
+        let obj = {
+          avatar: "./images/tom.jpeg",
+          user: "@tom",
+          title: comment,
+        };
+
+        commentData.unshift(obj);
+        console.log(commentData);
+        const elemAll = document.querySelectorAll(".comment_box");
+        for (let k = 0; k < elemAll.length; k++) {
+          elemAll[k].remove();
+        }
+        showComments();
+
+        // alert(comment)
+        // let parent = document.getElementById("lists");
+        // let name = document.getElementById("name").value;
+        // let obj = { id: "111", name: name, comment };
+        // comments.unshift(obj);
+
+        // // 今表示されているコメントを全て消す
+        // clearElements();
+
+        // // commentsを表示
+        // showComments();
+      });
+
+      showComments();
     </script>
-</body>
-
+  </body>
 </html>
