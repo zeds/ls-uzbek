@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube_header</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        padding: 0 20px;
+      }
+      header {
+        height: 56px;
+        display: grid;
+        grid-template-columns: 169px 1fr 156px;
+        align-items: center;
+        padding: 0 16px;
+        gap: 10px;
+      }
+      .logo-container {
+        height: 56px;
+        display: flex;
+        align-items: center;
+      }
+      .burger {
+        width: 24px;
+        height: 24px;
+        padding: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .burger:hover {
+        background: #f2f3f3;
+      }
+      .burger img {
+        height: 24px;
+      }
+      .logo-img {
+        height: 56px;
+        padding: 18px 14px 18px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo-img img {
+        height: 20px;
+      }
+      .search {
+        display: flex;
+        height: 40px;
+        flex-grow: 1;
+        margin: 0 10px 0 10px;
+        max-width: 666px;
+      }
+      .search input {
+        width: 100%;
+        height: 100%;
+        border: solid 1px #c1c1c1;
+        border-radius: 20px 0 0 20px;
+        padding-left: 17px;
+        font-size: 16px;
+      }
+      .search button {
+        height: 40px;
+        width: 64px;
+        position: relative;
+        border-radius: 0 20px 20px 0;
+        border: solid 1px rgb(228 225 225);
+        border-left: none;
+        background: #f8f8f8;
+      }
+      .search button:hover {
+        background: #d0d0d0;
+        cursor: pointer;
+      }
+      .search button:hover .tooltip {
+        visibility: visible;
+        background-color: #686868;
+        position: absolute;
+      }
+      .mic {
+        aspect-ratio: 1/1;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 14px;
+        position: relative;
+      }
+      .mic:hover {
+        background: #d9d9d9;
+        cursor: pointer;
+      }
+      .mic:hover .tooltip {
+        visibility: visible;
+        position: absolute;
+      }
+      .profile {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .video {
+        height: 40px;
+        width: 40px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        position: relative;
+      }
+      .video:hover {
+        border-radius: 20px;
+        background: #d9d9d9;
+        cursor: pointer;
+      }
+      .video:hover .tooltip {
+        visibility: visible;
+        position: absolute;
+      }
+      .bell {
+        height: 40px;
+        width: 40px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .bell:hover {
+        background: #d9d9d9;
+        cursor: pointer;
+        border-radius: 20px;
+      }
+      .bell:hover .tooltip {
+        visibility: visible;
+        position: absolute;
+      }
+      .avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .avatar img {
+        height: 32px;
+        width: 32px;
+        border-radius: 16px;
+      }
+      .tooltip {
+        padding: 0 4px;
+        width: 70px;
+        height: 30px;
+        color: white;
+        border-radius: 5px;
+        background: gray;
+        position: absolute;
+        bottom: -45px;
+        left: 5px;
+        visibility: hidden;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
+        font-size: 0.8rem;
+        line-height: 1.3;
+      }
+      @media (width < 648px) {
+        input {
+          background: red;
+          display: none;
+        }
+        .search button {
+          width: 40px;
+          height: 40px;
+          border: none;
+          border-radius: 20px;
+          background: none;
+        }
+        .search {
+          padding: 0;
+          justify-content: end;
+        }
+        .mic {
+          background: none;
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo-container">
+          <div class="burger"><img src="burger.svg" /></div>
+          <div class="logo-img"><img src="logos--youtube.svg" /></div>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Search" />
+          <button class="search_button">
+            <div class="tooltip">検索</div>
+            <img src="search-outline.svg" />
+          </button>
+          <div class="mic">
+            <img src="mic.svg" />
+            <div class="tooltip">音声で検索</div>
+          </div>
+        </div>
+
+        <div class="profile">
+          <div class="video">
+            <img src="video.svg" />
+            <div class="tooltip">Create</div>
+          </div>
+          <div class="bell">
+            <img src="bell.svg" />
+            <div class="tooltip">Notifications</div>
+          </div>
+          <div class="avatar">
+            <img src="1unnamed (4).jpg" />
+          </div>
+        </div>
+      </header>
+    </div>
+  </body>
+</html>
