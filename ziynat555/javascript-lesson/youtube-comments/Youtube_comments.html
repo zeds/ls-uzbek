@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube_comments</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container_1 {
+        padding: 0 20px;
+      }
+      header {
+        width: 100%;
+        height: 56px;
+
+        display: grid;
+        grid-template-columns: 169px 1fr 156px;
+        align-items: center;
+
+        padding: 0 16px;
+        gap: 10px;
+        background: white;
+      }
+      .logo_container {
+        height: 56px;
+        display: flex;
+        align-items: center;
+      }
+      .burger {
+        width: 24px;
+        height: 24px;
+        padding: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .burger:hover {
+        background: #f2f3f3;
+        cursor: pointer;
+      }
+      .burger img {
+        height: 24px;
+      }
+      .logo-img {
+        height: 56px;
+        padding: 18px 14px 18px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo-img img {
+        height: 20px;
+      }
+      .search_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 40px;
+      }
+      .search_container input {
+        max-width: 515px;
+        width: 80%;
+        height: 40px;
+        border-radius: 20px 0 0 20px;
+        border: solid 1px rgb(228, 225, 225);
+        padding-left: 17px;
+      }
+      .search_button {
+        height: 40px;
+        width: 64px;
+        border: solid 1px rgb(228, 255, 255);
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        position: relative;
+      }
+      .search_button:hover .tooltip-text {
+        opacity: 1;
+        background-color: #686868;
+        visibility: visible;
+        position: absolute;
+      }
+      .search_button:hover {
+        background: #d0d0d0;
+        cursor: pointer;
+      }
+      .mic_icon {
+        aspect-ratio: 1/1;
+        width: 40px;
+        height: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .mic_icon:hover .tooltip-text {
+        visibility: visible;
+      }
+      .mic_icon:hover {
+        background: #d0d0d0;
+        cursor: pointer;
+      }
+      .right_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 20px;
+      }
+      .profile {
+        border-radius: 20px;
+        height: 32px;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        bottom: -45px;
+
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
+
+        font-size: 12px;
+        color: white;
+
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+      .tooltip:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .tooltip:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+      .profile:hover .tooltip-text {
+        visibility: visible;
+      }
+      .profile:hover {
+        background: #d0d0d0;
+        cursor: pointer;
+      }
+      .video {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .video:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .video:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+      .bell {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .bell:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .bell:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+
+      @media (width < 648px) {
+        input {
+          background: red;
+          display: none;
+        }
+        .search button {
+          width: 40px;
+          height: 40px;
+          border: none;
+          border-radius: 20px;
+          background: none;
+        }
+        .search {
+          padding: 0;
+          justify-content: end;
+        }
+        .mic {
+          background: none;
+          margin-left: 0;
+        }
+      }
+      .container_2 {
+        display: flex;
+        gap: 5px;
+      }
+      .video_container {
+        width: 100%;
+      }
+      iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+      }
+      .title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .description_container {
+        display: flex;
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      .user {
+        background: white;
+      }
+      .user div:nth-child(1) {
+        font-size: 16px;
+        margin-left: 10px;
+      }
+      .user div:nth-child(2) {
+        font-size: 12px;
+        margin-left: 10px;
+      }
+      .description_button {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        padding: 0 8px;
+        font-size: 14px;
+        height: 36px;
+      }
+      .description_button img {
+        width: 10px;
+        height: 30px;
+      }
+      .text-white {
+        color: white;
+        background: black;
+      }
+      .text-black {
+        color: black;
+        background: #f2f2f2;
+      }
+      .black {
+        background: rgb(15, 15, 15);
+      }
+      .description_container img {
+        width: 40px;
+        border-radius: 20px;
+      }
+      .recommend_container {
+        background: white;
+      }
+      .recommend {
+        display: flex;
+        gap: 5px;
+        font-size: 14px;
+        padding: 10px;
+      }
+      .recommend img {
+        width: 170px;
+      }
+      .recommend_title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .pc_comment_container {
+        display: block;
+      }
+      .sp_comment_container {
+        display: none;
+      }
+      .comment_icon {
+        aspect-ratio: "1/1";
+      }
+      #comment {
+        border: none;
+        border-bottom: 1px solid black;
+      }
+      @media (width < 10px) {
+        .container {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        .pc_comment_container {
+          display: none;
+        }
+        .sp_comment_container {
+          display: block;
+        }
+        .recommend {
+          width: 100%;
+        }
+        .item:nth-child(3) {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container_1">
+      <header>
+        <div class="logo_container">
+          <div class="burger"><img src="burger.svg" /></div>
+          <img class="logo-img" src="logos--youtube.svg" />
+        </div>
+        <div class="search_container">
+          <input type="text" placeholder="Search" />
+
+          <button class="search_button">
+            <div class="tooltip-text">検索</div>
+            <img src="search-outline.svg" />
+          </button>
+
+          <div class="mic_icon">
+            <div class="tooltip-text">音声で検索</div>
+            <img src="mic.svg" />
+          </div>
+        </div>
+        <div class="right_container">
+          <div class="video">
+            <div class="tooltip-text">Create</div>
+            <img src="video.svg" />
+          </div>
+
+          <div class="bell">
+            <div class="tooltip-text">通知</div>
+            <img src="bell.svg" />
+          </div>
+
+          <img class="profile" src="1unnamed (4).jpg" />
+        </div>
+      </header>
+    </div>
+    <div class="container_2">
+      <!--アイテム-->
+      <div class="item">
+        <iframe
+          src="https://www.youtube.com/embed/rBadprLH1jM?si=KuPWVnlGGcQFV8NN"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+          title="YouTube video player" frameborder="0" allow="accelerometer;
+          autoplay; clipboard-write; encrypted-media; gyroscope;
+          picture-in-picture; web-share" allowfullscreen ></iframe
+        >
+
+        <div class="title">
+          <div>
+            <h3>
+              Morning Piano Music | Piano music to Study, Work, Ambience,... 🎷
+              | Best Choice for Study, Work #2
+            </h3>
+          </div>
+        </div>
+        <div class="description_container">
+          <img src="CAT.jpg" />
+          <div class="user">
+            <div>Aom♡</div>
+            <div>50 thousand subscribers</div>
+          </div>
+          <div class="description_button">
+            <div class="description_button text-white">Subscription</div>
+            <div class="description_button text-black">
+              <img src="bell.svg" />Notification<img src="down-light.svg" />
+            </div>
+            <div class="description_button text-black">
+              <img src="like.svg" />Like
+            </div>
+            <div class="description_button text-black">
+              <img src="dislike.svg" />
+            </div>
+            <div class="description_button text-black">
+              <img src="share.svg" />Share
+            </div>
+            <div class="description_button text-black">
+              <img src="save.svg" />Offline
+            </div>
+          </div>
+        </div>
+        <div class="post_container">
+          <!-- ここからコメントを投稿する -->
+        </div>
+        <div class="pc_comment_container">
+          <!-- <div class="elem"> -->
+          <!-- <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div> -->
+          <!-- <div> -->
+          <!-- <button>編集</button> -->
+          <!-- <button>削除</button> -->
+          <!-- </div> -->
+          <!-- </div> -->
+        </div>
+      </div>
+      <div class="recommend_container"></div>
+      <div class="sp_comment_container">
+        <div class="elem">
+          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+          <div>
+            <button>編集</button>
+            <button>削除</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const parent = document.querySelector(".recommend_container");
+      parent.style.width = "377px";
+      parent.style.background = "white";
+
+      const recommendData = [
+        {
+          img: "https://i.ytimg.com/vi/GgtrIykBuaA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB29LGAKDXD-ffHC0m95rnt3wxW-g",
+          title: "Luck Life — 'Lily' | Color Coded Lyrics",
+          user: "Kei Takahashi",
+          statistics: "271 thousand views - 2 years ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/sUwD3GRPJos/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDifblLIHzy8TAYchnYQvJzy5j_wA",
+          title:
+            "2.5-HOUR STUDY WITH ME / calm piano / 🚢 Yokohama Harbor at SUNSET🌃 ",
+          user: "Abao in Tokyo",
+          statistics: "15M views - 1 year ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/8pojxwXzD8w/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWh30uLs7NXjPtNr3vMe9twTAlYA",
+          title: "Blue Lock Best Moments That Broke The Internet!!!🤯🤯",
+          user: "Blue Lock TV",
+          statistics: "35thousand views - 1 year ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/gGCwgCe3WtQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQy58vAcnn12CdHWEKLzOvygsRzA",
+          title: "Scotland 4K - Scenic Relaxation Film With Celtic Music",
+          user: "Scenic Relaxation",
+          statistics: "1.7 million views - 2 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/2Ei2htcM1wk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCzndEwGtsvf1hmehSbKqf7NpiaUw",
+          title: "☆ Xianyun Cosplay Makeup Tutorial Genshin Impact 原神 ☆",
+          user: "Kleiner Pixel",
+          statistics: "36 thousand views - 8 days ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/N1-Jmq7BLFE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCyLpS3boh1ChcvVbXOTWBR6sWt5w",
+          title: "Bulgaria 8K HDR 60P (FUHD) Very beautiful place",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "900K Subscribers",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/9lVB1-c69Sw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB_-3sU4idKDIRdVpXRGxmz3IKHOA",
+          title: "The FUNNIEST Pet Videos of 2023! 🤣 | BEST Compilation",
+          user: "The Pet Collective",
+          statistics: "21M views - 3 months ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/erGJkZZsTds/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBpYR57VDJCHpegDRPDtHGvcAR-fQ",
+          title: "Amazing Places to visit in Japan - Travel Video",
+          user: "Joyous Travel",
+          statistics: "435 thousand views - 9 months ago",
+        },
+        {
+          img: "https://i.ytimg.com/vi/HrkbTa3AMvg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD9rVZaHdMvHgLvoqnpBtTZPjfuOw",
+          title:
+            "ENCHANTING COUNTRY COTTAGE TINY HOME w/ Waterfall & Outdoor Shower!",
+          user: "MikeWillTravel",
+          statistics: "703 thousand views - 2 years ago",
+        },
+      ];
+
+      for (let i = 0; i < recommendData.length; i++) {
+        const recommend = document.createElement("div");
+        recommend.style.width = "377px";
+        recommend.style.height = "94px";
+        recommend.style.background = "white";
+        recommend.style.marginBottom = "10px";
+        recommend.style.display = "flex";
+        recommend.style.fontSize = "12px";
+
+        const img = document.createElement("img");
+        img.src = recommendData[i].img;
+        img.style.height = "100%";
+
+        const description = document.createElement("div");
+        description.style.background = "white";
+
+        const title = document.createElement("div");
+        title.innerHTML = recommendData[i].title;
+        title.className = "recommend_title";
+        const user = document.createElement("div");
+        user.innerHTML = recommendData[i].user;
+        const statistics = document.createElement("div");
+        statistics.innerHTML = recommendData[i].statistics;
+
+        description.appendChild(title);
+        description.appendChild(user);
+        description.appendChild(statistics);
+
+        recommend.appendChild(img);
+        recommend.appendChild(description);
+
+        parent.appendChild(recommend);
+      }
+
+      const commentData = [
+        {
+          avatar:
+            "https://yt3.ggpht.com/JubS_YZwwJ3Jxv5tNcNpBu8vQx7J9IHvtCO3za-OjkGGATVwmmkY857fHDgh4L5zv7YwuWEd8Q=s88-c-k-c0x00ffffff-no-rj",
+          user: "@ChinaMixDJ",
+          title:
+            "If you're reading this, I hope that day comes real soon where your wildest dreams come true. Where you finally  feel that you are at peace with yourself and your surroundings. May your life be full of joy, strength, light, and  ease. May you lead a life full of positivity and greatness. You got this. It's gonna get better real soon",
+        },
+        {
+          avatar:
+            "https://yt3.ggpht.com/TMQMxQOAl-ynkxpku_kMhSgJ35OYpBvCuxlvRIgh4moWpcQjsmDmNVNvoGGrvZV4gzQdUWqkqQ=s88-c-k-c0x00ffffff-no-rj",
+          user: "@user-dk8vj6ds5p",
+          title:
+            "In life there are different chapters some are funny, some are stressful, some are joyful and, some are sad but u can't skip any of them so u gotta be tough for every challenge you're facing right now and wait for the next chapter because life is like a book.",
+        },
+      ];
+
+      const parent_pc_comment = document.querySelector(".pc_comment_container");
+      const parent_sp_comment = document.querySelector(".sp_comment_container");
+
+      console.log("commentData.length=", commentData.length);
+      function showComments() {
+        for (let i = 0; i < commentData.length; i++) {
+          const comment_box = document.createElement("div");
+          comment_box.style.display = "flex";
+          comment_box.style.alignItems = "center";
+          comment_box.className = "comment_box";
+
+          const comment_img = document.createElement("img");
+          comment_img.src = commentData[i].avatar;
+          comment_img.style.width = "40px";
+          comment_img.style.height = "40px";
+
+          // userとタイトルの親
+          const comment_desc = document.createElement("div");
+          const comment_user = document.createElement("div");
+          comment_user.innerHTML = commentData[i].user;
+          const comment_title = document.createElement("div");
+          comment_title.innerHTML = commentData[i].title;
+          comment_desc.appendChild(comment_user);
+          comment_desc.appendChild(comment_title);
+
+          // ボタンの親
+          const comment_button = document.createElement("div");
+          comment_button.display = "flex";
+          const edit_button = document.createElement("button");
+          edit_button.innerHTML = "編集";
+          const delete_button = document.createElement("button");
+          delete_button.innerHTML = "削除";
+          comment_button.appendChild(edit_button);
+          comment_button.appendChild(delete_button);
+
+          //削除ボタンが押された時
+          delete_button.addEventListener("click", function () {
+            // alert(`${i}番目が押されました`);
+            commentData.splice(i, 1);
+
+            const elemAll = document.querySelectorAll(".comment_box");
+            for (let k = 0; k < elemAll.length; k++) {
+              elemAll[k].remove();
+            }
+
+            showComments();
+          });
+
+          comment_box.appendChild(comment_img);
+          comment_box.appendChild(comment_desc);
+          comment_box.appendChild(comment_button);
+
+          parent_pc_comment.appendChild(comment_box);
+          // parent_sp_comment.appendChild(comment_box);
+        }
+      }
+      // コメント投稿部分を作成
+      const post_container = document.querySelector(".post_container");
+      post_container.style.display = "flex";
+
+      const img = document.createElement("img");
+      img.src = "1unnamed (4).jpg";
+      img.style.width = "40px";
+      img.style.height = "40px";
+
+      post_container.appendChild(img);
+
+      const post_input_container = document.createElement("div");
+      post_input_container.style.width = "100%";
+      post_input_container.style.padding = "0 10px 5px 10px";
+
+      const post_input = document.createElement("input");
+      post_input.id = "comment";
+      post_input.placeholder = "コメントする";
+
+      post_input.style.width = "100%";
+      post_input_container.appendChild(post_input);
+      post_container.appendChild(post_input_container);
+
+      const post_cancel_button = document.createElement("button");
+      post_cancel_button.innerHTML = "キャンセル";
+      const post_comment_button = document.createElement("button");
+      post_comment_button.innerHTML = "コメント";
+
+      post_input_container.appendChild(post_cancel_button);
+      post_input_container.appendChild(post_comment_button);
+
+      post_comment_button.addEventListener("click", function () {
+        let comment = document.getElementById("comment").value;
+        let obj = {
+          avatar: "1unnamed (4).jpg",
+          user: "@ziynat555",
+          title: comment,
+        };
+
+        commentData.unshift(obj);
+        console.log(commentData);
+        const elemAll = document.querySelectorAll(".comment_box");
+        for (let k = 0; k < elemAll.length; k++) {
+          elemAll[k].remove();
+        }
+        showComments();
+
+        // alert(comment)
+        // let parent = document.getElementById("lists");
+        // let name = document.getElementById("name").value;
+        // let obj = { id: "111", name: name, comment };
+        // comments.unshift(obj);
+
+        // // 今表示されているコメントを全て消す
+        // clearElements();
+
+        // // commentsを表示
+        // showComments();
+      });
+
+      showComments();
+    </script>
+  </body>
+</html>
