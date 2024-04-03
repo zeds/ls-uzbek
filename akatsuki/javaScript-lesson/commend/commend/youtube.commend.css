@@ -176,6 +176,7 @@ iframe {
 .profile-info {
   display: flex;
   width: 100%;
+  flex-wrap: nowrap;
   justify-content: space-between;
   margin-bottom: 20px;
 }
@@ -289,6 +290,9 @@ iframe {
 .profile_tag {
   color: rgb(138, 137, 137);
 }
+
+
+
 .recommend {
   display: flex;
   gap: 5px;
@@ -340,7 +344,21 @@ iframe {
   .pc_comment_container {
     display: none;
   }
+  .profile-info{
+    flex-wrap:wrap;
+  }
 
+  .button,
+  .channel_button,
+  .offline,
+  .thank,
+  .menu_button {
+    margin-top: 10px;
+  }
+
+  .profile-left,.profile-right{
+    flex:1 0 100%;
+  }
   .sp_comment_container {
     display: block;
   }
