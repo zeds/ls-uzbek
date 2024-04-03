@@ -1,82 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="youtube.commend.css">
-    <title>Youtube_Commend</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="youtube.commend.css">
+        <title>Youtube_Commend</title>
+    </head>
 
-<body>
-    <div class="container">
-        <header>
-            <div class="header_container">
-                <div class="header_left">
-                    <div class="menu_burger"><img src="Svg/menu_burger.svg" alt=""></div>
-                    <img class="youtube_icon " src="Svg/youtube_icon.svg" alt="">
-                </div>
-            </div>
-        </header>
-        <div class="body_container">
-            <!--アイテム-->
-            <div class="item">
-                <iframe src="https://www.youtube.com/embed/erGCAu_hFqM?si=Yyx8RkQK-HJA6GSv" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="video_title">アンジェラ・アキ「手紙 ～拝啓十五の君へ～」 Music Video
-                    (HD)</div>
-                <!-- <img src="./russia.webp" /> -->
-                <div class="profile-info">
-                    <div class="profile-left">
-                        <img class="channel_icon" src="Iamge/channelicon.png" alt="channel_icon" />
-                        <div class="user">
-                            <div class="channel_name">アンジェラ・アキ応援団</div>
-                            <div class="followers">チャンネル登録者7.9万人</div>
-                        </div>
-                        <div class="channel_button button text-white">チャンネル登録</div>
+    <body>
+        <div class="container">
+            <header>
+                <div class="head_container">
+                    <div class="header_left">
+                        <div class="header_menu"><img src="Svg/menu.svg"
+                                alt></div>
+                        <img class="header_icon" src="Iamge/YouTube_icon.png"
+                            alt />
                     </div>
-                    <div class="profile-right">
-                        <div class="button text-black">
-                            <img src="Svg/material-symbols-light--thumb-up.svg" alt>高評価<img
-                                src="Svg/material-symbols--thumb-down-outline.svg" alt>
+                    <div class="search_container">
+                        <input class="input_search" type="text"
+                            placeholder="検索">
+                        <button class="search_button">
+
+                            <img src="Svg/search.svg" />
+                        </button>
+                        <div class="mic_icon">
+
+                            <img src="Svg/mic.svg" />
                         </div>
-                        <div class="button text-black"><img src="Svg/ph--share-fat-light.svg" alt>共有</div>
-                        <div class="offline"><img src="Svg/system-uicons--download.svg" alt>オフライン</div>
-                        <div class="thank"><img src="Svg/tabler--heart-handshake.svg" alt>THANK</div>
-                        <div class="menu_button text-black"><img src="Svg/menu.svg" alt></div>
                     </div>
-
-                </div>
-                <div class="pc_comment_container">
-                    <div class="elem">
-                        <div>
-
+                    <div class="header_right">
+                        <div class="video_create">
+                            <img src="Svg/video_create.svg" alt>
+                        </div>
+                        <div class="bell">
+                            <div class="tooltip-text"></div>
+                            <img src="Svg/bell.svg" />
+                        </div>
+                        <div class="user_icon">
+                            <img src="Iamge/icon_user_1.png" alt>
                         </div>
                     </div>
                 </div>
-                <div class="viewer_comment_container">
+            </header>
+            <div class="body_container">
+                <!--アイテム-->
+                <div class="item">
+                    <iframe
+                        src="https://www.youtube.com/embed/erGCAu_hFqM?si=Yyx8RkQK-HJA6GSv"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                    <div class="video_title">アンジェラ・アキ「手紙 ～拝啓十五の君へ～」 Music Video
+                        (HD)</div>
+                    <!-- <img src="./russia.webp" /> -->
+                    <div class="profile-info">
+                        <div class="profile-left">
+                            <img class="channel_icon"
+                                src="Iamge/channelicon.png"
+                                alt="channel_icon" />
+                            <div class="user">
+                                <div class="channel_name">アンジェラ・アキ応援団</div>
+                                <div class="followers">チャンネル登録者7.9万人</div>
+                            </div>
+                            <div
+                                class="channel_button button text-white">チャンネル登録</div>
+                        </div>
+                        <div class="profile-right">
+                            <div class="button text-black">
+                                <img
+                                    src="Svg/material-symbols-light--thumb-up.svg"
+                                    alt>高評価<img
+                                    src="Svg/material-symbols--thumb-down-outline.svg"
+                                    alt></div>
+                            <div class="button text-black"><img
+                                    src="Svg/ph--share-fat-light.svg"
+                                    alt>共有</div>
+                            <div class="offline"><img
+                                    src="Svg/system-uicons--download.svg"
+                                    alt>オフライン</div>
+                            <div class="thank"><img
+                                    src="Svg/tabler--heart-handshake.svg"
+                                    alt>THANK</div>
+                            <div class="menu_button text-black"><img
+                                    src="Svg/meunbar.svg"
+                                    alt></div>
+                        </div>
+                    </div>
+                    <div class="profile_data">
+                        <div class="profile_text">85,395,315 回視聴
+                            2013/06/19</div>
+                        <div class="profile_tag">#アンジェラ#手紙</div>
+                        <div class="profile_text">NHKみんなのうた（2008年8-9月のうた）。</div>
+                        <div
+                            class="profile_text">第75回（平成20年度）NHK全国学校音楽コンクール"中学校の部"課題曲。</div>
+                        <div
+                            class="profile_text">あなたは、「未来の自分」に手紙を書いたことがありますか？</div>
+                        <div class="profile_text">自分を信じて生きていくためのメッセージ・ソング。</div>
+                        <div class="profile_text">楽曲はこちらから。<a
+                                href="https://lnk.to/AngelaAki">https://lnk.to/AngelaAki</a></div>
+                    </div>
+                    <div class="pc_comment_container">
+                        <div class="elem">
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="viewer_comment_container">
+
+                    </div>
+                </div>
+                <div class="recommend_container">
+                </div>
+                <div class="sp_comment_container">
 
                 </div>
             </div>
-            <div class="recommend_container">
-            </div>
-            <div class="sp_comment_container">
-                <div class="elem">
-                    <div>
-                        高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
-                    </div>
-                    <div>
-                        <button>編集</button>
-                        <button>削除</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-    <script src="youtube.commend.js"></script>
-</body>
+        <script src="youtube.commend.js"></script>
+    </body>
 
 </html>
