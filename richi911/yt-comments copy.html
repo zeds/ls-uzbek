@@ -211,8 +211,12 @@
           margin-left: 0;
         }
       }
+      .container_2 {
+        display: flex;
+        gap: 5px;
+      }
       .video_container {
-        aspect-ratio: 9/16;
+        width: 100%;
       }
 
       iframe {
@@ -447,57 +451,58 @@
           <img class="profile" src="Images/lunox.jpg" />
         </div>
       </header>
-      <div class="video_container">
-        <iframe
-          src="https://www.youtube.com/embed/UN3uF3990Q0?si=lIHsuz0vyc7pR49c"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+      <div class="container_2">
+        <div class="video_container">
+          <iframe
+            src="https://www.youtube.com/embed/UN3uF3990Q0?si=lIHsuz0vyc7pR49c"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
 
-        <div class="video_description">Above NYC - Filmed in 12K</div>
-        <div class="tag_container">
-          <div class="left_box">
-            <img src="Images/yt.jpg" />
-            <div class="details">
-              <div class="user">New York 8K</div>
-              <div class="number">200K subscribers</div>
+          <div class="video_description">Above NYC - Filmed in 12K</div>
+          <div class="tag_container">
+            <div class="left_box">
+              <img src="Images/yt.jpg" />
+              <div class="details">
+                <div class="user">New York 8K</div>
+                <div class="number">200K subscribers</div>
+              </div>
+              <div class="description_button text-white">Subscription</div>
+              <div class="description_button text-black">
+                <img src="Images/222.svg" />Notifications
+                <img src="Images/Show-more.svg" />
+              </div>
             </div>
-            <div class="description_button text-white">Subscription</div>
-            <div class="description_button text-black">
-              <img src="Images/222.svg" />Notifications
-              <img src="Images/Show-more.svg" />
+
+            <div class="right_box">
+              <div class="like-dislike_container">
+                <div class="like"><img src="Images/like.svg" /></div>
+                <div class="dislike"><img src="dislike.svg" /></div>
+              </div>
+              <div class="description_button text-black">
+                <img src="share.svg" />Share
+              </div>
+              <div class="description_button text-black">
+                <img src="Images/download.svg" />Download
+              </div>
+              <div class="description_button text-black">
+                <img src="Images/clip.svg" />Clip
+              </div>
+              <div class="description_button text-black">
+                <img src="dots.svg" />
+              </div>
             </div>
           </div>
 
-          <div class="right_box">
-            <div class="like-dislike_container">
-              <div class="like"><img src="Images/like.svg" /></div>
-              <div class="dislike"><img src="dislike.svg" /></div>
-            </div>
-            <div class="description_button text-black">
-              <img src="share.svg" />Share
-            </div>
-            <div class="description_button text-black">
-              <img src="Images/download.svg" />Download
-            </div>
-            <div class="description_button text-black">
-              <img src="Images/clip.svg" />Clip
-            </div>
-            <div class="description_button text-black">
-              <img src="dots.svg" />
-            </div>
+          <div class="post_container">
+            <!-- ここからコメントを投稿する -->
           </div>
-        </div>
 
-        <div class="post_container">
-          <!-- ここからコメントを投稿する -->
-        </div>
-
-        <div class="pc_comment_container">
-          <!-- <div class="elem">
+          <div class="pc_comment_container">
+            <!-- <div class="elem">
 						<div>
 							高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
 						</div>
@@ -506,15 +511,16 @@
 							<button>削除</button>
 						</div>
 					</div> -->
+          </div>
         </div>
-      </div>
-      <div class="recommend_container"></div>
-      <div class="sp_comment_container">
-        <div class="elem">
-          <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
-          <div>
-            <button>編集</button>
-            <button>削除</button>
+        <div class="recommend_container"></div>
+        <div class="sp_comment_container">
+          <div class="elem">
+            <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+            <div>
+              <button>編集</button>
+              <button>削除</button>
+            </div>
           </div>
         </div>
       </div>
