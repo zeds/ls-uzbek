@@ -1,64 +1,158 @@
-/*=============================================
-　　　　　　　　　　header
-===============================================*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .container {
   width: 100%;
   height: 100vh;
-  /* background: lightgray; */
-  padding:5px;
 }
+
+/*=============================================
+　　　　　　　　　　header
+===============================================*/
+
+/* 左側 */
 header {
   width: 100%;
   height: 56px;
-  display: grid;
-  grid-template-columns: 169px 1fr 156px;
-  align-items: center;
-  padding: 0 12px;
+  padding: 0px 20px;
   gap: 10px;
-  background: white;
-
 }
-.header_container {
+
+.head_container {
   width: 100%;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 180px 1fr 180px;
+  grid-template-areas: left middle right;
 }
 
-.header_left{
-  height:56px;
-  display:flex;
+.header_left {
+  width: 169px;
+  height: 56px;
+  display: flex;
   align-items: center;
 }
 
-.menu_burger {
-  width: 24px;
-  height: 24px;
-  margin-right: 20px;
+.header_menu {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_menu:hover {
+  background-color: #dfdede;
+}
+
+.header_icon {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 11px 20px 8px;
+}
+
+/* 真ん中 */
+
+.search_container {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  padding: 6px 0px;
+  margin: 3px 0px 0px 18px;
+}
+
+.input_search {
+  max-width: 536px;
+  width: 80%;
+  height: 40px;
+  border-radius: 20px 0 0 20px;
+  border: solid 1px rgb(209, 201, 201);
+  padding-left: 17px;
+  font-size: 16px;
+}
+
+.search_button {
+  height: 40px;
+  width: 64px;
+  border: solid 1px rgb(209, 201, 201);
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  background: #f8f8f8;
+  position: relative;
+}
+
+.mic_icon {
+  aspect-ratio: 1/1;
+  width: 40px;
+  height: 40px;
+  margin-left: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
+  background: #f2f2f2;
+  position: relative;
 }
 
-.menu_burger:hover {
-  background: #f2f3f3;
+.search_button:hover {
+  background: #d0d0d0;
+}
+
+.mic_icon:hover .tooltip-text {
+  visibility: visible;
+}
+.mic_icon:hover {
+  background: #d0d0d0;
   cursor: pointer;
 }
 
-.menu_burger img {
-  height: 24px;
+/* 右側 */
+.header_right {
+  height: 56px;
+  width: 150px;
+  display: flex;
+  margin-left: 28px;
+  padding: 8px 0px;
+  gap: 10px;
 }
 
-.youtube_icon{
-  height: 25px;
+.video_create,
+.bell {
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
+  position: relative;
 }
 
+.video_create:hover,
+.bell:hover {
+  background: lightgray;
+  cursor: pointer;
+}
 
+.user_icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 2px;
+}
+
+/*========================================================================
+　　　　　　　　　　　　　　　　　　BODY
+==========================================================================*/
 .body_container {
   display: flex;
-  gap: 10px;
-  padding: 5px 50px;
+  gap: 30px;
+  padding: 25px 100px;
 }
 
 .item:nth-child(1) {
@@ -102,10 +196,12 @@ iframe {
 .channel_name {
   font-size: 16px;
   font-weight: bold;
+  white-space: nowrap;
 }
 .followers {
   font-size: 12px;
   color: rgb(149, 147, 147);
+  white-space: nowrap;
 }
 
 .button {
@@ -176,6 +272,23 @@ iframe {
   background-color: rgba(63, 63, 63, 0.999);
 }
 
+.profile_data {
+  width: 100%;
+  height: auto;
+  background-color: rgba(233, 231, 231, 0.6);
+  border-radius: 8px;
+  margin-bottom: 35px;
+  padding: 3px 15px;
+}
+
+.profile_text,
+.profile_tag {
+  font-size: 14px;
+  font-weight: 500;
+}
+.profile_tag {
+  color: rgb(138, 137, 137);
+}
 .recommend {
   display: flex;
   gap: 5px;
@@ -215,13 +328,15 @@ iframe {
   .offline {
     display: none;
   }
+  .input_search {
+    width: 350px;
+  }
 }
 @media (width < 980px) {
   .container {
     display: grid;
     grid-template-columns: 1fr;
   }
-
   .pc_comment_container {
     display: none;
   }
@@ -236,5 +351,27 @@ iframe {
 
   .item:nth-child(3) {
     display: block;
+  }
+}
+
+@media (width<648) {
+  input {
+    background: red;
+    display: none;
+  }
+  .search button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: none;
+  }
+  .search {
+    padding: 0;
+    justify-content: end;
+  }
+  .mic {
+    background: none;
+    margin-left: 0;
   }
 }

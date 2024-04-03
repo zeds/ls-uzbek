@@ -1,10 +1,86 @@
+const rec_parent = document.querySelector(".recommend_container");
 //===================================================================================
-//　　　　　　　　　　　　　　　ビデオの詳細処理
+//　　　　　　　　　　　　　　　　　　チャットリスト
 //===================================================================================
 
-const parent_recommend = document.querySelector(".recommend_container");
-parent_recommend.style.width = "377px";
-parent_recommend.style.padding = "4px";
+const chatList = document.createElement("div");
+chatList.style.width = "392px";
+chatList.style.height = "36px";
+chatList.style.background = "white";
+chatList.style.border = "1px solid rgba(0,0,0,0.1)";
+chatList.style.borderRadius = "35px";
+chatList.style.marginBottom = "40px";
+chatList.style.cursor = "pointer";
+chatList.style.display = "flex";
+chatList.style.alignItems = "center";
+chatList.style.justifyContent = "center";
+chatList.innerHTML = "チャットを表示";
+
+chatList.addEventListener("mousemove", function () {
+  chatList.style.background = "rgb(209, 201, 201)";
+});
+chatList.addEventListener("mouseleave", function () {
+  chatList.style.background = "white";
+});
+rec_parent.appendChild(chatList);
+
+//=======================================================================================
+//　　　　　　　　　　　　　　　　　　スポンサー処理
+//=======================================================================================
+rec_parent.style.width = "377px";
+const sponsor = document.createElement("div");
+sponsor.style.width = "377px";
+sponsor.style.height = "136px";
+sponsor.style.backgroundColor = "rgb(136,221,105)";
+sponsor.style.borderRadius = "15px";
+sponsor.style.marginBottom = "20px";
+sponsor.style.cursor = "pointer";
+
+const sponsor_up = document.createElement("div");
+sponsor_up.classList.add = "sponsor_up";
+sponsor_up.style.backgroundImage =
+  "linear-gradient(rgb(255,255,255) , rgb(233,233,233))";
+sponsor_up.style.width = "377px";
+sponsor_up.style.height = "68px";
+sponsor_up.style.borderBottom = "none";
+sponsor_up.style.borderRadius = "15px 15px 0 0";
+sponsor_up.style.display = "flex";
+
+const sponsor_up_img = document.createElement("img");
+sponsor_up_img.src = "Iamge/banner_actus.jpg";
+sponsor_up_img.style.width = "75%";
+sponsor_up_img.style.height = "100%";
+sponsor_up_img.style.borderRadius = "15px 15px 0 0";
+
+const sponsor_bottom = document.createElement("div");
+sponsor_bottom.classList.add = "sponsor_bottom";
+sponsor_bottom.style.width = "377px";
+sponsor_bottom.style.height = "68px";
+sponsor_bottom.style.backgroundColor = "rgb(255,255,255)";
+sponsor_bottom.style.border = "1px solid rgb(209,211,211)";
+sponsor_bottom.style.borderTop = "none";
+sponsor_bottom.style.borderRadius = "0 0  15px 15px";
+sponsor_bottom.style.display = "flex";
+sponsor_bottom.style.alignItems = "center";
+sponsor_bottom.style.justifyItems = "center";
+
+const sponsor_bottom_info = document.createElement("div");
+sponsor_bottom_info.style.width = "100%";
+sponsor_bottom_info.style.height = "80%";
+sponsor_bottom_info.innerHTML = "＜一条工務店＞バーチャル展示場OPEN";
+const sponsor_word = document.createElement("div");
+sponsor_word.innerHTML = "スポンサー：ichiji...";
+sponsor_word.style.marginLeft = "25px";
+sponsor_word.style.fontSize = "12px";
+sponsor_word.style.color = "rgba(0,0,0,0.5)";
+
+sponsor_bottom_info.appendChild(sponsor_word);
+sponsor_bottom.appendChild(sponsor_bottom_info);
+sponsor_up.appendChild(sponsor_up_img);
+sponsor.appendChild(sponsor_up);
+sponsor.appendChild(sponsor_bottom);
+
+rec_parent.appendChild(sponsor);
 
 //===================================================================================
 //　　　　　　　　　　　　　　　おすすめ動画(Recommend)処理
@@ -72,8 +148,6 @@ const recommendData = [
   },
 ];
 
-const rec_parent = document.querySelector(".recommend_container");
-rec_parent.style.width = "377px";
 //rec_parent.style.padding = "4px";
 
 for (let i = 0; i < recommendData.length; i++) {
@@ -200,19 +274,22 @@ const viewer_commendArray = [
     avatar:
       "https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG6CX7bFaQ6O-4GUHsIE4EGxkHsOAPeTbgJ9dtUeicEsE2ctZexgaPG0eqhRxOdW378vac3EkDLspah3qWWd6fK3rik0kZTCjBP9DrD7vbrp_o8LKF6AjTRFPEJVogbdhDv4mxuUZYmlqg83lCUvBzGt3ZThxQVSSX3ufNQ7XrTK6P9BRdGb6MY4vF0HYTZemqknKoU-KRxRZRggDXzEAS634KKY9eDebhvqXbGXNDRz2xZc5E_25VpCX5Vil_X7maHJxqAG5uVAiaZ62BTxDvSQ=/22026fd9bedadf32bdba4d7f076d216e.jpg",
     user: "@example",
-    commend: "This is a commend",
+    commend:
+      "人生にリセットボタンはないけど、スタートボタンは何回押してもいいよね。",
   },
   {
     avatar:
       "https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG9QVb_Q5YMZ_9XGvjBEcHiUkEA_SmwzZNbdbJAFAPE_c4eeSAZX__SDk8KgBX7v5hGzyWG3itr2rne4afXtTPZKkHq-fnI1ENLCwa4Od_wnrBryEi2Y2WoKghU74fKWSi_b_Kl_GpVCZs9SZT5e22hNCZEdwTcaj20TdEKEbrXbmgT0zkufcAqHODNuOT8b_Dq7b0BnTdLCbzPjAtE2nF7gNmHJv2cf0zgWS172JaTmFfq3ZkviQ5He3fo6cz_NzXfKZmMPIvT4OR-Pi3bgbCJ3DRwENeP45I1Ha9pwwr154bxgkguG9k_WTtnIyJA5vNr4GWyJB7gpnjzZWBxMH1ln1gM4HpzZr4eq_7h8pzvWy/fitcoverw460h460",
     user: "@example.02",
-    commend: "This is a two commend",
+    commend:
+      "15才未満で聴くのと 15歳になった日に聴くのと 15歳より上の時に聴くのとで 感じ方が違う曲",
   },
   {
     avatar:
       "https://msp.c.yimg.jp/images/v2/tpvPBYOX1wpNVI1UoNSgEpCpxNISoZ4oYbTXnXwZcOHLiJlOV258tTKjNtwKxI1RMA8TokDCFpKC0v8IBK4xGr8S-WSgK9dReo-op8j6eiwggfheT3VZvQQXUlSp7XonFW8qCg9JccEDAkW7qgTayoAgOERmond4rce8jpRphSmrlg_CZut-1eRwx49pFTf5vqbhAqa8imSD_murkIPOn8Iu2oOymvcWPX_mTT2b_eGZtZcDEnuTuSOLRFqdcVLb-_9b8IbMCT1QaxRgvlb3JA==/tanaka003.png",
     user: "@example.03",
-    commend: "This is a three commend",
+    commend:
+      "この曲が世に出た事によってどれだけの若者が救われた事だろう,前に進む勇気を得られただろう",
   },
 ];
 
@@ -228,6 +305,7 @@ function showComment() {
     viewer_box.style.display = "flex";
     viewer_box.style.alignItems = "center";
     viewer_box.classList = "viewer_box";
+    viewer_box.style.marginBottom ="20px";
 
     //2.ユーザーのアイコンを設定
     const viewer_img = document.createElement("img");
