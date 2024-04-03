@@ -4,217 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>video layout</title>
     <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
       .container {
-        width: 100%;
-        height: 100vh;
-        /* background: lightgray; */
-        padding: 0 20px;
-      }
-      header {
-        /* position: fixed;
-        z-index: 2; */
-        width: 100%;
-        height: 56px;
-
         display: grid;
-        grid-template-columns: 169px 1fr 156px;
-        align-items: center;
-
-        padding: 0 16px;
-        gap: 10px;
-        background: white;
-      }
-      .logo_container {
-        height: 56px;
-        display: flex;
-        align-items: center;
-      }
-      .burger {
-        width: 24px;
-        height: 24px;
-        padding: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .burger:hover {
-        background: #f2f3f3;
-        cursor: pointer;
-      }
-      .burger img {
-        height: 24px;
-      }
-      .logo-img {
-        height: 56px;
-        padding: 18px 14px 18px 16px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .logo-img img {
-        height: 20px;
-      }
-      .search_container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 40px;
-      }
-      .search_container input {
-        max-width: 515px;
-        width: 80%;
-        height: 40px;
-        border-radius: 20px 0 0 20px;
-        border: solid 1px rgb(228, 225, 225);
-        padding-left: 17px;
-      }
-      .search_button {
-        height: 40px;
-        width: 64px;
-        border: solid 1px rgb(228, 255, 255);
-        border-left: none;
-        border-radius: 0 20px 20px 0;
-        background: #f8f8f8;
-        position: relative;
-      }
-      .search_button:hover .tooltip-text {
-        opacity: 1;
-        background-color: #686868;
-        visibility: visible;
-        position: absolute;
-      }
-      .search_button:hover {
-        background: #d0d0d0;
-        cursor: pointer;
-      }
-      .mic_icon {
-        aspect-ratio: 1/1;
-        width: 40px;
-        height: 40px;
-        margin-left: 14px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        background: #f2f2f2;
-        position: relative;
-      }
-      .mic_icon:hover .tooltip-text {
-        visibility: visible;
-      }
-      .mic_icon:hover {
-        background: #d0d0d0;
-        cursor: pointer;
-      }
-      .right_container {
-        height: 100%;
-        width: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin-right: 20px;
-      }
-      .profile {
-        border-radius: 20px;
-        height: 32px;
-      }
-      .tooltip-text {
-        visibility: hidden;
-        position: absolute;
-        bottom: -45px;
-
-        display: inline-block;
-        white-space: nowrap;
-        padding: 10px;
-
-        font-size: 12px;
-        color: white;
-
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-      }
-      .tooltip:hover .tooltip-text {
-        opacity: 1;
-        visibility: visible;
-      }
-      .tooltip:hover {
-        background: lightgray;
-        cursor: pointer;
-      }
-      .profile:hover .tooltip-text {
-        visibility: visible;
-      }
-      .profile:hover {
-        background: #d0d0d0;
-        cursor: pointer;
-      }
-      .video {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        position: relative;
-      }
-      .video:hover .tooltip-text {
-        opacity: 1;
-        visibility: visible;
-      }
-      .video:hover {
-        background: lightgray;
-        cursor: pointer;
-      }
-      .bell {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        position: relative;
-      }
-      .bell:hover .tooltip-text {
-        opacity: 1;
-        visibility: visible;
-      }
-      .bell:hover {
-        background: lightgray;
-        cursor: pointer;
-      }
-
-      @media (width < 648px) {
-        input {
-          background: red;
-          display: none;
-        }
-        .search button {
-          width: 40px;
-          height: 40px;
-          border: none;
-          border-radius: 20px;
-          background: none;
-        }
-        .search {
-          padding: 0;
-          justify-content: end;
-        }
-        .mic {
-          background: none;
-          margin-left: 0;
-        }
-      }
-      .container_2 {
-        display: flex;
+        grid-template-columns: 1fr 400px;
         gap: 5px;
       }
+
       .video_container {
         width: 100%;
       }
@@ -222,140 +19,174 @@
       iframe {
         width: 100%;
         aspect-ratio: 16/9;
-        border-radius: 10px;
       }
-      /* tag container starts here */
-      .description_button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: skyblue;
-        border-radius: 20px;
-        padding: 0 8px;
-        font-size: 14px;
-        font-weight: 500;
-        height: 36px;
-      }
-      .description_button img {
-        padding: 8px;
-      }
-      .black {
-        background: rgb(15, 15, 15);
-        color: white;
-      }
-      .text-white {
-        color: white;
-        background: black;
-      }
-      .text-black {
-        color: black;
-        background: #f2f2f2;
-      }
-      .video_description {
+
+      .video_title {
         width: 100%;
-        display: flex;
+        color: rgb(15, 15, 15);
         font-size: 20px;
         font-weight: 700;
+        padding: 10px;
       }
-      .tag_container {
-        display: grid;
-        gap: 10px;
-        grid-template-columns: 1fr 1fr;
+
+      .description_container {
         width: 100%;
-      }
-      .left_box {
-        display: grid;
-        grid-template-columns: 40px 1fr 136px 136px;
-        background: red;
-        align-items: center;
-        gap: 10px;
-      }
-      .left_box img {
-        width: 40px;
-        height: 40px;
-        border-radius: 20px;
-      }
-      .details {
-        padding-left: 5px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: start;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: aqua;
       }
-      .user {
+
+      .description_left {
+        display: flex;
+        align-items: center;
+      }
+
+      .mochimaru {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+      }
+
+      .channel_name {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
         font-size: 16px;
         font-weight: 500;
-        color: rgb(15, 15, 15);
+        line-height: 22px;
       }
-      .number {
-        font-size: 12px;
-        font-weight: 400;
+
+      .channel_name img {
+        margin-left: 3px;
+        width: 15px;
+        height: 15px;
+        object-fit: cover;
+      }
+
+      .channel_statistics {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
         color: rgb(96, 96, 96);
+        font-size: 12px;
+        line-height: 18px;
       }
-      .right_box {
-        display: grid;
-        grid-template-columns: 1fr 86px 112px 86px 36px;
-        background: blue;
+
+      .channel_buttons {
+        display: flex;
+        gap: 5px;
+      }
+
+      .member,
+      .subscribe {
+        width: 136px;
+        height: 36px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        border-radius: 18px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      .member {
+        background-color: rgb(15, 15, 15);
+        color: white;
+      }
+
+      .subscribe img {
+        height: 20px;
+      }
+
+      .description_right {
+        display: flex;
         align-items: center;
         gap: 10px;
+        padding-right: 5px;
       }
-      .like-dislike_container {
-        display: grid;
-        grid-template-columns: 48px 48px;
-        width: 100px;
-        background: red;
+
+      .like_dislike {
+        display: flex;
       }
-      .like {
-        width: 50px;
+
+      .tooltip-text {
+        visibility: hidden;
+      }
+
+      .like_button {
+        width: 90px;
         height: 35px;
         border-radius: 20px 0 0 20px;
         background: #f2f2f2;
-        border-left: none;
-        border-top: none;
-        border-bottom: none;
-        border-right: solid 1px black;
+        border: none;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         cursor: pointer;
+        gap: 5px;
+        padding: 5px;
       }
-      .like img {
-        width: 47%;
-      }
-      .like_button:hover.tooltip-text {
-        opacity: 1;
-        visibility: visible;
-      }
+
       .like_button img {
         height: 50%;
       }
-      .dislike {
-        width: 50px;
-        height: 35px;
-        background: #f2f2f2;
-        border-top: none;
-        border-bottom: none;
-        border-right: none;
-        border-left: solid 1px black;
-        border-radius: 0 20px 20px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-      }
-      .dislike img {
-      }
-      .dislike_button:hover.tooltip-text {
+
+      .like_button:hover .tooltip-text {
         opacity: 1;
         visibility: visible;
+      }
+
+      .vl {
+        width: 0;
+        height: 24px;
+        border: 0.5px solid lightgray;
+        margin-left: 10px;
+      }
+
+      .dislike_button {
+        width: 30px;
+        height: 35px;
+        background: #f2f2f2;
+        border-radius: 0 20px 20px 0;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
       }
 
       .dislike_button img {
         height: 50%;
       }
 
-      .recommend_container {
-        background: none;
+      .dislike_button:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (width < 600px) {
+        .description_container {
+          flex-direction: column;
+        }
+      }
+
+      @media (600px <=width < 856px) {
+        .offline {
+          display: none;
+        }
+      }
+
+      @media (856px <=width < 1100px) {
+        .thanks {
+          display: none;
+        }
       }
 
       .recommend {
@@ -393,7 +224,7 @@
         border-bottom: 1px solid black;
       }
 
-      @media (width < 10px) {
+      @media (width < 980px) {
         .container {
           display: grid;
           grid-template-columns: 1fr;
@@ -417,113 +248,92 @@
       }
     </style>
   </head>
+
   <body>
     <div class="container">
-      <header class="header_container">
-        <div class="logo_container">
-          <div class="burger"><img src="Images/burger.svg" /></div>
-          <img class="logo-img" src="Images/youtube (1).svg" />
-        </div>
-        <div class="search_container">
-          <input type="text" placeholder="Search" />
+      <!--アイテム-->
 
-          <button class="search_button">
-            <div class="tooltip-text">検索</div>
-            <img src="Images/search-outline.svg" />
-          </button>
+      <div class="video_container">
+        <iframe
+          src="https://www.youtube.com/embed/JRKJtnVVKsk?si=2-qo9BS3mlaERfsI"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
 
-          <div class="mic_icon">
-            <div class="tooltip-text">音声で検索</div>
-            <img src="Images/mic.svg" />
+        <!-- <img src="./russia.webp" /> -->
+        <div class="info">
+          <div class="video_title">
+            ランニングマシンを使いたくて後ろで順番待ちしてる猫たちがかわいすぎました笑
           </div>
         </div>
-        <div class="right_container">
-          <div class="video">
-            <div class="tooltip-text">作成</div>
-            <img src="Images/recordingicon.svg" />
-          </div>
-
-          <div class="bell">
-            <div class="tooltip-text">通知</div>
-            <img src="Images/222.svg" />
-          </div>
-
-          <img class="profile" src="Images/lunox.jpg" />
-        </div>
-      </header>
-      <div class="container_2">
-        <div class="video_container">
-          <iframe
-            src="https://www.youtube.com/embed/UN3uF3990Q0?si=lIHsuz0vyc7pR49c"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-
-          <div class="video_description">Above NYC - Filmed in 12K</div>
-          <div class="tag_container">
-            <div class="left_box">
-              <img src="Images/yt.jpg" />
-              <div class="details">
-                <div class="user">New York 8K</div>
-                <div class="number">200K subscribers</div>
+        <div class="description_container">
+          <div class="description_left">
+            <img
+              class="mochimaru"
+              src="https://yt3.ggpht.com/H_KYY1eL4QGJftZL6iup3qPXp2YQE5lG5flpbcypOiP7xSv86dCOw1hsy6NwrDu7Wr83KNXzWds=s88-c-k-c0x00ffffff-no-rj"
+              alt=""
+            />
+            <div class="channel_info">
+              <div class="channel_name">
+                もちまる日記 <img src="./images/check.svg" alt="" />
               </div>
-              <div class="description_button text-white">Subscription</div>
-              <div class="description_button text-black">
-                <img src="Images/222.svg" />Notifications
-                <img src="Images/Show-more.svg" />
-              </div>
+              <div class="channel_statistics">215万人 チャンネル登録者数</div>
             </div>
-
-            <div class="right_box">
-              <div class="like-dislike_container">
-                <div class="like"><img src="Images/like.svg" /></div>
-                <div class="dislike"><img src="dislike.svg" /></div>
-              </div>
-              <div class="description_button text-black">
-                <img src="share.svg" />Share
-              </div>
-              <div class="description_button text-black">
-                <img src="Images/download.svg" />Download
-              </div>
-              <div class="description_button text-black">
-                <img src="Images/clip.svg" />Clip
-              </div>
-              <div class="description_button text-black">
-                <img src="dots.svg" />
-              </div>
+            <div class="channel_buttons">
+              <button class="member">メンバーになる</button>
+              <button class="subscribe">
+                <img src="./images/bell.svg" alt="" />登録済み
+                <img src="./images/down-arrow.svg" alt="" />
+              </button>
             </div>
           </div>
-
-          <div class="post_container">
-            <!-- ここからコメントを投稿する -->
-          </div>
-
-          <div class="pc_comment_container">
-            <!-- <div class="elem">
-						<div>
-							高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
-						</div>
-						<div>
-							<button>編集</button>
-							<button>削除</button>
-						</div>
-					</div> -->
+          <div class="description_right">
+            <div class="like_dislike">
+              <button class="like_button">
+                <img src="./images/like.svg" alt="" />
+                <div class="tooltip-text">i like it</div>
+                <div class="vl"></div>
+              </button>
+              <button class="dislike_button">
+                <img src="./images/dislike.svg" alt="" />
+                <div class="tooltip-text">i disliked it</div>
+              </button>
+            </div>
+            <button class="share">
+              <img src="./images/share.svg" alt="" />
+              共有
+            </button>
+            <button class="offline">
+              <img src="./images/dowload.svg" alt="" />
+              オフライン
+            </button>
+            <button class="thanks">
+              <img src="./images/thanks.svg" alt="" />thanks
+            </button>
           </div>
         </div>
-        <div class="recommend_container"></div>
-        <div class="sp_comment_container">
-          <div class="elem">
-            <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
-            <div>
-              <button>編集</button>
-              <button>削除</button>
-            </div>
-          </div>
+        <div class="post_container">
+          <!-- ここからコメントを投稿する -->
+        </div>
+
+        <div class="pc_comment_container">
+          <!-- <div class="elem">
+                    <div>
+                      高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+                    </div>
+                    <div>
+                      <button>編集</button>
+                      <button>削除</button>
+                    </div>
+                  </div> -->
         </div>
       </div>
+      <div class="pc_comment_container"></div>
+      <div class="recommend_container"></div>
+      <div class="sp_comment_container"></div>
     </div>
     <script>
       const parent_recommend = document.querySelector(".recommend_container");
@@ -613,7 +423,7 @@
         {
           img: "https://i.ytimg.com/vi/OEfz-pZPg24/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPH78BAUaVBNzeu9JLfJzxz_pIWw",
           title:
-            "A Mellow Morning In Tokyo - (Playlist) 𝙻𝚊𝚖𝚙, Ichiko Aoba, 𝙼𝚊𝚖𝚎𝚛𝚒𝚌𝚘,フレネシ",
+            "A Mellow Morning In Tokyo - (𝙿𝚕𝚊𝚢𝚕𝚒𝚜𝚝) 𝙻𝚊𝚖𝚙, 𝙸𝚌𝚑𝚒𝚔𝚘 𝙰𝚘𝚋𝚊, 𝙼𝚊𝚖𝚎𝚛𝚒𝚌𝚘,フレネシ",
           user: "Hangout Session",
           statistics: "7万回視聴",
         },
@@ -696,7 +506,7 @@
         {
           avatar: "https://i.ytimg.com/vi/rBadprLH1jM/hq720.jpg",
           user: "@Hangout Session",
-          title: "A Mellow Morning In Tokyo - (Playlist) ",
+          title: "A Mellow Morning In Tokyo - (𝙿𝚕𝚊𝚢𝚕𝚒𝚜𝚝) ",
         },
 
         {
@@ -711,6 +521,7 @@
       const parent_sp_comment = document.querySelector(".sp_comment_container");
 
       console.log("commentData.length=", commentData.length);
+
       function showComments() {
         for (let i = 0; i < commentData.length; i++) {
           const comment_box = document.createElement("div");
@@ -742,6 +553,11 @@
           comment_button.appendChild(edit_button);
           comment_button.appendChild(delete_button);
 
+          //editButton
+          edit_button.addEventListener("click", function () {
+            alert(`${i}番目が押されました`);
+          });
+
           //削除ボタンが押された時
           delete_button.addEventListener("click", function () {
             // alert(`${i}番目が押されました`);
@@ -760,7 +576,7 @@
           comment_box.appendChild(comment_button);
 
           parent_pc_comment.appendChild(comment_box);
-          // parent_sp_comment.appendChild(comment_box);
+          parent_sp_comment.appendChild(comment_box);
         }
       }
 
@@ -769,7 +585,7 @@
       post_container.style.display = "flex";
 
       const img = document.createElement("img");
-      img.src = "./images/profileimg.jpg";
+      img.src = "./images/me.jpg";
       img.style.width = "40px";
       img.style.height = "40px";
 
@@ -798,8 +614,8 @@
       post_comment_button.addEventListener("click", function () {
         let comment = document.getElementById("comment").value;
         let obj = {
-          avatar: "./images/tom.jpeg",
-          user: "@tom",
+          avatar: "./images/me.jpg",
+          user: "@sayfullayevmexroj",
           title: comment,
         };
 
