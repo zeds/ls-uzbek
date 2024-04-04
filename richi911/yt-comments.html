@@ -2,14 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
       * {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+      }
+
+      .body {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
       }
       .container {
         width: 100%;
@@ -213,7 +227,8 @@
       }
       .container_2 {
         display: flex;
-        gap: 5px;
+        padding: 25px;
+        gap: 25px;
       }
       .video_container {
         width: 100%;
@@ -261,6 +276,7 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+        padding: 10px 10px 10px 0;
       }
       .left_box {
         display: flex;
@@ -313,34 +329,33 @@
         gap: 10px;
       }
       .like-dislike_container {
-        display: grid;
-        grid-template-columns: 48px 48px;
+        display: flex;
         width: 100px;
-        /* background: red; */
       }
       .like {
-        width: 50px;
+        width: 100px;
         height: 35px;
         border-radius: 20px 0 0 20px;
         background: #f2f2f2;
         border-left: none;
         border-top: none;
         border-bottom: none;
-        border-right: solid 1px gray;
+        border-right: solid 1px lightgray;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        gap: 5px;
+        font-weight: 500;
+        padding: 5px;
       }
       .like img {
-        width: 47%;
+        height: 23px;
+        width: 23px;
       }
-      .like_button:hover.tooltip-text {
+      .like:hover.tooltip-text {
         opacity: 1;
         visibility: visible;
-      }
-      .like_button img {
-        height: 50%;
       }
       .dislike {
         width: 50px;
@@ -349,24 +364,23 @@
         border-top: none;
         border-bottom: none;
         border-right: none;
-        border-left: solid 1px gray;
+        border-left: solid 1px lightgray;
         border-radius: 0 20px 20px 0;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        padding: 5px;
       }
-      /* .dislike img {
-
-      } */
-      .dislike_button:hover.tooltip-text {
+      .dislike img {
+        height: 23px;
+        width: 23px;
+      }
+      .dislike:hover.tooltip-text {
         opacity: 1;
         visibility: visible;
       }
 
-      .dislike_button img {
-        height: 50%;
-      }
       .share,
       .download,
       .clip,
@@ -380,6 +394,7 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
+        cursor: pointer;
       }
       .share {
         width: 80px;
@@ -393,7 +408,41 @@
       .dots {
         width: 36px;
       }
+      .more_container {
+        width: 100%;
+        height: 100px;
+        background: #f2f2f2;
+        border-radius: 10px;
+        margin: 5px 0 20px 0;
+        padding: 10px;
+      }
+      .more_container_views {
+        width: 100%;
+        font-weight: 600;
+        font-size: 14px;
+        padding-bottom: 5px;
+        /* background: red; */
+      }
+      .more_container_details {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: 14px;
+        line-height: 18px;
+      }
+      .more_container_details {
+        width: 100%;
+        font-size: 14px;
+        /* background: pink; */
+      }
+      .more_container_show {
+        width: 50px;
+        font-weight: 600;
+        font-size: 14px;
+      }
 
+      /* ------------------------- */
       .recommend_container {
         background: none;
       }
@@ -471,26 +520,6 @@
         .clip {
           display: none;
         }
-        .download {
-          /* padding-left: 20px; */
-        }
-
-        .share {
-          /* padding-left: 20px; */
-        }
-      }
-      @media (856px <=width < 1100px) {
-        .dots {
-          display: none;
-        }
-
-        .download {
-          /* padding-left: 20px; */
-        }
-
-        .share {
-          /* padding-left: 20px; */
-        }
       }
     </style>
   </head>
@@ -539,7 +568,10 @@
             allowfullscreen
           ></iframe>
 
-          <div class="video_description">Above NYC - Filmed in 12K</div>
+          <div class="video_description">
+            New York City from above - 12K an entire city view of one of the
+            best destinations in the world
+          </div>
           <div class="tag_container">
             <div class="left_box">
               <img src="Images/yt.jpg" />
@@ -548,7 +580,7 @@
                 <div class="number">200K subscribers</div>
               </div>
 
-              <div class="description_button text-white">Subscription</div>
+              <div class="description_button text-white">Subscribe</div>
               <div class="description_button text-black">
                 <img src="Images/222.svg" />Notifications
                 <img src="Images/Show-more.svg" />
@@ -557,7 +589,7 @@
 
             <div class="right_box">
               <div class="like-dislike_container">
-                <div class="like"><img src="Images/like.svg" /></div>
+                <div class="like"><img src="Images/like.svg" />211K</div>
                 <div class="dislike"><img src="dislike.svg" /></div>
               </div>
               <button class="share"><img src="share.svg" /> Share</button>
@@ -570,6 +602,23 @@
                 <img src="dots.svg" />
               </button>
             </div>
+          </div>
+
+          <div class="more_container">
+            <div class="more_container_views">1.2M views 3 months ago</div>
+            <div class="more_container_details">
+              In this cinematic new york footage, you'll see the iconic streets
+              and landmarks in stunning 12K ULTRA HD HDR 120fps with Dolby
+              Vision. This footage is perfect for your next travel video, video
+              production, or just to view on your home cinema. Experience all
+              the splendour of cinematic new york in this stunning 12K ULTRA HD
+              footage. View the iconic streets and landmarks in stunning 12K
+              ULTRA HD footage with Dolby Vision. This footage is perfect for
+              your next travel video, video production, or just to view on your
+              home cinema. If you're a fan of the New York Yankees, then you'll
+              love this footage!
+            </div>
+            <div class="more_container_show">...more</div>
           </div>
 
           <div class="post_container">
@@ -603,7 +652,7 @@
     <script>
       const parent_recommend = document.querySelector(".recommend_container");
       parent_recommend.style.width = "377px";
-      parent_recommend.style.background = "blue";
+      // parent_recommend.style.background = "blue";
 
       const recommendData = [
         {
@@ -705,7 +754,7 @@
         const recommend = document.createElement("div");
         recommend.style.width = "377px";
         recommend.style.height = "94px";
-        recommend.style.background = "red";
+        // recommend.style.background = "red";
         recommend.style.marginBottom = "10px";
         recommend.style.display = "flex";
         recommend.style.fontSize = "12px";
@@ -713,9 +762,10 @@
         const img = document.createElement("img");
         img.src = recommendData[i].img;
         img.style.height = "100%";
+        img.style.borderRadius = "10px";
 
         const description = document.createElement("div");
-        description.style.background = "pink";
+        // description.style.background = "pink";
 
         const title = document.createElement("div");
         title.innerHTML = recommendData[i].title;
