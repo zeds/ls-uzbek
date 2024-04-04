@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .body {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+      }
+
+      .container {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        padding: 5px;
+      }
+
+      input_container {
+      }
+
+      #input {
+        width: 250px;
+        height: 250px;
+      }
+
+      .btn_container {
+        display: flex;
+        align-items: center;
+      }
+
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+      }
+
+      #answer {
+        width: 250px;
+        height: 250px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="input_container">
+        <div class="title_1">文字列を数えるアプリ</div>
+        <textarea name="input" id="input" cols="50" rows="20"></textarea>
+      </div>
+
+      <div class="btn_container">
+        <button class="btn">計算></button>
+      </div>
+
+      <div class="answer_container">
+        <div class="title_2">A~Z順に表示してください</div>
+        <textarea name="input" id="answer" cols="50" rows="20"></textarea>
+      </div>
+    </div>
+    <script>
+      const textInput = document.getElementById("input");
+
+      textInput.value =
+        "hello how are we doing excellent very good I am thrilled to be here and I'm thrilled to be talking about the topic of how to make our communication memorable so today is all about specific tips and tricks that you can use so that you can help yourself remember what you're trying to say and to help your audience remember well I like communicating I love hearing you communicate as well so today is going to be participative and I invite you to participate as much or as little as you like so let's go ahead and get started";
+
+      var str = "banana, apple, orange, apple";
+
+      // 「apple」を検索してみる
+      var ret = str.indexOf("apples");
+
+      console.log(ret);
+
+      function compareFunc(a, b) {
+        return b - a;
+      }
+
+      const button = document.querySelector(".btn");
+      button.addEventListener("click", function () {
+        const words = textInput.value.split(" ");
+        console.log(words);
+
+        const textAnswer = document.getElementById("answer");
+
+        let ans = "";
+        for (let i = 0; i < words.length; i++) {
+          const result = ans.indexOf(words[i]);
+          if (result !== -1) {
+            console.log("みつかった！");
+          } else {
+            // arrAns.push(words[i])
+            // arrAns.sort();
+            ans = ans + words[i] + " ";
+          }
+        }
+
+        const arrAns = ans.split(" ");
+        arrAns.sort((a, b) => b.rating - a.rating);
+        // arrAns.sort()
+
+        textAnswer.value = arrAns;
+      });
+
+      const answer = document.getElementById("answer");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .body {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+    }
+
+    .container2 {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .title {
+      width: 100%;
+      color: rgb(15, 15, 15);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .description-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+
+    /* sarvie */
+
+    .buttonsub {
+      display: flex;
+      gap: 5px;
+    }
+
+    .member,
+    .subscribe {
+      width: 136px;
+      height: 36px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 36px;
+      border-radius: 18px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .subscribe img {
+      height: 20px;
+    }
+
+    .member {
+      background-color: rgb(15, 15, 15);
+      color: white;
+    }
+
+    /* sarvie */
+
+    /* alsu */
+    .share,
+    .offline,
+    .thanks {
+      height: 36px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 36px;
+      border-radius: 18px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .share {
+      width: 80px;
+    }
+
+    .offline {
+      width: 110px;
+    }
+
+    .thanks {
+      width: 80px;
+    }
+
+    .offline img,
+    .thanks img {
+      height: 20px;
+    }
+
+    /* alsu */
+
+
+    /*wox  */
+    .description-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .img-channel {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+    }
+
+    .amount-subscribe {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      color: rgb(96, 96, 96);
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    .name-channel {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 22px;
+    }
+
+    .name-channel {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .check {
+      margin-left: 3px;
+      width: 15px;
+      height: 15px;
+      object-fit: cover;
+    }
+
+    /*wox  */
+    /* Asila*/
+    .description-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .like {
+      display: flex;
+    }
+
+    .like_button {
+      width: 90px;
+      height: 35px;
+      border-radius: 20px 0 0 20px;
+      background: #f2f2f2;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      gap: 5px padding: 5px;
+
+    }
+
+    .vertical-line {
+      width: 0;
+      height: 24px;
+      border: 0.5px solid lightgray;
+      margin-left: 10px;
+    }
+
+    .like_button:hover.tooltip-text {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .like_button img {
+      height: 50%;
+    }
+
+    .dislike_button {
+      width: 30px;
+      height: 35px;
+      background: #f2f2f2;
+      border-radius: 0 20px 20px 0;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .dislike_button:hover.tooltip-text {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dislike_button img {
+      height: 50%;
+    }
+
+
+    /* .download_button{
+              width: 40px;
+              height: 35px;
+              border: solid 1px #d3d3d3;
+              background: #f8f8f8;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              cursor: pointer;
+            }
+            .download_button img{
+              height: 50%;
+            } */
+    @media (width < 600px) {
+      .description-container {
+        flex-direction: column;
+      }
+    }
+
+    @media (600px <=width < 856px) {
+      .offline {
+        display: none;
+      }
+
+    }
+
+    @media (856px <=width < 1100px) {
+      .thanks {
+        display: none;
+      }
+
+      .offline {
+        /* padding-left: 20px; */
+      }
+
+      .share {
+        /* padding-left: 20px; */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container2">
+    <div class="title">
+      ランニングマシンを使いたくて後ろで順番待ちしてる猫たちがかわいすぎました笑
+    </div>
+    <div class="description-container">
+      <!--wwox  -->
+      <div class="description-left">
+        <img class="img-channel" src="./images/mochimaru.jpeg">
+        <div class="info-channel">
+          <div class="name-channel">もちまる日記 <img class="check" src="./images/check1.svg"></div>
+          <div class="amount-subscribe">215万人 チャンネル登録者数 </div>
+        </div>
+        <!--wwox  -->
+
+
+
+        <!-- sarvie -->
+        <div class="buttonsub">
+          <button class="member">メンバーになる</button>
+          <button class="subscribe"><img src="images/bell.svg"> 登録済み <img src="images/down-arrow.svg"></button>
+        </div>
+        <!-- sarvie -->
+      </div>
+
+      <!-- Asila -->
+      <div class="description-right">
+        <div class="like">
+          <button class="like_button">
+            <img src="images/material-symbols-light--thumb-up.svg" />
+            <div class="tooltip-text">　高評価</div>
+            <div class="vertical-line">
+          </button>
+          <button class="dislike_button">
+            <div class="tooltip-text"></div>
+            <img src="images/material-symbols--thumb-down-outline.svg" />
+          </button>
+        </div>
+
+
+
+        <!-- alsu -->
+
+        <!-- <div class="button-container"> -->
+        <button class="share">
+          <img src="images/ph--share-fat-light.svg" />
+          共有
+        </button>
+        <button class="offline">
+          <img src="images/download.svg" />
+          オフライン
+        </button>
+        <button class="thanks">
+          <img src="images/tabler--heart-handshake.svg" />
+          Thanks
+        </button>
+        <!-- </div> -->
+
+</body>
+
+</html>

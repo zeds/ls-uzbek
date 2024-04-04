@@ -258,15 +258,12 @@
         font-weight: 700;
       }
       .tag_container {
-        display: grid;
-        gap: 10px;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        justify-content: space-between;
         width: 100%;
       }
       .left_box {
-        display: grid;
-        grid-template-columns: 40px 1fr 136px 136px;
-        /* background: red; */
+        display: flex;
         align-items: center;
         gap: 10px;
       }
@@ -283,9 +280,27 @@
         align-items: start;
       }
       .user {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+      }
+      .user {
         font-size: 16px;
         font-weight: 500;
         color: rgb(15, 15, 15);
+      }
+      .number {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        color: rgb(96, 96, 96);
+        font-size: 12px;
+        line-height: 18px;
       }
       .number {
         font-size: 12px;
@@ -293,9 +308,7 @@
         color: rgb(96, 96, 96);
       }
       .right_box {
-        display: grid;
-        grid-template-columns: 1fr 86px 112px 86px 36px;
-        /* background: blue; */
+        display: flex;
         align-items: center;
         gap: 10px;
       }
@@ -343,8 +356,9 @@
         align-items: center;
         cursor: pointer;
       }
-      .dislike img {
-      }
+      /* .dislike img {
+
+      } */
       .dislike_button:hover.tooltip-text {
         opacity: 1;
         visibility: visible;
@@ -352,6 +366,32 @@
 
       .dislike_button img {
         height: 50%;
+      }
+      .share,
+      .download,
+      .clip,
+      .dots {
+        height: 36px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        border-radius: 18px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      .share {
+        width: 80px;
+      }
+      .download {
+        width: 110px;
+      }
+      .clip {
+        width: 80px;
+      }
+      .dots {
+        width: 36px;
       }
 
       .recommend_container {
@@ -393,7 +433,7 @@
         border-bottom: 1px solid black;
       }
 
-      @media (width < 10px) {
+      /* @media (width < 10px) {
         .container {
           display: grid;
           grid-template-columns: 1fr;
@@ -413,6 +453,43 @@
 
         .item:nth-child(3) {
           display: block;
+        }
+      } */
+      @media (width < 600px) {
+        .tag_container {
+          flex-direction: column;
+        }
+      }
+
+      @media (600px <=width < 856px) {
+        .download {
+          display: none;
+        }
+      }
+
+      @media (856px <=width < 1100px) {
+        .clip {
+          display: none;
+        }
+        .download {
+          /* padding-left: 20px; */
+        }
+
+        .share {
+          /* padding-left: 20px; */
+        }
+      }
+      @media (856px <=width < 1100px) {
+        .dots {
+          display: none;
+        }
+
+        .download {
+          /* padding-left: 20px; */
+        }
+
+        .share {
+          /* padding-left: 20px; */
         }
       }
     </style>
@@ -470,6 +547,7 @@
                 <div class="user">New York 8K</div>
                 <div class="number">200K subscribers</div>
               </div>
+
               <div class="description_button text-white">Subscription</div>
               <div class="description_button text-black">
                 <img src="Images/222.svg" />Notifications
@@ -482,18 +560,15 @@
                 <div class="like"><img src="Images/like.svg" /></div>
                 <div class="dislike"><img src="dislike.svg" /></div>
               </div>
-              <div class="description_button text-black">
-                <img src="share.svg" />Share
-              </div>
-              <div class="description_button text-black">
-                <img src="Images/download.svg" />Download
-              </div>
-              <div class="description_button text-black">
-                <img src="Images/clip.svg" />Clip
-              </div>
-              <div class="description_button text-black">
+              <button class="share"><img src="share.svg" /> Share</button>
+              <button class="download">
+                <img src="Images/download.svg" />
+                Download
+              </button>
+              <button class="clip"><img src="Images/clip.svg" /> Clip</button>
+              <button class="dots">
                 <img src="dots.svg" />
-              </div>
+              </button>
             </div>
           </div>
 
