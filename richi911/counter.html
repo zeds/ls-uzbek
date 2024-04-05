@@ -25,101 +25,36 @@
         font-family: "Roboto", sans-serif;
         font-size: 14px;
       }
-
-      .container {
-        width: 100%;
-        display: flex;
-        gap: 10px;
-        padding: 5px;
-      }
-
-      input_container {
-      }
-
-      #input {
-        width: 250px;
-        height: 250px;
-      }
-
-      .btn_container {
-        display: flex;
-        align-items: center;
-      }
-
-      .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-      }
-
-      #answer {
-        width: 250px;
-        height: 250px;
-      }
     </style>
   </head>
 
   <body>
-    <div class="container">
-      <div class="input_container">
-        <div class="title_1">文字列を数えるアプリ</div>
-        <textarea name="input" id="input" cols="50" rows="20"></textarea>
-      </div>
+    <textarea id="textArea" rows="4" cols="50"> </textarea>
+    <button id="btn">数える</button>
+    <textarea id="textOutput" rows="4" cols="50"> </textarea>
 
-      <div class="btn_container">
-        <button class="btn">計算></button>
-      </div>
-
-      <div class="answer_container">
-        <div class="title_2">A~Z順に表示してください</div>
-        <textarea name="input" id="answer" cols="50" rows="20"></textarea>
-      </div>
-    </div>
     <script>
-      const textInput = document.getElementById("input");
+      let btn = document.getElementById("btn");
+      let textArea = document.getElementById("textArea");
+      let newDiv = document.createElement("div");
+      let result = document.querySelector(".result");
 
-      textInput.value =
-        "hello how are we doing excellent very good I am thrilled to be here and I'm thrilled to be talking about the topic of how to make our communication memorable so today is all about specific tips and tricks that you can use so that you can help yourself remember what you're trying to say and to help your audience remember well I like communicating I love hearing you communicate as well so today is going to be participative and I invite you to participate as much or as little as you like so let's go ahead and get started";
+      let output = [];
 
-      var str = "banana, apple, orange, apple";
-
-      // 「apple」を検索してみる
-      var ret = str.indexOf("apples");
-
-      console.log(ret);
-
-      function compareFunc(a, b) {
-        return b - a;
-      }
-
-      const button = document.querySelector(".btn");
-      button.addEventListener("click", function () {
-        const words = textInput.value.split(" ");
-        console.log(words);
-
-        const textAnswer = document.getElementById("answer");
-
-        let ans = "";
-        for (let i = 0; i < words.length; i++) {
-          const result = ans.indexOf(words[i]);
-          if (result !== -1) {
-            console.log("みつかった！");
-          } else {
-            // arrAns.push(words[i])
-            // arrAns.sort();
-            ans = ans + words[i] + " ";
+      btn.addEventListener("click", function () {
+        let upper = textArea.value.toLowerCase();
+        let arr = upper.split(" ");
+        console.log("arr=", arr.sort());
+        for (let k = 0; k < arr.length; k++) {
+          if (output.indexOf(arr[k]) == -1) {
+            // 存在しない時には、追加する
+            output.push(arr[k]);
           }
         }
-
-        const arrAns = ans.split(" ");
-        arrAns.sort((a, b) => b.rating - a.rating);
-        // arrAns.sort()
-
-        textAnswer.value = arrAns;
+        console.log("output=", output.sort());
+        let textOutput = document.getElementById("textOutput");
+        textOutput.value = output.sort().join(" ");
       });
-
-      const answer = document.getElementById("answer");
     </script>
   </body>
 </html>
