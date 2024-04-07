@@ -39,7 +39,14 @@ document.getElementById("commentButton").addEventListener("click", function () {
   // commentsにオブジェクトを追加
   let name = document.getElementById("name").value;
   let comment = document.getElementById("comment").value;
-  let obj = { id: "111", name: name, comment: comment, age: 18, image_url: "" };
+  let obj = {
+    id: "111",
+    name: name,
+    comment: comment,
+    age: 18,
+    image_url:
+      "https://yt3.ggpht.com/C_WH4A2Q4p_w63JmEHKK8-jeWjM3HBwTMRIUsSD1IJMKvo0a9YbrN2h4iOukOECzJ8Duqkun=s68-c-k-c0x00ffffff-no-rj",
+  };
 
   if (editMode) {
     comments[indexComment].name = name;
