@@ -2,14 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
       * {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+      }
+
+      .body {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
       }
       .container {
         width: 100%;
@@ -213,7 +227,8 @@
       }
       .container_2 {
         display: flex;
-        gap: 5px;
+        padding: 25px;
+        gap: 25px;
       }
       .video_container {
         width: 100%;
@@ -258,15 +273,13 @@
         font-weight: 700;
       }
       .tag_container {
-        display: grid;
-        gap: 10px;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        justify-content: space-between;
         width: 100%;
+        padding: 10px 10px 10px 0;
       }
       .left_box {
-        display: grid;
-        grid-template-columns: 40px 1fr 136px 136px;
-        background: red;
+        display: flex;
         align-items: center;
         gap: 10px;
       }
@@ -283,9 +296,27 @@
         align-items: start;
       }
       .user {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+      }
+      .user {
         font-size: 16px;
         font-weight: 500;
         color: rgb(15, 15, 15);
+      }
+      .number {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        color: rgb(96, 96, 96);
+        font-size: 12px;
+        line-height: 18px;
       }
       .number {
         font-size: 12px;
@@ -293,41 +324,38 @@
         color: rgb(96, 96, 96);
       }
       .right_box {
-        display: grid;
-        grid-template-columns: 1fr 86px 112px 86px 36px;
-        background: blue;
+        display: flex;
         align-items: center;
         gap: 10px;
       }
       .like-dislike_container {
-        display: grid;
-        grid-template-columns: 48px 48px;
+        display: flex;
         width: 100px;
-        background: red;
       }
       .like {
-        width: 50px;
+        width: 100px;
         height: 35px;
         border-radius: 20px 0 0 20px;
         background: #f2f2f2;
         border-left: none;
         border-top: none;
         border-bottom: none;
-        border-right: solid 1px black;
+        border-right: solid 1px lightgray;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        gap: 5px;
+        font-weight: 500;
+        padding: 5px;
       }
       .like img {
-        width: 47%;
+        height: 23px;
+        width: 23px;
       }
-      .like_button:hover.tooltip-text {
+      .like:hover.tooltip-text {
         opacity: 1;
         visibility: visible;
-      }
-      .like_button img {
-        height: 50%;
       }
       .dislike {
         width: 50px;
@@ -336,24 +364,85 @@
         border-top: none;
         border-bottom: none;
         border-right: none;
-        border-left: solid 1px black;
+        border-left: solid 1px lightgray;
         border-radius: 0 20px 20px 0;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        padding: 5px;
       }
       .dislike img {
+        height: 23px;
+        width: 23px;
       }
-      .dislike_button:hover.tooltip-text {
+      .dislike:hover.tooltip-text {
         opacity: 1;
         visibility: visible;
       }
 
-      .dislike_button img {
-        height: 50%;
+      .share,
+      .download,
+      .clip,
+      .dots {
+        height: 36px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        border-radius: 18px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        cursor: pointer;
+      }
+      .share {
+        width: 80px;
+      }
+      .download {
+        width: 110px;
+      }
+      .clip {
+        width: 80px;
+      }
+      .dots {
+        width: 36px;
+      }
+      .more_container {
+        width: 100%;
+        height: 100px;
+        background: #f2f2f2;
+        border-radius: 10px;
+        margin: 5px 0 20px 0;
+        padding: 10px;
+      }
+      .more_container_views {
+        width: 100%;
+        font-weight: 600;
+        font-size: 14px;
+        padding-bottom: 5px;
+        /* background: red; */
+      }
+      .more_container_details {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: 14px;
+        line-height: 18px;
+      }
+      .more_container_details {
+        width: 100%;
+        font-size: 14px;
+        /* background: pink; */
+      }
+      .more_container_show {
+        width: 50px;
+        font-weight: 600;
+        font-size: 14px;
       }
 
+      /* ------------------------- */
       .recommend_container {
         background: none;
       }
@@ -393,7 +482,7 @@
         border-bottom: 1px solid black;
       }
 
-      @media (width < 10px) {
+      /* @media (width < 10px) {
         .container {
           display: grid;
           grid-template-columns: 1fr;
@@ -413,6 +502,23 @@
 
         .item:nth-child(3) {
           display: block;
+        }
+      } */
+      @media (width < 600px) {
+        .tag_container {
+          flex-direction: column;
+        }
+      }
+
+      @media (600px <=width < 856px) {
+        .download {
+          display: none;
+        }
+      }
+
+      @media (856px <=width < 1100px) {
+        .clip {
+          display: none;
         }
       }
     </style>
@@ -462,7 +568,10 @@
             allowfullscreen
           ></iframe>
 
-          <div class="video_description">Above NYC - Filmed in 12K</div>
+          <div class="video_description">
+            New York City from above - 12K an entire city view of one of the
+            best destinations in the world
+          </div>
           <div class="tag_container">
             <div class="left_box">
               <img src="Images/yt.jpg" />
@@ -470,7 +579,8 @@
                 <div class="user">New York 8K</div>
                 <div class="number">200K subscribers</div>
               </div>
-              <div class="description_button text-white">Subscription</div>
+
+              <div class="description_button text-white">Subscribe</div>
               <div class="description_button text-black">
                 <img src="Images/222.svg" />Notifications
                 <img src="Images/Show-more.svg" />
@@ -479,22 +589,36 @@
 
             <div class="right_box">
               <div class="like-dislike_container">
-                <div class="like"><img src="Images/like.svg" /></div>
+                <div class="like"><img src="Images/like.svg" />211K</div>
                 <div class="dislike"><img src="dislike.svg" /></div>
               </div>
-              <div class="description_button text-black">
-                <img src="share.svg" />Share
-              </div>
-              <div class="description_button text-black">
-                <img src="Images/download.svg" />Download
-              </div>
-              <div class="description_button text-black">
-                <img src="Images/clip.svg" />Clip
-              </div>
-              <div class="description_button text-black">
+              <button class="share"><img src="share.svg" /> Share</button>
+              <button class="download">
+                <img src="Images/download.svg" />
+                Download
+              </button>
+              <button class="clip"><img src="Images/clip.svg" /> Clip</button>
+              <button class="dots">
                 <img src="dots.svg" />
-              </div>
+              </button>
             </div>
+          </div>
+
+          <div class="more_container">
+            <div class="more_container_views">1.2M views 3 months ago</div>
+            <div class="more_container_details">
+              In this cinematic new york footage, you'll see the iconic streets
+              and landmarks in stunning 12K ULTRA HD HDR 120fps with Dolby
+              Vision. This footage is perfect for your next travel video, video
+              production, or just to view on your home cinema. Experience all
+              the splendour of cinematic new york in this stunning 12K ULTRA HD
+              footage. View the iconic streets and landmarks in stunning 12K
+              ULTRA HD footage with Dolby Vision. This footage is perfect for
+              your next travel video, video production, or just to view on your
+              home cinema. If you're a fan of the New York Yankees, then you'll
+              love this footage!
+            </div>
+            <div class="more_container_show">...more</div>
           </div>
 
           <div class="post_container">
@@ -528,101 +652,101 @@
     <script>
       const parent_recommend = document.querySelector(".recommend_container");
       parent_recommend.style.width = "377px";
-      parent_recommend.style.background = "blue";
+      // parent_recommend.style.background = "blue";
 
       const recommendData = [
         {
-          img: "https://i.ytimg.com/vi/q-VNPpo9z0Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCTfzICpNJURsAUR7H5oKiwbRU1OQ",
-          title: "ロシアから日本を選んで住んだ理由。",
-          user: "🌹ディアナちゃんねる🌹",
-          statistics: "57,007 回視聴  2024/03/15",
-        },
-        {
-          img: "https://i.ytimg.com/vi/JM75dAskORs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBTNuT62ywWpzAiB8-XMZJXdr6iEg",
+          img: "https://i.ytimg.com/vi/Znr5lTsXjh8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7THgTJEjLTkxeHxiALvnLPlnJJg",
           title:
-            "【ドーパミン中毒】スタンフォード大学医学部「冷たいシャワーの効果とは」／朝一番のエクササイズが効果的な理由／苦痛と快楽の感情はシーソーのように行き来する【PIVOT GLOBAL】",
-          user: "PIVOT 公式チャンネル",
-          statistics: "チャンネル登録者数 144万人",
-        },
-        {
-          img: "https://i.ytimg.com/vi/TO2t9esOUZA/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbmuO4gXa25PqUBzpwJhqHfOwsbw",
-          title:
-            "ИСТОРИИ СПАСАТЕЛЯ! Страшные истории на ночь.Страшилки на ночь.",
-          user: "DARK~PHIL",
-          statistics: "65万回視聴",
-        },
-        {
-          img: "https://i.ytimg.com/vi/BH4ukdHaLmg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7AOL5WAISU0HpHDVqNF_ySb2yOw",
-          title:
-            "КВАРТИРА КОШМАРОВ! Страшные истории на ночь.Страшилки на ночь.",
-          user: "DARK~PHIL",
-          statistics: "21万回視聴",
+            "12K HDR 120fps Dolby Vision with Epic Music (Los Angeles // GTA VI)",
+          user: "8K Safari",
+          statistics: "3.1M views • 1 year ago",
         },
 
         {
-          img: "https://i.ytimg.com/vi/BFS9n4B_2xA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0XuNyVjX1z1FRManXoNmQKxlBSg",
-          title: "Bali in 8k ULTRA HD HDR - Paradise of Asia (60 FPS)",
-          user: "8K WORLD",
-          statistics: "3M Subscribers",
+          img: "https://i.ytimg.com/vi/G5RpJwCJDqc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDUFlVnmxyAVRtEKHbuCtLo6oaGWQ",
+          title: "Japan in 8K ULTRA HD - Land of The Rising Sun (60 FPS)",
+          user: "8K World",
+          statistics: "5.6M views • 2 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/hVvEISFw9w0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCOfXHVn1eAfsvoC6xHheu6Sao7og",
+          title: "Morocco 8K HDR 60FPS (FUHD)",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "10M views • 5 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/vQVwkyn3-F8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBDa0Wt3XN0OLTBAPSBsbIdDl2U2g",
+          title: "Uzbekistan 8K HDR 60p",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "2.6M views • 2 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/QmwlJbgPtek/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPYCASlQv1IVsBb15GrCJpkGiLPA",
+          title:
+            "VIETNAM 🇻🇳 8K Video Ultra HD [60FPS] Dolby Vision | Vietnam 8K HDR",
+          user: "8K HDR Dolby World",
+          statistics: "3M views • 2 years ago",
         },
 
         {
           img: "https://i.ytimg.com/vi/N1-Jmq7BLFE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCyLpS3boh1ChcvVbXOTWBR6sWt5w",
           title: "Bulgaria 8K HDR 60P (FUHD) Very beautiful place",
           user: "Jacob + Keitz Shwartz",
-          statistics: "900K Subscribers",
+          statistics: "2.3 views • 7 months ago",
         },
 
         {
-          img: "https://i.ytimg.com/vi/rBadprLH1jM/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFEoPjAP&rs=AOn4CLDMnU74TxZBcC5ano3eLkdFn0SEFw",
+          img: "https://i.ytimg.com/vi/RzVvThhjAKw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnFjY1R8_XMJSSHAM1e9-weFZ79w",
           title:
-            "Morning Piano Music | Piano music to Study, Work, Ambience,... 🎷 | Best Choice for Study, Work #2",
-          user: "Aom",
-          statistics: "50 thousand Subscribers",
+            "Forest 4K • Nature Relaxation Film • Peaceful Relaxing Music • 4k Video UltraHD",
+          user: "Relaxation Film",
+          statistics: "765K views • 5 months ago",
         },
+
         {
-          img: "https://i.ytimg.com/vi/RqooLet7B2Q/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAAbA9SZZz9H8rBTMfma5QFcRsdvw",
-          title: "BUMP OF CHICKEN「Sleep Walking Orchestra」",
-          user: "BUMP OF CHICKEN",
-          statistics: "342万回視聴",
+          img: "https://i.ytimg.com/vi/eoTpdTU8nTA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBF7Hn_0T-EHwb52Uli_zWmLgp0fQ",
+          title: "The Ocean 4K - Scenic Wildlife Film With Calming Music",
+          user: "Scenic Relaxation",
+          statistics: "15M views • 2 years ago",
         },
-        // Sarviee
+
         {
-          img: "https://i.ytimg.com/vi/1N-I7vNVYVQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrBrRV3JQn4-8bnLiahdxCGa_I-A",
-          title:
-            "Cottagecore Spring Hobbies 🌷🍓🐇 | Making Strawberry Cookies |",
-          user: "Our Cottage Life",
-          statistics: "46K views  2 weeks ago",
+          img: "https://i.ytimg.com/vi/BJG8qMBveHw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDwxuuYq1zH3daKSQ3J9uvNIxtxmA",
+          title: "San Francisco 12K HDR 60fps Dolby Vision™ | Cinematic Video",
+          user: "8K World",
+          statistics: "378K views • 5 months ago",
         },
-        // shox
+
         {
-          img: "https://i.ytimg.com/vi/ncUTNE6D39M/hq720.jpg?sqp=- oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOjYm_cjlGPXFQV0BZPYHIMX-4yw ",
-          title:
-            "FAST X | Won't Back Down (Official Music Video) - NBA YoungBoy, Bailey Zimmerman, Dermot Kennedy",
-          user: "YoungBoy Never Broken",
+          img: "https://i.ytimg.com/vi/1La4QzGeaaQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBwK5s0t8VCDUrxahcJhKdNOgu-BA",
+          title: "Peru 8K HDR 60FPS (FUHD)",
+          user: "Jacob + Keitz Shwartz",
           statistics: "10万回視聴",
         },
-        //Asila
+
         {
-          img: "https://i.ytimg.com/vi/AnErrgFRWV4/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLATKBtEcTwQn8zPaKgEYujNFV8Ntw",
-          title: "Sizga yetib bo'lmay qoladi www | Iqtibos podcast #23",
-          user: "Aziz Rakhimov",
-          statistics: "52K views  2 weeks ago",
+          img: "https://i.ytimg.com/vi/CHSnz0bCaUk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD8S8CvGlGYAbri_msPm0GOh5AKEg",
+          title: "Alaska in 8K 60p HDR (Dolby Vision)",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "62M views • 6 years ago",
         },
-        //alsu
+
         {
-          img: "https://i.ytimg.com/vi/OEfz-pZPg24/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPH78BAUaVBNzeu9JLfJzxz_pIWw",
-          title:
-            "A Mellow Morning In Tokyo - (Playlist) 𝙻𝚊𝚖𝚙, Ichiko Aoba, 𝙼𝚊𝚖𝚎𝚛𝚒𝚌𝚘,フレネシ",
-          user: "Hangout Session",
-          statistics: "7万回視聴",
+          img: "https://i.ytimg.com/vi/f7hbWvHKns0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCCTfOgKDGaP62gByxuwiaM2rbHuA",
+          title: "GREENLAND - LAND OF ICE 4K",
+          user: "Stefan Foster",
+          statistics: "13M views • 5 months ago",
         },
-        //mexroj
+
         {
-          img: "https://i.ytimg.com/vi/rBadprLH1jM/hq720.jpg",
-          title: "temani qattimi",
-          user: "mexroj",
-          statistics: "1M views",
+          img: "https://i.ytimg.com/vi/8aedJQ8Ca-o/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCr4h53qjLhyriZuH92Whw2nEwfDg",
+          title: "Paris In 4k - Aerial Video : Travel Around Paris by Drone",
+          user: "ExploreFly",
+          statistics: "4K views • 5 weeks ago",
         },
       ];
 
@@ -630,17 +754,19 @@
         const recommend = document.createElement("div");
         recommend.style.width = "377px";
         recommend.style.height = "94px";
-        recommend.style.background = "red";
+        // recommend.style.background = "red";
         recommend.style.marginBottom = "10px";
         recommend.style.display = "flex";
         recommend.style.fontSize = "12px";
+        recommend.style.columnGap = "10px";
 
         const img = document.createElement("img");
         img.src = recommendData[i].img;
         img.style.height = "100%";
+        img.style.borderRadius = "10px";
 
         const description = document.createElement("div");
-        description.style.background = "pink";
+        // description.style.background = "pink";
 
         const title = document.createElement("div");
         title.innerHTML = recommendData[i].title;
