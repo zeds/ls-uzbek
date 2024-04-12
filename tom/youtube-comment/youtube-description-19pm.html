@@ -76,12 +76,21 @@
           width: 100%;
         }
 
+<<<<<<< HEAD
         .item:nth-child(3) {
           display: block;
         }
       }
     </style>
   </head>
+=======
+			  .item:nth-child(3) {
+			    display: block;
+			  }
+			}
+		</style>
+	</head>
+>>>>>>> 5ef5e17945a41fc504e48bccf101d905733b7d93
 
   <body>
     <div class="container">
@@ -335,6 +344,7 @@
           comment_desc.appendChild(comment_user);
           comment_desc.appendChild(comment_title);
 
+<<<<<<< HEAD
           // ボタンの親
           const comment_button = document.createElement("div");
           comment_button.display = "flex";
@@ -344,6 +354,17 @@
           delete_button.innerHTML = "削除";
           comment_button.appendChild(edit_button);
           comment_button.appendChild(delete_button);
+=======
+					// ボタンの
+					const comment_button = document.createElement("div");
+					comment_button.display = "flex";
+					const edit_button = document.createElement("button");
+					edit_button.innerHTML = "編集";
+					const delete_button = document.createElement("button");
+					delete_button.innerHTML = "削除";
+					comment_button.appendChild(edit_button);
+					comment_button.appendChild(delete_button);
+>>>>>>> 5ef5e17945a41fc504e48bccf101d905733b7d93
 
           //削除ボタンが押された時
           delete_button.addEventListener("click", function () {
