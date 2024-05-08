@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+    }
+
+    .container {
+        height: 100vh;
+        width: 100%;
+        background: lightgray;
+    }
+
+    .box {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #comment,
+    #age,
+    #input {
+        margin: 0 10px;
+        outline: none;
+        padding: 10px 15px;
+    }
+
+    #btn {
+        padding: 10px 15px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .newDiv {
+        padding: 10px 20px;
+    }
+
+    .info {
+        background-color: aquamarine;
+        border-radius: 5px;
+    }
+
+    .editBtn {
+        margin-left: 10px;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 1px solid rgb(0, 190, 248);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <input type="text" placeholder="name" id="input">
+            <input type="text" placeholder="age" id="age">
+            <input type="text" placeholder="comment" id="comment">
+            <button id="btn">enter</button>
+        </div>
+        <div class="list"></div>
+    </div>
+
+
+
+    <script>
+
+        let input = document.getElementById("input");
+        let age = document.getElementById("age");
+        let comment = document.getElementById("comment");
+        let btn = document.getElementById("btn");
+
+        let list = document.querySelector(".list");
+        let dataInfo = [
+            //     {
+            //     name: 'Shoxrux',
+            //     age: 24,
+            //     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dolor.'
+            // }, {
+            //     name: 'Laizi',
+            //     age: 22,
+            //     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dolor.'
+            // }, {
+            //     name: 'Begzod',
+            //     age: 20,
+            //     info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dolor.'
+            // }
+        ]
+
+
+
+        function showConnent() {
+            for (let i = 0; i < dataInfo.length; i++) {
+                let newDiv = document.createElement("div");
+                newDiv.className = "newDiv"
+                let editBtn = document.createElement("button");
+                editBtn.innerHTML = "edit";
+                editBtn.className = "editBtn";
+                newDiv.innerHTML = 'ismi: ' + dataInfo[i].name + ' yoshi:  ' + dataInfo[i].age + ' matn:  ' + dataInfo[i].info;
+                newDiv.appendChild(editBtn);
+                list.appendChild(newDiv);
+
+                editBtn.addEventListener("click",function(){
+                    input.value = dataInfo[i].name + dataInfo[i].age;
+                })
+            }
+        }
+        function clearInfo() {
+            const all = document.querySelectorAll(".newDiv");
+            for (let i = 0; i < all; i++) {
+                all[i].remove();
+            }
+        }
+
+ 
+
+        btn.addEventListener("click", function () {
+
+
+            let obj = {
+                name: input.value,
+                age: age.value,
+                info: comment.value,
+            }
+            dataInfo.unshift(obj)
+            showConnent();
+            // clearInfo();
+
+
+        })
+        // showConnent();
+    </script>
+
+</body>
+
+</html>

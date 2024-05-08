@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .body {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <textarea id="textArea" rows="4" cols="50"> </textarea>
+  <button id="btn">並び替える</button>
+  <textarea id="textOutput" rows="4" cols="50"> </textarea> -->
+  <div class="div"></div>
+  <div class="div2"></div>
+  <script>
+
+
+    const numBer = [1, 2, 3, 4, 5];
+    const user = [
+      { id: 1, id: 2 },
+    ]
+    const newNum = numBer.map((x) => x * 10);
+
+    document.querySelector(".div").innerHTML = newNum;
+
+    const wors = ['Doston', 'Bexruz', 'Calim', 'Amir',]
+    const result = wors.filter((name) => name.length > 5);
+    document.querySelector(".div2").innerHTML = result;
+    // let btn = document.getElementById("btn");
+    // let textArea = document.getElementById("textArea");
+    // let newDiv = document.createElement("div");
+    // let result = document.querySelector(".result");
+
+    // let output = [];
+
+    // btn.addEventListener("click", function () {
+    //   let upper = textArea.value.toLowerCase();
+    //   let arr = upper.split(" ");
+    //   console.log("arr=", arr.sort());
+    //   for (let k = 0; k < arr.length; k++) {
+    //     if (output.indexOf(arr[k]) == -1) {
+    //       // 存在しない時には、追加する
+    //       output.push(arr[k]);
+    //     }
+    //   }
+    //   console.log("output=", output.sort());
+    //   let textOutput = document.getElementById("textOutput");
+    //   textOutput.value = output.sort().join(" ")
+    // });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .body {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        /* background: lightgray; */
+        padding: 0 20px;
+      }
+      header {
+        /* position: fixed;
+        z-index: 2; */
+        width: 100%;
+        height: 56px;
+
+        display: grid;
+        grid-template-columns: 169px 1fr 156px;
+        align-items: center;
+
+        padding: 0 16px;
+        gap: 10px;
+        background: white;
+      }
+      .logo_container {
+        height: 56px;
+        display: flex;
+        align-items: center;
+      }
+      .burger {
+        width: 24px;
+        height: 24px;
+        padding: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .burger:hover {
+        background: #f2f3f3;
+        cursor: pointer;
+      }
+      .burger img {
+        height: 24px;
+      }
+      .logo-img {
+        height: 56px;
+        padding: 18px 14px 18px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo-img img {
+        height: 20px;
+      }
+      .search_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 40px;
+      }
+      .search_container input {
+        max-width: 515px;
+        width: 80%;
+        height: 40px;
+        border-radius: 20px 0 0 20px;
+        border: solid 1px rgb(228, 225, 225);
+        padding-left: 17px;
+      }
+      .search_button {
+        height: 40px;
+        width: 64px;
+        border: solid 1px rgb(228, 255, 255);
+        border-left: none;
+        border-radius: 0 20px 20px 0;
+        background: #f8f8f8;
+        position: relative;
+      }
+      .search_button:hover .tooltip-text {
+        opacity: 1;
+        background-color: #686868;
+        visibility: visible;
+        position: absolute;
+      }
+      .search_button:hover {
+        background: #d0d0d0;
+        cursor: pointer;
+      }
+      .mic_icon {
+        aspect-ratio: 1/1;
+        width: 40px;
+        height: 40px;
+        margin-left: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #f2f2f2;
+        position: relative;
+      }
+      .mic_icon:hover .tooltip-text {
+        visibility: visible;
+      }
+      .mic_icon:hover {
+        background: #d0d0d0;
+        cursor: pointer;
+      }
+      .right_container {
+        height: 100%;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 20px;
+      }
+      .profile {
+        border-radius: 20px;
+        height: 32px;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        bottom: -45px;
+
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
+
+        font-size: 12px;
+        color: white;
+
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+      .tooltip:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .tooltip:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+      .profile:hover .tooltip-text {
+        visibility: visible;
+      }
+      .profile:hover {
+        background: #d0d0d0;
+        cursor: pointer;
+      }
+      .video {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .video:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .video:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+      .bell {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+      }
+      .bell:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .bell:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+
+      @media (width < 648px) {
+        input {
+          background: red;
+          display: none;
+        }
+        .search button {
+          width: 40px;
+          height: 40px;
+          border: none;
+          border-radius: 20px;
+          background: none;
+        }
+        .search {
+          padding: 0;
+          justify-content: end;
+        }
+        .mic {
+          background: none;
+          margin-left: 0;
+        }
+      }
+      .container_2 {
+        display: flex;
+        padding: 25px;
+        gap: 25px;
+      }
+      .video_container {
+        width: 100%;
+      }
+
+      iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 10px;
+      }
+      /* tag container starts here */
+      .description_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: skyblue;
+        border-radius: 20px;
+        padding: 0 8px;
+        font-size: 14px;
+        font-weight: 500;
+        height: 36px;
+      }
+      .description_button img {
+        padding: 8px;
+      }
+      .black {
+        background: rgb(15, 15, 15);
+        color: white;
+      }
+      .text-white {
+        color: white;
+        background: black;
+      }
+      .text-black {
+        color: black;
+        background: #f2f2f2;
+      }
+      .video_description {
+        width: 100%;
+        display: flex;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .tag_container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 10px 10px 0;
+      }
+      .left_box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .left_box img {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .details {
+        padding-left: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+      }
+      .user {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+      }
+      .user {
+        font-size: 16px;
+        font-weight: 500;
+        color: rgb(15, 15, 15);
+      }
+      .number {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        color: rgb(96, 96, 96);
+        font-size: 12px;
+        line-height: 18px;
+      }
+      .number {
+        font-size: 12px;
+        font-weight: 400;
+        color: rgb(96, 96, 96);
+      }
+      .right_box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .like-dislike_container {
+        display: flex;
+        width: 100px;
+      }
+      .like {
+        width: 100px;
+        height: 35px;
+        border-radius: 20px 0 0 20px;
+        background: #f2f2f2;
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+        border-right: solid 1px lightgray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        gap: 5px;
+        font-weight: 500;
+        padding: 5px;
+      }
+      .like img {
+        height: 23px;
+        width: 23px;
+      }
+      .like:hover.tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+      .dislike {
+        width: 50px;
+        height: 35px;
+        background: #f2f2f2;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+        border-left: solid 1px lightgray;
+        border-radius: 0 20px 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px;
+      }
+      .dislike img {
+        height: 23px;
+        width: 23px;
+      }
+      .dislike:hover.tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .share,
+      .download,
+      .clip,
+      .dots {
+        height: 36px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        border-radius: 18px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        cursor: pointer;
+      }
+      .share {
+        width: 80px;
+      }
+      .download {
+        width: 110px;
+      }
+      .clip {
+        width: 80px;
+      }
+      .dots {
+        width: 36px;
+      }
+      .more_container {
+        width: 100%;
+        height: 100px;
+        background: #f2f2f2;
+        border-radius: 10px;
+        margin: 5px 0 20px 0;
+        padding: 10px;
+      }
+      .more_container_views {
+        width: 100%;
+        font-weight: 600;
+        font-size: 14px;
+        padding-bottom: 5px;
+        /* background: red; */
+      }
+      .more_container_details {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: 14px;
+        line-height: 18px;
+      }
+      .more_container_details {
+        width: 100%;
+        font-size: 14px;
+        /* background: pink; */
+      }
+      .more_container_show {
+        width: 50px;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      /* ------------------------- */
+      .recommend_container {
+        background: none;
+      }
+
+      .recommend {
+        display: flex;
+        gap: 5px;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .recommend img {
+        width: 170px;
+      }
+
+      .recommend_title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .pc_comment_container {
+        display: block;
+      }
+
+      .sp_comment_container {
+        display: none;
+      }
+
+      .comment_icon {
+        aspect-ratio: "1/1";
+      }
+
+      #comment {
+        border: none;
+        border-bottom: 1px solid black;
+      }
+
+      /* @media (width < 10px) {
+        .container {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        .pc_comment_container {
+          display: none;
+        }
+
+        .sp_comment_container {
+          display: block;
+        }
+
+        .recommend {
+          width: 100%;
+        }
+
+        .item:nth-child(3) {
+          display: block;
+        }
+      } */
+      @media (width < 600px) {
+        .tag_container {
+          flex-direction: column;
+        }
+      }
+
+      @media (600px <=width < 856px) {
+        .download {
+          display: none;
+        }
+      }
+
+      @media (856px <=width < 1100px) {
+        .clip {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header_container">
+        <div class="logo_container">
+          <div class="burger"><img src="Images/burger.svg" /></div>
+          <img class="logo-img" src="Images/youtube (1).svg" />
+        </div>
+        <div class="search_container">
+          <input type="text" placeholder="Search" />
+
+          <button class="search_button">
+            <div class="tooltip-text">検索</div>
+            <img src="Images/search-outline.svg" />
+          </button>
+
+          <div class="mic_icon">
+            <div class="tooltip-text">音声で検索</div>
+            <img src="Images/mic.svg" />
+          </div>
+        </div>
+        <div class="right_container">
+          <div class="video">
+            <div class="tooltip-text">作成</div>
+            <img src="Images/recordingicon.svg" />
+          </div>
+
+          <div class="bell">
+            <div class="tooltip-text">通知</div>
+            <img src="Images/222.svg" />
+          </div>
+
+          <img class="profile" src="Images/lunox.jpg" />
+        </div>
+      </header>
+      <div class="container_2">
+        <div class="video_container">
+          <iframe
+            src="https://www.youtube.com/embed/UN3uF3990Q0?si=lIHsuz0vyc7pR49c"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+
+          <div class="video_description">
+            New York City from above - 12K an entire city view of one of the
+            best destinations in the world
+          </div>
+          <div class="tag_container">
+            <div class="left_box">
+              <img src="Images/yt.jpg" />
+              <div class="details">
+                <div class="user">New York 8K</div>
+                <div class="number">200K subscribers</div>
+              </div>
+
+              <div class="description_button text-white">Subscribe</div>
+              <div class="description_button text-black">
+                <img src="Images/222.svg" />Notifications
+                <img src="Images/Show-more.svg" />
+              </div>
+            </div>
+
+            <div class="right_box">
+              <div class="like-dislike_container">
+                <div class="like"><img src="Images/like.svg" />211K</div>
+                <div class="dislike"><img src="dislike.svg" /></div>
+              </div>
+              <button class="share"><img src="share.svg" /> Share</button>
+              <button class="download">
+                <img src="Images/download.svg" />
+                Download
+              </button>
+              <button class="clip"><img src="Images/clip.svg" /> Clip</button>
+              <button class="dots">
+                <img src="dots.svg" />
+              </button>
+            </div>
+          </div>
+
+          <div class="more_container">
+            <div class="more_container_views">1.2M views 3 months ago</div>
+            <div class="more_container_details">
+              In this cinematic new york footage, you'll see the iconic streets
+              and landmarks in stunning 12K ULTRA HD HDR 120fps with Dolby
+              Vision. This footage is perfect for your next travel video, video
+              production, or just to view on your home cinema. Experience all
+              the splendour of cinematic new york in this stunning 12K ULTRA HD
+              footage. View the iconic streets and landmarks in stunning 12K
+              ULTRA HD footage with Dolby Vision. This footage is perfect for
+              your next travel video, video production, or just to view on your
+              home cinema. If you're a fan of the New York Yankees, then you'll
+              love this footage!
+            </div>
+            <div class="more_container_show">...more</div>
+          </div>
+
+          <div class="post_container">
+            <!-- ここからコメントを投稿する -->
+          </div>
+
+          <div class="pc_comment_container">
+            <!-- <div class="elem">
+						<div>
+							高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀
+						</div>
+						<div>
+							<button>編集</button>
+							<button>削除</button>
+						</div>
+					</div> -->
+          </div>
+        </div>
+        <div class="recommend_container"></div>
+        <div class="sp_comment_container">
+          <div class="elem">
+            <div>高橋 いつも一緒に居る人がそばに居れば安心するんだよねぇ🍀</div>
+            <div>
+              <button>編集</button>
+              <button>削除</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const parent_recommend = document.querySelector(".recommend_container");
+      parent_recommend.style.width = "377px";
+      // parent_recommend.style.background = "blue";
+
+      const recommendData = [
+        {
+          img: "https://i.ytimg.com/vi/Znr5lTsXjh8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7THgTJEjLTkxeHxiALvnLPlnJJg",
+          title:
+            "12K HDR 120fps Dolby Vision with Epic Music (Los Angeles // GTA VI)",
+          user: "8K Safari",
+          statistics: "3.1M views • 1 year ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/G5RpJwCJDqc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDUFlVnmxyAVRtEKHbuCtLo6oaGWQ",
+          title: "Japan in 8K ULTRA HD - Land of The Rising Sun (60 FPS)",
+          user: "8K World",
+          statistics: "5.6M views • 2 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/hVvEISFw9w0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCOfXHVn1eAfsvoC6xHheu6Sao7og",
+          title: "Morocco 8K HDR 60FPS (FUHD)",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "10M views • 5 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/vQVwkyn3-F8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBDa0Wt3XN0OLTBAPSBsbIdDl2U2g",
+          title: "Uzbekistan 8K HDR 60p",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "2.6M views • 2 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/QmwlJbgPtek/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPYCASlQv1IVsBb15GrCJpkGiLPA",
+          title:
+            "VIETNAM 🇻🇳 8K Video Ultra HD [60FPS] Dolby Vision | Vietnam 8K HDR",
+          user: "8K HDR Dolby World",
+          statistics: "3M views • 2 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/N1-Jmq7BLFE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCyLpS3boh1ChcvVbXOTWBR6sWt5w",
+          title: "Bulgaria 8K HDR 60P (FUHD) Very beautiful place",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "2.3 views • 7 months ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/RzVvThhjAKw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnFjY1R8_XMJSSHAM1e9-weFZ79w",
+          title:
+            "Forest 4K • Nature Relaxation Film • Peaceful Relaxing Music • 4k Video UltraHD",
+          user: "Relaxation Film",
+          statistics: "765K views • 5 months ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/eoTpdTU8nTA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBF7Hn_0T-EHwb52Uli_zWmLgp0fQ",
+          title: "The Ocean 4K - Scenic Wildlife Film With Calming Music",
+          user: "Scenic Relaxation",
+          statistics: "15M views • 2 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/BJG8qMBveHw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDwxuuYq1zH3daKSQ3J9uvNIxtxmA",
+          title: "San Francisco 12K HDR 60fps Dolby Vision™ | Cinematic Video",
+          user: "8K World",
+          statistics: "378K views • 5 months ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/1La4QzGeaaQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBwK5s0t8VCDUrxahcJhKdNOgu-BA",
+          title: "Peru 8K HDR 60FPS (FUHD)",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "10万回視聴",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/CHSnz0bCaUk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD8S8CvGlGYAbri_msPm0GOh5AKEg",
+          title: "Alaska in 8K 60p HDR (Dolby Vision)",
+          user: "Jacob + Keitz Shwartz",
+          statistics: "62M views • 6 years ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/f7hbWvHKns0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCCTfOgKDGaP62gByxuwiaM2rbHuA",
+          title: "GREENLAND - LAND OF ICE 4K",
+          user: "Stefan Foster",
+          statistics: "13M views • 5 months ago",
+        },
+
+        {
+          img: "https://i.ytimg.com/vi/8aedJQ8Ca-o/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCr4h53qjLhyriZuH92Whw2nEwfDg",
+          title: "Paris In 4k - Aerial Video : Travel Around Paris by Drone",
+          user: "ExploreFly",
+          statistics: "4K views • 5 weeks ago",
+        },
+      ];
+
+      for (let i = 0; i < recommendData.length; i++) {
+        const recommend = document.createElement("div");
+        recommend.style.width = "377px";
+        recommend.style.height = "94px";
+        // recommend.style.background = "red";
+        recommend.style.marginBottom = "10px";
+        recommend.style.display = "flex";
+        recommend.style.fontSize = "12px";
+        recommend.style.columnGap = "10px";
+
+        const img = document.createElement("img");
+        img.src = recommendData[i].img;
+        img.style.height = "100%";
+        img.style.borderRadius = "10px";
+
+        const description = document.createElement("div");
+        // description.style.background = "pink";
+
+        const title = document.createElement("div");
+        title.innerHTML = recommendData[i].title;
+        title.className = "recommend_title";
+        const user = document.createElement("div");
+        user.innerHTML = recommendData[i].user;
+        const statistics = document.createElement("div");
+        statistics.innerHTML = recommendData[i].statistics;
+
+        description.appendChild(title);
+        description.appendChild(user);
+        description.appendChild(statistics);
+
+        recommend.appendChild(img);
+        recommend.appendChild(description);
+
+        parent_recommend.appendChild(recommend);
+      }
+
+      const commentData = [
+        {
+          avatar:
+            "https://yt3.ggpht.com/ytc/AIdro_myvH7b_HnK4bGTriXHPDN8em2LEIWBbek8J0FNKo0rQD8ZCW9JmvaIEjxiNg1o=s88-c-k-c0x00ffffff-no-rj",
+          user: "@shuhratsattorov1021",
+          title:
+            "Aktyor, qo'shiqchi, sportchilarga muxlis fanat bo'linar edi Ilim axliga muxlis fanat bo'lish vaqti yana keldi.",
+        },
+        // Sarvie
+        {
+          avatar:
+            "https://yt3.ggpht.com/-76XG7nkFvP7s-gIh3DIvqHmpAPzIqzSAz6oEzsY7-Qv_QpJVDVn9_PP3yvTu8I_5ZHZZJfI1A=s88-c-k-c0x00ffffff-no-rj",
+          user: "@PhanLynne",
+          title:
+            "The vocals express emotions so strongly that it makes you feel like you're being engulfed by the waves of emotion in the song. This song feels like it takes you on a journey of the mind. I think it will leave a lasting impression when listening to it. The combination of the delicate expression of the voice and the beauty of the melody is truly touching.",
+        },
+        //Asila
+        {
+          avatar:
+            "https://yt3.ggpht.com/JMI3XYUuTx44r1J9ve_Gwo9jdhh7z7dTTjg8r3PDGmGxvlGu_Cnxr_lR7_XeiiObo4nd-H-exQ=s88-c-k-c0x00ffffff-no-rj",
+          user: "@asilamamanova",
+          title:
+            "Kutib turgandik🎉.Hammasini eshitib chiqdik, bir boshidan.Juda foydali bo'layapti.O'tgan galki hayotim uchun katta katta anglashlar berdi",
+        },
+        // shox
+        {
+          avatar:
+            "https://champlaincrossover.org/wp-content/uploads/2022/04/gEeThz9M5G9N72JH2dXadQ-900x450.jpg",
+          user: "@YoungBoyNeverBroken",
+          title:
+            "The Fast and Furious Franchise: Why Is It so Popular? - The Crossover",
+        },
+        //alsu
+        {
+          avatar: "https://i.ytimg.com/vi/rBadprLH1jM/hq720.jpg",
+          user: "@Hangout Session",
+          title: "A Mellow Morning In Tokyo - (Playlist) ",
+        },
+
+        {
+          avatar:
+            "https://yt3.ggpht.com/JMI3XYUuTx44r1J9ve_Gwo9jdhh7z7dTTjg8r3PDGmGxvlGu_Cnxr_lR7_XeiiObo4nd-H-exQ=s88-c-k-c0x00ffffff-no-rj",
+          user: "@Momokso",
+          title: "Daydreaming of a Road Trip",
+        },
+      ];
+
+      const parent_pc_comment = document.querySelector(".pc_comment_container");
+      const parent_sp_comment = document.querySelector(".sp_comment_container");
+
+      console.log("commentData.length=", commentData.length);
+      function showComments() {
+        for (let i = 0; i < commentData.length; i++) {
+          const comment_box = document.createElement("div");
+          comment_box.style.display = "flex";
+          comment_box.style.alignItems = "center";
+          comment_box.className = "comment_box";
+
+          const comment_img = document.createElement("img");
+          comment_img.src = commentData[i].avatar;
+          comment_img.style.width = "40px";
+          comment_img.style.height = "40px";
+
+          // userとタイトルの親
+          const comment_desc = document.createElement("div");
+          const comment_user = document.createElement("div");
+          comment_user.innerHTML = commentData[i].user;
+          const comment_title = document.createElement("div");
+          comment_title.innerHTML = commentData[i].title;
+          comment_desc.appendChild(comment_user);
+          comment_desc.appendChild(comment_title);
+
+          // ボタンの親
+          const comment_button = document.createElement("div");
+          comment_button.display = "flex";
+          const edit_button = document.createElement("button");
+          edit_button.innerHTML = "編集";
+          const delete_button = document.createElement("button");
+          delete_button.innerHTML = "削除";
+          comment_button.appendChild(edit_button);
+          comment_button.appendChild(delete_button);
+
+          //削除ボタンが押された時
+          delete_button.addEventListener("click", function () {
+            // alert(`${i}番目が押されました`);
+            commentData.splice(i, 1);
+
+            const elemAll = document.querySelectorAll(".comment_box");
+            for (let k = 0; k < elemAll.length; k++) {
+              elemAll[k].remove();
+            }
+
+            showComments();
+          });
+
+          comment_box.appendChild(comment_img);
+          comment_box.appendChild(comment_desc);
+          comment_box.appendChild(comment_button);
+
+          parent_pc_comment.appendChild(comment_box);
+          // parent_sp_comment.appendChild(comment_box);
+        }
+      }
+
+      // コメント投稿部分を作成
+      const post_container = document.querySelector(".post_container");
+      post_container.style.display = "flex";
+
+      const img = document.createElement("img");
+      img.src = "./images/profileimg.jpg";
+      img.style.width = "40px";
+      img.style.height = "40px";
+
+      post_container.appendChild(img);
+
+      const post_input_container = document.createElement("div");
+      post_input_container.style.width = "100%";
+      post_input_container.style.padding = "0 10px 5px 10px";
+
+      const post_input = document.createElement("input");
+      post_input.id = "comment";
+      post_input.placeholder = "コメントする";
+
+      post_input.style.width = "100%";
+      post_input_container.appendChild(post_input);
+      post_container.appendChild(post_input_container);
+
+      const post_cancel_button = document.createElement("button");
+      post_cancel_button.innerHTML = "キャンセル";
+      const post_comment_button = document.createElement("button");
+      post_comment_button.innerHTML = "コメント";
+
+      post_input_container.appendChild(post_cancel_button);
+      post_input_container.appendChild(post_comment_button);
+
+      post_comment_button.addEventListener("click", function () {
+        let comment = document.getElementById("comment").value;
+        let obj = {
+          avatar: "./images/tom.jpeg",
+          user: "@tom",
+          title: comment,
+        };
+
+        commentData.unshift(obj);
+        console.log(commentData);
+        const elemAll = document.querySelectorAll(".comment_box");
+        for (let k = 0; k < elemAll.length; k++) {
+          elemAll[k].remove();
+        }
+        showComments();
+
+        // alert(comment)
+        // let parent = document.getElementById("lists");
+        // let name = document.getElementById("name").value;
+        // let obj = { id: "111", name: name, comment };
+        // comments.unshift(obj);
+
+        // // 今表示されているコメントを全て消す
+        // clearElements();
+
+        // // commentsを表示
+        // showComments();
+      });
+
+      showComments();
+    </script>
+  </body>
+</html>
