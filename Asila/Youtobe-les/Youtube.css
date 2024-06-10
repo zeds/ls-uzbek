@@ -267,12 +267,11 @@ main {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
 }
 .article_video {
   width: 100%;
-  aspect-ratio: 3/2;
-  margin-top: 30px;
+  aspect-ratio: 3/2.6;
 }
 .article_video img {
   width: 100%;
@@ -282,14 +281,12 @@ main {
 .description {
   display: flex;
   gap: 10px;
+  margin-top: 9px;
 }
 .description img {
   width: 36px;
   height: 36px;
   border-radius: 18px;
-}
-.text_container {
-  padding-top: 12px;
 }
 .title {
   overflow: hidden;
@@ -303,17 +300,12 @@ main {
   color: #0f0f0f;
 }
 .author {
-  color: #606060;
   font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
 }
 .statistics {
-  color: #606060;
   font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
 }
+
 /* MEDIA */
 
 @media (width < 648px) {
@@ -322,17 +314,10 @@ main {
   }
   nav {
     display: none;
-    position: fixed;
-    top: 70px;
-    z-index: 2;
-    width: 240px;
-    height: 100%;
   }
   .article_container {
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 20px;
   }
-
   .tag_container {
     padding-left: 20px;
   }
@@ -347,7 +332,6 @@ main {
   .article_container {
     padding-left: 20px;
   }
-
   .tag_container {
     padding-left: 20px;
   }
@@ -355,7 +339,7 @@ main {
     display: none;
   }
 }
-@media (768px <= width < 1040px) {
+@media (768px <= width < 1024px) {
   .article_container {
     grid-template-columns: 1fr 1fr;
   }
@@ -371,7 +355,7 @@ main {
     font-size: 10px;
     width: 60px;
     align-items: center;
-    padding: 20px 20px;
+    padding: 10px;
     margin-bottom: 15px;
   }
   nav li div {
@@ -381,7 +365,7 @@ main {
     -webkit-line-clamp: 1;
   }
 }
-@media (1041px <= width < 1280px) {
+@media (1024px <= width < 1280px) {
   .article_container {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -403,17 +387,12 @@ main {
     font-size: 10px;
     width: 60px;
     align-items: center;
-    padding: 20px;
-    /* margin-bottom: 15px; */
+    padding: 10px;
+    margin-bottom: 15px;
   }
 }
-@media (1280px <= width < 1536px) {
+@media (1280px <= width) {
   .article_container {
     grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-@media (1536px <=width) {
-  .articles {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
